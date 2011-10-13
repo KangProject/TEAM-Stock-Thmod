@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Thư mục</item>
+        <item>Xã hội</item>
+        <item>Giải trí</item>
+        <item>Media</item>
+        <item>Mục ưa thích</item>
+        <item>Sức khoẻ</item>
+        <item>Công cụ</item>
+        <item>Tin tức</item>
+    </string-array>
+</resources>

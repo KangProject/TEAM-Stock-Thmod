@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">使用鍵盤撥號</string>
+    <string name="general_dialpad_voicemail_txt">語音信箱</string>
+    <string name="gui_cancel_txt">取消</string>
+    <string name="gui_ok_txt">確定</string>
+    <string name="lockscreen_strings_backup_question_1_txt">您母親的娘家姓氏是什麼？</string>
+    <string name="lockscreen_strings_backup_question_2_txt">您的出生地在哪？</string>
+    <string name="lockscreen_strings_backup_question_3_txt">您最愛的地方是哪裡？</string>
+    <string name="lockscreen_strings_backup_question_4_txt">您最愛的電影是哪一部？</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">答案</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">緊急電話</string>
+    <string name="lockscreen_strings_backup_question_header_txt">安全問題</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">解鎖</string>
+    <string name="lockscreen_strings_howtounlock_txt">按下 %icon 以解除鎖定</string>
+    <string name="lockscreen_strings_locked_out_header_txt">圖案錯誤</string>
+    <string name="lockscreen_strings_locked_out_message_txt">您已錯誤繪製圖案 20 次。請使用安全問題繼續解鎖。</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">答案錯誤</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">SIM卡已封鎖</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">剩餘嘗試數：</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">輸入PUK碼</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">SIM卡已鎖住</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">輸入由您電信業者提供的PUK碼</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">請連絡您的電信業者</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">輸入新的PIN碼</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">重新輸入新的PIN碼</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK碼必須為8位數</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">圖案錯誤</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">輕觸[下一步]以使用安全問題解鎖，或在30秒內再試一次</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">剩餘5次嘗試次數</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">下一步</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">再試一次</string>
+    <string name="seport_strings_accessory_not_supported_txt">配件不受支援</string>
+</resources>

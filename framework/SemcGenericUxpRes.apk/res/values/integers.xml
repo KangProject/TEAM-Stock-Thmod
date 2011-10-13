@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="semc_wait_feedback_duration">150</integer>
+    <integer name="semc_fastscroll_hit_area_height">80</integer>
+    <integer name="semc_fastscroll_hit_area_width">50</integer>
+    <integer name="semc_cornerbutton_anglex">90</integer>
+    <integer name="semc_cornerbutton_anglez">70</integer>
+    <integer name="semc_cornerbutton_showduration">600</integer>
+    <integer name="semc_cornerbutton_hideduration">400</integer>
+</resources>

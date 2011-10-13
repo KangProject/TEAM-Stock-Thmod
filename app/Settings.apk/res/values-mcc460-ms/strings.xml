@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">Pasang sijil WLAN</string>
+    <string name="radio_controls_summary">Urus WLAN, Bluetooth, mod pesawat, rangkaian mudah alih, &amp; VPNs</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">Hidupkan WLAN</string>
+    <string name="wifi_settings">Tetapan WLAN</string>
+    <string name="wifi_settings_category">Tetapan WLAN</string>
+    <string name="wifi_starting">Menghidupkan…</string>
+    <string name="wifi_add_network">Tambah rangkaian WLAN</string>
+    <string name="wifi_access_points">Rangkaian WLAN</string>
+    <string name="wifi_setting_sleep_policy_title">Dasar tidur WLAN</string>
+    <string name="wifi_setting_sleep_policy_summary">Tentukan bila hendak bertukar dari WLAN ke data mudah alih</string>
+    <string name="wifi_tether_checkbox_text">Hotspot WLAN mudah alih</string>
+    <string name="wifi_tether_enabled_subtext">%1$s hotspot mudah alih aktif</string>
+    <string name="wifi_tether_failed_subtext">Ralat hotspot WLAN mudah alih</string>
+    <string name="wifi_tether_settings_text">Tetapan hotspot WLAN mudah alih</string>
+    <string name="wifi_tether_settings_subtext">Sediakan &amp; urus hotspot WLAN mudah alih</string>
+    <string name="wifi_tether_settings_title">Tetapan hotspot WLAN mudah alih</string>
+    <string name="wifi_tether_configure_ap_text">Konfigurasikan hotspot WLAN</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">%1$s %2$s hotspot WLAN mudah alih</string>
+    <string name="status_wifi_mac_address">Alamat MAC WLAN</string>
+    <string name="tether_settings_title_wifi">Hotspot mudah alih</string>
+    <string name="tether_settings_title_both">Tether &amp; hotspot mudah alih</string>
+    <string name="tether_settings_summary_wifi">Kongsi sambungan mudah alih telefon anda sebagai hotspot WLAN mudah alih</string>
+    <string name="tether_settings_summary_both">Kongsi sambungan data mudah alih telefon anda melalui USB atau sebagai hotspot WLAN mudah alih</string>
+    <string name="location_network_based">Gunakan rangkaian wayarles</string>
+    <string name="location_networks_disabled">Lihat lokasi dalam aplikasi (seperti Peta) menggunakan rangkaian wayarles</string>
+    <string name="location_neighborhood_level">Lokasi ditentukan oleh WLAN dan/atau rangkaian mudah alih</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">Waktu hidup WLAN</string>
+    <string name="bluetooth_on_time">Waktu hidup WLAN</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">WLAN dijalankan</string>
+    <string name="battery_action_wifi">Tetapan WLAN</string>
+    <string name="battery_desc_wifi">Bateri yang digunakan oleh WLAN</string>
+    <string name="battery_sugg_wifi">Matikan WLAN apabila tidak menggunakannya atau di mana ia tidak boleh didapati</string>
+    <string name="gadget_toggle_wifi">Mengemas kini tetapan WLAN</string>
+    <string name="backup_data_summary">Buat sandaran data aplikasi, kata laluan WLAN dan tetapan lain ke pelayan Google</string>
+    <string name="backup_erase_dialog_message">Adakah ada pasti mahu berhenti membuat sandaran kata laluan WLAN anda, penanda buku dan tetapan lain serta data aplikasi dan memadam semua salinan di pelayan Google?</string>
+    <string name="wifi_context_menu_change_wapi_certificate">Tukar Sijil WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">Dilindungi oleh WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">Dilindungi oleh WLAN PSK</string>
+    <string name="error_starting">Tidak boleh memulakan WLAN</string>
+    <string name="error_stopping">Tidak boleh menghentikan WLAN</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">Tambah rangkaian WLAN</string>
+</resources>

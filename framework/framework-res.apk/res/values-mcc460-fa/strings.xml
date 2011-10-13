@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permlab_accessWifiState">مشاهده وضعیت WLAN</string>
+    <string name="permdesc_accessWifiState">به برنامه اجازه می دهد تا اطلاعات مربوط به وضعیت WLAN را مشاهده کند.</string>
+    <string name="permlab_changeWifiState">تغییر وضعیت WLAN</string>
+    <string name="permdesc_changeWifiState">به برنامه اجازه می دهد تا به نقاط دستیابی WLAN وصل شود یا از آن قطع شود و تغییراتی در شبکه های WLAN پیکربندی شده ایجاد کند.</string>
+    <string name="permlab_changeWifiMulticastState">مجازبودن دریافت پخش چندمقصدی WLAN</string>
+    <string name="tethered_notification_title">مهار يا هات اسپات فعال</string>
+</resources>

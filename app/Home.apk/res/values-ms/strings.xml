@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Rumah Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Aplikasi</string>
+    <string name="home_menu_add_txt">Tambah</string>
+    <string name="home_menu_wallpaper_txt">Hias latar</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Tetapan</string>
+    <string name="home_dialog_title_add_to_home_txt">Tambah ke skrin rumah</string>
+    <string name="home_option_add_shortcut_txt">Jalan pintas</string>
+    <string name="home_option_add_widget_txt">Widget</string>
+    <string name="home_option_add_folder_txt">Folder</string>
+    <string name="home_option_set_wallpaper_txt">Hias latar</string>
+    <string name="home_option_set_theme_txt">Tema</string>
+    <string name="home_dialog_title_add_shortcut_txt">Tambah jalan pintas</string>
+    <string name="home_dialog_title_pick_application_txt">Pilih aplikasi</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Pilih hias latar</string>
+    <string name="home_dialog_title_select_theme_txt">Pilih tema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Atur apl</string>
+    <string name="home_sort_dialog_arrange_button_txt">Atur</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Susunan sendiri</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Mengikut abjad</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Paling digunakan</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Terbaru dipasangkan</string>
+    <string name="home_popup_cancel_txt">Batal</string>
+    <string name="home_error_activity_not_found_txt">Aplikasi tidak ditemui</string>
+    <string name="home_error_desktop_full_txt">Tiada ruang pada skrin rumah ini</string>
+    <string name="home_error_loading_widget">Tidak boleh memuatkan widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Nama folder</string>
+    <string name="home_folder_confirm_delete_txt">Folder ini mengandungi item. Padam folder?</string>
+    <string name="home_folder_dialog_create_new_txt">Wujudkan folder baru</string>
+    <string name="home_folder_select_icon_txt">Pilih ikon folder</string>
+    <string name="home_shortcut_created_txt">Jalan pintas diwujudkan: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Jalan pintas dipadamkan: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Jalan pintas sudah pun wujud: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Untuk mewujudkan jalan pintas pada skrin rumah, sentuh terus ikon aplikasi.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Selesai</string>
+    <string name="gui_cancel_txt">Batal</string>
+    <string name="home_button_exit_overview">Keluar drpd gmbrn kseluruhan</string>
+    <string name="home_no_uninstallable_apps_txt">Apl ini tidak boleh dibuang pemasangannya</string>
+</resources>

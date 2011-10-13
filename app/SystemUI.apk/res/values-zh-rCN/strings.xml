@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">状态栏</string>
+    <string name="status_bar_clear_all_button">清除</string>
+    <string name="status_bar_no_notifications_title">无通知</string>
+    <string name="status_bar_ongoing_events_title">正在进行的</string>
+    <string name="status_bar_latest_events_title">通知</string>
+    <string name="battery_low_title">请连接充电器</string>
+    <string name="battery_low_subtitle">电量所剩不多：</string>
+    <string name="battery_low_percent_format">电量剩余 %d%% 或更少。</string>
+    <string name="battery_low_why">电量使用情况</string>
+</resources>

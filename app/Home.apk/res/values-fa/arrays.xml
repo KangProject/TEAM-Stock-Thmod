@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>پوشه</item>
+        <item>اجتماعي</item>
+        <item>سرگرمي</item>
+        <item>رسانه</item>
+        <item>مورد علاقه ها</item>
+        <item>سلامت</item>
+        <item>ابزارها</item>
+        <item>اخبار</item>
+    </string-array>
+</resources>

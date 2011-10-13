@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson होम</string>
+    <string name="home_add_application_shortcut_txt">अनुप्रयोग</string>
+    <string name="home_menu_add_txt">जोड़ें</string>
+    <string name="home_menu_wallpaper_txt">वॉलपेपर</string>
+    <string name="home_menu_theme_txt">थीम</string>
+    <string name="home_menu_settings_txt">सेटिंग</string>
+    <string name="home_dialog_title_add_to_home_txt">होम स्क्रीन में जोड़ें</string>
+    <string name="home_option_add_shortcut_txt">शॉर्टकट</string>
+    <string name="home_option_add_widget_txt">विजेट</string>
+    <string name="home_option_add_folder_txt">फोल्डर</string>
+    <string name="home_option_set_wallpaper_txt">वॉलपेपर</string>
+    <string name="home_option_set_theme_txt">थीम</string>
+    <string name="home_dialog_title_add_shortcut_txt">शॉर्टकट जोड़ें</string>
+    <string name="home_dialog_title_pick_application_txt">अनुप्रयोग का चयन करें</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">वॉलपेपर का चयन करें</string>
+    <string name="home_dialog_title_select_theme_txt">थीम का चयन करें</string>
+    <string name="home_sort_dialog_title_sorting_txt">अनुप्रयोग व्यवस्थित करें</string>
+    <string name="home_sort_dialog_arrange_button_txt">व्‍यवस्थित करें</string>
+    <string name="home_sort_dialog_option_free_sort_txt">स्वयं का क्रम</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">शब्दानुक्रमिक</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">अधिकांश उपयोग किए गए</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">हाल में स्थापित</string>
+    <string name="home_popup_cancel_txt">रद्द करें</string>
+    <string name="home_error_activity_not_found_txt">अनुप्रयोग नहीं मिला</string>
+    <string name="home_error_desktop_full_txt">इस होम स्क्रीन पर कोई जगह नहीं है</string>
+    <string name="home_error_loading_widget">विजेट लोड नहीं कर सका</string>
+    <string name="home_folder_dialog_folder_name_txt">फोल्डर नाम</string>
+    <string name="home_folder_confirm_delete_txt">इस फोल्डर में आइटम हैं। फोल्डर हटाएँ?</string>
+    <string name="home_folder_dialog_create_new_txt">नया फोल्डर बनाएँ</string>
+    <string name="home_folder_select_icon_txt">फोल्डर आइकॉन का चयन करें</string>
+    <string name="home_shortcut_created_txt">शॉर्टकट बनाया गया: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">शॉर्टकट हटाया गया: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">शॉर्टकट पहले से मौजूद है: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">होम स्क्रीन पर शॉर्टकट बनाने के लिए, अनुप्रयोग आइकॉन पर स्पर्श करके रखें।</string>
+    <string name="gui_ok_txt">ठीक</string>
+    <string name="gui_done_txt">संपन्न</string>
+    <string name="gui_cancel_txt">रद्द करें</string>
+    <string name="home_button_exit_overview">अवलोकन से बाहर निकलें</string>
+    <string name="home_no_uninstallable_apps_txt">इन अनुप्रयोगों की स्थापना रद्द नहीं की जा सकती</string>
+</resources>

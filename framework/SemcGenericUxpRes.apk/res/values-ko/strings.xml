@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">키보드로 전화 걸기</string>
+    <string name="general_dialpad_voicemail_txt">음성메일</string>
+    <string name="gui_cancel_txt">취소</string>
+    <string name="gui_ok_txt">확인</string>
+    <string name="lockscreen_strings_backup_question_1_txt">어머니의 성함은 무엇입니까?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">고향은 어디입니까?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">좋아하는 장소는 어디입니까?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">좋아하는 영화는 무엇입니까?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">답변</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">긴급 전화</string>
+    <string name="lockscreen_strings_backup_question_header_txt">보안 질문</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">잠금 해제</string>
+    <string name="lockscreen_strings_howtounlock_txt">잠금 해제하려면 %icon을 누르세요.</string>
+    <string name="lockscreen_strings_locked_out_header_txt">잘못된 패턴</string>
+    <string name="lockscreen_strings_locked_out_message_txt">패턴을 20회 잘못 입력했습니다. 보안 질문으로 잠금을 해제하세요.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">틀린 답변</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">USIM카드 차단됨</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">남은 시도 횟수:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">PUK입력</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">USIM카드 잠금</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">이동 통신 사업자가 제공한PUK코드를 입력하세요.</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">이동통신 사업자에게 문의하세요.</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">새PIN입력</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">새PIN다시 입력</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK는8자리여야 합니다.</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">잘못된 패턴</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">보안 질문에 답변하여 잠금을 해제하려면 다음을 누르고, 그렇지 않으면 30초 후에 다시 시도하세요.</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">5번 남았습니다.</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">다음</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">다시 시도</string>
+    <string name="seport_strings_accessory_not_supported_txt">액세서리 지원 안됨</string>
+</resources>

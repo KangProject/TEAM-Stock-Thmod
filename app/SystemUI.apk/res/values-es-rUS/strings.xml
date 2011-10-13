@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Barra de estado</string>
+    <string name="status_bar_clear_all_button">Borrar</string>
+    <string name="status_bar_no_notifications_title">No hay notificaciones</string>
+    <string name="status_bar_ongoing_events_title">Continuo</string>
+    <string name="status_bar_latest_events_title">Notificaciones</string>
+    <string name="battery_low_title">Conecta el cargador</string>
+    <string name="battery_low_subtitle">Hay poca batería:</string>
+    <string name="battery_low_percent_format">%d%% o menos disponible.</string>
+    <string name="battery_low_why">Uso de la batería</string>
+</resources>

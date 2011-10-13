@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">نوار وضعیت</string>
+    <string name="status_bar_clear_all_button">پاک کردن</string>
+    <string name="status_bar_no_notifications_title">اعلانی موجود نیست</string>
+    <string name="status_bar_ongoing_events_title">در حال انجام</string>
+    <string name="status_bar_latest_events_title">اعلان ها</string>
+    <string name="battery_low_title">لطفاً شارژر را وصل کنید</string>
+    <string name="battery_low_subtitle">باتری در حال کم شدن است:</string>
+    <string name="battery_low_percent_format">%d%% یا کمتر باقیمانده است.</string>
+    <string name="battery_low_why">استفاده از باتری</string>
+</resources>

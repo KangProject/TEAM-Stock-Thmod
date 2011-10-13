@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson – domů</string>
+    <string name="home_add_application_shortcut_txt">Aplikace</string>
+    <string name="home_menu_add_txt">Přidat</string>
+    <string name="home_menu_wallpaper_txt">Tapeta</string>
+    <string name="home_menu_theme_txt">Schéma</string>
+    <string name="home_menu_settings_txt">Nastavení</string>
+    <string name="home_dialog_title_add_to_home_txt">Přidat na domovskou obrazovku</string>
+    <string name="home_option_add_shortcut_txt">Zkratky</string>
+    <string name="home_option_add_widget_txt">Widgety</string>
+    <string name="home_option_add_folder_txt">Složka</string>
+    <string name="home_option_set_wallpaper_txt">Tapety</string>
+    <string name="home_option_set_theme_txt">Schémata</string>
+    <string name="home_dialog_title_add_shortcut_txt">Přidat zkratku</string>
+    <string name="home_dialog_title_pick_application_txt">Vybrat aplikaci</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Vybrat tapetu</string>
+    <string name="home_dialog_title_select_theme_txt">Vybrat schéma</string>
+    <string name="home_sort_dialog_title_sorting_txt">Uspořádat aplikace</string>
+    <string name="home_sort_dialog_arrange_button_txt">Uspořádat</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Vlastní řazení</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Abecedně</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Nejpoužívanější</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Nedávno nainstalované</string>
+    <string name="home_popup_cancel_txt">Zrušit</string>
+    <string name="home_error_activity_not_found_txt">Aplikace nenalezena</string>
+    <string name="home_error_desktop_full_txt">Na této domovské obrazovce již není místo.</string>
+    <string name="home_error_loading_widget">Nelze načíst widget.</string>
+    <string name="home_folder_dialog_folder_name_txt">Název složky</string>
+    <string name="home_folder_confirm_delete_txt">Tato složka obsahuje položky. Chcete ji odstranit?</string>
+    <string name="home_folder_dialog_create_new_txt">Vytvořit novou složku</string>
+    <string name="home_folder_select_icon_txt">Vybrat ikonu složky</string>
+    <string name="home_shortcut_created_txt">Zkratka vytvořena: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Zkratka odstraněna: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Zkratka již existuje: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Chcete-li vytvořit zkratku na domovské obrazovce, dotkněte se ikony aplikace a podržte ji.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Hotovo</string>
+    <string name="gui_cancel_txt">Zrušit</string>
+    <string name="home_button_exit_overview">Ukončit přehled</string>
+    <string name="home_no_uninstallable_apps_txt">Tyto aplikace nelze odinstalovat.</string>
+</resources>

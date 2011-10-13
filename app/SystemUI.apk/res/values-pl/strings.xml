@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Pasek stanu</string>
+    <string name="status_bar_clear_all_button">Wyczyść</string>
+    <string name="status_bar_no_notifications_title">Brak powiadomień</string>
+    <string name="status_bar_ongoing_events_title">Bieżące</string>
+    <string name="status_bar_latest_events_title">Powiadomienia</string>
+    <string name="battery_low_title">Podłącz ładowarkę</string>
+    <string name="battery_low_subtitle">Bateria się rozładowuje:</string>
+    <string name="battery_low_percent_format">Pozostało: %d%% lub mniej.</string>
+    <string name="battery_low_why">Użycie baterii</string>
+</resources>

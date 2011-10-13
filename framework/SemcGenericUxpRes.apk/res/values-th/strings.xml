@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">ใช้แป้นพิมพ์โทร</string>
+    <string name="general_dialpad_voicemail_txt">วอยซ์เมล</string>
+    <string name="gui_cancel_txt">ยกเลิก</string>
+    <string name="gui_ok_txt">ตกลง</string>
+    <string name="lockscreen_strings_backup_question_1_txt">แม่ของคุณมีนามสกุลเดิมว่าอะไร?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">สถานที่เกิดของคุณคือที่ไหน?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">สถานที่โปรดของคุณคือที่ไหน?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">"ภาพยนตร์โปรดของคุณคือ
+เรื่องอะไร?"</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">ตอบ</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">โทรฉุกเฉิน</string>
+    <string name="lockscreen_strings_backup_question_header_txt">คำถามด้านความปลอดภัย</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">ปลดล็อค</string>
+    <string name="lockscreen_strings_howtounlock_txt">กด %icon เพื่อปลดล็อค</string>
+    <string name="lockscreen_strings_locked_out_header_txt">รูปแบบไม่ถูกต้อง</string>
+    <string name="lockscreen_strings_locked_out_message_txt">"คุณวาดรูปแบบไม่ถูกต้อง 20 ครั้ง โปรดปลดล็อคด้วยคำถามด้าน
+ความปลอดภัย"</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">คำตอบไม่ถูกต้อง</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">SIM การ์ดถูกบล็อค</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">จำนวนครั้งที่เหลือ:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">ป้อน PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">SIM การ์ดถูกบล็อค</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">ป้อนรหัส PUK ที่ผู้ให้บริการของคุณจัดให้</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">โปรดติดต่อผู้ให้บริการของคุณ</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">ป้อน PIN ใหม่</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">ป้อน PIN ใหม่ซ้ำ</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK ต้องเป็นตัวเลข 8 ตัว</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">รูปแบบไม่ถูกต้อง</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">"แตะ ถัดไป เพื่อปลดล็อคด้วยคำถามด้าน
+ความปลอดภัย หรือลองใหม่ใน 30 วินาที"</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">ลองได้อีก 5 ครั้ง</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">ถัดไป</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">ลองใหม่</string>
+    <string name="seport_strings_accessory_not_supported_txt">ไม่สนับสนุนอุปกรณ์เสริม</string>
+</resources>

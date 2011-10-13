@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">نصب گواهینامه های WLAN</string>
+    <string name="radio_controls_summary">مدیریت WLAN، Bluetooth، حالت هواپیما، شبکه های موبایل، و VPN ها</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">روشن کردن WLAN</string>
+    <string name="wifi_settings">تنظیمات WLAN</string>
+    <string name="wifi_settings_category">تنظيمات WLAN</string>
+    <string name="wifi_starting">درحال روشن شدن...</string>
+    <string name="wifi_add_network">افزودن شبكه WLAN</string>
+    <string name="wifi_access_points">شبکه های WLAN</string>
+    <string name="wifi_setting_sleep_policy_title">غیرفعال بودن WLAN</string>
+    <string name="wifi_setting_sleep_policy_summary">تعیین زمان تعویض از WLAN به داده موبایل</string>
+    <string name="wifi_tether_checkbox_text">هات اسپات WLAN قابل حمل</string>
+    <string name="wifi_tether_enabled_subtext">هات اسپات قابل حمل %1$s فعال</string>
+    <string name="wifi_tether_failed_subtext">خطا در هات اسپات WLAN قابل حمل</string>
+    <string name="wifi_tether_settings_text">تنظيمات هات اسپات WLAN قابل حمل</string>
+    <string name="wifi_tether_settings_subtext">تنظيم و مديريت هات اسپات WLAN قابل حمل</string>
+    <string name="wifi_tether_settings_title">تنظيمات هات اسپات WLAN قابل حمل</string>
+    <string name="wifi_tether_configure_ap_text">پيكربندي هات اسپات WLAN</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">%1$s %2$s هات اسپات WLAN قابل حمل</string>
+    <string name="status_wifi_mac_address">آدرس WLAN MAC</string>
+    <string name="tether_settings_title_wifi">هات اسپات قابل حمل</string>
+    <string name="tether_settings_title_both">مهار و هات اسپات قابل حمل</string>
+    <string name="tether_settings_summary_wifi">اتصال تلفن همراه خود را به عنوان يك هات اسپات WLAN قابل حمل به اشتراك بگذاريد</string>
+    <string name="tether_settings_summary_both">اتصال داده هاي تلفن همراه خود را با USB و به عنوان يك هات اسپات WLAN قابل حمل به اشتراك بگذاريد</string>
+    <string name="location_network_based">استفاده از شبمه های بی سیم</string>
+    <string name="location_networks_disabled">مشاهده مکان در برنامه ها (مانند Maps) با استفاده از شبکه های محلی</string>
+    <string name="location_neighborhood_level">تعیین مکان توسط شبکه های موبایل و/یا WLAN</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">WLAN مدت دار</string>
+    <string name="bluetooth_on_time">زمان روشن بودن WLAN</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">WLAN در حال اجرا</string>
+    <string name="battery_action_wifi">تنظیمات WLAN</string>
+    <string name="battery_desc_wifi">باتری استفاده شده توسط WLAN</string>
+    <string name="battery_sugg_wifi">وقتی WLAN در دسترس نیست یا از آن استفاده نمی کنید، آن را خاموش کنید</string>
+    <string name="gadget_toggle_wifi">به روزرسانی تنظیم WLAN</string>
+    <string name="backup_data_summary">از داده هاي برنامه، رمزهاي عبور WLAN، و ساير تنظيمات در سرورهاي Google پشتيبان تهيه كنيد</string>
+    <string name="backup_erase_dialog_message">آیا مطمئنید می خواهید تهيه پشتيبان از رمزهاي عبور WLAN، نشانه ها و ساير تنظيمات و داده هاي برنامه متوقف شود و کلیه نسخه ها از سرورهای Google حذف شوند؟</string>
+    <string name="wifi_context_menu_change_wapi_certificate">تغییر دادن گواهینامه WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">امن با WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">امن با WLAN PSK</string>
+    <string name="error_starting">شروع WLAN ممکن نیست</string>
+    <string name="error_stopping">توقف WLAN ممکن نيست</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">افزودن شبکه WLAN</string>
+</resources>

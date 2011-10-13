@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Programos</string>
+    <string name="home_menu_add_txt">Pridėti</string>
+    <string name="home_menu_wallpaper_txt">Fonas</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Nustatymai</string>
+    <string name="home_dialog_title_add_to_home_txt">Pridėjim. pagr. ekrane</string>
+    <string name="home_option_add_shortcut_txt">Nuorodos</string>
+    <string name="home_option_add_widget_txt">Įtaisai</string>
+    <string name="home_option_add_folder_txt">Aplankas</string>
+    <string name="home_option_set_wallpaper_txt">Fonai</string>
+    <string name="home_option_set_theme_txt">Temos</string>
+    <string name="home_dialog_title_add_shortcut_txt">Nuorodos pridėjimas</string>
+    <string name="home_dialog_title_pick_application_txt">Programos pasirinkimas</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Fono pasirinkimas</string>
+    <string name="home_dialog_title_select_theme_txt">Temos pasirinkimas</string>
+    <string name="home_sort_dialog_title_sorting_txt">Programų rūšiavimas</string>
+    <string name="home_sort_dialog_arrange_button_txt">Išdėstyti</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Tvarkyti pagal save</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Pagal abėcėlę</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Dažniausiai naudotos</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Vėliausiai įdiegtos</string>
+    <string name="home_popup_cancel_txt">Atšaukti</string>
+    <string name="home_error_activity_not_found_txt">Programa nerasta</string>
+    <string name="home_error_desktop_full_txt">Šiame pagrindiniame ekrane nėra vietos</string>
+    <string name="home_error_loading_widget">Nepavyko įkelti įtaiso</string>
+    <string name="home_folder_dialog_folder_name_txt">Aplanko pavadinimas</string>
+    <string name="home_folder_confirm_delete_txt">Šiame aplanke yra elementų. Ištrinti dabar?</string>
+    <string name="home_folder_dialog_create_new_txt">Kurti naują aplanką</string>
+    <string name="home_folder_select_icon_txt">Pasirinkite aplanko piktogr.</string>
+    <string name="home_shortcut_created_txt">Nuoroda sukurta: „%s“</string>
+    <string name="home_shortcut_removed_txt">Nuoroda ištrinta: „%s“</string>
+    <string name="home_shortcut_already_exists_txt">Nuoroda jau yra: „%s“</string>
+    <string name="home_hint_shortcut_message_txt">Norėdami sukurti pagrindinio ekrano nuorodą, palieskite ir palaikykite programos piktogramą.</string>
+    <string name="gui_ok_txt">Gerai</string>
+    <string name="gui_done_txt">Atlikta</string>
+    <string name="gui_cancel_txt">Atšaukti</string>
+    <string name="home_button_exit_overview">Išeiti iš apžvalgos</string>
+    <string name="home_no_uninstallable_apps_txt">Šių programų negalima pašalinti</string>
+</resources>

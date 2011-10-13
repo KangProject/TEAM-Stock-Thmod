@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Button" parent="@android:style/Widget.Button">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">@drawable/semc_button_bg</item>
+    </style>
+    <style name="HomeTheme" parent="@android:style/Theme.Wallpaper.NoTitleBar">
+        <item name="android:buttonStyle">@style/Button</item>
+    </style>
+</resources>

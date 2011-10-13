@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Állapotsor</string>
+    <string name="status_bar_clear_all_button">Törlés</string>
+    <string name="status_bar_no_notifications_title">Nincs értesítés</string>
+    <string name="status_bar_ongoing_events_title">Folyamatban van</string>
+    <string name="status_bar_latest_events_title">Értesítések</string>
+    <string name="battery_low_title">Kérjük, csatlakoztassa a töltőt</string>
+    <string name="battery_low_subtitle">Akkufeszültség alacsony:</string>
+    <string name="battery_low_percent_format">%d%% vagy kevesebb maradt.</string>
+    <string name="battery_low_why">Akkumulátorhasználat</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Përd. tastier. për form. nr.</string>
+    <string name="general_dialpad_voicemail_txt">Posta zanore</string>
+    <string name="gui_cancel_txt">Anulo</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Cili është mbiemri i vajzërisë i nënës suaj?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Cila është vendlindja juaj?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Cili është vendi juaj i preferuar?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Cili është filmi juaj i preferuar?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Përgjigju</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Tel. e urgjencës</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Pyetja e sigurisë</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Shkyç</string>
+    <string name="lockscreen_strings_howtounlock_txt">Shtyp %icon për të shkyçyr</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Model i pasaktë</string>
+    <string name="lockscreen_strings_locked_out_message_txt">Ju e keni vizatuar 20 herë në mënyrë të gabuar modelin. Shkyçeni me pyetjen e sigurisë.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Përgjigje e pasaktë</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">Karta SIM u bllokua</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Orvajtjet e mbetura:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Fut kodin PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">Karta SIM u bllokua</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Futni kodin PUK të ofruar nga operatori juaj</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Ju lutemi kontaktoni operatorin tuaj</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Fut kodin PIN të ri</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Përsërit kodin PIN të ri</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">Kodi PUK duhet të jetë me 8 shifra</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Model i pasaktë</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Trokitni lehtë Tjetër për ta shyçur me pyetjen e sigurisë ose provojeni përsëri pas 30 sekondash</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Ju mbetën dhe 5 përpjekje</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Tjetër</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Prov. përs.</string>
+    <string name="seport_strings_accessory_not_supported_txt">Pajisja shtesë nuk mbështetet</string>
+</resources>

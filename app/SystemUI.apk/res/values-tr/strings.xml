@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Durum çubuğu</string>
+    <string name="status_bar_clear_all_button">Temizle</string>
+    <string name="status_bar_no_notifications_title">Bildirim yok</string>
+    <string name="status_bar_ongoing_events_title">Sürüyor</string>
+    <string name="status_bar_latest_events_title">Bildirimler</string>
+    <string name="battery_low_title">Lütfen şarj cihazını takın</string>
+    <string name="battery_low_subtitle">Pil tükeniyor:</string>
+    <string name="battery_low_percent_format">%d%% veya daha az kaldı.</string>
+    <string name="battery_low_why">Pil kullanımı</string>
+</resources>

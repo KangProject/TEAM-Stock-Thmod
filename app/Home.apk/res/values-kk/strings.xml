@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson негізгі беті</string>
+    <string name="home_add_application_shortcut_txt">Қолданбалар</string>
+    <string name="home_menu_add_txt">Қосу</string>
+    <string name="home_menu_wallpaper_txt">Фон суреті</string>
+    <string name="home_menu_theme_txt">Тақырып</string>
+    <string name="home_menu_settings_txt">Параметрлер</string>
+    <string name="home_dialog_title_add_to_home_txt">Негізгі экранға қосу</string>
+    <string name="home_option_add_shortcut_txt">Төте жолдар</string>
+    <string name="home_option_add_widget_txt">Виджеттер</string>
+    <string name="home_option_add_folder_txt">Қалта</string>
+    <string name="home_option_set_wallpaper_txt">Фон суреттері</string>
+    <string name="home_option_set_theme_txt">Тақырыптар</string>
+    <string name="home_dialog_title_add_shortcut_txt">Төте жол қосу</string>
+    <string name="home_dialog_title_pick_application_txt">Қолданбаны таңдау</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Фон суретін таңдау</string>
+    <string name="home_dialog_title_select_theme_txt">Тақырыпты таңдау</string>
+    <string name="home_sort_dialog_title_sorting_txt">Сұрыптау</string>
+    <string name="home_sort_dialog_arrange_button_txt">Реттеу</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Теңшелетін сұрыптау</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Алфавиттік</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Ең көп пайд-тын</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Жақында орн-н</string>
+    <string name="home_popup_cancel_txt">Бас тарту</string>
+    <string name="home_error_activity_not_found_txt">Қолданба табылмады</string>
+    <string name="home_error_desktop_full_txt">Бұл негізгі экранда бос орын жоқ</string>
+    <string name="home_error_loading_widget">Виджетті жүктеу мүмкін болмады</string>
+    <string name="home_folder_dialog_folder_name_txt">Қалта атауы</string>
+    <string name="home_folder_confirm_delete_txt">Бұл қалтада элементтер бар. Қалта жойылсын ба?</string>
+    <string name="home_folder_dialog_create_new_txt">Жаңа қалта жасау</string>
+    <string name="home_folder_select_icon_txt">Қалта белгішесін таңдау</string>
+    <string name="home_shortcut_created_txt">Төте жол жасалды: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Төте жол жойылды: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Төте жол әлдеқашан бар: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Негізгі экранда төте жолды жасау үшін қолданба белгішесін түртіңіз және ұстап тұрыңыз.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Дайын</string>
+    <string name="gui_cancel_txt">Бас тарту</string>
+    <string name="home_button_exit_overview">Шолудан шығу</string>
+    <string name="home_no_uninstallable_apps_txt">Бұл қолданбалар орнатылмайды</string>
+</resources>

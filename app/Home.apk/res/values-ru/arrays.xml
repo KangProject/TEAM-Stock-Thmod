@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Папка</item>
+        <item>Общение</item>
+        <item>Развлечения</item>
+        <item>Мультимедиа</item>
+        <item>Избранное</item>
+        <item>Здоровье</item>
+        <item>Инструменты</item>
+        <item>Новости</item>
+    </string-array>
+</resources>

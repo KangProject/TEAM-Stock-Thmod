@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Accueil Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Applications</string>
+    <string name="home_menu_add_txt">Ajouter</string>
+    <string name="home_menu_wallpaper_txt">"Fond d'écran"</string>
+    <string name="home_menu_theme_txt">"Thème "</string>
+    <string name="home_menu_settings_txt">Paramètres</string>
+    <string name="home_dialog_title_add_to_home_txt">"Ajouter à l'écran d'accueil"</string>
+    <string name="home_option_add_shortcut_txt">Raccourcis</string>
+    <string name="home_option_add_widget_txt">Gadgets</string>
+    <string name="home_option_add_folder_txt">Dossier</string>
+    <string name="home_option_set_wallpaper_txt">"Fonds d'écran"</string>
+    <string name="home_option_set_theme_txt">Thèmes</string>
+    <string name="home_dialog_title_add_shortcut_txt">Ajouter un raccourci</string>
+    <string name="home_dialog_title_pick_application_txt">"Sélectionner l'application"</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">"Sélectionner un fond d'écran"</string>
+    <string name="home_dialog_title_select_theme_txt">Choisir le thème</string>
+    <string name="home_sort_dialog_title_sorting_txt">Tri des applications</string>
+    <string name="home_sort_dialog_arrange_button_txt">Arranger</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Tri personnalisé</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alphabétique</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Les plus utilisées</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Récemment installées</string>
+    <string name="home_popup_cancel_txt">Annuler</string>
+    <string name="home_error_activity_not_found_txt">Application non trouvée</string>
+    <string name="home_error_desktop_full_txt">"Pas d'espace sur cet écran d'accueil"</string>
+    <string name="home_error_loading_widget">Impossible de charger le gadget</string>
+    <string name="home_folder_dialog_folder_name_txt">Nom de dossier</string>
+    <string name="home_folder_confirm_delete_txt">Ce dossier contient des éléments. Supprimer le dossier?</string>
+    <string name="home_folder_dialog_create_new_txt">Créer un nouveau dossier</string>
+    <string name="home_folder_select_icon_txt">Sélectionner icône dossier</string>
+    <string name="home_shortcut_created_txt">Raccourci créé : \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Raccourci supprimé : \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Le raccourci existe déjà : \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">"Pour créer un raccourci sur l'écran d'accueil, touchez longuement une icône d'application."</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Terminé</string>
+    <string name="gui_cancel_txt">Annuler</string>
+    <string name="home_button_exit_overview">Quitter la présentation</string>
+    <string name="home_no_uninstallable_apps_txt">"Ces applications ne peuvent pas être désinstallées "</string>
+</resources>

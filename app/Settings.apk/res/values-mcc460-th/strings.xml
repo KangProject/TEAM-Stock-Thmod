@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">ติดตั้งใบรับรอง WLAN</string>
+    <string name="radio_controls_summary">จัดการ WLAN, Bluetooth, โหมดใช้งานบนเครื่องบิน, เครือข่ายโทรศัพท์เคลื่อนที่ และ VPN</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">เปิด WLAN</string>
+    <string name="wifi_settings">"การตั้งค่า WLAN "</string>
+    <string name="wifi_settings_category">"การตั้งค่า WLAN "</string>
+    <string name="wifi_starting">กำลังเปิด...</string>
+    <string name="wifi_add_network">"เพิ่มเครือข่าย WLAN "</string>
+    <string name="wifi_access_points">"เครือข่าย WLAN "</string>
+    <string name="wifi_setting_sleep_policy_title">"นโยบายการหยุดพักการทำงานของ 
+WLAN "</string>
+    <string name="wifi_setting_sleep_policy_summary">ระบุเมื่อจะสลับจาก WLAN เป็นข้อมูลแบบเคลื่อนที่</string>
+    <string name="wifi_tether_checkbox_text">ฮอตสปอต WLAN แบบพกพา</string>
+    <string name="wifi_tether_enabled_subtext">ฮอตสปอตแบบพกพา %1$s ทำงาน</string>
+    <string name="wifi_tether_failed_subtext">ฮอตสปอต WLAN แบบพกพามีข้อผิดพลาด</string>
+    <string name="wifi_tether_settings_text">การตั้งค่าฮอตสปอต WLAN แบบพกพา</string>
+    <string name="wifi_tether_settings_subtext">การตั้งค่าและการจัดการฮอตสปอต WLAN แบบพกพา</string>
+    <string name="wifi_tether_settings_title">การตั้งค่าฮอตสปอต WLAN แบบพกพา</string>
+    <string name="wifi_tether_configure_ap_text">"กำหนดค่าฮอตสปอต WLAN "</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">ฮอตสปอต WLAN แบบพกพา %1$s %2$s</string>
+    <string name="status_wifi_mac_address">ที่อยู่ WLAN MAC</string>
+    <string name="tether_settings_title_wifi">ฮอตสปอตแบบพกพา</string>
+    <string name="tether_settings_title_both">การเชื่อมต่ออินเทอร์เน็ตและฮอตสปอตแบบพกพา</string>
+    <string name="tether_settings_summary_wifi">แชร์การเชื่อมต่อโทรศัพท์มือถือของคุณเป็นฮอตสปอต WLAN แบบพกพา</string>
+    <string name="tether_settings_summary_both">แชร์การเชื่อมต่อข้อมูลโทรศัพท์มือถือของคุณผ่าน USB หรือเป็นฮอตสปอต WLAN แบบพกพา</string>
+    <string name="location_network_based">ใช้เครือข่ายไร้สาย</string>
+    <string name="location_networks_disabled">ดูตำแหน่งที่ตั้งในแอปพลิเคชัน (เช่น แผ่นที่) โดยใช้เครือข่ายไร้สาย</string>
+    <string name="location_neighborhood_level">ตำแหน่งถูกกำหนดโดย WLAN และ/หรือเครือข่ายโทรศัพท์เคลื่อนที่</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">WLAN ตรงเวลา</string>
+    <string name="bluetooth_on_time">WLAN ตรงเวลา</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">WLAN กำลังทำงาน</string>
+    <string name="battery_action_wifi">การตั้งค่า WLAN</string>
+    <string name="battery_desc_wifi">แบตเตอรี่ที่ WLAN ใช้</string>
+    <string name="battery_sugg_wifi">"ปิด WLAN เมื่อไม่ได้ใช้งานหรืออยู่ในบริเวณ
+ที่ใช้งานไม่ได้"</string>
+    <string name="gadget_toggle_wifi">"กำลังอัปเดตการตั้งค่า WLAN "</string>
+    <string name="backup_data_summary">สำรองข้อมูลแอปพลิเคชัน รหัสผ่าน WLAN และการตั้งค่าอื่นๆ ในเซิร์ฟเวอร์ Google</string>
+    <string name="backup_erase_dialog_message">แน่ใจหรือไม่ว่าต้องการหยุดสำรองข้อมูลรหัสผ่าน WLAN บุ้คมาร์ก และการตั้งค่าอื่นๆ และข้อมูลแอปพลิเคชันและลบสำเนาทั้งหมดบนเซิร์ฟเวอร์ Google?</string>
+    <string name="wifi_context_menu_change_wapi_certificate">เปลี่ยนใบรับรอง WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">รักษาความปลอดภัยด้วย WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">รักษาความปลอดภัยด้วย WLAN PSK</string>
+    <string name="error_starting">เริ่ม WLAN ไม่ได้</string>
+    <string name="error_stopping">หยุด WLAN ไม่ได้</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">"เพิ่มเครือข่าย WLAN "</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Composer avec clavier</string>
+    <string name="general_dialpad_voicemail_txt">Messagerie vocale</string>
+    <string name="gui_cancel_txt">Annuler</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Quel est le nom de fille de votre mère?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Quel est votre lieu de naissance?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Quel est votre endroit favori?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Quel est votre film favori?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Réponse</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Appel urgence</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Question de sécurité</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Déverrouiller</string>
+    <string name="lockscreen_strings_howtounlock_txt">Appuyez sur %icon pour déverr</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Dessin incorrect</string>
+    <string name="lockscreen_strings_locked_out_message_txt">"Vous avez reproduit incorrectement le dessin à 20 reprises. Utilisez la question de sécurité pour déverrouiller l'appareil."</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Réponse incorrecte</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">Carte SIM bloquée</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Tentatives restantes</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Entrez la CPD</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">Carte SIM verrouillée</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Entrez la CPD fournie par votre opérateur</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Veuillez communiquer avec votre opérateur</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Entrez un nouveau NIP</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Répétez le nouveau NIP</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">La CPD doit avoir 8 chiffres</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Dessin incorrect</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Tapez sur Suivant pour déverrouiller avec la question de sécurité ou essayez de nouveau dans 30 secondes</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Il vous reste 5 essais</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Suivant</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Réessayer</string>
+    <string name="seport_strings_accessory_not_supported_txt">Accessoire non pris en charge</string>
+</resources>

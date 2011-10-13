@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson-en hasierako pantaila</string>
+    <string name="home_add_application_shortcut_txt">Aplikazioak</string>
+    <string name="home_menu_add_txt">Gehitu</string>
+    <string name="home_menu_wallpaper_txt">Horma papera</string>
+    <string name="home_menu_theme_txt">Gaia</string>
+    <string name="home_menu_settings_txt">Ezarpenak</string>
+    <string name="home_dialog_title_add_to_home_txt">Gehitu hasierako pantailan</string>
+    <string name="home_option_add_shortcut_txt">Laster teklak</string>
+    <string name="home_option_add_widget_txt">Widget-ak</string>
+    <string name="home_option_add_folder_txt">Karpeta</string>
+    <string name="home_option_set_wallpaper_txt">Horma paperak</string>
+    <string name="home_option_set_theme_txt">Gaiak</string>
+    <string name="home_dialog_title_add_shortcut_txt">Gehitu laster tekla</string>
+    <string name="home_dialog_title_pick_application_txt">Hautatu aplikazioa</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Hautatu horma papera</string>
+    <string name="home_dialog_title_select_theme_txt">Hautatu gaia</string>
+    <string name="home_sort_dialog_title_sorting_txt">Antolatu aplikazioak</string>
+    <string name="home_sort_dialog_arrange_button_txt">Antolatu</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Hurrenkera pertsonalizatua</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetikoa</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Erabilienak</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Instalatutako azkenak</string>
+    <string name="home_popup_cancel_txt">Utzi</string>
+    <string name="home_error_activity_not_found_txt">Ez da aplikazioa aurkitu</string>
+    <string name="home_error_desktop_full_txt">Ez dago tokirik hasierako pantaila honetan</string>
+    <string name="home_error_loading_widget">Ezin izan da widget-a kargatu</string>
+    <string name="home_folder_dialog_folder_name_txt">Karpetaren izena</string>
+    <string name="home_folder_confirm_delete_txt">Karpetak elementuak ditu. Karpeta ezabatu?</string>
+    <string name="home_folder_dialog_create_new_txt">Sortu karpeta</string>
+    <string name="home_folder_select_icon_txt">Hautatu karpetaren ikonoa</string>
+    <string name="home_shortcut_created_txt">Laster tekla sortu da: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Laster tekla ezabatu da: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Laster tekla jada badago: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Hasierako pantailan laster tekla sortzeko, eduki ukituta aplikazioaren ikonoa.</string>
+    <string name="gui_ok_txt">Ados</string>
+    <string name="gui_done_txt">Eginda</string>
+    <string name="gui_cancel_txt">Utzi</string>
+    <string name="home_button_exit_overview">Irten ikuspegi orokorretik</string>
+    <string name="home_no_uninstallable_apps_txt">Ezin dira aplikazio hauek desinstalatu</string>
+</resources>

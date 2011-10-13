@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson sākums</string>
+    <string name="home_add_application_shortcut_txt">Programmas</string>
+    <string name="home_menu_add_txt">Pievienot</string>
+    <string name="home_menu_wallpaper_txt">Fons</string>
+    <string name="home_menu_theme_txt">Motīvs</string>
+    <string name="home_menu_settings_txt">Iestatījumi</string>
+    <string name="home_dialog_title_add_to_home_txt">Pievienošana sākuma ekrānam</string>
+    <string name="home_option_add_shortcut_txt">Īsceļi</string>
+    <string name="home_option_add_widget_txt">Logrīki</string>
+    <string name="home_option_add_folder_txt">Mape</string>
+    <string name="home_option_set_wallpaper_txt">Foni</string>
+    <string name="home_option_set_theme_txt">Motīvi</string>
+    <string name="home_dialog_title_add_shortcut_txt">Īsceļa pievienošana</string>
+    <string name="home_dialog_title_pick_application_txt">Programmas izvēle</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Fona izvēle</string>
+    <string name="home_dialog_title_select_theme_txt">Motīva izvēle</string>
+    <string name="home_sort_dialog_title_sorting_txt">Programmu kārtošana</string>
+    <string name="home_sort_dialog_arrange_button_txt">Kārtot</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Pielāgota kārtošana</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabētiska secība</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Visvairāk izmantotās</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Nesen instalētās</string>
+    <string name="home_popup_cancel_txt">Atcelt</string>
+    <string name="home_error_activity_not_found_txt">Programma nav atrasta</string>
+    <string name="home_error_desktop_full_txt">Šajā sākuma ekrānā nav vietas</string>
+    <string name="home_error_loading_widget">Neizdevās ielādēt logrīku</string>
+    <string name="home_folder_dialog_folder_name_txt">Mapes nosaukums</string>
+    <string name="home_folder_confirm_delete_txt">Šajā mapē ir objekti. Vai izdzēst mapi?</string>
+    <string name="home_folder_dialog_create_new_txt">Izveidot jaunu mapi</string>
+    <string name="home_folder_select_icon_txt">Izvēlieties mapes ikonu</string>
+    <string name="home_shortcut_created_txt">Īsceļš izveidots: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Īsceļš izdzēsts: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Īsceļš jau pastāv: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Lai izveidotu īsceļu sākuma ekrānā, pieskarieties programmas ikonai un turiet to.</string>
+    <string name="gui_ok_txt">Labi</string>
+    <string name="gui_done_txt">Gatavs</string>
+    <string name="gui_cancel_txt">Atcelt</string>
+    <string name="home_button_exit_overview">Iziet no pārskata</string>
+    <string name="home_no_uninstallable_apps_txt">Šīs programmas nevar atinstalēt</string>
+</resources>

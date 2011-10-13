@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cell_width">106.0dip</dimen>
+    <dimen name="cell_height">74.0dip</dimen>
+    <dimen name="desktop_height">296.0dip</dimen>
+    <dimen name="folder_cell_width">106.0dip</dimen>
+    <dimen name="folder_cell_height">74.0dip</dimen>
+    <dimen name="stage_cell_width">106.0dip</dimen>
+    <dimen name="stage_cell_height">74.0dip</dimen>
+    <dimen name="apptray_cell_width">106.0dip</dimen>
+    <dimen name="apptray_cell_height">74.0dip</dimen>
+</resources>

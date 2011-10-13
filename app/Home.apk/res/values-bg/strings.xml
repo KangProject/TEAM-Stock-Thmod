@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Приложения</string>
+    <string name="home_menu_add_txt">Добавяне</string>
+    <string name="home_menu_wallpaper_txt">Фон</string>
+    <string name="home_menu_theme_txt">Тема</string>
+    <string name="home_menu_settings_txt">Настройки</string>
+    <string name="home_dialog_title_add_to_home_txt">Добавяне към началния екран</string>
+    <string name="home_option_add_shortcut_txt">Бързи клавиши</string>
+    <string name="home_option_add_widget_txt">Графични обекти</string>
+    <string name="home_option_add_folder_txt">Папка</string>
+    <string name="home_option_set_wallpaper_txt">Фонове</string>
+    <string name="home_option_set_theme_txt">Теми</string>
+    <string name="home_dialog_title_add_shortcut_txt">Добавяне на бърз клавиш</string>
+    <string name="home_dialog_title_pick_application_txt">Избор на приложение</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Избор на фон</string>
+    <string name="home_dialog_title_select_theme_txt">Избор на тема</string>
+    <string name="home_sort_dialog_title_sorting_txt">Подреждане на приложенията</string>
+    <string name="home_sort_dialog_arrange_button_txt">Подрежд.</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Подреждане по избор</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">По азбучен ред</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Най-използвани</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Последно инсталирани</string>
+    <string name="home_popup_cancel_txt">Отмяна</string>
+    <string name="home_error_activity_not_found_txt">Приложението не е намерено</string>
+    <string name="home_error_desktop_full_txt">Няма място на този начален екран</string>
+    <string name="home_error_loading_widget">Зареждането на графичния обект е неуспешно</string>
+    <string name="home_folder_dialog_folder_name_txt">Име на папката</string>
+    <string name="home_folder_confirm_delete_txt">Папката съдържа елементи. Искате ли да изтриете папката?</string>
+    <string name="home_folder_dialog_create_new_txt">Създаване на нова папка</string>
+    <string name="home_folder_select_icon_txt">Избор на икона на папката</string>
+    <string name="home_shortcut_created_txt">Бързият клавиш е създаден: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Бързият клавиш е изтрит: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Бързият клавиш вече съществува: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">За да създадете бърз клавиш на началния екран, докоснете и задръжте иконата на дадено приложение.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Готово</string>
+    <string name="gui_cancel_txt">Отмяна</string>
+    <string name="home_button_exit_overview">Изход от общия преглед</string>
+    <string name="home_no_uninstallable_apps_txt">Тези приложения не могат да се деинсталират</string>
+</resources>

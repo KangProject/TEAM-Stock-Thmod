@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Statusa josla</string>
+    <string name="status_bar_clear_all_button">Notīrīt</string>
+    <string name="status_bar_no_notifications_title">Nav paziņojumu</string>
+    <string name="status_bar_ongoing_events_title">Notiekošs</string>
+    <string name="status_bar_latest_events_title">Paziņojumi</string>
+    <string name="battery_low_title">Lūdzu, pievienojiet uzlādes ierīci.</string>
+    <string name="battery_low_subtitle">Akumulatora uzlādes līmenis kļūst zems:</string>
+    <string name="battery_low_percent_format">Atlicis %d%% vai mazāk.</string>
+    <string name="battery_low_why">Akumulatora lietojums</string>
+</resources>

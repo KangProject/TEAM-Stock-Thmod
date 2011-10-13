@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Stavový řádek</string>
+    <string name="status_bar_clear_all_button">Vymazat</string>
+    <string name="status_bar_no_notifications_title">Žádná oznámení</string>
+    <string name="status_bar_ongoing_events_title">Probíhající</string>
+    <string name="status_bar_latest_events_title">Oznámení</string>
+    <string name="battery_low_title">Prosím připojte dobíjecí zařízení</string>
+    <string name="battery_low_subtitle">Baterie je vybitá:</string>
+    <string name="battery_low_percent_format">Zbývá %d%% nebo méně.</string>
+    <string name="battery_low_why">Využití baterie</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Map</item>
+        <item>Sosial</item>
+        <item>Hiburan</item>
+        <item>Media</item>
+        <item>Favorit</item>
+        <item>Kesehatan</item>
+        <item>Alat</item>
+        <item>Berita</item>
+    </string-array>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Página inicial Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Aplicações</string>
+    <string name="home_menu_add_txt">Adicionar</string>
+    <string name="home_menu_wallpaper_txt">Padrão de fundo</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Definições</string>
+    <string name="home_dialog_title_add_to_home_txt">Adicionar ao ecrã inicial</string>
+    <string name="home_option_add_shortcut_txt">Atalhos</string>
+    <string name="home_option_add_widget_txt">Widgets</string>
+    <string name="home_option_add_folder_txt">Pasta</string>
+    <string name="home_option_set_wallpaper_txt">Padrões de fundo</string>
+    <string name="home_option_set_theme_txt">Temas</string>
+    <string name="home_dialog_title_add_shortcut_txt">Adicionar atalho</string>
+    <string name="home_dialog_title_pick_application_txt">Seleccionar aplicação</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Seleccionar padrão de fundo</string>
+    <string name="home_dialog_title_select_theme_txt">Seleccionar tema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Ordenar aplicações</string>
+    <string name="home_sort_dialog_arrange_button_txt">Ordenar</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Ordenação personalizada</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabética</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Mais utilizadas</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Instaladas recentemente</string>
+    <string name="home_popup_cancel_txt">Cancelar</string>
+    <string name="home_error_activity_not_found_txt">Aplicação não encontrada</string>
+    <string name="home_error_desktop_full_txt">Não há espaço neste ecrã inicial</string>
+    <string name="home_error_loading_widget">Não foi possível carregar o widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Nome da pasta</string>
+    <string name="home_folder_confirm_delete_txt">Esta pasta contém itens. Eliminar pasta?</string>
+    <string name="home_folder_dialog_create_new_txt">Criar nova pasta</string>
+    <string name="home_folder_select_icon_txt">Seleccionar ícone de pasta</string>
+    <string name="home_shortcut_created_txt">Atalho criado: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Atalho eliminado: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">O atalho já existe: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Para criar atalhos no ecrã inicial, toque sem soltar no ícone de uma aplicação.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Concluído</string>
+    <string name="gui_cancel_txt">Cancelar</string>
+    <string name="home_button_exit_overview">Sair da vista geral</string>
+    <string name="home_no_uninstallable_apps_txt">Não é possível desinstalar estas aplicações</string>
+</resources>

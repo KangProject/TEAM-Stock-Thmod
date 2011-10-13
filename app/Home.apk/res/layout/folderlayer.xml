@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#b0000000" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/open_folder" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <RelativeLayout android:id="@id/folder_view" android:layout_width="fill_parent" android:layout_height="0.0dip">
+        <com.sonyericsson.paneview.PaneView android:id="@id/folder_pane_view" android:background="#00000000" android:scrollbars="vertical" android:fadingEdge="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/folder_left_margin" android:layout_marginTop="@dimen/folder_top_margin" android:layout_marginRight="@dimen/folder_right_margin" android:layout_marginBottom="@dimen/folder_bottom_margin" />
+        <ImageView android:background="@drawable/general_list_divider_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="@dimen/folder_top_margin" android:layout_marginRight="8.0dip" />
+        <LinearLayout android:id="@id/label_click_view" android:paddingTop="19.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="9.0dip">
+            <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="marquee" android:id="@id/label" android:background="@drawable/folder_popup_header" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:paddingBottom="0.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/folder_bg_left" android:background="@drawable/home_folder_popup_left" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.0" />
+            <ImageView android:id="@id/folder_bg_middle" android:background="@drawable/home_folder_popup_down" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="0.0" />
+            <ImageView android:id="@id/folder_bg_right" android:background="@drawable/home_folder_popup_right" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

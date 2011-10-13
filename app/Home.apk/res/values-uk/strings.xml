@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson: головний екран</string>
+    <string name="home_add_application_shortcut_txt">Програми</string>
+    <string name="home_menu_add_txt">Додати</string>
+    <string name="home_menu_wallpaper_txt">Шпалери</string>
+    <string name="home_menu_theme_txt">Тема</string>
+    <string name="home_menu_settings_txt">Установки</string>
+    <string name="home_dialog_title_add_to_home_txt">Додати на головний екран</string>
+    <string name="home_option_add_shortcut_txt">Ярлики</string>
+    <string name="home_option_add_widget_txt">Міні-програми</string>
+    <string name="home_option_add_folder_txt">Папка</string>
+    <string name="home_option_set_wallpaper_txt">Шпалери</string>
+    <string name="home_option_set_theme_txt">Теми</string>
+    <string name="home_dialog_title_add_shortcut_txt">Додати ярлик</string>
+    <string name="home_dialog_title_pick_application_txt">Вибрати програму</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Вибрати шпалери</string>
+    <string name="home_dialog_title_select_theme_txt">Вибір теми</string>
+    <string name="home_sort_dialog_title_sorting_txt">Сортування програм</string>
+    <string name="home_sort_dialog_arrange_button_txt">Упорядкув.</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Власне сортування</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">За алфавітом</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Найчастіше використання</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Нещодавно встановлені</string>
+    <string name="home_popup_cancel_txt">Скасувати</string>
+    <string name="home_error_activity_not_found_txt">Програму не знайдено</string>
+    <string name="home_error_desktop_full_txt">На цьому головному екрані немає вільного місця</string>
+    <string name="home_error_loading_widget">Не вдалося завантажити міні-програму</string>
+    <string name="home_folder_dialog_folder_name_txt">Назва папки</string>
+    <string name="home_folder_confirm_delete_txt">Ця папка містить об’єкти. Видалити папку?</string>
+    <string name="home_folder_dialog_create_new_txt">Створити нову папку</string>
+    <string name="home_folder_select_icon_txt">Виберіть піктограму папки</string>
+    <string name="home_shortcut_created_txt">Створено ярлик: «%s»</string>
+    <string name="home_shortcut_removed_txt">Видалено ярлик: «%s»</string>
+    <string name="home_shortcut_already_exists_txt">Ярлик уже існує: «%s»</string>
+    <string name="home_hint_shortcut_message_txt">Щоб створити ярлик на головному екрані, доторкніться й утримуйте піктограму програми.</string>
+    <string name="gui_ok_txt">ОК</string>
+    <string name="gui_done_txt">Готово</string>
+    <string name="gui_cancel_txt">Скасувати</string>
+    <string name="home_button_exit_overview">Закрити огляд</string>
+    <string name="home_no_uninstallable_apps_txt">Не можна видалити ці програми</string>
+</resources>

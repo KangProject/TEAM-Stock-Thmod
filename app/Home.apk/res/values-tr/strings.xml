@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Ana Sayfası</string>
+    <string name="home_add_application_shortcut_txt">Uygulamalar</string>
+    <string name="home_menu_add_txt">Ekle</string>
+    <string name="home_menu_wallpaper_txt">Duvar kağıdı</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Ayarlar</string>
+    <string name="home_dialog_title_add_to_home_txt">Ana ekrana ekle</string>
+    <string name="home_option_add_shortcut_txt">Kısayollar</string>
+    <string name="home_option_add_widget_txt">"Widget'lar"</string>
+    <string name="home_option_add_folder_txt">Klasör</string>
+    <string name="home_option_set_wallpaper_txt">Duvar kağıtları</string>
+    <string name="home_option_set_theme_txt">Temalar</string>
+    <string name="home_dialog_title_add_shortcut_txt">Kısayol ekle</string>
+    <string name="home_dialog_title_pick_application_txt">Uygulama seç</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Duvar kağıdı seç</string>
+    <string name="home_dialog_title_select_theme_txt">Tema seç</string>
+    <string name="home_sort_dialog_title_sorting_txt">Uygulamaları düzenle</string>
+    <string name="home_sort_dialog_arrange_button_txt">Düzenle</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Özel sıralama</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetik</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">En sık kullanılanlar</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Son yüklenenler</string>
+    <string name="home_popup_cancel_txt">İptal</string>
+    <string name="home_error_activity_not_found_txt">Uygulama bulunamadı</string>
+    <string name="home_error_desktop_full_txt">Bu ana ekranda yer kalmadı</string>
+    <string name="home_error_loading_widget">Widget yüklenemedi</string>
+    <string name="home_folder_dialog_folder_name_txt">Klasör adı</string>
+    <string name="home_folder_confirm_delete_txt">Bu klasör öğeler içeriyor. Klasör silinsin mi?</string>
+    <string name="home_folder_dialog_create_new_txt">Yeni klasör oluştur</string>
+    <string name="home_folder_select_icon_txt">Klasör simgesi seçin</string>
+    <string name="home_shortcut_created_txt">Kısayol oluşturuldu: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Kısayol silindi: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Kısayol zaten var: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Ana ekranda kısayol oluşturmak için bir uygulama simgesine dokunarak bekleyin.</string>
+    <string name="gui_ok_txt">Tamam</string>
+    <string name="gui_done_txt">Bitti</string>
+    <string name="gui_cancel_txt">İptal</string>
+    <string name="home_button_exit_overview">Genel bakıştan çık</string>
+    <string name="home_no_uninstallable_apps_txt">Bu uygulamalar kaldırılamaz</string>
+</resources>

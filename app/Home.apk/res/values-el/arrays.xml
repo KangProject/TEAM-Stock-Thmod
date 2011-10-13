@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Φάκελος</item>
+        <item>Κοινωνικά δίκτυα</item>
+        <item>Ψυχαγωγία</item>
+        <item>Πολυμέσα</item>
+        <item>Αγαπημένα</item>
+        <item>Υγεία</item>
+        <item>Εργαλεία</item>
+        <item>Ειδήσεις</item>
+    </string-array>
+</resources>

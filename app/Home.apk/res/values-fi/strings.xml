@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Sovellukset</string>
+    <string name="home_menu_add_txt">Lisää</string>
+    <string name="home_menu_wallpaper_txt">Taustakuva</string>
+    <string name="home_menu_theme_txt">Teema</string>
+    <string name="home_menu_settings_txt">Asetukset</string>
+    <string name="home_dialog_title_add_to_home_txt">Lisää kotinäyttöön</string>
+    <string name="home_option_add_shortcut_txt">Pikakomennot</string>
+    <string name="home_option_add_widget_txt">Lisäohjelmat</string>
+    <string name="home_option_add_folder_txt">Kansio</string>
+    <string name="home_option_set_wallpaper_txt">Taustakuvat</string>
+    <string name="home_option_set_theme_txt">Teemat</string>
+    <string name="home_dialog_title_add_shortcut_txt">Lisää pikakomento</string>
+    <string name="home_dialog_title_pick_application_txt">Valitse sovellus</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Valitse taustakuva</string>
+    <string name="home_dialog_title_select_theme_txt">Valitse teema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Järjestä sovellukset</string>
+    <string name="home_sort_dialog_arrange_button_txt">Järjestä</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Oma järjestys</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Aakkosellinen</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Useimmin käytetyt</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Äskettäin asennetut</string>
+    <string name="home_popup_cancel_txt">Peruuta</string>
+    <string name="home_error_activity_not_found_txt">Sovellusta ei löydy</string>
+    <string name="home_error_desktop_full_txt">Ei tilaa tässä kotinäytössä</string>
+    <string name="home_error_loading_widget">Lisäohjelmaa ei voitu ladata</string>
+    <string name="home_folder_dialog_folder_name_txt">Kansion nimi</string>
+    <string name="home_folder_confirm_delete_txt">Tässä kansiossa on kohteita. Poistetaanko kansio?</string>
+    <string name="home_folder_dialog_create_new_txt">Luo uusi kansio</string>
+    <string name="home_folder_select_icon_txt">Valitse kansiokuvake</string>
+    <string name="home_shortcut_created_txt">Pikakomento luotu: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Pikakomento poistettu: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Pikakomento on jo olemassa: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Voit luoda pikakomennon kotinäyttöön koskettamalla sovelluskuvaketta ja pitämällä sitä kosketettuna.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Valmis</string>
+    <string name="gui_cancel_txt">Peruuta</string>
+    <string name="home_button_exit_overview">Poistu yleiskuvauksesta</string>
+    <string name="home_no_uninstallable_apps_txt">Näiden sovellusten asennusta ei voi poistaa</string>
+</resources>

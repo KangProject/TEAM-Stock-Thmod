@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>폴더</item>
+        <item>정보 교류</item>
+        <item>연예</item>
+        <item>미디어</item>
+        <item>즐겨찾기</item>
+        <item>건강</item>
+        <item>도구</item>
+        <item>뉴스</item>
+    </string-array>
+</resources>

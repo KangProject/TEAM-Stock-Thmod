@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Aplankas</item>
+        <item>Socialiniai tinklai</item>
+        <item>Pramogos</item>
+        <item>Medija</item>
+        <item>Mėgstamiausi</item>
+        <item>Sveikata</item>
+        <item>Įrankiai</item>
+        <item>Naujienos</item>
+    </string-array>
+</resources>

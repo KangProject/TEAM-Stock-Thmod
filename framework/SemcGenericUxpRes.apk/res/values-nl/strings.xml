@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Toetsenb. gebr. om te kzn</string>
+    <string name="gui_cancel_txt">Annul.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Wat is de meisjesnaam van uw moeder?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Wat is uw geboorteplaats?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Wat is uw favoriete plaats?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Wat is uw favoriete film?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Antwoord</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Noodoproep</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Beveiligingsvraag</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Ontgrendelen</string>
+    <string name="lockscreen_strings_howtounlock_txt">Druk op %icon voor ontgrendelen</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Onjuist patroon</string>
+    <string name="lockscreen_strings_locked_out_message_txt">U hebt het patroon 20 verkeerd getekend. Ontgrendel met de beveiligingsvraag</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Onjuist antwoord</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">SIM-kaart geblokkeerd</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Resterende pogingen:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Voer PUK in</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">SIM-kaart vergrendeld</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Voer de PUK-code in die door uw operator is geleverd</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Neem contact op met de operator</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Voer nieuwe PIN in</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Herhaal nieuwe PIN</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK moet 8 cijfers zijn</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Onjuist patroon</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Tik op Volgende om te ontgrendelen met beveiligingsvraag of probeer het opnieuw over 30 seconden.</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">U hebt 5 resterende pogingen</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Volgende</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Opnieuw</string>
+    <string name="seport_strings_accessory_not_supported_txt">Accessoire wordt niet ondersteund</string>
+</resources>

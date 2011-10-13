@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">صفحه اصلیSony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">برنامه های کاربردی</string>
+    <string name="home_menu_add_txt">افزودن</string>
+    <string name="home_menu_wallpaper_txt">تصوير زمينه</string>
+    <string name="home_menu_theme_txt">مضمون</string>
+    <string name="home_menu_settings_txt">تنظيمات</string>
+    <string name="home_dialog_title_add_to_home_txt">افزودن به صفحه اصلي</string>
+    <string name="home_option_add_shortcut_txt">میانبرها</string>
+    <string name="home_option_add_widget_txt">ویجت ها</string>
+    <string name="home_option_add_folder_txt">پوشه</string>
+    <string name="home_option_set_wallpaper_txt">تصاویر زمینه</string>
+    <string name="home_option_set_theme_txt">تم ها</string>
+    <string name="home_dialog_title_add_shortcut_txt">افزودن ميانبر</string>
+    <string name="home_dialog_title_pick_application_txt">انتخاب برنامه</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">انتخاب تصويرزمينه</string>
+    <string name="home_dialog_title_select_theme_txt">انتخاب مضمون</string>
+    <string name="home_sort_dialog_title_sorting_txt">ترتیب بندی برنامه ها</string>
+    <string name="home_sort_dialog_arrange_button_txt">ترتیب بندی</string>
+    <string name="home_sort_dialog_option_free_sort_txt">سفارش شما</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">به ترتيب الفبا</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">بيشتر استفاده شده</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">اخيراً نصب شده</string>
+    <string name="home_popup_cancel_txt">لغو</string>
+    <string name="home_error_activity_not_found_txt">برنامه يافت نشد</string>
+    <string name="home_error_desktop_full_txt">فضايي براي اين صفحه اصلي وجود ندارد</string>
+    <string name="home_error_loading_widget">بارگيري ويجت ممكن نيست</string>
+    <string name="home_folder_dialog_folder_name_txt">نام پوشه</string>
+    <string name="home_folder_confirm_delete_txt">مواردي در اين پوشه وجود دارد. پوشه حذف شود؟</string>
+    <string name="home_folder_dialog_create_new_txt">ايجاد پوشه جديد</string>
+    <string name="home_folder_select_icon_txt">انتخاب نماد پوشه</string>
+    <string name="home_shortcut_created_txt">ميانبر ايجاد شده: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">ميانبر حذف شده: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">ميانبر از قبل وجود دارد: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">براي ايجاد ميانبر در صفحه اصلي، يك نماد برنامه را لمس كرده و نگهداريد.</string>
+    <string name="gui_ok_txt">تاييد</string>
+    <string name="gui_done_txt">انجام شد</string>
+    <string name="gui_cancel_txt">لغو</string>
+    <string name="home_button_exit_overview">خروج از نماي كلي</string>
+    <string name="home_no_uninstallable_apps_txt">این برنامه ها را نمی توان حذف کرد</string>
+</resources>

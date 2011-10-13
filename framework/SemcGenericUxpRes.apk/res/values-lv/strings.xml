@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Sastādiet nr. ar pilno tast.</string>
+    <string name="general_dialpad_voicemail_txt">Balss pasts</string>
+    <string name="gui_cancel_txt">Atcelt</string>
+    <string name="gui_ok_txt">Labi</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Kāds ir jūsu mātes pirmslaulības uzvārds?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Kura ir jūsu dzimšanas vieta?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Kura ir jūsu iecienītākā vieta?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Kura ir jūsu mīļākā filma?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Atbildēt</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Ārkārtas zvans</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Drošības jautājums</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Atslēgt</string>
+    <string name="lockscreen_strings_howtounlock_txt">Lai atbloķētu, nospiediet %icon</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Nepareiza shēma</string>
+    <string name="lockscreen_strings_locked_out_message_txt">Jūs esat nepareizi uzzīmējis shēmu 20 reizes. Atslēdziet, izmantojot drošības jautājumu.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Nepareiza atbilde</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">SIM karte bloķēta</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Atlikušie mēģinājumi:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">PUK koda ievade</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">SIM karte bloķēta</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Ievadiet PUK kodu, ko piešķīris jūsu operators</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Lūdzu, sazinieties ar savu operatoru</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Jauna PIN koda ievade</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Jaunā PIN koda atkārtošana</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK kodā jābūt 8 cipariem</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Nepareiza shēma</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Piesitiet Tālāk, lai atslēgtu, izmantojot drošības jautājumu, vai mēģiniet vēlreiz pēc 30 sekundēm</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Jums ir atlikuši 5 mēģinājumi</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Tālāk</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Mēģ. vēl</string>
+    <string name="seport_strings_accessory_not_supported_txt">Papildierīce netiek atbalstīta</string>
+</resources>

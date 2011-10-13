@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Dùng bàn phím để quay số</string>
+    <string name="general_dialpad_voicemail_txt">Thư thoại</string>
+    <string name="gui_cancel_txt">Huỷ</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Tên thời con gái của mẹ bạn là gì?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Nơi sinh của bạn ở đâu?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Địa điểm yêu thích của bạn là gì?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Bộ phim yêu thích của bạn là gì?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Trả lời</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Cuộc gọi khẩn</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Câu hỏi bảo mật</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Mở khoá</string>
+    <string name="lockscreen_strings_howtounlock_txt">Bấm %icon để mở khoá</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Mẫu không đúng</string>
+    <string name="lockscreen_strings_locked_out_message_txt">Bạn đã nhập mẫu không đúng 20 lần. Mở khoá bằng câu hỏi bảo mật.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Câu trả lời không đúng</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">Chặn SIM</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Số lần thử còn lại:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Nhập mã PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">Đã khoá SIM</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Nhập mã PUK do nhà khai thác mạng của bạn cung cấp</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Vui lòng liên hệ với nhà khai thác của bạn</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Nhập mã PIN mới</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Nhập lại mã PIN mới</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK phải là 8 chữ số</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Mẫu không đúng</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Nhấn Tiếp theo để mở khoá bằng câu hỏi bảo mật hoặc thử lại sau 30 giây</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Bạn có 5 lần còn lại</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Tiếp theo</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Thử lại</string>
+    <string name="seport_strings_accessory_not_supported_txt">Không hỗ trợ phụ kiện</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">דף הבית Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">יישומים</string>
+    <string name="home_menu_add_txt">הוסף</string>
+    <string name="home_menu_wallpaper_txt">טפט</string>
+    <string name="home_menu_theme_txt">ערכת נושא</string>
+    <string name="home_menu_settings_txt">הגדרות</string>
+    <string name="home_dialog_title_add_to_home_txt">הוסף למסך הבית</string>
+    <string name="home_option_add_shortcut_txt">קיצורים</string>
+    <string name="home_option_add_widget_txt">יישומונים</string>
+    <string name="home_option_add_folder_txt">תיקייה</string>
+    <string name="home_option_set_wallpaper_txt">טפטים</string>
+    <string name="home_option_set_theme_txt">"ער' נושא"</string>
+    <string name="home_dialog_title_add_shortcut_txt">הוסף קיצור דרך</string>
+    <string name="home_dialog_title_pick_application_txt">בחר יישום</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">בחר טפט</string>
+    <string name="home_dialog_title_select_theme_txt">בחר ערכת נושא</string>
+    <string name="home_sort_dialog_title_sorting_txt">סדר יישומים</string>
+    <string name="home_sort_dialog_arrange_button_txt">סדר</string>
+    <string name="home_sort_dialog_option_free_sort_txt">סדר בעלות</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">אלפביתי</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">בשימוש תכוף ביותר</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">הותקנו לאחרונה</string>
+    <string name="home_popup_cancel_txt">ביטול</string>
+    <string name="home_error_activity_not_found_txt">היישום לא נמצא</string>
+    <string name="home_error_desktop_full_txt">אין מקום במסך בית זה</string>
+    <string name="home_error_loading_widget">לא ניתן לטעון את הרכיב הגרפי</string>
+    <string name="home_folder_dialog_folder_name_txt">שם תיקייה</string>
+    <string name="home_folder_confirm_delete_txt">תיקייה זו מכילה הפריטים. למחוק תיקייה?</string>
+    <string name="home_folder_dialog_create_new_txt">צור תיקייה חדשה</string>
+    <string name="home_folder_select_icon_txt">בחר סמל תיקייה</string>
+    <string name="home_shortcut_created_txt">קיצור דרך נוצר: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">קיצור דרך נמחק: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">קיצור דרך כבר קיים: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">כדי ליצור קיצור דרך במסך הבית, גע בסמל יישום והחזק אותו לחוץ.</string>
+    <string name="gui_ok_txt">אישור</string>
+    <string name="gui_done_txt">בוצע</string>
+    <string name="gui_cancel_txt">ביטול</string>
+    <string name="home_button_exit_overview">צא ממצב סקירה כללית</string>
+    <string name="home_no_uninstallable_apps_txt">לא ניתן להסיר יישומים אלה</string>
+</resources>

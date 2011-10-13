@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>ফোল্ডার</item>
+        <item>সামাজিক</item>
+        <item>বিনোদন</item>
+        <item>মিডিয়া</item>
+        <item>পছন্দসই</item>
+        <item>স্বাস্থ্য</item>
+        <item>সরঞ্জামসমূহ</item>
+        <item>সংবাদ</item>
+    </string-array>
+</resources>

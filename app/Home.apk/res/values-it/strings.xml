@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Home di Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Applicazioni</string>
+    <string name="home_menu_add_txt">Aggiungi</string>
+    <string name="home_menu_wallpaper_txt">Sfondo</string>
+    <string name="home_menu_theme_txt">Motivo</string>
+    <string name="home_menu_settings_txt">Impostazioni</string>
+    <string name="home_dialog_title_add_to_home_txt">Aggiungi alla schermata iniziale</string>
+    <string name="home_option_add_shortcut_txt">Scelte rapide</string>
+    <string name="home_option_add_widget_txt">Widget</string>
+    <string name="home_option_add_folder_txt">Cartella</string>
+    <string name="home_option_set_wallpaper_txt">Sfondi</string>
+    <string name="home_option_set_theme_txt">Motivi</string>
+    <string name="home_dialog_title_add_shortcut_txt">Aggiungi scelta rapida</string>
+    <string name="home_dialog_title_pick_application_txt">Seleziona applicazione</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Seleziona sfondo</string>
+    <string name="home_dialog_title_select_theme_txt">Seleziona motivo</string>
+    <string name="home_sort_dialog_title_sorting_txt">Disponi applicazioni</string>
+    <string name="home_sort_dialog_arrange_button_txt">Disponi</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Ordine personalizzato</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetico</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Più utilizzati</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Installato di recente</string>
+    <string name="home_popup_cancel_txt">Annulla</string>
+    <string name="home_error_activity_not_found_txt">Applicazione non trovata</string>
+    <string name="home_error_desktop_full_txt">Nessuna stanza nella schermata iniziale</string>
+    <string name="home_error_loading_widget">Impossibile caricare widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Nome cartella</string>
+    <string name="home_folder_confirm_delete_txt">La cartella contiene elementi. Eliminare la cartella?</string>
+    <string name="home_folder_dialog_create_new_txt">Crea nuova cartella</string>
+    <string name="home_folder_select_icon_txt">Seleziona icona cartella</string>
+    <string name="home_shortcut_created_txt">Scelta rapida creata: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Scelta rapida eliminata: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">La scelta rapida esiste già: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">"Per creare una scelta rapida sulla schermata iniziale, tieni premuto un'icona applicazione."</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Fine</string>
+    <string name="gui_cancel_txt">Annulla</string>
+    <string name="home_button_exit_overview">Esci dalla panoramica</string>
+    <string name="home_no_uninstallable_apps_txt">Impossibile disinstallare queste app.</string>
+</resources>

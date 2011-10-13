@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Gmitin keyboard pag-dial</string>
+    <string name="gui_cancel_txt">Kansela</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Apelyido sa pagkadalaga ng iyong ina?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Saan ang iyong lugar ng kapanganakan?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Ano ang iyong paboritong lugar?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Ano ang iyong paboritong pelikula?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Sagutin</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Emergency call</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Tanong na panseguridad</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">I-unlock</string>
+    <string name="lockscreen_strings_howtounlock_txt">Pindutin %icon upang i-unlock</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Maling pattern</string>
+    <string name="lockscreen_strings_locked_out_message_txt">Mali mong iginuhit ng 20 beses ang pattern. I-unlock gamit ang katanungang panseguridad.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Maling sagot</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">Naka-block ang SIM card</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Mga natitirang pagsubok:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Ipasok ang PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">Naka-lock ang SIM card</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Ipasok ang PUK code na ibinigay ng iyong operator</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Mangyaring makipag-ugnayan sa iyong operator</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Ipasok ang bagong PIN</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Ulitin ang bagong PIN</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">Dapat na 8 digit ang PUK</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Maling pattern</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Tapikin ang Susunod upang i-unlock gamit ang katanungang panseguridad o subukang muli makalipas ang 30 segundo</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Mayroon kang 5 pagsubok na natitira</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Susunod</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Sbkng mli</string>
+    <string name="seport_strings_accessory_not_supported_txt">Hindi suportado ang aksesorya</string>
+</resources>

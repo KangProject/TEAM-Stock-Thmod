@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Қалта</item>
+        <item>Әлеуметтік</item>
+        <item>Ойын-сауық</item>
+        <item>Медиа</item>
+        <item>Таңдаулылар</item>
+        <item>Денсаулық</item>
+        <item>Құралдар</item>
+        <item>Жаңалықтар</item>
+    </string-array>
+</resources>

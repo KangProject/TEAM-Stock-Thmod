@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Programi</string>
+    <string name="home_menu_add_txt">Dodaj</string>
+    <string name="home_menu_wallpaper_txt">Ozadje</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Nastavitve</string>
+    <string name="home_dialog_title_add_to_home_txt">Dodaj na začetni zaslon</string>
+    <string name="home_option_add_shortcut_txt">Bližnjice</string>
+    <string name="home_option_add_widget_txt">Gradniki</string>
+    <string name="home_option_add_folder_txt">Mapa</string>
+    <string name="home_option_set_wallpaper_txt">Ozadja</string>
+    <string name="home_option_set_theme_txt">Teme</string>
+    <string name="home_dialog_title_add_shortcut_txt">Dodaj bližnjico</string>
+    <string name="home_dialog_title_pick_application_txt">Izbira programa</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Izbira ozadja</string>
+    <string name="home_dialog_title_select_theme_txt">Izbiranje teme</string>
+    <string name="home_sort_dialog_title_sorting_txt">Razvrščanje programov</string>
+    <string name="home_sort_dialog_arrange_button_txt">Razporedi</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Razvrščanje po meri</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Po abecedi</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Najpogosteje uporabljeni</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Nazadnje uporabljeni</string>
+    <string name="home_popup_cancel_txt">Prekliči</string>
+    <string name="home_error_activity_not_found_txt">Programa ni bilo mogoče najti.</string>
+    <string name="home_error_desktop_full_txt">Na tem začetnem zaslonu ni prostora.</string>
+    <string name="home_error_loading_widget">Gradnika ni bilo mogoče naložiti</string>
+    <string name="home_folder_dialog_folder_name_txt">Ime mape</string>
+    <string name="home_folder_confirm_delete_txt">V tej mapi so elementi. Ali želite izbrisati mapo?</string>
+    <string name="home_folder_dialog_create_new_txt">Ustvari novo mapo</string>
+    <string name="home_folder_select_icon_txt">Izberite ikono mape</string>
+    <string name="home_shortcut_created_txt">Bližnjica je ustvarjena: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Bližnjica je izbrisana: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Bližnjica že obstaja: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Če želite ustvariti bližnjico na domačem zaslonu, se dotaknite ikone programa in jo pridržite.</string>
+    <string name="gui_ok_txt">V redu</string>
+    <string name="gui_done_txt">Dokončano</string>
+    <string name="gui_cancel_txt">Prekliči</string>
+    <string name="home_button_exit_overview">Zapri pregled</string>
+    <string name="home_no_uninstallable_apps_txt">Teh programov ni mogoče odstraniti</string>
+</resources>

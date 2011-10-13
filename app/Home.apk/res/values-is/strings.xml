@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Heimasíða Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Forrit</string>
+    <string name="home_menu_add_txt">Bæta við</string>
+    <string name="home_menu_wallpaper_txt">Veggfóður</string>
+    <string name="home_menu_theme_txt">Þema</string>
+    <string name="home_menu_settings_txt">Stillingar</string>
+    <string name="home_dialog_title_add_to_home_txt">Bæta við upphafsskjá</string>
+    <string name="home_option_add_shortcut_txt">Flýtileiðir</string>
+    <string name="home_option_add_widget_txt">Græjur</string>
+    <string name="home_option_add_folder_txt">Mappa</string>
+    <string name="home_option_set_wallpaper_txt">Veggfóður</string>
+    <string name="home_option_set_theme_txt">Þemu</string>
+    <string name="home_dialog_title_add_shortcut_txt">Bæta við flýtileið</string>
+    <string name="home_dialog_title_pick_application_txt">Velja forrit</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Velja veggfóður</string>
+    <string name="home_dialog_title_select_theme_txt">Velja þema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Flokka forrit</string>
+    <string name="home_sort_dialog_arrange_button_txt">Raða</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Sérsniðin flokkun</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Í stafrófsröð</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Mest notað</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Nýlega uppsett</string>
+    <string name="home_popup_cancel_txt">Hætta við</string>
+    <string name="home_error_activity_not_found_txt">Forritið fannst ekki</string>
+    <string name="home_error_desktop_full_txt">Það er ekki meira pláss á þessum heimaskjá</string>
+    <string name="home_error_loading_widget">Ekki tókst að hlaða græju</string>
+    <string name="home_folder_dialog_folder_name_txt">Heiti möppu</string>
+    <string name="home_folder_confirm_delete_txt">Mappan inniheldur hluti. Á að eyða möppunni?</string>
+    <string name="home_folder_dialog_create_new_txt">Búa til nýja möppu</string>
+    <string name="home_folder_select_icon_txt">Velja möpputákn</string>
+    <string name="home_shortcut_created_txt">Flýtileið búin til: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Flýtileið eytt: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Flýtileið er til nú þegar: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Snertu og haltu inni forritstákni til að búa til flýtileið á heimaskjánum.</string>
+    <string name="gui_ok_txt">Í lagi</string>
+    <string name="gui_done_txt">Lokið</string>
+    <string name="gui_cancel_txt">Hætta við</string>
+    <string name="home_button_exit_overview">Loka yfirliti</string>
+    <string name="home_no_uninstallable_apps_txt">Ekki er hægt að fjarlægja þessi forrit</string>
+</resources>

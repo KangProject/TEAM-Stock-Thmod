@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">استخدام لوحة المفاتيح الرقمية للطلب</string>
+    <string name="general_dialpad_voicemail_txt">بريد صوتي</string>
+    <string name="gui_cancel_txt">إلغاء</string>
+    <string name="gui_ok_txt">موافق</string>
+    <string name="lockscreen_strings_backup_question_1_txt">ما اسم أمك قبل الزواج؟</string>
+    <string name="lockscreen_strings_backup_question_2_txt">ما هو مسقط رأسك؟</string>
+    <string name="lockscreen_strings_backup_question_3_txt">ما هو مكانك المفضل؟</string>
+    <string name="lockscreen_strings_backup_question_4_txt">ما هو فيلمك المفضل؟</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">إجابة</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">مكالمة طوارئ</string>
+    <string name="lockscreen_strings_backup_question_header_txt">سؤال أمان</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">إلغاء القفل</string>
+    <string name="lockscreen_strings_howtounlock_txt">اضغط على %icon لإلغاء القفل</string>
+    <string name="lockscreen_strings_locked_out_header_txt">نمط غير صحيح</string>
+    <string name="lockscreen_strings_locked_out_message_txt">لقد رسمت النمط بشكل خاطئ 20 مرة. قم بإلغاء القفل باستخدام سؤال الأمان.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">إجابة غير صحيحة</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">تم حظر بطاقة SIM</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">المحاولات المتبقية:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">أدخل PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">تم قفل بطاقة SIM</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">أدخل رمز PUK الذي قدمه لك المشغل</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">يرجى الاتصال بالمشغل</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">أدخل رمز PIN الجديد</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">كرر رمز PIN الجديد</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">يجب أن يتألف PUK من 8 أرقام</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">نمط غير صحيح</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">المس التالي لإلغاء القفل باستخدام سؤال الأمان أو أعد المحاول خلال 30 ثانية</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">تبقى لك 5 محاولات</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">التالي</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">أعد المحاولة</string>
+    <string name="seport_strings_accessory_not_supported_txt">الملحق غير مدعوم</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Dosja</item>
+        <item>Shoqërore</item>
+        <item>Zbavitja</item>
+        <item>Media</item>
+        <item>Të preferuarat</item>
+        <item>Shëndeti</item>
+        <item>Veglat</item>
+        <item>Lajmet</item>
+    </string-array>
+</resources>

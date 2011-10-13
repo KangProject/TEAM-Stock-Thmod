@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Inicio de Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Aplicaciones</string>
+    <string name="home_menu_add_txt">Añadir</string>
+    <string name="home_menu_wallpaper_txt">Fondo</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Ajustes</string>
+    <string name="home_dialog_title_add_to_home_txt">Añadir a pantalla de inicio</string>
+    <string name="home_option_add_shortcut_txt">Accesos directos</string>
+    <string name="home_option_add_widget_txt">Widgets</string>
+    <string name="home_option_add_folder_txt">Carpeta</string>
+    <string name="home_option_set_wallpaper_txt">Fondos</string>
+    <string name="home_option_set_theme_txt">Temas</string>
+    <string name="home_dialog_title_add_shortcut_txt">Añadir acceso directo</string>
+    <string name="home_dialog_title_pick_application_txt">Seleccionar aplicación</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Seleccionar fondo</string>
+    <string name="home_dialog_title_select_theme_txt">Seleccionar tema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Organizar aplicaciones</string>
+    <string name="home_sort_dialog_arrange_button_txt">Organizar</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Orden personalizado</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabético</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Más utilizadas</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Recientemente instaladas</string>
+    <string name="home_popup_cancel_txt">Cancelar</string>
+    <string name="home_error_activity_not_found_txt">Aplicación no encontrada</string>
+    <string name="home_error_desktop_full_txt">Sin espacio en esta pantalla de inicio</string>
+    <string name="home_error_loading_widget">No se pudo cargar el widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Nombre de carpeta</string>
+    <string name="home_folder_confirm_delete_txt">Esta carpeta contiene elementos. ¿Eliminar carpeta?</string>
+    <string name="home_folder_dialog_create_new_txt">Crear nueva carpeta</string>
+    <string name="home_folder_select_icon_txt">Seleccionar icono de carpeta</string>
+    <string name="home_shortcut_created_txt">Acceso directo creado: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Acceso directo eliminado: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">El acceso directo ya existe: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Para crear un acceso directo en la pantalla de inicio, mantenga el toque en un icono de aplicación.</string>
+    <string name="gui_ok_txt">Aceptar</string>
+    <string name="gui_done_txt">Hecho</string>
+    <string name="gui_cancel_txt">Cancelar</string>
+    <string name="home_button_exit_overview">Salir de visión general</string>
+    <string name="home_no_uninstallable_apps_txt">Estas aplicaciones no se pueden desinstalar.</string>
+</resources>

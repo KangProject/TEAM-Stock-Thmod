@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Апликации</string>
+    <string name="home_menu_add_txt">Додај</string>
+    <string name="home_menu_wallpaper_txt">Позадина</string>
+    <string name="home_menu_theme_txt">Тема</string>
+    <string name="home_menu_settings_txt">Поставки</string>
+    <string name="home_dialog_title_add_to_home_txt">Додај на почет. екран</string>
+    <string name="home_option_add_shortcut_txt">Кратенки</string>
+    <string name="home_option_add_widget_txt">Додатоци</string>
+    <string name="home_option_add_folder_txt">Папка</string>
+    <string name="home_option_set_wallpaper_txt">Позадини</string>
+    <string name="home_option_set_theme_txt">Теми</string>
+    <string name="home_dialog_title_add_shortcut_txt">Додај кратенка</string>
+    <string name="home_dialog_title_pick_application_txt">Одбери апликација</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Одбери позадина</string>
+    <string name="home_dialog_title_select_theme_txt">Одбери тема</string>
+    <string name="home_sort_dialog_title_sorting_txt">Подреди апликации</string>
+    <string name="home_sort_dialog_arrange_button_txt">Подреди</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Сопствен редослед</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Азбучно</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Најкористени</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Неодамна инсталирани</string>
+    <string name="home_popup_cancel_txt">Откажи</string>
+    <string name="home_error_activity_not_found_txt">Апликацијата не е најдена</string>
+    <string name="home_error_desktop_full_txt">Нема место на овој почетен екран</string>
+    <string name="home_error_loading_widget">Не може да се вчита додатокот</string>
+    <string name="home_folder_dialog_folder_name_txt">Име на папката</string>
+    <string name="home_folder_confirm_delete_txt">Оваа папка содржи објекти. Да се избрише папката?</string>
+    <string name="home_folder_dialog_create_new_txt">Креирај нова папка</string>
+    <string name="home_folder_select_icon_txt">Одберете икона за папката</string>
+    <string name="home_shortcut_created_txt">Кратенката е креирана: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Кратенката е избришана: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Кратенката веќе постои: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">За да креирате кратенка на почетниот екран, допрете и држете ја иконата на апликацијата.</string>
+    <string name="gui_ok_txt">ОК</string>
+    <string name="gui_done_txt">Готово</string>
+    <string name="gui_cancel_txt">Откажи</string>
+    <string name="home_button_exit_overview">Излези од преглед</string>
+    <string name="home_no_uninstallable_apps_txt">Овие апликации не може да се деинсталираат</string>
+</resources>

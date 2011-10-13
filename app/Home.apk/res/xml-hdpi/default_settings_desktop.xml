@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="1">
+    <groups type="desktop">
+        <group>
+            <groups type="widgets">
+                <group>
+                    <setting key="name">com.sonyericsson.widget.togglewidgets.WifiWidget</setting>
+                    <setting key="package-name">com.sonyericsson.widget.togglewidgets</setting>
+                    <setting key="width">1</setting>
+                    <setting key="height">1</setting>
+                    <setting key="pane">0</setting>
+                </group>
+                <group>
+                    <setting key="name">com.sonyericsson.widget.togglewidgets.BluetoothWidget</setting>
+                    <setting key="package-name">com.sonyericsson.widget.togglewidgets</setting>
+                    <setting key="width">1</setting>
+                    <setting key="height">1</setting>
+                    <setting key="x">1</setting>
+                    <setting key="pane">0</setting>
+                </group>
+                <group>
+                    <setting key="name">com.sonyericsson.widget.togglewidgets.SoundWidget</setting>
+                    <setting key="package-name">com.sonyericsson.widget.togglewidgets</setting>
+                    <setting key="width">1</setting>
+                    <setting key="height">1</setting>
+                    <setting key="x">2</setting>
+                    <setting key="pane">0</setting>
+                </group>
+                <group>
+                    <setting key="name">com.sonyericsson.widget.togglewidgets.BrightnessWidget</setting>
+                    <setting key="package-name">com.sonyericsson.widget.togglewidgets</setting>
+                    <setting key="width">1</setting>
+                    <setting key="height">1</setting>
+                    <setting key="x">3</setting>
+                    <setting key="pane">0</setting>
+                </group>
+                <group>
+                    <setting key="name">com.sonyericsson.widget.favourites.FavouritesAndCallLog</setting>
+                    <setting key="package-name">com.sonyericsson.widget.favourites</setting>
+                    <setting key="width">4</setting>
+                    <setting key="height">4</setting>
+                    <setting key="pane">1</setting>
+                </group>
+                <group>
+                    <setting key="name">com.google.android.googlequicksearchbox.SearchWidgetProvider</setting>
+                    <setting key="package-name">com.google.android.googlequicksearchbox</setting>
+                    <setting key="width">4</setting>
+                    <setting key="height">1</setting>
+                    <setting key="pane">2</setting>
+                </group>
+                <group>
+                    <setting key="name">com.sonyericsson.mediawidget.MediaAppWidgetProvider</setting>
+                    <setting key="package-name">com.sonyericsson.mediawidget</setting>
+                    <setting key="y">3</setting>
+                    <setting key="width">4</setting>
+                    <setting key="height">1</setting>
+                    <setting key="pane">3</setting>
+                </group>
+                <group>
+                    <setting key="name">com.sonyericsson.widget.digitalclock.DigitalClockWidget</setting>
+                    <setting key="package-name">com.sonyericsson.widget.digitalclock</setting>
+                    <setting key="width">4</setting>
+                    <setting key="height">2</setting>
+                    <setting key="pane">4</setting>
+                </group>
+                <group>
+                    <setting key="name">com.sonyericsson.android.support.appwidget.SupportAppWidget</setting>
+                    <setting key="package-name">com.sonyericsson.android.support</setting>
+                    <setting key="width">4</setting>
+                    <setting key="height">2</setting>
+                    <setting key="y">2</setting>
+                    <setting key="pane">4</setting>
+                </group>
+            </groups>
+            <groups type="advanced-widgets">
+                <group>
+                    <setting key="package-name">com.sonyericsson.advancedwidget.timescape</setting>
+                    <setting key="y">1</setting>
+                    <setting key="width">4</setting>
+                    <setting key="height">3</setting>
+                    <setting key="pane">2</setting>
+                </group>
+                <group>
+                    <setting key="package-name">com.sonyericsson.advancedwidget.music</setting>
+                    <setting key="width">4</setting>
+                    <setting key="height">1</setting>
+                    <setting key="pane">3</setting>
+                </group>
+                <group>
+                    <setting key="package-name">com.sonyericsson.advancedwidget.photo</setting>
+                    <setting key="style">small</setting>
+                    <setting key="x">1</setting>
+                    <setting key="y">1</setting>
+                    <setting key="width">2</setting>
+                    <setting key="height">2</setting>
+                    <setting key="pane">3</setting>
+                </group>
+            </groups>
+        </group>
+    </groups>
+</settings>

@@ -1,0 +1,490 @@
+.class public Lcom/sonyericsson/home/statistics/Statistics;
+.super Ljava/lang/Object;
+.source "Statistics.java"
+
+
+# static fields
+.field private static final STORAGE_ENTITY_NAME:Ljava/lang/String; = "statistics"
+
+.field private static final STORAGE_VERSION_KEY:Ljava/lang/String; = "version"
+
+.field private static final STORAGE_VERSION_VALUE:I = 0x1
+
+
+# instance fields
+.field mActivityStats:Ljava/util/LinkedList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/LinkedList",
+            "<",
+            "Lcom/sonyericsson/home/statistics/ActivityStats;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mAddDuringSyncIsInstall:Z
+
+.field private mContext:Landroid/content/Context;
+
+.field private mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
+
+.field private mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+.field private mSyncable:Lcom/sonyericsson/home/layer/LayerController$Syncable;
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
+    .locals 3
+    .parameter "context"
+    .parameter "packageLoader"
+
+    .prologue
+    .line 76
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 50
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    .line 59
+    invoke-direct {p0}, Lcom/sonyericsson/home/statistics/Statistics;->createSyncable()Lcom/sonyericsson/home/layer/LayerController$Syncable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mSyncable:Lcom/sonyericsson/home/layer/LayerController$Syncable;
+
+    .line 62
+    invoke-direct {p0}, Lcom/sonyericsson/home/statistics/Statistics;->createOnPackageUpdateListener()Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
+
+    .line 77
+    iput-object p1, p0, Lcom/sonyericsson/home/statistics/Statistics;->mContext:Landroid/content/Context;
+
+    .line 78
+    iput-object p2, p0, Lcom/sonyericsson/home/statistics/Statistics;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    .line 81
+    iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    iget-object v1, p0, Lcom/sonyericsson/home/statistics/Statistics;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnPackageUpdateListener(Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;)V
+
+    .line 84
+    iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mContext:Landroid/content/Context;
+
+    const-string v1, "statistics"
+
+    new-instance v2, Lcom/sonyericsson/home/statistics/Statistics$1;
+
+    invoke-direct {v2, p0}, Lcom/sonyericsson/home/statistics/Statistics$1;-><init>(Lcom/sonyericsson/home/statistics/Statistics;)V
+
+    invoke-static {v0, v1, v2}, Lcom/sonyericsson/storage/Storage;->readRoot(Landroid/content/Context;Ljava/lang/String;Lcom/sonyericsson/storage/Storage$OnReadCompletedCallback;)V
+
+    .line 113
+    return-void
+.end method
+
+.method static synthetic access$000(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/resourceload/PackageLoader;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mSyncable:Lcom/sonyericsson/home/layer/LayerController$Syncable;
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Lcom/sonyericsson/home/statistics/Statistics;)Ljava/util/List;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    invoke-direct {p0}, Lcom/sonyericsson/home/statistics/Statistics;->getAllInfos()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/sonyericsson/home/statistics/Statistics;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    invoke-direct {p0}, Lcom/sonyericsson/home/statistics/Statistics;->writeToStorage()V
+
+    return-void
+.end method
+
+.method static synthetic access$400(Lcom/sonyericsson/home/statistics/Statistics;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    iget-boolean v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mAddDuringSyncIsInstall:Z
+
+    return v0
+.end method
+
+.method static synthetic access$402(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 40
+    iput-boolean p1, p0, Lcom/sonyericsson/home/statistics/Statistics;->mAddDuringSyncIsInstall:Z
+
+    return p1
+.end method
+
+.method private createOnPackageUpdateListener()Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
+    .locals 1
+
+    .prologue
+    .line 232
+    new-instance v0, Lcom/sonyericsson/home/statistics/Statistics$3;
+
+    invoke-direct {v0, p0}, Lcom/sonyericsson/home/statistics/Statistics$3;-><init>(Lcom/sonyericsson/home/statistics/Statistics;)V
+
+    return-object v0
+.end method
+
+.method private createSyncable()Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    .locals 1
+
+    .prologue
+    .line 187
+    new-instance v0, Lcom/sonyericsson/home/statistics/Statistics$2;
+
+    invoke-direct {v0, p0}, Lcom/sonyericsson/home/statistics/Statistics$2;-><init>(Lcom/sonyericsson/home/statistics/Statistics;)V
+
+    return-object v0
+.end method
+
+.method private getAllInfos()Ljava/util/List;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/sonyericsson/home/data/Info;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 217
+    new-instance v1, Ljava/util/LinkedList;
+
+    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
+
+    .line 218
+    .local v1, list:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
+    iget-object v3, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    invoke-virtual {v3}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/sonyericsson/home/statistics/ActivityStats;
+
+    .line 219
+    .local v2, stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    invoke-virtual {v2}, Lcom/sonyericsson/home/statistics/ActivityStats;->getInfo()Lcom/sonyericsson/home/data/ActivityInfo;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/util/LinkedList;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 220
+    invoke-virtual {v2}, Lcom/sonyericsson/home/statistics/ActivityStats;->getInfo()Lcom/sonyericsson/home/data/ActivityInfo;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 223
+    .end local v2           #stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    :cond_1
+    return-object v1
+.end method
+
+.method private writeToStorage()V
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x1
+
+    .line 262
+    new-instance v0, Lcom/sonyericsson/storage/Root;
+
+    const-string v1, "statistics"
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/storage/Root;-><init>(Ljava/lang/String;)V
+
+    .line 263
+    .local v0, root:Lcom/sonyericsson/storage/Root;
+    const-string v1, "version"
+
+    invoke-virtual {v0, v1, v3}, Lcom/sonyericsson/storage/Root;->put(Ljava/lang/String;I)V
+
+    .line 264
+    iget-object v1, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    invoke-static {v2}, Lcom/sonyericsson/storage/NodeManager;->toNode(Ljava/lang/Object;)Lcom/sonyericsson/storage/Node;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/storage/Root;->addChild(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)V
+
+    .line 265
+    iget-object v1, p0, Lcom/sonyericsson/home/statistics/Statistics;->mContext:Landroid/content/Context;
+
+    invoke-static {v1, v0, v3}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Lcom/sonyericsson/storage/Root;Z)V
+
+    .line 266
+    return-void
+.end method
+
+
+# virtual methods
+.method public getStats(Lcom/sonyericsson/home/data/ActivityInfo;)Lcom/sonyericsson/home/statistics/ActivityStats;
+    .locals 3
+    .parameter "info"
+
+    .prologue
+    .line 155
+    iget-object v2, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    if-nez v2, :cond_0
+
+    .line 156
+    const/4 v2, 0x0
+
+    .line 170
+    :goto_0
+    return-object v2
+
+    .line 159
+    :cond_0
+    iget-object v2, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/sonyericsson/home/statistics/ActivityStats;
+
+    .line 160
+    .local v1, stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    invoke-virtual {v1}, Lcom/sonyericsson/home/statistics/ActivityStats;->getInfo()Lcom/sonyericsson/home/data/ActivityInfo;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Lcom/sonyericsson/home/data/ActivityInfo;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    move-object v2, v1
+
+    .line 161
+    goto :goto_0
+
+    .line 166
+    .end local v1           #stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    :cond_2
+    new-instance v1, Lcom/sonyericsson/home/statistics/ActivityStats;
+
+    invoke-direct {v1, p1}, Lcom/sonyericsson/home/statistics/ActivityStats;-><init>(Lcom/sonyericsson/home/data/ActivityInfo;)V
+
+    .line 167
+    .restart local v1       #stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    iget-object v2, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    invoke-virtual {v2, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    .line 168
+    invoke-direct {p0}, Lcom/sonyericsson/home/statistics/Statistics;->writeToStorage()V
+
+    move-object v2, v1
+
+    .line 170
+    goto :goto_0
+.end method
+
+.method public onDestroy()V
+    .locals 2
+
+    .prologue
+    .line 178
+    iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    iget-object v1, p0, Lcom/sonyericsson/home/statistics/Statistics;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->removeOnPackageUpdateListener(Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;)V
+
+    .line 179
+    return-void
+.end method
+
+.method public registerAcitvityStart(Lcom/sonyericsson/home/data/ActivityInfo;I)V
+    .locals 5
+    .parameter "info"
+    .parameter "source"
+
+    .prologue
+    .line 122
+    iget-object v3, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    if-nez v3, :cond_0
+
+    .line 145
+    :goto_0
+    return-void
+
+    .line 126
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 129
+    .local v0, found:Z
+    iget-object v3, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    invoke-virtual {v3}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :cond_1
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/sonyericsson/home/statistics/ActivityStats;
+
+    .line 130
+    .local v2, stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    invoke-virtual {v2}, Lcom/sonyericsson/home/statistics/ActivityStats;->getInfo()Lcom/sonyericsson/home/data/ActivityInfo;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Lcom/sonyericsson/home/data/ActivityInfo;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 131
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    invoke-virtual {v2, p2, v3, v4}, Lcom/sonyericsson/home/statistics/ActivityStats;->registerStart(IJ)V
+
+    .line 132
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    .line 137
+    .end local v2           #stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    :cond_2
+    if-nez v0, :cond_3
+
+    .line 138
+    new-instance v2, Lcom/sonyericsson/home/statistics/ActivityStats;
+
+    invoke-direct {v2, p1}, Lcom/sonyericsson/home/statistics/ActivityStats;-><init>(Lcom/sonyericsson/home/data/ActivityInfo;)V
+
+    .line 139
+    .restart local v2       #stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    invoke-virtual {v2, p2, v3, v4}, Lcom/sonyericsson/home/statistics/ActivityStats;->registerStart(IJ)V
+
+    .line 140
+    iget-object v3, p0, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
+
+    invoke-virtual {v3, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    .line 144
+    .end local v2           #stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    :cond_3
+    invoke-direct {p0}, Lcom/sonyericsson/home/statistics/Statistics;->writeToStorage()V
+
+    goto :goto_0
+.end method

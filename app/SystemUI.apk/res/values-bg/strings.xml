@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Лента на състоянието</string>
+    <string name="status_bar_clear_all_button">Изчистване</string>
+    <string name="status_bar_no_notifications_title">Няма известия</string>
+    <string name="status_bar_ongoing_events_title">В момента</string>
+    <string name="status_bar_latest_events_title">Известия</string>
+    <string name="battery_low_title">Моля, включете зарядно устройство</string>
+    <string name="battery_low_subtitle">Батерията се изтощава:</string>
+    <string name="battery_low_percent_format">Остава %d%% или по-малко.</string>
+    <string name="battery_low_why">Използване на батерията</string>
+</resources>

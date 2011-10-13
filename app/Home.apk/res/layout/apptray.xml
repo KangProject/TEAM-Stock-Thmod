@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:visibility="invisible" android:animationCache="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/sort_button" android:paddingLeft="6.0dip" android:paddingTop="20.0dip" android:paddingRight="20.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/sort_free" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+    <View android:id="@id/edit_mode_bg_fade" android:background="#b0000000" android:visibility="invisible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sonyericsson.home.layer.HintView android:id="@id/apptray_nudge_left" android:visibility="invisible" android:layout_width="5.0dip" android:layout_height="@dimen/apptray_height" android:layout_marginTop="35.0dip" />
+    <com.sonyericsson.home.layer.HintView android:id="@id/apptray_nudge_right" android:visibility="invisible" android:layout_width="5.0dip" android:layout_height="@dimen/apptray_height" android:layout_marginTop="35.0dip" android:layout_alignParentRight="true" />
+    <ImageView android:id="@id/edit_button" android:paddingLeft="20.0dip" android:paddingTop="20.0dip" android:paddingRight="6.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/edit_locked" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sonyericsson.home.layer.PaneIndicator android:id="@id/apptray_pane_indicator" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_alignParentTop="true" />
+        <com.sonyericsson.paneview.PaneView android:id="@id/apptray_pane_view" android:paddingLeft="8.0dip" android:paddingTop="16.0dip" android:paddingRight="8.0dip" android:paddingBottom="8.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/apptray_height" />
+    </LinearLayout>
+</RelativeLayout>

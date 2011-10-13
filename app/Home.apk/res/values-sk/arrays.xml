@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Priečinok</item>
+        <item>Sociálne siete</item>
+        <item>Zábava</item>
+        <item>Médiá</item>
+        <item>Obľúbené</item>
+        <item>Zdravie</item>
+        <item>Nástroje</item>
+        <item>Správy</item>
+    </string-array>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">Instalar certificados WLAN</string>
+    <string name="radio_controls_summary">Administrar WLAN, Bluetooth, modo avión, redes móviles y VPN</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">Activar WLAN</string>
+    <string name="wifi_settings">Ajustes de WLAN</string>
+    <string name="wifi_settings_category">Ajustes de WLAN</string>
+    <string name="wifi_starting">Activando...</string>
+    <string name="wifi_add_network">Añadir red WLAN</string>
+    <string name="wifi_access_points">Redes WLAN</string>
+    <string name="wifi_setting_sleep_policy_title">Política de suspensión de WLAN</string>
+    <string name="wifi_setting_sleep_policy_summary">Especificar cuándo cambiar de WLAN a datos móviles</string>
+    <string name="wifi_tether_checkbox_text">Zona WLAN portátil</string>
+    <string name="wifi_tether_enabled_subtext">%1$s de zona WLAN portátil activa</string>
+    <string name="wifi_tether_failed_subtext">Error de zona WLAN portátil</string>
+    <string name="wifi_tether_settings_text">Configuración de zona WLAN portátil</string>
+    <string name="wifi_tether_settings_subtext">Configurar y administrar zona WLAN portátil</string>
+    <string name="wifi_tether_settings_title">Configuración de zona WLAN portátil</string>
+    <string name="wifi_tether_configure_ap_text">Configurar zona WLAN</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">Zona WLAN portátil de %2$s de %1$s</string>
+    <string name="status_wifi_mac_address">Dirección MAC de WLAN</string>
+    <string name="tether_settings_title_wifi">Zona WLAN portátil</string>
+    <string name="tether_settings_title_both">Anclaje a red y zona WLAN</string>
+    <string name="tether_settings_summary_wifi">Comparte la conexión móvil del teléfono como zona WLAN portátil.</string>
+    <string name="tether_settings_summary_both">Comparte la conexión de datos móvil del teléfono por USB o como zona WLAN portátil.</string>
+    <string name="location_network_based">Usar redes inalámbricas</string>
+    <string name="location_networks_disabled">Para ver una ubicación en aplicaciones (por ejemplo, Google Maps)</string>
+    <string name="location_neighborhood_level">Ubicación determinada por redes móviles o WLAN</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">Tiempo de conexión WLAN</string>
+    <string name="bluetooth_on_time">Tiempo de conexión WLAN</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">WLAN en funcionamiento</string>
+    <string name="battery_action_wifi">Ajustes de WLAN</string>
+    <string name="battery_desc_wifi">Batería utilizada por la conexión WLAN</string>
+    <string name="battery_sugg_wifi">Desactiva la conexión WLAN cuando no la estés utilizando o cuando no esté disponible.</string>
+    <string name="gadget_toggle_wifi">Actualización de la configuración de la conexión WLAN</string>
+    <string name="backup_data_summary">Realizar copia de seguridad en servidores de Google de datos de aplicaciones, contraseñas WLAN y otras opciones de configuración</string>
+    <string name="backup_erase_dialog_message">¿Estás seguro de que quieres detener la copia de seguridad de las contraseñas WLAN, de los marcadores y de otros datos de aplicaciones y opciones de configuración y borrar todas las copias de los servidores de Google?</string>
+    <string name="wifi_context_menu_change_wapi_certificate">Cambiar Certificado WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">Protegida con WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">Protegida con WLAN PSK</string>
+    <string name="error_starting">No se ha podido iniciar la función WLAN.</string>
+    <string name="error_stopping">No se ha podido interrumpir la función WLAN.</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">Añadir red WLAN</string>
+</resources>

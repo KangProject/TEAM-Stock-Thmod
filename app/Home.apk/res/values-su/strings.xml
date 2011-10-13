@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Layar Awal Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Aplikasi</string>
+    <string name="home_menu_add_txt">Tambahkeun</string>
+    <string name="home_menu_wallpaper_txt">Wallpaper</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Setelan</string>
+    <string name="home_dialog_title_add_to_home_txt">Tambahkeun ka layar mimiti</string>
+    <string name="home_option_add_shortcut_txt">Pintesan</string>
+    <string name="home_option_add_widget_txt">Widget</string>
+    <string name="home_option_add_folder_txt">Polder</string>
+    <string name="home_option_set_wallpaper_txt">Wallpaper</string>
+    <string name="home_option_set_theme_txt">Tema</string>
+    <string name="home_dialog_title_add_shortcut_txt">Tambahkeun pintesan</string>
+    <string name="home_dialog_title_pick_application_txt">Pilih aplikasi</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Pilih wallpaper</string>
+    <string name="home_dialog_title_select_theme_txt">Pilih tema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Atur aplikasi</string>
+    <string name="home_sort_dialog_arrange_button_txt">Atur</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Pangurutan sorangan</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Nurutan abjad</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Sering dipake</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Karek dipasang</string>
+    <string name="home_popup_cancel_txt">Bolay</string>
+    <string name="home_error_activity_not_found_txt">Aplikasi teu kapanggih</string>
+    <string name="home_error_desktop_full_txt">Taya ruang di layar mimiti ieu</string>
+    <string name="home_error_loading_widget">Teu bisa ngamuat widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Ngaran polder</string>
+    <string name="home_folder_confirm_delete_txt">Polder ieu aya eusina, Pupus polder?</string>
+    <string name="home_folder_dialog_create_new_txt">Jieun polder anyar</string>
+    <string name="home_folder_select_icon_txt">Pilih ikon polder</string>
+    <string name="home_shortcut_created_txt">Pintesan dijieun: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Pintesan dipupus: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Pintesan geus aya: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Jang nyieun pintesan dilayar mimiti, toel tur tahan ikon aplikasi.</string>
+    <string name="gui_ok_txt">OKEH</string>
+    <string name="gui_done_txt">Rengse</string>
+    <string name="gui_cancel_txt">Bolay</string>
+    <string name="home_button_exit_overview">Kaluar ihtisar</string>
+    <string name="home_no_uninstallable_apps_txt">Apl ieu teu bisa dicoplokeun pamasanganna</string>
+</resources>

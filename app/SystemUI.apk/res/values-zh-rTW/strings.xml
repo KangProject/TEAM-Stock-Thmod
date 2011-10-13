@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">狀態列</string>
+    <string name="status_bar_clear_all_button">清除</string>
+    <string name="status_bar_no_notifications_title">沒有通知</string>
+    <string name="status_bar_ongoing_events_title">進行中</string>
+    <string name="status_bar_latest_events_title">通知</string>
+    <string name="battery_low_title">請連接充電器</string>
+    <string name="battery_low_subtitle">電池電量即將不足：</string>
+    <string name="battery_low_percent_format">還剩 %d%% 以下。</string>
+    <string name="battery_low_why">電池使用狀況</string>
+</resources>

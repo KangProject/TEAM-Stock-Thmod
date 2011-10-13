@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">Instala certificados de WLAN</string>
+    <string name="radio_controls_summary">Administrar WLAN, Bluetooth, modo de avión, redes, móviles, &amp; VPN</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">Encender WLAN</string>
+    <string name="wifi_settings">Configuración WLAN</string>
+    <string name="wifi_settings_category">Configuración WLAN</string>
+    <string name="wifi_starting">Encendiendo...</string>
+    <string name="wifi_add_network">Agregar red de WLAN</string>
+    <string name="wifi_access_points">Redes de WLAN</string>
+    <string name="wifi_setting_sleep_policy_title">Política de estado de inactividad de WLAN</string>
+    <string name="wifi_setting_sleep_policy_summary">Especificar cuándo se debe cambiar de WLAN a datos de celular</string>
+    <string name="wifi_tether_checkbox_text">Zona activa WLAN portátil</string>
+    <string name="wifi_tether_enabled_subtext">Zona activa portátil %1$s conectada</string>
+    <string name="wifi_tether_failed_subtext">Error en la zona activa WLAN portátil</string>
+    <string name="wifi_tether_settings_text">Parámetros de configuración de la zona activa WLAN portátil</string>
+    <string name="wifi_tether_settings_subtext">Configurar y administrar la zona activa WLAN portátil</string>
+    <string name="wifi_tether_settings_title">Parámetros de configuración de la zona activa WLAN portátil</string>
+    <string name="wifi_tether_configure_ap_text">Configurar zona activa WLAN</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">" Zona activa WLAN portátil %1$s %2$s"</string>
+    <string name="status_wifi_mac_address">Dirección MAC de WLAN</string>
+    <string name="tether_settings_title_wifi">Zona activa portátil</string>
+    <string name="tether_settings_title_both">Anclaje a red y zona activa portátil</string>
+    <string name="tether_settings_summary_wifi">Comparte la conexión para celulares de tu teléfono como una zona activa WLAN portátil</string>
+    <string name="tether_settings_summary_both">Comparte la conexión de datos para celulares de tu teléfono a través de USB o como zona activa WLAN portátil</string>
+    <string name="location_network_based">Utilizar redes inalám.</string>
+    <string name="location_networks_disabled">Ver ubicación en las aplicaciones (como Mapas) mediante redes inalámbricas</string>
+    <string name="location_neighborhood_level">Ubicación determinada por WLAN o redes de celulares</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">WLAN a tiempo</string>
+    <string name="bluetooth_on_time">WLAN a tiempo</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">WLAN en funcionamiento</string>
+    <string name="battery_action_wifi">Configuración WLAN</string>
+    <string name="battery_desc_wifi">La batería está siendo utilizada por WLAN</string>
+    <string name="battery_sugg_wifi">Desactivar WLAN cuando no se utiliza o cuando no está disponible</string>
+    <string name="gadget_toggle_wifi">Actualizando configuración de WLAN</string>
+    <string name="backup_data_summary">Hacer copias de seguridad de los datos de la aplicación, de las contraseñas de WLAN, y otra configuración en los servidores de Google</string>
+    <string name="backup_erase_dialog_message">¿Estás seguro de que deseas dejar de hacer copias de seguridad de tus contraseñas de WLAN, marcadores y otros datos de configuración y aplicaciones, y borrar todas las copias de los servidores de Google?</string>
+    <string name="wifi_context_menu_change_wapi_certificate">Cambiar certificado de WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">Asegurado con WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">Asegurado con WLAN PSK</string>
+    <string name="error_starting">No se ha podido iniciar WLAN</string>
+    <string name="error_stopping">No se ha podido detener WLAN</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">Agregar red de WLAN</string>
+</resources>

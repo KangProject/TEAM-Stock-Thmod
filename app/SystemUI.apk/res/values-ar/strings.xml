@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">شريط الحالة</string>
+    <string name="status_bar_clear_all_button">محو</string>
+    <string name="status_bar_no_notifications_title">ليس هناك أي تنبيهات</string>
+    <string name="status_bar_ongoing_events_title">مستمر</string>
+    <string name="status_bar_latest_events_title">التنبيهات</string>
+    <string name="battery_low_title">الرجاء توصيل الشاحن</string>
+    <string name="battery_low_subtitle">البطارية منخفضة:</string>
+    <string name="battery_low_percent_format">يتبقى %d%% أو أقل.</string>
+    <string name="battery_low_why">استخدام البطارية</string>
+</resources>

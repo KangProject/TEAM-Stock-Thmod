@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Statusbjælke</string>
+    <string name="status_bar_clear_all_button">Ryd</string>
+    <string name="status_bar_no_notifications_title">Ingen meddelelser</string>
+    <string name="status_bar_ongoing_events_title">I gang</string>
+    <string name="status_bar_latest_events_title">Meddelelser</string>
+    <string name="battery_low_title">Forbind oplader</string>
+    <string name="battery_low_subtitle">Batteriet er ved at være fladt:</string>
+    <string name="battery_low_percent_format">%d%% eller mindre tilbage.</string>
+    <string name="battery_low_why">Batteriforbrug</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Статусна трака</string>
+    <string name="status_bar_clear_all_button">Обриши</string>
+    <string name="status_bar_no_notifications_title">Нема обавештења</string>
+    <string name="status_bar_ongoing_events_title">Текуће</string>
+    <string name="status_bar_latest_events_title">Обавештења</string>
+    <string name="battery_low_title">Прикључите пуњач</string>
+    <string name="battery_low_subtitle">Ниво напуњености батерије је низак:</string>
+    <string name="battery_low_percent_format">Преостало је %d%% или мање.</string>
+    <string name="battery_low_why">Коришћење батерије</string>
+</resources>

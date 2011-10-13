@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Приложения</string>
+    <string name="home_menu_add_txt">Добавить</string>
+    <string name="home_menu_wallpaper_txt">Фон. рисунок</string>
+    <string name="home_menu_theme_txt">Тема</string>
+    <string name="home_menu_settings_txt">Параметры</string>
+    <string name="home_dialog_title_add_to_home_txt">Добавление на основной экран</string>
+    <string name="home_option_add_shortcut_txt">Ярлыки</string>
+    <string name="home_option_add_widget_txt">Графические фрагменты</string>
+    <string name="home_option_add_folder_txt">Папка</string>
+    <string name="home_option_set_wallpaper_txt">Фоновые рисунки</string>
+    <string name="home_option_set_theme_txt">Темы</string>
+    <string name="home_dialog_title_add_shortcut_txt">Добавление ярлыков</string>
+    <string name="home_dialog_title_pick_application_txt">Выбор приложения</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Выбор фонового рисунка</string>
+    <string name="home_dialog_title_select_theme_txt">Выбор темы</string>
+    <string name="home_sort_dialog_title_sorting_txt">Сортировка</string>
+    <string name="home_sort_dialog_arrange_button_txt">Упорядоч.</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Свой порядок</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">По алфавиту</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Наиболее часто используемые</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Недавно установленные</string>
+    <string name="home_popup_cancel_txt">Отмена</string>
+    <string name="home_error_activity_not_found_txt">Приложение не найдено</string>
+    <string name="home_error_desktop_full_txt">На основном экране нет места</string>
+    <string name="home_error_loading_widget">Невозможно загрузить графический фрагмент</string>
+    <string name="home_folder_dialog_folder_name_txt">Имя папки</string>
+    <string name="home_folder_confirm_delete_txt">В папке содержатся объекты. Удалить папку?</string>
+    <string name="home_folder_dialog_create_new_txt">Создать новую папку</string>
+    <string name="home_folder_select_icon_txt">Выбрать значок для папки</string>
+    <string name="home_shortcut_created_txt">Ярлык создан: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Ярлык удален: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Ярлык уже существует: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Для создания ярлыка на основном экране коснитесь и удерживайте значок приложения.</string>
+    <string name="gui_ok_txt">ОК</string>
+    <string name="gui_done_txt">Готово</string>
+    <string name="gui_cancel_txt">Отмена</string>
+    <string name="home_button_exit_overview">Закончить обзор</string>
+    <string name="home_no_uninstallable_apps_txt">Невозможно удалить эти приложения</string>
+</resources>

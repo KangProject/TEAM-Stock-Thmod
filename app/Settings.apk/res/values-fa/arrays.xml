@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="timezone_filters">
+        <item>آمریکا</item>
+        <item>اروپا</item>
+        <item>آفریقا</item>
+        <item>آسیا</item>
+        <item>استرالیا</item>
+        <item>اقیانوس آرام</item>
+        <item>همه</item>
+    </string-array>
+    <string-array name="animations_entries">
+        <item>بدون تصویر متحرک</item>
+        <item>برخی از تصاویر متحرک</item>
+        <item>همه تصاویر متحرک</item>
+    </string-array>
+    <string-array name="animations_summaries">
+        <item>هیچ تصویر متحرکی بصورت پنجره ای نمایش داده نشود</item>
+        <item>برخی از تصاویر متحرک بصورت پنجره ای نمایش داده شوند</item>
+        <item>کلیه تصاویر متحرک بصورت پنجره ای نمایش داده شوند</item>
+    </string-array>
+    <string-array name="screen_timeout_entries">
+        <item>15ثانیه</item>
+        <item>30 ثانیه</item>
+        <item>1 دقیقه</item>
+        <item>2 دقیقه</item>
+        <item>10 دقیقه</item>
+        <item>30 دقیقه</item>
+    </string-array>
+    <string-array name="tts_rate_entries">
+        <item>خیلی آهسته</item>
+        <item>آهسته</item>
+        <item>عادي</item>
+        <item>سریع</item>
+        <item>خیلی سریع</item>
+    </string-array>
+    <string-array name="tts_pitch_entries">
+        <item>خیلی کم</item>
+        <item>کم</item>
+        <item>عادي</item>
+        <item>زیاد</item>
+        <item>خیلی زیاد</item>
+    </string-array>
+    <string-array name="tts_lang_entries">
+        <item>انگلیسی آمریکایی</item>
+        <item>انگلیسی بریتانیایی</item>
+        <item>فرانسوی</item>
+        <item>آلمانی</item>
+        <item>ایتالیایی</item>
+        <item>اسپانیایی</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>در حال اسكن...</item>
+        <item>در حال اتصال ...</item>
+        <item>درحال تأیید اعتبار...</item>
+        <item>در حال دريافت آدرس IP…</item>
+        <item>متصل شد</item>
+        <item>معوق</item>
+        <item>درحال قطع اتصال...</item>
+        <item>قطع اتصال</item>
+        <item>ناموفق</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>در حال اسكن...</item>
+        <item>در حال اتصال به %1$s…</item>
+        <item>درحال تاييد اعتبار با %1$s…</item>
+        <item>در حال دريافت آدرس IP از %1$s…</item>
+        <item>متصل به %1$s</item>
+        <item>معوق</item>
+        <item>درحال قطع اتصال از %1$s…</item>
+        <item>قطع اتصال</item>
+        <item>ناموفق</item>
+    </string-array>
+    <string-array name="wifi_security">
+        <item>باز کردن</item>
+        <item>WEP</item>
+        <item>WPA/WPA2 PSK</item>
+        <item>802.1x EAP</item>
+    </string-array>
+    <string-array name="wifi_security_with_wapi">
+        <item>باز كردن</item>
+        <item>WEP</item>
+        <item>WPA/WPA2 PSK</item>
+        <item>802.1x EAP</item>
+        <item>WAPI PSK</item>
+        <item>WAPI CERT</item>
+    </string-array>
+    <string-array name="wapi_psk_type">
+        <item>WAPI ASCII</item>
+        <item>شانزده شانزدهی WAPI</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>ضعيف</item>
+        <item>نسبتاً خوب</item>
+        <item>خوب</item>
+        <item>عالي</item>
+    </string-array>
+    <string-array name="wifi_sleep_policy_entries">
+        <item>وقتی صفحه خاموش می شود</item>
+        <item>هرگز وقتی به برق وصل است</item>
+        <item>هرگز</item>
+    </string-array>
+    <string-array name="usage_stats_display_order_types">
+        <item>زمان استفاده</item>
+        <item>شمارش شروع به کار</item>
+        <item>نام برنامه</item>
+    </string-array>
+    <string-array name="wifi_eap_entries">
+        <item>PEAP</item>
+        <item>TLS</item>
+        <item>TTLS</item>
+    </string-array>
+    <string-array name="wifi_phase2_entries">
+        <item>هیچکدام</item>
+        <item>PAP</item>
+        <item>MSCHAP</item>
+        <item>MSCHAPV2</item>
+        <item>GTC</item>
+    </string-array>
+    <string-array name="emergency_tone_entries">
+        <item>خاموش</item>
+        <item>هشدار</item>
+        <item>لرزش</item>
+    </string-array>
+    <string-array name="apn_auth_entries">
+        <item>هیچکدام</item>
+        <item>PAP</item>
+        <item>CHAP</item>
+        <item>PAP یا CHAP</item>
+    </string-array>
+    <string-array name="app_install_location_entries">
+        <item>محل ذخيره داخلي دستگاه</item>
+        <item>كارت SD جداشدني</item>
+        <item>اجازه دهيد سيستم تصميم بگيرد</item>
+    </string-array>
+    <string-array name="vibrate_entries">
+        <item>هميشه</item>
+        <item>هرگز</item>
+        <item>فقط حالت بيصدا</item>
+        <item>فقط وقتي در حالت بيصدا نيست</item>
+    </string-array>
+</resources>

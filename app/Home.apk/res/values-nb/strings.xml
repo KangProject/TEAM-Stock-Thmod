@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Startside</string>
+    <string name="home_add_application_shortcut_txt">Programmer</string>
+    <string name="home_menu_add_txt">Legg til</string>
+    <string name="home_menu_wallpaper_txt">Bakgrunn</string>
+    <string name="home_menu_theme_txt">Motiv</string>
+    <string name="home_menu_settings_txt">Innstillinger</string>
+    <string name="home_dialog_title_add_to_home_txt">Legg til Hjem-skjerm</string>
+    <string name="home_option_add_shortcut_txt">Snarveier</string>
+    <string name="home_option_add_widget_txt">Moduler</string>
+    <string name="home_option_add_folder_txt">Mappe</string>
+    <string name="home_option_set_wallpaper_txt">Bakgrunner</string>
+    <string name="home_option_set_theme_txt">Motiv</string>
+    <string name="home_dialog_title_add_shortcut_txt">Legg til snarvei</string>
+    <string name="home_dialog_title_pick_application_txt">Velg program</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Velg bakgrunn</string>
+    <string name="home_dialog_title_select_theme_txt">Velg motiv</string>
+    <string name="home_sort_dialog_title_sorting_txt">Ordne programmer</string>
+    <string name="home_sort_dialog_arrange_button_txt">Ordne</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Egendefinert rekkefølge</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetisk</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Oftest brukt</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Nylig installert</string>
+    <string name="home_popup_cancel_txt">Avbryt</string>
+    <string name="home_error_activity_not_found_txt">Finner ikke program</string>
+    <string name="home_error_desktop_full_txt">Ikke mer plass på denne Hjem-skjermen</string>
+    <string name="home_error_loading_widget">Kan ikke laste modul</string>
+    <string name="home_folder_dialog_folder_name_txt">Mappenavn</string>
+    <string name="home_folder_confirm_delete_txt">Denne mappen inneholder elementer. Slette mappen?</string>
+    <string name="home_folder_dialog_create_new_txt">Opprett ny mappe</string>
+    <string name="home_folder_select_icon_txt">Velg mappeikon</string>
+    <string name="home_shortcut_created_txt">Snarvei opprettet: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Snarvei slettet: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Snarvei finnes allerede: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Hvis du vil opprette en snarvei på Hjem-skjermen, berører du og holder nede et programikon.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Ferdig</string>
+    <string name="gui_cancel_txt">Avbryt</string>
+    <string name="home_button_exit_overview">Avslutt oversikt</string>
+    <string name="home_no_uninstallable_apps_txt">Disse programmene kan ikke avinstalleres</string>
+</resources>

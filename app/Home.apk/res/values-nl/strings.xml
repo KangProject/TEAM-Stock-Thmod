@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Applicaties</string>
+    <string name="home_menu_add_txt">Toevoegen</string>
+    <string name="home_menu_wallpaper_txt">Achtergrond</string>
+    <string name="home_menu_theme_txt">Thema</string>
+    <string name="home_menu_settings_txt">Instellingen</string>
+    <string name="home_dialog_title_add_to_home_txt">Toevoegen aan startscherm</string>
+    <string name="home_option_add_shortcut_txt">Snelkoppelingen</string>
+    <string name="home_option_add_widget_txt">Widgets</string>
+    <string name="home_option_add_folder_txt">Map</string>
+    <string name="home_option_set_wallpaper_txt">Achtergronden</string>
+    <string name="home_option_set_theme_txt">"Thema's"</string>
+    <string name="home_dialog_title_add_shortcut_txt">Snelkoppeling toevoegen</string>
+    <string name="home_dialog_title_pick_application_txt">Applicatie selecteren</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Achtergrond selecteren</string>
+    <string name="home_dialog_title_select_theme_txt">Thema selecteren</string>
+    <string name="home_sort_dialog_title_sorting_txt">Applicaties ordenen</string>
+    <string name="home_sort_dialog_arrange_button_txt">Schikken</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Eigen volgorde</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetisch</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Meest gebruikt</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Onlangs geïnstalleerd</string>
+    <string name="home_popup_cancel_txt">Annuleren</string>
+    <string name="home_error_activity_not_found_txt">Applicatie niet gevonden</string>
+    <string name="home_error_desktop_full_txt">Geen ruimte op dit startscherm</string>
+    <string name="home_error_loading_widget">Kan widget niet laden</string>
+    <string name="home_folder_dialog_folder_name_txt">Mapnaam</string>
+    <string name="home_folder_confirm_delete_txt">Deze map bevat items. Map verwijderen?</string>
+    <string name="home_folder_dialog_create_new_txt">Nieuwe map maken</string>
+    <string name="home_folder_select_icon_txt">Mappictogram selecteren</string>
+    <string name="home_shortcut_created_txt">Snelkoppeling gemaakt: %s</string>
+    <string name="home_shortcut_removed_txt">Snelkoppeling verwijderd: %s</string>
+    <string name="home_shortcut_already_exists_txt">Snelkoppeling bestaat al: %s</string>
+    <string name="home_hint_shortcut_message_txt">Als u een snelkoppeling wilt maken op het startscherm, raakt u een applicatiepictogram aan en houdt u het vast.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Gereed</string>
+    <string name="gui_cancel_txt">Annuleren</string>
+    <string name="home_button_exit_overview">Overzicht afsluiten</string>
+    <string name="home_no_uninstallable_apps_txt">Deze applicaties kunnen niet worden verwijderd</string>
+</resources>

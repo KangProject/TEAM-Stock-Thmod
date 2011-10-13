@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Aplikacije</string>
+    <string name="home_menu_add_txt">Dodati</string>
+    <string name="home_menu_wallpaper_txt">Pozadina</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Postavke</string>
+    <string name="home_dialog_title_add_to_home_txt">Dodati na početni ekran</string>
+    <string name="home_option_add_shortcut_txt">Prečice</string>
+    <string name="home_option_add_widget_txt">Kontrole</string>
+    <string name="home_option_add_folder_txt">Fascikla</string>
+    <string name="home_option_set_wallpaper_txt">Pozadine</string>
+    <string name="home_option_set_theme_txt">Teme</string>
+    <string name="home_dialog_title_add_shortcut_txt">Dodati prečicu</string>
+    <string name="home_dialog_title_pick_application_txt">Odabrati aplikaciju</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Odabrati pozadinu</string>
+    <string name="home_dialog_title_select_theme_txt">Odabrati temu</string>
+    <string name="home_sort_dialog_title_sorting_txt">Složiti aplikacije</string>
+    <string name="home_sort_dialog_arrange_button_txt">Poredati</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Po vlastitom redoslijedu</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Abecedno</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Najviše korištene</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Nedavno instalirane</string>
+    <string name="home_popup_cancel_txt">Otkazati</string>
+    <string name="home_error_activity_not_found_txt">Aplikacija nije nađena</string>
+    <string name="home_error_desktop_full_txt">Nema prostora na ovom početnom ekranu</string>
+    <string name="home_error_loading_widget">Učitavanje kontrole nije bilo moguće</string>
+    <string name="home_folder_dialog_folder_name_txt">Ime fascikle</string>
+    <string name="home_folder_confirm_delete_txt">Ova fascikla sadrži stavke. Želite obrisati fasciklu?</string>
+    <string name="home_folder_dialog_create_new_txt">Kreirati novu fasciklu</string>
+    <string name="home_folder_select_icon_txt">Odabrati ikonu fascikle</string>
+    <string name="home_shortcut_created_txt">Prečica kreirana: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Prečica izbrisana: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Prečica već postoji: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Za kreiranje prečice na početnom ekranu, dodirnite i držite pritisnutom ikonu aplikacije.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Gotovo</string>
+    <string name="gui_cancel_txt">Otkazati</string>
+    <string name="home_button_exit_overview">Izaći iz pregleda</string>
+    <string name="home_no_uninstallable_apps_txt">Ove aplikacije ne mogu se deinstalirati</string>
+</resources>

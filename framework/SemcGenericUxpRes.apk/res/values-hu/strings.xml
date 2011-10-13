@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Tárcsázás billentyűzettel</string>
+    <string name="general_dialpad_voicemail_txt">Hangposta</string>
+    <string name="gui_cancel_txt">Mégse</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Mi az anyja leánykori neve?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Mi a születési helye?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Melyik a kedvenc helye?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Melyik a kedvenc filmje?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Válasz</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Segélyhívás</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Biztonsági kérdés</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Feloldás</string>
+    <string name="lockscreen_strings_howtounlock_txt">Feloldás a következővel: %icon</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Helytelen alakzat</string>
+    <string name="lockscreen_strings_locked_out_message_txt">20 alkalommal rajzolt helytelen alakzatot. Végezze el a feloldást biztonsági kérdés segítségével.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Helytelen válasz</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">A SIM-kártya le van tiltva</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Hátralévő kísérletek:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">PUK-kód megadása</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">A SIM-kártya zárolva van</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Adja meg az üzemeltetőtől kapott PUK-kódot.</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Forduljon az üzemeltetőhöz</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Új PIN-kód megadása</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Új PIN-kód ismétlése</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">A PUK-kód 8 számjegyből áll</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Helytelen alakzat</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Koppintson a Tovább gombra a zárolás biztonsági kérdéssel történő feloldásához, vagy próbálkozzon újból 30 másodperc múlva.</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Még ötször próbálkozhat</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Tovább</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Újra</string>
+    <string name="seport_strings_accessory_not_supported_txt">A tartozék nem támogatott</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Applications</string>
+    <string name="home_menu_add_txt">Add</string>
+    <string name="home_menu_wallpaper_txt">Wallpaper</string>
+    <string name="home_menu_theme_txt">Theme</string>
+    <string name="home_menu_settings_txt">Settings</string>
+    <string name="home_dialog_title_add_to_home_txt">Add to home screen</string>
+    <string name="home_option_add_shortcut_txt">Shortcuts</string>
+    <string name="home_option_add_widget_txt">Widgets</string>
+    <string name="home_option_add_folder_txt">Folder</string>
+    <string name="home_option_set_wallpaper_txt">Wallpapers</string>
+    <string name="home_option_set_theme_txt">Themes</string>
+    <string name="home_dialog_title_add_shortcut_txt">Add shortcut</string>
+    <string name="home_dialog_title_pick_application_txt">Select application</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Select wallpaper</string>
+    <string name="home_dialog_title_select_theme_txt">Select theme</string>
+    <string name="home_sort_dialog_title_sorting_txt">Arrange apps</string>
+    <string name="home_sort_dialog_arrange_button_txt">Arrange</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Own order</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alphabetical</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Most used</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Recently installed</string>
+    <string name="home_popup_cancel_txt">Cancel</string>
+    <string name="home_error_activity_not_found_txt">Application not found</string>
+    <string name="home_error_desktop_full_txt">No room on this home screen</string>
+    <string name="home_error_loading_widget">Could not load widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Folder name</string>
+    <string name="home_folder_confirm_delete_txt">This folder contains items. Delete folder?</string>
+    <string name="home_folder_dialog_create_new_txt">Create new folder</string>
+    <string name="home_folder_select_icon_txt">Select folder icon</string>
+    <string name="home_shortcut_created_txt">Shortcut created: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Shortcut deleted: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Shortcut already exists: \"%s\"</string>
+    <string name="home_hint_shortcut_title_txt">Shortcut tip</string>
+    <string name="home_hint_shortcut_message_txt">To create shortcut on home screen, touch and hold on an application icon.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Done</string>
+    <string name="gui_cancel_txt">Cancel</string>
+    <string name="home_button_exit_overview">Exit overview</string>
+    <string name="home_no_uninstallable_apps_txt">These apps cannot be uninstalled</string>
+</resources>

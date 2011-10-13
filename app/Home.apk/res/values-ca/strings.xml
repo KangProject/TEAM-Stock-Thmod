@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson: inici</string>
+    <string name="home_add_application_shortcut_txt">Aplicacions</string>
+    <string name="home_menu_add_txt">Afegeix</string>
+    <string name="home_menu_wallpaper_txt">Fons de pantalla</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Paràmetres</string>
+    <string name="home_dialog_title_add_to_home_txt">Addició a la pantalla inicial</string>
+    <string name="home_option_add_shortcut_txt">Dreceres</string>
+    <string name="home_option_add_widget_txt">Ginys</string>
+    <string name="home_option_add_folder_txt">Carpeta</string>
+    <string name="home_option_set_wallpaper_txt">Fons de pantalla</string>
+    <string name="home_option_set_theme_txt">Temes</string>
+    <string name="home_dialog_title_add_shortcut_txt">"Addició d'una drecera"</string>
+    <string name="home_dialog_title_pick_application_txt">"Selecció d'una aplicació"</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Selecció del fons de pantalla</string>
+    <string name="home_dialog_title_select_theme_txt">"Selecció d'un tema"</string>
+    <string name="home_sort_dialog_title_sorting_txt">"Organització d'aplicacions"</string>
+    <string name="home_sort_dialog_arrange_button_txt">Ordena</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Ordre propi</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabètic</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Les més utilitzades</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Instal·lades últimament</string>
+    <string name="home_popup_cancel_txt">Cancel·la</string>
+    <string name="home_error_activity_not_found_txt">"No s'ha trobat l'aplicació"</string>
+    <string name="home_error_desktop_full_txt">No hi ha lloc en aquesta pantalla inicial</string>
+    <string name="home_error_loading_widget">"No s'ha pogut carregar el giny"</string>
+    <string name="home_folder_dialog_folder_name_txt">Nom de la carpeta</string>
+    <string name="home_folder_confirm_delete_txt">Aquesta carpeta conté elements. Voleu suprimir-la?</string>
+    <string name="home_folder_dialog_create_new_txt">Crea una carpeta nova</string>
+    <string name="home_folder_select_icon_txt">Selecc. una icona de carpeta</string>
+    <string name="home_shortcut_created_txt">"S'ha creat la drecera: \"%s\""</string>
+    <string name="home_shortcut_removed_txt">"S'ha suprimit la drecera: \"%s\""</string>
+    <string name="home_shortcut_already_exists_txt">La drecera ja existeix: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">"Per crear una drecera a la pantalla inicial, toqueu una icona d'una aplicació sense deixar-la anar."</string>
+    <string name="gui_ok_txt">"D'acord"</string>
+    <string name="gui_done_txt">Fet</string>
+    <string name="gui_cancel_txt">Cancel·la</string>
+    <string name="home_button_exit_overview">Surt de la informació general</string>
+    <string name="home_no_uninstallable_apps_txt">Aquestes aplicacions no es poden desinstal·lar</string>
+</resources>

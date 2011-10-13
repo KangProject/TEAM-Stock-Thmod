@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">Zainstaluj certyfikaty WLAN</string>
+    <string name="radio_controls_summary">Zarządzaj połączeniami WLAN i Bluetooth, trybem samolotowym, sieciami komórkowymi i VPN.</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">Włącz WLAN</string>
+    <string name="wifi_settings">Ustawienia WLAN</string>
+    <string name="wifi_settings_category">Ustawienia WLAN</string>
+    <string name="wifi_starting">Włączanie...</string>
+    <string name="wifi_add_network">Dodaj sieć WLAN</string>
+    <string name="wifi_access_points">Sieci WLAN</string>
+    <string name="wifi_setting_sleep_policy_title">Zasady usypiania WLAN</string>
+    <string name="wifi_setting_sleep_policy_summary">Określ, kiedy przełączyć WLAN na komórkowe połączenie danych</string>
+    <string name="wifi_tether_checkbox_text">Przenośny punkt dostępu WLAN</string>
+    <string name="wifi_tether_enabled_subtext">Przenośny punkt dostępu %1$s jest aktywny</string>
+    <string name="wifi_tether_failed_subtext">Błąd przenośnego punktu dostępu WLAN</string>
+    <string name="wifi_tether_settings_text">Ustawienia przenośnych punktów dostępu WLAN</string>
+    <string name="wifi_tether_settings_subtext">Skonfiguruj przenośne punkty dostępu WLAN i zarządzaj nimi</string>
+    <string name="wifi_tether_settings_title">Ustawienia przenośnych punktów dostępu WLAN</string>
+    <string name="wifi_tether_configure_ap_text">Skonfiguruj punkt dostępu WLAN</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">Przenośny punkt dostępu WLAN %1$s %2$s</string>
+    <string name="status_wifi_mac_address">Adres MAC karty WLAN</string>
+    <string name="tether_settings_title_wifi">Przenośny punkt dostępu</string>
+    <string name="tether_settings_title_both">Powiązanie i przenośny punkt dostępu</string>
+    <string name="tether_settings_summary_wifi">Udostępniaj bezprzewodowe połączenie swojego telefonu jako przenośny punkt dostępu WLAN</string>
+    <string name="tether_settings_summary_both">Udostępniaj bezprzewodowe połączenie transmisji danych swojego telefonu przez USB lub jako przenośny punkt dostępu WLAN</string>
+    <string name="location_network_based">Użyj sieci WLAN</string>
+    <string name="location_networks_disabled">Określ moją lokalizację w aplikacjach (takich jak Mapy), korzystając z sieci bezprzewodowych</string>
+    <string name="location_neighborhood_level">Lokalizacja określana jest za pomocą WLAN i/lub sieci komórkowych</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">WLAN na czas</string>
+    <string name="bluetooth_on_time">WLAN na czas</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">Działanie WLAN</string>
+    <string name="battery_action_wifi">Ustawienia WLAN</string>
+    <string name="battery_desc_wifi">Użycie baterii przez WLAN</string>
+    <string name="battery_sugg_wifi">Wyłącz WLAN, gdy nie jest używane i w miejscach, gdzie nie jest dostępne</string>
+    <string name="gadget_toggle_wifi">Aktualizowanie ustawień WLAN</string>
+    <string name="backup_data_summary">Utwórz na serwerach Google kopię zapasową danych aplikacji, haseł WLAN oraz innych ustawień</string>
+    <string name="backup_erase_dialog_message">Czy na pewno chcesz zakończyć tworzenie kopii zapasowych haseł WLAN, zakładek oraz innych ustawień i danych aplikacji, a także usunąć wszystkie kopie z serwerów Google?</string>
+    <string name="wifi_context_menu_change_wapi_certificate">Zmień certyfikat WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">Ochrona przez WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">Ochrona przez WLAN PSK</string>
+    <string name="error_starting">Nie można uruchomić WLAN</string>
+    <string name="error_stopping">Nie można zatrzymać działania WLAN</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">Dodaj sieć WLAN</string>
+</resources>

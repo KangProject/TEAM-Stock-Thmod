@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Ekrani fillestar i Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Aplikacionet</string>
+    <string name="home_menu_add_txt">Shto</string>
+    <string name="home_menu_wallpaper_txt">Sfondi</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Cilësimet</string>
+    <string name="home_dialog_title_add_to_home_txt">Shto në ekranin fillestar</string>
+    <string name="home_option_add_shortcut_txt">Shkurtoret</string>
+    <string name="home_option_add_widget_txt">Miniaplikacionet</string>
+    <string name="home_option_add_folder_txt">Dosja</string>
+    <string name="home_option_set_wallpaper_txt">Sfondet</string>
+    <string name="home_option_set_theme_txt">Temat</string>
+    <string name="home_dialog_title_add_shortcut_txt">Shto shkurtoren</string>
+    <string name="home_dialog_title_pick_application_txt">Përzgjidh aplikacionin</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Përzgjidh sfondin</string>
+    <string name="home_dialog_title_select_theme_txt">Përzgjidh temën</string>
+    <string name="home_sort_dialog_title_sorting_txt">Sistemo aplikacionet</string>
+    <string name="home_sort_dialog_arrange_button_txt">Sistemo</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Radhitje e përshtatur</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetik</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Më të përdorurat</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Të instaluara së fundi</string>
+    <string name="home_popup_cancel_txt">Anulo</string>
+    <string name="home_error_activity_not_found_txt">Aplikacioni nuk u gjet</string>
+    <string name="home_error_desktop_full_txt">Nuk ka vend në këtë ekran fillestar</string>
+    <string name="home_error_loading_widget">Miniaplikacioni nuk mundi të ngarkohet</string>
+    <string name="home_folder_dialog_folder_name_txt">Emri i dosjes</string>
+    <string name="home_folder_confirm_delete_txt">Kjo dosje përmban objekte. Të fshihet dosja?</string>
+    <string name="home_folder_dialog_create_new_txt">Krijo dosje të re</string>
+    <string name="home_folder_select_icon_txt">Përzgjidhni ikonën e dosjes</string>
+    <string name="home_shortcut_created_txt">Shkurtorja u krijua: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Shkurtorja u fshi: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Shkurtorja tashmë ekziston: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Për të krijuar shkurtoren në ekranin fillestar, mbani të prekur një ikonë aplikacioni.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">U krye</string>
+    <string name="gui_cancel_txt">Anulo</string>
+    <string name="home_button_exit_overview">Dil nga pamja e përgjithshme</string>
+    <string name="home_no_uninstallable_apps_txt">Këto aplikacione nuk mund të çinstalohen</string>
+</resources>

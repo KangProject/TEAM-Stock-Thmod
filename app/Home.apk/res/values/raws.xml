@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="raw" name="pane_dynamics_stiffness">850.0</item>
+    <item type="raw" name="pane_dynamics_damping">1.05</item>
+    <item type="raw" name="scroll_dynamics_stiffness">400.0</item>
+    <item type="raw" name="scroll_dynamics_damping">1.0</item>
+</resources>

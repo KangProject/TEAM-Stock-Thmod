@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Mappa</item>
+        <item>Közösségi</item>
+        <item>Szórakoztatás</item>
+        <item>Média</item>
+        <item>Kedvencek</item>
+        <item>Egészség</item>
+        <item>Eszközök</item>
+        <item>Hírek</item>
+    </string-array>
+</resources>

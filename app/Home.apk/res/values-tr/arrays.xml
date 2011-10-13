@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Klasör</item>
+        <item>Sosyal</item>
+        <item>Eğlence</item>
+        <item>Medya</item>
+        <item>Favoriler</item>
+        <item>Sağlık</item>
+        <item>Araçlar</item>
+        <item>Haberler</item>
+    </string-array>
+</resources>

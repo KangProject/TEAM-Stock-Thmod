@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Traka statusa</string>
+    <string name="status_bar_clear_all_button">Očisti</string>
+    <string name="status_bar_no_notifications_title">Bez obavijesti</string>
+    <string name="status_bar_ongoing_events_title">U tijeku</string>
+    <string name="status_bar_latest_events_title">Obavijesti</string>
+    <string name="battery_low_title">Priključite punjač</string>
+    <string name="battery_low_subtitle">Baterija će uskoro biti potrošena:</string>
+    <string name="battery_low_percent_format">Preostaje %d%% ili manje.</string>
+    <string name="battery_low_why">Iskorištenost baterije</string>
+</resources>

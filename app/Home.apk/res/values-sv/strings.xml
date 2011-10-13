@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Program</string>
+    <string name="home_menu_add_txt">Lägg till</string>
+    <string name="home_menu_wallpaper_txt">Bakgrund</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Inställningar</string>
+    <string name="home_dialog_title_add_to_home_txt">Lägg till på startskärm</string>
+    <string name="home_option_add_shortcut_txt">Genvägar</string>
+    <string name="home_option_add_widget_txt">Widgetar</string>
+    <string name="home_option_add_folder_txt">Mapp</string>
+    <string name="home_option_set_wallpaper_txt">Bakgrunder</string>
+    <string name="home_option_set_theme_txt">Teman</string>
+    <string name="home_dialog_title_add_shortcut_txt">Lägg till genväg</string>
+    <string name="home_dialog_title_pick_application_txt">Välj program</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Välj bakgrund</string>
+    <string name="home_dialog_title_select_theme_txt">Välj tema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Ordna program</string>
+    <string name="home_sort_dialog_arrange_button_txt">Ordna</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Egen ordning</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetisk</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Mest använda</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Senast installerade</string>
+    <string name="home_popup_cancel_txt">Avbryt</string>
+    <string name="home_error_activity_not_found_txt">Programmet kunde inte hittas</string>
+    <string name="home_error_desktop_full_txt">Ingen plats på den här startskärmen</string>
+    <string name="home_error_loading_widget">Det gick inte att läsa in widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Mappnamn</string>
+    <string name="home_folder_confirm_delete_txt">Den här mappen innehåller objekt. Radera mappen?</string>
+    <string name="home_folder_dialog_create_new_txt">Skapa ny mapp</string>
+    <string name="home_folder_select_icon_txt">Välj mappikon</string>
+    <string name="home_shortcut_created_txt">Genväg skapad: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Genväg raderad: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Genvägen finns redan: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Skapa en genväg på startskärmen genom att röra vid en programikon och hålla kvar.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Klar</string>
+    <string name="gui_cancel_txt">Avbryt</string>
+    <string name="home_button_exit_overview">Avsluta översikt</string>
+    <string name="home_no_uninstallable_apps_txt">Det går inte att avinstallera de här programmen</string>
+</resources>

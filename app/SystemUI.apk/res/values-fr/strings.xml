@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">"Barre d'état"</string>
+    <string name="status_bar_clear_all_button">Effacer</string>
+    <string name="status_bar_no_notifications_title">Aucune notification</string>
+    <string name="status_bar_ongoing_events_title">En cours</string>
+    <string name="status_bar_latest_events_title">Notifications</string>
+    <string name="battery_low_title">Branchez le chargeur</string>
+    <string name="battery_low_subtitle">Le niveau de la batterie est bas :</string>
+    <string name="battery_low_percent_format">Maximum %d%% restants.</string>
+    <string name="battery_low_why">Utilisation de la batterie</string>
+</resources>

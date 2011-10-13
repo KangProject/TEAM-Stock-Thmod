@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Statusbalk</string>
+    <string name="status_bar_clear_all_button">Wissen</string>
+    <string name="status_bar_no_notifications_title">Geen meldingen</string>
+    <string name="status_bar_ongoing_events_title">Actief</string>
+    <string name="status_bar_latest_events_title">Meldingen</string>
+    <string name="battery_low_title">Sluit de oplader aan</string>
+    <string name="battery_low_subtitle">De accu raakt op:</string>
+    <string name="battery_low_percent_format">%d%% of minder resterend.</string>
+    <string name="battery_low_why">Accugebruik</string>
+</resources>

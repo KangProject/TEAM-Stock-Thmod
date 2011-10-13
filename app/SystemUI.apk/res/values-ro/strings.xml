@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Bara de stare</string>
+    <string name="status_bar_clear_all_button">Ştergeţi</string>
+    <string name="status_bar_no_notifications_title">Nicio notificare</string>
+    <string name="status_bar_ongoing_events_title">În desfăşurare</string>
+    <string name="status_bar_latest_events_title">Notificări</string>
+    <string name="battery_low_title">Conectaţi încărcătorul</string>
+    <string name="battery_low_subtitle">Bateria se termină:</string>
+    <string name="battery_low_percent_format">A rămas %d%% sau mai puţin.</string>
+    <string name="battery_low_why">Utilizarea bateriei</string>
+</resources>

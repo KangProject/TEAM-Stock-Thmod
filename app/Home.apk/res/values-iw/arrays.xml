@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>תיקייה</item>
+        <item>חברתי</item>
+        <item>בידור</item>
+        <item>מדיה</item>
+        <item>מועדפים</item>
+        <item>בריאות</item>
+        <item>כלים</item>
+        <item>חדשות</item>
+    </string-array>
+</resources>

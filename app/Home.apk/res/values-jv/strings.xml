@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Aplikasi</string>
+    <string name="home_menu_add_txt">Tambah</string>
+    <string name="home_menu_wallpaper_txt">Wallpaper</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Setelan</string>
+    <string name="home_dialog_title_add_to_home_txt">Tambah menyang layar utama</string>
+    <string name="home_option_add_shortcut_txt">Trabasan</string>
+    <string name="home_option_add_widget_txt">Widget</string>
+    <string name="home_option_add_folder_txt">Folder</string>
+    <string name="home_option_set_wallpaper_txt">Wallpaper</string>
+    <string name="home_option_set_theme_txt">Tema</string>
+    <string name="home_dialog_title_add_shortcut_txt">Tambah trabasan</string>
+    <string name="home_dialog_title_pick_application_txt">Pilih aplikasi</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Pilih wallpaper</string>
+    <string name="home_dialog_title_select_theme_txt">Pilih tema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Atur aplikasi</string>
+    <string name="home_sort_dialog_arrange_button_txt">Atur</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Ngurutake kustom</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetis</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Paling kerep digunakake</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Bubar diinstal</string>
+    <string name="home_popup_cancel_txt">Batal</string>
+    <string name="home_error_activity_not_found_txt">Aplikasi ora ditemokake</string>
+    <string name="home_error_desktop_full_txt">Ora ana ruang ing layar utama iki</string>
+    <string name="home_error_loading_widget">Ora bisa muat widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Jeneng folder</string>
+    <string name="home_folder_confirm_delete_txt">Folder ik ingemot item. Busak folder?</string>
+    <string name="home_folder_dialog_create_new_txt">Gawe folder anyar</string>
+    <string name="home_folder_select_icon_txt">Pilih lambang folder</string>
+    <string name="home_shortcut_created_txt">Trabasan digawe: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Trabasan dibusak: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Trabasan wis ana: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Kanggo nggawe trabasan ing layar utama, tutul terus lambang aplikasi.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Rampung</string>
+    <string name="gui_cancel_txt">Batal</string>
+    <string name="home_button_exit_overview">Metu saka ikhtisar</string>
+    <string name="home_no_uninstallable_apps_txt">Aplikasi iki ora bisa dibusak</string>
+</resources>

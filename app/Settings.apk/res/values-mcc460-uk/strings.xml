@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">Установ. сертифік. WLAN</string>
+    <string name="radio_controls_summary">Керування WLAN, Bluetooth, режим \"У літаку\", мобільні та віртуальні приватні мережі (VPN)</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">Увімкнути WLAN</string>
+    <string name="wifi_settings">Установки WLAN</string>
+    <string name="wifi_settings_category">Установки WLAN</string>
+    <string name="wifi_starting">Увімкнення…</string>
+    <string name="wifi_add_network">Додати мережу WLAN</string>
+    <string name="wifi_access_points">Мережі WLAN</string>
+    <string name="wifi_setting_sleep_policy_title">Політика переходу в режим сну для WLAN</string>
+    <string name="wifi_setting_sleep_policy_summary">Вказати, коли переходити від WLAN до рухомої мережі передачі даних</string>
+    <string name="wifi_tether_checkbox_text">Портативна точка доступу WLAN</string>
+    <string name="wifi_tether_enabled_subtext">Портативна точка доступу %1$s активна</string>
+    <string name="wifi_tether_failed_subtext">Помилка портативної точки доступу WLAN</string>
+    <string name="wifi_tether_settings_text">Установки портативної точки доступу WLAN</string>
+    <string name="wifi_tether_settings_subtext">Налаштування й керування портативною точкою доступу WLAN</string>
+    <string name="wifi_tether_settings_title">Установки портативної точки доступу WLAN</string>
+    <string name="wifi_tether_configure_ap_text">Налаштувати точку доступу WLAN</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">Портативна точка доступу WLAN: %1$s %2$s</string>
+    <string name="status_wifi_mac_address">MAC-адреса WLAN</string>
+    <string name="tether_settings_title_wifi">Портативна точка доступу</string>
+    <string name="tether_settings_title_both">"З'єднання й портативна точка доступу"</string>
+    <string name="tether_settings_summary_wifi">"Надати загальний доступ до мобільного з'єднання телефону як до портативної точки доступу WLAN"</string>
+    <string name="tether_settings_summary_both">Надати загальний доступ до з’єднання з мобільними даними телефону через USB або як до портативної точки доступу WLAN</string>
+    <string name="location_network_based">Використовувати безпроводові мережі</string>
+    <string name="location_networks_disabled">Перегляд розташування у програмах (наприклад, \"Карти\") за допомогою безпроводових мереж</string>
+    <string name="location_neighborhood_level">Розташування визначається за допомогою WLAN і/або мобільних мереж</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">Час WLAN</string>
+    <string name="bluetooth_on_time">Час WLAN</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">WLAN запущено</string>
+    <string name="battery_action_wifi">Установки WLAN</string>
+    <string name="battery_desc_wifi">"Акумулятор використовується для з'єднання WLAN"</string>
+    <string name="battery_sugg_wifi">"Вимикайте з'єднання WLAN, коли не використовуєте його або коли воно недоступне"</string>
+    <string name="gadget_toggle_wifi">Оновлення установки WLAN</string>
+    <string name="backup_data_summary">Резервне копіювання програмних даних, паролів WLAN та інших установок на сервери Google</string>
+    <string name="backup_erase_dialog_message">Дійсно зупинити створення резервної копії паролів WLAN, закладок та інших установок і даних програм і видалити всі копії на серверах Google?</string>
+    <string name="wifi_context_menu_change_wapi_certificate">Змінити сертифікат WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">Захищено за допомогою WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">Захищено за допомогою WLAN PSK</string>
+    <string name="error_starting">Неможливо запустити WLAN</string>
+    <string name="error_stopping">Неможливо зупинити WLAN</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">Додати мережу WLAN</string>
+</resources>

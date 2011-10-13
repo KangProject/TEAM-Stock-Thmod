@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Anwendungen</string>
+    <string name="home_menu_add_txt">Hinzufügen</string>
+    <string name="home_menu_wallpaper_txt">Hintergrund</string>
+    <string name="home_menu_theme_txt">Design</string>
+    <string name="home_menu_settings_txt">Einstellungen</string>
+    <string name="home_dialog_title_add_to_home_txt">Zum Startbildschirm hinzufügen</string>
+    <string name="home_option_add_shortcut_txt">Verknüpfungen</string>
+    <string name="home_option_add_widget_txt">Widgets</string>
+    <string name="home_option_add_folder_txt">Ordner</string>
+    <string name="home_option_set_wallpaper_txt">Hintergründe</string>
+    <string name="home_option_set_theme_txt">Designs</string>
+    <string name="home_dialog_title_add_shortcut_txt">Verknüpfung hinzufügen</string>
+    <string name="home_dialog_title_pick_application_txt">Eine Anwendung auswählen</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Hintergrund auswählen</string>
+    <string name="home_dialog_title_select_theme_txt">Design auswählen</string>
+    <string name="home_sort_dialog_title_sorting_txt">Apps anordnen</string>
+    <string name="home_sort_dialog_arrange_button_txt">Anordnen</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Eigene Sortierung</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alphabetisch</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Am häufigsten verwendet</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Kürzlich installiert</string>
+    <string name="home_popup_cancel_txt">Abbrechen</string>
+    <string name="home_error_activity_not_found_txt">Die Anwendung wurde nicht gefunden.</string>
+    <string name="home_error_desktop_full_txt">Es ist kein Platz auf diesem Startbildschirm verfügbar.</string>
+    <string name="home_error_loading_widget">Das Widget konnte nicht geladen werden.</string>
+    <string name="home_folder_dialog_folder_name_txt">Ordnername</string>
+    <string name="home_folder_confirm_delete_txt">Dieser Ordner enthält Objekte. Ordner löschen?</string>
+    <string name="home_folder_dialog_create_new_txt">Neuen Ordner erstellen</string>
+    <string name="home_folder_select_icon_txt">Ordnersymbol auswählen</string>
+    <string name="home_shortcut_created_txt">Die Verknüpfung wurde erstellt: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Die Verknüpfung wurde gelöscht: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Die Verknüpfung ist bereits vorhanden: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Sie können eine Verknüpfung auf Ihrem Startbildschirm erstellen, indem Sie lang auf ein Anwendungssysmbol tippen.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Fertig</string>
+    <string name="gui_cancel_txt">Abbrechen</string>
+    <string name="home_button_exit_overview">Überblick verlassen</string>
+    <string name="home_no_uninstallable_apps_txt">Diese Anwendungen können nicht deinstalliert werden.</string>
+</resources>

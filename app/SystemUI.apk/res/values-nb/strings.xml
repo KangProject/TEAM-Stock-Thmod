@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Statusfelt</string>
+    <string name="status_bar_clear_all_button">Fjern</string>
+    <string name="status_bar_no_notifications_title">Ingen varslinger</string>
+    <string name="status_bar_ongoing_events_title">Aktiviteter</string>
+    <string name="status_bar_latest_events_title">Varslinger</string>
+    <string name="battery_low_title">Koble til en lader</string>
+    <string name="battery_low_subtitle">Batteriet er nesten tomt:</string>
+    <string name="battery_low_percent_format">mindre enn %d%% igjen.</string>
+    <string name="battery_low_why">Batteribruk</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Mga application</string>
+    <string name="home_menu_add_txt">Idagdag</string>
+    <string name="home_menu_wallpaper_txt">Wallpaper</string>
+    <string name="home_menu_theme_txt">Tema</string>
+    <string name="home_menu_settings_txt">Mga Setting</string>
+    <string name="home_dialog_title_add_to_home_txt">Idagdag sa home screen</string>
+    <string name="home_option_add_shortcut_txt">Mga Shortcut</string>
+    <string name="home_option_add_widget_txt">Mga Widget</string>
+    <string name="home_option_add_folder_txt">Folder</string>
+    <string name="home_option_set_wallpaper_txt">Mga Wallpaper</string>
+    <string name="home_option_set_theme_txt">Mga Tema</string>
+    <string name="home_dialog_title_add_shortcut_txt">Magdagdag ng shortcut</string>
+    <string name="home_dialog_title_pick_application_txt">Pumili ng application</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Pumili ng wallpaper</string>
+    <string name="home_dialog_title_select_theme_txt">Pumili ng tema</string>
+    <string name="home_sort_dialog_title_sorting_txt">Ayusin ang apps</string>
+    <string name="home_sort_dialog_arrange_button_txt">Ayusin</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Sariling order</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alphabetical</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Pinakaginagamit</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Kamakailang na-install</string>
+    <string name="home_popup_cancel_txt">Kanselahin</string>
+    <string name="home_error_activity_not_found_txt">Hindi nakita ang application</string>
+    <string name="home_error_desktop_full_txt">Walang lugar sa home screen na ito</string>
+    <string name="home_error_loading_widget">Hindi ma-laod ang widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Pangalan ng folder</string>
+    <string name="home_folder_confirm_delete_txt">Naglalaman ng mga item ang folder na ito. Tanggalin ang folder?</string>
+    <string name="home_folder_dialog_create_new_txt">Lumikha ng bagong folder</string>
+    <string name="home_folder_select_icon_txt">Pumili ng icon ng folder</string>
+    <string name="home_shortcut_created_txt">Nalikha na ang shortcut: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Natanggal na ang shortcut: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Umiiral na ang shortcut: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Upang lumikha ng shortcut sa home screen, i-touch nang matagal ang icon ng application.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Tapos na</string>
+    <string name="gui_cancel_txt">Kanselahin</string>
+    <string name="home_button_exit_overview">Lumabas sa overview</string>
+    <string name="home_no_uninstallable_apps_txt">Hindi maaaring ma-unistall ang apps na ito</string>
+</resources>

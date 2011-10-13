@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Gunakake ppn tbl kggo telp</string>
+    <string name="general_dialpad_voicemail_txt">Surat swara</string>
+    <string name="gui_cancel_txt">Batal</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Sapa asma timure ibu sampeyan?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Ing endi kutha klairane sampeyan?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Ing endi panggonan sing paling disenengi?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Film apa sing paling disenengi?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Wangsulan</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Telpon darurat</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Pitakon keamanan</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Bukak kunci</string>
+    <string name="lockscreen_strings_howtounlock_txt">Penet %icon knggo mbukak kunci</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Pola salah</string>
+    <string name="lockscreen_strings_locked_out_message_txt">Sampeyan salah nggambar pola kaping 20. Bukak kunci nganggo pitakon keamanan.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Wangsulan salah</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">Kertu SIM diblokir</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Sisa upaya:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Ketik PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">Kertu SIM dikunci</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Ketik kode PUK sing diwenehake dening operator</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Hubungi operator</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Ketik PIN anyar</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Baleni PIN</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK kudu 8 digit</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Pola salah</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Tutul Sabanjure kanggo mbukak kunci nganggo pitakon keamanan utawa coba maneh sawise 30 detik</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Sampeyan nduwe sisa upaya kaping 5</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Sabanjure</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Cb maneh</string>
+    <string name="seport_strings_accessory_not_supported_txt">Aksesoris ora didhukung</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>資料夾</item>
+        <item>社群</item>
+        <item>娛樂</item>
+        <item>媒體</item>
+        <item>我的最愛</item>
+        <item>健康</item>
+        <item>工具</item>
+        <item>新聞</item>
+    </string-array>
+</resources>

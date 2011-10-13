@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">Use keyboard to dial</string>
+    <string name="gui_cancel_txt">Cancel</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">"What is your mother's maiden name?"</string>
+    <string name="lockscreen_strings_backup_question_2_txt">What is your place of birth?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">What is your favorite place?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">What is your favorite film?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Answer</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Emergency call</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Security question</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Unlock</string>
+    <string name="lockscreen_strings_howtounlock_txt">Press %icon to unlock</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Incorrect pattern</string>
+    <string name="lockscreen_strings_locked_out_message_txt">You have incorrectly drawn pattern 20 times. Unlock with security question.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Incorrect answer</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">SIM card blocked</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Attempts remaining:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Enter PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">SIM card locked</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Enter the PUK code provided by your operator</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Please contact your operator</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Enter new PIN</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Repeat new PIN</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK must be 8 digits</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Incorrect pattern</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Tap Next to unlock with security question or try again in 30 seconds</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">You have 5 attempts left</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Next</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Try again</string>
+    <string name="seport_strings_accessory_not_supported_txt">Accessory not supported</string>
+</resources>

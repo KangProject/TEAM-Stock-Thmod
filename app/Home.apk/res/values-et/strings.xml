@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericssoni avakuva</string>
+    <string name="home_add_application_shortcut_txt">Rakendused</string>
+    <string name="home_menu_add_txt">Lisa</string>
+    <string name="home_menu_wallpaper_txt">Taustpilt</string>
+    <string name="home_menu_theme_txt">Teema</string>
+    <string name="home_menu_settings_txt">Seaded</string>
+    <string name="home_dialog_title_add_to_home_txt">Avakuvale lisamine</string>
+    <string name="home_option_add_shortcut_txt">Otseteed</string>
+    <string name="home_option_add_widget_txt">Vidinad</string>
+    <string name="home_option_add_folder_txt">Kaust</string>
+    <string name="home_option_set_wallpaper_txt">Taustpildid</string>
+    <string name="home_option_set_theme_txt">Teemad</string>
+    <string name="home_dialog_title_add_shortcut_txt">Otsetee lisamine</string>
+    <string name="home_dialog_title_pick_application_txt">Rakenduse valimine</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Taustpildi valimine</string>
+    <string name="home_dialog_title_select_theme_txt">Teema valimine</string>
+    <string name="home_sort_dialog_title_sorting_txt">Sortimine</string>
+    <string name="home_sort_dialog_arrange_button_txt">Korralda</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Kohandatud sortimine</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Tähestikuline</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Enim kasutatud</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Viimati installitud</string>
+    <string name="home_popup_cancel_txt">Tühista</string>
+    <string name="home_error_activity_not_found_txt">Rakendust ei leitud</string>
+    <string name="home_error_desktop_full_txt">Avakuval pole ruumi</string>
+    <string name="home_error_loading_widget">Vidinat ei saanud laadida</string>
+    <string name="home_folder_dialog_folder_name_txt">Kausta nimi</string>
+    <string name="home_folder_confirm_delete_txt">Kaustas on üksusi. Kas kaust kustutada?</string>
+    <string name="home_folder_dialog_create_new_txt">Loo uus kaust</string>
+    <string name="home_folder_select_icon_txt">Kaustaikooni valimine</string>
+    <string name="home_shortcut_created_txt">Rakenduse \"%s\" otsetee on loodud</string>
+    <string name="home_shortcut_removed_txt">Rakenduse \"%s\" otsetee on kustutatud</string>
+    <string name="home_shortcut_already_exists_txt">Rakenduse \"%s\" otsetee on juba olemas</string>
+    <string name="home_hint_shortcut_message_txt">Avakuvale otsetee loomiseks puudutage pikalt soovitud rakenduse ikooni.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Valmis</string>
+    <string name="gui_cancel_txt">Tühista</string>
+    <string name="home_button_exit_overview">Välju ülevaatest</string>
+    <string name="home_no_uninstallable_apps_txt">Neid rakendusi ei saa desinstallida</string>
+</resources>

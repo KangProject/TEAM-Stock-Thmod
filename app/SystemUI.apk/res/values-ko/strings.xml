@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">상태 표시줄</string>
+    <string name="status_bar_clear_all_button">지우기</string>
+    <string name="status_bar_no_notifications_title">알림 없음</string>
+    <string name="status_bar_ongoing_events_title">진행 중</string>
+    <string name="status_bar_latest_events_title">알림</string>
+    <string name="battery_low_title">충전기를 연결하세요.</string>
+    <string name="battery_low_subtitle">배터리 전원이 부족합니다.</string>
+    <string name="battery_low_percent_format">잔여 배터리가 %d%% 이하입니다.</string>
+    <string name="battery_low_why">배터리 사용량</string>
+</resources>

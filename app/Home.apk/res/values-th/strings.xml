@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">หน้าแรก Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">แอปพลิเคชัน</string>
+    <string name="home_menu_add_txt">เพิ่ม</string>
+    <string name="home_menu_wallpaper_txt">ภาพพื้นหลัง</string>
+    <string name="home_menu_theme_txt">ธีม</string>
+    <string name="home_menu_settings_txt">การตั้งค่า</string>
+    <string name="home_dialog_title_add_to_home_txt">เพิ่มในหน้าจอหลัก</string>
+    <string name="home_option_add_shortcut_txt">ปุ่มลัด</string>
+    <string name="home_option_add_widget_txt">Widget</string>
+    <string name="home_option_add_folder_txt">โฟลเดอร์</string>
+    <string name="home_option_set_wallpaper_txt">ภาพพื้นหลัง</string>
+    <string name="home_option_set_theme_txt">ธีม</string>
+    <string name="home_dialog_title_add_shortcut_txt">เพิ่มปุ่มลัด</string>
+    <string name="home_dialog_title_pick_application_txt">เลือกแอปพลิเคชัน</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">เลือกภาพพื้นหลัง</string>
+    <string name="home_dialog_title_select_theme_txt">เลือกธีม</string>
+    <string name="home_sort_dialog_title_sorting_txt">การจัดเรียงแอพส์</string>
+    <string name="home_sort_dialog_arrange_button_txt">จัดเตรียม</string>
+    <string name="home_sort_dialog_option_free_sort_txt">การเรียงลำดับที่กำหนดเอง</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">ตามตัวอักษร</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">ใช้มากที่สุด</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">ติดตั้งล่าสุด</string>
+    <string name="home_popup_cancel_txt">ยกเลิก</string>
+    <string name="home_error_activity_not_found_txt">ไม่พบแอปพลิเคชัน</string>
+    <string name="home_error_desktop_full_txt">ไม่มีที่ว่างบนหน้าจอหลักนี้</string>
+    <string name="home_error_loading_widget">โหลด widget ไม่ได้</string>
+    <string name="home_folder_dialog_folder_name_txt">ชื่อโฟลเดอร์</string>
+    <string name="home_folder_confirm_delete_txt">โฟลเดอร์นี้มีรายการอยู่ ลบโฟลเดอร์?</string>
+    <string name="home_folder_dialog_create_new_txt">สร้างโฟลเดอร์ใหม่</string>
+    <string name="home_folder_select_icon_txt">เลือกไอคอนโฟลเดอร์</string>
+    <string name="home_shortcut_created_txt">สร้างปุ่มลัดแล้ว: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">ลบปุ่มลัดแล้ว: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">มีปุ่มลัดนี้อยู่แล้ว: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">เมื่อต้องการสร้างปุ่มลัดบนหน้าจอหลัก ให้สัมผัสไอคอนแอปพลิเคชันค้างไว้</string>
+    <string name="gui_ok_txt">ตกลง</string>
+    <string name="gui_done_txt">เสร็จ</string>
+    <string name="gui_cancel_txt">ยกเลิก</string>
+    <string name="home_button_exit_overview">ออกจากภาพรวม</string>
+    <string name="home_no_uninstallable_apps_txt">ไม่สามารถถอนการติดตั้งแอปเหล่านี้</string>
+</resources>

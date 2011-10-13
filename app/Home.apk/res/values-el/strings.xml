@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Αρχική οθόνη Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Εφαρμογές</string>
+    <string name="home_menu_add_txt">Προσθήκη</string>
+    <string name="home_menu_wallpaper_txt">Φόντο</string>
+    <string name="home_menu_theme_txt">Θέμα</string>
+    <string name="home_menu_settings_txt">Ρυθμίσεις</string>
+    <string name="home_dialog_title_add_to_home_txt">Προσθήκη στην αρχική οθόνη</string>
+    <string name="home_option_add_shortcut_txt">Συντομεύσεις</string>
+    <string name="home_option_add_widget_txt">Widget</string>
+    <string name="home_option_add_folder_txt">Φάκελος</string>
+    <string name="home_option_set_wallpaper_txt">Ταπετσαρίες</string>
+    <string name="home_option_set_theme_txt">Θέματα</string>
+    <string name="home_dialog_title_add_shortcut_txt">Προσθήκη συντόμευσης</string>
+    <string name="home_dialog_title_pick_application_txt">Επιλογή εφαρμογής</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Επιλογή φόντου</string>
+    <string name="home_dialog_title_select_theme_txt">Επιλογή θέματος</string>
+    <string name="home_sort_dialog_title_sorting_txt">Ταξινόμηση</string>
+    <string name="home_sort_dialog_arrange_button_txt">Διάταξη</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Προσαρμοσμένη ταξινόμηση</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Αλφαβητικά</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Μεγαλύτερη χρήση</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Εγκαταστάθηκαν πρόσφατα</string>
+    <string name="home_popup_cancel_txt">Άκυρο</string>
+    <string name="home_error_activity_not_found_txt">Η εφαρμογή δεν βρέθηκε</string>
+    <string name="home_error_desktop_full_txt">Δεν υπάρχει χώρος σε αυτήν την αρχική οθόνη.</string>
+    <string name="home_error_loading_widget">Δεν ήταν δυνατή η φόρτωση του widget.</string>
+    <string name="home_folder_dialog_folder_name_txt">Όνομα φακέλου</string>
+    <string name="home_folder_confirm_delete_txt">Ο φάκελος περιέχει στοιχεία. Θέλετε να τον διαγράψετε;</string>
+    <string name="home_folder_dialog_create_new_txt">Δημιουργία νέου φακέλου</string>
+    <string name="home_folder_select_icon_txt">Επιλογή εικονιδίου φακέλου</string>
+    <string name="home_shortcut_created_txt">Η συντόμευση δημιουργήθηκε: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Η συντόμευση διαγράφηκε: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Η συντόμευση υπάρχει ήδη: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Για να δημιουργήσετε μια συντόμευση στην αρχική οθόνη, αγγίξτε παρατεταμένα το εικονίδιο μιας εφαρμογής.</string>
+    <string name="gui_ok_txt">ΟΚ</string>
+    <string name="gui_done_txt">Ολοκλήρωση</string>
+    <string name="gui_cancel_txt">Άκυρο</string>
+    <string name="home_button_exit_overview">Έξοδος από επισκόπηση</string>
+    <string name="home_no_uninstallable_apps_txt">Δεν είναι δυνατή η κατάργηση της εγκατάστασης αυτών των εφαρμογών</string>
+</resources>

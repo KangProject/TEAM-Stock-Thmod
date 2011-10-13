@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson হোম</string>
+    <string name="home_add_application_shortcut_txt">অ্যাপ্লিকেশনস</string>
+    <string name="home_menu_add_txt">সংযোজন করুন</string>
+    <string name="home_menu_wallpaper_txt">ওয়ালপেপার</string>
+    <string name="home_menu_theme_txt">থিম</string>
+    <string name="home_menu_settings_txt">সেটিংস</string>
+    <string name="home_dialog_title_add_to_home_txt">হোম স্ক্রীণে সংযোজন করুন</string>
+    <string name="home_option_add_shortcut_txt">শর্টকাটসমূহ</string>
+    <string name="home_option_add_widget_txt">উইদগেটস</string>
+    <string name="home_option_add_folder_txt">ফোল্ডার</string>
+    <string name="home_option_set_wallpaper_txt">ওয়ালপেপার</string>
+    <string name="home_option_set_theme_txt">থিমগুলি</string>
+    <string name="home_dialog_title_add_shortcut_txt">শর্টকাট সংযোজন করুন</string>
+    <string name="home_dialog_title_pick_application_txt">অ্যাপ্লিকেশন নির্বাচন করুন</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">ওয়ালপেপার নির্বাচন করুন</string>
+    <string name="home_dialog_title_select_theme_txt">থিম নির্বাচন করুন</string>
+    <string name="home_sort_dialog_title_sorting_txt">বিন্যাস হচ্ছে</string>
+    <string name="home_sort_dialog_arrange_button_txt">সজ্জা করুন</string>
+    <string name="home_sort_dialog_option_free_sort_txt">কাস্টম বাছাই</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">বর্ণানুক্রমিক</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">সর্বাধিক ব্যবহৃত</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">সম্প্রতি ইনস্টল হওয়া</string>
+    <string name="home_popup_cancel_txt">বাতিল করুন</string>
+    <string name="home_error_activity_not_found_txt">অ্যাপ্লিকেশন খুঁজে পাওয়া যায়নি</string>
+    <string name="home_error_desktop_full_txt">হোম স্ক্রীণে কোনও রুম নেই</string>
+    <string name="home_error_loading_widget">উইডগেট লোড করতে পারে নি</string>
+    <string name="home_folder_dialog_folder_name_txt">ফোল্ডার নাম</string>
+    <string name="home_folder_confirm_delete_txt">এই ফোল্ডারটিতে আইটেম রয়েছে৷ ফোল্ডার বিলোপ করবেন?</string>
+    <string name="home_folder_dialog_create_new_txt">নতুন ফোল্ডার তৈরি করুন</string>
+    <string name="home_folder_select_icon_txt">ফোল্ডার আইকন নির্বাচন করুন</string>
+    <string name="home_shortcut_created_txt">শর্টকাট তৈরি হয়েছে: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">শর্টকাট বিলোপ হয়েছে: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">শর্টকাট ইতোমধ্যে বিদ্যমান: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">হোমস্ক্রীনে শর্টকাট তৈরি করতে, কোনও অ্যাপ্লিকেশন আইকন স্পর্শ করুন ও ধরে থাকুন৷</string>
+    <string name="gui_ok_txt">ওকে</string>
+    <string name="gui_done_txt">সম্পন্ন</string>
+    <string name="gui_cancel_txt">বাতিল</string>
+    <string name="home_button_exit_overview">পূর্বরূপ থেকে প্রস্থান করুন</string>
+    <string name="home_no_uninstallable_apps_txt">এই অ্যাপ্লিকেশনগুলি আনইনস্টল করা যায়না</string>
+</resources>

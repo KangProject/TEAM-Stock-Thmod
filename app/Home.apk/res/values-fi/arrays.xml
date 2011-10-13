@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Kansio</item>
+        <item>Yhteisöpalvelut</item>
+        <item>Viihde</item>
+        <item>Media</item>
+        <item>Suosikit</item>
+        <item>Terveydenhuolto</item>
+        <item>Työkalut</item>
+        <item>Uutiset</item>
+    </string-array>
+</resources>

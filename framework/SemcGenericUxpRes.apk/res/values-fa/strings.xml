@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">استفاده از صفحه کلید برای شماره گیری</string>
+    <string name="general_dialpad_voicemail_txt">پست صوتی</string>
+    <string name="gui_cancel_txt">لغو</string>
+    <string name="gui_ok_txt">تأييد</string>
+    <string name="lockscreen_strings_backup_question_1_txt">نام زمان مجردی مادر شما چیست؟</string>
+    <string name="lockscreen_strings_backup_question_2_txt">محل تولد شما کجاست؟</string>
+    <string name="lockscreen_strings_backup_question_3_txt">مکان مورد علاقه شما کجاست؟</string>
+    <string name="lockscreen_strings_backup_question_4_txt">فیلم مورد علاقه شما چیست؟</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">پاسخ دادن</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">تماس اضطراری</string>
+    <string name="lockscreen_strings_backup_question_header_txt">سوال امنیتی</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">بازکردن قفل</string>
+    <string name="lockscreen_strings_howtounlock_txt">برای بازگشایی %icon را فشار دهید</string>
+    <string name="lockscreen_strings_locked_out_header_txt">الگوی نادرست</string>
+    <string name="lockscreen_strings_locked_out_message_txt">شما الگو را 20 بار نادرست رسم کردید. با سوال امنیتی باز کنید.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">پاسخ نادرست</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">SIM کارت مسدود شد</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">دفعات باقی مانده:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">PUK را وارد کنید</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">SIM کارت قفل شد</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">کد PUK که توسط اپراتور ارائه شده را وارد کنید</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">لطفا با اپراتور خود تماس بگیرید</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">PIN جدید را وارد کنید</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">PIN جدید را تکرار کنید</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK باید 8 رقم باشد</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">الگوی نادرست</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">برای بازگشایی با سوال امنیتی روی بعدی بزنید یا تا 30 ثانیه دیگر دوباره امتحان کنید</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">5 بار دیگر مانده است</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">بعد</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">تلاش مجدد</string>
+    <string name="seport_strings_accessory_not_supported_txt">لوازم جانبی پشتیبانی نمی شود</string>
+</resources>

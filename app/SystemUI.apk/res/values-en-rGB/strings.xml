@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Status Bar</string>
+    <string name="status_bar_clear_all_button">Clear</string>
+    <string name="status_bar_no_notifications_title">No notifications</string>
+    <string name="status_bar_ongoing_events_title">Ongoing</string>
+    <string name="status_bar_latest_events_title">Notifications</string>
+    <string name="battery_low_title">Please connect charger</string>
+    <string name="battery_low_subtitle">The battery is getting low:</string>
+    <string name="battery_low_percent_format">%d%% or less remaining.</string>
+    <string name="battery_low_why">Battery use</string>
+</resources>

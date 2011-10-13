@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Statusfält</string>
+    <string name="status_bar_clear_all_button">Ta bort</string>
+    <string name="status_bar_no_notifications_title">Inga aviseringar</string>
+    <string name="status_bar_ongoing_events_title">Pågående</string>
+    <string name="status_bar_latest_events_title">Meddelanden</string>
+    <string name="battery_low_title">Anslut laddaren</string>
+    <string name="battery_low_subtitle">Batteriet håller på att ta slut:</string>
+    <string name="battery_low_percent_format">%d%% eller mindre kvar.</string>
+    <string name="battery_low_why">Batteriförbrukning</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Tilapalkki</string>
+    <string name="status_bar_clear_all_button">Tyhjennä</string>
+    <string name="status_bar_no_notifications_title">Ei ilmoituksia</string>
+    <string name="status_bar_ongoing_events_title">Käynnissä olevat</string>
+    <string name="status_bar_latest_events_title">Ilmoitukset</string>
+    <string name="battery_low_title">Kytke laturi</string>
+    <string name="battery_low_subtitle">Akun virta on vähissä:</string>
+    <string name="battery_low_percent_format">jäljellä %d%% tai vähemmän.</string>
+    <string name="battery_low_why">Akun käyttö</string>
+</resources>

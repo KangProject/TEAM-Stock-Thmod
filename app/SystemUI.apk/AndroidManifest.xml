@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:process="system" android:versionCode="10" android:versionName="2.3.3" package="com.android.systemui"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="10" />
+    <uses-permission android:name="android.permission.STATUS_BAR_SERVICE" />
+    <application android:label="@string/app_label" android:icon="@drawable/ic_launcher_settings" android:allowClearUserData="false" android:persistent="true">
+        <service android:name=".statusbar.StatusBarService" android:exported="false" />
+        <activity android:name=".usb.UsbStorageActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Widget.Holo.HorizontalScrollView" android:name="com.android.internal.app.ExternalMediaFormatActivity" android:excludeFromRecents="true" />
+    </application>
+</manifest>

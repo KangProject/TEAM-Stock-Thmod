@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>Map</item>
+        <item>Sociale netwerken</item>
+        <item>Entertainment</item>
+        <item>Media</item>
+        <item>Favorieten</item>
+        <item>Gezondheid</item>
+        <item>"Hulpprogramma's"</item>
+        <item>Nieuws</item>
+    </string-array>
+</resources>

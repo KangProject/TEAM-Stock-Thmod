@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_wapi_certs">Instal sertifikat WLAN</string>
+    <string name="radio_controls_summary">Kelola WLAN, Bluetooth, mode penerbangan, jaringan mobile &amp; VPN</string>
+    <string name="wifi_quick_toggle_title">WLAN</string>
+    <string name="wifi_quick_toggle_summary">Hidupkan WLAN</string>
+    <string name="wifi_settings">Setelan WLAN</string>
+    <string name="wifi_settings_category">Setelan WLAN</string>
+    <string name="wifi_starting">Menghidupkan…</string>
+    <string name="wifi_add_network">Tambah jaringan WLAN</string>
+    <string name="wifi_access_points">Jaringan WLAN</string>
+    <string name="wifi_setting_sleep_policy_title">Kebijakan nonaktif WLAN</string>
+    <string name="wifi_setting_sleep_policy_summary">Tentukan kapan akan beralih dari WLAN ke data mobile</string>
+    <string name="wifi_tether_checkbox_text">Hotspot WLAN portebel</string>
+    <string name="wifi_tether_enabled_subtext">Hotspot portebel %1$s aktif</string>
+    <string name="wifi_tether_failed_subtext">Kesalahan hotspot WLAN portebel</string>
+    <string name="wifi_tether_settings_text">Setelan hotspot WLAN portebel</string>
+    <string name="wifi_tether_settings_subtext">Konfigurasi &amp; kelola hotspot WLAN portebel</string>
+    <string name="wifi_tether_settings_title">Setelan hotspot WLAN portebel</string>
+    <string name="wifi_tether_configure_ap_text">Konfigurasi hotspot WLAN</string>
+    <string name="wifi_tether_configure_subtext" formatted="false">%1$s %2$s hotspot WLAN portebel</string>
+    <string name="status_wifi_mac_address">Alamat MAC WLAN</string>
+    <string name="tether_settings_title_wifi">Hotspot portebel</string>
+    <string name="tether_settings_title_both">Penambatan &amp; hotspot portebel</string>
+    <string name="tether_settings_summary_wifi">Berbagi-pakai sambungan selular telepon sebagai hotspot WLAN portebel</string>
+    <string name="tether_settings_summary_both">Berbagi-pakai sambungan data selular telepon via USB atau sebagai hotspot WLAN portebel</string>
+    <string name="location_network_based">Gunakan jaringan nirkabel</string>
+    <string name="location_networks_disabled">Lihat lokasi di aplikasi (seperti Peta) menggunakan jaringan nirkabel</string>
+    <string name="location_neighborhood_level">Lokasi yang ditentukan oleh WLAN dan atau jaringan selular</string>
+    <string name="battery_stats_wifi_running_label">WLAN</string>
+    <string name="wifi_on_time">WLAN tepat waktu</string>
+    <string name="bluetooth_on_time">WLAN tepat waktu</string>
+    <string name="power_wifi">WLAN</string>
+    <string name="usage_type_wifi_running">WLAN berjalan</string>
+    <string name="battery_action_wifi">Setelan WLAN</string>
+    <string name="battery_desc_wifi">Baterai digunakan oleh WLAN</string>
+    <string name="battery_sugg_wifi">Matikan WLAN saat tidak digunakan atau saat tidak tersedia layanan</string>
+    <string name="gadget_toggle_wifi">Memperbarui setelan WLAN</string>
+    <string name="backup_data_summary">Membuat cadangan data aplikasi, sandi WLAN, dan setelan lainnya untuk server Google</string>
+    <string name="backup_erase_dialog_message">Anda yakin ingin berhenti membuat cadangan sandi WLAN, penanda serta data setelan dan aplikasi lainnya dan menghapus semua salinan di server Google?</string>
+    <string name="wifi_context_menu_change_wapi_certificate">Ubah sertifikat WLAN</string>
+    <string name="wifi_security_wapi_cert">WLAN CERT</string>
+    <string name="wifi_security_wapi_psk">WLAN PSK</string>
+    <string name="wifi_security_verbose_wapi_cert">Diamankan dengan WLAN CERT</string>
+    <string name="wifi_security_verbose_wapi_psk">Diamankan dengan WLAN PSK</string>
+    <string name="error_starting">Tidak dapat menjalankan WLAN</string>
+    <string name="error_stopping">Tidak dapat menghentikan WLAN</string>
+    <string name="wifi">WLAN</string>
+    <string name="wifi_add_other_network">Tambah jaringan WLAN</string>
+</resources>

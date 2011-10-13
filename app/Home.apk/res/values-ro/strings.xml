@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Ecr. princ. Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Aplicaţii</string>
+    <string name="home_menu_add_txt">Adăugare</string>
+    <string name="home_menu_wallpaper_txt">Tapet de fundal</string>
+    <string name="home_menu_theme_txt">Temă</string>
+    <string name="home_menu_settings_txt">Setări</string>
+    <string name="home_dialog_title_add_to_home_txt">Adăugare la ecranul principal</string>
+    <string name="home_option_add_shortcut_txt">Comenzi rapide</string>
+    <string name="home_option_add_widget_txt">Widgeturi</string>
+    <string name="home_option_add_folder_txt">Folder</string>
+    <string name="home_option_set_wallpaper_txt">Tapete de fundal</string>
+    <string name="home_option_set_theme_txt">Teme</string>
+    <string name="home_dialog_title_add_shortcut_txt">Adăugare comandă rapidă</string>
+    <string name="home_dialog_title_pick_application_txt">Selectare aplicaţie</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Selectare tapet de fundal</string>
+    <string name="home_dialog_title_select_theme_txt">Selectare temă</string>
+    <string name="home_sort_dialog_title_sorting_txt">Aranjare aplicaţii</string>
+    <string name="home_sort_dialog_arrange_button_txt">Aranjare</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Ordonare particularizată</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetic</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Cele mai utilizate</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Instalate recent</string>
+    <string name="home_popup_cancel_txt">Revocare</string>
+    <string name="home_error_activity_not_found_txt">Nu s-a găsit aplicaţia</string>
+    <string name="home_error_desktop_full_txt">În acest ecran principal nu există spaţiu disponibil</string>
+    <string name="home_error_loading_widget">Imposibil de încărcat widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Nume folder</string>
+    <string name="home_folder_confirm_delete_txt">Acest folder conţine elemente. Ştergeţi folderul?</string>
+    <string name="home_folder_dialog_create_new_txt">Creare folder nou</string>
+    <string name="home_folder_select_icon_txt">Selectare pictogramă folder</string>
+    <string name="home_shortcut_created_txt">Comandă rapidă creată: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Comandă rapidă ştearsă: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Comanda rapidă există deja: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Pentru a crea comanda rapidă în ecranul de început, atingeţi continuu pictograma unei aplicaţii.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Efectuat</string>
+    <string name="gui_cancel_txt">Revocare</string>
+    <string name="home_button_exit_overview">Ieşire din vedere de ansamblu</string>
+    <string name="home_no_uninstallable_apps_txt">Aceste aplicaţii nu pot fi instalate</string>
+</resources>

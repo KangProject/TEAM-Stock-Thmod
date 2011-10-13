@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Vrstica stanja</string>
+    <string name="status_bar_clear_all_button">Počisti</string>
+    <string name="status_bar_no_notifications_title">Ni obvestil</string>
+    <string name="status_bar_ongoing_events_title">Trenutno</string>
+    <string name="status_bar_latest_events_title">Obvestila</string>
+    <string name="battery_low_title">Priključite napajalnik</string>
+    <string name="battery_low_subtitle">Baterija je skoraj prazna:</string>
+    <string name="battery_low_percent_format">Preostalo %d%% ali manj.</string>
+    <string name="battery_low_why">Uporaba baterije</string>
+</resources>

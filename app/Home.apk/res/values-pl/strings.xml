@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson — strona główna</string>
+    <string name="home_add_application_shortcut_txt">Aplikacje</string>
+    <string name="home_menu_add_txt">Dodaj</string>
+    <string name="home_menu_wallpaper_txt">Tapeta</string>
+    <string name="home_menu_theme_txt">Motyw</string>
+    <string name="home_menu_settings_txt">Ustawienia</string>
+    <string name="home_dialog_title_add_to_home_txt">Dodawanie do ekranu głównego</string>
+    <string name="home_option_add_shortcut_txt">Skróty</string>
+    <string name="home_option_add_widget_txt">Widżety</string>
+    <string name="home_option_add_folder_txt">Folder</string>
+    <string name="home_option_set_wallpaper_txt">Tapety</string>
+    <string name="home_option_set_theme_txt">Motywy</string>
+    <string name="home_dialog_title_add_shortcut_txt">Dodawanie skrótów</string>
+    <string name="home_dialog_title_pick_application_txt">Wybieranie aplikacji</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Wybieranie tapety</string>
+    <string name="home_dialog_title_select_theme_txt">Wybierz motyw</string>
+    <string name="home_sort_dialog_title_sorting_txt">Kolejność aplikacji</string>
+    <string name="home_sort_dialog_arrange_button_txt">Rozmieść</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Własna kolejność</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Alfabetycznie</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Najczęściej używane</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Zainstalowane ostatnio</string>
+    <string name="home_popup_cancel_txt">Anuluj</string>
+    <string name="home_error_activity_not_found_txt">Nie znaleziono aplikacji</string>
+    <string name="home_error_desktop_full_txt">Brak miejsca na tym ekranie głównym</string>
+    <string name="home_error_loading_widget">Nie można załadować widżetu</string>
+    <string name="home_folder_dialog_folder_name_txt">Nazwa folderu</string>
+    <string name="home_folder_confirm_delete_txt">Ten folder zawiera elementy. Usunąć folder?</string>
+    <string name="home_folder_dialog_create_new_txt">Utwórz nowy folder</string>
+    <string name="home_folder_select_icon_txt">Wybierz ikonę folderu</string>
+    <string name="home_shortcut_created_txt">Utworzono skrót: „%s”</string>
+    <string name="home_shortcut_removed_txt">Usunięto skrót: „%s”</string>
+    <string name="home_shortcut_already_exists_txt">Skrót już istnieje: „%s”</string>
+    <string name="home_hint_shortcut_message_txt">Aby utworzyć skrót na ekranie głównym, dotknij i przytrzymaj ikonę aplikacji.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Gotowe</string>
+    <string name="gui_cancel_txt">Anuluj</string>
+    <string name="home_button_exit_overview">Zamknij omówienie</string>
+    <string name="home_no_uninstallable_apps_txt">Nie można odinstalować tych aplikacji</string>
+</resources>

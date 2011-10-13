@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Bilah Status</string>
+    <string name="status_bar_clear_all_button">Bersihkan</string>
+    <string name="status_bar_no_notifications_title">Tidak ada pemberitahuan</string>
+    <string name="status_bar_ongoing_events_title">Berkelanjutan</string>
+    <string name="status_bar_latest_events_title">Pemberitahuan</string>
+    <string name="battery_low_title">Harap hubungkan ke pengisi daya</string>
+    <string name="battery_low_subtitle">Baterai kekurangan daya:</string>
+    <string name="battery_low_percent_format">%d%% atau kurang yang tersisa.</string>
+    <string name="battery_low_why">Penggunaan baterai</string>
+</resources>

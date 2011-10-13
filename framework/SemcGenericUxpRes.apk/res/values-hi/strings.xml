@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">डायल करने हेतु कुंजी. का उप. करें</string>
+    <string name="general_dialpad_voicemail_txt">वॉयसमेल</string>
+    <string name="gui_cancel_txt">रद्द करें</string>
+    <string name="gui_ok_txt">ठीक</string>
+    <string name="lockscreen_strings_backup_question_1_txt">आपकी माता का शादी से पहले का नाम क्या है?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">आपका जन्म स्थान कहां है?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">आपका पसंदीदा स्थान कहां है?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">आपकी पसंदीदा फिल्म कौन सी है?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">उत्तर दें</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">आपातकालीन कॉल</string>
+    <string name="lockscreen_strings_backup_question_header_txt">सुरक्षा प्रश्न</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">अनलॉक करें</string>
+    <string name="lockscreen_strings_howtounlock_txt">अनलॉक करने हेतु %icon दबाएं</string>
+    <string name="lockscreen_strings_locked_out_header_txt">गलत पैटर्न</string>
+    <string name="lockscreen_strings_locked_out_message_txt">आपने 20 बार गलत तरीके से पैटर्न खींच दिया। सुरक्षा प्रश्न के साथ अनलॉक करें।</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">गलत उत्तर</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">सिम कार्ड अवरुद्ध किया गया</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">शेष प्रयत्न:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Enter PUK प्रविष्ट करें</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">सिम कार्ड लॉक किया गया</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">अपने ऑपरेटर द्वारा प्रदान किया गया PUK प्रविष्ट करें</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">कृपया अपने ऑपरेटर से संपर्क करें</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">नया PIN प्रविष्ट करें</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">नया PIN दोहराएं</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK 8 अंकों का होना चाहिए</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">गलत पैटर्न</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">"सुरक्षा प्रश्न के साथ अनलॉक करने के लिए अगला टैप करें या 30  सेकंड बाद दोबारा कोशिश करें"</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">आपके पास 5 प्रयास बचे हैं</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">अगला</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">दो. को. करें</string>
+    <string name="seport_strings_accessory_not_supported_txt">सहायक उपकरण समर्थित नहीं है</string>
+</resources>

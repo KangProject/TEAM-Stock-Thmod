@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">שורת מצב</string>
+    <string name="status_bar_clear_all_button">נקה</string>
+    <string name="status_bar_no_notifications_title">אין התראות</string>
+    <string name="status_bar_ongoing_events_title">מתבצע</string>
+    <string name="status_bar_latest_events_title">התראות</string>
+    <string name="battery_low_title">חבר מטען</string>
+    <string name="battery_low_subtitle">הסוללה נחלשת:</string>
+    <string name="battery_low_percent_format">נותרו עוד %d%% או פחות.</string>
+    <string name="battery_low_why">צריכת סוללה</string>
+</resources>

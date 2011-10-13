@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialer_keyboard_hint_txt">"Gnakn ppn k'nci utk mndail"</string>
+    <string name="general_dialpad_voicemail_txt">Mel suara</string>
+    <string name="gui_cancel_txt">Batal</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="lockscreen_strings_backup_question_1_txt">Siapakah nama ibu anda sebelum berkahwin?</string>
+    <string name="lockscreen_strings_backup_question_2_txt">Apakah tempat kelahiran anda?</string>
+    <string name="lockscreen_strings_backup_question_3_txt">Apakah tempat kegemaran anda?</string>
+    <string name="lockscreen_strings_backup_question_4_txt">Apakah filem kegemaran anda?</string>
+    <string name="lockscreen_strings_backup_question_answer_hint_txt">Jawapan</string>
+    <string name="lockscreen_strings_backup_question_emergency_button_txt">Pgln kecemasn</string>
+    <string name="lockscreen_strings_backup_question_header_txt">Soalan keselamatan</string>
+    <string name="lockscreen_strings_backup_question_unlock_button_txt">Buka kunci</string>
+    <string name="lockscreen_strings_howtounlock_txt">Tekan %icon utk buka kunci</string>
+    <string name="lockscreen_strings_locked_out_header_txt">Corak salah</string>
+    <string name="lockscreen_strings_locked_out_message_txt">Anda telah melukis corak yang salah sebanyak 20 kali. Buka kunci dengan soalan keselamatan.</string>
+    <string name="lockscreen_strings_locked_out_wrong_answer_txt">Jawapan salah</string>
+    <string name="lockscreen_strings_sim_locked_out_header_txt">Kad SIM disekat</string>
+    <string name="lockscreen_strings_sim_puk_attempts_remaining_txt">Baki percubaan:</string>
+    <string name="lockscreen_strings_sim_puk_enter_puk_header_txt">Masukkan PUK</string>
+    <string name="lockscreen_strings_sim_puk_locked_header_txt">Kad SIM dikunci</string>
+    <string name="lockscreen_strings_sim_puk_locked_message_txt">Masukkan kod PUK yang diberikan oleh pengendali anda.</string>
+    <string name="lockscreen_strings_sim_puk_locked_out_message_txt">Sila hubungi pengendali anda</string>
+    <string name="lockscreen_strings_sim_puk_new_pin_header_txt">Masukkan PIN baru</string>
+    <string name="lockscreen_strings_sim_puk_retype_new_pin_header_txt">Ulangi PIN baru</string>
+    <string name="lockscreen_strings_sim_puk_wrong_nbr_digits_header_txt">PUK mestilah 8 digit</string>
+    <string name="lockscreen_strings_timeout_dialog_header_txt">Corak salah</string>
+    <string name="lockscreen_strings_timeout_dialog_message_txt">Ketik Seterusnya untuk membuka kunci dengan soalan keselamatan atau cuba semula dalam 30 saat</string>
+    <string name="lockscreen_strings_timeout_dialog_near_lockout_message_txt">Anda mempunyai baki 5 percubaan</string>
+    <string name="lockscreen_strings_timeout_dialog_next_label_txt">Sterusnya</string>
+    <string name="lockscreen_strings_timeout_dialog_try_again_label_txt">Cuba lagi</string>
+    <string name="seport_strings_accessory_not_supported_txt">Aksesori tidak disokong</string>
+</resources>

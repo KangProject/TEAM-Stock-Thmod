@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">شاشة Sony Ericsson الرئيسية</string>
+    <string name="home_add_application_shortcut_txt">التطبيقات</string>
+    <string name="home_menu_add_txt">إضافة</string>
+    <string name="home_menu_wallpaper_txt">خلفية</string>
+    <string name="home_menu_theme_txt">نمط خلفية شاشة</string>
+    <string name="home_menu_settings_txt">إعدادات</string>
+    <string name="home_dialog_title_add_to_home_txt">إضافة إلى الشاشة الرئيسية</string>
+    <string name="home_option_add_shortcut_txt">اختصارات</string>
+    <string name="home_option_add_widget_txt">واجهات رسومية</string>
+    <string name="home_option_add_folder_txt">المجلد</string>
+    <string name="home_option_set_wallpaper_txt">الخلفيات</string>
+    <string name="home_option_set_theme_txt">أنماط خلفية الشاشة</string>
+    <string name="home_dialog_title_add_shortcut_txt">إضافة اختصار</string>
+    <string name="home_dialog_title_pick_application_txt">تحديد التطبيق</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">تحديد الخلفية</string>
+    <string name="home_dialog_title_select_theme_txt">تحديد نمط خلفية الشاشة</string>
+    <string name="home_sort_dialog_title_sorting_txt">فرز</string>
+    <string name="home_sort_dialog_arrange_button_txt">ترتيب</string>
+    <string name="home_sort_dialog_option_free_sort_txt">فرز مخصص</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">هجائي</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">الأكثر استخداما</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">تم تثبيته مؤخرا</string>
+    <string name="home_popup_cancel_txt">إلغاء</string>
+    <string name="home_error_activity_not_found_txt">لم يتم العثور على التطبيق</string>
+    <string name="home_error_desktop_full_txt">لا توجد مساحة على هذه الشاشة الرئيسية</string>
+    <string name="home_error_loading_widget">تعذر تحميل الواجهة الرسومية</string>
+    <string name="home_folder_dialog_folder_name_txt">اسم المجلد</string>
+    <string name="home_folder_confirm_delete_txt">يشتمل هذا المجلد على عناصر. حذف المجلد؟</string>
+    <string name="home_folder_dialog_create_new_txt">إنشاء مجلد جديد</string>
+    <string name="home_folder_select_icon_txt">تحديد رمز المجلد</string>
+    <string name="home_shortcut_created_txt">تم إنشاء اختصار: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">تم حذف الاختصار: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">الاختصار موجود بالفعل: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">لإنشاء اختصار على الشاشة الرئيسية، المس رمز تطبيق مع الاستمرار.</string>
+    <string name="gui_ok_txt">موافق</string>
+    <string name="gui_done_txt">تم</string>
+    <string name="gui_cancel_txt">إلغاء</string>
+    <string name="home_button_exit_overview">خروج من النظرة العامة</string>
+    <string name="home_no_uninstallable_apps_txt">تتعذر إزالة تثبيت هذه التطبيقات</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_folder_name_default_txt">
+        <item>โฟลเดอร์</item>
+        <item>สังคม</item>
+        <item>ความบันเทิง</item>
+        <item>สื่อ</item>
+        <item>รายการโปรด</item>
+        <item>สุขภาพ</item>
+        <item>เครื่องมือ</item>
+        <item>ข่าว</item>
+    </string-array>
+</resources>

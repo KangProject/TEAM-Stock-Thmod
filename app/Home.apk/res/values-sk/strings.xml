@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">Sony Ericsson Home</string>
+    <string name="home_add_application_shortcut_txt">Aplikácie</string>
+    <string name="home_menu_add_txt">Pridať</string>
+    <string name="home_menu_wallpaper_txt">Tapeta</string>
+    <string name="home_menu_theme_txt">Téma</string>
+    <string name="home_menu_settings_txt">Nastavenia</string>
+    <string name="home_dialog_title_add_to_home_txt">Pridať na domovskú obrazovku</string>
+    <string name="home_option_add_shortcut_txt">Skratky</string>
+    <string name="home_option_add_widget_txt">Nástroje widget</string>
+    <string name="home_option_add_folder_txt">Priečinok</string>
+    <string name="home_option_set_wallpaper_txt">Tapety</string>
+    <string name="home_option_set_theme_txt">Témy</string>
+    <string name="home_dialog_title_add_shortcut_txt">Pridať skratku</string>
+    <string name="home_dialog_title_pick_application_txt">Vybrať aplikáciu</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Vybrať tapetu</string>
+    <string name="home_dialog_title_select_theme_txt">Výber témy</string>
+    <string name="home_sort_dialog_title_sorting_txt">Usporiadanie</string>
+    <string name="home_sort_dialog_arrange_button_txt">Usporiadať</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Vlastné usporiadanie</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">V abecednom poradí</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Najpoužívanejšie</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Naposledy nainštalované</string>
+    <string name="home_popup_cancel_txt">Zrušiť</string>
+    <string name="home_error_activity_not_found_txt">Aplikácia sa nenašla</string>
+    <string name="home_error_desktop_full_txt">Na domovskej obrazovke je nedostatok miesta</string>
+    <string name="home_error_loading_widget">Nepodarilo sa načítať nástroj widget</string>
+    <string name="home_folder_dialog_folder_name_txt">Názov priečinka</string>
+    <string name="home_folder_confirm_delete_txt">Priečinok obsahuje položky. Odstrániť priečinok?</string>
+    <string name="home_folder_dialog_create_new_txt">Vytvoriť nový priečinok</string>
+    <string name="home_folder_select_icon_txt">Vyberte ikonu priečinka</string>
+    <string name="home_shortcut_created_txt">Skratka sa vytvorila: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Skratka sa odstránila: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Skratka už existuje: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Ak chcete vytvoriť skratku na domovskej obrazovke, dotknite sa ikony aplikácie a podržte ju.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Hotovo</string>
+    <string name="gui_cancel_txt">Zrušiť</string>
+    <string name="home_button_exit_overview">Ukončiť prehľad</string>
+    <string name="home_no_uninstallable_apps_txt">Tieto aplikácie nie je možné odinštalovať</string>
+</resources>

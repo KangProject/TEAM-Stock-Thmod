@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_application_name_txt">MH Chính Sony Ericsson</string>
+    <string name="home_add_application_shortcut_txt">Ứng dụng</string>
+    <string name="home_menu_add_txt">Thêm</string>
+    <string name="home_menu_wallpaper_txt">Hình nền</string>
+    <string name="home_menu_theme_txt">Chủ đề</string>
+    <string name="home_menu_settings_txt">Cài đặt</string>
+    <string name="home_dialog_title_add_to_home_txt">Thêm vào màn hình chính</string>
+    <string name="home_option_add_shortcut_txt">Phím tắt</string>
+    <string name="home_option_add_widget_txt">Tiện ích</string>
+    <string name="home_option_add_folder_txt">Thư mục</string>
+    <string name="home_option_set_wallpaper_txt">Hình nền</string>
+    <string name="home_option_set_theme_txt">Chủ đề</string>
+    <string name="home_dialog_title_add_shortcut_txt">Thêm phím tắt</string>
+    <string name="home_dialog_title_pick_application_txt">Chọn ứng dụng</string>
+    <string name="home_dialog_title_pick_wallpaper_txt">Chọn hình nền</string>
+    <string name="home_dialog_title_select_theme_txt">Chọn chủ đề</string>
+    <string name="home_sort_dialog_title_sorting_txt">Sắp xếp ứng dụng</string>
+    <string name="home_sort_dialog_arrange_button_txt">Sắp xếp</string>
+    <string name="home_sort_dialog_option_free_sort_txt">Sắp xếp tuỳ chỉnh</string>
+    <string name="home_sort_dialog_option_alphabetical_sort_txt">Theo bảng chữ cái</string>
+    <string name="home_sort_dialog_option_most_used_sort_txt">Được sử dụng nhiều nhất</string>
+    <string name="home_sort_dialog_option_recently_installed_sort_txt">Đã cài đặt gần đây</string>
+    <string name="home_popup_cancel_txt">Huỷ</string>
+    <string name="home_error_activity_not_found_txt">Không tìm thấy ứng dụng</string>
+    <string name="home_error_desktop_full_txt">Không còn chỗ trên màn hình chính này</string>
+    <string name="home_error_loading_widget">Không thể tải tiện ích</string>
+    <string name="home_folder_dialog_folder_name_txt">Tên thư mục</string>
+    <string name="home_folder_confirm_delete_txt">Thư mục này chứa các mục. Xoá thư mục?</string>
+    <string name="home_folder_dialog_create_new_txt">Tạo thư mục mới</string>
+    <string name="home_folder_select_icon_txt">Biểu tượng chọn thư mục</string>
+    <string name="home_shortcut_created_txt">Đã tạo phím tắt: \"%s\"</string>
+    <string name="home_shortcut_removed_txt">Đã xoá phím tắt: \"%s\"</string>
+    <string name="home_shortcut_already_exists_txt">Đã tồn tại phím tắt: \"%s\"</string>
+    <string name="home_hint_shortcut_message_txt">Để tạo phím tắt trên màn hình chính, hãy chạm và giữ biểu tượng ứng dụng.</string>
+    <string name="gui_ok_txt">OK</string>
+    <string name="gui_done_txt">Xong</string>
+    <string name="gui_cancel_txt">Huỷ</string>
+    <string name="home_button_exit_overview">Thoát khỏi tổng quan</string>
+    <string name="home_no_uninstallable_apps_txt">Không thể gỡ cài đặt các ứng dụng này</string>
+</resources>
