@@ -6,6 +6,6 @@
     <application android:label="@string/app_label" android:icon="@drawable/ic_launcher_settings" android:allowClearUserData="false" android:persistent="true">
         <service android:name=".statusbar.StatusBarService" android:exported="false" />
         <activity android:name=".usb.UsbStorageActivity" android:excludeFromRecents="true" />
-        <activity android:theme="@android:style/Widget.Holo.HorizontalScrollView" android:name="com.android.internal.app.ExternalMediaFormatActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.Dialog.Alert" android:name="com.android.internal.app.ExternalMediaFormatActivity" android:excludeFromRecents="true" />
     </application>
 </manifest>

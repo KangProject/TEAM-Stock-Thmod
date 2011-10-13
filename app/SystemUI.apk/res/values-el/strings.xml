@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_label">Γραμμή κατάστασης</string>
-    <string name="status_bar_clear_all_button">Εκκαθάριση</string>
+    <string name="status_bar_clear_all_button">Εντάξει</string>
     <string name="status_bar_no_notifications_title">Δεν υπάρχουν ειδοποιήσεις</string>
     <string name="status_bar_ongoing_events_title">Εν εξελίξει</string>
     <string name="status_bar_latest_events_title">Ειδοποιήσεις</string>

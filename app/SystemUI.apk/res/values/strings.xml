@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_label">Status Bar</string>
-    <string name="status_bar_clear_all_button">Clear</string>
+    <string name="status_bar_clear_all_button">Click Here To Clear All</string>
     <string name="status_bar_no_notifications_title">No notifications</string>
     <string name="status_bar_ongoing_events_title">Ongoing</string>
     <string name="status_bar_latest_events_title">Notifications</string>
@@ -9,4 +9,22 @@
     <string name="battery_low_subtitle">The battery is getting low:</string>
     <string name="battery_low_percent_format">%d%% or less remaining.</string>
     <string name="battery_low_why">Battery use</string>
+    <string name="quickpanel_dc_text">DCtext</string>
+    <string name="quickpanel_bluetooth_text">Bluetooth</string>
+    <string name="quickpanel_gps_text">GPS</string>
+    <string name="quickpanel_sound_text">Sound</string>
+    <string name="quickpanel_sound_vibration_text">"Sound
+Vibration"</string>
+    <string name="quickpanel_silent_text">Silent</string>
+    <string name="quickpanel_vibration_text">Vibration</string>
+    <string name="quickpanel_rotation_text">"Auto
+Rotation"</string>
+    <string name="quickpanel_error_text">Error</string>
+    <string name="quickpanel_wifi_text">Wi-Fi</string>
+	    <string name="quickpanel_mobiledata_text">Data</string>
+    <string name="quickpanel_flight_text">"Flight
+Mode"</string>
+    <string name="quickpanel_sync_text">"Auto
+Sync"</string>
+    <string name="quickpanel_vibrate_text">Vibrate</string>
 </resources>

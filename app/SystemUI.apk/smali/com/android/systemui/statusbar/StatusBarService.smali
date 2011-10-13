@@ -420,10 +420,12 @@
 .end method
 
 .method private makeStatusBarView(Landroid/content/Context;)V
-    .locals 11
+    .locals 12
     .parameter "context"
 
     .prologue
+    const/4 v11, 0x0
+
     const v10, 0x7f0a000d
 
     const/4 v9, 0x0
@@ -773,7 +775,19 @@
 
     invoke-virtual {p1, v6, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 327
+    const v6, 0x7f030006
+
+    invoke-static {p1, v6, v9}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/systemui/statusbar/quickpanel/QuickSettingsView;
+
+    .local v5, qsv:Lcom/android/systemui/statusbar/quickpanel/QuickSettingsView;
+    iget-object v6, p0, Lcom/android/systemui/statusbar/StatusBarService;->mExpandedView:Lcom/android/systemui/statusbar/ExpandedView;
+
+    invoke-virtual {v6, v5, v11}, Lcom/android/systemui/statusbar/ExpandedView;->addView(Landroid/view/View;I)V
+
     return-void
 .end method
 
@@ -1279,7 +1293,7 @@
 
     const/16 v4, 0x48
 
-    const/4 v5, 0x2
+    const/4 v5, -0x3
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
@@ -3192,7 +3206,7 @@
     const/4 v1, -0x1
 
     .line 1206
-    const/4 v0, 0x2
+    const/4 v0, -0x3
 
     .line 1207
     iget-object v2, p0, Lcom/android/systemui/statusbar/StatusBarService;->mTrackingView:Lcom/android/systemui/statusbar/TrackingView;

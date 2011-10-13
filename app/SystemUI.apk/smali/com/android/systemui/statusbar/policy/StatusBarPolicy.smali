@@ -1879,7 +1879,7 @@
 .end method
 
 .method private handleFiveBars()V
-    .locals 7
+    .locals 13
 
     .prologue
     const/16 v4, 0x63
@@ -1888,19 +1888,52 @@
 
     const/4 v3, 0x0
 
+    const v9, 0x1
+
+    .local v1, showSignal:Z
     const-string v5, "phone_signal"
 
     .line 997
     .line 1001
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mService:Landroid/app/StatusBarManager;
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v10
+
+    const-string v11, "tweaks_signal_icon_enabled"
+
+    invoke-static {v10, v11, v9}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v12
+
+    if-ne v12, v2, :cond_0
+
+    move v11, v3
+
+    :goto_0
+    invoke-virtual {v0, v5, v11}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
+
+    return-void
+
+    .end local v1           #showSignal:Z
+    :cond_0
+    move v11, v2
+
+    .line 1661
+    goto :goto_0
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mServiceState:Landroid/telephony/ServiceState;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->hasService()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mServiceState:Landroid/telephony/ServiceState;
 
@@ -1908,10 +1941,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     .line 1002
-    :cond_0
+    :cond_1
     const-string v0, "StatusBarPolicy"
 
     const-string v1, "updateSignalStrength: no service"
@@ -1931,7 +1964,7 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v2, :cond_2
 
     .line 1005
     const v0, 0x7f020065
@@ -1939,7 +1972,7 @@
     iput v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mPhoneSignalIconId:I
 
     .line 1009
-    :goto_0
+    :goto_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mService:Landroid/app/StatusBarManager;
 
     const-string v1, "phone_signal"
@@ -1949,11 +1982,11 @@
     invoke-virtual {v0, v5, v1, v3}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;II)V
 
     .line 1032
-    :goto_1
+    :goto_2
     return-void
 
     .line 1007
-    :cond_1
+    :cond_2
     sget-object v0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->sSignalImages_5_grades:[[I
 
     iget v1, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mInetCondition:I
@@ -1964,10 +1997,10 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mPhoneSignalIconId:I
 
-    goto :goto_0
+    goto :goto_1
 
     .line 1012
-    :cond_2
+    :cond_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mSignalStrength:Landroid/telephony/SignalStrength;
 
     invoke-virtual {v0}, Landroid/telephony/SignalStrength;->getGsmSignalStrength()I
@@ -1979,15 +2012,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     .line 1014
-    if-ne v0, v4, :cond_3
+    if-ne v0, v4, :cond_4
 
     move v0, v3
 
     .line 1019
-    :goto_2
+    :goto_3
     sget-object v1, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->sSignalImages_5_grades:[[I
 
     iget v2, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mInetCondition:I
@@ -2001,7 +2034,7 @@
     move-object v0, v6
 
     .line 1030
-    :goto_3
+    :goto_4
     aget v0, v0, v1
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mPhoneSignalIconId:I
@@ -2015,29 +2048,29 @@
 
     invoke-virtual {v0, v5, v1, v3}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;II)V
 
-    goto :goto_1
+    goto :goto_2
 
     .line 1017
-    :cond_3
+    :cond_4
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->getRscpEcioLevel()I
 
     move-result v0
 
-    goto :goto_2
+    goto :goto_3
 
     .line 1021
-    :cond_4
+    :cond_5
     mul-int/lit8 v1, v0, 0x2
 
     add-int/lit8 v1, v1, -0x71
 
     .line 1022
-    if-ne v0, v4, :cond_5
+    if-ne v0, v4, :cond_6
 
     move v0, v3
 
     .line 1028
-    :goto_4
+    :goto_5
     sget-object v1, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->sSignalImages_5_grades:[[I
 
     iget v2, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mInetCondition:I
@@ -2050,53 +2083,53 @@
 
     move-object v0, v6
 
-    goto :goto_3
-
-    .line 1023
-    :cond_5
-    const/16 v0, -0x68
-
-    if-gt v1, v0, :cond_6
-
-    move v0, v2
-
     goto :goto_4
 
-    .line 1024
+    .line 1023
     :cond_6
-    const/16 v0, -0x62
+    const/16 v0, -0x68
 
     if-gt v1, v0, :cond_7
 
-    const/4 v0, 0x2
+    move v0, v2
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 1025
+    .line 1024
     :cond_7
-    const/16 v0, -0x59
+    const/16 v0, -0x62
 
     if-gt v1, v0, :cond_8
 
-    const/4 v0, 0x3
+    const/4 v0, 0x2
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 1026
+    .line 1025
     :cond_8
-    const/16 v0, -0x50
+    const/16 v0, -0x59
 
     if-gt v1, v0, :cond_9
 
+    const/4 v0, 0x3
+
+    goto :goto_5
+
+    .line 1026
+    :cond_9
+    const/16 v0, -0x50
+
+    if-gt v1, v0, :cond_a
+
     const/4 v0, 0x4
 
-    goto :goto_4
+    goto :goto_5
 
     .line 1027
-    :cond_9
+    :cond_a
     const/4 v0, 0x5
 
-    goto :goto_4
+    goto :goto_5
 .end method
 
 .method private handleFourBars()V
@@ -2105,6 +2138,10 @@
     .prologue
     .line 898
     const/4 v5, -0x1
+
+    const/4 v4, 0x0
+
+    const v1, 0x1
 
     .line 902
     .local v5, iconLevel:I
@@ -2116,7 +2153,7 @@
 
     move-result v11
 
-    if-nez v11, :cond_2
+    if-nez v11, :cond_3
 
     iget-object v11, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mServiceState:Landroid/telephony/ServiceState;
 
@@ -2124,7 +2161,7 @@
 
     move-result v11
 
-    if-nez v11, :cond_2
+    if-nez v11, :cond_3
 
     .line 904
     :cond_0
@@ -2144,7 +2181,7 @@
 
     const/4 v12, 0x1
 
-    if-ne v11, v12, :cond_1
+    if-ne v11, v12, :cond_2
 
     .line 906
     const v11, 0x7f020064
@@ -2153,10 +2190,33 @@
 
     .line 910
     :goto_0
-    iget-object v11, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mService:Landroid/app/StatusBarManager;
-
     const-string v12, "phone_signal"
 
+    iget-object v11, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mService:Landroid/app/StatusBarManager;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "tweaks_signal_icon_enabled"
+
+    invoke-static {v2, v3, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    const v2, 0x0
+
+    .local v2, showSignal:Z
+    invoke-virtual {v11, v12, v2}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
+
+    return-void
+
+    .end local v1
+    :cond_1
     iget v13, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mPhoneSignalIconId:I
 
     const/4 v14, 0x0
@@ -2168,7 +2228,7 @@
     return-void
 
     .line 908
-    :cond_1
+    :cond_2
     const v11, 0x7f020066
 
     iput v11, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mPhoneSignalIconId:I
@@ -2176,12 +2236,12 @@
     goto :goto_0
 
     .line 914
-    :cond_2
+    :cond_3
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->isCdma()Z
 
     move-result v11
 
-    if-nez v11, :cond_c
+    if-nez v11, :cond_e
 
     .line 915
     iget-object v11, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mSignalStrength:Landroid/telephony/SignalStrength;
@@ -2194,13 +2254,13 @@
     .local v3, asu:I
     const/4 v11, 0x2
 
-    if-le v3, v11, :cond_3
+    if-le v3, v11, :cond_4
 
     const/16 v11, 0x63
 
-    if-ne v3, v11, :cond_5
+    if-ne v3, v11, :cond_7
 
-    :cond_3
+    :cond_4
     const/4 v5, 0x0
 
     .line 929
@@ -2211,7 +2271,7 @@
 
     move-result v11
 
-    if-eqz v11, :cond_b
+    if-eqz v11, :cond_d
 
     const-string v11, "persist.cust.tel.suppress.r.icn"
 
@@ -2221,7 +2281,7 @@
 
     move-result v11
 
-    if-nez v11, :cond_b
+    if-nez v11, :cond_d
 
     .line 931
     sget-object v11, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->sSignalImages_r:[[I
@@ -2262,7 +2322,7 @@
     .end local v2           #SHOW_ROAMING:I
     .end local v3           #asu:I
     .end local v8           #roamingIconFlag:I
-    :cond_4
+    :cond_5
     :goto_3
     :pswitch_0
     aget v11, v6, v5
@@ -2274,6 +2334,27 @@
 
     const-string v12, "phone_signal"
 
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "tweaks_signal_icon_enabled"
+
+    invoke-static {v2, v3, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-nez v2, :cond_6
+
+    const v2, 0x0
+
+    invoke-virtual {v11, v12, v2}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
+
+    return-void
+
+    :cond_6
     iget v13, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mPhoneSignalIconId:I
 
     const/4 v14, 0x0
@@ -2285,37 +2366,37 @@
     .line 922
     .end local v6           #iconList:[I
     .restart local v3       #asu:I
-    :cond_5
+    :cond_7
     const/16 v11, 0xc
 
-    if-lt v3, v11, :cond_6
+    if-lt v3, v11, :cond_8
 
     const/4 v5, 0x4
 
     goto :goto_2
 
     .line 923
-    :cond_6
+    :cond_8
     const/16 v11, 0x8
 
-    if-lt v3, v11, :cond_7
+    if-lt v3, v11, :cond_9
 
     const/4 v5, 0x3
 
     goto :goto_2
 
     .line 924
-    :cond_7
+    :cond_9
     const/4 v11, 0x5
 
-    if-lt v3, v11, :cond_8
+    if-lt v3, v11, :cond_a
 
     const/4 v5, 0x2
 
     goto :goto_2
 
     .line 925
-    :cond_8
+    :cond_a
     const/4 v5, 0x1
 
     goto :goto_2
@@ -2351,7 +2432,7 @@
 
     .line 959
     .local v4, hplmn:Ljava/lang/String;
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_b
 
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
@@ -2359,7 +2440,7 @@
 
     const/4 v12, 0x3
 
-    if-le v11, v12, :cond_9
+    if-le v11, v12, :cond_b
 
     .line 960
     const/4 v11, 0x0
@@ -2371,8 +2452,8 @@
     move-result-object v10
 
     .line 962
-    :cond_9
-    if-eqz v9, :cond_a
+    :cond_b
+    if-eqz v9, :cond_c
 
     invoke-virtual {v9}, Ljava/lang/String;->length()I
 
@@ -2380,7 +2461,7 @@
 
     const/4 v12, 0x3
 
-    if-le v11, v12, :cond_a
+    if-le v11, v12, :cond_c
 
     .line 963
     const/4 v11, 0x0
@@ -2392,16 +2473,16 @@
     move-result-object v4
 
     .line 965
-    :cond_a
-    if-eqz v10, :cond_4
+    :cond_c
+    if-eqz v10, :cond_5
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     invoke-virtual {v4, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v11
 
-    if-eqz v11, :cond_4
+    if-eqz v11, :cond_5
 
     .line 966
     sget-object v11, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->sSignalImages:[[I
@@ -2432,7 +2513,7 @@
     .end local v2           #SHOW_ROAMING:I
     .end local v6           #iconList:[I
     .end local v8           #roamingIconFlag:I
-    :cond_b
+    :cond_d
     sget-object v11, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->sSignalImages:[[I
 
     iget v12, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mInetCondition:I
@@ -2440,12 +2521,12 @@
     aget-object v6, v11, v12
 
     .restart local v6       #iconList:[I
-    goto :goto_3
+    goto/16 :goto_3
 
     .line 978
     .end local v3           #asu:I
     .end local v6           #iconList:[I
-    :cond_c
+    :cond_e
     sget-object v11, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->sSignalImages:[[I
 
     iget v12, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mInetCondition:I
@@ -2456,13 +2537,13 @@
     .restart local v6       #iconList:[I
     iget v11, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mPhoneState:I
 
-    if-nez v11, :cond_d
+    if-nez v11, :cond_f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->isEvdo()Z
 
     move-result v11
 
-    if-eqz v11, :cond_d
+    if-eqz v11, :cond_f
 
     .line 984
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->getEvdoLevel()I
@@ -2472,7 +2553,7 @@
     goto/16 :goto_3
 
     .line 989
-    :cond_d
+    :cond_f
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->getCdmaLevel()I
 
     move-result v5
@@ -2480,6 +2561,8 @@
     goto/16 :goto_3
 
     .line 951
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -3030,11 +3113,15 @@
 .end method
 
 .method private final updateBattery(Landroid/content/Intent;)V
-    .locals 8
+    .locals 12
     .parameter "intent"
 
     .prologue
     const/4 v6, 0x0
+
+    const/4 v10, 0x1
+
+    const/4 v9, 0x0
 
     const-string v7, "level"
 
@@ -3061,14 +3148,35 @@
 
     invoke-virtual {v4, v5, v0, v1}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;II)V
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "tweaks_show_battery"
+
+    invoke-static {v0, v1, v10}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const v0, 0x0
+
+    invoke-virtual {v4, v5, v0}, Landroid/app/StatusBarManager;->setIconVisibility(Ljava/lang/String;Z)V
+
+    return-void
+
     .line 579
+    :cond_0
     const-string v4, "plugged"
 
     invoke-virtual {p1, v4, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     const/4 v4, 0x1
 
@@ -3098,18 +3206,18 @@
     .line 594
     iget-boolean v4, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mBatteryFirst:Z
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     .line 595
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/policy/StatusBarPolicy;->mBatteryFirst:Z
 
     .line 607
-    :cond_0
+    :cond_1
     return-void
 
     .end local v2           #oldPlugged:Z
     .end local v3           #plugged:Z
-    :cond_1
+    :cond_2
     move v3, v6
 
     .line 579

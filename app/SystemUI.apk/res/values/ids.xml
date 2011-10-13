@@ -22,4 +22,43 @@
     <item type="id" name="number">false</item>
     <item type="id" name="content">false</item>
     <item type="id" name="close">false</item>
+    <item type="id" name="quickpanel_quick_settings">false</item>
+    <item type="id" name="quickpanel_wifi_btn_icon">false</item>
+    <item type="id" name="quickpanel_wifi_btn_text">false</item>
+    <item type="id" name="quickpanel_wifi_btn_status_icon">false</item>
+    <item type="id" name="quickpanel_bt_btn_icon">false</item>
+    <item type="id" name="quickpanel_bt_btn_text">false</item>
+    <item type="id" name="quickpanel_bt_btn_status_icon">false</item>
+    <item type="id" name="quickpanel_gps_btn_icon">false</item>
+    <item type="id" name="quickpanel_gps_btn_text">false</item>
+    <item type="id" name="quickpanel_gps_btn_status_icon">false</item>
+    <item type="id" name="quickpanel_sound_btn_icon">false</item>
+    <item type="id" name="quickpanel_sound_btn_text">false</item>
+    <item type="id" name="quickpanel_sound_btn_status_icon">false</item>
+    <item type="id" name="quickpanel_rotation_btn_icon">false</item>
+    <item type="id" name="quickpanel_rotation_btn_text">false</item>
+    <item type="id" name="quickpanel_rotation_btn_status_icon">false</item>
+    <item type="id" name="quickpanel_flight_btn_icon">false</item>
+    <item type="id" name="quickpanel_flight_btn_text">false</item>
+    <item type="id" name="quickpanel_flight_btn_status_icon">false</item>
+    <item type="id" name="quickpanel_sync_btn_icon">false</item>
+    <item type="id" name="quickpanel_sync_btn_text">false</item>
+    <item type="id" name="quickpanel_sync_btn_status_icon">false</item>
+    <item type="id" name="quickpanel_vibrate_btn_icon">false</item>
+    <item type="id" name="quickpanel_vibrate_btn_text">false</item>
+    <item type="id" name="quickpanel_vibrate_btn_status_icon">false</item>
+	 <item type="id" name="quickpanel_mobiledata_btn_icon">false</item>
+    <item type="id" name="quickpanel_mobiledata_btn_text">false</item>
+    <item type="id" name="quickpanel_mobiledata_btn_status_icon">false</item>
+
+    <item type="id" name="date2">false</item>
+	    <item type="id" name="wifi_bttn">false</item>
+    <item type="id" name="bt_bttn">false</item>
+    <item type="id" name="gps_bttn">false</item>
+    <item type="id" name="sound_bttn">false</item>
+    <item type="id" name="rotation_bttn">false</item>
+    <item type="id" name="data_bttn">false</item>
+    <item type="id" name="flight_bttn">false</item>
+	    <item type="id" name="sync_bttn">false</item>
+		    <item type="id" name="vibrate_bttn">false</item>
 </resources>
