@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method onSimLockChangedResponse(Z)V
-    .locals 2
+    .registers 4
     .parameter "success"
 
     .prologue
@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_11
 
     .line 441
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
@@ -59,8 +59,8 @@
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
     .line 443
-    :cond_0
-    if-eqz p1, :cond_1
+    :cond_11
+    if-eqz p1, :cond_2f
 
     .line 446
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
@@ -81,7 +81,7 @@
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
     .line 453
-    :goto_0
+    :goto_25
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->access$600(Lcom/android/internal/policy/impl/SimUnlockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -94,7 +94,7 @@
     return-void
 
     .line 449
-    :cond_1
+    :cond_2f
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->access$900(Lcom/android/internal/policy/impl/SimUnlockScreen;)Landroid/widget/TextView;
@@ -123,5 +123,5 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/SimUnlockScreen;->access$1102(Lcom/android/internal/policy/impl/SimUnlockScreen;I)I
 
-    goto :goto_0
+    goto :goto_25
 .end method

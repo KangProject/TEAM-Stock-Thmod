@@ -35,6 +35,8 @@
 
 .field private mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
+.field private mCaptureScreenshot:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
 .field private final mContext:Landroid/content/Context;
 
 .field private mDeviceProvisioned:Z
@@ -67,7 +69,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 4
+    .registers 6
     .parameter "context"
 
     .prologue
@@ -175,7 +177,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -186,7 +188,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -197,7 +199,7 @@
 .end method
 
 .method static synthetic access$1000(Lcom/android/internal/policy/impl/GlobalActions;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -208,7 +210,7 @@
 .end method
 
 .method static synthetic access$1100(Lcom/android/internal/policy/impl/GlobalActions;)Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -219,7 +221,7 @@
 .end method
 
 .method static synthetic access$1200(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/app/AlertDialog;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -230,7 +232,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/internal/policy/impl/GlobalActions;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -241,7 +243,7 @@
 .end method
 
 .method static synthetic access$202(Lcom/android/internal/policy/impl/GlobalActions;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -253,7 +255,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/internal/policy/impl/GlobalActions;Z)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -265,7 +267,7 @@
 .end method
 
 .method static synthetic access$400(Lcom/android/internal/policy/impl/GlobalActions;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -276,7 +278,7 @@
 .end method
 
 .method static synthetic access$402(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -288,7 +290,7 @@
 .end method
 
 .method static synthetic access$600(Lcom/android/internal/policy/impl/GlobalActions;)Ljava/util/ArrayList;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -299,7 +301,7 @@
 .end method
 
 .method static synthetic access$700(Lcom/android/internal/policy/impl/GlobalActions;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -310,7 +312,7 @@
 .end method
 
 .method static synthetic access$800(Lcom/android/internal/policy/impl/GlobalActions;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -321,7 +323,7 @@
 .end method
 
 .method static synthetic access$900(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/os/Handler;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -332,7 +334,7 @@
 .end method
 
 .method private changeAirplaneModeSystemSetting(Z)V
-    .locals 4
+    .registers 6
     .parameter "on"
 
     .prologue
@@ -345,11 +347,11 @@
 
     const-string v2, "airplane_mode_on"
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_25
 
     const/4 v3, 0x1
 
-    :goto_0
+    :goto_b
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 573
@@ -380,14 +382,14 @@
 
     .line 569
     .end local v0           #intent:Landroid/content/Intent;
-    :cond_0
+    :cond_25
     const/4 v3, 0x0
 
-    goto :goto_0
+    goto :goto_b
 .end method
 
 .method private createDialog()Landroid/app/AlertDialog;
-    .locals 11
+    .registers 12
 
     .prologue
     const/4 v10, 0x4
@@ -433,7 +435,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mAirplaneModeOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
 
     .line 195
-    const/4 v0, 0x3
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/internal/policy/impl/GlobalActions$Action;
 
@@ -458,6 +460,34 @@
     invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$3;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
     aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    new-instance v2, Lcom/android/internal/policy/impl/GlobalActions$7;
+
+    const v3, 0x108051c
+
+    const v4, 0x10403da
+
+    invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$7;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    new-instance v2, Lcom/android/internal/policy/impl/GlobalActions$8;
+
+    const v3, 0x108051d
+
+    const v4, 0x10403d9
+
+    invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$8;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
+
+    iput-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mCaptureScreenshot:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
 
     invoke-static {v0}, Lcom/google/android/collect/Lists;->newArrayList([Ljava/lang/Object;)Ljava/util/ArrayList;
 
@@ -519,7 +549,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_aa
 
     .line 230
     invoke-virtual {v8}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -529,7 +559,7 @@
     invoke-virtual {v0, v10, v10}, Landroid/view/Window;->setFlags(II)V
 
     .line 234
-    :cond_0
+    :cond_aa
     invoke-virtual {v8, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 236
@@ -537,7 +567,7 @@
 .end method
 
 .method private prepareDialog()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 240
@@ -549,7 +579,7 @@
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_0
+    if-eq v1, v2, :cond_38
 
     const/4 v1, 0x1
 
@@ -557,14 +587,14 @@
 
     .line 242
     .local v0, silentModeOn:Z
-    :goto_0
+    :goto_b
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions;->mSilentModeToggle:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3b
 
     sget-object v2, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->On:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    :goto_1
+    :goto_11
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->updateState(Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)V
 
     .line 244
@@ -582,7 +612,7 @@
     .line 246
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/GlobalActions;->mKeyguardShowing:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3e
 
     .line 247
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
@@ -596,7 +626,7 @@
     invoke-virtual {v1, v2}, Landroid/view/Window;->setType(I)V
 
     .line 251
-    :goto_2
+    :goto_2f
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
 
     const v2, 0x1040149
@@ -608,22 +638,22 @@
 
     .line 240
     .end local v0           #silentModeOn:Z
-    :cond_0
+    :cond_38
     const/4 v1, 0x0
 
     move v0, v1
 
-    goto :goto_0
+    goto :goto_b
 
     .line 242
     .restart local v0       #silentModeOn:Z
-    :cond_1
+    :cond_3b
     sget-object v2, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    goto :goto_1
+    goto :goto_11
 
     .line 249
-    :cond_2
+    :cond_3e
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
@@ -634,13 +664,13 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setType(I)V
 
-    goto :goto_2
+    goto :goto_2f
 .end method
 
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+    .registers 4
     .parameter "dialog"
     .parameter "which"
 
@@ -662,7 +692,7 @@
 .end method
 
 .method public onDismiss(Landroid/content/DialogInterface;)V
-    .locals 2
+    .registers 4
     .parameter "dialog"
 
     .prologue
@@ -678,7 +708,7 @@
 .end method
 
 .method public showDialog(ZZ)V
-    .locals 2
+    .registers 5
     .parameter "keyguardShowing"
     .parameter "isDeviceProvisioned"
 
@@ -692,7 +722,7 @@
     .line 105
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1a
 
     .line 106
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
@@ -715,7 +745,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
 
     .line 109
-    :cond_0
+    :cond_1a
     invoke-direct {p0}, Lcom/android/internal/policy/impl/GlobalActions;->prepareDialog()V
 
     .line 111

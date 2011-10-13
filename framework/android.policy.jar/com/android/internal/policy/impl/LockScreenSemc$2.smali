@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/LockScreenSemc;Landroid/widget/TextView;Ljava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter
     .parameter
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 354

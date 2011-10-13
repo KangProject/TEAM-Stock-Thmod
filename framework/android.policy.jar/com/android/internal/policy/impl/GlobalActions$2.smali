@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;IIIII)V
-    .locals 6
+    .registers 13
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method protected changeStateFromPress(Z)V
-    .locals 2
+    .registers 4
     .parameter "buttonOn"
 
     .prologue
@@ -67,14 +67,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_19
 
     .line 181
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_1a
 
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    :goto_0
+    :goto_10
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     .line 182
@@ -85,18 +85,18 @@
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$402(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     .line 184
-    :cond_0
+    :cond_19
     return-void
 
     .line 181
-    :cond_1
+    :cond_1a
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOff:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    goto :goto_0
+    goto :goto_10
 .end method
 
 .method onToggle(Z)V
-    .locals 3
+    .registers 5
     .parameter "on"
 
     .prologue
@@ -111,7 +111,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_29
 
     .line 165
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -146,20 +146,20 @@
 
     .line 174
     .end local v0           #ecmDialogIntent:Landroid/content/Intent;
-    :goto_0
+    :goto_28
     return-void
 
     .line 172
-    :cond_0
+    :cond_29
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {v1, p1}, Lcom/android/internal/policy/impl/GlobalActions;->access$300(Lcom/android/internal/policy/impl/GlobalActions;Z)V
 
-    goto :goto_0
+    goto :goto_28
 .end method
 
 .method public showBeforeProvisioning()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 191
@@ -169,7 +169,7 @@
 .end method
 
 .method public showDuringKeyguard()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 187

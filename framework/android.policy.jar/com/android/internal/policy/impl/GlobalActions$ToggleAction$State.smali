@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .registers 6
 
     .prologue
     const/4 v5, 0x3
@@ -115,7 +115,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter
     .parameter "intermediate"
@@ -137,7 +137,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-    .locals 1
+    .registers 2
     .parameter "name"
 
     .prologue
@@ -155,7 +155,7 @@
 .end method
 
 .method public static values()[Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 408
@@ -173,7 +173,7 @@
 
 # virtual methods
 .method public inTransition()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 421

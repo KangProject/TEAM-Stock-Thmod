@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method onSupplyPukResponse(Z)V
-    .locals 3
+    .registers 5
     .parameter "success"
 
     .prologue
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_12
 
     .line 568
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
@@ -62,8 +62,8 @@
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
     .line 570
-    :cond_0
-    if-eqz p1, :cond_1
+    :cond_12
+    if-eqz p1, :cond_2c
 
     .line 573
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
@@ -89,11 +89,11 @@
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
     .line 583
-    :goto_0
+    :goto_2b
     return-void
 
     .line 577
-    :cond_1
+    :cond_2c
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
 
     const v1, 0x10400ed
@@ -128,5 +128,5 @@
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->access$1800(Lcom/android/internal/policy/impl/SimUnlockScreen;)V
 
-    goto :goto_0
+    goto :goto_2b
 .end method

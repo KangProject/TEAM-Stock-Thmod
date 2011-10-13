@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 4
+    .registers 6
     .parameter "msg"
 
     .prologue
@@ -46,159 +46,159 @@
     .line 909
     iget v0, p1, Landroid/os/Message;->what:I
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch v0, :pswitch_data_68
 
     .line 950
-    :goto_0
+    :goto_7
     return-void
 
     .line 911
-    :pswitch_0
+    :pswitch_8
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$700(Lcom/android/internal/policy/impl/KeyguardViewMediator;I)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 914
-    :pswitch_1
+    :pswitch_10
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$800(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 917
-    :pswitch_2
+    :pswitch_16
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$900(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 920
-    :pswitch_3
+    :pswitch_1c
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1000(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 923
-    :pswitch_4
+    :pswitch_22
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1100(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 926
-    :pswitch_5
+    :pswitch_28
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1200(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 929
-    :pswitch_6
+    :pswitch_2e
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1300(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 932
-    :pswitch_7
+    :pswitch_34
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1400(Lcom/android/internal/policy/impl/KeyguardViewMediator;I)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 935
-    :pswitch_8
+    :pswitch_3c
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_47
 
     move v1, v2
 
-    :goto_1
+    :goto_43
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/KeyguardViewMediator;Z)V
 
-    goto :goto_0
+    goto :goto_7
 
-    :cond_0
+    :cond_47
     move v1, v3
 
-    goto :goto_1
+    goto :goto_43
 
     .line 938
-    :pswitch_9
+    :pswitch_49
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1600(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 941
-    :pswitch_a
+    :pswitch_4f
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-virtual {v0, v2}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->keyguardDone(Z)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 944
-    :pswitch_b
+    :pswitch_55
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_60
 
     move v1, v2
 
-    :goto_2
+    :goto_5c
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$1700(Lcom/android/internal/policy/impl/KeyguardViewMediator;Z)V
 
-    goto :goto_0
+    goto :goto_7
 
-    :cond_1
+    :cond_60
     move v1, v3
 
-    goto :goto_2
+    goto :goto_5c
 
     .line 947
-    :pswitch_c
+    :pswitch_62
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 909
-    :pswitch_data_0
+    :pswitch_data_68
     .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
         :pswitch_8
-        :pswitch_9
-        :pswitch_a
-        :pswitch_b
-        :pswitch_c
+        :pswitch_10
+        :pswitch_16
+        :pswitch_1c
+        :pswitch_22
+        :pswitch_28
+        :pswitch_2e
+        :pswitch_34
+        :pswitch_3c
+        :pswitch_49
+        :pswitch_4f
+        :pswitch_55
+        :pswitch_62
     .end packed-switch
 .end method

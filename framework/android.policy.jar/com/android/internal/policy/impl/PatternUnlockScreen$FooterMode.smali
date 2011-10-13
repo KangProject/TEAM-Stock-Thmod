@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .registers 5
 
     .prologue
     const/4 v4, 0x2
@@ -94,7 +94,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -111,7 +111,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/policy/impl/PatternUnlockScreen$FooterMode;
-    .locals 1
+    .registers 2
     .parameter "name"
 
     .prologue
@@ -129,7 +129,7 @@
 .end method
 
 .method public static values()[Lcom/android/internal/policy/impl/PatternUnlockScreen$FooterMode;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 131

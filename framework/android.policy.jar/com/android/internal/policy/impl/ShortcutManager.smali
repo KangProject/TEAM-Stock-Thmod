@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .registers 3
 
     .prologue
     .line 42
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;)V
-    .locals 1
+    .registers 4
     .parameter "context"
     .parameter "handler"
 
@@ -81,7 +81,7 @@
 .end method
 
 .method private updateShortcuts()V
-    .locals 7
+    .registers 8
 
     .prologue
     const-string v6, "ShortcutManager"
@@ -95,7 +95,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_12
 
     .line 74
     const-string v5, "ShortcutManager"
@@ -105,23 +105,23 @@
     invoke-static {v6, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 92
-    :cond_0
+    :cond_11
     return-void
 
     .line 78
-    :cond_1
+    :cond_12
     iget-object v5, p0, Lcom/android/internal/policy/impl/ShortcutManager;->mShortcutIntents:Landroid/util/SparseArray;
 
     invoke-virtual {v5}, Landroid/util/SparseArray;->clear()V
 
     .line 79
-    :cond_2
-    :goto_0
+    :cond_17
+    :goto_17
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_11
 
     .line 80
     const/4 v5, 0x0
@@ -132,7 +132,7 @@
 
     .line 81
     .local v4, shortcut:I
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_17
 
     .line 82
     const/4 v5, 0x1
@@ -147,26 +147,26 @@
 
     .line 85
     .local v2, intent:Landroid/content/Intent;
-    :try_start_0
+    :try_start_2a
     invoke-static {v3}, Landroid/content/Intent;->getIntent(Ljava/lang/String;)Landroid/content/Intent;
-    :try_end_0
-    .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_2d
+    .catch Ljava/net/URISyntaxException; {:try_start_2a .. :try_end_2d} :catch_36
 
     move-result-object v2
 
     .line 89
-    :goto_1
-    if-eqz v2, :cond_2
+    :goto_2e
+    if-eqz v2, :cond_17
 
     .line 90
     iget-object v5, p0, Lcom/android/internal/policy/impl/ShortcutManager;->mShortcutIntents:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v4, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto :goto_0
+    goto :goto_17
 
     .line 86
-    :catch_0
+    :catch_36
     move-exception v1
 
     .line 87
@@ -177,13 +177,13 @@
 
     invoke-static {v6, v5, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_2e
 .end method
 
 
 # virtual methods
 .method public getIntent(II)Landroid/content/Intent;
-    .locals 6
+    .registers 9
     .parameter "keyCode"
     .parameter "modifiers"
 
@@ -205,7 +205,7 @@
 
     .line 112
     .local v2, shortcut:I
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_19
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/ShortcutManager;->mShortcutIntents:Landroid/util/SparseArray;
 
@@ -219,27 +219,27 @@
 
     .line 113
     .local v0, intent:Landroid/content/Intent;
-    :goto_0
-    if-eqz v0, :cond_1
+    :goto_15
+    if-eqz v0, :cond_1b
 
     move-object v3, v0
 
     .line 117
     .end local p0
-    :goto_1
+    :goto_18
     return-object v3
 
     .end local v0           #intent:Landroid/content/Intent;
     .restart local p0
-    :cond_0
+    :cond_19
     move-object v0, v5
 
     .line 112
-    goto :goto_0
+    goto :goto_15
 
     .line 116
     .restart local v0       #intent:Landroid/content/Intent;
-    :cond_1
+    :cond_1b
     invoke-virtual {v1, p1, v4}, Landroid/view/KeyCharacterMap;->get(II)I
 
     move-result v3
@@ -249,7 +249,7 @@
     move-result v2
 
     .line 117
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_2f
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/ShortcutManager;->mShortcutIntents:Landroid/util/SparseArray;
 
@@ -262,17 +262,17 @@
 
     move-object v3, p0
 
-    goto :goto_1
+    goto :goto_18
 
     .restart local p0
-    :cond_2
+    :cond_2f
     move-object v3, v5
 
-    goto :goto_1
+    goto :goto_18
 .end method
 
 .method public observe()V
-    .locals 6
+    .registers 7
 
     .prologue
     const/4 v3, 0x0
@@ -311,7 +311,7 @@
 .end method
 
 .method public onChange(Z)V
-    .locals 0
+    .registers 2
     .parameter "selfChange"
 
     .prologue

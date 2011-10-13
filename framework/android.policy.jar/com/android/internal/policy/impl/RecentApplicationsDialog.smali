@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .registers 5
     .parameter "context"
 
     .prologue
@@ -102,7 +102,7 @@
 .end method
 
 .method private reloadButtons()V
-    .locals 24
+    .registers 25
 
     .prologue
     .line 185
@@ -201,8 +201,8 @@
     const/4 v9, 0x0
 
     .local v9, i:I
-    :goto_0
-    if-ge v9, v15, :cond_3
+    :goto_4b
+    if-ge v9, v15, :cond_123
 
     const/16 v21, 0x8
 
@@ -210,7 +210,7 @@
 
     move/from16 v1, v21
 
-    if-ge v0, v1, :cond_3
+    if-ge v0, v1, :cond_123
 
     .line 204
     move-object/from16 v0, v17
@@ -247,7 +247,7 @@
 
     move-object/from16 v21, v0
 
-    if-eqz v21, :cond_0
+    if-eqz v21, :cond_7c
 
     .line 211
     move-object v0, v13
@@ -263,8 +263,8 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     .line 215
-    :cond_0
-    if-eqz v8, :cond_2
+    :cond_7c
+    if-eqz v8, :cond_a7
 
     .line 216
     move-object v0, v8
@@ -285,7 +285,7 @@
 
     move-result v21
 
-    if-eqz v21, :cond_2
+    if-eqz v21, :cond_a7
 
     move-object v0, v8
 
@@ -305,17 +305,17 @@
 
     move-result v21
 
-    if-eqz v21, :cond_2
+    if-eqz v21, :cond_a7
 
     .line 203
-    :cond_1
-    :goto_1
+    :cond_a4
+    :goto_a4
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_0
+    goto :goto_4b
 
     .line 224
-    :cond_2
+    :cond_a7
     invoke-virtual {v14}, Landroid/content/Intent;->getFlags()I
 
     move-result v21
@@ -349,7 +349,7 @@
 
     .line 227
     .local v18, resolveInfo:Landroid/content/pm/ResolveInfo;
-    if-eqz v18, :cond_1
+    if-eqz v18, :cond_a4
 
     .line 228
     move-object/from16 v0, v18
@@ -384,15 +384,15 @@
 
     .line 232
     .local v10, icon:Landroid/graphics/drawable/Drawable;
-    if-eqz v19, :cond_1
+    if-eqz v19, :cond_a4
 
     invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->length()I
 
     move-result v21
 
-    if-lez v21, :cond_1
+    if-lez v21, :cond_a4
 
-    if-eqz v10, :cond_1
+    if-eqz v10, :cond_a4
 
     .line 233
     move-object/from16 v0, p0
@@ -458,7 +458,7 @@
     .line 241
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_1
+    goto :goto_a4
 
     .line 247
     .end local v5           #activityInfo:Landroid/content/pm/ActivityInfo;
@@ -468,29 +468,29 @@
     .end local v18           #resolveInfo:Landroid/content/pm/ResolveInfo;
     .end local v19           #title:Ljava/lang/String;
     .end local v20           #tv:Landroid/widget/TextView;
-    :cond_3
+    :cond_123
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->mNoAppsText:Landroid/view/View;
 
     move-object/from16 v21, v0
 
-    if-nez v12, :cond_4
+    if-nez v12, :cond_147
 
     const/16 v22, 0x0
 
-    :goto_2
+    :goto_12d
     invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
 
     .line 250
-    :goto_3
+    :goto_130
     const/16 v21, 0x8
 
     move v0, v12
 
     move/from16 v1, v21
 
-    if-ge v0, v1, :cond_5
+    if-ge v0, v1, :cond_14a
 
     .line 251
     move-object/from16 v0, p0
@@ -508,23 +508,23 @@
     .line 250
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_3
+    goto :goto_130
 
     .line 247
-    :cond_4
+    :cond_147
     const/16 v22, 0x8
 
-    goto :goto_2
+    goto :goto_12d
 
     .line 253
-    :cond_5
+    :cond_14a
     return-void
 .end method
 
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 8
+    .registers 10
     .parameter "v"
 
     .prologue
@@ -538,14 +538,14 @@
     const/4 v3, 0x0
 
     .local v3, i$:I
-    :goto_0
-    if-ge v3, v5, :cond_0
+    :goto_4
+    if-ge v3, v5, :cond_1e
 
     aget-object v1, v0, v3
 
     .line 129
     .local v1, b:Landroid/widget/TextView;
-    if-ne v1, p1, :cond_1
+    if-ne v1, p1, :cond_2c
 
     .line 131
     invoke-virtual {v1}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
@@ -556,7 +556,7 @@
 
     .line 132
     .local v4, intent:Landroid/content/Intent;
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1e
 
     .line 133
     const/high16 v6, 0x10
@@ -564,20 +564,20 @@
     invoke-virtual {v4, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 135
-    :try_start_0
+    :try_start_17
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
     invoke-virtual {v6, v4}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1e
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_17 .. :try_end_1e} :catch_22
 
     .line 143
     .end local v1           #b:Landroid/widget/TextView;
     .end local v4           #intent:Landroid/content/Intent;
-    :cond_0
-    :goto_1
+    :cond_1e
+    :goto_1e
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->dismiss()V
 
     .line 144
@@ -586,7 +586,7 @@
     .line 136
     .restart local v1       #b:Landroid/widget/TextView;
     .restart local v4       #intent:Landroid/content/Intent;
-    :catch_0
+    :catch_22
     move-exception v6
 
     move-object v2, v6
@@ -599,19 +599,19 @@
 
     invoke-static {v6, v7, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_1e
 
     .line 128
     .end local v2           #e:Landroid/content/ActivityNotFoundException;
     .end local v4           #intent:Landroid/content/Intent;
-    :cond_1
+    :cond_2c
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_0
+    goto :goto_4
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 13
+    .registers 15
     .parameter "savedInstanceState"
 
     .prologue
@@ -637,7 +637,7 @@
     .local v2, context:Landroid/content/Context;
     sget-object v7, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->sStatusBar:Landroid/app/StatusBarManager;
 
-    if-nez v7, :cond_0
+    if-nez v7, :cond_1b
 
     .line 90
     const-string v7, "statusbar"
@@ -651,7 +651,7 @@
     sput-object v7, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->sStatusBar:Landroid/app/StatusBarManager;
 
     .line 93
-    :cond_0
+    :cond_1b
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v6
@@ -829,8 +829,8 @@
     const/4 v3, 0x0
 
     .local v3, i$:I
-    :goto_0
-    if-ge v3, v4, :cond_1
+    :goto_bd
+    if-ge v3, v4, :cond_c7
 
     aget-object v1, v0, v3
 
@@ -841,16 +841,16 @@
     .line 118
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_0
+    goto :goto_bd
 
     .line 121
     .end local v1           #b:Landroid/widget/TextView;
-    :cond_1
+    :cond_c7
     return-void
 .end method
 
 .method public onStart()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 151
@@ -862,7 +862,7 @@
     .line 153
     sget-object v0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->sStatusBar:Landroid/app/StatusBarManager;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_10
 
     .line 154
     sget-object v0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->sStatusBar:Landroid/app/StatusBarManager;
@@ -872,7 +872,7 @@
     invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->disable(I)V
 
     .line 158
-    :cond_0
+    :cond_10
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -895,7 +895,7 @@
 .end method
 
 .method public onStop()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 168
@@ -904,7 +904,7 @@
     .line 170
     sget-object v0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->sStatusBar:Landroid/app/StatusBarManager;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_d
 
     .line 171
     sget-object v0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->sStatusBar:Landroid/app/StatusBarManager;
@@ -914,7 +914,7 @@
     invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->disable(I)V
 
     .line 175
-    :cond_0
+    :cond_d
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->getContext()Landroid/content/Context;
 
     move-result-object v0

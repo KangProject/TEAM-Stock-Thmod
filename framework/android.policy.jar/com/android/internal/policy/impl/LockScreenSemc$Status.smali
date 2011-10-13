@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .registers 8
 
     .prologue
     const/4 v7, 0x4
@@ -151,7 +151,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter
     .parameter "mShowStatusLines"
@@ -173,7 +173,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/policy/impl/LockScreenSemc$Status;
-    .locals 1
+    .registers 2
     .parameter "name"
 
     .prologue
@@ -191,7 +191,7 @@
 .end method
 
 .method public static values()[Lcom/android/internal/policy/impl/LockScreenSemc$Status;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 96
@@ -209,7 +209,7 @@
 
 # virtual methods
 .method public showStatusLines()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 140

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Landroid/os/Handler;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 4
+    .registers 6
     .parameter "selfChange"
 
     .prologue
@@ -64,11 +64,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_46
 
     const/4 v1, 0x1
 
-    :goto_0
+    :goto_19
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$402(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Z)Z
 
     .line 194
@@ -78,7 +78,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_45
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -86,7 +86,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_45
 
     .line 196
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -115,12 +115,12 @@
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$602(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Landroid/database/ContentObserver;)Landroid/database/ContentObserver;
 
     .line 200
-    :cond_0
+    :cond_45
     return-void
 
-    :cond_1
+    :cond_46
     move v1, v3
 
     .line 192
-    goto :goto_0
+    goto :goto_19
 .end method

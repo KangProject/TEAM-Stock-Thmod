@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,25 +38,25 @@
 
 # virtual methods
 .method public onKeyguardExitResult(Z)V
-    .locals 2
+    .registers 4
     .parameter "success"
 
     .prologue
     .line 1287
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_15
 
     .line 1289
-    :try_start_0
+    :try_start_2
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/app/IActivityManager;->stopAppSwitches()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_9
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_9} :catch_16
 
     .line 1292
-    :goto_0
+    :goto_9
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const-string v1, "homekey"
@@ -69,12 +69,12 @@
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->startDockOrHome()V
 
     .line 1295
-    :cond_0
+    :cond_15
     return-void
 
     .line 1290
-    :catch_0
+    :catch_16
     move-exception v0
 
-    goto :goto_0
+    goto :goto_9
 .end method

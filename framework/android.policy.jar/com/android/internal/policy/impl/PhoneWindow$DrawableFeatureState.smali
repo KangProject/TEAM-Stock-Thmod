@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(I)V
-    .locals 1
+    .registers 3
     .parameter "_featureId"
 
     .prologue

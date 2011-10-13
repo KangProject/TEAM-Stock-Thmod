@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMotion(Landroid/view/MotionEvent;Ljava/lang/Runnable;)V
-    .locals 2
+    .registers 5
     .parameter "event"
     .parameter "finishedCallback"
 
@@ -51,12 +51,12 @@
     monitor-enter v0
 
     .line 253
-    :try_start_0
+    :try_start_8
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$1;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPointerLocationView:Lcom/android/internal/widget/PointerLocationView;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_15
 
     .line 254
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$1;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -66,19 +66,19 @@
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/PointerLocationView;->addTouchEvent(Landroid/view/MotionEvent;)V
 
     .line 256
-    :cond_0
+    :cond_15
     monitor-exit v0
 
     .line 257
     return-void
 
     .line 256
-    :catchall_0
+    :catchall_17
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_19
+    .catchall {:try_start_8 .. :try_end_19} :catchall_17
 
     throw v1
 .end method

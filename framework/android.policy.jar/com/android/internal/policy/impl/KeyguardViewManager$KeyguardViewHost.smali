@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardViewCallback;)V
-    .locals 0
+    .registers 3
     .parameter "context"
     .parameter "callback"
 
@@ -36,7 +36,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardViewCallback;Lcom/android/internal/policy/impl/KeyguardViewManager$1;)V
-    .locals 0
+    .registers 4
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 1
+    .registers 3
     .parameter "canvas"
 
     .prologue

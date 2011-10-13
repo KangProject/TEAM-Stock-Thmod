@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,14 +35,14 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 1
+    .registers 3
     .parameter "msg"
 
     .prologue
     .line 557
     iget v0, p1, Landroid/os/Message;->what:I
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_15
 
     .line 558
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -51,7 +51,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_15
 
     .line 559
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -63,6 +63,6 @@
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 562
-    :cond_0
+    :cond_15
     return-void
 .end method

@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 50
@@ -45,7 +45,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_0
+    fill-array-data v0, :array_a
 
     sput-object v0, Lcom/android/internal/policy/impl/IconUtilities;->sColors:[I
 
@@ -53,7 +53,7 @@
 
     nop
 
-    :array_0
+    :array_a
     .array-data 0x4
         0x0t 0x0t 0xfft 0xfft
         0x0t 0xfft 0x0t 0xfft
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 10
+    .registers 12
     .parameter "context"
 
     .prologue
@@ -256,7 +256,7 @@
 .end method
 
 .method private createIconBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
-    .locals 20
+    .registers 22
     .parameter "icon"
 
     .prologue
@@ -283,7 +283,7 @@
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_3
+    if-eqz v18, :cond_a0
 
     .line 113
     move-object/from16 v0, p1
@@ -305,8 +305,8 @@
 
     .line 124
     .end local v10           #painter:Landroid/graphics/drawable/PaintDrawable;
-    :cond_0
-    :goto_0
+    :cond_21
+    :goto_21
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v13
@@ -319,21 +319,21 @@
 
     .line 127
     .local v12, sourceHeight:I
-    if-lez v13, :cond_2
+    if-lez v13, :cond_4b
 
-    if-lez v13, :cond_2
+    if-lez v13, :cond_4b
 
     .line 129
     move/from16 v0, v17
 
     move v1, v13
 
-    if-lt v0, v1, :cond_1
+    if-lt v0, v1, :cond_34
 
-    if-ge v8, v12, :cond_5
+    if-ge v8, v12, :cond_d4
 
     .line 131
-    :cond_1
+    :cond_34
     move v0, v13
 
     int-to-float v0, v0
@@ -350,7 +350,7 @@
 
     .line 132
     .local v11, ratio:F
-    if-le v13, v12, :cond_4
+    if-le v13, v12, :cond_c5
 
     .line 133
     move/from16 v0, v17
@@ -369,8 +369,8 @@
 
     .line 145
     .end local v11           #ratio:F
-    :cond_2
-    :goto_1
+    :cond_4b
+    :goto_4b
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/IconUtilities;->mIconTextureWidth:I
@@ -485,14 +485,14 @@
     .end local v14           #textureHeight:I
     .end local v15           #textureWidth:I
     .end local v16           #top:I
-    :cond_3
+    :cond_a0
     move-object/from16 v0, p1
 
     instance-of v0, v0, Landroid/graphics/drawable/BitmapDrawable;
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_0
+    if-eqz v18, :cond_21
 
     .line 118
     move-object/from16 v0, p1
@@ -513,7 +513,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_0
+    if-nez v18, :cond_21
 
     .line 121
     move-object/from16 v0, p0
@@ -528,7 +528,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/BitmapDrawable;->setTargetDensity(Landroid/util/DisplayMetrics;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_21
 
     .line 134
     .end local v5           #bitmap:Landroid/graphics/Bitmap;
@@ -536,8 +536,8 @@
     .restart local v11       #ratio:F
     .restart local v12       #sourceHeight:I
     .restart local v13       #sourceWidth:I
-    :cond_4
-    if-le v12, v13, :cond_2
+    :cond_c5
+    if-le v12, v13, :cond_4b
 
     .line 135
     move v0, v8
@@ -554,18 +554,18 @@
 
     move/from16 v17, v0
 
-    goto/16 :goto_1
+    goto/16 :goto_4b
 
     .line 137
     .end local v11           #ratio:F
-    :cond_5
+    :cond_d4
     move v0, v13
 
     move/from16 v1, v17
 
-    if-ge v0, v1, :cond_2
+    if-ge v0, v1, :cond_4b
 
-    if-ge v12, v8, :cond_2
+    if-ge v12, v8, :cond_4b
 
     .line 139
     move/from16 v17, v13
@@ -573,11 +573,11 @@
     .line 140
     move v8, v12
 
-    goto/16 :goto_1
+    goto/16 :goto_4b
 .end method
 
 .method private createSelectedBitmap(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
-    .locals 9
+    .registers 12
     .parameter "src"
     .parameter "pressed"
 
@@ -634,11 +634,11 @@
 
     int-to-float v5, v5
 
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_36
 
     iget-object v6, p0, Lcom/android/internal/policy/impl/IconUtilities;->mGlowColorPressedPaint:Landroid/graphics/Paint;
 
-    :goto_0
+    :goto_2a
     invoke-virtual {v0, v1, v4, v5, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 186
@@ -653,16 +653,16 @@
     return-object v2
 
     .line 183
-    :cond_0
+    :cond_36
     iget-object v6, p0, Lcom/android/internal/policy/impl/IconUtilities;->mGlowColorFocusedPaint:Landroid/graphics/Paint;
 
-    goto :goto_0
+    goto :goto_2a
 .end method
 
 
 # virtual methods
 .method public createIconDrawable(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
-    .locals 7
+    .registers 9
     .parameter "src"
 
     .prologue

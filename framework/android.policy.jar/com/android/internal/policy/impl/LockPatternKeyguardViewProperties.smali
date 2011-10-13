@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/widget/BackupQuestionUtils;)V
-    .locals 1
+    .registers 5
     .parameter "lockPatternUtils"
     .parameter "updateMonitor"
     .parameter "backupQuestionUtils"
@@ -46,7 +46,7 @@
 .end method
 
 .method private isSimPinSecure()Z
-    .locals 2
+    .registers 3
 
     .prologue
     .line 73
@@ -60,32 +60,32 @@
     .local v0, simState:Lcom/android/internal/telephony/IccCard$State;
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->PIN_REQUIRED:Lcom/android/internal/telephony/IccCard$State;
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_12
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->PUK_REQUIRED:Lcom/android/internal/telephony/IccCard$State;
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_12
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->ABSENT:Lcom/android/internal/telephony/IccCard$State;
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_14
 
-    :cond_0
+    :cond_12
     const/4 v1, 0x1
 
-    :goto_0
+    :goto_13
     return v1
 
-    :cond_1
+    :cond_14
     const/4 v1, 0x0
 
-    goto :goto_0
+    goto :goto_13
 .end method
 
 
 # virtual methods
 .method public createKeyguardView(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardWindowController;)Lcom/android/internal/policy/impl/KeyguardViewBase;
-    .locals 7
+    .registers 11
     .parameter "context"
     .parameter "updateMonitor"
     .parameter "controller"
@@ -112,7 +112,7 @@
 .end method
 
 .method public isSecure()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 65
@@ -122,28 +122,28 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_e
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardViewProperties;->isSimPinSecure()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_10
 
-    :cond_0
+    :cond_e
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_f
     return v0
 
-    :cond_1
+    :cond_10
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_f
 .end method
 
 .method public setEmergencyMasterReset(Z)V
-    .locals 0
+    .registers 2
     .parameter "isEmergencyMasterReset"
 
     .prologue

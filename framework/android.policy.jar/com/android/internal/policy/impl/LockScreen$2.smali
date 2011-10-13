@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/LockScreen;Landroid/widget/TextView;Ljava/lang/String;II)V
-    .locals 0
+    .registers 6
     .parameter
     .parameter
     .parameter
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x0
@@ -73,7 +73,7 @@
     .line 374
     iget v0, p0, Lcom/android/internal/policy/impl/LockScreen$2;->val$color:I
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_13
 
     .line 375
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$2;->val$textView:Landroid/widget/TextView;
@@ -83,7 +83,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 377
-    :cond_0
+    :cond_13
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$2;->val$textView:Landroid/widget/TextView;
 
     iget v1, p0, Lcom/android/internal/policy/impl/LockScreen$2;->val$iconResourceId:I

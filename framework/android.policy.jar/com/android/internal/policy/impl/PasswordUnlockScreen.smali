@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
-    .locals 8
+    .registers 14
     .parameter "context"
     .parameter "configuration"
     .parameter "lockPatternUtils"
@@ -84,7 +84,7 @@
     .local v1, layoutInflater:Landroid/view/LayoutInflater;
     iget v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCreationOrientation:I
 
-    if-eq v3, v7, :cond_1
+    if-eq v3, v7, :cond_ac
 
     .line 88
     const v3, 0x1090037
@@ -92,7 +92,7 @@
     invoke-virtual {v1, v3, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 93
-    :goto_0
+    :goto_22
     invoke-virtual {p3}, Lcom/android/internal/widget/LockPatternUtils;->getKeyguardStoredPasswordQuality()I
 
     move-result v2
@@ -101,18 +101,18 @@
     .local v2, quality:I
     const/high16 v3, 0x4
 
-    if-eq v3, v2, :cond_0
+    if-eq v3, v2, :cond_2e
 
     const/high16 v3, 0x5
 
-    if-ne v3, v2, :cond_2
+    if-ne v3, v2, :cond_b4
 
-    :cond_0
+    :cond_2e
     move v0, v5
 
     .line 97
     .local v0, isAlpha:Z
-    :goto_1
+    :goto_2f
     const v3, 0x1020159
 
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
@@ -185,11 +185,11 @@
     .line 106
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mKeyboardHelper:Lcom/android/internal/widget/PasswordEntryKeyboardHelper;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_b7
 
     move v4, v6
 
-    :goto_2
+    :goto_7a
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->setKeyboardMode(I)V
 
     .line 109
@@ -197,15 +197,15 @@
 
     iget v4, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCreationHardKeyboardHidden:I
 
-    if-ne v4, v5, :cond_4
+    if-ne v4, v5, :cond_b9
 
     iget v4, p2, Landroid/content/res/Configuration;->keyboard:I
 
-    if-ne v4, v7, :cond_4
+    if-ne v4, v7, :cond_b9
 
     const/4 v4, 0x4
 
-    :goto_3
+    :goto_88
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->setVisibility(I)V
 
     .line 112
@@ -214,7 +214,7 @@
     invoke-virtual {v3}, Landroid/widget/EditText;->requestFocus()Z
 
     .line 116
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_bb
 
     .line 117
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;
@@ -226,7 +226,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setKeyListener(Landroid/text/method/KeyListener;)V
 
     .line 122
-    :goto_4
+    :goto_9b
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mKeyboardHelper:Lcom/android/internal/widget/PasswordEntryKeyboardHelper;
 
     iget-object v4, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -235,11 +235,11 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_c5
 
     const v4, 0x1070011
 
-    :goto_5
+    :goto_a8
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->setVibratePattern(I)V
 
     .line 124
@@ -248,35 +248,35 @@
     .line 90
     .end local v0           #isAlpha:Z
     .end local v2           #quality:I
-    :cond_1
+    :cond_ac
     const v3, 0x1090036
 
     invoke-virtual {v1, v3, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    goto/16 :goto_0
+    goto/16 :goto_22
 
     .restart local v2       #quality:I
-    :cond_2
+    :cond_b4
     move v0, v6
 
     .line 94
-    goto/16 :goto_1
+    goto/16 :goto_2f
 
     .restart local v0       #isAlpha:Z
-    :cond_3
+    :cond_b7
     move v4, v5
 
     .line 106
-    goto :goto_2
+    goto :goto_7a
 
-    :cond_4
+    :cond_b9
     move v4, v6
 
     .line 109
-    goto :goto_3
+    goto :goto_88
 
     .line 119
-    :cond_5
+    :cond_bb
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;
 
     invoke-static {}, Landroid/text/method/DigitsKeyListener;->getInstance()Landroid/text/method/DigitsKeyListener;
@@ -285,17 +285,17 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setKeyListener(Landroid/text/method/KeyListener;)V
 
-    goto :goto_4
+    goto :goto_9b
 
-    :cond_6
+    :cond_c5
     move v4, v6
 
     .line 122
-    goto :goto_5
+    goto :goto_a8
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/PasswordUnlockScreen;)Landroid/widget/TextView;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -306,7 +306,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/internal/policy/impl/PasswordUnlockScreen;)Landroid/widget/EditText;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -317,7 +317,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/internal/policy/impl/PasswordUnlockScreen;)Lcom/android/internal/widget/PasswordEntryKeyboardView;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -328,7 +328,7 @@
 .end method
 
 .method private handleAttemptLockout(J)V
-    .locals 8
+    .registers 11
     .parameter "elapsedRealtimeDeadline"
 
     .prologue
@@ -372,7 +372,7 @@
 .end method
 
 .method private verifyPasswordAndUnlock()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 169
@@ -394,7 +394,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_25
 
     .line 171
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -409,8 +409,8 @@
     invoke-interface {v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->reportSuccessfulUnlockAttempt()V
 
     .line 183
-    :cond_0
-    :goto_0
+    :cond_1d
+    :goto_1d
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;
 
     const-string v4, ""
@@ -421,14 +421,14 @@
     return-void
 
     .line 173
-    :cond_1
+    :cond_25
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v3
 
     const/4 v4, 0x3
 
-    if-le v3, v4, :cond_0
+    if-le v3, v4, :cond_1d
 
     .line 176
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -444,7 +444,7 @@
 
     rem-int/lit8 v3, v3, 0x5
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_1d
 
     .line 179
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -457,13 +457,13 @@
     .local v0, deadline:J
     invoke-direct {p0, v0, v1}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->handleAttemptLockout(J)V
 
-    goto :goto_0
+    goto :goto_1d
 .end method
 
 
 # virtual methods
 .method public cleanUp()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 158
@@ -476,7 +476,7 @@
 .end method
 
 .method public needsInput()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 134
@@ -486,7 +486,7 @@
 .end method
 
 .method protected onAttachedToWindow()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 220
@@ -507,34 +507,34 @@
 
     iget v2, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCreationOrientation:I
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_17
 
     iget v1, v0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
     iget v2, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCreationHardKeyboardHidden:I
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v2, :cond_1c
 
     .line 224
-    :cond_0
+    :cond_17
     iget-object v1, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v1, v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->recreateMe(Landroid/content/res/Configuration;)V
 
     .line 226
-    :cond_1
+    :cond_1c
     return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .registers 3
     .parameter "v"
 
     .prologue
     .line 162
     iget-object v0, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mEmergencyCallButton:Landroid/widget/Button;
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v0, :cond_9
 
     .line 163
     iget-object v0, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -542,7 +542,7 @@
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->takeEmergencyCallAction()V
 
     .line 165
-    :cond_0
+    :cond_9
     iget-object v0, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
@@ -552,7 +552,7 @@
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 2
+    .registers 4
     .parameter "newConfig"
 
     .prologue
@@ -564,34 +564,34 @@
 
     iget v1, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCreationOrientation:I
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_f
 
     iget v0, p1, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
     iget v1, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCreationHardKeyboardHidden:I
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_14
 
     .line 234
-    :cond_0
+    :cond_f
     iget-object v0, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v0, p1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->recreateMe(Landroid/content/res/Configuration;)V
 
     .line 236
-    :cond_1
+    :cond_14
     return-void
 .end method
 
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .locals 1
+    .registers 5
     .parameter "v"
     .parameter "actionId"
     .parameter "event"
 
     .prologue
     .line 245
-    if-nez p2, :cond_0
+    if-nez p2, :cond_7
 
     .line 246
     invoke-direct {p0}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->verifyPasswordAndUnlock()V
@@ -600,17 +600,17 @@
     const/4 v0, 0x1
 
     .line 249
-    :goto_0
+    :goto_6
     return v0
 
-    :cond_0
+    :cond_7
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_6
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .locals 1
+    .registers 4
     .parameter "keyCode"
     .parameter "event"
 
@@ -627,32 +627,32 @@
 .end method
 
 .method public onKeyboardChange(Z)V
-    .locals 2
+    .registers 4
     .parameter "isKeyboardOpen"
 
     .prologue
     .line 240
     iget-object v0, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mKeyboardView:Lcom/android/internal/widget/PasswordEntryKeyboardView;
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_9
 
     const/4 v1, 0x4
 
-    :goto_0
+    :goto_5
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->setVisibility(I)V
 
     .line 241
     return-void
 
     .line 240
-    :cond_0
+    :cond_9
     const/4 v1, 0x0
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 .method public onPause()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 140
@@ -660,7 +660,7 @@
 .end method
 
 .method public onPhoneStateChanged(Ljava/lang/String;)V
-    .locals 2
+    .registers 4
     .parameter "newState"
 
     .prologue
@@ -676,7 +676,7 @@
 .end method
 
 .method public onRefreshBatteryInfo(ZZI)V
-    .locals 0
+    .registers 4
     .parameter "showBatteryInfo"
     .parameter "pluggedIn"
     .parameter "batteryLevel"
@@ -687,7 +687,7 @@
 .end method
 
 .method public onRefreshCarrierInfo(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
-    .locals 0
+    .registers 3
     .parameter "plmn"
     .parameter "spn"
 
@@ -697,7 +697,7 @@
 .end method
 
 .method protected onRequestFocusInDescendants(ILandroid/graphics/Rect;)Z
-    .locals 1
+    .registers 4
     .parameter "direction"
     .parameter "previouslyFocusedRect"
 
@@ -713,7 +713,7 @@
 .end method
 
 .method public onResume()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 145
@@ -748,18 +748,18 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_22
 
     .line 152
     invoke-direct {p0, v0, v1}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->handleAttemptLockout(J)V
 
     .line 154
-    :cond_0
+    :cond_22
     return-void
 .end method
 
 .method public onRingerModeChanged(I)V
-    .locals 0
+    .registers 2
     .parameter "state"
 
     .prologue
@@ -768,7 +768,7 @@
 .end method
 
 .method public onTimeChanged()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 270

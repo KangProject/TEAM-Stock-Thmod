@@ -24,7 +24,7 @@
 
 # direct methods
 .method protected constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+    .registers 5
     .parameter
     .parameter "puk"
     .parameter "pin"
@@ -41,12 +41,12 @@
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     .line 598
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_9
 
-    if-nez p3, :cond_1
+    if-nez p3, :cond_f
 
     .line 599
-    :cond_0
+    :cond_9
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
@@ -54,7 +54,7 @@
     throw v0
 
     .line 601
-    :cond_1
+    :cond_f
     iput-object p2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimCode;->mPuk:Ljava/lang/String;
 
     .line 602
@@ -70,7 +70,7 @@
 .end method
 
 .method public run()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 615
@@ -102,16 +102,16 @@
     invoke-direct {v3, p0, v1}, Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimCode$1;-><init>(Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimCode;Z)V
 
     invoke-virtual {v2, v3}, Lcom/android/internal/policy/impl/SimUnlockScreen;->post(Ljava/lang/Runnable;)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1c
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_1c} :catch_1d
 
     .line 630
     .end local v1           #result:Z
-    :goto_0
+    :goto_1c
     return-void
 
     .line 623
-    :catch_0
+    :catch_1d
     move-exception v2
 
     move-object v0, v2
@@ -126,5 +126,5 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/policy/impl/SimUnlockScreen;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_0
+    goto :goto_1c
 .end method

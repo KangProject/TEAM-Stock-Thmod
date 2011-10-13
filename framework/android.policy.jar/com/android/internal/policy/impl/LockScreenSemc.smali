@@ -80,7 +80,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
-    .locals 6
+    .registers 12
     .parameter "context"
     .parameter "configuration"
     .parameter "lockPatternUtils"
@@ -156,7 +156,7 @@
     .local v0, inflater:Landroid/view/LayoutInflater;
     iget v1, p2, Landroid/content/res/Configuration;->orientation:I
 
-    if-eq v1, v5, :cond_1
+    if-eq v1, v5, :cond_ed
 
     .line 180
     const v1, 0x109003b
@@ -167,7 +167,7 @@
     iput v3, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mOrientation:I
 
     .line 187
-    :goto_0
+    :goto_3b
     const v1, 0x10201f5
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/LockScreenSemc;->findViewById(I)Landroid/view/View;
@@ -259,7 +259,7 @@
     .line 197
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mEmergencyCallButton:Landroid/widget/Button;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_ab
 
     .line 198
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mEmergencyCallButton:Landroid/widget/Button;
@@ -278,7 +278,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 206
-    :cond_0
+    :cond_ab
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/LockScreenSemc;->setFocusable(Z)V
 
     .line 207
@@ -345,7 +345,7 @@
     return-void
 
     .line 183
-    :cond_1
+    :cond_ed
     const v1, 0x109003c
 
     invoke-virtual {v0, v1, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -353,11 +353,11 @@
     .line 184
     iput v5, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mOrientation:I
 
-    goto/16 :goto_0
+    goto/16 :goto_3b
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/LockScreenSemc;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -368,27 +368,27 @@
 .end method
 
 .method static getCarrierString(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .locals 2
+    .registers 4
     .parameter "telephonyPlmn"
     .parameter "telephonySpn"
 
     .prologue
     .line 610
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_6
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_6
 
     move-object v0, p0
 
     .line 617
-    :goto_0
+    :goto_5
     return-object v0
 
     .line 612
-    :cond_0
-    if-eqz p0, :cond_1
+    :cond_6
+    if-eqz p0, :cond_22
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_22
 
     .line 613
     new-instance v0, Ljava/lang/StringBuilder;
@@ -413,28 +413,28 @@
 
     move-result-object v0
 
-    goto :goto_0
+    goto :goto_5
 
     .line 614
-    :cond_1
-    if-nez p0, :cond_2
+    :cond_22
+    if-nez p0, :cond_28
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_28
 
     move-object v0, p1
 
     .line 615
-    goto :goto_0
+    goto :goto_5
 
     .line 617
-    :cond_2
+    :cond_28
     const-string v0, ""
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 .method private getCurrentStatus(Lcom/android/internal/telephony/IccCard$State;)Lcom/android/internal/policy/impl/LockScreenSemc$Status;
-    .locals 6
+    .registers 8
     .parameter "simState"
 
     .prologue
@@ -449,36 +449,36 @@
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_14
 
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->ABSENT:Lcom/android/internal/telephony/IccCard$State;
 
-    if-ne p1, v2, :cond_0
+    if-ne p1, v2, :cond_14
 
     move v1, v5
 
     .line 461
     .local v1, missingAndNotProvisioned:Z
-    :goto_0
-    if-eqz v1, :cond_1
+    :goto_f
+    if-eqz v1, :cond_16
 
     .line 462
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissingLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
     .line 490
-    :goto_1
+    :goto_13
     return-object v2
 
     .end local v1           #missingAndNotProvisioned:Z
-    :cond_0
+    :cond_14
     move v1, v4
 
     .line 459
-    goto :goto_0
+    goto :goto_f
 
     .line 465
     .restart local v1       #missingAndNotProvisioned:Z
-    :cond_1
+    :cond_16
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -493,13 +493,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_35
 
     move v0, v5
 
     .line 468
     .local v0, isFlightModeOff:Z
-    :goto_2
+    :goto_27
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/IccCard$State;->ordinal()I
@@ -508,89 +508,89 @@
 
     aget v2, v2, v3
 
-    packed-switch v2, :pswitch_data_0
+    packed-switch v2, :pswitch_data_52
 
     .line 490
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissing:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .end local v0           #isFlightModeOff:Z
-    :cond_2
+    :cond_35
     move v0, v4
 
     .line 465
-    goto :goto_2
+    goto :goto_27
 
     .line 470
     .restart local v0       #isFlightModeOff:Z
-    :pswitch_0
-    if-eqz v0, :cond_3
+    :pswitch_37
+    if-eqz v0, :cond_3c
 
     .line 472
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissing:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 475
-    :cond_3
+    :cond_3c
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->Normal:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 478
-    :pswitch_1
+    :pswitch_3f
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissingLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 480
-    :pswitch_2
+    :pswitch_42
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissing:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 482
-    :pswitch_3
+    :pswitch_45
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 484
-    :pswitch_4
+    :pswitch_48
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimPukLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 486
-    :pswitch_5
+    :pswitch_4b
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->Normal:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 488
-    :pswitch_6
+    :pswitch_4e
     sget-object v2, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissing:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 468
     nop
 
-    :pswitch_data_0
+    :pswitch_data_52
     .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
+        :pswitch_37
+        :pswitch_3f
+        :pswitch_42
+        :pswitch_45
+        :pswitch_48
+        :pswitch_4b
+        :pswitch_4e
     .end packed-switch
 .end method
 
 .method private isSilentMode()Z
-    .locals 2
+    .registers 3
 
     .prologue
     .line 230
@@ -602,21 +602,21 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_b
 
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_a
     return v0
 
-    :cond_0
+    :cond_b
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_a
 .end method
 
 .method private queryKeyboardOpen()Z
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x1
@@ -636,21 +636,21 @@
     .local v0, configuration:Landroid/content/res/Configuration;
     iget v1, v0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_11
 
     move v1, v2
 
-    :goto_0
+    :goto_10
     return v1
 
-    :cond_0
+    :cond_11
     const/4 v1, 0x0
 
-    goto :goto_0
+    goto :goto_10
 .end method
 
 .method private refreshAlarmDisplay()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 371
@@ -665,7 +665,7 @@
     .line 372
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mNextAlarm:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1d
 
     .line 373
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
@@ -685,7 +685,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mAlarmIcon:Landroid/graphics/drawable/Drawable;
 
     .line 375
-    :cond_0
+    :cond_1d
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateStatusLines()V
 
     .line 376
@@ -693,7 +693,7 @@
 .end method
 
 .method private refreshBatteryStringAndIcon(Z)V
-    .locals 3
+    .registers 5
     .parameter "pluggedIn"
 
     .prologue
@@ -702,7 +702,7 @@
     .line 390
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mShowingBatteryInfo:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_b
 
     .line 391
     const/4 v0, 0x0
@@ -710,12 +710,13 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCharging:Ljava/lang/String;
 
     .line 407
-    :goto_0
+    :goto_a
     return-void
-
+	
     .line 395
-    :cond_0
-    if-eqz p1, :cond_2
+    :cond_b
+    
+	if-eqz p1, :cond_45
 
     .line 396
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
@@ -733,10 +734,10 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mChargingIcon:Landroid/graphics/drawable/Drawable;
 
     .line 401
-    :goto_1
+    :goto_1b
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mChargingIcon:Landroid/graphics/drawable/Drawable;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2d
 
     .line 402
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
@@ -754,7 +755,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mChargingIcon:Landroid/graphics/drawable/Drawable;
 
     .line 406
-    :cond_1
+    :cond_2d
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -777,10 +778,10 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCharging:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_a
 
     .line 398
-    :cond_2
+    :cond_45
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -797,11 +798,11 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mChargingIcon:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_1
+    goto :goto_1b
 .end method
 
 .method private refreshTimeAndDateDisplay()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 415
@@ -824,7 +825,7 @@
 .end method
 
 .method private resetStatusInfo(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)V
-    .locals 2
+    .registers 4
     .parameter "updateMonitor"
 
     .prologue
@@ -892,14 +893,14 @@
 .end method
 
 .method private setEmergencyVisibility(I)V
-    .locals 1
+    .registers 3
     .parameter "visibility"
 
     .prologue
     .line 604
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mEmergencyCallButton:Landroid/widget/Button;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_9
 
     .line 605
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mEmergencyCallButton:Landroid/widget/Button;
@@ -907,19 +908,19 @@
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setVisibility(I)V
 
     .line 607
-    :cond_0
+    :cond_9
     return-void
 .end method
 
 .method private setScreenLockedVisibility(I)V
-    .locals 1
+    .registers 3
     .parameter "visibility"
 
     .prologue
     .line 598
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mScreenLocked:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_9
 
     .line 599
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mScreenLocked:Landroid/widget/TextView;
@@ -927,19 +928,19 @@
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 601
-    :cond_0
+    :cond_9
     return-void
 .end method
 
 .method private setSelectorVisibility(I)V
-    .locals 1
+    .registers 3
     .parameter "visibility"
 
     .prologue
     .line 592
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSelector:Lcom/android/internal/widget/SlidingTabSemc;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_9
 
     .line 593
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSelector:Lcom/android/internal/widget/SlidingTabSemc;
@@ -947,12 +948,12 @@
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/SlidingTabSemc;->setVisibility(I)V
 
     .line 595
-    :cond_0
+    :cond_9
     return-void
 .end method
 
 .method private shouldEnableMenuKey()Z
-    .locals 7
+    .registers 8
 
     .prologue
     const/4 v6, 0x0
@@ -992,26 +993,26 @@
 
     .line 156
     .local v1, fileOverride:Z
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_23
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_23
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_25
 
-    :cond_0
+    :cond_23
     const/4 v4, 0x1
 
-    :goto_0
+    :goto_24
     return v4
 
-    :cond_1
+    :cond_25
     move v4, v6
 
-    goto :goto_0
+    goto :goto_24
 .end method
 
 .method private toastMessage(Landroid/widget/TextView;Ljava/lang/String;)V
-    .locals 3
+    .registers 6
     .parameter "textView"
     .parameter "text"
 
@@ -1019,12 +1020,12 @@
     const/4 v1, 0x0
 
     .line 340
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_39
 
     .line 341
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mPendingR1:Ljava/lang/Runnable;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_e
 
     .line 342
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mPendingR1:Ljava/lang/Runnable;
@@ -1035,10 +1036,10 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mPendingR1:Ljava/lang/Runnable;
 
     .line 345
-    :cond_0
+    :cond_e
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mPendingR2:Ljava/lang/Runnable;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_19
 
     .line 346
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mPendingR2:Ljava/lang/Runnable;
@@ -1049,7 +1050,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mPendingR2:Ljava/lang/Runnable;
 
     .line 350
-    :cond_1
+    :cond_19
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/LockScreenSemc;->setScreenLockedVisibility(I)V
@@ -1083,19 +1084,19 @@
     invoke-virtual {p1, v0, v1, v2}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 365
-    :cond_2
+    :cond_39
     return-void
 .end method
 
 .method private updateCarrierText(I)V
-    .locals 1
+    .registers 3
     .parameter "resource"
 
     .prologue
     .line 574
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCarrier:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_9
 
     .line 575
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCarrier:Landroid/widget/TextView;
@@ -1103,19 +1104,19 @@
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(I)V
 
     .line 577
-    :cond_0
+    :cond_9
     return-void
 .end method
 
 .method private updateCarrierText(Ljava/lang/CharSequence;)V
-    .locals 1
+    .registers 3
     .parameter "text"
 
     .prologue
     .line 580
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCarrier:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_9
 
     .line 581
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCarrier:Landroid/widget/TextView;
@@ -1123,12 +1124,12 @@
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 583
-    :cond_0
+    :cond_9
     return-void
 .end method
 
 .method private updateLayout(Lcom/android/internal/policy/impl/LockScreenSemc$Status;)V
-    .locals 8
+    .registers 10
     .parameter "status"
 
     .prologue
@@ -1151,14 +1152,14 @@
 
     aget v1, v1, v2
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v1, :pswitch_data_da
 
     .line 571
-    :goto_0
+    :goto_15
     return-void
 
     .line 499
-    :pswitch_0
+    :pswitch_16
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1173,7 +1174,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_47
 
     const/4 v1, 0x1
 
@@ -1181,14 +1182,14 @@
 
     .line 503
     .local v0, isFlightModeOff:Z
-    :goto_1
+    :goto_28
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getTelephonyPlmn()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_49
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -1196,7 +1197,7 @@
 
     move-result-object v2
 
-    :goto_2
+    :goto_36
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/LockScreenSemc;->getCarrierString(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -1212,25 +1213,25 @@
     .line 512
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/LockScreenSemc;->setEmergencyVisibility(I)V
 
-    goto :goto_0
+    goto :goto_15
 
     .end local v0           #isFlightModeOff:Z
-    :cond_0
+    :cond_47
     move v0, v4
 
     .line 499
-    goto :goto_1
+    goto :goto_28
 
     .line 503
     .restart local v0       #isFlightModeOff:Z
-    :cond_1
+    :cond_49
     const/4 v2, 0x0
 
-    goto :goto_2
+    goto :goto_36
 
     .line 516
     .end local v0           #isFlightModeOff:Z
-    :pswitch_1
+    :pswitch_4b
     const v1, 0x10402c2
 
     invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateCarrierText(I)V
@@ -1247,10 +1248,10 @@
     .line 522
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/LockScreenSemc;->setEmergencyVisibility(I)V
 
-    goto :goto_0
+    goto :goto_15
 
     .line 526
-    :pswitch_2
+    :pswitch_5e
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v1
@@ -1259,7 +1260,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_8d
 
     .line 527
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -1285,7 +1286,7 @@
     invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateCarrierText(Ljava/lang/CharSequence;)V
 
     .line 533
-    :goto_3
+    :goto_80
     invoke-direct {p0, v6}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateScreenLockedText(I)V
 
     .line 536
@@ -1297,10 +1298,10 @@
     .line 538
     invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/LockScreenSemc;->setEmergencyVisibility(I)V
 
-    goto :goto_0
+    goto :goto_15
 
     .line 530
-    :cond_2
+    :cond_8d
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getTelephonyPlmn()Ljava/lang/CharSequence;
@@ -1321,10 +1322,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateCarrierText(Ljava/lang/CharSequence;)V
 
-    goto :goto_3
+    goto :goto_80
 
     .line 543
-    :pswitch_3
+    :pswitch_a3
     invoke-direct {p0, v7}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateCarrierText(I)V
 
     .line 544
@@ -1341,10 +1342,10 @@
     .line 549
     invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/LockScreenSemc;->setEmergencyVisibility(I)V
 
-    goto/16 :goto_0
+    goto/16 :goto_15
 
     .line 554
-    :pswitch_4
+    :pswitch_b7
     const v1, 0x10402c5
 
     invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateCarrierText(I)V
@@ -1358,10 +1359,10 @@
     .line 559
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/LockScreenSemc;->setEmergencyVisibility(I)V
 
-    goto/16 :goto_0
+    goto/16 :goto_15
 
     .line 563
-    :pswitch_5
+    :pswitch_c8
     const v1, 0x10402c3
 
     invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateCarrierText(I)V
@@ -1375,24 +1376,24 @@
     .line 568
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/LockScreenSemc;->setEmergencyVisibility(I)V
 
-    goto/16 :goto_0
+    goto/16 :goto_15
 
     .line 497
     nop
 
-    :pswitch_data_0
+    :pswitch_data_da
     .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
+        :pswitch_16
+        :pswitch_4b
+        :pswitch_5e
+        :pswitch_a3
+        :pswitch_b7
+        :pswitch_c8
     .end packed-switch
 .end method
 
 .method private updateRightTabResources()V
-    .locals 7
+    .registers 8
 
     .prologue
     const/4 v6, 0x1
@@ -1400,7 +1401,7 @@
     .line 236
     iget-boolean v4, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSilentMode:Z
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2d
 
     .line 238
     iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mAudioManager:Landroid/media/AudioManager;
@@ -1411,7 +1412,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_20
 
     .line 240
     const v0, 0x10803ca
@@ -1430,7 +1431,7 @@
 
     .line 264
     .local v2, ghostId:I
-    :goto_0
+    :goto_1a
     iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSelector:Lcom/android/internal/widget/SlidingTabSemc;
 
     invoke-virtual {v4, v0, v1, v3, v2}, Lcom/android/internal/widget/SlidingTabSemc;->setRightTabResources(IIII)V
@@ -1443,7 +1444,7 @@
     .end local v1           #expandedId:I
     .end local v2           #ghostId:I
     .end local v3           #gotoId:I
-    :cond_0
+    :cond_20
     const v0, 0x10803c2
 
     .line 247
@@ -1459,14 +1460,14 @@
     const v2, 0x10803c0
 
     .restart local v2       #ghostId:I
-    goto :goto_0
+    goto :goto_1a
 
     .line 252
     .end local v0           #disabledId:I
     .end local v1           #expandedId:I
     .end local v2           #ghostId:I
     .end local v3           #gotoId:I
-    :cond_1
+    :cond_2d
     const v0, 0x10803c6
 
     .line 253
@@ -1489,38 +1490,38 @@
 
     move-result v4
 
-    if-ne v4, v6, :cond_2
+    if-ne v4, v6, :cond_4a
 
     .line 258
     const v3, 0x10803c9
 
     .line 262
     .restart local v3       #gotoId:I
-    :goto_1
+    :goto_46
     const v2, 0x10803c4
 
     .restart local v2       #ghostId:I
-    goto :goto_0
+    goto :goto_1a
 
     .line 260
     .end local v2           #ghostId:I
     .end local v3           #gotoId:I
-    :cond_2
+    :cond_4a
     const v3, 0x10803c5
 
     .restart local v3       #gotoId:I
-    goto :goto_1
+    goto :goto_46
 .end method
 
 .method private updateScreenLockedText(I)V
-    .locals 1
+    .registers 3
     .parameter "resource"
 
     .prologue
     .line 586
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mScreenLocked:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_9
 
     .line 587
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mScreenLocked:Landroid/widget/TextView;
@@ -1528,12 +1529,12 @@
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(I)V
 
     .line 589
-    :cond_0
+    :cond_9
     return-void
 .end method
 
 .method private updateStatusLines()V
-    .locals 4
+    .registers 5
 
     .prologue
     const/16 v3, 0x8
@@ -1549,18 +1550,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_14
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCharging:Ljava/lang/String;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1f
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mNextAlarm:Ljava/lang/String;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1f
 
     .line 421
-    :cond_0
+    :cond_14
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mStatus1:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
@@ -1571,19 +1572,19 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 447
-    :cond_1
-    :goto_0
+    :cond_1e
+    :goto_1e
     return-void
 
     .line 423
-    :cond_2
+    :cond_1f
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCharging:Ljava/lang/String;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_40
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mNextAlarm:Ljava/lang/String;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_40
 
     .line 425
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mStatus1:Landroid/widget/TextView;
@@ -1609,17 +1610,17 @@
 
     invoke-virtual {v0, v1, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_0
+    goto :goto_1e
 
     .line 430
-    :cond_3
+    :cond_40
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mNextAlarm:Ljava/lang/String;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_61
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCharging:Ljava/lang/String;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_61
 
     .line 432
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mStatus1:Landroid/widget/TextView;
@@ -1645,17 +1646,17 @@
 
     invoke-virtual {v0, v1, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_0
+    goto :goto_1e
 
     .line 437
-    :cond_4
+    :cond_61
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCharging:Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_1e
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mNextAlarm:Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_1e
 
     .line 439
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mStatus1:Landroid/widget/TextView;
@@ -1695,13 +1696,13 @@
 
     invoke-virtual {v0, v1, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_0
+    goto :goto_1e
 .end method
 
 
 # virtual methods
 .method public cleanUp()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 664
@@ -1714,7 +1715,7 @@
 .end method
 
 .method public needsInput()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 649
@@ -1724,7 +1725,7 @@
 .end method
 
 .method protected onAttachedToWindow()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 637
@@ -1738,7 +1739,7 @@
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 0
+    .registers 2
     .parameter "newConfig"
 
     .prologue
@@ -1753,7 +1754,7 @@
 .end method
 
 .method public onGrabbedStateChange(Landroid/view/View;I)V
-    .locals 2
+    .registers 5
     .parameter "v"
     .parameter "grabbedState"
 
@@ -1761,7 +1762,7 @@
     .line 325
     const/4 v0, 0x2
 
-    if-ne p2, v0, :cond_0
+    if-ne p2, v0, :cond_15
 
     .line 326
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->isSilentMode()Z
@@ -1775,15 +1776,15 @@
 
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSilentMode:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_1b
 
     const v1, 0x10402d4
 
-    :goto_0
+    :goto_12
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/SlidingTabSemc;->setRightHintText(I)V
 
     .line 330
-    :cond_0
+    :cond_15
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
@@ -1792,14 +1793,14 @@
     return-void
 
     .line 327
-    :cond_1
+    :cond_1b
     const v1, 0x10402d5
 
-    goto :goto_0
+    goto :goto_12
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .locals 1
+    .registers 4
     .parameter "keyCode"
     .parameter "event"
 
@@ -1807,11 +1808,11 @@
     .line 284
     const/16 v0, 0x52
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v0, :cond_d
 
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mEnableMenuKeyInLockScreen:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_d
 
     .line 285
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -1819,14 +1820,14 @@
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
     .line 287
-    :cond_0
+    :cond_d
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public onPause()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 655
@@ -1834,7 +1835,7 @@
 .end method
 
 .method public onPhoneStateChanged(Ljava/lang/String;)V
-    .locals 2
+    .registers 4
     .parameter "newState"
 
     .prologue
@@ -1850,7 +1851,7 @@
 .end method
 
 .method public onRefreshBatteryInfo(ZZI)V
-    .locals 0
+    .registers 4
     .parameter "showBatteryInfo"
     .parameter "pluggedIn"
     .parameter "batteryLevel"
@@ -1873,7 +1874,7 @@
 .end method
 
 .method public onRefreshCarrierInfo(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
-    .locals 1
+    .registers 4
     .parameter "plmn"
     .parameter "spn"
 
@@ -1888,7 +1889,7 @@
 .end method
 
 .method public onResume()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 659
@@ -1901,18 +1902,18 @@
 .end method
 
 .method public onRingerModeChanged(I)V
-    .locals 1
+    .registers 3
     .parameter "state"
 
     .prologue
     .line 669
     const/4 v0, 0x2
 
-    if-eq v0, p1, :cond_0
+    if-eq v0, p1, :cond_a
 
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_4
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSilentMode:Z
 
     .line 670
@@ -1922,14 +1923,14 @@
     return-void
 
     .line 669
-    :cond_0
+    :cond_a
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_4
 .end method
 
 .method public onSimStateChanged(Lcom/android/internal/telephony/IccCard$State;)V
-    .locals 1
+    .registers 3
     .parameter "simState"
 
     .prologue
@@ -1953,7 +1954,7 @@
 .end method
 
 .method public onTimeChanged()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 411
@@ -1964,7 +1965,7 @@
 .end method
 
 .method public onTrigger(Landroid/view/View;I)V
-    .locals 5
+    .registers 8
     .parameter "v"
     .parameter "whichHandle"
 
@@ -1976,7 +1977,7 @@
     const/4 v3, 0x1
 
     .line 292
-    if-ne p2, v3, :cond_1
+    if-ne p2, v3, :cond_b
 
     .line 293
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -1984,28 +1985,28 @@
     invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
     .line 321
-    :cond_0
-    :goto_0
+    :cond_a
+    :goto_a
     return-void
 
     .line 294
-    :cond_1
-    if-ne p2, v2, :cond_0
+    :cond_b
+    if-ne p2, v2, :cond_a
 
     .line 296
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSilentMode:Z
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_4b
 
     move v1, v3
 
-    :goto_1
+    :goto_12
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSilentMode:Z
 
     .line 297
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSilentMode:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_53
 
     .line 299
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
@@ -2022,7 +2023,7 @@
 
     move-result v1
 
-    if-ne v1, v3, :cond_3
+    if-ne v1, v3, :cond_4d
 
     .line 302
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mAudioManager:Landroid/media/AudioManager;
@@ -2030,13 +2031,13 @@
     invoke-virtual {v1, v3}, Landroid/media/AudioManager;->setRingerMode(I)V
 
     .line 312
-    :goto_2
+    :goto_2d
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->updateRightTabResources()V
 
     .line 314
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mSilentMode:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_59
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
 
@@ -2052,7 +2053,7 @@
 
     .line 318
     .local v0, message:Ljava/lang/String;
-    :goto_3
+    :goto_40
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mScreenLocked:Landroid/widget/TextView;
 
     invoke-direct {p0, v1, v0}, Lcom/android/internal/policy/impl/LockScreenSemc;->toastMessage(Landroid/widget/TextView;Ljava/lang/String;)V
@@ -2062,33 +2063,33 @@
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    goto :goto_0
+    goto :goto_a
 
     .end local v0           #message:Ljava/lang/String;
-    :cond_2
+    :cond_4b
     move v1, v4
 
     .line 296
-    goto :goto_1
+    goto :goto_12
 
     .line 305
-    :cond_3
+    :cond_4d
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v1, v4}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    goto :goto_2
+    goto :goto_2d
 
     .line 309
-    :cond_4
+    :cond_53
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    goto :goto_2
+    goto :goto_2d
 
     .line 314
-    :cond_5
+    :cond_59
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockScreenSemc;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -2101,11 +2102,11 @@
 
     move-object v0, v1
 
-    goto :goto_3
+    goto :goto_40
 .end method
 
 .method updateConfiguration()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 629
@@ -2125,21 +2126,21 @@
 
     move-result v2
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_16
 
     iget v1, v0, Landroid/content/res/Configuration;->orientation:I
 
     iget v2, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mOrientation:I
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v2, :cond_1b
 
     .line 631
-    :cond_0
+    :cond_16
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreenSemc;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v1, v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->recreateMe(Landroid/content/res/Configuration;)V
 
     .line 633
-    :cond_1
+    :cond_1b
     return-void
 .end method

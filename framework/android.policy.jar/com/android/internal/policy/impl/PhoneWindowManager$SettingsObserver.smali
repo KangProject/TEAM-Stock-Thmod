@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/os/Handler;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "handler"
 
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method observe()V
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x0
@@ -126,7 +126,7 @@
 .end method
 
 .method public onChange(Z)V
-    .locals 4
+    .registers 6
     .parameter "selfChange"
 
     .prologue
@@ -136,7 +136,7 @@
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSettings()V
 
     .line 343
-    :try_start_0
+    :try_start_5
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$SettingsObserver;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManager:Landroid/view/IWindowManager;
@@ -150,16 +150,16 @@
     iget v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mFancyRotationAnimation:I
 
     invoke-interface {v0, v1, v2, v3}, Landroid/view/IWindowManager;->setRotation(IZI)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_13
+    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_13} :catch_14
 
     .line 348
-    :goto_0
+    :goto_13
     return-void
 
     .line 345
-    :catch_0
+    :catch_14
     move-exception v0
 
-    goto :goto_0
+    goto :goto_13
 .end method

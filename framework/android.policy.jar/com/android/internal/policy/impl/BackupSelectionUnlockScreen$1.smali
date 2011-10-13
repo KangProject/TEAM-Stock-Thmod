@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 2
+    .registers 8
     .parameter
     .parameter "view"
     .parameter "position"
@@ -69,7 +69,7 @@
     .line 96
     instance-of v0, p2, Landroid/widget/Checkable;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1a
 
     .line 97
     check-cast p2, Landroid/widget/Checkable;
@@ -85,6 +85,6 @@
     invoke-static {v0, p3}, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->access$102(Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;I)I
 
     .line 100
-    :cond_0
+    :cond_1a
     return-void
 .end method

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
-    .locals 0
+    .registers 4
     .parameter "context"
     .parameter "lockPatternUtils"
     .parameter "keyguardCallback"
@@ -51,7 +51,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/internal/policy/impl/CommonBackupUtil;)Landroid/content/Context;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -62,7 +62,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/internal/policy/impl/CommonBackupUtil;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -73,7 +73,7 @@
 .end method
 
 .method private showSelectionDialog()V
-    .locals 9
+    .registers 10
 
     .prologue
     const/4 v8, 0x4
@@ -180,7 +180,7 @@
 
 # virtual methods
 .method unlockAndFinishKeyguard()V
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x0
