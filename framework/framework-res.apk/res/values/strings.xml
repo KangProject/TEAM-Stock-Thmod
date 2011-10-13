@@ -996,6 +996,6 @@ for account %s"</string>
     <string name="lockscreen_strings_dialpad_9_txt">9</string>
     <string name="lockscreen_strings_locked_out_wrong_answer_txt">Incorrect answer</string>
     <string name="seport_strings_accessory_not_supported_txt">Accessory not supported</string>
+    <string name="reboot_recovery">XRecovery</string>
     <string name="reboot">Reboot</string>
-    <string name="app_killed_message">Application killed</string>
 </resources>

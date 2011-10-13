@@ -950,6 +950,6 @@
     <string name="gui_cancel_txt">キャンセル</string>
     <string name="lockscreen_strings_locked_out_wrong_answer_txt">答えが間違っています</string>
     <string name="seport_strings_accessory_not_supported_txt">アクセサリがサポートされていません</string>
-    <string name="reboot">再起動する</string>
-    <string name="app_killed_message">アプリケーションを終了しました</string>
+    <string name="reboot_recovery">XRecovery</string>
+    <string name="reboot">再起動</string>
 </resources>

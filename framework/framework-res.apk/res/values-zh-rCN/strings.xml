@@ -950,5 +950,4 @@
     <string name="gui_ok_txt">确定</string>
     <string name="lockscreen_strings_locked_out_wrong_answer_txt">答案不正确</string>
     <string name="seport_strings_accessory_not_supported_txt">不支持配件</string>
-    <string name="app_killed_message">应用程序已结束</string>
 </resources>

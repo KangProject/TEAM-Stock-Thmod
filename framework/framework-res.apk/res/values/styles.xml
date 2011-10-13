@@ -83,10 +83,10 @@
         <item name="alertDialogStyle">@style/AlertDialog</item>
         <item name="panelBackground">@drawable/menu_background</item>
         <item name="panelFullBackground">@drawable/menu_background_fill_parent_width</item>
-        <item name="panelColorForeground">?textColorPrimary</item>
+        <item name="panelColorForeground">#ffffffff</item>
         <item name="panelColorBackground">#ff000000</item>
         <item name="panelTextAppearance">?textAppearance</item>
-        <item name="scrollbarSize">10.0dip</item>
+        <item name="scrollbarSize">5.0dip</item>
         <item name="scrollbarThumbHorizontal">@drawable/scrollbar_handle_horizontal</item>
         <item name="scrollbarThumbVertical">@drawable/scrollbar_handle_vertical</item>
         <item name="scrollbarTrackHorizontal">@null</item>
@@ -197,23 +197,23 @@
     </style>
     <style name="Theme.Dialog" parent="@style/Theme">
         <item name="textAppearance">@style/TextAppearance</item>
-        <item name="textAppearanceInverse">@style/TextAppearance.Inverse</item>
+        <item name="textAppearanceInverse">@style/TextAppearance</item>
         <item name="textColorPrimary">@color/primary_text_dark</item>
-        <item name="textColorPrimaryDisableOnly">@color/primary_text_dark_disable_only</item>
+        <item name="textColorPrimaryDisableOnly">@color/primary_text_dark</item>
         <item name="textColorSecondary">@color/secondary_text_dark</item>
-        <item name="textColorPrimaryInverse">@color/primary_text_light</item>
-        <item name="textColorSecondaryInverse">@color/secondary_text_light</item>
-        <item name="textColorPrimaryNoDisable">@color/primary_text_dark_nodisable</item>
-        <item name="textColorSecondaryNoDisable">@color/secondary_text_dark_nodisable</item>
-        <item name="textColorPrimaryInverseNoDisable">@color/primary_text_light_nodisable</item>
-        <item name="textColorSecondaryInverseNoDisable">@color/secondary_text_light_nodisable</item>
-        <item name="textColorHintInverse">@color/hint_foreground_light</item>
+        <item name="textColorPrimaryInverse">@color/primary_text_dark</item>
+        <item name="textColorSecondaryInverse">@color/secondary_text_dark</item>
+        <item name="textColorPrimaryNoDisable">@color/primary_text_dark</item>
+        <item name="textColorSecondaryNoDisable">@color/secondary_text_dark</item>
+        <item name="textColorPrimaryInverseNoDisable">@color/primary_text_dark</item>
+        <item name="textColorSecondaryInverseNoDisable">@color/secondary_text_dark</item>
+        <item name="textColorHintInverse">@color/hint_foreground_dark</item>
         <item name="textAppearanceLarge">@style/TextAppearance.Large</item>
         <item name="textAppearanceMedium">@style/TextAppearance.Medium</item>
         <item name="textAppearanceSmall">@style/TextAppearance.Small</item>
-        <item name="textAppearanceLargeInverse">@style/TextAppearance.Large.Inverse</item>
-        <item name="textAppearanceMediumInverse">@style/TextAppearance.Medium.Inverse</item>
-        <item name="textAppearanceSmallInverse">@style/TextAppearance.Small.Inverse</item>
+        <item name="textAppearanceLargeInverse">@style/TextAppearance.Large</item>
+        <item name="textAppearanceMediumInverse">@style/TextAppearance.Medium</item>
+        <item name="textAppearanceSmallInverse">@style/TextAppearance.Small</item>
         <item name="windowBackground">@drawable/panel_background</item>
         <item name="windowFrame">@null</item>
         <item name="windowIsFloating">true</item>
@@ -222,10 +222,10 @@
         <item name="textColorHint">@color/hint_foreground_dark</item>
         <item name="windowAnimationStyle">@style/Animation.Dialog</item>
         <item name="textColorTertiary">@color/tertiary_text_dark</item>
-        <item name="textColorTertiaryInverse">@color/tertiary_text_light</item>
+        <item name="textColorTertiaryInverse">@color/tertiary_text_dark</item>
         <item name="windowSoftInputMode">adjustPan</item>
         <item name="textColorSearchUrl">@color/search_url_text</item>
-        <item name="textColorPrimaryInverseDisableOnly">@color/primary_text_light_disable_only</item>
+        <item name="textColorPrimaryInverseDisableOnly">@color/primary_text_dark_disable_only</item>
         <item name="colorBackgroundCacheHint">@null</item>
     </style>
     <style name="Theme.Light" parent="@style/Theme">
@@ -295,8 +295,9 @@
         <item name="fastScrollThumbHeight">@dimen/fastscroll_thumb_height</item>
     </style>
     <style name="Widget.Button" parent="@style/Widget">
-        <item name="textAppearance">?textAppearanceSmallInverse</item>
-        <item name="textColor">@color/primary_text_light</item>
+        <item name="textAppearance">?textAppearanceSmall</item>
+        <item name="textStyle">bold</item>
+        <item name="textColor">#ffffffff</item>
         <item name="gravity">center</item>
         <item name="background">@drawable/btn_default</item>
         <item name="focusable">true</item>
@@ -316,7 +317,8 @@
     </style>
     <style name="Widget.CompoundButton" parent="@style/Widget">
         <item name="textAppearance">?textAppearance</item>
-        <item name="textColor">?textColorPrimaryDisableOnly</item>
+        <item name="textStyle">bold</item>
+        <item name="textColor">#ffffffff</item>
         <item name="gravity">left|center</item>
         <item name="focusable">true</item>
         <item name="clickable">true</item>
@@ -523,20 +525,20 @@
         <item name="textSize">16.0sp</item>
         <item name="textStyle">normal</item>
         <item name="textColor">?textColorPrimary</item>
-        <item name="textColorHighlight">#ffff9200</item>
+        <item name="textColorHighlight">#ffab7ddb</item>
         <item name="textColorHint">?textColorHint</item>
-        <item name="textColorLink">#ff5c5cff</item>
+        <item name="textColorLink">#ff995cff</item>
     </style>
     <style name="TextAppearance.Inverse" parent="@style/TextAppearance">
         <item name="textColor">?textColorPrimaryInverse</item>
         <item name="textColorHint">?textColorHintInverse</item>
-        <item name="textColorLink">#ff0000ee</item>
+        <item name="textColorLink">#ff7f46de</item>
     </style>
     <style name="TextAppearance.Theme" parent="@style/TextAppearance" />
     <style name="TextAppearance.DialogWindowTitle" parent="@style/TextAppearance">
         <item name="textSize">18.0sp</item>
         <item name="textStyle">normal</item>
-        <item name="textColor">?textColorPrimary</item>
+        <item name="textColor">#ffffffff</item>
     </style>
     <style name="TextAppearance.Large" parent="@style/TextAppearance">
         <item name="textSize">22.0sp</item>
@@ -544,7 +546,7 @@
         <item name="textColor">?textColorPrimary</item>
     </style>
     <style name="TextAppearance.Large.Inverse" parent="@style/TextAppearance.Large">
-        <item name="textColor">?textColorPrimaryInverse</item>
+        <item name="textColor">#ffffffff</item>
         <item name="textColorHint">?textColorHintInverse</item>
     </style>
     <style name="TextAppearance.Medium" parent="@style/TextAppearance">
@@ -553,7 +555,7 @@
         <item name="textColor">?textColorPrimary</item>
     </style>
     <style name="TextAppearance.Medium.Inverse" parent="@style/TextAppearance.Medium">
-        <item name="textColor">?textColorPrimaryInverse</item>
+        <item name="textColor">#ffffffff</item>
         <item name="textColorHint">?textColorHintInverse</item>
     </style>
     <style name="TextAppearance.Small" parent="@style/TextAppearance">
@@ -562,12 +564,12 @@
         <item name="textColor">?textColorSecondary</item>
     </style>
     <style name="TextAppearance.Small.Inverse" parent="@style/TextAppearance.Small">
-        <item name="textColor">?textColorSecondaryInverse</item>
+        <item name="textColor">#ffffffff</item>
         <item name="textColorHint">?textColorHintInverse</item>
     </style>
     <style name="TextAppearance.Theme.Dialog" parent="@style/TextAppearance.Theme" />
     <style name="TextAppearance.Widget" parent="@style/TextAppearance" />
-    <style name="TextAppearance.Widget.Button" parent="@style/TextAppearance.Small.Inverse">
+    <style name="TextAppearance.Widget.Button" parent="@style/TextAppearance.Small">
         <item name="textColor">@color/primary_text_light_nodisable</item>
     </style>
     <style name="TextAppearance.Widget.IconMenu.Item" parent="@style/TextAppearance.Small">
@@ -712,12 +714,14 @@
         <item name="textStyle">bold</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent" parent="@style/TextAppearance.StatusBar">
-        <item name="textColor">#ff3d3d3d</item>
+        <item name="textColor">#ffe5e5e5</item>
+        <item name="maxLines">2</item>
+        <item name="singleLine">false</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent.Title" parent="@style/TextAppearance.StatusBar.EventContent">
         <item name="textSize">16.0sp</item>
         <item name="textStyle">bold</item>
-        <item name="textColor">?textColorPrimaryInverse</item>
+        <item name="textColor">#fff2f2f2</item>
     </style>
     <style name="Widget.TabHost" parent="@style/Widget">
         <item name="tabIndicatorLayout">@layout/tab_indicator</item>
@@ -813,8 +817,8 @@
     <style name="TextAppearance.StatusBar.Ticker" parent="@style/TextAppearance.StatusBar" />
     <style name="Widget.GestureOverlayView" parent="@style/Widget">
         <item name="gestureStrokeWidth">12.0</item>
-        <item name="gestureColor">#ffffff00</item>
-        <item name="uncertainGestureColor">#48ffff00</item>
+        <item name="gestureColor">#ffa567f2</item>
+        <item name="uncertainGestureColor">#489000ff</item>
         <item name="fadeOffset">420</item>
         <item name="fadeDuration">150</item>
         <item name="gestureStrokeLengthThreshold">50.0</item>
@@ -823,11 +827,12 @@
         <item name="eventsInterceptionEnabled">true</item>
     </style>
     <style name="Widget.GestureOverlayView.White" parent="@style/Widget.GestureOverlayView">
-        <item name="gestureColor">#ff00ff00</item>
-        <item name="uncertainGestureColor">#4800ff00</item>
+        <item name="gestureColor">#ff7200ff</item>
+        <item name="uncertainGestureColor">#487200ff</item>
     </style>
     <style name="Widget.Button.Transparent" parent="@style/Widget.Button">
         <item name="textAppearance">?textAppearanceSmall</item>
+        <item name="textStyle">bold</item>
         <item name="textColor">@color/white</item>
         <item name="background">@drawable/btn_default_transparent</item>
     </style>
@@ -916,7 +921,7 @@
         <item name="quickContactWindowSize">modeLarge</item>
     </style>
     <style name="TextAppearance.Theme.Dialog.AppError" parent="@style/TextAppearance.Theme.Dialog">
-        <item name="textColor">#ffffc0c0</item>
+        <item name="textColor">#ffc4a4f0</item>
     </style>
     <style name="TextAppearance.SlidingTabNormal" parent="@attr/textAppearanceMedium">
         <item name="textSize">28.0sp</item>
@@ -935,7 +940,7 @@
         <item name="textColor">?textColorPrimaryInverse</item>
         <item name="textColorHint">?textColorHintInverse</item>
     </style>
-    <style name="Preference">
+    <style name="Preference" parent="@style/Theme.Wallpaper">
         <item name="layout">@layout/preference</item>
     </style>
     <style name="Preference.Information" parent="@style/Preference">
@@ -1077,7 +1082,8 @@
         <item name="background">@drawable/semc_btn_default</item>
     </style>
     <style name="SEMCWidget.Button.Vanilla" parent="@style/Widget.Button">
-        <item name="textColor">@color/semc_primary_text</item>
+        <item name="textStyle">bold</item>
+        <item name="textColor">#ffffffff</item>
         <item name="background">@drawable/semc_btn_default_with_margin</item>
     </style>
     <style name="SEMCWidget.Button.Small" parent="@style/SEMCWidget.Button">
@@ -1263,7 +1269,7 @@
     <style name="SEMCTextAppearance.Widget" parent="@style/SEMCTextAppearance" />
     <style name="SEMCTextAppearance.Widget.Button" parent="@style/SEMCTextAppearance.Widget">
         <item name="textSize">@dimen/semc_text_size_button</item>
-        <item name="textColor">?textColorPrimary</item>
+        <item name="textColor">#ffffffff</item>
     </style>
     <style name="SEMCTextAppearance.Widget.IconMenu" parent="@style/SEMCTextAppearance.Widget" />
     <style name="SEMCTextAppearance.Widget.IconMenu.Item" parent="@style/SEMCTextAppearance.Widget.IconMenu">
@@ -1521,22 +1527,22 @@
     </style>
     <style name="SEMCTheme.Dialog" parent="@style/SEMCTheme">
         <item name="textAppearance">@style/TextAppearance</item>
-        <item name="textAppearanceInverse">@style/TextAppearance.Inverse</item>
-        <item name="textColorPrimary">@color/primary_text_dark</item>
-        <item name="textColorPrimaryDisableOnly">@color/primary_text_dark_disable_only</item>
+        <item name="textAppearanceInverse">@style/TextAppearance</item>
+        <item name="textColorPrimary">#ffffffff</item>
+        <item name="textColorPrimaryDisableOnly">#ffffffff</item>
         <item name="textColorSecondary">@color/secondary_text_dark</item>
-        <item name="textColorPrimaryInverse">@color/primary_text_light</item>
-        <item name="textColorSecondaryInverse">@color/secondary_text_light</item>
-        <item name="textColorPrimaryNoDisable">@color/primary_text_dark_nodisable</item>
+        <item name="textColorPrimaryInverse">@color/primary_text_dark</item>
+        <item name="textColorSecondaryInverse">@color/secondary_text_dark</item>
+        <item name="textColorPrimaryNoDisable">#ffffffff</item>
         <item name="textColorSecondaryNoDisable">@color/secondary_text_dark_nodisable</item>
-        <item name="textColorPrimaryInverseNoDisable">@color/primary_text_light_nodisable</item>
-        <item name="textColorSecondaryInverseNoDisable">@color/secondary_text_light_nodisable</item>
+        <item name="textColorPrimaryInverseNoDisable">@color/primary_text_dark_nodisable</item>
+        <item name="textColorSecondaryInverseNoDisable">@color/secondary_text_dark_nodisable</item>
         <item name="textAppearanceLarge">@style/TextAppearance.Large</item>
         <item name="textAppearanceMedium">@style/TextAppearance.Medium</item>
         <item name="textAppearanceSmall">@style/TextAppearance.Small</item>
-        <item name="textAppearanceLargeInverse">@style/TextAppearance.Large.Inverse</item>
-        <item name="textAppearanceMediumInverse">@style/TextAppearance.Medium.Inverse</item>
-        <item name="textAppearanceSmallInverse">@style/TextAppearance.Small.Inverse</item>
+        <item name="textAppearanceLargeInverse">@style/TextAppearance.Large</item>
+        <item name="textAppearanceMediumInverse">@style/TextAppearance.Medium</item>
+        <item name="textAppearanceSmallInverse">@style/TextAppearance.Small</item>
         <item name="windowBackground">@drawable/panel_background</item>
         <item name="windowFrame">@null</item>
         <item name="windowIsFloating">true</item>
@@ -1544,10 +1550,10 @@
         <item name="windowTitleStyle">@style/DialogWindowTitle</item>
         <item name="windowAnimationStyle">@style/Animation.Dialog</item>
         <item name="textColorTertiary">@color/tertiary_text_dark</item>
-        <item name="textColorTertiaryInverse">@color/tertiary_text_light</item>
+        <item name="textColorTertiaryInverse">@color/tertiary_text_dark</item>
         <item name="windowSoftInputMode">adjustPan</item>
         <item name="textColorSearchUrl">@color/search_url_text</item>
-        <item name="textColorPrimaryInverseDisableOnly">@color/primary_text_light_disable_only</item>
+        <item name="textColorPrimaryInverseDisableOnly">@color/primary_text_dark_disable_only</item>
         <item name="colorBackgroundCacheHint">@null</item>
     </style>
     <style name="SEMCTheme.Dialog.ActionDialog" parent="@style/SEMCTheme.Translucent.NoTitleBar" />

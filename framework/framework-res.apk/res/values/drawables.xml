@@ -12,6 +12,7 @@
     <drawable name="stat_sys_upload_done">@drawable/stat_sys_upload_anim0</drawable>
     <item type="drawable" name="screen_background_dark">#ff000000</item>
     <item type="drawable" name="screen_background_light">#ffffffff</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00a1">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_00a2">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_00a3">false</item>
     <item type="drawable" name="screen_background_dark_transparent">#80000000</item>
@@ -58,6 +59,12 @@
     <item type="drawable" name="APKTOOL_DUMMY_0485">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_0487">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_048e">false</item>
+    <item type="drawable" name="status_bar_closed_default_background">#00000000</item>
+    <item type="drawable" name="status_bar_opened_default_background">#00000000</item>
+    <item type="drawable" name="search_bar_default_color">#ff000000</item>
+    <item type="drawable" name="safe_mode_background">#60000000</item>
+    <item type="drawable" name="input_method_fullscreen_background">#fff9f9f9</item>
+    <item type="drawable" name="selected_day_background">#ff0092f4</item>
     <item type="drawable" name="APKTOOL_DUMMY_048f">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_0490">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_0491">false</item>
@@ -78,11 +85,4 @@
     <item type="drawable" name="APKTOOL_DUMMY_04b6">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_04b8">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_04be">false</item>
-    <item type="drawable" name="status_bar_closed_default_background">#ff000000</item>
-    <item type="drawable" name="status_bar_opened_default_background">#ff000000</item>
-    <item type="drawable" name="search_bar_default_color">#ff000000</item>
-    <item type="drawable" name="safe_mode_background">#60000000</item>
-    <item type="drawable" name="input_method_fullscreen_background">#fff9f9f9</item>
-    <item type="drawable" name="selected_day_background">#ff0092f4</item>
-    <item type="drawable" name="APKTOOL_DUMMY_00a1">false</item>
 </resources>

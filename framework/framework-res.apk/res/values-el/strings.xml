@@ -950,4 +950,6 @@
     <string name="gui_ok_txt">OK</string>
     <string name="lockscreen_strings_locked_out_wrong_answer_txt">Λάθος απάντηση</string>
     <string name="seport_strings_accessory_not_supported_txt">Το αξεσουάρ δεν υποστηρίζεται</string>
+    <string name="reboot_recovery">xRecovery</string>
+    <string name="reboot">Επανεκκίνηση</string>
 </resources>

@@ -961,5 +961,4 @@ per al compte %s"</string>
     <string name="gui_ok_txt">"D'acord"</string>
     <string name="lockscreen_strings_locked_out_wrong_answer_txt">Resposta incorrecta</string>
     <string name="seport_strings_accessory_not_supported_txt">Accessori no admès</string>
-    <string name="app_killed_message">Aplicació matada</string>
 </resources>
