@@ -1,4 +1,4 @@
-version: 1.4.2.269870b
+version: 1.4.1
 apkFileName: SemcGenericUxpRes.apk
 isFrameworkApk: true
 usesFramework:

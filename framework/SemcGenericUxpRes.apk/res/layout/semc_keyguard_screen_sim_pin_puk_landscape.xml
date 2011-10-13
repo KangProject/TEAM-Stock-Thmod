@@ -14,5 +14,5 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/emergencyCall" android:background="@drawable/semc_generalbutton" android:focusable="false" android:layout_width="200.0px" android:layout_height="34.0px" android:layout_marginBottom="5.0px" android:text="@android:string/lockscreen_sim_puk_locked_instructions" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/emergencyCall" android:background="@drawable/semc_generalbutton" android:focusable="false" android:layout_width="200.0px" android:layout_height="34.0px" android:layout_marginBottom="5.0px" android:text="@android:string/lockscreen_emergency_call" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
 </RelativeLayout>
