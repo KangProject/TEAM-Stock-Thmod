@@ -3,7 +3,7 @@
 .source "DesktopController.java"
 
 # interfaces
-.implements Lremove/me/when/froyo/comes/ScaleGestureDetector$OnScaleGestureListener;
+.implements Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 370
+    .line 407
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,66 +37,135 @@
 
 
 # virtual methods
-.method public onScale(Lremove/me/when/froyo/comes/ScaleGestureDetector;)Z
-    .locals 10
+.method public onScale(Landroid/view/ScaleGestureDetector;)Z
+    .locals 12
     .parameter "detector"
 
     .prologue
-    const/high16 v9, 0x3f00
+    const/high16 v11, 0x3f00
 
-    const/4 v8, 0x0
+    const/4 v10, 0x0
 
-    .line 390
+    .line 428
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    .line 391
-    .local v1, now:J
-    invoke-virtual {p1}, Lremove/me/when/froyo/comes/ScaleGestureDetector;->getCurrentSpan()F
-
-    move-result v4
-
-    invoke-virtual {p1}, Lremove/me/when/froyo/comes/ScaleGestureDetector;->getPreviousSpan()F
-
-    move-result v5
-
-    sub-float/2addr v4, v5
-
-    neg-float v4, v4
-
+    .line 430
+    .local v2, now:J
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    invoke-static {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)F
+    invoke-static {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1300(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)F
 
     move-result v5
 
-    mul-float v0, v4, v5
+    cmpl-float v5, v5, v10
 
-    .line 395
-    .local v0, dProgress:F
-    cmpl-float v4, v0, v8
+    if-nez v5, :cond_0
 
-    if-lez v4, :cond_0
+    .line 434
+    const/high16 v0, 0x4000
 
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+    .line 435
+    .local v0, PROGRESS_RATIO:F
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    invoke-static {v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
+    const/high16 v6, 0x4000
 
-    move-result-object v4
+    iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    invoke-virtual {v4}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
+    iget-object v7, v7, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    move-result v4
+    invoke-static {v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/view/ViewGroup;
 
-    const/high16 v5, 0x3f80
+    move-result-object v7
 
-    cmpl-float v4, v4, v5
+    invoke-virtual {v7}, Landroid/view/ViewGroup;->getWidth()I
 
-    if-ltz v4, :cond_0
+    move-result v7
 
-    .line 396
-    const/high16 v4, 0x3fc0
+    iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+
+    iget-object v8, v8, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v8}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/view/ViewGroup;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/view/ViewGroup;->getWidth()I
+
+    move-result v8
+
+    mul-int/2addr v7, v8
+
+    iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+
+    iget-object v8, v8, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v8}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/view/ViewGroup;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/view/ViewGroup;->getHeight()I
+
+    move-result v8
+
+    iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+
+    iget-object v9, v9, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v9}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/view/ViewGroup;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/view/ViewGroup;->getHeight()I
+
+    move-result v9
+
+    mul-int/2addr v8, v9
+
+    add-int/2addr v7, v8
+
+    int-to-double v7, v7
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v7
+
+    double-to-float v7, v7
+
+    div-float/2addr v6, v7
+
+    invoke-static {v5, v6}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1302(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)F
+
+    .line 440
+    .end local v0           #PROGRESS_RATIO:F
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getCurrentSpan()F
+
+    move-result v5
+
+    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getPreviousSpan()F
+
+    move-result v6
+
+    sub-float/2addr v5, v6
+
+    neg-float v5, v5
+
+    iget-object v6, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+
+    invoke-static {v6}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1300(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)F
+
+    move-result v6
+
+    mul-float v1, v5, v6
+
+    .line 444
+    .local v1, dProgress:F
+    cmpl-float v5, v1, v10
+
+    if-lez v5, :cond_1
 
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
@@ -108,92 +177,111 @@
 
     move-result v5
 
-    sub-float/2addr v4, v5
+    const/high16 v6, 0x3f80
 
-    invoke-static {v8, v4}, Ljava/lang/Math;->max(FF)F
+    cmpl-float v5, v5, v6
 
-    move-result v4
+    if-ltz v5, :cond_1
 
-    mul-float/2addr v0, v4
-
-    .line 399
-    :cond_0
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
-
-    const/high16 v5, 0x447a
-
-    mul-float/2addr v5, v0
-
-    invoke-virtual {p1}, Lremove/me/when/froyo/comes/ScaleGestureDetector;->getTimeDelta()J
-
-    move-result-wide v6
-
-    long-to-float v6, v6
-
-    div-float/2addr v5, v6
-
-    mul-float/2addr v5, v9
+    .line 445
+    const/high16 v5, 0x3fc0
 
     iget-object v6, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    invoke-static {v6}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$800(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)F
+    invoke-static {v6}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
 
     move-result v6
 
-    mul-float/2addr v6, v9
+    sub-float/2addr v5, v6
 
-    add-float/2addr v5, v6
+    invoke-static {v10, v5}, Ljava/lang/Math;->max(FF)F
 
-    invoke-static {v4, v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$802(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)F
+    move-result v5
 
-    .line 400
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+    mul-float/2addr v1, v5
 
-    invoke-static {v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
+    .line 448
+    :cond_1
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    move-result-object v4
+    const/high16 v6, 0x447a
 
-    invoke-virtual {v4}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
+    mul-float/2addr v6, v1
+
+    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getTimeDelta()J
+
+    move-result-wide v7
+
+    long-to-float v7, v7
+
+    div-float/2addr v6, v7
+
+    mul-float/2addr v6, v11
+
+    iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+
+    invoke-static {v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$800(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)F
+
+    move-result v7
+
+    mul-float/2addr v7, v11
+
+    add-float/2addr v6, v7
+
+    invoke-static {v5, v6}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$802(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)F
+
+    .line 449
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+
+    invoke-static {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
+
+    move-result v5
+
+    add-float/2addr v5, v1
+
+    const v6, 0x7f7fffff
+
+    invoke-static {v5, v10, v6}, Lcom/sonyericsson/util/MathUtil;->clamp(FFF)F
 
     move-result v4
 
-    add-float/2addr v4, v0
+    .line 451
+    .local v4, progress:F
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    const v5, 0x7f7fffff
+    invoke-static {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
 
-    invoke-static {v4, v8, v5}, Lcom/sonyericsson/util/MathUtil;->clamp(FFF)F
+    move-result-object v5
 
-    move-result v3
+    invoke-virtual {v5, v4, v10, v2, v3}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 402
-    .local v3, progress:F
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+    .line 452
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    invoke-static {v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
+    invoke-static {v5, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$500(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)V
 
-    move-result-object v4
+    .line 454
+    const/4 v5, 0x1
 
-    invoke-virtual {v4, v3, v8, v1, v2}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
-
-    .line 403
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
-
-    invoke-static {v4, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$500(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)V
-
-    .line 405
-    const/4 v4, 0x1
-
-    return v4
+    return v5
 .end method
 
-.method public onScaleBegin(Lremove/me/when/froyo/comes/ScaleGestureDetector;)Z
+.method public onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
     .locals 3
     .parameter "detector"
 
     .prologue
     const/4 v2, 0x1
 
-    .line 373
+    .line 410
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -210,14 +298,14 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 374
+    .line 411
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$802(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)F
 
-    .line 377
+    .line 414
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$900(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)I
@@ -226,12 +314,23 @@
 
     if-nez v0, :cond_0
 
-    .line 378
+    .line 415
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1000(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)V
 
-    .line 382
+    .line 416
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
+
+    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/PaneIndicator;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/PaneIndicator;->hide(Z)V
+
+    .line 420
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
@@ -241,17 +340,17 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 383
+    .line 421
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1100(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)V
 
-    .line 386
+    .line 424
     :cond_1
     return v2
 .end method
 
-.method public onScaleEnd(Lremove/me/when/froyo/comes/ScaleGestureDetector;)V
+.method public onScaleEnd(Landroid/view/ScaleGestureDetector;)V
     .locals 5
     .parameter "detector"
 
@@ -262,7 +361,7 @@
 
     const/high16 v2, 0x3f00
 
-    .line 413
+    .line 462
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$800(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)F
@@ -277,7 +376,7 @@
 
     if-gez v1, :cond_1
 
-    .line 414
+    .line 463
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
@@ -294,7 +393,7 @@
 
     move v0, v3
 
-    .line 419
+    .line 468
     .local v0, snap:I
     :goto_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
@@ -307,19 +406,19 @@
 
     move-result v3
 
-    invoke-static {v1, v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1300(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;FF)V
+    invoke-static {v1, v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1500(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;FF)V
 
-    .line 420
+    .line 469
     return-void
 
     .end local v0           #snap:I
     :cond_0
     move v0, v4
 
-    .line 414
+    .line 463
     goto :goto_0
 
-    .line 416
+    .line 465
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 

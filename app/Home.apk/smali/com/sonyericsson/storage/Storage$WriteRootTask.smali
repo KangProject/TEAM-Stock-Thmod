@@ -27,7 +27,7 @@
     .parameter "root"
 
     .prologue
-    .line 187
+    .line 234
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -52,13 +52,13 @@
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/util/Worker$Task;-><init>(Ljava/lang/String;)V
 
-    .line 188
+    .line 235
     iput-object p1, p0, Lcom/sonyericsson/storage/Storage$WriteRootTask;->mContext:Landroid/content/Context;
 
-    .line 189
+    .line 236
     iput-object p2, p0, Lcom/sonyericsson/storage/Storage$WriteRootTask;->mRoot:Lcom/sonyericsson/storage/Root;
 
-    .line 190
+    .line 237
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .parameter "x2"
 
     .prologue
-    .line 180
+    .line 227
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/storage/Storage$WriteRootTask;-><init>(Landroid/content/Context;Lcom/sonyericsson/storage/Root;)V
 
     return-void
@@ -83,16 +83,16 @@
     .prologue
     const-string v5, "UTF-8"
 
-    .line 203
+    .line 250
     invoke-static {}, Landroid/util/Xml;->newSerializer()Lorg/xmlpull/v1/XmlSerializer;
 
     move-result-object v4
 
-    .line 205
+    .line 252
     .local v4, serializer:Lorg/xmlpull/v1/XmlSerializer;
     const/4 v2, 0x0
 
-    .line 208
+    .line 255
     .local v2, gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     :try_start_0
     iget-object v5, p0, Lcom/sonyericsson/storage/Storage$WriteRootTask;->mContext:Landroid/content/Context;
@@ -127,7 +127,7 @@
 
     move-result-object v1
 
-    .line 210
+    .line 257
     .local v1, fileOutputStream:Ljava/io/FileOutputStream;
     new-instance v3, Ljava/util/zip/GZIPOutputStream;
 
@@ -136,7 +136,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 212
+    .line 259
     .end local v2           #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     .local v3, gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     :try_start_1
@@ -144,7 +144,7 @@
 
     invoke-interface {v4, v3, v5}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 213
+    .line 260
     const-string v5, "UTF-8"
 
     const/4 v6, 0x1
@@ -155,21 +155,27 @@
 
     invoke-interface {v4, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 214
+    .line 261
     iget-object v5, p0, Lcom/sonyericsson/storage/Storage$WriteRootTask;->mRoot:Lcom/sonyericsson/storage/Root;
 
     invoke-virtual {v5, v4}, Lcom/sonyericsson/storage/Root;->toXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
-    .line 215
+    .line 262
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
+
+    .line 265
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->flush()V
+
+    .line 266
+    invoke-static {v1}, Lcom/sonyericsson/storage/Storage;->sync(Ljava/io/FileOutputStream;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 220
+    .line 270
     if-eqz v3, :cond_2
 
-    .line 222
+    .line 272
     :try_start_2
     invoke-virtual {v3}, Ljava/util/zip/GZIPOutputStream;->close()V
     :try_end_2
@@ -177,7 +183,7 @@
 
     move-object v2, v3
 
-    .line 227
+    .line 277
     .end local v1           #fileOutputStream:Ljava/io/FileOutputStream;
     .end local v3           #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     .restart local v2       #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
@@ -185,7 +191,7 @@
     :goto_0
     return-void
 
-    .line 223
+    .line 273
     .end local v2           #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     .restart local v1       #fileOutputStream:Ljava/io/FileOutputStream;
     .restart local v3       #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
@@ -194,19 +200,19 @@
 
     move-object v2, v3
 
-    .line 224
+    .line 274
     .end local v3           #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     .restart local v2       #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     goto :goto_0
 
-    .line 217
+    .line 267
     .end local v1           #fileOutputStream:Ljava/io/FileOutputStream;
     :catch_1
     move-exception v5
 
     move-object v0, v5
 
-    .line 218
+    .line 268
     .local v0, e:Ljava/io/IOException;
     :goto_1
     :try_start_3
@@ -218,10 +224,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 220
+    .line 270
     if-eqz v2, :cond_0
 
-    .line 222
+    .line 272
     :try_start_4
     invoke-virtual {v2}, Ljava/util/zip/GZIPOutputStream;->close()V
     :try_end_4
@@ -229,13 +235,13 @@
 
     goto :goto_0
 
-    .line 223
+    .line 273
     :catch_2
     move-exception v5
 
     goto :goto_0
 
-    .line 220
+    .line 270
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v5
@@ -243,24 +249,24 @@
     :goto_2
     if-eqz v2, :cond_1
 
-    .line 222
+    .line 272
     :try_start_5
     invoke-virtual {v2}, Ljava/util/zip/GZIPOutputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 224
+    .line 274
     :cond_1
     :goto_3
     throw v5
 
-    .line 223
+    .line 273
     :catch_3
     move-exception v6
 
     goto :goto_3
 
-    .line 220
+    .line 270
     .end local v2           #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     .restart local v1       #fileOutputStream:Ljava/io/FileOutputStream;
     .restart local v3       #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
@@ -273,7 +279,7 @@
     .restart local v2       #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     goto :goto_2
 
-    .line 217
+    .line 267
     .end local v2           #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     .restart local v3       #gzipOutputStream:Ljava/util/zip/GZIPOutputStream;
     :catch_4
@@ -302,19 +308,19 @@
     .parameter "another"
 
     .prologue
-    .line 194
+    .line 241
     instance-of v2, p1, Lcom/sonyericsson/storage/Storage$WriteRootTask;
 
     if-nez v2, :cond_0
 
-    .line 195
+    .line 242
     const/4 v2, 0x0
 
-    .line 198
+    .line 245
     :goto_0
     return v2
 
-    .line 197
+    .line 244
     :cond_0
     move-object v0, p1
 
@@ -322,7 +328,7 @@
 
     move-object v1, v0
 
-    .line 198
+    .line 245
     .local v1, task2:Lcom/sonyericsson/storage/Storage$WriteRootTask;
     iget-object v2, p0, Lcom/sonyericsson/storage/Storage$WriteRootTask;->mRoot:Lcom/sonyericsson/storage/Root;
 
@@ -347,7 +353,7 @@
     .locals 5
 
     .prologue
-    .line 231
+    .line 281
     iget-object v2, p0, Lcom/sonyericsson/storage/Storage$WriteRootTask;->mContext:Landroid/content/Context;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -378,7 +384,7 @@
 
     move-result-object v0
 
-    .line 232
+    .line 282
     .local v0, file:Ljava/io/File;
     iget-object v2, p0, Lcom/sonyericsson/storage/Storage$WriteRootTask;->mContext:Landroid/content/Context;
 
@@ -410,7 +416,7 @@
 
     move-result-object v1
 
-    .line 233
+    .line 283
     .local v1, tmpFile:Ljava/io/File;
     invoke-virtual {v1, v0}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
@@ -418,14 +424,14 @@
 
     if-nez v2, :cond_0
 
-    .line 234
+    .line 284
     const-string v2, "Storage"
 
     const-string v3, "Rename file during write root failed"
 
     invoke-static {v2, v3}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 236
+    .line 286
     :cond_0
     return-void
 .end method

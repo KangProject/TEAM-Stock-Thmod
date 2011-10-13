@@ -15,6 +15,8 @@
         Lcom/sonyericsson/home/R$id;,
         Lcom/sonyericsson/home/R$drawable;,
         Lcom/sonyericsson/home/R$dimen;,
+        Lcom/sonyericsson/home/R$color;,
+        Lcom/sonyericsson/home/R$bool;,
         Lcom/sonyericsson/home/R$attr;,
         Lcom/sonyericsson/home/R$array;,
         Lcom/sonyericsson/home/R$anim;
@@ -30,6 +32,6 @@
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 508
+    .line 592
     return-void
 .end method

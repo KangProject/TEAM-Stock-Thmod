@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="desktop_first_pane_switch_wait_duration">500</integer>
+    <integer name="pane_margin">0</integer>
+</resources>

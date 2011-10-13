@@ -24,6 +24,9 @@
 .method public abstract onEditStarted()V
 .end method
 
+.method public abstract onNudgeHint()V
+.end method
+
 .method public abstract onTransferCanceled()V
 .end method
 

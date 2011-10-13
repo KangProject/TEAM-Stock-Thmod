@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="1">
+    <groups type="corner">
+        <group>
+            <groups type="activities">
+                <group>
+                    <setting key="name">.ui.ConversationListActivity</setting>
+                    <setting key="package-name">com.sonyericsson.conversations</setting>
+                </group>
+            </groups>
+        </group>
+    </groups>
+</settings>

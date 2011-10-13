@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sonyericsson.home.layer.folder.FolderLayout android:id="@id/folder_layer" android:background="#b0000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sonyericsson.home.layer.folder.FolderView android:id="@id/folder_view" android:layout_width="0.0dip" android:layout_height="0.0dip">
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="marquee" android:id="@id/folder_title" android:background="@drawable/home_folder_popup_title_bg" android:paddingLeft="15.0dip" android:paddingTop="13.0dip" android:paddingRight="15.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" />
+        <com.sonyericsson.paneview.PaneView android:id="@id/content" android:background="#00000000" android:scrollbars="vertical" android:fadingEdge="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.sonyericsson.home.layer.folder.FolderView>
+</com.sonyericsson.home.layer.folder.FolderLayout>

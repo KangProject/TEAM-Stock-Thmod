@@ -19,29 +19,29 @@
 
 .field info:Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
-.field location:Landroid/graphics/Point;
+.field location:Lcom/sonyericsson/grid/GridLocation;
 
 
 # direct methods
-.method public constructor <init>(Lcom/sonyericsson/home/data/AdvWidgetInfo;Landroid/graphics/Point;Lcom/sonyericsson/home/widget/OnWidgetConfigured;)V
+.method public constructor <init>(Lcom/sonyericsson/home/data/AdvWidgetInfo;Lcom/sonyericsson/grid/GridLocation;Lcom/sonyericsson/home/widget/OnWidgetConfigured;)V
     .locals 0
     .parameter "info"
     .parameter "location"
     .parameter "callback"
 
     .prologue
-    .line 62
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
+    .line 66
     iput-object p1, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager$PendingWidgetInfo;->info:Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
-    .line 64
-    iput-object p2, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager$PendingWidgetInfo;->location:Landroid/graphics/Point;
+    .line 67
+    iput-object p2, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager$PendingWidgetInfo;->location:Lcom/sonyericsson/grid/GridLocation;
 
-    .line 65
+    .line 68
     iput-object p3, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager$PendingWidgetInfo;->callback:Lcom/sonyericsson/home/widget/OnWidgetConfigured;
 
-    .line 66
+    .line 69
     return-void
 .end method

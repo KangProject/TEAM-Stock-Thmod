@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:visibility="gone" android:animationCache="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/edit_mode_bg_fade" android:background="#b0000000" android:visibility="invisible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <include layout="@layout/apptray_nudges" />
+    <com.sonyericsson.paneview.PaneView android:id="@id/apptray_pane_view" android:paddingLeft="@dimen/apptray_padding_left" android:paddingTop="@dimen/apptray_padding_top" android:paddingRight="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/apptray_margin_top" />
+    <include layout="@layout/apptray_pagination" />
+</RelativeLayout>

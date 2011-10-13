@@ -4,9 +4,9 @@
 
 
 # static fields
-.field private static final MAX_TIMESTEP:I = 0x64
+.field private static final MAX_TIMESTEP:I = 0x1f4
 
-.field private static final TIMESTEP:I = 0x14
+.field private static final TIMESTEP:I = 0xa
 
 
 # instance fields
@@ -308,12 +308,12 @@
 
     .line 142
     .local v0, dt:I
-    const/16 v2, 0x64
+    const/16 v2, 0x1f4
 
     if-le v0, v2, :cond_0
 
     .line 143
-    const/16 v0, 0x64
+    const/16 v0, 0x1f4
 
     .line 146
     :cond_0
@@ -321,7 +321,7 @@
     if-lez v0, :cond_1
 
     .line 147
-    const/16 v2, 0x14
+    const/16 v2, 0xa
 
     invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
@@ -332,7 +332,7 @@
     invoke-virtual {p0, v1}, Lcom/sonyericsson/util/Dynamics;->onUpdate(I)V
 
     .line 149
-    add-int/lit8 v0, v0, -0x14
+    add-int/lit8 v0, v0, -0xa
 
     .line 150
     goto :goto_0

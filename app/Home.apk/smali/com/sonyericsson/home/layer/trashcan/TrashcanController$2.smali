@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 147
+    .line 165
     iput-object p1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,179 +44,226 @@
     .parameter "renderer"
 
     .prologue
-    .line 181
+    .line 201
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->mHinting:Z
 
     if-eqz v0, :cond_0
 
-    .line 182
+    .line 202
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    invoke-static {v0, p1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$600(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Lcom/sonyericsson/animation/Renderer;)V
+    invoke-static {v0, p1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$900(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 183
+    .line 203
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->mHinting:Z
 
-    .line 185
+    .line 205
     :cond_0
     return-void
 .end method
 
 .method public drop(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
-    .locals 7
+    .locals 6
     .parameter "view"
     .parameter "renderer"
     .parameter "dropListener"
 
     .prologue
-    .line 167
-    invoke-static {p1}, Lcom/sonyericsson/home/layer/AdapterHelper;->getInfoFromView(Landroid/view/View;)Lcom/sonyericsson/home/data/Info;
-
-    move-result-object v5
-
-    .line 168
-    .local v5, info:Lcom/sonyericsson/home/data/Info;
+    .line 187
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$000(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
+    invoke-static {p1}, Lcom/sonyericsson/home/layer/AdapterHelper;->getInfoFromView(Landroid/view/View;)Lcom/sonyericsson/home/data/Info;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$202(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/data/Info;
+
+    .line 188
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$100(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 169
+    .line 189
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$000(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$100(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
 
-    move-result-object v6
+    move-result-object v0
 
-    new-instance v0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2$1;
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    move-object v1, p0
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$200(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/data/Info;
 
-    move-object v2, p1
+    move-result-object v1
 
-    move-object v3, p2
+    new-instance v2, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2$1;
 
-    move-object v4, p3
+    invoke-direct {v2, p0, p1, p2, p3}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2$1;-><init>(Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    invoke-direct/range {v0 .. v5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2$1;-><init>(Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;)V
+    invoke-interface {v0, v1, v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;->onDrop(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    invoke-interface {v6, v5, v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;->onDrop(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
-
-    .line 177
+    .line 197
     :goto_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->mHinting:Z
 
-    .line 178
+    .line 198
     return-void
 
-    .line 175
+    .line 195
     :cond_0
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    const/4 v6, 0x1
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$200(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/data/Info;
 
-    move-object v2, p1
+    move-result-object v4
 
-    move-object v3, p2
+    const/4 v5, 0x1
 
-    move-object v4, p3
+    move-object v1, p1
 
-    invoke-static/range {v1 .. v6}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$500(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;Z)V
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-static/range {v0 .. v5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$800(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;Z)V
 
     goto :goto_0
 .end method
 
 .method public hint(Landroid/view/View;IILcom/sonyericsson/animation/Renderer;)Z
-    .locals 3
+    .locals 5
     .parameter "view"
     .parameter "x"
     .parameter "y"
     .parameter "renderer"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v4, 0x0
 
-    .line 151
+    const/4 v3, 0x1
+
+    .line 169
     invoke-static {p1}, Lcom/sonyericsson/home/layer/AdapterHelper;->getInfoFromView(Landroid/view/View;)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
 
-    .line 152
+    .line 170
     .local v0, info:Lcom/sonyericsson/home/data/Info;
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+    instance-of v2, v0, Lcom/sonyericsson/home/data/WidgetInfo;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$200(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Z
+    if-nez v2, :cond_0
 
-    move-result v1
+    instance-of v2, v0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_6
 
-    if-lez p3, :cond_2
-
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
-
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$300(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->getHeight()I
-
-    move-result v1
-
-    if-ge p3, v1, :cond_2
-
-    instance-of v1, v0, Lcom/sonyericsson/home/data/WidgetInfo;
-
-    if-nez v1, :cond_0
-
-    instance-of v1, v0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
-
-    if-nez v1, :cond_0
-
-    if-lez p2, :cond_2
-
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
-
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$300(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->getWidth()I
-
-    move-result v1
-
-    if-ge p2, v1, :cond_2
-
-    .line 156
     :cond_0
-    iget-boolean v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->mHinting:Z
+    move v1, v3
 
-    if-nez v1, :cond_1
+    .line 171
+    .local v1, isWidgetInfo:Z
+    :goto_0
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    .line 157
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$400(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Z
 
-    invoke-static {v1, p4}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$400(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Lcom/sonyericsson/animation/Renderer;)V
+    move-result v2
 
-    .line 158
-    iput-boolean v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->mHinting:Z
+    if-eqz v2, :cond_7
+
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$500(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    if-nez v1, :cond_2
 
     :cond_1
-    move v1, v2
+    if-lez p3, :cond_7
 
-    .line 162
-    :goto_0
-    return v1
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$600(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->getHeight()I
+
+    move-result v2
+
+    if-ge p3, v2, :cond_7
 
     :cond_2
-    const/4 v1, 0x0
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$500(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    if-nez v1, :cond_4
+
+    :cond_3
+    if-lez p2, :cond_7
+
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$600(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->getWidth()I
+
+    move-result v2
+
+    if-ge p2, v2, :cond_7
+
+    .line 176
+    :cond_4
+    iget-boolean v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->mHinting:Z
+
+    if-nez v2, :cond_5
+
+    .line 177
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    invoke-static {v2, p4}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$700(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Lcom/sonyericsson/animation/Renderer;)V
+
+    .line 178
+    iput-boolean v3, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->mHinting:Z
+
+    :cond_5
+    move v2, v3
+
+    .line 182
+    :goto_1
+    return v2
+
+    .end local v1           #isWidgetInfo:Z
+    :cond_6
+    move v1, v4
+
+    .line 170
     goto :goto_0
+
+    .restart local v1       #isWidgetInfo:Z
+    :cond_7
+    move v2, v4
+
+    .line 182
+    goto :goto_1
 .end method

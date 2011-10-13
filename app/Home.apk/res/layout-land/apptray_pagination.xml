@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sonyericsson.home.layer.PaneIndicator android:id="@id/apptray_pane_indicator" android:layout_width="@dimen/apptray_backplate_width" android:layout_height="35.0dip" android:layout_marginLeft="@dimen/apptray_backplate_offsetx" android:layout_alignParentTop="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

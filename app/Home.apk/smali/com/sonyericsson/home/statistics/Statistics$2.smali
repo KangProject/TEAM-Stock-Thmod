@@ -3,12 +3,12 @@
 .source "Statistics.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/LayerController$Syncable;
+.implements Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/statistics/Statistics;->createSyncable()Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    value = Lcom/sonyericsson/home/statistics/Statistics;->createSyncable()Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 187
+    .line 188
     iput-object p1, p0, Lcom/sonyericsson/home/statistics/Statistics$2;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,25 +37,25 @@
 
 
 # virtual methods
-.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 3
     .parameter "info"
 
     .prologue
-    .line 204
+    .line 206
     instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$2;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$400(Lcom/sonyericsson/home/statistics/Statistics;)Z
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$500(Lcom/sonyericsson/home/statistics/Statistics;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 205
+    .line 207
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$2;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
@@ -71,17 +71,26 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/home/statistics/ActivityStats;->registerInstall(J)V
 
-    .line 207
+    .line 208
+    const/4 v0, 0x1
+
+    .line 210
+    :goto_0
+    return v0
+
+    .restart local p1
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 3
     .parameter "info"
 
     .prologue
-    .line 191
+    .line 192
     iget-object v2, p0, Lcom/sonyericsson/home/statistics/Statistics$2;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     iget-object v2, v2, Lcom/sonyericsson/home/statistics/Statistics;->mActivityStats:Ljava/util/LinkedList;
@@ -90,7 +99,7 @@
 
     move-result-object v0
 
-    .line 192
+    .line 193
     .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/sonyericsson/home/statistics/ActivityStats;>;"
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -99,14 +108,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 193
+    .line 194
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/sonyericsson/home/statistics/ActivityStats;
 
-    .line 196
+    .line 197
     .local v1, stats:Lcom/sonyericsson/home/statistics/ActivityStats;
     invoke-virtual {v1}, Lcom/sonyericsson/home/statistics/ActivityStats;->getInfo()Lcom/sonyericsson/home/data/ActivityInfo;
 
@@ -114,11 +123,19 @@
 
     if-ne v2, p1, :cond_0
 
-    .line 197
+    .line 198
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 201
+    .line 199
+    const/4 v2, 0x1
+
+    .line 202
     .end local v1           #stats:Lcom/sonyericsson/home/statistics/ActivityStats;
+    :goto_0
+    return v2
+
     :cond_1
-    return-void
+    const/4 v2, 0x0
+
+    goto :goto_0
 .end method

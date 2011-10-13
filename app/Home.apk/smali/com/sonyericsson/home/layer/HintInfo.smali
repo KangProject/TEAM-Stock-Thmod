@@ -28,7 +28,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f030006
+    const v1, 0x7f030010
 
     const/4 v2, 0x0
 
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 54
     const/4 v0, 0x0
 
     return-object v0
@@ -97,7 +97,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 59
     const/4 v0, 0x0
 
     return v0

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/apptray_button" android:background="@drawable/icon_highlight" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="@dimen/switch_apptray_button_padding_side" android:focusable="true" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/apptray" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</merge>

@@ -76,37 +76,37 @@
     .parameter "packageLoader"
 
     .prologue
-    .line 152
+    .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 71
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoGroupListeners:Ljava/util/LinkedList;
 
-    .line 78
+    .line 83
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mOnLoadCompletedCallbacks:Ljava/util/LinkedList;
 
-    .line 81
+    .line 86
     new-instance v0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/InfoGroupManager$1;-><init>(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
-    .line 153
+    .line 169
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mContext:Landroid/content/Context;
 
-    .line 154
+    .line 170
     iput-object p2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    .line 158
+    .line 174
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mContext:Landroid/content/Context;
 
     const-string v1, "infogroups"
@@ -115,9 +115,9 @@
 
     invoke-direct {v2, p0, p2}, Lcom/sonyericsson/home/layer/InfoGroupManager$2;-><init>(Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
 
-    invoke-static {v0, v1, v2}, Lcom/sonyericsson/storage/Storage;->readRoot(Landroid/content/Context;Ljava/lang/String;Lcom/sonyericsson/storage/Storage$OnReadCompletedCallback;)V
+    invoke-static {v0, v1, v2}, Lcom/sonyericsson/storage/Storage;->readRoot(Landroid/content/Context;Ljava/lang/String;Lcom/sonyericsson/storage/Storage$OnReadCompletedCallback;)Ljava/lang/Object;
 
-    .line 186
+    .line 202
     return-void
 .end method
 
@@ -126,7 +126,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     return-object v0
@@ -138,7 +138,7 @@
     .parameter "x1"
 
     .prologue
-    .line 38
+    .line 39
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     return-object p1
@@ -149,7 +149,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoListener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoListener;
 
     return-object v0
@@ -160,7 +160,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     return-object v0
@@ -171,7 +171,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 39
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->writeToStorage()V
 
     return-void
@@ -182,7 +182,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 39
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->notifyContentChanged()V
 
     return-void
@@ -193,7 +193,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
     return-object v0
@@ -204,7 +204,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mOnLoadCompletedCallbacks:Ljava/util/LinkedList;
 
     return-object v0
@@ -226,7 +226,7 @@
     .end annotation
 
     .prologue
-    .line 205
+    .line 221
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -235,23 +235,23 @@
 
     check-cast v0, Ljava/util/LinkedList;
 
-    .line 206
+    .line 222
     .local v0, infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
     if-nez v0, :cond_0
 
-    .line 207
+    .line 223
     new-instance v0, Ljava/util/LinkedList;
 
     .end local v0           #infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    .line 208
+    .line 224
     .restart local v0       #infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 210
+    .line 226
     :cond_0
     return-object v0
 .end method
@@ -260,7 +260,7 @@
     .locals 3
 
     .prologue
-    .line 350
+    .line 354
     iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoGroupListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
@@ -281,13 +281,13 @@
 
     check-cast v1, Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
 
-    .line 351
+    .line 355
     .local v1, listener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;->onContentChanged()V
 
     goto :goto_0
 
-    .line 353
+    .line 357
     .end local v1           #listener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
     :cond_0
     return-void
@@ -299,20 +299,20 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 369
+    .line 374
     new-instance v0, Lcom/sonyericsson/storage/Root;
 
     const-string v1, "infogroups"
 
     invoke-direct {v0, v1}, Lcom/sonyericsson/storage/Root;-><init>(Ljava/lang/String;)V
 
-    .line 370
+    .line 375
     .local v0, root:Lcom/sonyericsson/storage/Root;
     const-string v1, "version"
 
     invoke-virtual {v0, v1, v3}, Lcom/sonyericsson/storage/Root;->put(Ljava/lang/String;I)V
 
-    .line 371
+    .line 376
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -327,12 +327,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/storage/Root;->addChild(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)V
 
-    .line 372
+    .line 377
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mContext:Landroid/content/Context;
 
     invoke-static {v1, v0, v3}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Lcom/sonyericsson/storage/Root;Z)V
 
-    .line 373
+    .line 378
     return-void
 .end method
 
@@ -345,23 +345,23 @@
     .parameter "info"
 
     .prologue
-    .line 255
+    .line 254
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     if-nez v1, :cond_0
 
-    .line 256
+    .line 255
     const-string v1, "InfoGroupManager"
 
     const-string v2, "add() called before InfoGroupManager initialized."
 
     invoke-static {v1, v2}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 266
+    .line 265
     :goto_0
     return-void
 
-    .line 261
+    .line 260
     :cond_0
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->getUuid()Ljava/util/UUID;
 
@@ -375,14 +375,14 @@
 
     move-result-object v0
 
-    .line 262
+    .line 261
     .local v0, infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
     invoke-virtual {v0, p2, p3}, Ljava/util/LinkedList;->add(ILjava/lang/Object;)V
 
-    .line 264
+    .line 263
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->writeToStorage()V
 
-    .line 265
+    .line 264
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->notifyContentChanged()V
 
     goto :goto_0
@@ -394,23 +394,23 @@
     .parameter "info"
 
     .prologue
-    .line 275
+    .line 269
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     if-nez v1, :cond_0
 
-    .line 276
+    .line 270
     const-string v1, "InfoGroupManager"
 
     const-string v2, "addLast() called before InfoGroupManager initialized."
 
     invoke-static {v1, v2}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 286
+    .line 280
     :goto_0
     return-void
 
-    .line 281
+    .line 275
     :cond_0
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->getUuid()Ljava/util/UUID;
 
@@ -424,14 +424,14 @@
 
     move-result-object v0
 
-    .line 282
+    .line 276
     .local v0, infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
     invoke-virtual {v0, p2}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 284
+    .line 278
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->writeToStorage()V
 
-    .line 285
+    .line 279
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->notifyContentChanged()V
 
     goto :goto_0
@@ -442,10 +442,10 @@
     .parameter "resourceLoader"
 
     .prologue
-    .line 394
+    .line 399
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/InfoGroupManager;->cacheShortcuts(Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
 
-    .line 395
+    .line 400
     return-void
 .end method
 
@@ -454,15 +454,75 @@
     .parameter "resourceLoader"
 
     .prologue
-    .line 384
+    .line 389
     new-instance v0, Lcom/sonyericsson/home/layer/InfoGroupManager$3;
 
     invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/layer/InfoGroupManager$3;-><init>(Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->registerOnLoadCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 391
+    .line 396
     return-void
+.end method
+
+.method public contains(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)Z
+    .locals 4
+    .parameter "infoGroup"
+    .parameter "info"
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 307
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
+
+    if-nez v1, :cond_0
+
+    .line 308
+    const-string v1, "InfoGroupManager"
+
+    const-string v2, "contains() called before InfoGroupManager initialized."
+
+    invoke-static {v1, v2}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
+
+    move v1, v3
+
+    .line 318
+    :goto_0
+    return v1
+
+    .line 313
+    :cond_0
+    invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->getUuid()Ljava/util/UUID;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/sonyericsson/home/layer/InfoGroupManager;->getOrCreateInfoList(Ljava/lang/String;)Ljava/util/LinkedList;
+
+    move-result-object v0
+
+    .line 314
+    .local v0, infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
+    invoke-virtual {v0, p2}, Ljava/util/LinkedList;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 315
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    move v1, v3
+
+    .line 318
+    goto :goto_0
 .end method
 
 .method public getInfo(Lcom/sonyericsson/home/data/InfoGroup;I)Lcom/sonyericsson/home/data/Info;
@@ -471,22 +531,22 @@
     .parameter "location"
 
     .prologue
-    .line 238
+    .line 243
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
-    .line 239
+    .line 244
     const-string v0, "InfoGroupManager"
 
     const-string v1, "getInfo() called before InfoGroupManager initialized."
 
     invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 241
+    .line 246
     const/4 v0, 0x0
 
-    .line 244
+    .line 249
     .end local p0
     :goto_0
     return-object v0
@@ -528,12 +588,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 220
+    .line 231
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     if-nez v1, :cond_0
 
-    .line 221
+    .line 232
     const-string v1, "InfoGroupManager"
 
     const-string v2, "getInfoCount() called before InfoGroupManager initialized."
@@ -542,11 +602,11 @@
 
     move v1, v3
 
-    .line 227
+    .line 238
     :goto_0
     return v1
 
-    .line 226
+    .line 237
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
@@ -564,7 +624,7 @@
 
     check-cast v0, Ljava/util/LinkedList;
 
-    .line 227
+    .line 238
     .local v0, infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
     if-nez v0, :cond_1
 
@@ -584,7 +644,7 @@
     .locals 1
 
     .prologue
-    .line 194
+    .line 210
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -604,7 +664,7 @@
     .locals 3
 
     .prologue
-    .line 363
+    .line 368
     iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoGroupListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
@@ -625,13 +685,13 @@
 
     check-cast v1, Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
 
-    .line 364
+    .line 369
     .local v1, listener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;->onAppearanceChanged()V
 
     goto :goto_0
 
-    .line 366
+    .line 371
     .end local v1           #listener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
     :cond_0
     return-void
@@ -642,12 +702,12 @@
     .parameter "infoGroupListener"
 
     .prologue
-    .line 324
+    .line 328
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoGroupListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 325
+    .line 329
     return-void
 .end method
 
@@ -656,21 +716,21 @@
     .parameter "runnable"
 
     .prologue
-    .line 376
+    .line 381
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->isLoadCompleted()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 377
+    .line 382
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 381
+    .line 386
     :goto_0
     return-void
 
-    .line 379
+    .line 384
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mOnLoadCompletedCallbacks:Ljava/util/LinkedList;
 
@@ -685,30 +745,30 @@
     .parameter "location"
 
     .prologue
-    .line 296
+    .line 284
     iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
     if-nez v2, :cond_0
 
-    .line 297
+    .line 285
     const-string v2, "InfoGroupManager"
 
     const-string v3, "remove() called before InfoGroupManager initialized."
 
     invoke-static {v2, v3}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 299
+    .line 287
     const/4 v2, 0x0
 
-    .line 314
+    .line 302
     :goto_0
     return-object v2
 
-    .line 302
+    .line 290
     :cond_0
     const/4 v1, 0x0
 
-    .line 304
+    .line 292
     .local v1, removedInfo:Lcom/sonyericsson/home/data/Info;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoLists:Ljava/util/HashMap;
 
@@ -726,11 +786,11 @@
 
     check-cast v0, Ljava/util/LinkedList;
 
-    .line 305
+    .line 293
     .local v0, infoList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;"
     if-eqz v0, :cond_1
 
-    .line 306
+    .line 294
     invoke-virtual {v0, p2}, Ljava/util/LinkedList;->remove(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -738,21 +798,21 @@
     .end local v1           #removedInfo:Lcom/sonyericsson/home/data/Info;
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 309
+    .line 297
     .restart local v1       #removedInfo:Lcom/sonyericsson/home/data/Info;
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 310
+    .line 298
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->writeToStorage()V
 
-    .line 311
+    .line 299
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->notifyContentChanged()V
 
     :cond_2
     move-object v2, v1
 
-    .line 314
+    .line 302
     goto :goto_0
 .end method
 
@@ -761,10 +821,10 @@
     .parameter "listener"
 
     .prologue
-    .line 343
+    .line 347
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoListener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoListener;
 
-    .line 344
+    .line 348
     return-void
 .end method
 
@@ -772,12 +832,12 @@
     .locals 1
 
     .prologue
-    .line 398
+    .line 403
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoGroupListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
-    .line 399
+    .line 404
     return-void
 .end method
 
@@ -786,11 +846,11 @@
     .parameter "infoGroupListener"
 
     .prologue
-    .line 334
+    .line 338
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager;->mInfoGroupListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 335
+    .line 339
     return-void
 .end method

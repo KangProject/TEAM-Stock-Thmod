@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sonyericsson.home.layer.stage.StageGlowView android:id="@id/stage_glow" android:background="@drawable/home_stage_bg" android:layout_width="@dimen/stage_breadth" android:layout_height="fill_parent" android:src="@drawable/stage_glow" android:scaleType="fitStart" android:layout_alignParentRight="true" />
+    <com.sonyericsson.paneview.PaneView android:id="@id/stage_paneview" android:paddingLeft="725.0px" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sonyericsson.home.layer.HintView android:id="@id/stage_hintview" android:visibility="invisible" android:layout_width="@dimen/stage_breadth" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+</RelativeLayout>

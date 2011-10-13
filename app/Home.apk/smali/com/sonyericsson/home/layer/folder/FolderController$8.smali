@@ -3,12 +3,12 @@
 .source "FolderController.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/folder/FolderController$FolderControllerListener$OnRenameFolderListener;
+.implements Landroid/widget/AdapterView$OnItemLongClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/folder/FolderController;->onResume(Z)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/sonyericsson/home/layer/folder/FolderController;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 650
+    .line 250
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$8;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,17 +37,34 @@
 
 
 # virtual methods
-.method public onRenameFinished()V
-    .locals 2
+.method public onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
+    .locals 1
+    .parameter
+    .parameter "view"
+    .parameter "position"
+    .parameter "id"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView",
+            "<*>;",
+            "Landroid/view/View;",
+            "IJ)Z"
+        }
+    .end annotation
 
     .prologue
-    .line 652
+    .line 253
+    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$8;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$2802(Lcom/sonyericsson/home/layer/folder/FolderController;Z)Z
+    move-result-object v0
 
-    .line 653
-    return-void
+    invoke-virtual {v0, p2, p3}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->onItemLongClick(Landroid/view/View;I)Z
+
+    move-result v0
+
+    return v0
 .end method

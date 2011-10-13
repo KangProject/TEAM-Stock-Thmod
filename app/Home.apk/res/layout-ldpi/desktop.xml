@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.sonyericsson.home.layer.desktop.InterceptingRelativeLayout android:id="@id/desktop_layer" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sonyericsson.home.layer.PaneIndicator android:id="@id/desktop_pane_indicator" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
-    <com.sonyericsson.home.layer.HintView android:id="@id/desktop_nudge_left" android:visibility="invisible" android:layout_width="5.0dip" android:layout_height="@dimen/desktop_height" />
-    <com.sonyericsson.home.layer.HintView android:id="@id/desktop_nudge_right" android:visibility="invisible" android:layout_width="5.0dip" android:layout_height="@dimen/desktop_height" android:layout_alignParentRight="true" />
-    <com.sonyericsson.paneview.PaneView android:id="@id/desktop_pane_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</com.sonyericsson.home.layer.desktop.InterceptingRelativeLayout>

@@ -240,10 +240,10 @@
     .parameter "context"
 
     .prologue
-    .line 141
+    .line 140
     const/4 v0, 0x0
 
-    .line 142
+    .line 141
     .local v0, retVal:I
     sget-boolean v1, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
@@ -255,14 +255,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 143
+    .line 142
     sget v0, Lcom/sonyericsson/home/bidi/Utils;->sThemeBidiDialogAlert:I
 
-    .line 149
+    .line 148
     :goto_0
     return v0
 
-    .line 147
+    .line 146
     :cond_0
     sget v0, Lcom/sonyericsson/home/bidi/Utils;->sThemeDialogAlert:I
 
@@ -274,16 +274,16 @@
     .parameter "context"
 
     .prologue
-    .line 123
+    .line 122
     const/4 v1, 0x0
 
-    .line 124
+    .line 123
     .local v1, retVal:Z
     sget-boolean v2, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     if-eqz v2, :cond_0
 
-    .line 126
+    .line 125
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -297,18 +297,18 @@
 
     move-result v1
 
-    .line 131
+    .line 130
     :cond_0
     :goto_0
     return v1
 
-    .line 127
+    .line 126
     :catch_0
     move-exception v2
 
     move-object v0, v2
 
-    .line 128
+    .line 127
     .local v0, e:Landroid/content/res/Resources$NotFoundException;
     const-string v2, "Bidi"
 
@@ -328,12 +328,12 @@
 
     const-string v5, "Bidi"
 
-    .line 103
+    .line 102
     sget-boolean v1, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     if-eqz v1, :cond_0
 
-    .line 105
+    .line 104
     :try_start_0
     sget-object v1, Lcom/sonyericsson/home/bidi/Utils;->sSetDirectionalityMethod:Ljava/lang/reflect/Method;
 
@@ -357,18 +357,18 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 114
+    .line 113
     :cond_0
     :goto_0
     return-void
 
-    .line 106
+    .line 105
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 107
+    .line 106
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v1, "Bidi"
 
@@ -378,14 +378,14 @@
 
     goto :goto_0
 
-    .line 108
+    .line 107
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v1
 
     move-object v0, v1
 
-    .line 109
+    .line 108
     .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v1, "Bidi"
 
@@ -395,14 +395,14 @@
 
     goto :goto_0
 
-    .line 110
+    .line 109
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_2
     move-exception v1
 
     move-object v0, v1
 
-    .line 111
+    .line 110
     .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     const-string v1, "Bidi"
 

@@ -24,7 +24,7 @@
     <string name="home_sort_dialog_option_recently_installed_sort_txt">Installato di recente</string>
     <string name="home_popup_cancel_txt">Annulla</string>
     <string name="home_error_activity_not_found_txt">Applicazione non trovata</string>
-    <string name="home_error_desktop_full_txt">Nessuna stanza nella schermata iniziale</string>
+    <string name="home_error_desktop_full_txt">Spazio insufficiente nella schermata iniziale</string>
     <string name="home_error_loading_widget">Impossibile caricare widget</string>
     <string name="home_folder_dialog_folder_name_txt">Nome cartella</string>
     <string name="home_folder_confirm_delete_txt">La cartella contiene elementi. Eliminare la cartella?</string>

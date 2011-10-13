@@ -7,10 +7,10 @@
 
 
 # static fields
-.field private static mRecycledLocations:Ljava/util/LinkedList;
+.field private static mRecycledLocations:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/LinkedList",
+            "Ljava/util/ArrayList",
             "<",
             "Lcom/sonyericsson/paneview/PaneLocation;",
             ">;"
@@ -33,11 +33,11 @@
 
     .prologue
     .line 33
-    new-instance v0, Ljava/util/LinkedList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/LinkedList;
+    sput-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -60,14 +60,14 @@
     return-void
 .end method
 
-.method static obtain()Lcom/sonyericsson/paneview/PaneLocation;
-    .locals 1
+.method public static obtain()Lcom/sonyericsson/paneview/PaneLocation;
+    .locals 3
 
     .prologue
     .line 51
-    sget-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/LinkedList;
+    sget-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
@@ -83,9 +83,19 @@
     return-object v0
 
     :cond_0
-    sget-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/LinkedList;
+    sget-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
+    sget-object v1, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    sub-int/2addr v1, v2
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -228,9 +238,9 @@
     iput v0, p0, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
 
     .line 78
-    sget-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/LinkedList;
+    sget-object v0, Lcom/sonyericsson/paneview/PaneLocation;->mRecycledLocations:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p0}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 79
     return-void

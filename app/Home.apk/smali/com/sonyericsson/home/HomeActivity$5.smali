@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 386
+    .line 622
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$5;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .parameter "info"
 
     .prologue
-    .line 389
+    .line 625
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$5;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$1000(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/Info;)V
+    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$600(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 390
+    .line 626
     return-void
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 214
+    .line 219
     iput-object p1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$3;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,21 +43,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 216
+    .line 221
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$3;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$902(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;Z)Z
 
-    .line 217
+    .line 222
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$3;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$1002(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;Z)Z
 
-    .line 218
+    .line 223
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$3;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->close(I)V
 
-    .line 219
+    .line 224
     return-void
 .end method

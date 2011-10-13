@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->onReadCompleted(Lcom/sonyericsson/storage/Root;)V
+    value = Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->run()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 264
+    .line 354
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1$1;->this$2:Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,14 +53,14 @@
     .parameter "b"
 
     .prologue
-    .line 266
+    .line 356
     iget v1, p1, Lcom/sonyericsson/home/resourceload/ResourceLoader$TimedInfo;->timing:I
 
     iget v2, p2, Lcom/sonyericsson/home/resourceload/ResourceLoader$TimedInfo;->timing:I
 
     sub-int v0, v1, v2
 
-    .line 270
+    .line 360
     .local v0, comparison:I
     if-eqz v0, :cond_0
 
@@ -81,7 +81,7 @@
     .parameter "x1"
 
     .prologue
-    .line 264
+    .line 354
     check-cast p1, Lcom/sonyericsson/home/resourceload/ResourceLoader$TimedInfo;
 
     .end local p1

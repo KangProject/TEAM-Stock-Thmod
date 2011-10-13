@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_menu_add_txt">সংযোজন করুন</string>
+    <string name="home_dialog_title_add_shortcut_txt">শর্টকাট সংযোজন করুন</string>
+</resources>

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 184
+    .line 214
     iput-object p1, p0, Lcom/sonyericsson/util/Worker$2;->this$0:Lcom/sonyericsson/util/Worker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,27 +41,52 @@
     .locals 2
 
     .prologue
-    .line 195
+    .line 216
     iget-object v0, p0, Lcom/sonyericsson/util/Worker$2;->this$0:Lcom/sonyericsson/util/Worker;
 
-    invoke-static {v0}, Lcom/sonyericsson/util/Worker;->access$000(Lcom/sonyericsson/util/Worker;)Lcom/sonyericsson/util/Worker$Task;
+    invoke-static {v0}, Lcom/sonyericsson/util/Worker;->access$000(Lcom/sonyericsson/util/Worker;)Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 226
+    iget-object v0, p0, Lcom/sonyericsson/util/Worker$2;->this$0:Lcom/sonyericsson/util/Worker;
+
+    invoke-static {v0}, Lcom/sonyericsson/util/Worker;->access$100(Lcom/sonyericsson/util/Worker;)Lcom/sonyericsson/util/Worker$Task;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sonyericsson/util/Worker$Task;->postExecute()V
 
-    .line 198
+    .line 230
+    :cond_0
     iget-object v0, p0, Lcom/sonyericsson/util/Worker$2;->this$0:Lcom/sonyericsson/util/Worker;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/util/Worker;->access$002(Lcom/sonyericsson/util/Worker;Lcom/sonyericsson/util/Worker$Task;)Lcom/sonyericsson/util/Worker$Task;
+    invoke-static {v0, v1}, Lcom/sonyericsson/util/Worker;->access$102(Lcom/sonyericsson/util/Worker;Lcom/sonyericsson/util/Worker$Task;)Lcom/sonyericsson/util/Worker$Task;
 
-    .line 199
+    .line 231
     iget-object v0, p0, Lcom/sonyericsson/util/Worker$2;->this$0:Lcom/sonyericsson/util/Worker;
 
-    invoke-static {v0}, Lcom/sonyericsson/util/Worker;->access$300(Lcom/sonyericsson/util/Worker;)V
+    invoke-static {v0}, Lcom/sonyericsson/util/Worker;->access$000(Lcom/sonyericsson/util/Worker;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 200
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 232
+    iget-object v0, p0, Lcom/sonyericsson/util/Worker$2;->this$0:Lcom/sonyericsson/util/Worker;
+
+    invoke-static {v0}, Lcom/sonyericsson/util/Worker;->access$400(Lcom/sonyericsson/util/Worker;)V
+
+    .line 233
     return-void
 .end method

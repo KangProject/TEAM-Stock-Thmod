@@ -15,117 +15,125 @@
 
 
 # static fields
-.field public static final app_tray_layer:I = 0x7f0c0029
+.field public static final app_tray_layer:I = 0x7f0e0030
 
-.field public static final apptray_button:I = 0x7f0c0033
+.field public static final apptray_button:I = 0x7f0e0015
 
-.field public static final apptray_nudge_left:I = 0x7f0c0002
+.field public static final apptray_controls:I = 0x7f0e0003
 
-.field public static final apptray_nudge_right:I = 0x7f0c0003
+.field public static final apptray_nudge_left:I = 0x7f0e0007
 
-.field public static final apptray_pane_indicator:I = 0x7f0c0005
+.field public static final apptray_nudge_right:I = 0x7f0e0008
 
-.field public static final apptray_pane_view:I = 0x7f0c0006
+.field public static final apptray_pane_indicator:I = 0x7f0e0001
 
-.field public static final button_negative:I = 0x7f0c0008
+.field public static final apptray_pane_view:I = 0x7f0e0000
 
-.field public static final button_positive:I = 0x7f0c0007
+.field public static final badge_icon:I = 0x7f0e0029
 
-.field public static final desktop_fullscreen_placeholder:I = 0x7f0c0028
+.field public static final bottomleft_corner:I = 0x7f0e000d
 
-.field public static final desktop_layer:I = 0x7f0c0009
+.field public static final bottomright_corner:I = 0x7f0e000e
 
-.field public static final desktop_layer_stub:I = 0x7f0c0026
+.field public static final button_negative:I = 0x7f0e0010
 
-.field public static final desktop_leave_overview:I = 0x7f0c0027
+.field public static final button_positive:I = 0x7f0e000f
 
-.field public static final desktop_master_layer:I = 0x7f0c0025
+.field public static final content:I = 0x7f0e001d
 
-.field public static final desktop_nudge_left:I = 0x7f0c000b
+.field public static final corner_layer:I = 0x7f0e0009
 
-.field public static final desktop_nudge_right:I = 0x7f0c000c
+.field public static final cornerbutton_dim:I = 0x7f0e000a
 
-.field public static final desktop_pane_indicator:I = 0x7f0c000a
+.field public static final desktop_fullscreen_placeholder:I = 0x7f0e002f
 
-.field public static final desktop_pane_view:I = 0x7f0c000d
+.field public static final desktop_layer:I = 0x7f0e0011
 
-.field public static final edit_button:I = 0x7f0c0004
+.field public static final desktop_leave_overview:I = 0x7f0e002e
 
-.field public static final edit_mode_bg_fade:I = 0x7f0c0001
+.field public static final desktop_master_layer:I = 0x7f0e002d
 
-.field public static final fake_stage:I = 0x7f0c0032
+.field public static final desktop_nudge_left:I = 0x7f0e0012
 
-.field public static final folder_bg_left:I = 0x7f0c001f
+.field public static final desktop_nudge_right:I = 0x7f0e0013
 
-.field public static final folder_bg_middle:I = 0x7f0c0020
+.field public static final desktop_pane_indicator:I = 0x7f0e0016
 
-.field public static final folder_bg_right:I = 0x7f0c0021
+.field public static final desktop_pane_view:I = 0x7f0e0014
 
-.field public static final folder_layer:I = 0x7f0c002a
+.field public static final edit_button:I = 0x7f0e0005
 
-.field public static final folder_pane_view:I = 0x7f0c001c
+.field public static final edit_mode_bg_fade:I = 0x7f0e0002
 
-.field public static final folder_view:I = 0x7f0c001b
+.field public static final fade:I = 0x7f0e002c
 
-.field public static final home_button:I = 0x7f0c0034
+.field public static final fake_stage:I = 0x7f0e0019
 
-.field public static final icon0:I = 0x7f0c0012
+.field public static final folder_layer:I = 0x7f0e001a
 
-.field public static final icon1:I = 0x7f0c0013
+.field public static final folder_title:I = 0x7f0e001c
 
-.field public static final icon2:I = 0x7f0c0014
+.field public static final folder_view:I = 0x7f0e001b
 
-.field public static final icon3:I = 0x7f0c0015
+.field public static final home_button:I = 0x7f0e0006
 
-.field public static final icon4:I = 0x7f0c0016
+.field public static final icon0:I = 0x7f0e0020
 
-.field public static final icon5:I = 0x7f0c0017
+.field public static final icon1:I = 0x7f0e0021
 
-.field public static final icon6:I = 0x7f0c0018
+.field public static final icon2:I = 0x7f0e0022
 
-.field public static final icon7:I = 0x7f0c0019
+.field public static final icon3:I = 0x7f0e0023
 
-.field public static final icon_image:I = 0x7f0c0022
+.field public static final icon4:I = 0x7f0e0024
 
-.field public static final icon_label:I = 0x7f0c0023
+.field public static final icon5:I = 0x7f0e0025
 
-.field public static final item_icon:I = 0x7f0c000e
+.field public static final icon6:I = 0x7f0e0026
 
-.field public static final item_label:I = 0x7f0c000f
+.field public static final icon7:I = 0x7f0e0027
 
-.field public static final label:I = 0x7f0c001e
+.field public static final icon_image:I = 0x7f0e0028
 
-.field public static final label_click_view:I = 0x7f0c001d
+.field public static final icon_label:I = 0x7f0e002a
 
-.field public static final open_folder:I = 0x7f0c001a
+.field public static final item_icon:I = 0x7f0e0017
 
-.field public static final sort_button:I = 0x7f0c0000
+.field public static final item_label:I = 0x7f0e0018
 
-.field public static final sort_icon:I = 0x7f0c002b
+.field public static final network_name_view:I = 0x7f0e0031
 
-.field public static final sort_label:I = 0x7f0c002c
+.field public static final sort_button:I = 0x7f0e0004
 
-.field public static final sort_radiobutton:I = 0x7f0c002d
+.field public static final sort_icon:I = 0x7f0e0032
 
-.field public static final stage_glow:I = 0x7f0c002e
+.field public static final sort_label:I = 0x7f0e0033
 
-.field public static final stage_hintview:I = 0x7f0c0030
+.field public static final sort_radiobutton:I = 0x7f0e0034
 
-.field public static final stage_layer:I = 0x7f0c0031
+.field public static final stage_glow:I = 0x7f0e0035
 
-.field public static final stage_paneview:I = 0x7f0c002f
+.field public static final stage_hintview:I = 0x7f0e0037
 
-.field public static final text:I = 0x7f0c0011
+.field public static final stage_layer:I = 0x7f0e0038
 
-.field public static final title:I = 0x7f0c0010
+.field public static final stage_paneview:I = 0x7f0e0036
 
-.field public static final transfer_layer:I = 0x7f0c0024
+.field public static final text:I = 0x7f0e001f
 
-.field public static final trashcan:I = 0x7f0c0037
+.field public static final title:I = 0x7f0e001e
 
-.field public static final trashcan_hint:I = 0x7f0c0036
+.field public static final topleft_corner:I = 0x7f0e000b
 
-.field public static final trashcan_layer:I = 0x7f0c0035
+.field public static final topright_corner:I = 0x7f0e000c
+
+.field public static final transfer_layer:I = 0x7f0e002b
+
+.field public static final trashcan:I = 0x7f0e003b
+
+.field public static final trashcan_hint:I = 0x7f0e003a
+
+.field public static final trashcan_layer:I = 0x7f0e0039
 
 
 # direct methods
@@ -133,7 +141,7 @@
     .locals 0
 
     .prologue
-    .line 197
+    .line 318
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -24,7 +24,7 @@
     .parameter "id"
 
     .prologue
-    .line 36
+    .line 39
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/FindBlockingPaneView;->getId()I
 
     move-result v0
@@ -47,7 +47,7 @@
     .parameter "tag"
 
     .prologue
-    .line 43
+    .line 49
     if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/FindBlockingPaneView;->getTag()Ljava/lang/Object;

@@ -3,7 +3,7 @@
 .source "StageController.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/LayerController$Syncable;
+.implements Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 187
+    .line 210
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$1;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,21 +37,23 @@
 
 
 # virtual methods
-.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)V
-    .locals 0
-    .parameter "info"
-
-    .prologue
-    .line 197
-    return-void
-.end method
-
-.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 1
     .parameter "info"
 
     .prologue
-    .line 189
+    .line 221
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 212
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$1;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$000(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageModelManager;
@@ -60,7 +62,7 @@
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->remove(Lcom/sonyericsson/home/data/Info;)Z
 
-    .line 190
+    .line 213
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$1;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$100(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;
@@ -69,7 +71,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 191
+    .line 214
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$1;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$100(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;
@@ -78,7 +80,9 @@
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;->onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 193
+    .line 216
     :cond_0
-    return-void
+    const/4 v0, 0x1
+
+    return v0
 .end method

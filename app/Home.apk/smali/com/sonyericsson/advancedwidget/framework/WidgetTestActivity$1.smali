@@ -107,7 +107,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onDestroy()V
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->remove()V
 
     .line 61
     iget-object v0, p0, Lcom/sonyericsson/advancedwidget/framework/WidgetTestActivity$1;->this$0:Lcom/sonyericsson/advancedwidget/framework/WidgetTestActivity;

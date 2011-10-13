@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 384
+    .line 389
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$3;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$3;->val$resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
@@ -46,7 +46,7 @@
     .locals 4
 
     .prologue
-    .line 386
+    .line 391
     iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$3;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$000(Lcom/sonyericsson/home/layer/InfoGroupManager;)Ljava/util/HashMap;
@@ -75,7 +75,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 387
+    .line 392
     .local v1, infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$3;->val$resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 389
+    .line 394
     .end local v1           #infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     :cond_0
     return-void

@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 51
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 56
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer$State;-><init>()V
 
     return-void

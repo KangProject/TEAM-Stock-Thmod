@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 2034
+    .line 2773
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$3;->this$1:Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;
 
     iput-object p2, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$3;->val$itemView:Landroid/view/View;
@@ -52,17 +52,18 @@
 
 
 # virtual methods
-.method public cacheCallback(Lcom/sonyericsson/home/data/Info;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
+.method public cacheCallback(Lcom/sonyericsson/home/data/Info;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Ljava/lang/String;)V
     .locals 2
     .parameter "info"
     .parameter "icon"
     .parameter "label"
+    .parameter "badgeMessage"
 
     .prologue
-    .line 2037
+    .line 2776
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$3;->val$itemView:Landroid/view/View;
 
-    invoke-static {}, Lcom/sonyericsson/home/HomeActivity;->access$4700()I
+    invoke-static {}, Lcom/sonyericsson/home/HomeActivity;->access$5800()I
 
     move-result v1
 
@@ -76,22 +77,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 2038
+    .line 2777
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$3;->val$iconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2039
+    .line 2778
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$3;->val$labelView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2040
+    .line 2779
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$3;->val$itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 2042
+    .line 2781
     :cond_0
     return-void
 .end method

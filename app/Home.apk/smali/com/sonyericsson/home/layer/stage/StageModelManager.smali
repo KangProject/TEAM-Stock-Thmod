@@ -27,63 +27,63 @@
     .end annotation
 .end field
 
-.field private mViewWidth:I
+.field private mLandscapeOrientation:Z
 
 
 # direct methods
-.method public constructor <init>(III)V
+.method public constructor <init>(ZII)V
     .locals 4
-    .parameter "viewWidth"
+    .parameter "landscapeOrientation"
     .parameter "cellWidth"
     .parameter "cellHeight"
 
     .prologue
     const/4 v3, 0x4
 
-    .line 47
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
+    .line 50
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintLocation:I
 
-    .line 48
-    iput p1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mViewWidth:I
+    .line 55
+    iput-boolean p1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mLandscapeOrientation:Z
 
-    .line 49
+    .line 56
     iput p2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
 
-    .line 50
+    .line 57
     iput p3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellHeight:I
 
-    .line 51
+    .line 58
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
-    .line 52
+    .line 59
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v3, :cond_0
 
-    .line 53
+    .line 60
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 52
+    .line 59
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 55
+    .line 62
     :cond_0
     return-void
 .end method
@@ -92,23 +92,10 @@
     .locals 4
 
     .prologue
-    .line 294
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
-
-    if-nez v3, :cond_0
-
-    .line 295
-    new-instance v3, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v3}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v3
-
-    .line 297
-    :cond_0
+    .line 318
     const/4 v0, 0x0
 
-    .line 298
+    .line 319
     .local v0, hintPosition:I
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -117,13 +104,13 @@
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :cond_1
+    :cond_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -131,18 +118,18 @@
 
     check-cast v2, Lcom/sonyericsson/home/data/Info;
 
-    .line 299
+    .line 320
     .local v2, info:Lcom/sonyericsson/home/data/Info;
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
-    .line 300
+    .line 321
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 303
+    .line 324
     .end local v2           #info:Lcom/sonyericsson/home/data/Info;
-    :cond_2
+    :cond_1
     return v0
 .end method
 
@@ -153,10 +140,10 @@
     .parameter "hintInfo"
 
     .prologue
-    .line 190
+    .line 208
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
-    .line 191
+    .line 209
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->getHintPosition()I
 
     move-result v0
@@ -170,7 +157,7 @@
     .parameter "index"
 
     .prologue
-    .line 286
+    .line 310
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -179,15 +166,15 @@
 
     if-nez v0, :cond_0
 
-    .line 287
+    .line 311
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2, p1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 288
+    .line 312
     const/4 v0, 0x1
 
-    .line 290
+    .line 314
     :goto_0
     return v0
 
@@ -197,24 +184,28 @@
     goto :goto_0
 .end method
 
-.method public addItemAtHint(Lcom/sonyericsson/home/data/Info;)I
+.method public addItemAtHint(Lcom/sonyericsson/home/data/Info;)V
     .locals 2
     .parameter "info"
 
     .prologue
-    .line 264
+    .line 289
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     if-nez v0, :cond_0
 
-    .line 265
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 290
+    const-string v0, "StageModelManager.addItemAtHint(Info)"
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    const-string v1, "mHintInfo is null"
 
-    throw v0
+    invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 268
+    .line 295
+    :goto_0
+    return-void
+
+    .line 294
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -222,8 +213,18 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 270
-    invoke-direct {p0}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->getHintPosition()I
+    goto :goto_0
+.end method
+
+.method public contains(Lcom/sonyericsson/home/data/Info;)Z
+    .locals 1
+    .parameter "infoToLookFor"
+
+    .prologue
+    .line 332
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -235,21 +236,21 @@
     .parameter "position"
 
     .prologue
-    .line 105
+    .line 111
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->getIndexFromPosition(I)I
 
     move-result v0
 
-    .line 106
+    .line 112
     .local v0, index:I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 107
+    .line 113
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
-    .line 109
+    .line 115
     .end local p0
     :goto_0
     return-object v1
@@ -283,12 +284,14 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 139
     new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    const/4 v3, 0x4
 
-    .line 135
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 141
     .local v2, infos:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -311,38 +314,44 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 136
+    .line 142
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     if-eqz v1, :cond_0
 
-    .line 137
+    .line 143
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 141
+    .line 147
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     return-object v2
 .end method
 
 .method public getHintType()I
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 242
+    .line 262
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     if-nez v0, :cond_0
 
-    .line 243
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 263
+    const-string v0, "StageModelManager.getHintType()"
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    const-string v1, "mHintInfo is null"
 
-    throw v0
+    invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 246
+    .line 264
+    const/4 v0, 0x1
+
+    .line 267
+    :goto_0
+    return v0
+
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
@@ -350,48 +359,65 @@
 
     move-result v0
 
-    return v0
+    goto :goto_0
 .end method
 
-.method public getIndexFromCoordinate(I)I
-    .locals 5
+.method public getIndexFromCoordinate(II)I
+    .locals 4
     .parameter "x"
+    .parameter "y"
 
     .prologue
-    .line 179
+    .line 191
     const/4 v1, 0x5
 
-    .line 180
+    .line 194
     .local v1, size:I
-    iget v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mViewWidth:I
+    iget-boolean v2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mLandscapeOrientation:Z
 
-    div-int v2, v3, v1
+    if-eqz v2, :cond_1
 
-    .line 181
-    .local v2, widthDelta:I
-    div-int v0, p1, v2
+    .line 195
+    const/4 v2, 0x4
 
-    .line 182
+    iget v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellHeight:I
+
+    div-int v3, p2, v3
+
+    sub-int v0, v2, v3
+
+    .line 200
     .local v0, index:I
-    div-int/lit8 v3, v1, 0x2
+    :goto_0
+    div-int/lit8 v2, v1, 0x2
 
-    if-lt v0, v3, :cond_0
+    if-lt v0, v2, :cond_0
 
-    .line 183
+    .line 201
     add-int/lit8 v0, v0, -0x1
 
-    .line 185
+    .line 203
     :cond_0
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x3
+    const/4 v3, 0x3
 
-    invoke-static {v0, v3, v4}, Lcom/sonyericsson/util/MathUtil;->clamp(III)I
+    invoke-static {v0, v2, v3}, Lcom/sonyericsson/util/MathUtil;->clamp(III)I
 
     move-result v0
 
-    .line 186
+    .line 204
     return v0
+
+    .line 197
+    .end local v0           #index:I
+    :cond_1
+    iget v2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
+
+    div-int v0, p1, v2
+
+    .restart local v0       #index:I
+    goto :goto_0
 .end method
 
 .method public getIndexFromPosition(I)I
@@ -399,7 +425,7 @@
     .parameter "position"
 
     .prologue
-    .line 274
+    .line 298
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -412,7 +438,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 275
+    .line 299
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -421,26 +447,26 @@
 
     if-eqz v1, :cond_0
 
-    .line 276
+    .line 300
     add-int/lit8 p1, p1, -0x1
 
-    .line 278
+    .line 302
     :cond_0
     if-gez p1, :cond_1
 
     move v1, v0
 
-    .line 282
+    .line 306
     :goto_1
     return v1
 
-    .line 274
+    .line 298
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 282
+    .line 306
     :cond_2
     const/4 v1, -0x1
 
@@ -451,7 +477,7 @@
     .locals 2
 
     .prologue
-    .line 250
+    .line 276
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->getHintType()I
 
     move-result v0
@@ -460,14 +486,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 251
+    .line 277
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 254
+    .line 280
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -484,99 +510,37 @@
 .end method
 
 .method public getLocation(ILcom/sonyericsson/paneview/PaneLocation;)V
-    .locals 8
+    .locals 2
     .parameter "position"
     .parameter "outLocation"
 
     .prologue
-    const/4 v7, 0x0
-
-    .line 159
+    .line 164
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->getIndexFromPosition(I)I
 
     move-result v0
 
-    .line 160
+    .line 165
     .local v0, index:I
-    const/4 v4, -0x1
+    const/4 v1, -0x1
 
-    if-ne v0, v4, :cond_0
+    if-ne v0, v1, :cond_0
 
-    .line 161
+    .line 166
     iget v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintLocation:I
 
-    .line 163
-    :cond_0
-    const/4 v1, 0x5
-
-    .line 164
-    .local v1, size:I
-    div-int/lit8 v4, v1, 0x2
-
-    if-lt v0, v4, :cond_1
-
-    .line 165
-    add-int/lit8 v0, v0, 0x1
-
-    .line 168
-    :cond_1
-    iget v4, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mViewWidth:I
-
-    iget v5, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
-
-    mul-int/2addr v5, v1
-
-    sub-int/2addr v4, v5
-
-    add-int/lit8 v5, v1, 0x1
-
-    div-int v2, v4, v5
-
     .line 169
-    .local v2, startX:I
-    iget v4, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
+    :cond_0
+    iget-object v1, p2, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
 
-    add-int v3, v2, v4
+    invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->setupRect(ILandroid/graphics/Rect;)V
+
+    .line 170
+    const/4 v1, 0x0
+
+    iput v1, p2, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
 
     .line 171
-    .local v3, widthDelta:I
-    iget-object v4, p2, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
-
-    mul-int v5, v0, v3
-
-    add-int/2addr v5, v2
-
-    iput v5, v4, Landroid/graphics/Rect;->left:I
-
-    .line 172
-    iget-object v4, p2, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
-
-    iget-object v5, p2, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    iget v6, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
-
-    add-int/2addr v5, v6
-
-    iput v5, v4, Landroid/graphics/Rect;->right:I
-
-    .line 173
-    iget-object v4, p2, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
-
-    iput v7, v4, Landroid/graphics/Rect;->top:I
-
-    .line 174
-    iget-object v4, p2, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
-
-    iget v5, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellHeight:I
-
-    iput v5, v4, Landroid/graphics/Rect;->bottom:I
-
-    .line 175
-    iput v7, p2, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
-
-    .line 176
     return-void
 .end method
 
@@ -593,7 +557,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 79
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     return-object v0
@@ -603,7 +567,7 @@
     .locals 1
 
     .prologue
-    .line 238
+    .line 258
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     if-eqz v0, :cond_0
@@ -624,10 +588,10 @@
     .parameter "infoToLookFor"
 
     .prologue
-    .line 120
+    .line 126
     const/4 v2, 0x0
 
-    .line 121
+    .line 127
     .local v2, position:I
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -650,28 +614,28 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 122
+    .line 128
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     if-eqz v1, :cond_0
 
-    .line 123
+    .line 129
     if-ne v1, p1, :cond_1
 
     move v3, v2
 
-    .line 129
+    .line 135
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :goto_1
     return v3
 
-    .line 126
+    .line 132
     .restart local v1       #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 129
+    .line 135
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :cond_2
     const/4 v3, -0x1
@@ -684,12 +648,12 @@
     .parameter "position"
 
     .prologue
-    .line 97
+    .line 104
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->getIndexFromPosition(I)I
 
     move-result v0
 
-    .line 98
+    .line 105
     .local v0, index:I
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -699,7 +663,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 99
+    .line 106
     .local v1, removedInfo:Lcom/sonyericsson/home/data/Info;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -707,7 +671,7 @@
 
     invoke-virtual {v2, v0, v3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 101
+    .line 107
     return-object v1
 .end method
 
@@ -716,30 +680,30 @@
     .parameter "infoToRemove"
 
     .prologue
-    .line 82
+    .line 89
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 83
+    .line 90
     .local v0, index:I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 84
+    .line 91
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v0, v2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 85
+    .line 92
     const/4 v1, 0x1
 
-    .line 87
+    .line 94
     :goto_0
     return v1
 
@@ -750,34 +714,37 @@
 .end method
 
 .method public removeHint()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 229
+    .line 248
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     if-nez v0, :cond_0
 
-    .line 230
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 249
+    const-string v0, "StageModelManager.removeHint()"
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    const-string v1, "mHintInfo is null"
 
-    throw v0
+    invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 255
+    :goto_0
+    return-void
+
+    .line 253
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
-    .line 234
+    .line 254
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintLocation:I
 
-    .line 235
-    return-void
+    goto :goto_0
 .end method
 
 .method public setHint(Lcom/sonyericsson/home/data/Info;I)Z
@@ -790,28 +757,34 @@
 
     const/4 v3, 0x0
 
-    .line 195
+    .line 213
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     if-nez v1, :cond_0
 
-    .line 196
-    new-instance v1, Ljava/lang/IllegalStateException;
+    .line 214
+    const-string v1, "StageModelManager.setHint(Info, int)"
 
-    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
+    const-string v2, "mHintInfo is null"
 
-    throw v1
+    invoke-static {v1, v2}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 200
+    move v1, v3
+
+    .line 244
+    :goto_0
+    return v1
+
+    .line 219
     :cond_0
     iget v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintLocation:I
 
     if-eq v1, p2, :cond_5
 
-    .line 202
+    .line 221
     iput p2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintLocation:I
 
-    .line 205
+    .line 224
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
     iget v2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintLocation:I
@@ -822,25 +795,22 @@
 
     check-cast v0, Lcom/sonyericsson/home/data/Info;
 
-    .line 208
+    .line 227
     .local v0, overInfo:Lcom/sonyericsson/home/data/Info;
     if-nez v0, :cond_1
 
-    .line 209
+    .line 228
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     invoke-virtual {v1, v3}, Lcom/sonyericsson/home/layer/HintInfo;->setHintType(I)V
 
-    :goto_0
+    :goto_1
     move v1, v4
 
-    .line 225
-    .end local v0           #overInfo:Lcom/sonyericsson/home/data/Info;
-    :goto_1
-    return v1
+    .line 240
+    goto :goto_0
 
-    .line 211
-    .restart local v0       #overInfo:Lcom/sonyericsson/home/data/Info;
+    .line 230
     :cond_1
     if-eqz p1, :cond_4
 
@@ -865,7 +835,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 214
+    .line 233
     :cond_3
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
@@ -873,22 +843,22 @@
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/home/layer/HintInfo;->setHintType(I)V
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 216
+    .line 235
     :cond_4
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     invoke-virtual {v1, v4}, Lcom/sonyericsson/home/layer/HintInfo;->setHintType(I)V
 
-    goto :goto_0
+    goto :goto_1
 
     .end local v0           #overInfo:Lcom/sonyericsson/home/data/Info;
     :cond_5
     move v1, v3
 
-    .line 225
-    goto :goto_1
+    .line 244
+    goto :goto_0
 .end method
 
 .method public setModel(Ljava/util/ArrayList;)V
@@ -908,9 +878,9 @@
     .local p1, infos:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     const/4 v2, 0x4
 
-    const-string v3, "INFO"
+    const-string v3, "StageModelManager"
 
-    .line 59
+    .line 66
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -918,21 +888,21 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 60
-    const-string v0, "INFO"
+    .line 67
+    const-string v0, "StageModelManager"
 
-    const-string v0, "adding null"
+    const-string v0, "Adding null"
 
-    invoke-static {v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v0}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 61
+    .line 68
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 64
+    .line 71
     :cond_0
     :goto_1
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -941,14 +911,14 @@
 
     if-le v0, v2, :cond_1
 
-    .line 65
-    const-string v0, "INFO"
+    .line 72
+    const-string v0, "StageModelManager"
 
-    const-string v0, "removing info"
+    const-string v0, "Removing info"
 
-    invoke-static {v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v0}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 66
+    .line 73
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -961,22 +931,115 @@
 
     goto :goto_1
 
-    .line 68
+    .line 75
     :cond_1
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
-    .line 69
+    .line 76
     return-void
+.end method
+
+.method public setupRect(ILandroid/graphics/Rect;)V
+    .locals 4
+    .parameter "index"
+    .parameter "outRect"
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 174
+    const/4 v1, 0x2
+
+    if-lt p1, v1, :cond_0
+
+    const/4 v1, 0x1
+
+    :goto_0
+    add-int v0, p1, v1
+
+    .line 176
+    .local v0, location:I
+    iget-boolean v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mLandscapeOrientation:Z
+
+    if-eqz v1, :cond_1
+
+    .line 177
+    const/4 v1, 0x4
+
+    sub-int v0, v1, v0
+
+    .line 178
+    iput v3, p2, Landroid/graphics/Rect;->left:I
+
+    .line 179
+    iget v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
+
+    iput v1, p2, Landroid/graphics/Rect;->right:I
+
+    .line 180
+    iget v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellHeight:I
+
+    mul-int/2addr v1, v0
+
+    iput v1, p2, Landroid/graphics/Rect;->top:I
+
+    .line 181
+    iget v1, p2, Landroid/graphics/Rect;->top:I
+
+    iget v2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellHeight:I
+
+    add-int/2addr v1, v2
+
+    iput v1, p2, Landroid/graphics/Rect;->bottom:I
+
+    .line 188
+    :goto_1
+    return-void
+
+    .end local v0           #location:I
+    :cond_0
+    move v1, v3
+
+    .line 174
+    goto :goto_0
+
+    .line 183
+    .restart local v0       #location:I
+    :cond_1
+    iget v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
+
+    mul-int/2addr v1, v0
+
+    iput v1, p2, Landroid/graphics/Rect;->left:I
+
+    .line 184
+    iget v1, p2, Landroid/graphics/Rect;->left:I
+
+    iget v2, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellWidth:I
+
+    add-int/2addr v1, v2
+
+    iput v1, p2, Landroid/graphics/Rect;->right:I
+
+    .line 185
+    iput v3, p2, Landroid/graphics/Rect;->top:I
+
+    .line 186
+    iget v1, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mCellHeight:I
+
+    iput v1, p2, Landroid/graphics/Rect;->bottom:I
+
+    goto :goto_1
 .end method
 
 .method public size()I
     .locals 4
 
     .prologue
-    .line 145
+    .line 151
     const/4 v2, 0x0
 
-    .line 146
+    .line 152
     .local v2, size:I
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mInfos:Ljava/util/ArrayList;
 
@@ -999,26 +1062,26 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 147
+    .line 153
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     if-eqz v1, :cond_0
 
-    .line 148
+    .line 154
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 151
+    .line 157
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageModelManager;->mHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     if-eqz v3, :cond_2
 
-    .line 152
+    .line 158
     add-int/lit8 v2, v2, 0x1
 
-    .line 154
+    .line 160
     :cond_2
     return v2
 .end method

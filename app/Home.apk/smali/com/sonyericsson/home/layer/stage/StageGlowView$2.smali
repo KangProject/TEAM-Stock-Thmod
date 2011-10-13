@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 68
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 66
+    .line 70
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageGlowView;->access$000(Lcom/sonyericsson/home/layer/stage/StageGlowView;)Z
@@ -50,14 +50,14 @@
 
     if-nez v0, :cond_0
 
-    .line 67
+    .line 71
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/stage/StageGlowView;->access$002(Lcom/sonyericsson/home/layer/stage/StageGlowView;Z)Z
 
-    .line 68
+    .line 72
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -66,13 +66,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/sonyericsson/home/layer/stage/StageGlowView;->access$102(Lcom/sonyericsson/home/layer/stage/StageGlowView;J)J
 
-    .line 71
+    .line 75
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageGlowView;->invalidate()V
 
-    .line 73
+    .line 77
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -93,7 +93,7 @@
 
     if-gez v0, :cond_1
 
-    .line 74
+    .line 78
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageGlowView;->access$300(Lcom/sonyericsson/home/layer/stage/StageGlowView;)Landroid/os/Handler;
@@ -108,11 +108,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 78
+    .line 82
     :goto_0
     return-void
 
-    .line 76
+    .line 80
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 

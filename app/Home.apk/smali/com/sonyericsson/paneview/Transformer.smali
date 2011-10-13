@@ -19,7 +19,7 @@
 .method public abstract finishSetup()V
 .end method
 
-.method public abstract getDrawRect(Ljava/lang/Object;Landroid/graphics/Rect;)V
+.method public abstract getDrawRect(Ljava/lang/Object;Landroid/graphics/Rect;)Z
 .end method
 
 .method public abstract isSelected(Ljava/lang/Object;)Z

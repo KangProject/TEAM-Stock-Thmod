@@ -33,10 +33,13 @@
 .method public abstract finishDeleteDrop(Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Z)V
 .end method
 
-.method public abstract openFolder(Lcom/sonyericsson/home/data/InfoGroup;Landroid/graphics/Rect;)V
+.method public abstract openFolder(Lcom/sonyericsson/home/data/InfoGroup;ILjava/lang/Object;)V
 .end method
 
 .method public abstract overrideTransition(Landroid/graphics/Rect;)V
+.end method
+
+.method public abstract resolveRect(ILjava/lang/Object;)Landroid/graphics/Rect;
 .end method
 
 .method public abstract setFolderLabel(Lcom/sonyericsson/home/data/InfoGroup;Ljava/lang/String;I)V

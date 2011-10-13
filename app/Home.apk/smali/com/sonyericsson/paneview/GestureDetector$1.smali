@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 163
+    .line 160
     iput-object p1, p0, Lcom/sonyericsson/paneview/GestureDetector$1;->this$0:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 165
+    .line 162
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector$1;->this$0:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-static {v0}, Lcom/sonyericsson/paneview/GestureDetector;->access$000(Lcom/sonyericsson/paneview/GestureDetector;)Lcom/sonyericsson/paneview/GestureDetector$TouchState;
@@ -52,7 +52,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 166
+    .line 163
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector$1;->this$0:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-static {v0}, Lcom/sonyericsson/paneview/GestureDetector;->access$300(Lcom/sonyericsson/paneview/GestureDetector;)Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
@@ -75,27 +75,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 167
+    .line 164
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector$1;->this$0:Lcom/sonyericsson/paneview/GestureDetector;
 
     sget-object v1, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->LONGPRESSED:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     invoke-static {v0, v1}, Lcom/sonyericsson/paneview/GestureDetector;->access$002(Lcom/sonyericsson/paneview/GestureDetector;Lcom/sonyericsson/paneview/GestureDetector$TouchState;)Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    .line 172
+    .line 167
     :cond_0
-    :goto_0
     return-void
-
-    .line 169
-    :cond_1
-    iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector$1;->this$0:Lcom/sonyericsson/paneview/GestureDetector;
-
-    sget-object v1, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->WAITING_FOR_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/paneview/GestureDetector;->access$002(Lcom/sonyericsson/paneview/GestureDetector;Lcom/sonyericsson/paneview/GestureDetector$TouchState;)Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
-    goto :goto_0
 .end method

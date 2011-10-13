@@ -97,35 +97,35 @@
     .prologue
     const/4 v8, 0x2
 
-    .line 229
+    .line 252
     new-instance v4, Lcom/sonyericsson/storage/Node;
 
     invoke-direct {v4}, Lcom/sonyericsson/storage/Node;-><init>()V
 
-    .line 232
+    .line 255
     .local v4, node:Lcom/sonyericsson/storage/Node;
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v1
 
-    .line 233
+    .line 256
     .local v1, eventType:I
     if-eq v1, v8, :cond_0
 
-    .line 234
+    .line 257
     new-instance v6, Ljava/lang/IllegalStateException;
 
     invoke-direct {v6}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v6
 
-    .line 238
+    .line 261
     :cond_0
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeCount()I
 
     move-result v0
 
-    .line 239
+    .line 262
     .local v0, attributeCount:I
     const/4 v2, 0x0
 
@@ -133,29 +133,29 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 240
+    .line 263
     invoke-interface {p0, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeName(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 241
+    .line 264
     .local v3, key:Ljava/lang/String;
     invoke-interface {p0, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 242
+    .line 265
     .local v5, value:Ljava/lang/String;
     iget-object v6, v4, Lcom/sonyericsson/storage/Node;->mAttributes:Ljava/util/HashMap;
 
     invoke-virtual {v6, v3, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 239
+    .line 262
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 245
+    .line 268
     .end local v3           #key:Ljava/lang/String;
     .end local v5           #value:Ljava/lang/String;
     :cond_1
@@ -163,23 +163,23 @@
 
     move-result v1
 
-    .line 246
+    .line 269
     :goto_1
     const/4 v6, 0x3
 
     if-eq v1, v6, :cond_3
 
-    .line 248
+    .line 271
     if-eq v1, v8, :cond_2
 
-    .line 249
+    .line 272
     new-instance v6, Ljava/lang/IllegalStateException;
 
     invoke-direct {v6}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v6
 
-    .line 253
+    .line 276
     :cond_2
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
@@ -195,14 +195,14 @@
 
     invoke-virtual {v4, v6, v7}, Lcom/sonyericsson/storage/Node;->addChild(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)V
 
-    .line 255
+    .line 278
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v1
 
     goto :goto_1
 
-    .line 258
+    .line 281
     :cond_3
     return-object v4
 .end method
@@ -224,7 +224,7 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 114
     .local p1, key:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     iget-object v1, p0, Lcom/sonyericsson/storage/Node;->mChildMap:Ljava/util/HashMap;
 
@@ -234,27 +234,27 @@
 
     check-cast v0, Ljava/util/LinkedList;
 
-    .line 106
+    .line 116
     .local v0, childList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;"
     if-nez v0, :cond_0
 
-    .line 107
+    .line 117
     new-instance v0, Ljava/util/LinkedList;
 
     .end local v0           #childList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;"
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    .line 110
+    .line 120
     .restart local v0       #childList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;"
     :cond_0
     invoke-virtual {v0, p2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 113
+    .line 123
     iget-object v1, p0, Lcom/sonyericsson/storage/Node;->mChildMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 115
+    .line 125
     iget-object v1, p0, Lcom/sonyericsson/storage/Node;->mChildList:Ljava/util/LinkedList;
 
     new-instance v2, Lcom/sonyericsson/storage/Node$Child;
@@ -263,8 +263,36 @@
 
     invoke-virtual {v1, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 116
+    .line 126
     return-void
+.end method
+
+.method public getBoolean(Ljava/lang/String;Z)Z
+    .locals 2
+    .parameter "key"
+    .parameter "defaultValue"
+
+    .prologue
+    .line 211
+    invoke-virtual {p0, p1}, Lcom/sonyericsson/storage/Node;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 212
+    .local v0, s:Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
+    move-result v1
+
+    :goto_0
+    return v1
+
+    :cond_0
+    move v1, p2
+
+    goto :goto_0
 .end method
 
 .method public getChildren()Ljava/util/List;
@@ -280,7 +308,7 @@
     .end annotation
 
     .prologue
-    .line 153
+    .line 163
     iget-object v0, p0, Lcom/sonyericsson/storage/Node;->mChildList:Ljava/util/LinkedList;
 
     return-object v0
@@ -302,7 +330,7 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 154
     .local p1, key:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/sonyericsson/storage/Node;->mChildMap:Ljava/util/HashMap;
 
@@ -329,7 +357,7 @@
     .end annotation
 
     .prologue
-    .line 128
+    .line 138
     .local p1, key:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     iget-object v1, p0, Lcom/sonyericsson/storage/Node;->mChildMap:Ljava/util/HashMap;
 
@@ -339,14 +367,14 @@
 
     check-cast v0, Ljava/util/LinkedList;
 
-    .line 130
+    .line 140
     .local v0, childList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;"
     if-nez v0, :cond_0
 
-    .line 131
+    .line 141
     const/4 v1, 0x0
 
-    .line 134
+    .line 144
     .end local p0
     :goto_0
     return-object v1
@@ -371,12 +399,12 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 175
+    .line 185
     invoke-virtual {p0, p1}, Lcom/sonyericsson/storage/Node;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 176
+    .line 186
     .local v0, s:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -399,12 +427,12 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 188
+    .line 198
     invoke-virtual {p0, p1}, Lcom/sonyericsson/storage/Node;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 189
+    .line 199
     .local v0, s:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -426,7 +454,7 @@
     .parameter "key"
 
     .prologue
-    .line 163
+    .line 173
     iget-object v0, p0, Lcom/sonyericsson/storage/Node;->mAttributes:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -488,6 +516,23 @@
     return-void
 .end method
 
+.method public put(Ljava/lang/String;Z)V
+    .locals 1
+    .parameter "key"
+    .parameter "value"
+
+    .prologue
+    .line 104
+    invoke-static {p2}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Lcom/sonyericsson/storage/Node;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 105
+    return-void
+.end method
+
 .method protected toXml(Lorg/xmlpull/v1/XmlSerializer;)V
     .locals 10
     .parameter "serializer"
@@ -500,7 +545,7 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 200
+    .line 223
     iget-object v7, p0, Lcom/sonyericsson/storage/Node;->mAttributes:Ljava/util/HashMap;
 
     invoke-virtual {v7}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -525,7 +570,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 201
+    .line 224
     .local v0, attribute:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -543,7 +588,7 @@
 
     goto :goto_0
 
-    .line 204
+    .line 227
     .end local v0           #attribute:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_0
     iget-object v7, p0, Lcom/sonyericsson/storage/Node;->mChildMap:Ljava/util/HashMap;
@@ -570,7 +615,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 205
+    .line 228
     .local v2, childListEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Class<*>;Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -578,7 +623,7 @@
 
     check-cast v3, Ljava/lang/Class;
 
-    .line 206
+    .line 229
     .local v3, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -586,7 +631,7 @@
 
     check-cast v1, Ljava/util/LinkedList;
 
-    .line 208
+    .line 231
     .local v1, childList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;"
     invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
@@ -606,7 +651,7 @@
 
     check-cast v6, Lcom/sonyericsson/storage/Node;
 
-    .line 209
+    .line 232
     .local v6, node:Lcom/sonyericsson/storage/Node;
     invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
@@ -614,10 +659,10 @@
 
     invoke-interface {p1, v9, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 210
+    .line 233
     invoke-virtual {v6, p1}, Lcom/sonyericsson/storage/Node;->toXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
-    .line 211
+    .line 234
     invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v7
@@ -626,7 +671,7 @@
 
     goto :goto_1
 
-    .line 214
+    .line 237
     .end local v1           #childList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;"
     .end local v2           #childListEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Class<*>;Ljava/util/LinkedList<Lcom/sonyericsson/storage/Node;>;>;"
     .end local v3           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"

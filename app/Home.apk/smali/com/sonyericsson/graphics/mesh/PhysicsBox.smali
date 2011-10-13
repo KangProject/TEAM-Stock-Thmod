@@ -177,14 +177,14 @@
     .prologue
     const/high16 v6, 0x3f00
 
-    .line 154
+    .line 158
     iget-object v3, p0, Lcom/sonyericsson/graphics/mesh/PhysicsBox;->mVertexList:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 155
+    .line 159
     .local v2, vertexListSize:I
     const/4 v0, 0x0
 
@@ -192,7 +192,7 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 156
+    .line 160
     iget-object v3, p0, Lcom/sonyericsson/graphics/mesh/PhysicsBox;->mVertexList:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -201,7 +201,7 @@
 
     check-cast v1, Lcom/sonyericsson/graphics/mesh/Vertex;
 
-    .line 157
+    .line 161
     .local v1, v:Lcom/sonyericsson/graphics/mesh/Vertex;
     iget v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->x:F
 
@@ -223,7 +223,7 @@
 
     iput v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->x:F
 
-    .line 158
+    .line 162
     iget v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->y:F
 
     iget v4, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->vy:F
@@ -244,12 +244,12 @@
 
     iput v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->y:F
 
-    .line 155
+    .line 159
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 160
+    .line 164
     .end local v1           #v:Lcom/sonyericsson/graphics/mesh/Vertex;
     :cond_0
     return-void
@@ -260,14 +260,14 @@
     .parameter "dt"
 
     .prologue
-    .line 142
+    .line 144
     iget-object v3, p0, Lcom/sonyericsson/graphics/mesh/PhysicsBox;->mVertexList:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 143
+    .line 145
     .local v2, vertexListSize:I
     const/4 v0, 0x0
 
@@ -275,7 +275,7 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 144
+    .line 146
     iget-object v3, p0, Lcom/sonyericsson/graphics/mesh/PhysicsBox;->mVertexList:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -284,7 +284,7 @@
 
     check-cast v1, Lcom/sonyericsson/graphics/mesh/Vertex;
 
-    .line 145
+    .line 147
     .local v1, v:Lcom/sonyericsson/graphics/mesh/Vertex;
     iget v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->vx:F
 
@@ -296,7 +296,7 @@
 
     iput v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->vx:F
 
-    .line 146
+    .line 148
     iget v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->vy:F
 
     iget v4, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->ay:F
@@ -307,12 +307,12 @@
 
     iput v3, v1, Lcom/sonyericsson/graphics/mesh/Vertex;->vy:F
 
-    .line 143
+    .line 145
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 148
+    .line 150
     .end local v1           #v:Lcom/sonyericsson/graphics/mesh/Vertex;
     :cond_0
     return-void

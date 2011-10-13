@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 251
+    .line 258
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivityFlow$2;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
     iput-object p2, p0, Lcom/sonyericsson/home/HomeActivityFlow$2;->val$dropListener:Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 257
+    .line 264
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$2;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
     invoke-static {v0}, Lcom/sonyericsson/home/HomeActivityFlow;->access$000(Lcom/sonyericsson/home/HomeActivityFlow;)Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
@@ -59,7 +59,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->finishDeleteDrop(Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Z)V
 
-    .line 258
+    .line 265
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .parameter "result"
 
     .prologue
-    .line 253
+    .line 260
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$2;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
     invoke-static {v0}, Lcom/sonyericsson/home/HomeActivityFlow;->access$000(Lcom/sonyericsson/home/HomeActivityFlow;)Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
@@ -81,6 +81,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->finishDeleteDrop(Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Z)V
 
-    .line 254
+    .line 261
     return-void
 .end method

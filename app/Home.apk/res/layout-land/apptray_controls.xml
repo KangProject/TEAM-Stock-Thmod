@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/apptray_controls" android:visibility="gone" android:layout_width="62.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/sort_button" android:background="@drawable/icon_highlight" android:paddingLeft="20.0dip" android:paddingTop="20.0dip" android:paddingRight="@dimen/apptray_controls_padding_side" android:paddingBottom="6.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/sort_free" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <ImageView android:id="@id/edit_button" android:background="@drawable/icon_highlight" android:paddingLeft="20.0dip" android:paddingTop="6.0dip" android:paddingRight="@dimen/apptray_controls_padding_side" android:paddingBottom="20.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/edit_locked" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+</RelativeLayout>

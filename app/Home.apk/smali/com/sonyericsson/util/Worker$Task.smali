@@ -24,13 +24,13 @@
     .parameter "name"
 
     .prologue
-    .line 49
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 51
     iput-object p1, p0, Lcom/sonyericsson/util/Worker$Task;->mName:Ljava/lang/String;
 
-    .line 51
+    .line 52
     return-void
 .end method
 
@@ -44,11 +44,19 @@
     .parameter "another"
 
     .prologue
-    .line 71
+    .line 77
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public abstract postExecute()V
+.end method
+
+.method public preExecute()V
+    .locals 0
+
+    .prologue
+    .line 57
+    return-void
 .end method

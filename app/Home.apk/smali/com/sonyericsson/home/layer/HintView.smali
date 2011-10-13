@@ -56,7 +56,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090007
+    const v2, 0x7f0a0008
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02002f
+    const v2, 0x7f02003a
 
     invoke-static {v1, v2, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
@@ -93,7 +93,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02002e
+    const v2, 0x7f020039
 
     invoke-static {v1, v2, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
@@ -106,7 +106,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02002c
+    const v2, 0x7f020038
 
     invoke-static {v1, v2, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 

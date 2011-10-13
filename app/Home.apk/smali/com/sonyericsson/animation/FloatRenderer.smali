@@ -8,6 +8,8 @@
 
 
 # static fields
+.field private static final SHADOW_ALPHA:I = 0xd0
+
 .field private static final SHADOW_HEIGHT:I = 0x6
 
 .field private static final mRecycleStack:Ljava/util/LinkedList;
@@ -23,6 +25,12 @@
 
 
 # instance fields
+.field private mBadgeIcon:Landroid/graphics/Bitmap;
+
+.field private mBadgeOffsetX:I
+
+.field private mBadgeOffsetY:I
+
 .field private mCurrentRect:Landroid/graphics/RectF;
 
 .field private final mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
@@ -49,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 43
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
@@ -63,38 +71,38 @@
     .locals 3
 
     .prologue
-    .line 74
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
+    .line 67
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mPaint:Landroid/graphics/Paint;
 
-    .line 66
+    .line 70
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
-    .line 76
+    .line 90
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mPaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 79
+    .line 93
     new-instance v0, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v0}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
-    .line 80
+    .line 94
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     const/high16 v1, 0x4248
@@ -103,35 +111,35 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 83
+    .line 97
     new-instance v0, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v0}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
-    .line 84
+    .line 98
     new-instance v0, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v0}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
-    .line 87
+    .line 101
     new-instance v0, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v0}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
-    .line 88
+    .line 102
     new-instance v0, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v0}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
-    .line 89
+    .line 103
     return-void
 .end method
 
@@ -140,12 +148,12 @@
     .parameter "snapshot"
 
     .prologue
-    .line 299
+    .line 327
     const/4 v1, 0x2
 
     new-array v0, v1, [I
 
-    .line 300
+    .line 328
     .local v0, offset:[I
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mPaint:Landroid/graphics/Paint;
 
@@ -159,7 +167,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setMaskFilter(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;
 
-    .line 301
+    .line 329
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Bitmap;->extractAlpha(Landroid/graphics/Paint;[I)Landroid/graphics/Bitmap;
@@ -168,14 +176,14 @@
 
     iput-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
-    .line 302
+    .line 330
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mPaint:Landroid/graphics/Paint;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setMaskFilter(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;
 
-    .line 303
+    .line 331
     return-void
 .end method
 
@@ -186,19 +194,19 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 306
+    .line 334
     invoke-static {p1}, Lcom/sonyericsson/util/ViewSnapshot;->getSnapshot(Landroid/view/View;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 307
+    .line 335
     .local v2, snapshot:Landroid/graphics/Bitmap;
     if-eqz v2, :cond_0
 
-    .line 308
+    .line 336
     const/16 v0, 0xc
 
-    .line 309
+    .line 337
     .local v0, maxShadowOffset:I
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -220,21 +228,21 @@
 
     iput-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
-    .line 311
+    .line 339
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mPaint:Landroid/graphics/Paint;
 
-    const/16 v4, 0x60
+    const/16 v4, 0xd0
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 312
+    .line 340
     new-instance v1, Landroid/graphics/Canvas;
 
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
     invoke-direct {v1, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 313
+    .line 341
     .local v1, offscreenCanvas:Landroid/graphics/Canvas;
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
@@ -246,12 +254,12 @@
 
     invoke-virtual {v1, v3, v4, v5, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 314
+    .line 342
     const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v7, v7, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 316
+    .line 344
     .end local v0           #maxShadowOffset:I
     .end local v1           #offscreenCanvas:Landroid/graphics/Canvas;
     :cond_0
@@ -266,50 +274,50 @@
     .parameter "zFactor"
 
     .prologue
-    const/16 v7, 0xff
-
     const/high16 v5, 0x4000
+
+    const/16 v7, 0xff
 
     const/4 v6, 0x0
 
-    .line 266
+    .line 287
     invoke-static {p1}, Lcom/sonyericsson/util/ViewSnapshot;->getSnapshot(Landroid/view/View;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 268
+    .line 289
     .local v2, snapshot:Landroid/graphics/Bitmap;
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v3
 
-    if-nez v3, :cond_2
+    if-nez v3, :cond_3
 
-    .line 269
+    .line 290
     const/high16 v3, 0x40c0
 
     mul-float v1, p4, v3
 
-    .line 270
+    .line 291
     .local v1, shadowOffset:F
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mPaint:Landroid/graphics/Paint;
 
-    .line 272
+    .line 293
     .local v0, paint:Landroid/graphics/Paint;
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
     if-nez v3, :cond_0
 
-    .line 273
+    .line 294
     invoke-direct {p0, v2}, Lcom/sonyericsson/animation/FloatRenderer;->createShadow(Landroid/graphics/Bitmap;)V
 
-    .line 276
+    .line 297
     :cond_0
     invoke-virtual {p2}, Landroid/graphics/Canvas;->save()I
 
-    .line 277
+    .line 298
     iget v3, p3, Landroid/graphics/RectF;->left:F
 
     sub-float/2addr v3, v1
@@ -320,18 +328,18 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 279
+    .line 300
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_4
 
-    .line 281
+    .line 302
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v3, :cond_1
 
-    .line 282
-    const/high16 v3, 0x42c0
+    .line 303
+    const/high16 v3, 0x4350
 
     mul-float/2addr v3, p4
 
@@ -339,7 +347,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 283
+    .line 304
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
     mul-float v4, v5, v1
@@ -348,30 +356,66 @@
 
     invoke-virtual {p2, v3, v4, v5, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 286
+    .line 307
     :cond_1
     invoke-virtual {v0, v7}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 287
+    .line 308
     invoke-virtual {p2, v2, v6, v6, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 294
+    .line 315
     :goto_0
-    invoke-virtual {p2}, Landroid/graphics/Canvas;->restore()V
+    iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeIcon:Landroid/graphics/Bitmap;
 
-    .line 296
-    .end local v0           #paint:Landroid/graphics/Paint;
-    .end local v1           #shadowOffset:F
-    :cond_2
-    return-void
+    if-eqz v3, :cond_2
 
-    .line 290
-    .restart local v0       #paint:Landroid/graphics/Paint;
-    .restart local v1       #shadowOffset:F
-    :cond_3
+    .line 317
     invoke-virtual {v0, v7}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 291
+    .line 318
+    iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeIcon:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p3}, Landroid/graphics/RectF;->width()F
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeIcon:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v5
+
+    iget v6, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeOffsetX:I
+
+    add-int/2addr v5, v6
+
+    int-to-float v5, v5
+
+    sub-float/2addr v4, v5
+
+    iget v5, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeOffsetY:I
+
+    int-to-float v5, v5
+
+    invoke-virtual {p2, v3, v4, v5, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+
+    .line 322
+    :cond_2
+    invoke-virtual {p2}, Landroid/graphics/Canvas;->restore()V
+
+    .line 324
+    .end local v0           #paint:Landroid/graphics/Paint;
+    .end local v1           #shadowOffset:F
+    :cond_3
+    return-void
+
+    .line 311
+    .restart local v0       #paint:Landroid/graphics/Paint;
+    .restart local v1       #shadowOffset:F
+    :cond_4
+    invoke-virtual {v0, v7}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 312
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
     invoke-virtual {p2, v3, v6, v6, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
@@ -383,7 +427,7 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 111
     sget-object v0, Lcom/sonyericsson/animation/FloatRenderer;->mRecycleStack:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
@@ -392,7 +436,7 @@
 
     if-nez v0, :cond_0
 
-    .line 98
+    .line 112
     sget-object v0, Lcom/sonyericsson/animation/FloatRenderer;->mRecycleStack:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->removeLast()Ljava/lang/Object;
@@ -401,7 +445,7 @@
 
     check-cast v0, Lcom/sonyericsson/animation/FloatRenderer;
 
-    .line 100
+    .line 114
     :goto_0
     return-object v0
 
@@ -425,19 +469,19 @@
 
     const-wide/high16 v6, 0x3ff0
 
-    .line 230
+    .line 250
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, p2, p3}, Lcom/sonyericsson/util/SpringDynamics;->update(J)V
 
-    .line 231
+    .line 251
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
 
     move-result v2
 
-    .line 232
+    .line 252
     .local v2, zFactor:F
     const/4 v3, 0x0
 
@@ -445,10 +489,10 @@
 
     if-gez v3, :cond_0
 
-    .line 233
+    .line 253
     neg-float v2, v2
 
-    .line 237
+    .line 257
     :cond_0
     iget-wide v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->nextRandomizationTime:J
 
@@ -456,7 +500,7 @@
 
     if-gez v3, :cond_1
 
-    .line 238
+    .line 258
     mul-float v3, v2, v10
 
     invoke-static {}, Ljava/lang/Math;->random()D
@@ -471,7 +515,7 @@
 
     mul-float v0, v3, v4
 
-    .line 239
+    .line 259
     .local v0, dx:F
     mul-float v3, v2, v10
 
@@ -487,7 +531,7 @@
 
     mul-float v1, v3, v4
 
-    .line 240
+    .line 260
     .local v1, dy:F
     invoke-static {}, Ljava/lang/Math;->random()D
 
@@ -507,27 +551,27 @@
 
     iput-wide v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->nextRandomizationTime:J
 
-    .line 241
+    .line 261
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, v0}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 242
+    .line 262
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, v0}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 243
+    .line 263
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, v1}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 244
+    .line 264
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, v1}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 248
+    .line 268
     .end local v0           #dx:F
     .end local v1           #dy:F
     :cond_1
@@ -535,12 +579,12 @@
 
     invoke-virtual {v3, p2, p3}, Lcom/sonyericsson/util/SpringDynamics;->update(J)V
 
-    .line 249
+    .line 269
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, p2, p3}, Lcom/sonyericsson/util/SpringDynamics;->update(J)V
 
-    .line 252
+    .line 273
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     iget v4, p1, Landroid/graphics/Rect;->left:I
@@ -557,7 +601,7 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 253
+    .line 274
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     iget v4, p1, Landroid/graphics/Rect;->left:I
@@ -574,7 +618,7 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 254
+    .line 275
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     iget v4, p1, Landroid/graphics/Rect;->top:I
@@ -591,7 +635,7 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 255
+    .line 276
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     iget v4, p1, Landroid/graphics/Rect;->top:I
@@ -608,17 +652,17 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 258
+    .line 279
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, p2, p3}, Lcom/sonyericsson/util/SpringDynamics;->update(J)V
 
-    .line 259
+    .line 280
     iget-object v3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v3, p2, p3}, Lcom/sonyericsson/util/SpringDynamics;->update(J)V
 
-    .line 262
+    .line 283
     return v2
 .end method
 
@@ -638,12 +682,12 @@
 
     const/high16 v4, 0x4000
 
-    .line 120
+    .line 136
     invoke-direct {p0, p3, p4, p5}, Lcom/sonyericsson/animation/FloatRenderer;->update(Landroid/graphics/Rect;J)F
 
     move-result v0
 
-    .line 122
+    .line 138
     .local v0, zFactor:F
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
@@ -667,10 +711,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 126
+    .line 143
     invoke-direct {p0, p1}, Lcom/sonyericsson/animation/FloatRenderer;->createSnapshotWithShadow(Landroid/view/View;)V
 
-    .line 130
+    .line 147
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
@@ -688,12 +732,12 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/RectF;->offsetTo(FF)V
 
-    .line 133
+    .line 150
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
     invoke-direct {p0, p1, p2, v1, v0}, Lcom/sonyericsson/animation/FloatRenderer;->drawView(Landroid/view/View;Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
 
-    .line 136
+    .line 153
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v1, v4, v4}, Lcom/sonyericsson/util/SpringDynamics;->isAtRest(FF)Z
@@ -722,10 +766,10 @@
 
     if-gez v1, :cond_1
 
-    .line 138
+    .line 155
     const/4 v1, 0x0
 
-    .line 140
+    .line 157
     :goto_0
     return v1
 
@@ -740,10 +784,10 @@
     .parameter "outRect"
 
     .prologue
-    .line 177
+    .line 190
     if-eqz p1, :cond_0
 
-    .line 178
+    .line 191
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->left:F
@@ -752,7 +796,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->left:I
 
-    .line 179
+    .line 192
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->right:F
@@ -761,7 +805,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->right:I
 
-    .line 180
+    .line 193
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->top:F
@@ -770,7 +814,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->top:I
 
-    .line 181
+    .line 194
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->bottom:F
@@ -779,7 +823,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 183
+    .line 196
     :cond_0
     return-void
 .end method
@@ -791,7 +835,7 @@
     .parameter "now"
 
     .prologue
-    .line 188
+    .line 201
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
     int-to-float v1, p1
@@ -800,7 +844,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 189
+    .line 202
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
@@ -821,7 +865,7 @@
 
     invoke-virtual {v0, v1, v2, p3, p4}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 190
+    .line 203
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
@@ -842,7 +886,7 @@
 
     invoke-virtual {v0, v1, v2, p3, p4}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 191
+    .line 204
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
@@ -863,7 +907,7 @@
 
     invoke-virtual {v0, v1, v2, p3, p4}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 193
+    .line 206
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
@@ -884,7 +928,7 @@
 
     invoke-virtual {v0, v1, v2, p3, p4}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 195
+    .line 208
     return-void
 .end method
 
@@ -894,40 +938,43 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 105
+    .line 119
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 106
+    .line 120
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 107
+    .line 121
     iput-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mShadowBitmap:Landroid/graphics/Bitmap;
 
-    .line 109
+    .line 123
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_1
 
-    .line 110
+    .line 124
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 111
+    .line 125
     iput-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
-    .line 113
+    .line 128
     :cond_1
+    iput-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeIcon:Landroid/graphics/Bitmap;
+
+    .line 129
     sget-object v0, Lcom/sonyericsson/animation/FloatRenderer;->mRecycleStack:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p0}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 114
+    .line 130
     return-void
 .end method
 
@@ -939,57 +986,62 @@
     .parameter "extras"
 
     .prologue
+    const/4 v1, 0x0
+
     const/high16 v7, 0x43c8
 
     const v6, 0x3f666666
 
     const/4 v5, 0x0
 
-    .line 199
+    const-string v2, "badge"
+
+    .line 212
     const-string v0, "stop"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 200
+    .line 213
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 201
+    .line 214
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 202
-    const/4 v0, 0x0
+    .line 215
+    iput-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mSnapshotWithShadow:Landroid/graphics/Bitmap;
-
-    .line 206
+    .line 219
     :cond_0
+    iput-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeIcon:Landroid/graphics/Bitmap;
+
+    .line 222
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v5}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 207
+    .line 223
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v5}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 208
+    .line 224
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
-    const/high16 v1, 0x4348
+    const/high16 v1, 0x4416
 
-    const v2, 0x3f266666
+    const v2, 0x3f59999a
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 209
+    .line 225
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     iget-object v1, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
@@ -998,7 +1050,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x41f0
+    const/high16 v2, 0x4270
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1006,17 +1058,17 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 212
+    .line 228
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v7, v6}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 213
+    .line 229
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v7, v6}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 216
+    .line 232
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1025,7 +1077,7 @@
 
     invoke-virtual {v0, v5, v5, v1, v2}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 217
+    .line 233
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1034,34 +1086,66 @@
 
     invoke-virtual {v0, v5, v5, v1, v2}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 218
+    .line 234
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v5}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 219
+    .line 235
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v5}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 220
+    .line 236
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v5}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 221
+    .line 237
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v5}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 224
+    .line 240
     const-wide v0, 0x7fffffffffffffffL
 
     iput-wide v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->nextRandomizationTime:J
 
-    .line 226
+    .line 246
     :cond_1
+    :goto_0
     return-void
+
+    .line 241
+    :cond_2
+    const-string v0, "badge"
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    if-eqz p4, :cond_1
+
+    .line 242
+    const-string v0, "badge"
+
+    invoke-virtual {p4, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeIcon:Landroid/graphics/Bitmap;
+
+    .line 243
+    iput p2, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeOffsetX:I
+
+    .line 244
+    iput p3, p0, Lcom/sonyericsson/animation/FloatRenderer;->mBadgeOffsetY:I
+
+    goto :goto_0
 .end method
 
 .method public start(Landroid/graphics/Rect;IIJ)V
@@ -1080,12 +1164,12 @@
 
     const/4 v2, 0x0
 
-    .line 147
+    .line 164
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mCurrentRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0, p1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 150
+    .line 167
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     iget v1, p1, Landroid/graphics/Rect;->left:I
@@ -1094,7 +1178,7 @@
 
     invoke-virtual {v0, v1, v2, p4, p5}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 151
+    .line 168
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     iget v1, p1, Landroid/graphics/Rect;->top:I
@@ -1103,71 +1187,63 @@
 
     invoke-virtual {v0, v1, v2, p4, p5}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 152
+    .line 169
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v4, v5}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 153
+    .line 170
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v4, v5}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 156
+    .line 173
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v4, v3}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 157
+    .line 174
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeTop:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v4, v3}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 158
+    .line 175
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 159
+    .line 176
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsShakeLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 162
+    .line 179
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v3}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 163
+    .line 180
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v3}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 164
+    .line 181
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0, v2, v2, p4, p5}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 165
+    .line 182
     iget-object v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->mDynamicsZ:Lcom/sonyericsson/util/SpringDynamics;
 
     const/high16 v1, 0x4248
 
     invoke-virtual {v0, v1, v3}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 168
+    .line 185
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/sonyericsson/animation/FloatRenderer;->nextRandomizationTime:J
 
-    .line 169
-    return-void
-.end method
-
-.method public stop()V
-    .locals 0
-
-    .prologue
-    .line 173
+    .line 186
     return-void
 .end method

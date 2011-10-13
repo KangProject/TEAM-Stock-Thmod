@@ -33,7 +33,7 @@
     <string name="home_shortcut_created_txt">ショートカットが作成されました: \"%s\"</string>
     <string name="home_shortcut_removed_txt">ショートカットが消去されました: \"%s\"</string>
     <string name="home_shortcut_already_exists_txt">ショートカットが既に存在します: \"%s\"</string>
-    <string name="home_hint_shortcut_message_txt">ホーム画面にショートカットを作成するには、アプリケーションアイコンを長押しします。</string>
+    <string name="home_hint_shortcut_message_txt">ホーム画面にショートカットを作成するには、アプリケーションアイコンを長押しします</string>
     <string name="gui_ok_txt">OK</string>
     <string name="gui_done_txt">完了</string>
     <string name="gui_cancel_txt">キャンセル</string>

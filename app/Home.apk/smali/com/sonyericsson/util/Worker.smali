@@ -18,7 +18,7 @@
 
 .field private static final THREAD_PREFIX:Ljava/lang/String; = "Worker ["
 
-.field private static mWorkers:Ljava/util/HashMap;
+.field private static final mWorkers:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -37,6 +37,8 @@
 .field private final mExecuteRunnable:Ljava/lang/Runnable;
 
 .field private mExecutingTask:Lcom/sonyericsson/util/Worker$Task;
+
+.field private final mExecutingTaskCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 .field private mHandlerBG:Landroid/os/Handler;
 
@@ -63,7 +65,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 111
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -78,38 +80,45 @@
     .parameter "priority"
 
     .prologue
-    .line 150
+    .line 177
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 91
+    .line 97
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/util/Worker;->mTaskQueue:Ljava/util/LinkedList;
 
-    .line 163
+    .line 105
+    new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    iput-object v1, p0, Lcom/sonyericsson/util/Worker;->mExecutingTaskCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    .line 190
     new-instance v1, Lcom/sonyericsson/util/Worker$1;
 
     invoke-direct {v1, p0}, Lcom/sonyericsson/util/Worker$1;-><init>(Lcom/sonyericsson/util/Worker;)V
 
     iput-object v1, p0, Lcom/sonyericsson/util/Worker;->mExecuteRunnable:Ljava/lang/Runnable;
 
-    .line 184
+    .line 214
     new-instance v1, Lcom/sonyericsson/util/Worker$2;
 
     invoke-direct {v1, p0}, Lcom/sonyericsson/util/Worker$2;-><init>(Lcom/sonyericsson/util/Worker;)V
 
     iput-object v1, p0, Lcom/sonyericsson/util/Worker;->mPostExecuteRunnable:Ljava/lang/Runnable;
 
-    .line 151
+    .line 178
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/util/Worker;->mHandlerMain:Landroid/os/Handler;
 
-    .line 152
+    .line 179
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -136,75 +145,86 @@
 
     iput-object v1, p0, Lcom/sonyericsson/util/Worker;->mWorkerName:Ljava/lang/String;
 
-    .line 154
+    .line 181
     new-instance v0, Landroid/os/HandlerThread;
 
     iget-object v1, p0, Lcom/sonyericsson/util/Worker;->mWorkerName:Ljava/lang/String;
 
     invoke-direct {v0, v1, p1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
-    .line 155
+    .line 182
     .local v0, backgroundThread:Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 157
+    .line 184
     invoke-direct {p0, v0}, Lcom/sonyericsson/util/Worker;->createHandlerBG(Landroid/os/HandlerThread;)V
 
-    .line 158
+    .line 185
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/sonyericsson/util/Worker;)Lcom/sonyericsson/util/Worker$Task;
+.method static synthetic access$000(Lcom/sonyericsson/util/Worker;)Ljava/util/concurrent/atomic/AtomicBoolean;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
+    iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mExecutingTaskCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100(Lcom/sonyericsson/util/Worker;)Lcom/sonyericsson/util/Worker$Task;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 35
     iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mExecutingTask:Lcom/sonyericsson/util/Worker$Task;
 
     return-object v0
 .end method
 
-.method static synthetic access$002(Lcom/sonyericsson/util/Worker;Lcom/sonyericsson/util/Worker$Task;)Lcom/sonyericsson/util/Worker$Task;
+.method static synthetic access$102(Lcom/sonyericsson/util/Worker;Lcom/sonyericsson/util/Worker$Task;)Lcom/sonyericsson/util/Worker$Task;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 34
+    .line 35
     iput-object p1, p0, Lcom/sonyericsson/util/Worker;->mExecutingTask:Lcom/sonyericsson/util/Worker$Task;
 
     return-object p1
 .end method
 
-.method static synthetic access$100(Lcom/sonyericsson/util/Worker;)Ljava/lang/Runnable;
+.method static synthetic access$200(Lcom/sonyericsson/util/Worker;)Ljava/lang/Runnable;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mPostExecuteRunnable:Ljava/lang/Runnable;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/sonyericsson/util/Worker;)Landroid/os/Handler;
+.method static synthetic access$300(Lcom/sonyericsson/util/Worker;)Landroid/os/Handler;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mHandlerMain:Landroid/os/Handler;
 
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/sonyericsson/util/Worker;)V
+.method static synthetic access$400(Lcom/sonyericsson/util/Worker;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0}, Lcom/sonyericsson/util/Worker;->triggedTaskExecution()V
 
     return-void
@@ -215,12 +235,12 @@
     .parameter "threadBG"
 
     .prologue
-    .line 223
+    .line 257
     invoke-virtual {p1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 224
+    .line 258
     .local v0, looper:Landroid/os/Looper;
     if-nez v0, :cond_0
 
@@ -230,7 +250,7 @@
 
     throw v1
 
-    .line 225
+    .line 259
     :cond_0
     new-instance v1, Landroid/os/Handler;
 
@@ -238,10 +258,10 @@
 
     iput-object v1, p0, Lcom/sonyericsson/util/Worker;->mHandlerBG:Landroid/os/Handler;
 
-    .line 226
+    .line 260
     invoke-direct {p0}, Lcom/sonyericsson/util/Worker;->triggedTaskExecution()V
 
-    .line 227
+    .line 261
     return-void
 .end method
 
@@ -250,7 +270,7 @@
     .parameter "priority"
 
     .prologue
-    .line 114
+    .line 122
     sget-object v1, Lcom/sonyericsson/util/Worker;->mWorkers:Ljava/util/HashMap;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -263,17 +283,17 @@
 
     check-cast v0, Lcom/sonyericsson/util/Worker;
 
-    .line 116
+    .line 124
     .local v0, worker:Lcom/sonyericsson/util/Worker;
     if-nez v0, :cond_0
 
-    .line 117
+    .line 125
     new-instance v0, Lcom/sonyericsson/util/Worker;
 
     .end local v0           #worker:Lcom/sonyericsson/util/Worker;
     invoke-direct {v0, p0}, Lcom/sonyericsson/util/Worker;-><init>(I)V
 
-    .line 118
+    .line 126
     .restart local v0       #worker:Lcom/sonyericsson/util/Worker;
     sget-object v1, Lcom/sonyericsson/util/Worker;->mWorkers:Ljava/util/HashMap;
 
@@ -283,7 +303,7 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 121
+    .line 129
     :cond_0
     return-object v0
 .end method
@@ -292,7 +312,7 @@
     .locals 2
 
     .prologue
-    .line 208
+    .line 241
     iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mExecutingTask:Lcom/sonyericsson/util/Worker$Task;
 
     if-nez v0, :cond_0
@@ -305,7 +325,7 @@
 
     if-nez v0, :cond_0
 
-    .line 209
+    .line 242
     iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mTaskQueue:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
@@ -316,33 +336,99 @@
 
     iput-object v0, p0, Lcom/sonyericsson/util/Worker;->mExecutingTask:Lcom/sonyericsson/util/Worker$Task;
 
-    .line 213
+    .line 246
+    iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mExecutingTask:Lcom/sonyericsson/util/Worker$Task;
+
+    invoke-virtual {v0}, Lcom/sonyericsson/util/Worker$Task;->preExecute()V
+
+    .line 247
     iget-object v0, p0, Lcom/sonyericsson/util/Worker;->mHandlerBG:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/sonyericsson/util/Worker;->mExecuteRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 215
+    .line 249
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
+.method public cancelTask(Lcom/sonyericsson/util/Worker$Task;)V
+    .locals 3
+    .parameter "task"
+
+    .prologue
+    .line 158
+    if-eqz p1, :cond_0
+
+    iget-object v1, p0, Lcom/sonyericsson/util/Worker;->mExecutingTask:Lcom/sonyericsson/util/Worker$Task;
+
+    if-ne p1, v1, :cond_0
+
+    .line 159
+    iget-object v1, p0, Lcom/sonyericsson/util/Worker;->mExecutingTaskCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 162
+    :cond_0
+    iget-object v1, p0, Lcom/sonyericsson/util/Worker;->mTaskQueue:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .line 163
+    .end local p0
+    .local v0, iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/sonyericsson/util/Worker$Task;>;"
+    :cond_1
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 164
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/sonyericsson/util/Worker$Task;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 165
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_0
+
+    .line 168
+    :cond_2
+    return-void
+.end method
+
 .method public postTask(Lcom/sonyericsson/util/Worker$Task;)V
     .locals 3
     .parameter "task"
 
     .prologue
-    .line 130
+    .line 138
     iget-object v2, p0, Lcom/sonyericsson/util/Worker;->mTaskQueue:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 131
+    .line 139
     .local v0, iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/sonyericsson/util/Worker$Task;>;"
     :cond_0
     :goto_0
@@ -352,14 +438,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 132
+    .line 140
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/sonyericsson/util/Worker$Task;
 
-    .line 133
+    .line 141
     .local v1, oldTask:Lcom/sonyericsson/util/Worker$Task;
     invoke-virtual {p1, v1}, Lcom/sonyericsson/util/Worker$Task;->overrides(Lcom/sonyericsson/util/Worker$Task;)Z
 
@@ -367,27 +453,27 @@
 
     if-eqz v2, :cond_0
 
-    .line 134
+    .line 142
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 137
+    .line 145
     .end local v1           #oldTask:Lcom/sonyericsson/util/Worker$Task;
     :cond_1
     iget-object v2, p0, Lcom/sonyericsson/util/Worker;->mTaskQueue:Ljava/util/LinkedList;
 
     invoke-virtual {v2, p1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 138
+    .line 146
     iget-object v2, p0, Lcom/sonyericsson/util/Worker;->mHandlerBG:Landroid/os/Handler;
 
     if-eqz v2, :cond_2
 
-    .line 139
+    .line 147
     invoke-direct {p0}, Lcom/sonyericsson/util/Worker;->triggedTaskExecution()V
 
-    .line 141
+    .line 149
     :cond_2
     return-void
 .end method

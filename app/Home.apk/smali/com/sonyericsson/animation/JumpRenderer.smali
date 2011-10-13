@@ -61,42 +61,62 @@
 .end method
 
 .method public static createAnimation()Landroid/view/animation/Animation;
-    .locals 9
+    .locals 2
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v1, 0x1
 
+    const/high16 v0, 0x3f00
+
+    .line 65
+    invoke-static {v1, v0, v1, v0}, Lcom/sonyericsson/animation/JumpRenderer;->createAnimation(IFIF)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static createAnimation(IFIF)Landroid/view/animation/Animation;
+    .locals 9
+    .parameter "pivotXType"
+    .parameter "pivotXValue"
+    .parameter "pivotYType"
+    .parameter "pivotYValue"
+
+    .prologue
     const v2, 0x3fa66666
 
     const/high16 v1, 0x3f80
 
-    const/high16 v6, 0x3f00
-
-    .line 64
+    .line 81
     new-instance v0, Landroid/view/animation/ScaleAnimation;
 
     move v3, v1
 
     move v4, v2
 
-    move v7, v5
+    move v5, p0
 
-    move v8, v6
+    move v6, p1
+
+    move v7, p2
+
+    move v8, p3
 
     invoke-direct/range {v0 .. v8}, Landroid/view/animation/ScaleAnimation;-><init>(FFFFIFIF)V
 
-    .line 67
+    .line 84
     .local v0, jump:Landroid/view/animation/Animation;
     sget-object v1, Lcom/sonyericsson/animation/JumpRenderer;->mInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 68
+    .line 85
     const-wide/16 v1, 0x2b7
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 69
+    .line 86
     return-object v0
 .end method
 
@@ -114,28 +134,28 @@
 
     const v7, 0x442dc000
 
-    .line 73
+    .line 90
     iget-wide v3, p0, Lcom/sonyericsson/animation/JumpRenderer;->mStartTime:J
 
     sub-long v3, p4, v3
 
     long-to-float v0, v3
 
-    .line 76
+    .line 93
     .local v0, animTime:F
     cmpl-float v3, v0, v7
 
     if-lez v3, :cond_0
 
-    .line 77
+    .line 94
     const/high16 v1, 0x3f80
 
-    .line 83
+    .line 100
     .local v1, scale:F
     :goto_0
     invoke-virtual {p2}, Landroid/graphics/Canvas;->save()I
 
-    .line 84
+    .line 101
     invoke-virtual {p3}, Landroid/graphics/Rect;->exactCenterX()F
 
     move-result v3
@@ -146,7 +166,7 @@
 
     invoke-virtual {p2, v1, v1, v3, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 85
+    .line 102
     iget v3, p3, Landroid/graphics/Rect;->left:I
 
     int-to-float v3, v3
@@ -157,37 +177,37 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 86
+    .line 103
     invoke-static {p1}, Lcom/sonyericsson/util/ViewSnapshot;->getSnapshot(Landroid/view/View;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 87
+    .line 104
     .local v2, snapshot:Landroid/graphics/Bitmap;
     if-eqz v2, :cond_1
 
-    .line 88
+    .line 105
     iget-object v3, p0, Lcom/sonyericsson/animation/JumpRenderer;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p2, v2, v8, v8, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 92
+    .line 109
     :goto_1
     invoke-virtual {p2}, Landroid/graphics/Canvas;->restore()V
 
-    .line 94
+    .line 111
     cmpl-float v3, v0, v7
 
     if-lez v3, :cond_2
 
-    .line 95
+    .line 112
     const/4 v3, 0x0
 
-    .line 98
+    .line 115
     :goto_2
     return v3
 
-    .line 79
+    .line 96
     .end local v1           #scale:F
     .end local v2           #snapshot:Landroid/graphics/Bitmap;
     :cond_0
@@ -210,14 +230,14 @@
     .restart local v1       #scale:F
     goto :goto_0
 
-    .line 90
+    .line 107
     .restart local v2       #snapshot:Landroid/graphics/Bitmap;
     :cond_1
     invoke-virtual {p1, p2}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_1
 
-    .line 98
+    .line 115
     :cond_2
     const/4 v3, 0x1
 
@@ -229,7 +249,7 @@
     .parameter "outRect"
 
     .prologue
-    .line 102
+    .line 119
     return-void
 .end method
 
@@ -240,7 +260,7 @@
     .parameter "now"
 
     .prologue
-    .line 105
+    .line 122
     return-void
 .end method
 
@@ -252,7 +272,7 @@
     .parameter "extras"
 
     .prologue
-    .line 108
+    .line 125
     return-void
 .end method
 
@@ -264,9 +284,9 @@
     .parameter "now"
 
     .prologue
-    .line 111
+    .line 128
     iput-wide p4, p0, Lcom/sonyericsson/animation/JumpRenderer;->mStartTime:J
 
-    .line 112
+    .line 129
     return-void
 .end method

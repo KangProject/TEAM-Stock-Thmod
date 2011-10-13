@@ -3,7 +3,7 @@
 .source "FolderController.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/sonyericsson/home/transfer/TransferTarget;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 431
+    .line 188
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,74 +37,80 @@
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 3
-    .parameter
-    .parameter "view"
-    .parameter "position"
-    .parameter "id"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
+.method public cancelHint(Lcom/sonyericsson/animation/Renderer;)V
+    .locals 1
+    .parameter "renderer"
 
     .prologue
-    .line 435
-    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
+    .line 191
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$2700(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderController$FolderControllerListener;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
-
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/data/InfoGroup;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 436
-    invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 
-    .line 437
-    .local v0, sourceBounds:Landroid/graphics/Rect;
-    invoke-virtual {p2, v0}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->cancelHint()V
 
-    .line 438
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
+    .line 192
+    return-void
+.end method
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$2700(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderController$FolderControllerListener;
+.method public drop(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
+    .locals 2
+    .parameter "view"
+    .parameter "renderer"
+    .parameter "dropListener"
+
+    .prologue
+    .line 195
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+
+    move-result-object v0
+
+    invoke-static {p1}, Lcom/sonyericsson/home/layer/AdapterHelper;->getInfoFromView(Landroid/view/View;)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v1
 
+    invoke-virtual {v0, v1, p2, p3}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->drop(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
+
+    .line 196
+    return-void
+.end method
+
+.method public hint(Landroid/view/View;IILcom/sonyericsson/animation/Renderer;)Z
+    .locals 3
+    .parameter "view"
+    .parameter "x"
+    .parameter "y"
+    .parameter "renderer"
+
+    .prologue
+    .line 199
+    invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    .line 200
+    .local v1, hitRect:Landroid/graphics/Rect;
+    invoke-virtual {p1, v1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+
+    .line 201
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$100(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderAdapter;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v2
 
-    invoke-virtual {v2, p3}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
+    invoke-virtual {v2, v1, p3}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->hint(Landroid/graphics/Rect;I)Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-interface {v1, v2, v0}, Lcom/sonyericsson/home/layer/folder/FolderController$FolderControllerListener;->onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
+    .line 202
+    .local v0, hintResult:Z
+    invoke-static {v1}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 439
-    invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
-
-    .line 441
-    .end local v0           #sourceBounds:Landroid/graphics/Rect;
-    :cond_0
-    return-void
+    .line 203
+    return v0
 .end method

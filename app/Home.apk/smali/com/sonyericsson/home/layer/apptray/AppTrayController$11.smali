@@ -3,12 +3,12 @@
 .source "AppTrayController.java"
 
 # interfaces
-.implements Lcom/sonyericsson/paneview/PaneView$ScrollListener;
+.implements Lcom/sonyericsson/home/layer/PaneIndicator$InactiveTimeoutListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createScrollListener(Lcom/sonyericsson/home/layer/PaneIndicator;)Lcom/sonyericsson/paneview/PaneView$ScrollListener;
+    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setupPaneIndicator(Landroid/content/Context;Landroid/view/View;)Lcom/sonyericsson/home/layer/PaneIndicator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 756
+    .line 844
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -42,17 +42,17 @@
 
 
 # virtual methods
-.method public onScroll(FI)V
-    .locals 1
-    .parameter "position"
-    .parameter "max"
+.method public onInactiveTimeout()V
+    .locals 2
 
     .prologue
-    .line 758
+    .line 846
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
-    invoke-virtual {v0, p1, p2}, Lcom/sonyericsson/home/layer/PaneIndicator;->setPosition(FI)V
+    const/4 v1, 0x1
 
-    .line 759
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/PaneIndicator;->hide(Z)V
+
+    .line 847
     return-void
 .end method

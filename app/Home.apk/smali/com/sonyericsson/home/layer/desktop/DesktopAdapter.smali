@@ -242,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 153
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->mDesktopModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->getNbrOfPanes()I
@@ -437,6 +437,27 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/data/Info;->isEnabled()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isInteractive(I)Z
+    .locals 1
+    .parameter "position"
+
+    .prologue
+    .line 149
+    invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->getItem(I)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getInfo()Lcom/sonyericsson/home/data/Info;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/data/Info;->isInteractive()Z
 
     move-result v0
 

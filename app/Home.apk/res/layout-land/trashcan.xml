@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/trashcan_layer" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sonyericsson.home.layer.HintView android:id="@id/trashcan_hint" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignLeft="@id/trashcan" android:layout_alignTop="@id/trashcan" android:layout_alignRight="@id/trashcan" android:layout_alignBottom="@id/trashcan" />
+    <com.sonyericsson.home.layer.trashcan.TrashcanView android:id="@id/trashcan" android:paddingRight="@dimen/trashcan_padding_side" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

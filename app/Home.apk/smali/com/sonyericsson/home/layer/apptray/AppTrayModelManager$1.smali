@@ -3,7 +3,7 @@
 .source "AppTrayModelManager.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/LayerController$Syncable;
+.implements Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
 
 # annotations
@@ -37,7 +37,7 @@
 
 
 # virtual methods
-.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 1
     .parameter "info"
 
@@ -51,15 +51,17 @@
     invoke-static {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->access$000(Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;Lcom/sonyericsson/home/data/ActivityInfo;)V
 
     .line 83
-    return-void
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
-.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 3
     .parameter "info"
 
     .prologue
-    .line 86
+    .line 87
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;)Lcom/sonyericsson/util/PagedList;
@@ -68,7 +70,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 90
+    .line 91
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;)Lcom/sonyericsson/util/PagedList;
@@ -83,7 +85,7 @@
 
     invoke-virtual {v2, v1}, Lcom/sonyericsson/util/PagedList;->remove(Ljava/lang/Object;)Z
 
-    .line 92
+    .line 93
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
@@ -96,6 +98,8 @@
     .end local p1
     invoke-virtual {v1, p1}, Lcom/sonyericsson/util/PagedList;->remove(Ljava/lang/Object;)Z
 
-    .line 93
-    return-void
+    .line 94
+    const/4 v1, 0x1
+
+    return v1
 .end method

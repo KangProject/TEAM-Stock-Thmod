@@ -14,7 +14,11 @@
 # instance fields
 .field private editorOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
+.field private mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
+
 .field private mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
+
+.field private mBadgeOffset:I
 
 .field private mCellHeight:I
 
@@ -23,6 +27,8 @@
 .field private mDoMirror:Z
 
 .field private mEditingEnabled:Z
+
+.field private mEnabledChecker:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
 
 .field private mGrid:Lcom/sonyericsson/grid/Grid;
 
@@ -38,7 +44,13 @@
 
 .field private mOriginRect:Landroid/graphics/Rect;
 
-.field private mPaneSwitchMargin:I
+.field private mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+.field private mPaneSwitchMarginLeft:I
+
+.field private mPaneSwitchMarginRight:I
+
+.field private mPaneSwitchNudgeOffset:I
 
 .field private mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -54,7 +66,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/grid/Grid;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/view/View;Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/grid/Grid;Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
     .locals 4
     .parameter "context"
     .parameter "view"
@@ -62,24 +74,24 @@
     .parameter "animatorFactory"
     .parameter "transferHandler"
     .parameter "grid"
+    .parameter "adapter"
+    .parameter "packageLoader"
 
     .prologue
-    const v3, 0x7f09000a
-
     const/4 v2, 0x0
 
-    .line 148
+    .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
+    .line 102
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mOriginRect:Landroid/graphics/Rect;
 
-    .line 149
-    const v0, 0x7f0c0006
+    .line 173
+    const/high16 v0, 0x7f0e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -89,37 +101,82 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    .line 150
+    .line 174
     iput-object p3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
-    .line 151
+    .line 175
     iput-object p4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
-    .line 152
+    .line 176
     iput-object p6, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mGrid:Lcom/sonyericsson/grid/Grid;
 
-    .line 153
+    .line 177
+    iput-object p7, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
+
+    .line 178
+    iput-object p8, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    .line 179
     iput-object p5, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
 
-    .line 155
+    .line 181
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const/high16 v1, 0x7f09
+    const v1, 0x7f0a0033
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v0
 
-    iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMargin:I
+    iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mBadgeOffset:I
 
-    .line 157
+    .line 184
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f0a0005
+    const v1, 0x7f0a0020
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMarginLeft:I
+
+    .line 186
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0a0021
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMarginRight:I
+
+    .line 188
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0a0022
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchNudgeOffset:I
+
+    .line 190
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f090007
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -127,30 +184,34 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mMinPaneSwitchDuration:I
 
-    .line 160
+    .line 193
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    const v1, 0x7f0a000a
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mCellWidth:I
 
-    .line 161
+    .line 194
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    const v1, 0x7f0a000b
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mCellHeight:I
 
-    .line 163
-    const v0, 0x7f0c0002
+    .line 196
+    const v0, 0x7f0e0007
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -160,8 +221,8 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
-    .line 164
-    const v0, 0x7f0c0003
+    .line 197
+    const v0, 0x7f0e0008
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -171,18 +232,18 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
-    .line 165
+    .line 198
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/HintView;->setHintType(I)V
 
-    .line 166
+    .line 199
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/HintView;->setHintType(I)V
 
-    .line 167
-    const v0, 0x7f040006
+    .line 200
+    const v0, 0x7f04000a
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -190,35 +251,42 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mNudgeShow:Landroid/view/animation/Animation;
 
-    .line 170
+    .line 203
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mNudgeShow:Landroid/view/animation/Animation;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 172
+    .line 205
     invoke-direct {p0, p5}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->createStandardLongPressListener(Lcom/sonyericsson/home/transfer/TransferHandler;)Landroid/widget/AdapterView$OnItemLongClickListener;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->standardLongPressListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
-    .line 173
+    .line 206
     invoke-direct {p0, p5}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->createOnItemLongClickListener(Lcom/sonyericsson/home/transfer/TransferHandler;)Landroid/widget/AdapterView$OnItemLongClickListener;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->editorOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
-    .line 175
+    .line 207
+    invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->createEnabledChecker()Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mEnabledChecker:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
+
+    .line 208
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->createTransferTarget()Lcom/sonyericsson/home/transfer/TransferTarget;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mTransferTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 179
+    .line 214
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     sget v1, Lcom/sonyericsson/home/transfer/TransferView;->TRANSFER_TARGET_TAG:I
@@ -231,209 +299,64 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/paneview/PaneView;->setTag(ILjava/lang/Object;)V
 
-    .line 181
+    .line 216
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->standardLongPressListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
 
-    .line 182
+    .line 217
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 183
+    .line 218
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+.method static synthetic access$000(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 48
-    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mCellWidth:I
-
-    return v0
-.end method
-
-.method static synthetic access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mCellHeight:I
-
-    return v0
-.end method
-
-.method static synthetic access$1000(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->hideNudge()V
-
-    return-void
-.end method
-
-.method static synthetic access$1100(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/grid/Grid;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mGrid:Lcom/sonyericsson/grid/Grid;
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Z
+.method static synthetic access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/resourceload/PackageLoader;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 48
-    iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mDoMirror:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1300(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
-
-    return v0
-.end method
-
-.method static synthetic access$1302(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 48
-    iput p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
-
-    return p1
-.end method
-
-.method static synthetic access$1400(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
+.method static synthetic access$1000(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 48
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1600(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;Lcom/sonyericsson/animation/Renderer;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 48
-    invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->dropItem(Lcom/sonyericsson/animation/Renderer;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1700(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMargin:I
-
-    return v0
-.end method
-
-.method static synthetic access$200(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mListener:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Landroid/graphics/Rect;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mOriginRect:Landroid/graphics/Rect;
-
-    return-object v0
-.end method
-
-.method static synthetic access$500(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/paneview/PaneView;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$700(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
-    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mMinPaneSwitchDuration:I
-
-    return v0
-.end method
-
-.method static synthetic access$800(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 48
+    .line 50
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mEditingEnabled:Z
 
     return v0
 .end method
 
-.method static synthetic access$900(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;I)Z
+.method static synthetic access$1100(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;I)Z
     .locals 1
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 48
+    .line 50
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->showNudgeIfNeeded(I)Z
 
     move-result v0
@@ -441,15 +364,216 @@
     return v0
 .end method
 
+.method static synthetic access$1200(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->hideNudge()V
+
+    return-void
+.end method
+
+.method static synthetic access$1300(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/grid/Grid;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mGrid:Lcom/sonyericsson/grid/Grid;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1400(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mDoMirror:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1500(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
+
+    return v0
+.end method
+
+.method static synthetic access$1502(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 50
+    iput p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
+
+    return p1
+.end method
+
+.method static synthetic access$1600(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1700(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1800(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;Lcom/sonyericsson/animation/Renderer;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 50
+    invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->dropItem(Lcom/sonyericsson/animation/Renderer;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1900(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMarginLeft:I
+
+    return v0
+.end method
+
+.method static synthetic access$200(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mCellWidth:I
+
+    return v0
+.end method
+
+.method static synthetic access$2000(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMarginRight:I
+
+    return v0
+.end method
+
+.method static synthetic access$2100(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mBadgeOffset:I
+
+    return v0
+.end method
+
+.method static synthetic access$300(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mCellHeight:I
+
+    return v0
+.end method
+
+.method static synthetic access$400(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mListener:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
+
+    return-object v0
+.end method
+
+.method static synthetic access$500(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Landroid/graphics/Rect;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mOriginRect:Landroid/graphics/Rect;
+
+    return-object v0
+.end method
+
+.method static synthetic access$700(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)Lcom/sonyericsson/paneview/PaneView;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$900(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mMinPaneSwitchDuration:I
+
+    return v0
+.end method
+
+.method private createEnabledChecker()Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
+    .locals 1
+
+    .prologue
+    .line 263
+    new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$1;
+
+    invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$1;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)V
+
+    return-object v0
+.end method
+
 .method private createOnItemLongClickListener(Lcom/sonyericsson/home/transfer/TransferHandler;)Landroid/widget/AdapterView$OnItemLongClickListener;
     .locals 1
     .parameter "transferHandler"
 
     .prologue
-    .line 454
-    new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$3;
+    .line 506
+    new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$4;
 
-    invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$3;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;Lcom/sonyericsson/home/transfer/TransferHandler;)V
+    invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$4;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;Lcom/sonyericsson/home/transfer/TransferHandler;)V
 
     return-object v0
 .end method
@@ -459,10 +583,10 @@
     .parameter "transferHandler"
 
     .prologue
-    .line 226
-    new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$1;
+    .line 272
+    new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$2;
 
-    invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$1;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;Lcom/sonyericsson/home/transfer/TransferHandler;)V
+    invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$2;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;Lcom/sonyericsson/home/transfer/TransferHandler;)V
 
     return-object v0
 .end method
@@ -471,10 +595,10 @@
     .locals 1
 
     .prologue
-    .line 278
-    new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$2;
+    .line 324
+    new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$3;
 
-    invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$2;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)V
+    invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$3;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;)V
 
     return-object v0
 .end method
@@ -484,14 +608,14 @@
     .parameter "renderer"
 
     .prologue
-    .line 391
+    .line 437
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->permanentlyMakeRoom(I)V
 
-    .line 392
+    .line 438
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
@@ -502,10 +626,10 @@
 
     if-eqz v1, :cond_3
 
-    .line 393
+    .line 439
     if-eqz p1, :cond_0
 
-    .line 394
+    .line 440
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
@@ -522,7 +646,7 @@
 
     invoke-interface {p1, v1, v2, v3, v4}, Lcom/sonyericsson/animation/Renderer;->offset(IIJ)V
 
-    .line 396
+    .line 442
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
@@ -533,13 +657,13 @@
 
     invoke-virtual {v1, p1, v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;->setNextAddRenderer(Lcom/sonyericsson/animation/Renderer;I)V
 
-    .line 399
+    .line 445
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->restorePickedUpItem()V
 
-    .line 411
+    .line 457
     :goto_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
@@ -559,47 +683,47 @@
 
     if-nez v1, :cond_1
 
-    .line 412
+    .line 458
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->addEmptyPane()V
 
-    .line 414
+    .line 460
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->notifyObservers()V
 
-    .line 415
+    .line 461
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mListener:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
 
     if-eqz v1, :cond_2
 
-    .line 416
+    .line 462
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mListener:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
 
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;->onEditEnd()V
 
-    .line 418
+    .line 464
     :cond_2
     return-void
 
-    .line 401
+    .line 447
     :cond_3
     if-eqz p1, :cond_4
 
-    .line 402
+    .line 448
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 403
+    .line 449
     .local v0, rect:Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/paneview/PaneView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 404
+    .line 450
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPreviousHintPane:I
@@ -622,10 +746,10 @@
 
     invoke-interface {p1, v1, v2, v3, v4}, Lcom/sonyericsson/animation/Renderer;->offset(IIJ)V
 
-    .line 406
+    .line 452
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 407
+    .line 453
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
@@ -636,7 +760,7 @@
 
     invoke-virtual {v1, p1, v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;->setNextAddRenderer(Lcom/sonyericsson/animation/Renderer;I)V
 
-    .line 409
+    .line 455
     .end local v0           #rect:Landroid/graphics/Rect;
     :cond_4
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
@@ -652,49 +776,49 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 440
+    .line 492
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 441
+    .line 493
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/HintView;->clearAnimation()V
 
-    .line 442
+    .line 494
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 443
+    .line 495
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/HintView;->clearAnimation()V
 
-    .line 444
+    .line 496
     return-void
 .end method
 
 .method private showNudgeIfNeeded(I)Z
-    .locals 7
+    .locals 8
     .parameter "x"
 
     .prologue
-    const/4 v6, 0x4
+    const/4 v7, 0x4
+
+    const/4 v6, 0x0
 
     const/4 v5, 0x1
 
-    const/4 v4, 0x0
-
-    .line 421
+    .line 467
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v2}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
 
     move-result v0
 
-    .line 422
+    .line 468
     .local v0, currentPane:I
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -702,80 +826,54 @@
 
     move-result v1
 
-    .line 423
+    .line 469
     .local v1, maxPane:I
-    iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMargin:I
+    iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMarginLeft:I
 
-    mul-int/lit8 v2, v2, 0x2
+    iget v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchNudgeOffset:I
 
-    if-ge p1, v2, :cond_1
+    add-int/2addr v2, v3
 
-    if-lez v0, :cond_1
+    if-ge p1, v2, :cond_3
 
-    .line 424
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
+    .line 470
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mListener:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
 
-    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/HintView;->getVisibility()I
+    invoke-interface {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;->onNudgeHint()V
 
-    move-result v2
+    .line 471
+    iget-boolean v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mDoMirror:Z
 
-    if-ne v2, v6, :cond_0
+    if-nez v2, :cond_0
 
-    .line 425
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
-
-    invoke-virtual {v2, v4}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
-
-    .line 426
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
-
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mNudgeShow:Landroid/view/animation/Animation;
-
-    invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/HintView;->startAnimation(Landroid/view/animation/Animation;)V
+    if-gtz v0, :cond_1
 
     :cond_0
-    move v2, v5
+    iget-boolean v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mDoMirror:Z
 
-    .line 436
-    :goto_0
-    return v2
-
-    .line 429
-    :cond_1
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
-
-    invoke-virtual {v2}, Lcom/sonyericsson/paneview/PaneView;->getRight()I
-
-    move-result v2
-
-    iget v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMargin:I
-
-    mul-int/lit8 v3, v3, 0x2
-
-    sub-int/2addr v2, v3
-
-    if-le p1, v2, :cond_3
+    if-eqz v2, :cond_7
 
     sub-int v2, v1, v5
 
-    if-ge v0, v2, :cond_3
+    if-ge v0, v2, :cond_7
 
-    .line 430
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
+    .line 472
+    :cond_1
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/HintView;->getVisibility()I
 
     move-result v2
 
-    if-ne v2, v6, :cond_2
+    if-ne v2, v7, :cond_2
 
-    .line 431
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
+    .line 473
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
-    invoke-virtual {v2, v4}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
+    invoke-virtual {v2, v6}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 432
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
+    .line 474
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mNudgeShow:Landroid/view/animation/Animation;
 
@@ -784,105 +882,196 @@
     :cond_2
     move v2, v5
 
-    .line 434
+    .line 488
+    :goto_0
+    return v2
+
+    .line 478
+    :cond_3
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-virtual {v2}, Lcom/sonyericsson/paneview/PaneView;->getRight()I
+
+    move-result v2
+
+    iget v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchMarginRight:I
+
+    iget v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneSwitchNudgeOffset:I
+
+    add-int/2addr v3, v4
+
+    sub-int/2addr v2, v3
+
+    if-le p1, v2, :cond_7
+
+    .line 479
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mListener:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
+
+    invoke-interface {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;->onNudgeHint()V
+
+    .line 480
+    iget-boolean v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mDoMirror:Z
+
+    if-nez v2, :cond_4
+
+    sub-int v2, v1, v5
+
+    if-lt v0, v2, :cond_5
+
+    :cond_4
+    iget-boolean v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mDoMirror:Z
+
+    if-eqz v2, :cond_7
+
+    if-lez v0, :cond_7
+
+    .line 481
+    :cond_5
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/HintView;->getVisibility()I
+
+    move-result v2
+
+    if-ne v2, v7, :cond_6
+
+    .line 482
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
+
+    invoke-virtual {v2, v6}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
+
+    .line 483
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
+
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mNudgeShow:Landroid/view/animation/Animation;
+
+    invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/HintView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    :cond_6
+    move v2, v5
+
+    .line 485
     goto :goto_0
 
-    :cond_3
-    move v2, v4
+    :cond_7
+    move v2, v6
 
-    .line 436
+    .line 488
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method public enableEditing(Z)V
-    .locals 4
+.method public enableEditing(ZZ)V
+    .locals 5
     .parameter "enable"
+    .parameter "enableOnlyUninstall"
 
     .prologue
+    const/4 v4, 0x0
+
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    .line 199
-    if-eqz p1, :cond_0
+    .line 234
+    if-eqz p1, :cond_2
 
-    .line 200
+    .line 235
+    if-eqz p2, :cond_0
+
+    .line 236
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-virtual {v0, v4}, Lcom/sonyericsson/paneview/PaneView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
+
+    .line 237
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
+
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mEnabledChecker:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->setEnabledChecker(Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;)V
+
+    .line 241
+    :goto_0
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
+
+    if-nez p2, :cond_1
+
+    move v1, v3
+
+    :goto_1
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;->enableFloatRenderers(Z)V
+
+    .line 242
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-virtual {v0, v3}, Lcom/sonyericsson/paneview/PaneView;->setEnableStandardRenderers(Z)V
+
+    .line 251
+    :goto_2
+    iput-boolean p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mEditingEnabled:Z
+
+    .line 252
+    return-void
+
+    .line 239
+    :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->editorOnItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
 
-    .line 201
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+    goto :goto_0
 
-    invoke-virtual {v0, v3}, Lcom/sonyericsson/paneview/PaneView;->enableQuickLongPress(Z)V
+    :cond_1
+    move v1, v2
 
-    .line 202
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+    .line 241
+    goto :goto_1
 
-    invoke-virtual {v0, v3}, Lcom/sonyericsson/paneview/PaneView;->setEnableStandardRenderers(Z)V
-
-    .line 203
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->addEmptyPane()V
-
-    .line 204
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->notifyObservers()V
-
-    .line 213
-    :goto_0
-    iput-boolean p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mEditingEnabled:Z
-
-    .line 214
-    return-void
-
-    .line 206
-    :cond_0
+    .line 244
+    :cond_2
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->standardLongPressListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
 
-    .line 207
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
-
-    invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->enableQuickLongPress(Z)V
-
-    .line 208
+    .line 245
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/transfer/TransferHandler;->cancelTransfer()V
 
-    .line 209
+    .line 246
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->cancelLongPress()V
 
-    .line 210
+    .line 247
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setEnableStandardRenderers(Z)V
 
-    .line 211
+    .line 248
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAnimatorFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;->stopAllStandardAnimators()V
 
-    goto :goto_0
+    .line 249
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
+
+    invoke-virtual {v0, v4}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->setEnabledChecker(Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;)V
+
+    goto :goto_2
 .end method
 
 .method public isEditingEnabled()Z
     .locals 1
 
     .prologue
-    .line 217
+    .line 255
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mEditingEnabled:Z
 
     return v0
@@ -893,10 +1082,10 @@
     .parameter "doMirror"
 
     .prologue
-    .line 221
+    .line 259
     iput-boolean p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mDoMirror:Z
 
-    .line 222
+    .line 260
     return-void
 .end method
 
@@ -905,10 +1094,10 @@
     .parameter "listener"
 
     .prologue
-    .line 191
+    .line 226
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mListener:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;
 
-    .line 192
+    .line 227
     return-void
 .end method
 
@@ -917,11 +1106,11 @@
     .parameter "rect"
 
     .prologue
-    .line 195
+    .line 230
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mOriginRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 196
+    .line 231
     return-void
 .end method

@@ -3,7 +3,7 @@
 .source "InfoGroupManager.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/LayerController$Syncable;
+.implements Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
 
 # annotations
@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 91
+    .line 96
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;->this$1:Lcom/sonyericsson/home/layer/InfoGroupManager$1;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;->val$infoList:Ljava/util/Map$Entry;
@@ -47,21 +47,23 @@
 
 
 # virtual methods
-.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)V
-    .locals 0
+.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
+    .locals 1
     .parameter "info"
 
     .prologue
-    .line 102
-    return-void
+    .line 108
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 2
     .parameter "info"
 
     .prologue
-    .line 93
+    .line 98
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;->val$infoList:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -72,7 +74,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 94
+    .line 99
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;->val$changedInfoGroups:Ljava/util/HashSet;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;->val$infoList:Ljava/util/Map$Entry;
@@ -83,7 +85,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 95
+    .line 100
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;->this$1:Lcom/sonyericsson/home/layer/InfoGroupManager$1;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
@@ -94,7 +96,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 96
+    .line 101
     iget-object v0, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;->this$1:Lcom/sonyericsson/home/layer/InfoGroupManager$1;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
@@ -105,7 +107,9 @@
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/InfoGroupManager$InfoListener;->onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 98
+    .line 103
     :cond_0
-    return-void
+    const/4 v0, 0x1
+
+    return v0
 .end method

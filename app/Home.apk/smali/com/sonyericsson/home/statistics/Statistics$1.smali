@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 84
+    .line 86
     iput-object p1, p0, Lcom/sonyericsson/home/statistics/Statistics$1;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,10 +42,17 @@
     .parameter "root"
 
     .prologue
-    .line 86
+    .line 88
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$1;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$000(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/resourceload/PackageLoader;
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$002(Lcom/sonyericsson/home/statistics/Statistics;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 89
+    iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$1;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$300(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     move-result-object v0
 
@@ -55,6 +62,6 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnLoadCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 111
+    .line 110
     return-void
 .end method

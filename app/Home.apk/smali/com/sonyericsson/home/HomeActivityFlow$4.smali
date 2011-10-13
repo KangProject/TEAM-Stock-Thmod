@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 288
+    .line 299
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
     iput-object p2, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
@@ -46,12 +46,12 @@
     .locals 1
 
     .prologue
-    .line 295
+    .line 308
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderCanceled()V
 
-    .line 296
+    .line 309
     return-void
 .end method
 
@@ -60,7 +60,10 @@
     .parameter "result"
 
     .prologue
-    .line 290
+    .line 301
+    if-eqz p1, :cond_0
+
+    .line 302
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
     const-string v1, "result_folder_name"
@@ -77,6 +80,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderConfirmed(Ljava/lang/String;I)V
 
-    .line 292
+    .line 305
+    :cond_0
     return-void
 .end method

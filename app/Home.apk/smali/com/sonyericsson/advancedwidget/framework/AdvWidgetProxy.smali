@@ -10,6 +10,8 @@
 
 
 # instance fields
+.field private mCreateCount:I
+
 .field private mFocused:Z
 
 .field private mResumeCount:I
@@ -36,16 +38,19 @@
     .local p1, comm:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     const/4 v0, 0x0
 
-    .line 233
+    .line 251
     invoke-direct {p0, p1}, Lcom/sonyericsson/advancedwidget/framework/Proxy;-><init>(Ljava/util/Map;)V
 
-    .line 30
+    .line 29
+    iput v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mCreateCount:I
+
+    .line 32
     iput v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mStartCount:I
 
-    .line 33
+    .line 35
     iput v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mResumeCount:I
 
-    .line 234
+    .line 252
     return-void
 .end method
 
@@ -55,7 +60,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 248
+    .line 266
     const/4 v4, 0x1
 
     :try_start_0
@@ -63,7 +68,7 @@
 
     move-result-object v0
 
-    .line 249
+    .line 267
     .local v0, c:Landroid/content/Context;
     invoke-virtual {v0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
@@ -91,7 +96,7 @@
 
     move-result-object v1
 
-    .line 250
+    .line 268
     .local v1, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {v1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
@@ -99,7 +104,7 @@
 
     check-cast v2, Ljava/util/Map;
 
-    .line 251
+    .line 269
     .local v2, comm:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     new-instance v4, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
@@ -107,24 +112,24 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 254
+    .line 272
     .end local v0           #c:Landroid/content/Context;
     .end local v1           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     .end local v2           #comm:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     :goto_0
     return-object v4
 
-    .line 252
+    .line 270
     :catch_0
     move-exception v4
 
     move-object v3, v4
 
-    .line 253
+    .line 271
     .local v3, e:Ljava/lang/Exception;
     invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 254
+    .line 272
     const/4 v4, 0x0
 
     goto :goto_0
@@ -146,7 +151,7 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 283
     .local p0, comm:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     new-instance v0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
@@ -162,7 +167,7 @@
     .parameter "hostContext"
 
     .prologue
-    .line 175
+    .line 193
     const-string v1, "configure"
 
     invoke-virtual {p0, v1, p1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
@@ -171,7 +176,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 176
+    .line 194
     .local v0, ret:Ljava/lang/Integer;
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -185,7 +190,7 @@
     .parameter "settings"
 
     .prologue
-    .line 183
+    .line 201
     const-string v1, "customize"
 
     invoke-virtual {p0, v1, p1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
@@ -194,7 +199,7 @@
 
     check-cast v0, Ljava/lang/Boolean;
 
-    .line 184
+    .line 202
     .local v0, ret:Ljava/lang/Boolean;
     if-eqz v0, :cond_0
 
@@ -202,7 +207,7 @@
 
     move-result v1
 
-    .line 185
+    .line 203
     :goto_0
     return v1
 
@@ -216,7 +221,7 @@
     .locals 2
 
     .prologue
-    .line 192
+    .line 210
     const-string v0, "getContentView"
 
     const/4 v1, 0x0
@@ -235,7 +240,7 @@
     .locals 2
 
     .prologue
-    .line 44
+    .line 46
     const-string v0, "getFrameworkVersion"
 
     const/4 v1, 0x0
@@ -258,7 +263,7 @@
     .locals 2
 
     .prologue
-    .line 206
+    .line 224
     const-string v0, "getSnapshot"
 
     const/4 v1, 0x0
@@ -277,7 +282,7 @@
     .locals 2
 
     .prologue
-    .line 199
+    .line 217
     const-string v0, "getSpanXY"
 
     const/4 v1, 0x0
@@ -298,7 +303,7 @@
     .locals 2
 
     .prologue
-    .line 215
+    .line 233
     const-string v0, "getType"
 
     const/4 v1, 0x0
@@ -322,12 +327,12 @@
     .parameter "host"
 
     .prologue
-    .line 59
+    .line 61
     const-string v0, "init"
 
     invoke-virtual {p0, v0, p1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 60
+    .line 62
     return-void
 .end method
 
@@ -336,7 +341,7 @@
     .parameter "response"
 
     .prologue
-    .line 168
+    .line 186
     const-string v0, "onConfigured"
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -345,21 +350,33 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 169
+    .line 187
     return-void
 .end method
 
 .method public onCreate(Landroid/content/Context;)V
-    .locals 1
+    .locals 2
     .parameter "context"
 
     .prologue
-    .line 66
+    .line 80
+    const/4 v0, 0x1
+
+    iget v1, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mCreateCount:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mCreateCount:I
+
+    if-ne v0, v1, :cond_0
+
+    .line 81
     const-string v0, "onCreate"
 
     invoke-virtual {p0, v0, p1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 67
+    .line 83
+    :cond_0
     return-void
 .end method
 
@@ -367,7 +384,7 @@
     .locals 2
 
     .prologue
-    .line 73
+    .line 89
     iget-boolean v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mFocused:Z
 
     if-eqz v0, :cond_0
@@ -378,19 +395,19 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 74
+    .line 90
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mFocused:Z
 
-    .line 75
+    .line 91
     const-string v0, "onDefocus"
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 77
+    .line 93
     :cond_0
     return-void
 .end method
@@ -399,20 +416,29 @@
     .locals 2
 
     .prologue
-    .line 149
+    const/4 v1, 0x1
+
+    .line 165
+    iget v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mCreateCount:I
+
+    sub-int/2addr v0, v1
+
+    iput v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mCreateCount:I
+
+    if-nez v0, :cond_1
+
+    .line 166
     iget v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mStartCount:I
 
     if-lez v0, :cond_0
 
-    .line 151
-    const/4 v0, 0x1
+    .line 168
+    iput v1, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mStartCount:I
 
-    iput v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mStartCount:I
-
-    .line 152
+    .line 169
     invoke-virtual {p0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onStop()V
 
-    .line 154
+    .line 171
     :cond_0
     const-string v0, "onDestroy"
 
@@ -420,7 +446,8 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 155
+    .line 173
+    :cond_1
     return-void
 .end method
 
@@ -430,7 +457,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 83
+    .line 99
     iget-boolean v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mFocused:Z
 
     if-nez v0, :cond_0
@@ -439,17 +466,17 @@
 
     if-ne v1, v0, :cond_0
 
-    .line 84
+    .line 100
     iput-boolean v1, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mFocused:Z
 
-    .line 85
+    .line 101
     const-string v0, "onFocus"
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
+    .line 103
     :cond_0
     return-void
 .end method
@@ -458,14 +485,14 @@
     .locals 2
 
     .prologue
-    .line 161
+    .line 179
     const-string v0, "onMoved"
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 162
+    .line 180
     return-void
 .end method
 
@@ -475,7 +502,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 112
+    .line 128
     iget v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mResumeCount:I
 
     const/4 v1, 0x1
@@ -486,28 +513,28 @@
 
     if-nez v0, :cond_1
 
-    .line 113
+    .line 129
     iget-boolean v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mFocused:Z
 
     if-eqz v0, :cond_0
 
-    .line 115
+    .line 131
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mFocused:Z
 
-    .line 116
+    .line 132
     const-string v0, "onDefocus"
 
     invoke-virtual {p0, v0, v2}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 118
+    .line 134
     :cond_0
     const-string v0, "onPause"
 
     invoke-virtual {p0, v0, v2}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 120
+    .line 136
     :cond_1
     return-void
 .end method
@@ -516,7 +543,7 @@
     .locals 2
 
     .prologue
-    .line 98
+    .line 114
     const/4 v0, 0x1
 
     iget v1, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mResumeCount:I
@@ -527,14 +554,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 99
+    .line 115
     const-string v0, "onResume"
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 101
+    .line 117
     :cond_0
     return-void
 .end method
@@ -543,7 +570,7 @@
     .locals 2
 
     .prologue
-    .line 126
+    .line 142
     const/4 v0, 0x1
 
     iget v1, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mStartCount:I
@@ -554,14 +581,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 127
+    .line 143
     const-string v0, "onStart"
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 129
+    .line 145
     :cond_0
     return-void
 .end method
@@ -572,7 +599,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 135
+    .line 151
     iget v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mStartCount:I
 
     sub-int/2addr v0, v1
@@ -581,18 +608,18 @@
 
     if-nez v0, :cond_1
 
-    .line 136
+    .line 152
     iget v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mResumeCount:I
 
     if-lez v0, :cond_0
 
-    .line 138
+    .line 154
     iput v1, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mResumeCount:I
 
-    .line 139
+    .line 155
     invoke-virtual {p0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onPause()V
 
-    .line 141
+    .line 157
     :cond_0
     const-string v0, "onStop"
 
@@ -600,8 +627,37 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 143
+    .line 159
     :cond_1
+    return-void
+.end method
+
+.method public remove()V
+    .locals 2
+
+    .prologue
+    .line 68
+    iget v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mCreateCount:I
+
+    if-lez v0, :cond_0
+
+    .line 70
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->mCreateCount:I
+
+    .line 71
+    invoke-virtual {p0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onDestroy()V
+
+    .line 73
+    :cond_0
+    const-string v0, "remove"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 74
     return-void
 .end method
 
@@ -610,12 +666,12 @@
     .parameter "activity"
 
     .prologue
-    .line 223
+    .line 241
     const-string v0, "setActivity"
 
     invoke-virtual {p0, v0, p1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 224
+    .line 242
     return-void
 .end method
 
@@ -624,11 +680,11 @@
     .parameter "id"
 
     .prologue
-    .line 52
+    .line 54
     const-string v0, "setId"
 
     invoke-virtual {p0, v0, p1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->call(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 53
+    .line 55
     return-void
 .end method

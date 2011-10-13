@@ -15,7 +15,11 @@
 
 
 # static fields
+.field public static final BROADCAST_BADGE:Ljava/lang/String; = "com.sonyericsson.home.permission.BROADCAST_BADGE"
+
 .field public static final INSTALL_SHORTCUT:Ljava/lang/String; = "com.android.launcher.permission.INSTALL_SHORTCUT"
+
+.field public static final RECEIVE_BADGE:Ljava/lang/String; = "com.sonyericsson.home.permission.RECEIVE_BADGE"
 
 .field public static final UNINSTALL_SHORTCUT:Ljava/lang/String; = "com.android.launcher.permission.UNINSTALL_SHORTCUT"
 

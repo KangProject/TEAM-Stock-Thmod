@@ -3,12 +3,12 @@
 .source "AppTrayController.java"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createComparators(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/statistics/Statistics;)V
+    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;-><init>(Landroid/content/Context;Landroid/view/ViewStub;Landroid/view/ViewGroup;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/statistics/Statistics;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,34 +16,19 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Lcom/sonyericsson/home/data/ActivityInfo;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-.field final synthetic val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
-
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/statistics/Statistics;)V
+.method constructor <init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 561
+    .line 451
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
-
-    iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,56 +37,50 @@
 
 
 # virtual methods
-.method public compare(Lcom/sonyericsson/home/data/ActivityInfo;Lcom/sonyericsson/home/data/ActivityInfo;)I
-    .locals 3
-    .parameter "activityInfo1"
-    .parameter "activityInfo2"
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+    .parameter "v"
 
     .prologue
-    const/16 v2, 0xff
+    .line 453
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    .line 563
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$600(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Z
 
-    invoke-virtual {v0, p2}, Lcom/sonyericsson/home/statistics/Statistics;->getStats(Lcom/sonyericsson/home/data/ActivityInfo;)Lcom/sonyericsson/home/statistics/ActivityStats;
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 460
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 456
+    :cond_1
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lcom/sonyericsson/home/statistics/ActivityStats;->getStartCount(I)I
+    if-eqz v0, :cond_0
 
-    move-result v0
+    .line 457
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
-    invoke-virtual {v1, p1}, Lcom/sonyericsson/home/statistics/Statistics;->getStats(Lcom/sonyericsson/home/data/ActivityInfo;)Lcom/sonyericsson/home/statistics/ActivityStats;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-interface {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->sortButtonPressed()V
 
-    invoke-virtual {v1, v2}, Lcom/sonyericsson/home/statistics/ActivityStats;->getStartCount(I)I
+    .line 458
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    move-result v1
+    const/4 v1, 0x1
 
-    sub-int/2addr v0, v1
+    iput-boolean v1, v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mDisableDuringSortDialog:Z
 
-    return v0
-.end method
-
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 561
-    check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
-
-    .end local p1
-    check-cast p2, Lcom/sonyericsson/home/data/ActivityInfo;
-
-    .end local p2
-    invoke-virtual {p0, p1, p2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->compare(Lcom/sonyericsson/home/data/ActivityInfo;Lcom/sonyericsson/home/data/ActivityInfo;)I
-
-    move-result v0
-
-    return v0
+    goto :goto_0
 .end method

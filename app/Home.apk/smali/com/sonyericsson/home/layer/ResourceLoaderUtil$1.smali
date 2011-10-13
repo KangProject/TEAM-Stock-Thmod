@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
 
-.field final synthetic val$listener:Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;
-
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/layer/ResourceLoaderUtil;Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;)V
+.method constructor <init>(Lcom/sonyericsson/home/layer/ResourceLoaderUtil;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 46
+    .line 86
     iput-object p1, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
-
-    iput-object p2, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->val$listener:Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,37 +37,80 @@
 
 
 # virtual methods
-.method public cacheCallback(Lcom/sonyericsson/home/data/Info;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
-    .locals 1
+.method public cacheCallback(Lcom/sonyericsson/home/data/Info;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Ljava/lang/String;)V
+    .locals 3
     .parameter "info"
     .parameter "icon"
     .parameter "label"
+    .parameter "badgeMessage"
 
     .prologue
-    .line 48
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
+    .line 89
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
 
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->mWaitList:Ljava/util/Set;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->access$000(Lcom/sonyericsson/home/layer/ResourceLoaderUtil;)Ljava/util/Set;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    move-result-object v2
 
-    .line 49
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
+    invoke-interface {v2, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->mWaitList:Ljava/util/Set;
+    .line 90
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
 
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->access$000(Lcom/sonyericsson/home/layer/ResourceLoaderUtil;)Ljava/util/Set;
 
-    move-result v0
+    move-result-object v2
 
-    if-eqz v0, :cond_0
+    invoke-interface {v2}, Ljava/util/Set;->isEmpty()Z
 
-    .line 50
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->val$listener:Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;
+    move-result v2
 
+    if-eqz v2, :cond_1
+
+    .line 91
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->access$100(Lcom/sonyericsson/home/layer/ResourceLoaderUtil;)Ljava/util/LinkedList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;
+
+    .line 92
+    .local v0, callback:Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;->onResourcesLoaded()V
 
-    .line 52
+    goto :goto_0
+
+    .line 94
+    .end local v0           #callback:Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;
     :cond_0
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/ResourceLoaderUtil$1;->this$0:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->access$100(Lcom/sonyericsson/home/layer/ResourceLoaderUtil;)Ljava/util/LinkedList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->clear()V
+
+    .line 96
+    .end local v1           #i$:Ljava/util/Iterator;
+    :cond_1
     return-void
 .end method

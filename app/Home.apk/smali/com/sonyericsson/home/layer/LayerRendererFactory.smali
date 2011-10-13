@@ -53,7 +53,7 @@
 
 
 # virtual methods
-.method public createDefaultAddRenderer()Lcom/sonyericsson/animation/Renderer;
+.method protected createDefaultAddRenderer()Lcom/sonyericsson/animation/Renderer;
     .locals 7
 
     .prologue
@@ -82,7 +82,7 @@
     return-object v0
 .end method
 
-.method public createDefaultDeleteRenderer()Lcom/sonyericsson/animation/Renderer;
+.method protected createDefaultDeleteRenderer()Lcom/sonyericsson/animation/Renderer;
     .locals 7
 
     .prologue
@@ -111,7 +111,7 @@
     return-object v0
 .end method
 
-.method public createDefaultMoveRenderer()Lcom/sonyericsson/animation/Renderer;
+.method protected createDefaultMoveRenderer()Lcom/sonyericsson/animation/Renderer;
     .locals 1
 
     .prologue

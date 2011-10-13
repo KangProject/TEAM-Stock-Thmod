@@ -319,7 +319,7 @@
     :pswitch_2
     iget-object v3, p0, Lcom/sonyericsson/advancedwidget/framework/WidgetTestActivity;->mWidget:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
-    invoke-virtual {v3}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onDestroy()V
+    invoke-virtual {v3}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->remove()V
 
     .line 111
     iget-boolean v3, p0, Lcom/sonyericsson/advancedwidget/framework/WidgetTestActivity;->mDummy:Z
@@ -359,6 +359,11 @@
     invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onDestroy()V
 
     .line 179
+    iget-object v0, p0, Lcom/sonyericsson/advancedwidget/framework/WidgetTestActivity;->mWidget:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
+
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->remove()V
+
+    .line 180
     return-void
 .end method
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;-><init>(ILandroid/content/Context;Landroid/content/Intent;Lcom/sonyericsson/home/widget/ScrollableAppWidgetManager;)V
+    value = Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;-><init>(ILandroid/appwidget/AppWidgetProviderInfo;Landroid/content/Context;Landroid/content/Intent;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 205
+    .line 200
     iput-object p1, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$1;->this$0:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,11 +40,11 @@
     .parameter "selfChange"
 
     .prologue
-    .line 208
+    .line 203
     iget-object v0, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$1;->this$0:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;
 
     invoke-static {v0}, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;->access$200(Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;)V
 
-    .line 209
+    .line 204
     return-void
 .end method

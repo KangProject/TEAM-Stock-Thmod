@@ -35,12 +35,12 @@
     .parameter
 
     .prologue
-    .line 1972
+    .line 2711
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 1973
+    .line 2712
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
@@ -56,18 +56,18 @@
     .parameter "x1"
 
     .prologue
-    .line 1972
+    .line 2711
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
     return-void
 .end method
 
-.method static synthetic access$4500(Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;)V
+.method static synthetic access$5600(Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 1972
+    .line 2711
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->sortApps()V
 
     return-void
@@ -77,7 +77,7 @@
     .locals 2
 
     .prologue
-    .line 1991
+    .line 2730
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->mAppList:Ljava/util/LinkedList;
 
     new-instance v1, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$2;
@@ -86,7 +86,7 @@
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 2004
+    .line 2743
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 1976
+    .line 2715
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->mAppList:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
@@ -111,7 +111,7 @@
     .parameter "position"
 
     .prologue
-    .line 2007
+    .line 2746
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->mAppList:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
@@ -126,7 +126,7 @@
     .parameter "position"
 
     .prologue
-    .line 2011
+    .line 2750
     int-to-long v0, p1
 
     return-wide v0
@@ -141,27 +141,27 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 2015
+    .line 2754
     if-nez p2, :cond_0
 
-    .line 2016
+    .line 2755
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v5}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v5
 
-    const v6, 0x7f030003
+    const v6, 0x7f03000b
 
     invoke-virtual {v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object p2
 
-    .line 2020
+    .line 2759
     :cond_0
     move-object v3, p2
 
-    .line 2021
+    .line 2760
     .local v3, itemView:Landroid/view/View;
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->mAppList:Ljava/util/LinkedList;
 
@@ -171,16 +171,16 @@
 
     check-cast v2, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 2022
+    .line 2761
     .local v2, info:Lcom/sonyericsson/home/data/ActivityInfo;
-    invoke-static {}, Lcom/sonyericsson/home/HomeActivity;->access$4700()I
+    invoke-static {}, Lcom/sonyericsson/home/HomeActivity;->access$5800()I
 
     move-result v5
 
     invoke-virtual {v3, v5, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 2024
-    const v5, 0x7f0c000e
+    .line 2763
+    const v5, 0x7f0e0017
 
     invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -188,9 +188,9 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 2025
+    .line 2764
     .local v1, iconView:Landroid/widget/ImageView;
-    const v5, 0x7f0c000f
+    const v5, 0x7f0e0018
 
     invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -198,11 +198,11 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 2027
+    .line 2766
     .local v4, labelView:Landroid/widget/TextView;
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v5}, Lcom/sonyericsson/home/HomeActivity;->access$4600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    invoke-static {v5}, Lcom/sonyericsson/home/HomeActivity;->access$5700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     move-result-object v5
 
@@ -210,37 +210,37 @@
 
     move-result-object v0
 
-    .line 2028
+    .line 2767
     .local v0, cacheValue:Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
     if-eqz v0, :cond_1
 
-    .line 2029
+    .line 2768
     iget-object v5, v0, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2030
+    .line 2769
     iget-object v5, v0, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->label:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2046
+    .line 2785
     :goto_0
     return-object v3
 
-    .line 2032
+    .line 2771
     :cond_1
-    const v5, 0x7f02000b
+    const v5, 0x7f02000f
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2033
+    .line 2772
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2034
+    .line 2773
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v5}, Lcom/sonyericsson/home/HomeActivity;->access$4600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    invoke-static {v5}, Lcom/sonyericsson/home/HomeActivity;->access$5700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     move-result-object v5
 
@@ -257,15 +257,15 @@
     .locals 2
 
     .prologue
-    .line 1980
+    .line 2719
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->mAppList:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
-    .line 1981
+    .line 2720
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$4400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/PackageLoader;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$3300(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     move-result-object v0
 
@@ -275,6 +275,6 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnLoadCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 1988
+    .line 2727
     return-void
 .end method

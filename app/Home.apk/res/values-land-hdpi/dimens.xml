@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="apptray_cell_width">106.0dip</dimen>
+    <dimen name="apptray_cell_height">72.69998dip</dimen>
+    <dimen name="desktop_right_nudge_padding_right">89.0dip</dimen>
+    <dimen name="desktop_pane_switch_margin_right">138.0dip</dimen>
+    <dimen name="desktop_focus_padding_right">86.0dip</dimen>
+    <dimen name="desktop_focus_padding_bottom">0.0dip</dimen>
+    <dimen name="apptray_pane_switch_margin_left">45.0dip</dimen>
+    <dimen name="apptray_pane_switch_margin_right">100.0dip</dimen>
+    <dimen name="apptray_right_nudge_padding_right">70.0dip</dimen>
+    <dimen name="apptray_nudge_width">35.0dip</dimen>
+    <dimen name="apptray_margin_top">0.0dip</dimen>
+    <dimen name="apptray_padding_left">38.0dip</dimen>
+    <dimen name="apptray_padding_top">2.0dip</dimen>
+    <dimen name="apptray_backplate_offsetx">30.0dip</dimen>
+    <dimen name="apptray_backplate_width">440.0dip</dimen>
+    <dimen name="switch_apptray_button_padding_side">20.0dip</dimen>
+    <dimen name="folder_icon_selector_icon_margin_left">6.0dip</dimen>
+    <dimen name="folder_icon_selector_side">58.0dip</dimen>
+</resources>

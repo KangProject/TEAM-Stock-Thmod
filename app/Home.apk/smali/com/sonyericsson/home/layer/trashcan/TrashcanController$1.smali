@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 123
+    .line 139
     iput-object p1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->val$vibrator:Landroid/os/Vibrator;
@@ -45,41 +45,53 @@
 
 # virtual methods
 .method public onClosed()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 132
+    const/4 v2, 0x0
+
+    .line 148
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$000(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$100(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 133
+    .line 149
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$000(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$100(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
 
     move-result-object v0
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;->onClosed()V
 
-    .line 135
+    .line 151
     :cond_0
-    const-wide/16 v0, 0x1e
-
-    iput-wide v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->vibrateTime:J
-
-    .line 136
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$102(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Z)Z
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$202(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/data/Info;
 
-    .line 137
+    .line 152
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    invoke-static {v0, v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$002(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Z)Z
+
+    .line 153
+    const-wide/16 v0, 0x1e
+
+    iput-wide v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->vibrateTime:J
+
+    .line 154
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    invoke-static {v0, v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$302(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Z)Z
+
+    .line 155
     return-void
 .end method
 
@@ -87,23 +99,23 @@
     .locals 4
 
     .prologue
-    .line 140
+    .line 158
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$100(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Z
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$300(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 141
+    .line 159
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->val$vibrator:Landroid/os/Vibrator;
 
     iget-wide v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->vibrateTime:J
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 142
+    .line 160
     iget-wide v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->vibrateTime:J
 
     const-wide/16 v2, 0x2
@@ -112,15 +124,22 @@
 
     iput-wide v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->vibrateTime:J
 
-    .line 144
+    .line 162
     :cond_0
     return-void
 .end method
 
 .method public onOpened()V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 129
+    .line 144
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$1;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$002(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Z)Z
+
+    .line 145
     return-void
 .end method

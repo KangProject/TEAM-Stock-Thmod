@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 598
+    .line 593
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     return-void
@@ -49,16 +49,16 @@
 
     const/4 v4, 0x0
 
-    .line 647
+    .line 642
     if-ne p0, p1, :cond_0
 
     move v2, v5
 
-    .line 659
+    .line 654
     :goto_0
     return v2
 
-    .line 649
+    .line 644
     :cond_0
     invoke-super {p0, p1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
 
@@ -68,10 +68,10 @@
 
     move v2, v4
 
-    .line 650
+    .line 645
     goto :goto_0
 
-    .line 651
+    .line 646
     :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -85,10 +85,10 @@
 
     move v2, v4
 
-    .line 652
+    .line 647
     goto :goto_0
 
-    .line 653
+    .line 648
     :cond_2
     move-object v0, p1
 
@@ -96,23 +96,23 @@
 
     move-object v1, v0
 
-    .line 654
+    .line 649
     .local v1, other:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;
     iget-object v2, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->mActionUri:Ljava/lang/String;
 
     if-nez v2, :cond_3
 
-    .line 655
+    .line 650
     iget-object v2, v1, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->mActionUri:Ljava/lang/String;
 
     if-eqz v2, :cond_4
 
     move v2, v4
 
-    .line 656
+    .line 651
     goto :goto_0
 
-    .line 657
+    .line 652
     :cond_3
     iget-object v2, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->mActionUri:Ljava/lang/String;
 
@@ -126,13 +126,13 @@
 
     move v2, v4
 
-    .line 658
+    .line 653
     goto :goto_0
 
     :cond_4
     move v2, v5
 
-    .line 659
+    .line 654
     goto :goto_0
 .end method
 
@@ -140,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 610
+    .line 605
     iget-object v0, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->mActionUri:Ljava/lang/String;
 
     return-object v0
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 642
+    .line 637
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -163,10 +163,10 @@
     .parameter "string"
 
     .prologue
-    .line 606
+    .line 601
     iput-object p1, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->mActionUri:Ljava/lang/String;
 
-    .line 607
+    .line 602
     return-void
 .end method
 
@@ -176,18 +176,18 @@
     .prologue
     const/16 v7, 0x22
 
-    .line 615
+    .line 610
     new-instance v3, Ljava/lang/StringBuffer;
 
     invoke-direct {v3}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 616
+    .line 611
     .local v3, sb:Ljava/lang/StringBuffer;
     const-string v4, "{"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 617
+    .line 612
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -198,44 +198,44 @@
 
     if-ge v0, v4, :cond_3
 
-    .line 618
+    .line 613
     if-lez v0, :cond_0
 
-    .line 619
+    .line 614
     const/16 v4, 0x2c
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 620
+    .line 615
     :cond_0
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 621
+    .line 616
     .local v1, obj:Ljava/lang/Object;
     if-nez v1, :cond_1
 
-    .line 622
+    .line 617
     const-string v4, "<null>"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 617
+    .line 612
     .end local v1           #obj:Ljava/lang/Object;
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 623
+    .line 618
     .restart local v1       #obj:Ljava/lang/Object;
     :cond_1
     instance-of v4, v1, Ljava/lang/Integer;
 
     if-eqz v4, :cond_2
 
-    .line 624
+    .line 619
     check-cast v1, Ljava/lang/Integer;
 
     .end local v1           #obj:Ljava/lang/Object;
@@ -247,12 +247,12 @@
 
     goto :goto_1
 
-    .line 626
+    .line 621
     .restart local v1       #obj:Ljava/lang/Object;
     :cond_2
     invoke-virtual {v3, v7}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 627
+    .line 622
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -273,16 +273,16 @@
 
     move-result-object v2
 
-    .line 628
+    .line 623
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v3, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 629
+    .line 624
     invoke-virtual {v3, v7}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     goto :goto_1
 
-    .line 632
+    .line 627
     .end local v1           #obj:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
     :cond_3
@@ -290,22 +290,22 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 633
+    .line 628
     iget-object v4, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->mActionUri:Ljava/lang/String;
 
     if-eqz v4, :cond_4
 
-    .line 634
+    .line 629
     const-string v4, ",mActionUri="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 635
+    .line 630
     iget-object v4, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataRow;->mActionUri:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 637
+    .line 632
     :cond_4
     invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 

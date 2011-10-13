@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field public badgeMessage:Ljava/lang/String;
+
 .field public icon:Landroid/graphics/drawable/Drawable;
 
 .field public label:Ljava/lang/CharSequence;
@@ -25,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 81
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

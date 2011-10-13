@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/HomeActivityFlow;->setFolderName(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;Ljava/lang/String;I)V
+    value = Lcom/sonyericsson/home/HomeActivityFlow;->setFolderName(Lcom/sonyericsson/home/data/InfoGroup;Ljava/lang/String;ILcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,23 +22,23 @@
 
 .field final synthetic val$infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
 
-.field final synthetic val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;
+.field final synthetic val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;
 
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/HomeActivityFlow;Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;)V
+.method constructor <init>(Lcom/sonyericsson/home/HomeActivityFlow;Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;)V
     .locals 0
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 269
+    .line 276
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
     iput-object p2, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
 
-    iput-object p3, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;
+    iput-object p3, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,12 +51,12 @@
     .locals 1
 
     .prologue
-    .line 278
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;
+    .line 289
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;
 
-    invoke-interface {v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;->onFolderNameCanceled()V
+    invoke-interface {v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;->onFolderCanceled()V
 
-    .line 279
+    .line 290
     return-void
 .end method
 
@@ -65,14 +65,17 @@
     .parameter "result"
 
     .prologue
-    .line 271
+    .line 278
+    if-eqz p1, :cond_0
+
+    .line 279
     const-string v2, "result_folder_name"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 272
+    .line 280
     .local v1, name:Ljava/lang/String;
     const-string v2, "result_folder_icon"
 
@@ -80,7 +83,7 @@
 
     move-result v0
 
-    .line 273
+    .line 281
     .local v0, iconIndex:I
     iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
@@ -92,11 +95,22 @@
 
     invoke-interface {v2, v3, v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->setFolderLabel(Lcom/sonyericsson/home/data/InfoGroup;Ljava/lang/String;I)V
 
-    .line 274
-    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;
+    .line 282
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;
 
-    invoke-interface {v2, v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;->onFolderNameSet(Ljava/lang/String;I)V
+    invoke-interface {v2, v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;->onFolderRenamed(Ljava/lang/String;I)V
 
-    .line 275
+    .line 286
+    .end local v0           #iconIndex:I
+    .end local v1           #name:Ljava/lang/String;
+    :goto_0
     return-void
+
+    .line 284
+    :cond_0
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$3;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;
+
+    invoke-interface {v2}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;->onFolderCanceled()V
+
+    goto :goto_0
 .end method

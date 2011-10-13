@@ -3,12 +3,12 @@
 .source "AppTrayController.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createOnItemClickListener()Landroid/widget/AdapterView$OnItemClickListener;
+    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createScrollListener(Lcom/sonyericsson/home/layer/PaneIndicator;)Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
+.field final synthetic val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
+
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
+.method constructor <init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/layer/PaneIndicator;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 770
+    .line 861
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+
+    iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,81 +42,17 @@
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 3
-    .parameter
-    .parameter "view"
+.method public onScroll(FI)V
+    .locals 1
     .parameter "position"
-    .parameter "id"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
+    .parameter "max"
 
     .prologue
-    .line 773
-    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+    .line 863
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$700(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
+    invoke-virtual {v0, p1, p2}, Lcom/sonyericsson/home/layer/PaneIndicator;->setPosition(FI)V
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->isEditingEnabled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 783
-    :cond_0
-    :goto_0
+    .line 864
     return-void
-
-    .line 777
-    :cond_1
-    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
-
-    move-result-object v2
-
-    invoke-interface {v2, p3}, Landroid/widget/Adapter;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/sonyericsson/home/data/Info;
-
-    .line 778
-    .local v0, info:Lcom/sonyericsson/home/data/Info;
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
-
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    .line 779
-    invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    .line 780
-    .local v1, sourceBounds:Landroid/graphics/Rect;
-    invoke-virtual {p2, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
-
-    .line 781
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
-
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
-
-    move-result-object v2
-
-    invoke-interface {v2, v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
-
-    goto :goto_0
 .end method

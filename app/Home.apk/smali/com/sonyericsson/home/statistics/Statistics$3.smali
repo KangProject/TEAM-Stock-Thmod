@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 232
+    .line 236
     iput-object p1, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,17 +42,17 @@
     .parameter "packageName"
 
     .prologue
-    .line 235
+    .line 239
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$402(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$502(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
 
-    .line 236
+    .line 240
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$100(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$100(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
     move-result-object v0
 
@@ -64,7 +64,7 @@
 
     iget-object v2, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/statistics/Statistics;->access$000(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/resourceload/PackageLoader;
+    invoke-static {v2}, Lcom/sonyericsson/home/statistics/Statistics;->access$300(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     move-result-object v2
 
@@ -72,21 +72,21 @@
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lcom/sonyericsson/home/layer/LayerController;->syncPackageAdded(Lcom/sonyericsson/home/layer/LayerController$Syncable;Ljava/util/Collection;Ljava/util/Collection;)V
+    invoke-static {v0, v1, v2}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageAdded(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;)V
 
-    .line 238
+    .line 242
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$402(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$502(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
 
-    .line 239
+    .line 243
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$300(Lcom/sonyericsson/home/statistics/Statistics;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$400(Lcom/sonyericsson/home/statistics/Statistics;)V
 
-    .line 240
+    .line 244
     return-void
 .end method
 
@@ -95,17 +95,17 @@
     .parameter "packageName"
 
     .prologue
-    .line 243
+    .line 247
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$402(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$502(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
 
-    .line 244
+    .line 248
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$100(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$100(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
     move-result-object v0
 
@@ -117,7 +117,7 @@
 
     iget-object v2, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/statistics/Statistics;->access$000(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/resourceload/PackageLoader;
+    invoke-static {v2}, Lcom/sonyericsson/home/statistics/Statistics;->access$300(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     move-result-object v2
 
@@ -125,21 +125,21 @@
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2, p1}, Lcom/sonyericsson/home/layer/LayerController;->syncPackageChanged(Lcom/sonyericsson/home/layer/LayerController$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2, p1}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageChanged(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/lang/String;)V
 
-    .line 246
+    .line 250
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$402(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/statistics/Statistics;->access$502(Lcom/sonyericsson/home/statistics/Statistics;Z)Z
 
-    .line 247
+    .line 251
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$300(Lcom/sonyericsson/home/statistics/Statistics;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$400(Lcom/sonyericsson/home/statistics/Statistics;)V
 
-    .line 248
+    .line 252
     return-void
 .end method
 
@@ -148,10 +148,10 @@
     .parameter "packageName"
 
     .prologue
-    .line 251
+    .line 255
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$100(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$100(Lcom/sonyericsson/home/statistics/Statistics;)Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
     move-result-object v0
 
@@ -161,13 +161,31 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1, p1}, Lcom/sonyericsson/home/layer/LayerController;->syncPackageRemoved(Lcom/sonyericsson/home/layer/LayerController$Syncable;Ljava/util/Collection;Ljava/lang/String;)V
+    invoke-static {v0, v1, p1}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageRemoved(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/lang/String;)V
 
-    .line 252
+    .line 256
     iget-object v0, p0, Lcom/sonyericsson/home/statistics/Statistics$3;->this$0:Lcom/sonyericsson/home/statistics/Statistics;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$300(Lcom/sonyericsson/home/statistics/Statistics;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/statistics/Statistics;->access$400(Lcom/sonyericsson/home/statistics/Statistics;)V
 
-    .line 253
+    .line 257
+    return-void
+.end method
+
+.method public onPackagesAvailable([Ljava/lang/String;)V
+    .locals 0
+    .parameter "packageList"
+
+    .prologue
+    .line 261
+    return-void
+.end method
+
+.method public onPackagesUnavailable([Ljava/lang/String;)V
+    .locals 0
+    .parameter "packageList"
+
+    .prologue
+    .line 265
     return-void
 .end method

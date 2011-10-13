@@ -3,7 +3,7 @@
 .source "DesktopModelManager.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/LayerController$Syncable;
+.implements Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
 
 # annotations
@@ -37,21 +37,23 @@
 
 
 # virtual methods
-.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)V
-    .locals 0
-    .parameter "info"
-
-    .prologue
-    .line 49
-    return-void
-.end method
-
-.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 1
     .parameter "info"
 
     .prologue
-    .line 53
+    .line 49
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 54
     instance-of v0, p1, Lcom/sonyericsson/home/data/WidgetInfo;
 
     if-nez v0, :cond_0
@@ -60,13 +62,21 @@
 
     if-eqz v0, :cond_1
 
-    .line 54
+    .line 55
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->remove(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     .line 56
+    const/4 v0, 0x1
+
+    .line 58
+    :goto_0
+    return v0
+
     :cond_1
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

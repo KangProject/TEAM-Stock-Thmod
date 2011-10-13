@@ -5,18 +5,7 @@
     <EditText android:textAppearance="?android:textAppearanceMedium" android:gravity="fill_horizontal" android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:scrollHorizontally="true" android:inputType="textCapSentences" />
     <TextView android:textAppearance="?android:textAppearanceMedium" android:gravity="fill_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/home_folder_select_icon_txt" />
     <ImageView android:background="@drawable/general_list_divider_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
-    <com.sonyericsson.home.bidi.BiDiLinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="5.0dip">
-        <ImageView android:id="@id/icon0" android:layout_width="58.0dip" android:layout_height="58.0dip" android:src="@drawable/home_folder_folder" android:scaleType="center" />
-        <ImageView android:id="@id/icon1" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/home_folder_social" android:scaleType="center" />
-        <ImageView android:id="@id/icon2" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/home_folder_entertainment" android:scaleType="center" />
-        <ImageView android:id="@id/icon3" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/home_folder_media" android:scaleType="center" />
-    </com.sonyericsson.home.bidi.BiDiLinearLayout>
-    <com.sonyericsson.home.bidi.BiDiLinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="5.0dip">
-        <ImageView android:id="@id/icon4" android:layout_width="58.0dip" android:layout_height="58.0dip" android:src="@drawable/home_folder_favourites" android:scaleType="center" />
-        <ImageView android:id="@id/icon5" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/home_folder_health" android:scaleType="center" />
-        <ImageView android:id="@id/icon6" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/home_folder_tools" android:scaleType="center" />
-        <ImageView android:id="@id/icon7" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginLeft="12.0dip" android:src="@drawable/home_folder_news" android:scaleType="center" />
-    </com.sonyericsson.home.bidi.BiDiLinearLayout>
+    <include layout="@layout/folder_dialog_icon_selector" />
     <com.sonyericsson.home.bidi.BiDiLinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip">
         <Button android:id="@id/button_positive" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="@string/gui_done_txt" android:layout_weight="1.0" />
         <Button android:id="@id/button_negative" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="@string/gui_cancel_txt" android:layout_weight="1.0" />

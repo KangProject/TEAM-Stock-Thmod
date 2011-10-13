@@ -38,8 +38,6 @@
 
 .field public static final enum RESTING:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-.field public static final enum WAITING_FOR_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -112,19 +110,8 @@
 
     sput-object v0, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->NON_ACTIVE_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    .line 51
-    new-instance v0, Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
-    const-string v1, "WAITING_FOR_DRAG"
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2}, Lcom/sonyericsson/paneview/GestureDetector$TouchState;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->WAITING_FOR_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
     .line 31
-    const/4 v0, 0x7
+    const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
@@ -151,12 +138,6 @@
     const/4 v1, 0x5
 
     sget-object v2, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->NON_ACTIVE_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->WAITING_FOR_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     aput-object v2, v0, v1
 

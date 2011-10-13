@@ -6,7 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;,
+        Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;,
         Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;,
         Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;,
         Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
@@ -30,13 +30,13 @@
     .parameter "presenter"
 
     .prologue
-    .line 157
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 158
+    .line 162
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
-    .line 159
+    .line 163
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 30
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     return-object v0
@@ -58,7 +58,7 @@
     .parameter "activityInfo"
 
     .prologue
-    .line 168
+    .line 172
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->addActivity(Lcom/sonyericsson/home/data/ActivityInfo;)Z
@@ -67,14 +67,14 @@
 
     if-nez v0, :cond_0
 
-    .line 169
+    .line 173
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     const v1, 0x7f070018
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
 
-    .line 171
+    .line 175
     :cond_0
     return-void
 .end method
@@ -84,7 +84,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 193
+    .line 197
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->addAdvWidget(Ljava/lang/String;)Z
@@ -93,14 +93,14 @@
 
     if-nez v0, :cond_0
 
-    .line 194
+    .line 198
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     const v1, 0x7f070018
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
 
-    .line 196
+    .line 200
     :cond_0
     return-void
 .end method
@@ -112,12 +112,12 @@
     .parameter "iconIndex"
 
     .prologue
-    .line 199
+    .line 203
     new-instance v0, Lcom/sonyericsson/home/HomeActivityFlow$1;
 
     invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/HomeActivityFlow$1;-><init>(Lcom/sonyericsson/home/HomeActivityFlow;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;)V
 
-    .line 216
+    .line 224
     .local v0, onDialogResultListener:Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
@@ -125,7 +125,7 @@
 
     invoke-interface {v1, v0, v2, p2, p3}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showFolderDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;ILjava/lang/String;I)V
 
-    .line 218
+    .line 226
     return-void
 .end method
 
@@ -134,7 +134,7 @@
     .parameter "bundle"
 
     .prologue
-    .line 162
+    .line 166
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->addShortcut(Landroid/os/Bundle;)Z
@@ -143,14 +143,14 @@
 
     if-nez v0, :cond_0
 
-    .line 163
+    .line 167
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     const v1, 0x7f070018
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
 
-    .line 165
+    .line 169
     :cond_0
     return-void
 .end method
@@ -162,10 +162,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 182
+    .line 186
     if-eqz p1, :cond_1
 
-    .line 183
+    .line 187
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->addWidget(I)Z
@@ -174,7 +174,7 @@
 
     if-nez v0, :cond_0
 
-    .line 184
+    .line 188
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     const v1, 0x7f070018
@@ -183,11 +183,11 @@
 
     move v0, v2
 
-    .line 189
+    .line 193
     :goto_0
     return v0
 
-    .line 187
+    .line 191
     :cond_0
     const/4 v0, 0x1
 
@@ -196,7 +196,7 @@
     :cond_1
     move v0, v2
 
-    .line 189
+    .line 193
     goto :goto_0
 .end method
 
@@ -207,12 +207,12 @@
     .parameter "iconIndex"
 
     .prologue
-    .line 288
+    .line 299
     new-instance v0, Lcom/sonyericsson/home/HomeActivityFlow$4;
 
     invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/HomeActivityFlow$4;-><init>(Lcom/sonyericsson/home/HomeActivityFlow;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;)V
 
-    .line 299
+    .line 312
     .local v0, onDialogResultListener:Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
@@ -220,7 +220,7 @@
 
     invoke-interface {v1, v0, v2, p2, p3}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showFolderDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;ILjava/lang/String;I)V
 
-    .line 301
+    .line 314
     return-void
 .end method
 
@@ -231,7 +231,7 @@
     .parameter "dropListener"
 
     .prologue
-    .line 250
+    .line 257
     instance-of v1, p2, Lcom/sonyericsson/home/data/InfoGroup;
 
     if-eqz v1, :cond_0
@@ -245,23 +245,23 @@
 
     if-lez v1, :cond_0
 
-    .line 251
+    .line 258
     new-instance v0, Lcom/sonyericsson/home/HomeActivityFlow$2;
 
     invoke-direct {v0, p0, p3}, Lcom/sonyericsson/home/HomeActivityFlow$2;-><init>(Lcom/sonyericsson/home/HomeActivityFlow;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    .line 261
+    .line 268
     .local v0, onDialogResultListener:Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     invoke-interface {v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showDeleteDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;)V
 
-    .line 265
+    .line 272
     .end local v0           #onDialogResultListener:Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;
     :goto_0
     return-void
 
-    .line 263
+    .line 270
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
@@ -272,107 +272,127 @@
     goto :goto_0
 .end method
 
-.method public onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
-    .locals 3
+.method public onInfoClicked(Lcom/sonyericsson/home/data/Info;ILjava/lang/Object;)V
+    .locals 4
     .parameter "info"
-    .parameter "sourceBounds"
+    .parameter "layer"
+    .parameter "location"
 
     .prologue
-    .line 221
-    instance-of v1, p1, Lcom/sonyericsson/home/data/InfoGroup;
+    .line 229
+    instance-of v2, p1, Lcom/sonyericsson/home/data/InfoGroup;
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    .line 222
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+    .line 230
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     check-cast p1, Lcom/sonyericsson/home/data/InfoGroup;
 
     .end local p1
-    invoke-interface {v1, p1, p2}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->openFolder(Lcom/sonyericsson/home/data/InfoGroup;Landroid/graphics/Rect;)V
+    invoke-interface {v2, p1, p2, p3}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->openFolder(Lcom/sonyericsson/home/data/InfoGroup;ILjava/lang/Object;)V
 
-    .line 240
+    .line 247
     :cond_0
     :goto_0
     return-void
 
-    .line 223
+    .line 231
     .restart local p1
     :cond_1
-    instance-of v1, p1, Lcom/sonyericsson/home/data/WidgetInfo;
+    instance-of v2, p1, Lcom/sonyericsson/home/data/WidgetInfo;
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    .line 225
-    instance-of v1, p1, Lcom/sonyericsson/home/data/AdvWidgetInfo;
+    .line 233
+    instance-of v2, p1, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    .line 228
+    .line 236
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/Info;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 229
+    .line 237
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
-    .line 230
-    if-eqz p2, :cond_2
+    .line 238
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
-    .line 231
-    invoke-virtual {v0, p2}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
+    invoke-interface {v2, p2, p3}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->resolveRect(ILjava/lang/Object;)Landroid/graphics/Rect;
 
-    .line 233
-    :cond_2
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+    move-result-object v1
 
-    invoke-interface {v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->startActivitySafely(Landroid/content/Intent;)Z
+    .line 239
+    .local v1, sourceBounds:Landroid/graphics/Rect;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
-    move-result v1
+    .line 240
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
-    if-eqz v1, :cond_3
+    invoke-interface {v2, v0}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->startActivitySafely(Landroid/content/Intent;)Z
 
-    .line 234
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+    move-result v2
 
-    invoke-interface {v1, p2}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->overrideTransition(Landroid/graphics/Rect;)V
+    if-eqz v2, :cond_2
+
+    .line 241
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+
+    invoke-interface {v2, v1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->overrideTransition(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
-    .line 236
-    :cond_3
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+    .line 243
+    :cond_2
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
-    const v2, 0x7f070017
+    const v3, 0x7f070017
 
-    invoke-interface {v1, v2}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
+    invoke-interface {v2, v3}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
 
     goto :goto_0
 .end method
 
-.method public setFolderName(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;Ljava/lang/String;I)V
-    .locals 3
-    .parameter "infoGroup"
-    .parameter "listener"
-    .parameter "text"
-    .parameter "iconIndex"
+.method public onNoUninstallableItems()V
+    .locals 2
 
     .prologue
-    .line 269
+    .line 323
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+
+    const v1, 0x7f070027
+
+    invoke-interface {v0, v1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
+
+    .line 324
+    return-void
+.end method
+
+.method public setFolderName(Lcom/sonyericsson/home/data/InfoGroup;Ljava/lang/String;ILcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;)V
+    .locals 3
+    .parameter "infoGroup"
+    .parameter "text"
+    .parameter "iconIndex"
+    .parameter "listener"
+
+    .prologue
+    .line 276
     new-instance v0, Lcom/sonyericsson/home/HomeActivityFlow$3;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/sonyericsson/home/HomeActivityFlow$3;-><init>(Lcom/sonyericsson/home/HomeActivityFlow;Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderNameSetListener;)V
+    invoke-direct {v0, p0, p1, p4}, Lcom/sonyericsson/home/HomeActivityFlow$3;-><init>(Lcom/sonyericsson/home/HomeActivityFlow;Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;)V
 
-    .line 282
+    .line 293
     .local v0, onDialogResultListener:Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     const v2, 0x7f07001a
 
-    invoke-interface {v1, v0, v2, p3, p4}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showFolderDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;ILjava/lang/String;I)V
+    invoke-interface {v1, v0, v2, p2, p3}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showFolderDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;ILjava/lang/String;I)V
 
-    .line 284
+    .line 295
     return-void
 .end method
 
@@ -382,7 +402,7 @@
     .parameter "requestCode"
 
     .prologue
-    .line 243
+    .line 250
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     invoke-interface {v0, p1, p2}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->startActivitySafelyForResult(Landroid/content/Intent;I)Z
@@ -391,14 +411,64 @@
 
     if-nez v0, :cond_0
 
-    .line 244
+    .line 251
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
     const v1, 0x7f070017
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
 
-    .line 246
+    .line 253
     :cond_0
+    return-void
+.end method
+
+.method public uninstall(Lcom/sonyericsson/home/data/ActivityInfo;)V
+    .locals 4
+    .parameter "info"
+
+    .prologue
+    .line 317
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "package:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Lcom/sonyericsson/home/data/ActivityInfo;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    .line 318
+    .local v0, packageURI:Landroid/net/Uri;
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.DELETE"
+
+    invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    .line 319
+    .local v1, uninstallIntent:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow;->mPresenter:Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+
+    invoke-interface {v2, v1}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->startActivitySafely(Landroid/content/Intent;)Z
+
+    .line 320
     return-void
 .end method

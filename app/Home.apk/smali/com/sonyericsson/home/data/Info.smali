@@ -64,7 +64,24 @@
     return-wide v0
 .end method
 
-.method public abstract isEnabled()Z
+.method public isEnabled()Z
+    .locals 1
+
+    .prologue
+    .line 51
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public isInteractive()Z
+    .locals 1
+
+    .prologue
+    .line 61
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public final setNewUniqueID()V

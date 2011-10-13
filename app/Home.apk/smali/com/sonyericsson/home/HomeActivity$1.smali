@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 326
+    .line 566
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$1;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 328
+    .line 569
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 329
+    .line 570
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$1;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onStop()V
 
-    .line 331
+    .line 572
     :cond_0
     return-void
 .end method

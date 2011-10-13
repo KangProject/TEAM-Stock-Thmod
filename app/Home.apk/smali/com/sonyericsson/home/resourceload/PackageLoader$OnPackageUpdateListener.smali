@@ -23,3 +23,9 @@
 
 .method public abstract onPackageRemoved(Ljava/lang/String;)V
 .end method
+
+.method public abstract onPackagesAvailable([Ljava/lang/String;)V
+.end method
+
+.method public abstract onPackagesUnavailable([Ljava/lang/String;)V
+.end method

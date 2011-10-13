@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 134
+    .line 135
     iput-object p1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v5, 0x0
 
-    .line 136
+    .line 137
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$500(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Lcom/sonyericsson/util/SpringDynamics;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sonyericsson/util/SpringDynamics;->update(J)V
 
-    .line 137
+    .line 138
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$500(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Lcom/sonyericsson/util/SpringDynamics;
@@ -69,7 +69,7 @@
 
     move-result v0
 
-    .line 139
+    .line 140
     .local v0, pos:F
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
@@ -115,7 +115,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->left:I
 
-    .line 141
+    .line 142
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$600(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Landroid/graphics/Rect;
@@ -160,7 +160,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->right:I
 
-    .line 143
+    .line 144
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$600(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Landroid/graphics/Rect;
@@ -205,7 +205,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->top:I
 
-    .line 145
+    .line 146
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$600(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Landroid/graphics/Rect;
@@ -250,7 +250,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 148
+    .line 149
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$200(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Lcom/sonyericsson/animation/Renderer;
@@ -269,7 +269,7 @@
 
     invoke-interface {v1, v2, v3, v5, v4}, Lcom/sonyericsson/animation/Renderer;->sendCommand(Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 150
+    .line 151
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$500(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Lcom/sonyericsson/util/SpringDynamics;
@@ -282,14 +282,14 @@
 
     if-nez v1, :cond_1
 
-    .line 151
+    .line 152
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     const-wide/16 v2, 0x14
 
     invoke-virtual {v1, p0, v2, v3}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 162
+    .line 163
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
@@ -303,17 +303,17 @@
 
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 163
+    .line 164
     return-void
 
-    .line 153
+    .line 154
     .restart local p0
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1, v5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$902(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;Z)Z
 
-    .line 154
+    .line 155
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->access$1000(Lcom/sonyericsson/home/layer/trashcan/TrashcanView;)Z
@@ -322,7 +322,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 155
+    .line 156
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanView$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v1, v5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->close(I)V

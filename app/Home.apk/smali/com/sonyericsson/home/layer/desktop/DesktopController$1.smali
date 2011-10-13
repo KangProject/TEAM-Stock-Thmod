@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 237
+    .line 274
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,16 @@
     .locals 2
 
     .prologue
-    .line 240
+    .line 277
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$000(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 278
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$000(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
@@ -50,14 +59,15 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 241
+    .line 280
+    :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$100(Lcom/sonyericsson/home/layer/desktop/DesktopController;Z)V
 
-    .line 242
+    .line 281
     return-void
 .end method
 
@@ -65,6 +75,6 @@
     .locals 0
 
     .prologue
-    .line 246
+    .line 285
     return-void
 .end method

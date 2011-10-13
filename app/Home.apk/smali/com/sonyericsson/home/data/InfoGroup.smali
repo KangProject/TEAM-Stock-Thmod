@@ -27,14 +27,14 @@
     .parameter "icon"
 
     .prologue
-    .line 107
+    .line 102
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p1, p2}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/util/UUID;Ljava/lang/String;I)V
 
-    .line 108
+    .line 103
     return-void
 .end method
 
@@ -45,19 +45,19 @@
     .parameter "icon"
 
     .prologue
-    .line 100
+    .line 95
     invoke-direct {p0}, Lcom/sonyericsson/home/data/Info;-><init>()V
 
-    .line 101
+    .line 96
     iput-object p1, p0, Lcom/sonyericsson/home/data/InfoGroup;->mUuid:Ljava/util/UUID;
 
-    .line 102
+    .line 97
     iput-object p2, p0, Lcom/sonyericsson/home/data/InfoGroup;->mLabel:Ljava/lang/String;
 
-    .line 103
+    .line 98
     iput p3, p0, Lcom/sonyericsson/home/data/InfoGroup;->mIcon:I
 
-    .line 104
+    .line 99
     return-void
 .end method
 
@@ -114,7 +114,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 138
     iget v0, p0, Lcom/sonyericsson/home/data/InfoGroup;->mIcon:I
 
     return v0
@@ -134,7 +134,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 120
     iget-object v0, p0, Lcom/sonyericsson/home/data/InfoGroup;->mLabel:Ljava/lang/String;
 
     return-object v0
@@ -154,20 +154,10 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 147
     iget-object v0, p0, Lcom/sonyericsson/home/data/InfoGroup;->mUuid:Ljava/util/UUID;
 
     return-object v0
-.end method
-
-.method public isEnabled()Z
-    .locals 1
-
-    .prologue
-    .line 97
-    const/4 v0, 0x1
-
-    return v0
 .end method
 
 .method public setIcon(I)V
@@ -175,10 +165,10 @@
     .parameter "icon"
 
     .prologue
-    .line 134
+    .line 129
     iput p1, p0, Lcom/sonyericsson/home/data/InfoGroup;->mIcon:I
 
-    .line 135
+    .line 130
     return-void
 .end method
 
@@ -187,9 +177,9 @@
     .parameter "label"
 
     .prologue
-    .line 116
+    .line 111
     iput-object p1, p0, Lcom/sonyericsson/home/data/InfoGroup;->mLabel:Ljava/lang/String;
 
-    .line 117
+    .line 112
     return-void
 .end method

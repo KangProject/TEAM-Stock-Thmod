@@ -324,12 +324,12 @@
     .parameter "outRect"
 
     .prologue
-    .line 115
+    .line 110
     iget-object v0, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mStartRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 116
+    .line 111
     iget-object v0, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
@@ -348,7 +348,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Rect;->offsetTo(II)V
 
-    .line 118
+    .line 113
     return-void
 .end method
 
@@ -359,14 +359,14 @@
     .parameter "now"
 
     .prologue
-    .line 121
+    .line 116
     iget-object v2, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v2}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
 
     move-result v0
 
-    .line 122
+    .line 117
     .local v0, left:F
     iget-object v2, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
@@ -374,7 +374,7 @@
 
     move-result v1
 
-    .line 123
+    .line 118
     .local v1, top:F
     iget-object v2, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mDynamicsLeft:Lcom/sonyericsson/util/SpringDynamics;
 
@@ -390,7 +390,7 @@
 
     invoke-virtual {v2, v3, v4, p3, p4}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 124
+    .line 119
     iget-object v2, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mDynamicsTop:Lcom/sonyericsson/util/SpringDynamics;
 
     int-to-float v3, p2
@@ -405,7 +405,7 @@
 
     invoke-virtual {v2, v3, v4, p3, p4}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 125
+    .line 120
     return-void
 .end method
 
@@ -430,7 +430,7 @@
     .parameter "extras"
 
     .prologue
-    .line 129
+    .line 124
     return-void
 .end method
 
@@ -477,18 +477,5 @@
     iput-boolean v0, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mStopped:Z
 
     .line 107
-    return-void
-.end method
-
-.method public stop()V
-    .locals 1
-
-    .prologue
-    .line 111
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/sonyericsson/animation/SpringMoveRenderer;->mStopped:Z
-
-    .line 112
     return-void
 .end method

@@ -21,6 +21,10 @@
 
 .field target:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer$State;
 
+.field targetVx:F
+
+.field targetVy:F
+
 .field zOrder:I
 
 
@@ -29,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 58
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +44,7 @@
     .parameter "x0"
 
     .prologue
-    .line 58
+    .line 63
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer$Transformation;-><init>()V
 
     return-void

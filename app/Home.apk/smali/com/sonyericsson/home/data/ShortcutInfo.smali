@@ -16,6 +16,8 @@
 
 
 # instance fields
+.field private final mBitmapPath:Ljava/lang/String;
+
 .field private final mBitmapResourceName:Ljava/lang/String;
 
 .field private final mIconResource:Landroid/content/Intent$ShortcutIconResource;
@@ -26,18 +28,72 @@
 
 
 # direct methods
+.method public constructor <init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;)V
+    .locals 6
+    .parameter "label"
+    .parameter "intent"
+    .parameter "iconResource"
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 141
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v5, v4
+
+    invoke-direct/range {v0 .. v5}, Lcom/sonyericsson/home/data/ShortcutInfo;-><init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 142
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;)V
-    .locals 1
+    .locals 6
     .parameter "label"
     .parameter "intent"
     .parameter "iconResource"
     .parameter "bitmapResourceName"
 
     .prologue
-    .line 117
+    .line 137
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/sonyericsson/home/data/ShortcutInfo;-><init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 138
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+    .parameter "label"
+    .parameter "intent"
+    .parameter "iconResource"
+    .parameter "bitmapResourceName"
+    .parameter "bitmapPath"
+
+    .prologue
+    .line 127
     invoke-direct {p0}, Lcom/sonyericsson/home/data/Info;-><init>()V
 
-    .line 118
+    .line 128
     if-eqz p1, :cond_0
 
     move-object v0, p1
@@ -45,23 +101,52 @@
     :goto_0
     iput-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mLabel:Ljava/lang/String;
 
-    .line 119
+    .line 129
     iput-object p2, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIntent:Landroid/content/Intent;
 
-    .line 120
+    .line 130
     iput-object p3, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIconResource:Landroid/content/Intent$ShortcutIconResource;
 
-    .line 121
+    .line 131
     iput-object p4, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mBitmapResourceName:Ljava/lang/String;
 
-    .line 122
+    .line 132
+    iput-object p5, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mBitmapPath:Ljava/lang/String;
+
+    .line 133
     return-void
 
-    .line 118
+    .line 128
     :cond_0
     const-string v0, ""
 
     goto :goto_0
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;)V
+    .locals 6
+    .parameter "label"
+    .parameter "intent"
+    .parameter "bitmapPath"
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 145
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v4, v3
+
+    move-object v5, p3
+
+    invoke-direct/range {v0 .. v5}, Lcom/sonyericsson/home/data/ShortcutInfo;-><init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 146
+    return-void
 .end method
 
 .method public static create(Landroid/os/Bundle;)Lcom/sonyericsson/home/data/ShortcutInfo;
@@ -69,7 +154,7 @@
     .parameter "shortcutData"
 
     .prologue
-    .line 132
+    .line 156
     const-string v9, "android.intent.extra.shortcut.INTENT"
 
     invoke-virtual {p0, v9}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -78,7 +163,7 @@
 
     check-cast v8, Landroid/content/Intent;
 
-    .line 133
+    .line 157
     .local v8, shortcutIntent:Landroid/content/Intent;
     const-string v9, "android.intent.extra.shortcut.NAME"
 
@@ -86,18 +171,18 @@
 
     move-result-object v6
 
-    .line 134
+    .line 158
     .local v6, label:Ljava/lang/String;
     if-nez v6, :cond_0
 
-    .line 135
+    .line 159
     const-string v6, ""
 
-    .line 138
+    .line 162
     :cond_0
     const/4 v1, 0x0
 
-    .line 139
+    .line 163
     .local v1, bitmap:Landroid/graphics/Bitmap;
     const-string v9, "android.intent.extra.shortcut.ICON"
 
@@ -105,7 +190,7 @@
 
     move-result-object v2
 
-    .line 140
+    .line 164
     .local v2, bitmapParcelable:Landroid/os/Parcelable;
     if-eqz v2, :cond_1
 
@@ -113,22 +198,22 @@
 
     if-eqz v9, :cond_1
 
-    .line 141
+    .line 165
     move-object v0, v2
 
     check-cast v0, Landroid/graphics/Bitmap;
 
     move-object v1, v0
 
-    .line 143
+    .line 167
     :cond_1
     move-object v7, v1
 
-    .line 145
+    .line 169
     .local v7, shortcutBitmap:Landroid/graphics/Bitmap;
     const/4 v4, 0x0
 
-    .line 146
+    .line 170
     .local v4, iconResource:Landroid/content/Intent$ShortcutIconResource;
     const-string v9, "android.intent.extra.shortcut.ICON_RESOURCE"
 
@@ -136,7 +221,7 @@
 
     move-result-object v5
 
-    .line 148
+    .line 172
     .local v5, iconResourceParcelable:Landroid/os/Parcelable;
     if-nez v7, :cond_2
 
@@ -146,25 +231,25 @@
 
     if-eqz v9, :cond_2
 
-    .line 150
+    .line 174
     move-object v0, v5
 
     check-cast v0, Landroid/content/Intent$ShortcutIconResource;
 
     move-object v4, v0
 
-    .line 153
+    .line 177
     :cond_2
     if-eqz v8, :cond_4
 
-    .line 154
+    .line 178
     const/4 v3, 0x0
 
-    .line 155
+    .line 179
     .local v3, bitmapResourceName:Ljava/lang/String;
     if-eqz v7, :cond_3
 
-    .line 156
+    .line 180
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v9
@@ -173,13 +258,13 @@
 
     move-result-object v3
 
-    .line 158
+    .line 182
     :cond_3
     new-instance v9, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     invoke-direct {v9, v6, v8, v4, v3}, Lcom/sonyericsson/home/data/ShortcutInfo;-><init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;)V
 
-    .line 161
+    .line 185
     .end local v3           #bitmapResourceName:Ljava/lang/String;
     :goto_0
     return-object v9
@@ -201,25 +286,25 @@
 
     const/4 v4, 0x0
 
-    .line 183
+    .line 207
     if-ne p0, p1, :cond_0
 
     move v2, v5
 
-    .line 206
+    .line 230
     :goto_0
     return v2
 
-    .line 186
+    .line 210
     :cond_0
     if-nez p1, :cond_1
 
     move v2, v4
 
-    .line 187
+    .line 211
     goto :goto_0
 
-    .line 189
+    .line 213
     :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -233,10 +318,10 @@
 
     move v2, v4
 
-    .line 190
+    .line 214
     goto :goto_0
 
-    .line 193
+    .line 217
     :cond_2
     move-object v0, p1
 
@@ -244,7 +329,7 @@
 
     move-object v1, v0
 
-    .line 195
+    .line 219
     .local v1, other:Lcom/sonyericsson/home/data/ShortcutInfo;
     iget-object v2, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mLabel:Ljava/lang/String;
 
@@ -258,26 +343,26 @@
 
     move v2, v4
 
-    .line 196
+    .line 220
     goto :goto_0
 
-    .line 198
+    .line 222
     :cond_3
     iget-object v2, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIntent:Landroid/content/Intent;
 
     if-nez v2, :cond_4
 
-    .line 199
+    .line 223
     iget-object v2, v1, Lcom/sonyericsson/home/data/ShortcutInfo;->mIntent:Landroid/content/Intent;
 
     if-eqz v2, :cond_5
 
     move v2, v4
 
-    .line 200
+    .line 224
     goto :goto_0
 
-    .line 202
+    .line 226
     :cond_4
     iget-object v2, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIntent:Landroid/content/Intent;
 
@@ -291,21 +376,31 @@
 
     move v2, v4
 
-    .line 203
+    .line 227
     goto :goto_0
 
     :cond_5
     move v2, v5
 
-    .line 206
+    .line 230
     goto :goto_0
+.end method
+
+.method public getBitmapPath()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 275
+    iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mBitmapPath:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public getBitmapResourceName()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 238
+    .line 257
     iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mBitmapResourceName:Ljava/lang/String;
 
     return-object v0
@@ -315,7 +410,7 @@
     .locals 1
 
     .prologue
-    .line 247
+    .line 266
     iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIconResource:Landroid/content/Intent$ShortcutIconResource;
 
     return-object v0
@@ -325,7 +420,7 @@
     .locals 1
 
     .prologue
-    .line 215
+    .line 239
     iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIntent:Landroid/content/Intent;
 
     return-object v0
@@ -335,7 +430,7 @@
     .locals 1
 
     .prologue
-    .line 210
+    .line 234
     iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mLabel:Ljava/lang/String;
 
     return-object v0
@@ -345,17 +440,17 @@
     .locals 1
 
     .prologue
-    .line 220
+    .line 244
     iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIconResource:Landroid/content/Intent$ShortcutIconResource;
 
     if-eqz v0, :cond_0
 
-    .line 221
+    .line 245
     iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIconResource:Landroid/content/Intent$ShortcutIconResource;
 
     iget-object v0, v0, Landroid/content/Intent$ShortcutIconResource;->packageName:Ljava/lang/String;
 
-    .line 224
+    .line 248
     :goto_0
     return-object v0
 
@@ -369,14 +464,14 @@
     .locals 4
 
     .prologue
-    .line 166
+    .line 190
     const/16 v0, 0x1f
 
-    .line 167
+    .line 191
     .local v0, prime:I
     const/4 v1, 0x1
 
-    .line 168
+    .line 192
     .local v1, result:I
     mul-int/lit8 v2, v1, 0x1f
 
@@ -389,7 +484,7 @@
     :goto_0
     add-int/lit8 v1, v2, 0x1f
 
-    .line 169
+    .line 193
     mul-int/lit8 v2, v1, 0x1f
 
     iget-object v3, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mLabel:Ljava/lang/String;
@@ -400,36 +495,16 @@
 
     add-int v1, v2, v3
 
-    .line 170
+    .line 194
     return v1
 
-    .line 168
+    .line 192
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v2}, Landroid/content/Intent;->filterHashCode()I
 
     move-result v2
-
-    goto :goto_0
-.end method
-
-.method public isEnabled()Z
-    .locals 1
-
-    .prologue
-    .line 229
-    iget-object v0, p0, Lcom/sonyericsson/home/data/ShortcutInfo;->mIntent:Landroid/content/Intent;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
 
     goto :goto_0
 .end method

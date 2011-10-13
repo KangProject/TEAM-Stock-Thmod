@@ -1,14 +1,11 @@
 .class Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;
-.super Ljava/lang/Object;
+.super Ljava/lang/Thread;
 .source "AppTrayController.java"
-
-# interfaces
-.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createComparators(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/statistics/Statistics;)V
+    value = Lcom/sonyericsson/home/layer/apptray/AppTrayController;->showToast(Landroid/widget/Toast;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,120 +13,108 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Lcom/sonyericsson/home/data/ActivityInfo;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-.field final synthetic val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
+.field final synthetic val$addedDuration:I
+
+.field final synthetic val$toast:Landroid/widget/Toast;
 
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/statistics/Statistics;)V
+.method constructor <init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;ILandroid/widget/Toast;)V
     .locals 0
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 569
+    .line 465
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
+    iput p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$addedDuration:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$toast:Landroid/widget/Toast;
+
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public compare(Lcom/sonyericsson/home/data/ActivityInfo;Lcom/sonyericsson/home/data/ActivityInfo;)I
-    .locals 8
-    .parameter "activityInfo1"
-    .parameter "activityInfo2"
+.method public run()V
+    .locals 5
 
     .prologue
-    const-wide/16 v6, 0x0
+    .line 472
+    :try_start_0
+    iget v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$addedDuration:I
 
-    .line 571
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
+    div-int/lit16 v1, v3, 0x3e8
 
-    invoke-virtual {v2, p2}, Lcom/sonyericsson/home/statistics/Statistics;->getStats(Lcom/sonyericsson/home/data/ActivityInfo;)Lcom/sonyericsson/home/statistics/ActivityStats;
+    .line 473
+    .local v1, iterations:I
+    const/4 v0, 0x0
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/sonyericsson/home/statistics/ActivityStats;->getInstallTime()J
-
-    move-result-wide v2
-
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
-
-    invoke-virtual {v4, p1}, Lcom/sonyericsson/home/statistics/Statistics;->getStats(Lcom/sonyericsson/home/data/ActivityInfo;)Lcom/sonyericsson/home/statistics/ActivityStats;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/sonyericsson/home/statistics/ActivityStats;->getInstallTime()J
-
-    move-result-wide v4
-
-    sub-long v0, v2, v4
-
-    .line 576
-    .local v0, diff:J
-    cmp-long v2, v0, v6
-
-    if-lez v2, :cond_0
-
-    .line 577
-    const/4 v2, 0x1
-
-    .line 581
+    .local v0, i:I
     :goto_0
-    return v2
+    if-ge v0, v1, :cond_0
 
-    .line 578
+    .line 474
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$toast:Landroid/widget/Toast;
+
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
+
+    .line 475
+    const-wide/16 v3, 0x3e8
+
+    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
+
+    .line 473
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 478
     :cond_0
-    cmp-long v2, v0, v6
+    iget v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$addedDuration:I
 
-    if-gez v2, :cond_1
+    rem-int/lit16 v2, v3, 0x3e8
 
-    .line 579
-    const/4 v2, -0x1
+    .line 479
+    .local v2, leftOver:I
+    if-lez v2, :cond_1
 
-    goto :goto_0
+    .line 480
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$toast:Landroid/widget/Toast;
 
-    .line 581
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
+
+    .line 481
+    int-to-long v3, v2
+
+    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
+
+    .line 484
     :cond_1
-    const/4 v2, 0x0
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$toast:Landroid/widget/Toast;
 
-    goto :goto_0
-.end method
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .line 488
+    .end local v0           #i:I
+    .end local v1           #iterations:I
+    .end local v2           #leftOver:I
+    :goto_1
+    return-void
 
-    .prologue
-    .line 569
-    check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
+    .line 485
+    :catch_0
+    move-exception v3
 
-    .end local p1
-    check-cast p2, Lcom/sonyericsson/home/data/ActivityInfo;
-
-    .end local p2
-    invoke-virtual {p0, p1, p2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->compare(Lcom/sonyericsson/home/data/ActivityInfo;Lcom/sonyericsson/home/data/ActivityInfo;)I
-
-    move-result v0
-
-    return v0
+    goto :goto_1
 .end method

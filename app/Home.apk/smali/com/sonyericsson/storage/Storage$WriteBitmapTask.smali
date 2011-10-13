@@ -30,7 +30,7 @@
     .parameter "bitmap"
 
     .prologue
-    .line 252
+    .line 302
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -51,16 +51,16 @@
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/util/Worker$Task;-><init>(Ljava/lang/String;)V
 
-    .line 253
+    .line 303
     iput-object p1, p0, Lcom/sonyericsson/storage/Storage$WriteBitmapTask;->mContext:Landroid/content/Context;
 
-    .line 254
+    .line 304
     iput-object p2, p0, Lcom/sonyericsson/storage/Storage$WriteBitmapTask;->mName:Ljava/lang/String;
 
-    .line 255
+    .line 305
     iput-object p3, p0, Lcom/sonyericsson/storage/Storage$WriteBitmapTask;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 256
+    .line 306
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .parameter "x3"
 
     .prologue
-    .line 243
+    .line 293
     invoke-direct {p0, p1, p2, p3}, Lcom/sonyericsson/storage/Storage$WriteBitmapTask;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;)V
 
     return-void
@@ -84,10 +84,10 @@
     .locals 8
 
     .prologue
-    .line 260
+    .line 310
     const/4 v3, 0x0
 
-    .line 263
+    .line 313
     .local v3, outputStream:Ljava/io/FileOutputStream;
     :try_start_0
     iget-object v5, p0, Lcom/sonyericsson/storage/Storage$WriteBitmapTask;->mContext:Landroid/content/Context;
@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    .line 264
+    .line 314
     .local v0, bitmapDir:Ljava/io/File;
     new-instance v2, Ljava/io/File;
 
@@ -126,7 +126,7 @@
 
     invoke-direct {v2, v0, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 265
+    .line 315
     .local v2, outputFile:Ljava/io/File;
     new-instance v4, Ljava/io/FileOutputStream;
 
@@ -135,7 +135,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 267
+    .line 317
     .end local v3           #outputStream:Ljava/io/FileOutputStream;
     .local v4, outputStream:Ljava/io/FileOutputStream;
     :try_start_1
@@ -150,10 +150,10 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 271
+    .line 321
     if-eqz v4, :cond_2
 
-    .line 273
+    .line 323
     :try_start_2
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
@@ -161,7 +161,7 @@
 
     move-object v3, v4
 
-    .line 278
+    .line 328
     .end local v0           #bitmapDir:Ljava/io/File;
     .end local v2           #outputFile:Ljava/io/File;
     .end local v4           #outputStream:Ljava/io/FileOutputStream;
@@ -170,7 +170,7 @@
     :goto_0
     return-void
 
-    .line 274
+    .line 324
     .end local v3           #outputStream:Ljava/io/FileOutputStream;
     .restart local v0       #bitmapDir:Ljava/io/File;
     .restart local v2       #outputFile:Ljava/io/File;
@@ -180,12 +180,12 @@
 
     move-object v3, v4
 
-    .line 275
+    .line 325
     .end local v4           #outputStream:Ljava/io/FileOutputStream;
     .restart local v3       #outputStream:Ljava/io/FileOutputStream;
     goto :goto_0
 
-    .line 268
+    .line 318
     .end local v0           #bitmapDir:Ljava/io/File;
     .end local v2           #outputFile:Ljava/io/File;
     :catch_1
@@ -193,7 +193,7 @@
 
     move-object v1, v5
 
-    .line 269
+    .line 319
     .local v1, e:Ljava/io/IOException;
     :goto_1
     :try_start_3
@@ -205,10 +205,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 271
+    .line 321
     if-eqz v3, :cond_0
 
-    .line 273
+    .line 323
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -216,13 +216,13 @@
 
     goto :goto_0
 
-    .line 274
+    .line 324
     :catch_2
     move-exception v5
 
     goto :goto_0
 
-    .line 271
+    .line 321
     .end local v1           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v5
@@ -230,24 +230,24 @@
     :goto_2
     if-eqz v3, :cond_1
 
-    .line 273
+    .line 323
     :try_start_5
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 275
+    .line 325
     :cond_1
     :goto_3
     throw v5
 
-    .line 274
+    .line 324
     :catch_3
     move-exception v6
 
     goto :goto_3
 
-    .line 271
+    .line 321
     .end local v3           #outputStream:Ljava/io/FileOutputStream;
     .restart local v0       #bitmapDir:Ljava/io/File;
     .restart local v2       #outputFile:Ljava/io/File;
@@ -261,7 +261,7 @@
     .restart local v3       #outputStream:Ljava/io/FileOutputStream;
     goto :goto_2
 
-    .line 268
+    .line 318
     .end local v3           #outputStream:Ljava/io/FileOutputStream;
     .restart local v4       #outputStream:Ljava/io/FileOutputStream;
     :catch_4
@@ -289,7 +289,7 @@
     .locals 6
 
     .prologue
-    .line 282
+    .line 332
     iget-object v3, p0, Lcom/sonyericsson/storage/Storage$WriteBitmapTask;->mContext:Landroid/content/Context;
 
     const-string v4, "img"
@@ -300,7 +300,7 @@
 
     move-result-object v0
 
-    .line 284
+    .line 334
     .local v0, bitmapDir:Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
@@ -326,7 +326,7 @@
 
     invoke-direct {v1, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 285
+    .line 335
     .local v1, file:Ljava/io/File;
     new-instance v2, Ljava/io/File;
 
@@ -352,7 +352,7 @@
 
     invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 287
+    .line 337
     .local v2, tmpFile:Ljava/io/File;
     invoke-virtual {v2, v1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
@@ -360,14 +360,14 @@
 
     if-nez v3, :cond_0
 
-    .line 288
+    .line 338
     const-string v3, "Storage"
 
     const-string v4, "Failed to rename file during write bitmap!"
 
     invoke-static {v3, v4}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 290
+    .line 340
     :cond_0
     return-void
 .end method

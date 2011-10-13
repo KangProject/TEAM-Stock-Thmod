@@ -361,8 +361,8 @@
 
 .method public centerGridRect(IILcom/sonyericsson/grid/GridRect;)V
     .locals 7
-    .parameter "centerX"
-    .parameter "centerY"
+    .parameter "col"
+    .parameter "row"
     .parameter "gridRect"
 
     .prologue
@@ -383,15 +383,15 @@
 
     .line 188
     .local v0, height:I
-    div-int/lit8 v5, v4, 0x2
+    iget v5, p0, Lcom/sonyericsson/grid/Grid;->mCellWidth:I
 
-    sub-int v1, p1, v5
+    mul-int v1, p1, v5
 
     .line 189
     .local v1, left:I
-    div-int/lit8 v5, v0, 0x2
+    iget v5, p0, Lcom/sonyericsson/grid/Grid;->mCellHeight:I
 
-    sub-int v3, p2, v5
+    mul-int v3, p2, v5
 
     .line 190
     .local v3, top:I

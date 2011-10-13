@@ -3,12 +3,12 @@
 .source "DesktopController.java"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Lcom/sonyericsson/storage/Storage$OnReadCompletedCallback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/desktop/DesktopController;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/AvailabilityReceiver;)V
+    value = Lcom/sonyericsson/home/layer/desktop/DesktopController;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
+.field final synthetic val$context:Landroid/content/Context;
+
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
+.method constructor <init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;Landroid/content/Context;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 729
+    .line 797
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,48 +42,24 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 1
-    .parameter "animation"
+.method public onReadCompleted(Lcom/sonyericsson/storage/Root;)V
+    .locals 2
+    .parameter "root"
 
     .prologue
-    .line 740
+    .line 799
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;
 
-    .line 741
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+    invoke-direct {v1, p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController$3;Lcom/sonyericsson/storage/Root;)V
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnLoadCompletedCallback(Ljava/lang/Runnable;)V
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onDesktopHidden()V
-
-    .line 743
-    :cond_0
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
-    .parameter "animation"
-
-    .prologue
-    .line 737
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
-    .parameter "animation"
-
-    .prologue
-    .line 733
+    .line 881
     return-void
 .end method

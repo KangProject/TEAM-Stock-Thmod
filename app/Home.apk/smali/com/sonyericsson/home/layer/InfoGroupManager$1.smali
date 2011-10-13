@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 81
+    .line 86
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 85
+    .line 90
     return-void
 .end method
 
@@ -51,12 +51,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 88
+    .line 93
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 90
+    .line 95
     .local v0, changedInfoGroups:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
@@ -86,14 +86,14 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 91
+    .line 96
     .local v2, infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     new-instance v3, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;
 
     invoke-direct {v3, p0, v2, v0}, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;-><init>(Lcom/sonyericsson/home/layer/InfoGroupManager$1;Ljava/util/Map$Entry;Ljava/util/HashSet;)V
 
-    .line 105
-    .local v3, syncable:Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    .line 112
+    .local v3, syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -116,13 +116,13 @@
 
     move-result-object v5
 
-    invoke-static {v3, v4, v5, p1}, Lcom/sonyericsson/home/layer/LayerController;->syncPackageChanged(Lcom/sonyericsson/home/layer/LayerController$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/lang/String;)V
+    invoke-static {v3, v4, v5, p1}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageChanged(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 109
+    .line 116
     .end local v2           #infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
-    .end local v3           #syncable:Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    .end local v3           #syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     :cond_0
     invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
 
@@ -130,17 +130,17 @@
 
     if-nez v4, :cond_1
 
-    .line 110
+    .line 117
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$300(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 111
+    .line 118
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$400(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 113
+    .line 120
     :cond_1
     return-void
 .end method
@@ -150,12 +150,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 116
+    .line 123
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 118
+    .line 125
     .local v0, changedInfoGroups:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
@@ -185,14 +185,14 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 119
+    .line 126
     .local v2, infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     new-instance v3, Lcom/sonyericsson/home/layer/InfoGroupManager$1$2;
 
     invoke-direct {v3, p0, v2, v0}, Lcom/sonyericsson/home/layer/InfoGroupManager$1$2;-><init>(Lcom/sonyericsson/home/layer/InfoGroupManager$1;Ljava/util/Map$Entry;Ljava/util/HashSet;)V
 
-    .line 133
-    .local v3, syncable:Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    .line 142
+    .local v3, syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -205,13 +205,13 @@
 
     check-cast v4, Ljava/util/Collection;
 
-    invoke-static {v3, v4, p1}, Lcom/sonyericsson/home/layer/LayerController;->syncPackageRemoved(Lcom/sonyericsson/home/layer/LayerController$Syncable;Ljava/util/Collection;Ljava/lang/String;)V
+    invoke-static {v3, v4, p1}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageRemoved(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 137
+    .line 146
     .end local v2           #infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
-    .end local v3           #syncable:Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    .end local v3           #syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     :cond_0
     invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
 
@@ -219,17 +219,35 @@
 
     if-nez v4, :cond_1
 
-    .line 138
+    .line 147
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$300(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 139
+    .line 148
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$400(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 141
+    .line 150
     :cond_1
+    return-void
+.end method
+
+.method public onPackagesAvailable([Ljava/lang/String;)V
+    .locals 0
+    .parameter "packageList"
+
+    .prologue
+    .line 154
+    return-void
+.end method
+
+.method public onPackagesUnavailable([Ljava/lang/String;)V
+    .locals 0
+    .parameter "packageList"
+
+    .prologue
+    .line 158
     return-void
 .end method

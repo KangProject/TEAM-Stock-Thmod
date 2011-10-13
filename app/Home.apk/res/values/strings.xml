@@ -44,4 +44,8 @@
     <string name="home_permission_install_shortcut_description">Allows an application to add shortcuts without user intervention.</string>
     <string name="home_permission_uninstall_shortcut_label">uninstall shortcuts</string>
     <string name="home_permission_uninstall_shortcut_description">Allows an application to remove shortcuts without user intervention.</string>
+    <string name="home_permission_receive_badge_label">receive badges</string>
+    <string name="home_permission_receive_badge_description">Allows an application to receive information about badges that should be put on applications activity icons.</string>
+    <string name="home_permission_broadcast_badge_label">set badges</string>
+    <string name="home_permission_broadcast_badge_description">Allows an application to set badges on applications activity icons. Note that this will make it possible for this application to set badges on other applications activity icons.</string>
 </resources>

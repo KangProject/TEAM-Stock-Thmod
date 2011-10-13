@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/AdapterHelper;->getActivityInfoView(Lcom/sonyericsson/home/data/ActivityInfo;Landroid/view/View;)Landroid/view/View;
+    value = Lcom/sonyericsson/home/layer/AdapterHelper;->getShortcutInfoView(Lcom/sonyericsson/home/data/ShortcutInfo;Landroid/view/View;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,26 +24,21 @@
 
 .field final synthetic val$itemView:Landroid/view/View;
 
-.field final synthetic val$labelView:Landroid/widget/TextView;
-
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/layer/AdapterHelper;Landroid/view/View;Landroid/widget/ImageView;Landroid/widget/TextView;)V
+.method constructor <init>(Lcom/sonyericsson/home/layer/AdapterHelper;Landroid/view/View;Landroid/widget/ImageView;)V
     .locals 0
-    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 171
+    .line 195
     iput-object p1, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->this$0:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$itemView:Landroid/view/View;
 
     iput-object p3, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$iconView:Landroid/widget/ImageView;
-
-    iput-object p4, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$labelView:Landroid/widget/TextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,17 +47,18 @@
 
 
 # virtual methods
-.method public cacheCallback(Lcom/sonyericsson/home/data/Info;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
+.method public cacheCallback(Lcom/sonyericsson/home/data/Info;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Ljava/lang/String;)V
     .locals 2
     .parameter "info"
     .parameter "icon"
     .parameter "label"
+    .parameter "badgeMessage"
 
     .prologue
-    .line 174
+    .line 198
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$itemView:Landroid/view/View;
 
-    invoke-static {}, Lcom/sonyericsson/home/layer/AdapterHelper;->access$200()I
+    invoke-static {}, Lcom/sonyericsson/home/layer/AdapterHelper;->access$000()I
 
     move-result v1
 
@@ -76,22 +72,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 175
+    .line 199
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$iconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 176
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$labelView:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 177
+    .line 200
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 179
+    .line 202
     :cond_0
     return-void
 .end method

@@ -39,12 +39,12 @@
     .parameter
 
     .prologue
-    .line 1991
+    .line 2730
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$2;->this$1:Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1992
+    .line 2731
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -62,7 +62,7 @@
     .parameter "activityInfo2"
 
     .prologue
-    .line 1996
+    .line 2735
     :try_start_0
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$2;->mCollator:Ljava/text/Collator;
 
@@ -70,7 +70,7 @@
 
     iget-object v2, v2, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$4600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$5700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     move-result-object v2
 
@@ -84,7 +84,7 @@
 
     iget-object v3, v3, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v3}, Lcom/sonyericsson/home/HomeActivity;->access$4600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    invoke-static {v3}, Lcom/sonyericsson/home/HomeActivity;->access$5700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     move-result-object v3
 
@@ -100,17 +100,17 @@
 
     move-result v1
 
-    .line 2000
+    .line 2739
     :goto_0
     return v1
 
-    .line 1999
+    .line 2738
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 2000
+    .line 2739
     .local v0, npe:Ljava/lang/NullPointerException;
     const/4 v1, 0x1
 
@@ -123,7 +123,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1991
+    .line 2730
     check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     .end local p1

@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract onWidgetConfigured(Lcom/sonyericsson/home/data/AdvWidgetInfo;Landroid/graphics/Point;)Z
+.method public abstract onWidgetConfigured(Lcom/sonyericsson/home/data/AdvWidgetInfo;Lcom/sonyericsson/grid/GridLocation;)Z
 .end method

@@ -21,20 +21,29 @@
 .method public abstract onAppTrayOpened()V
 .end method
 
+.method public abstract onEditModeEnabled(Z)V
+.end method
+
 .method public abstract onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
+.end method
+
+.method public abstract onInfoClickedInEditMode(Lcom/sonyericsson/home/data/ActivityInfo;)V
 .end method
 
 .method public abstract onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
 .end method
 
+.method public abstract onItemPickedUp()V
+.end method
+
+.method public abstract onItemTransferCanceled()V
+.end method
+
+.method public abstract onNoUninstallableItems()V
+.end method
+
 .method public abstract onSyncCompleted()V
 .end method
 
-.method public abstract onTransferToDesktop()V
-.end method
-
-.method public abstract onTransferToDesktopFailed()V
-.end method
-
-.method public abstract sortButtonPressed(Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTraySortCallback;)V
+.method public abstract sortButtonPressed()V
 .end method

@@ -27,15 +27,15 @@
     .parameter "timing"
 
     .prologue
-    .line 451
+    .line 602
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 452
+    .line 603
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$TimedInfo;->item:Lcom/sonyericsson/home/data/Info;
 
-    .line 453
+    .line 604
     iput p2, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$TimedInfo;->timing:I
 
-    .line 454
+    .line 605
     return-void
 .end method

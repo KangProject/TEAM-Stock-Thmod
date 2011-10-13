@@ -2,7 +2,7 @@
 <resources>
     <string name="home_application_name_txt">Sony Ericsson হোম</string>
     <string name="home_add_application_shortcut_txt">অ্যাপ্লিকেশনস</string>
-    <string name="home_menu_add_txt">সংযোজন করুন</string>
+    <string name="home_menu_add_txt">যুক্ত করুন</string>
     <string name="home_menu_wallpaper_txt">ওয়ালপেপার</string>
     <string name="home_menu_theme_txt">থিম</string>
     <string name="home_menu_settings_txt">সেটিংস</string>
@@ -12,7 +12,7 @@
     <string name="home_option_add_folder_txt">ফোল্ডার</string>
     <string name="home_option_set_wallpaper_txt">ওয়ালপেপার</string>
     <string name="home_option_set_theme_txt">থিমগুলি</string>
-    <string name="home_dialog_title_add_shortcut_txt">শর্টকাট সংযোজন করুন</string>
+    <string name="home_dialog_title_add_shortcut_txt">শর্টকাট যুক্ত করুন</string>
     <string name="home_dialog_title_pick_application_txt">অ্যাপ্লিকেশন নির্বাচন করুন</string>
     <string name="home_dialog_title_pick_wallpaper_txt">ওয়ালপেপার নির্বাচন করুন</string>
     <string name="home_dialog_title_select_theme_txt">থিম নির্বাচন করুন</string>

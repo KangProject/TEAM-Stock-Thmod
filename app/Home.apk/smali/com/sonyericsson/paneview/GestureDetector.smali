@@ -31,8 +31,6 @@
 
 .field private mNotClickOrLongPressCalled:Z
 
-.field private mQuickLongPressEnabled:Z
-
 .field private mStartX:I
 
 .field private mStartY:I
@@ -52,40 +50,40 @@
     .parameter "longPressDelay"
 
     .prologue
-    .line 187
+    .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 163
+    .line 160
     new-instance v0, Lcom/sonyericsson/paneview/GestureDetector$1;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/paneview/GestureDetector$1;-><init>(Lcom/sonyericsson/paneview/GestureDetector;)V
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressRunnable:Ljava/lang/Runnable;
 
-    .line 188
+    .line 182
     iput-object p1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
-    .line 189
+    .line 183
     mul-int v0, p2, p2
 
     iput v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mTouchSlop2:I
 
-    .line 190
+    .line 184
     iput-wide p3, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressDelay:J
 
-    .line 191
+    .line 185
     sget-object v0, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->RESTING:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    .line 192
+    .line 186
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mHandler:Landroid/os/Handler;
 
-    .line 193
+    .line 187
     return-void
 .end method
 
@@ -146,18 +144,18 @@
 .end method
 
 .method private handleTouchDown(Landroid/view/MotionEvent;)V
-    .locals 8
+    .locals 6
     .parameter "event"
 
     .prologue
-    .line 307
+    .line 297
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
 
     float-to-int v0, v2
 
-    .line 308
+    .line 298
     .local v0, x:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -165,112 +163,97 @@
 
     float-to-int v1, v2
 
-    .line 309
+    .line 299
     .local v1, y:I
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
     invoke-interface {v2, v0, v1}, Lcom/sonyericsson/paneview/GestureDetector$GestureListener;->onTouchStart(II)V
 
-    .line 310
+    .line 300
     iput v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastX:I
 
-    .line 311
+    .line 301
     iput v1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastY:I
 
-    .line 312
+    .line 302
     iput v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mStartX:I
 
-    .line 313
+    .line 303
     iput v1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mStartY:I
 
-    .line 314
+    .line 304
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 315
+    .line 305
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 316
+    .line 306
     sget-object v2, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->CLICKED:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     iput-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    .line 317
+    .line 307
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressRunnable:Ljava/lang/Runnable;
 
-    iget-boolean v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mQuickLongPressEnabled:Z
-
-    if-eqz v4, :cond_0
-
     iget-wide v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressDelay:J
 
-    const-wide/16 v6, 0x4
-
-    div-long/2addr v4, v6
-
-    :goto_0
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 319
+    .line 308
     return-void
-
-    .line 317
-    :cond_0
-    iget-wide v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressDelay:J
-
-    goto :goto_0
 .end method
 
 .method private handleTouchEnd()V
     .locals 2
 
     .prologue
-    .line 376
+    .line 364
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 377
+    .line 365
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_0
 
-    .line 378
+    .line 366
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 379
+    .line 367
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 381
+    .line 369
     :cond_0
     sget-object v0, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->RESTING:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    .line 382
+    .line 370
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mNotClickOrLongPressCalled:Z
 
-    .line 383
+    .line 371
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/paneview/GestureDetector$GestureListener;->onTouchEnd()V
 
-    .line 384
+    .line 372
     return-void
 .end method
 
@@ -279,14 +262,14 @@
     .parameter "event"
 
     .prologue
-    .line 327
+    .line 316
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v4
 
     float-to-int v2, v4
 
-    .line 328
+    .line 317
     .local v2, x:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -294,7 +277,7 @@
 
     float-to-int v3, v4
 
-    .line 330
+    .line 319
     .local v3, y:I
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
@@ -304,21 +287,15 @@
 
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    sget-object v5, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->WAITING_FOR_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
-    if-eq v4, v5, :cond_0
-
-    iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
-
     sget-object v5, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->NON_ACTIVE_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     if-ne v4, v5, :cond_1
 
-    .line 332
+    .line 320
     :cond_0
     invoke-direct {p0, v2, v3}, Lcom/sonyericsson/paneview/GestureDetector;->startDragIfNeeded(II)V
 
-    .line 334
+    .line 322
     :cond_1
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
@@ -326,38 +303,38 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 335
+    .line 323
     iget v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastX:I
 
     sub-int v0, v2, v4
 
-    .line 336
+    .line 324
     .local v0, dx:I
     invoke-direct {p0}, Lcom/sonyericsson/paneview/GestureDetector;->onNotClickOrLongPress()V
 
-    .line 337
+    .line 325
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
     invoke-interface {v4, v0}, Lcom/sonyericsson/paneview/GestureDetector$GestureListener;->onHorizontalDrag(I)V
 
-    .line 338
+    .line 326
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v4, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 346
+    .line 334
     .end local v0           #dx:I
     :cond_2
     :goto_0
     iput v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastX:I
 
-    .line 347
+    .line 335
     iput v3, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastY:I
 
-    .line 348
+    .line 336
     return-void
 
-    .line 339
+    .line 327
     :cond_3
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
@@ -365,21 +342,21 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 340
+    .line 328
     iget v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastY:I
 
     sub-int v1, v3, v4
 
-    .line 341
+    .line 329
     .local v1, dy:I
     invoke-direct {p0}, Lcom/sonyericsson/paneview/GestureDetector;->onNotClickOrLongPress()V
 
-    .line 342
+    .line 330
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
     invoke-interface {v4, v1}, Lcom/sonyericsson/paneview/GestureDetector$GestureListener;->onVerticalDrag(I)V
 
-    .line 343
+    .line 331
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v4, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
@@ -392,14 +369,14 @@
     .parameter "event"
 
     .prologue
-    .line 356
+    .line 344
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     sget-object v3, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->CLICKED:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     if-ne v2, v3, :cond_0
 
-    .line 357
+    .line 345
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
     iget v3, p0, Lcom/sonyericsson/paneview/GestureDetector;->mStartX:I
@@ -408,14 +385,14 @@
 
     invoke-interface {v2, v3, v4}, Lcom/sonyericsson/paneview/GestureDetector$GestureListener;->onClick(II)V
 
-    .line 358
+    .line 346
     invoke-direct {p0}, Lcom/sonyericsson/paneview/GestureDetector;->handleTouchEnd()V
 
-    .line 370
+    .line 358
     :goto_0
     return-void
 
-    .line 359
+    .line 347
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
@@ -429,27 +406,27 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 361
+    .line 349
     :cond_1
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 362
+    .line 350
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     const/16 v3, 0x3e8
 
     invoke-virtual {v2, v3}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 363
+    .line 351
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v2}, Landroid/view/VelocityTracker;->getXVelocity()F
 
     move-result v0
 
-    .line 364
+    .line 352
     .local v0, velocityX:F
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
@@ -457,18 +434,18 @@
 
     move-result v1
 
-    .line 365
+    .line 353
     .local v1, velocityY:F
     iget-object v2, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
     invoke-interface {v2, v0, v1}, Lcom/sonyericsson/paneview/GestureDetector$GestureListener;->onFling(FF)V
 
-    .line 366
+    .line 354
     invoke-direct {p0}, Lcom/sonyericsson/paneview/GestureDetector;->handleTouchEnd()V
 
     goto :goto_0
 
-    .line 368
+    .line 356
     .end local v0           #velocityX:F
     .end local v1           #velocityY:F
     :cond_2
@@ -481,22 +458,22 @@
     .locals 1
 
     .prologue
-    .line 418
+    .line 406
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mNotClickOrLongPressCalled:Z
 
     if-nez v0, :cond_0
 
-    .line 419
+    .line 407
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mGestureListener:Lcom/sonyericsson/paneview/GestureDetector$GestureListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/paneview/GestureDetector$GestureListener;->onNotClickOrLongPress()V
 
-    .line 420
+    .line 408
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mNotClickOrLongPressCalled:Z
 
-    .line 422
+    .line 410
     :cond_0
     return-void
 .end method
@@ -507,26 +484,26 @@
     .parameter "y"
 
     .prologue
-    .line 394
+    .line 382
     iget v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mStartX:I
 
     sub-int v0, p1, v4
 
-    .line 395
+    .line 383
     .local v0, dx:I
     iget v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mStartY:I
 
     sub-int v2, p2, v4
 
-    .line 396
+    .line 384
     .local v2, dy:I
     mul-int v1, v0, v0
 
-    .line 397
+    .line 385
     .local v1, dx2:I
     mul-int v3, v2, v2
 
-    .line 398
+    .line 386
     .local v3, dy2:I
     add-int v4, v1, v3
 
@@ -534,27 +511,27 @@
 
     if-le v4, v5, :cond_1
 
-    .line 399
+    .line 387
     iget-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mHandler:Landroid/os/Handler;
 
     iget-object v5, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 400
+    .line 388
     if-le v1, v3, :cond_2
 
-    .line 401
+    .line 389
     iget-boolean v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mEnableHorizontalDrag:Z
 
     if-eqz v4, :cond_0
 
-    .line 402
+    .line 390
     sget-object v4, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->DRAGGING_HORIZONTALLY:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     iput-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    .line 409
+    .line 397
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/GestureDetector;->isDragging()Z
@@ -563,25 +540,25 @@
 
     if-nez v4, :cond_1
 
-    .line 411
+    .line 399
     sget-object v4, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->NON_ACTIVE_DRAG:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     iput-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
-    .line 412
+    .line 400
     invoke-direct {p0}, Lcom/sonyericsson/paneview/GestureDetector;->onNotClickOrLongPress()V
 
-    .line 415
+    .line 403
     :cond_1
     return-void
 
-    .line 405
+    .line 393
     :cond_2
     iget-boolean v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mEnableVerticalDrag:Z
 
     if-eqz v4, :cond_0
 
-    .line 406
+    .line 394
     sget-object v4, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->DRAGGING_VERTICALLY:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     iput-object v4, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
@@ -595,14 +572,14 @@
     .locals 2
 
     .prologue
-    .line 221
+    .line 211
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLongPressRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 222
+    .line 212
     return-void
 .end method
 
@@ -610,30 +587,18 @@
     .locals 2
 
     .prologue
-    .line 229
+    .line 219
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     sget-object v1, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->RESTING:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     if-eq v0, v1, :cond_0
 
-    .line 232
+    .line 222
     invoke-direct {p0}, Lcom/sonyericsson/paneview/GestureDetector;->handleTouchEnd()V
 
-    .line 234
+    .line 224
     :cond_0
-    return-void
-.end method
-
-.method public enableQuickLongPress(Z)V
-    .locals 0
-    .parameter "enable"
-
-    .prologue
-    .line 214
-    iput-boolean p1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mQuickLongPressEnabled:Z
-
-    .line 215
     return-void
 .end method
 
@@ -641,7 +606,7 @@
     .locals 1
 
     .prologue
-    .line 262
+    .line 252
     iget v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastX:I
 
     return v0
@@ -651,7 +616,7 @@
     .locals 1
 
     .prologue
-    .line 271
+    .line 261
     iget v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mLastY:I
 
     return v0
@@ -661,7 +626,7 @@
     .locals 2
 
     .prologue
-    .line 243
+    .line 233
     iget-object v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mState:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
 
     sget-object v1, Lcom/sonyericsson/paneview/GestureDetector$TouchState;->DRAGGING_HORIZONTALLY:Lcom/sonyericsson/paneview/GestureDetector$TouchState;
@@ -690,7 +655,7 @@
     .locals 1
 
     .prologue
-    .line 253
+    .line 243
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/GestureDetector;->mEnableHorizontalDrag:Z
 
     if-nez v0, :cond_0
@@ -716,41 +681,41 @@
     .parameter "event"
 
     .prologue
-    .line 281
+    .line 271
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 295
+    .line 285
     invoke-direct {p0}, Lcom/sonyericsson/paneview/GestureDetector;->handleTouchEnd()V
 
-    .line 298
+    .line 288
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 283
+    .line 273
     :pswitch_0
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/GestureDetector;->handleTouchDown(Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
-    .line 287
+    .line 277
     :pswitch_1
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/GestureDetector;->handleTouchMove(Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
-    .line 291
+    .line 281
     :pswitch_2
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/GestureDetector;->handleTouchUp(Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
-    .line 281
+    .line 271
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -764,10 +729,10 @@
     .parameter "enable"
 
     .prologue
-    .line 201
+    .line 195
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mEnableHorizontalDrag:Z
 
-    .line 202
+    .line 196
     return-void
 .end method
 
@@ -776,9 +741,9 @@
     .parameter "enable"
 
     .prologue
-    .line 210
+    .line 204
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/GestureDetector;->mEnableVerticalDrag:Z
 
-    .line 211
+    .line 205
     return-void
 .end method

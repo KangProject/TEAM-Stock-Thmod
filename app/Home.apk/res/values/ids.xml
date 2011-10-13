@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="id" name="sort_button">false</item>
+    <item type="id" name="apptray_pane_view">false</item>
+    <item type="id" name="apptray_pane_indicator">false</item>
     <item type="id" name="edit_mode_bg_fade">false</item>
+    <item type="id" name="apptray_controls">false</item>
+    <item type="id" name="sort_button">false</item>
+    <item type="id" name="edit_button">false</item>
+    <item type="id" name="home_button">false</item>
     <item type="id" name="apptray_nudge_left">false</item>
     <item type="id" name="apptray_nudge_right">false</item>
-    <item type="id" name="edit_button">false</item>
-    <item type="id" name="apptray_pane_indicator">false</item>
-    <item type="id" name="apptray_pane_view">false</item>
+    <item type="id" name="corner_layer">false</item>
+    <item type="id" name="cornerbutton_dim">false</item>
+    <item type="id" name="topleft_corner">false</item>
+    <item type="id" name="topright_corner">false</item>
+    <item type="id" name="bottomleft_corner">false</item>
+    <item type="id" name="bottomright_corner">false</item>
     <item type="id" name="button_positive">false</item>
     <item type="id" name="button_negative">false</item>
     <item type="id" name="desktop_layer">false</item>
-    <item type="id" name="desktop_pane_indicator">false</item>
     <item type="id" name="desktop_nudge_left">false</item>
     <item type="id" name="desktop_nudge_right">false</item>
     <item type="id" name="desktop_pane_view">false</item>
+    <item type="id" name="apptray_button">false</item>
+    <item type="id" name="desktop_pane_indicator">false</item>
     <item type="id" name="item_icon">false</item>
     <item type="id" name="item_label">false</item>
+    <item type="id" name="fake_stage">false</item>
+    <item type="id" name="folder_layer">false</item>
+    <item type="id" name="folder_view">false</item>
+    <item type="id" name="folder_title">false</item>
+    <item type="id" name="content">false</item>
     <item type="id" name="title">false</item>
     <item type="id" name="text">false</item>
     <item type="id" name="icon0">false</item>
@@ -26,23 +40,16 @@
     <item type="id" name="icon5">false</item>
     <item type="id" name="icon6">false</item>
     <item type="id" name="icon7">false</item>
-    <item type="id" name="open_folder">false</item>
-    <item type="id" name="folder_view">false</item>
-    <item type="id" name="folder_pane_view">false</item>
-    <item type="id" name="label_click_view">false</item>
-    <item type="id" name="label">false</item>
-    <item type="id" name="folder_bg_left">false</item>
-    <item type="id" name="folder_bg_middle">false</item>
-    <item type="id" name="folder_bg_right">false</item>
     <item type="id" name="icon_image">false</item>
+    <item type="id" name="badge_icon">false</item>
     <item type="id" name="icon_label">false</item>
     <item type="id" name="transfer_layer">false</item>
+    <item type="id" name="fade">false</item>
     <item type="id" name="desktop_master_layer">false</item>
-    <item type="id" name="desktop_layer_stub">false</item>
     <item type="id" name="desktop_leave_overview">false</item>
     <item type="id" name="desktop_fullscreen_placeholder">false</item>
     <item type="id" name="app_tray_layer">false</item>
-    <item type="id" name="folder_layer">false</item>
+    <item type="id" name="network_name_view">false</item>
     <item type="id" name="sort_icon">false</item>
     <item type="id" name="sort_label">false</item>
     <item type="id" name="sort_radiobutton">false</item>
@@ -50,9 +57,6 @@
     <item type="id" name="stage_paneview">false</item>
     <item type="id" name="stage_hintview">false</item>
     <item type="id" name="stage_layer">false</item>
-    <item type="id" name="fake_stage">false</item>
-    <item type="id" name="apptray_button">false</item>
-    <item type="id" name="home_button">false</item>
     <item type="id" name="trashcan_layer">false</item>
     <item type="id" name="trashcan_hint">false</item>
     <item type="id" name="trashcan">false</item>

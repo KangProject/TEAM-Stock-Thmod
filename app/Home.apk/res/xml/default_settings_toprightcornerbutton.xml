@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="1">
+    <groups type="corner">
+        <group>
+            <groups type="activities">
+                <group>
+                    <setting key="name">.PlayerActivity</setting>
+                    <setting key="package-name">com.sonyericsson.music</setting>
+                </group>
+                <group>
+                    <setting key="name">.Gallery</setting>
+                    <setting key="package-name">com.sonyericsson.gallery</setting>
+                </group>
+                <group>
+                    <setting key="name">.FMRadioActivity</setting>
+                    <setting key="package-name">com.sonyericsson.fmradio</setting>
+                </group>
+            </groups>
+        </group>
+    </groups>
+</settings>

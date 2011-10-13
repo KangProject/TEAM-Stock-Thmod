@@ -12,3 +12,6 @@
 
 .method public abstract getNumberOfPanes()I
 .end method
+
+.method public abstract isInteractive(I)Z
+.end method

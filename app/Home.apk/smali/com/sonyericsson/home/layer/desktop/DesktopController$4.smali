@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/desktop/DesktopController;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/AvailabilityReceiver;)V
+    value = Lcom/sonyericsson/home/layer/desktop/DesktopController;->setContextDependentData()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 747
+    .line 922
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$4;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +38,18 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 1
+    .locals 2
     .parameter "animation"
 
     .prologue
-    .line 758
+    .line 932
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$4;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
+    const/4 v1, 0x1
 
-    .line 759
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3000(Lcom/sonyericsson/home/layer/desktop/DesktopController;Z)V
+
+    .line 933
     return-void
 .end method
 
@@ -56,7 +58,7 @@
     .parameter "animation"
 
     .prologue
-    .line 755
+    .line 929
     return-void
 .end method
 
@@ -65,6 +67,6 @@
     .parameter "animation"
 
     .prologue
-    .line 751
+    .line 925
     return-void
 .end method

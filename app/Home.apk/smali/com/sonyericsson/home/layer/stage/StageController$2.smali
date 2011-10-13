@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 200
+    .line 225
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 227
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -50,12 +50,12 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 203
+    .line 228
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$300(Lcom/sonyericsson/home/layer/stage/StageController;)V
 
-    .line 204
+    .line 229
     return-void
 .end method
 
@@ -63,6 +63,6 @@
     .locals 0
 
     .prologue
-    .line 208
+    .line 233
     return-void
 .end method

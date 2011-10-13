@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sonyericsson.home.layer.HintView android:id="@id/apptray_nudge_left" android:visibility="invisible" android:layout_width="@dimen/apptray_nudge_width" android:layout_height="@dimen/apptray_portrait_height" android:layout_marginTop="@dimen/apptray_margin_top" />
+    <com.sonyericsson.home.layer.HintView android:id="@id/apptray_nudge_right" android:visibility="invisible" android:layout_width="@dimen/apptray_nudge_width" android:layout_height="@dimen/apptray_portrait_height" android:layout_marginTop="@dimen/apptray_margin_top" android:layout_marginRight="@dimen/apptray_right_nudge_padding_right" android:layout_alignParentRight="true" />
+</merge>

@@ -3,12 +3,12 @@
 .source "HomeActivity.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
+.implements Lcom/sonyericsson/home/transfer/TransferView$FocusHandler;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/HomeActivity;->createAppTray()V
+    value = Lcom/sonyericsson/home/HomeActivity;->setupTransferView(Lcom/sonyericsson/home/transfer/TransferView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 876
+    .line 975
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,319 +37,259 @@
 
 
 # virtual methods
-.method public onAppTrayClosed(Z)V
-    .locals 2
-    .parameter "animating"
+.method public onRequestFocusInDescendants(ILandroid/graphics/Rect;)Z
+    .locals 3
+    .parameter "direction"
+    .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 902
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$1600(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 903
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$1600(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
-
-    .line 904
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
+    .line 1002
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$1602(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
+    .line 1004
+    .local v1, tookFocus:Z
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    .line 906
-    :cond_0
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$1400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->isOpen()Z
 
-    invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->start()V
+    move-result v2
 
-    .line 907
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    if-eqz v2, :cond_1
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    .line 1005
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    move-result-object v0
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$1400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->resume()V
+    move-result-object v2
 
-    .line 908
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->show(Z)V
-
-    .line 909
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 910
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageController;->show(Z)V
-
-    .line 912
-    :cond_1
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->isShowing()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    .line 913
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$500(Lcom/sonyericsson/home/HomeActivity;Z)V
-
-    .line 915
-    :cond_2
-    return-void
-.end method
-
-.method public onAppTrayOpened()V
-    .locals 0
-
-    .prologue
-    .line 918
-    return-void
-.end method
-
-.method public onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
-    .locals 2
-    .parameter "info"
-    .parameter "sourceBounds"
-
-    .prologue
-    .line 879
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$1900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2}, Lcom/sonyericsson/home/HomeActivityFlow;->onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
-
-    .line 880
-    instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
-
-    if-eqz v0, :cond_0
-
-    .line 881
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/statistics/Statistics;
-
-    move-result-object v0
-
-    check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
-
-    .end local p1
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, p1, v1}, Lcom/sonyericsson/home/statistics/Statistics;->registerAcitvityStart(Lcom/sonyericsson/home/data/ActivityInfo;I)V
-
-    .line 884
-    :cond_0
-    return-void
-.end method
-
-.method public onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
-    .locals 1
-    .parameter "info"
-
-    .prologue
-    .line 887
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$1000(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/Info;)V
-
-    .line 888
-    return-void
-.end method
-
-.method public onSyncCompleted()V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x1
-
-    .line 931
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$500(Lcom/sonyericsson/home/HomeActivity;Z)V
-
-    .line 934
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$100(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->getCurrentSorting()I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 945
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;I)I
-
-    .line 948
-    :goto_0
-    return-void
-
-    .line 936
-    :pswitch_0
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;I)I
-
-    goto :goto_0
-
-    .line 939
-    :pswitch_1
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    const/4 v1, 0x2
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;I)I
-
-    goto :goto_0
-
-    .line 942
-    :pswitch_2
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;I)I
-
-    goto :goto_0
-
-    .line 934
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
-.end method
-
-.method public onTransferToDesktop()V
-    .locals 2
-
-    .prologue
-    .line 921
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$900(Lcom/sonyericsson/home/HomeActivity;Z)V
-
-    .line 922
-    return-void
-.end method
-
-.method public onTransferToDesktopFailed()V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 925
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->hide(Z)V
-
-    .line 926
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$600(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 927
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2300(Lcom/sonyericsson/home/HomeActivity;)V
-
-    .line 928
-    return-void
-.end method
-
-.method public sortButtonPressed(Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTraySortCallback;)V
-    .locals 2
-    .parameter "appTraySortCallback"
-
-    .prologue
-    .line 891
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    iput-object p1, v0, Lcom/sonyericsson/home/HomeActivity;->mAppTraySortCallback:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTraySortCallback;
-
-    .line 892
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$100(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->getCurrentSorting()I
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->requestFocus()Z
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;I)I
+    .line 1019
+    :cond_0
+    :goto_0
+    return v1
 
-    .line 893
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    .line 1006
+    :cond_1
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    const/4 v1, 0x2
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->showDialog(I)V
+    move-result-object v2
 
-    .line 894
-    return-void
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isOpen()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 1007
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    .line 1008
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/stage/StageController;->requestFocus()Z
+
+    move-result v1
+
+    goto :goto_0
+
+    .line 1009
+    :cond_2
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    .line 1010
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->getOpenCorner()I
+
+    move-result v0
+
+    .line 1011
+    .local v0, cornerIndex:I
+    const/4 v2, -0x1
+
+    if-eq v0, v2, :cond_3
+
+    .line 1012
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->requestFocus(I)Z
+
+    move-result v1
+
+    goto :goto_0
+
+    .line 1014
+    :cond_3
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->requestFocus()Z
+
+    move-result v1
+
+    goto :goto_0
+.end method
+
+.method public onUnhandledMove(Landroid/view/View;I)Z
+    .locals 4
+    .parameter "focused"
+    .parameter "direction"
+
+    .prologue
+    const/16 v3, 0x42
+
+    const/16 v2, 0x11
+
+    .line 978
+    const/4 v0, 0x0
+
+    .line 980
+    .local v0, handled:Z
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isOpen()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 981
+    if-ne p2, v3, :cond_1
+
+    .line 982
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->moveToRightPane()V
+
+    .line 983
+    const/4 v0, 0x1
+
+    .line 998
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 984
+    :cond_1
+    if-ne p2, v2, :cond_0
+
+    .line 985
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->moveToLeftPane()V
+
+    .line 986
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 988
+    :cond_2
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$1400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->isOpen()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->isInOverview()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 989
+    if-ne p2, v3, :cond_3
+
+    .line 990
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->moveToRightPane()V
+
+    .line 991
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 992
+    :cond_3
+    if-ne p2, v2, :cond_0
+
+    .line 993
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$7;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->moveToLeftPane()V
+
+    .line 994
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method

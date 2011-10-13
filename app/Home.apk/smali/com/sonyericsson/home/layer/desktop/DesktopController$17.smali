@@ -3,12 +3,12 @@
 .source "DesktopController.java"
 
 # interfaces
-.implements Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
+.implements Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/sonyericsson/home/layer/desktop/DesktopController;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/sonyericsson/home/layer/desktop/DesktopController;->onResume(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1811
+    .line 2330
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,116 +37,202 @@
 
 
 # virtual methods
-.method public onClick(II)V
-    .locals 7
-    .parameter "x"
-    .parameter "y"
+.method public onCanceled()V
+    .locals 1
 
     .prologue
-    .line 1824
+    .line 2352
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$5500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/app/WallpaperManager;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
-
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/sonyericsson/paneview/PaneView;->getWindowToken()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    const-string v2, "android.wallpaper.tap"
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move v3, p1
-
-    move v4, p2
-
-    invoke-virtual/range {v0 .. v6}, Landroid/app/WallpaperManager;->sendWallpaperCommand(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V
-
-    .line 1826
+    .line 2353
     return-void
 .end method
 
-.method public onLongPress(II)Z
-    .locals 5
-    .parameter "x"
-    .parameter "y"
+.method public onConfirmed(Ljava/lang/String;I)V
+    .locals 6
+    .parameter "folderName"
+    .parameter "icon"
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    .line 1813
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+    .line 2332
+    new-instance v0, Lcom/sonyericsson/home/data/InfoGroup;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
+    invoke-direct {v0, p1, p2}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/lang/String;I)V
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 1814
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
-
-    move-result-object v0
-
-    new-instance v1, Landroid/graphics/Point;
-
+    .line 2333
+    .local v0, infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/sonyericsson/paneview/PaneView;->getPaddingLeft()I
-
-    move-result v2
-
-    sub-int v2, p1, v2
-
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-static {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6200(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/sonyericsson/paneview/PaneView;->getPaddingTop()I
+    invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->remove(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)Z
 
-    move-result v3
+    .line 2334
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    sub-int v3, p2, v3
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$4200(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
-    invoke-direct {v1, v2, v3}, Landroid/graphics/Point;-><init>(II)V
+    move-result-object v2
 
-    invoke-interface {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onLongPress(Landroid/graphics/Point;)V
+    invoke-virtual {v2, v5}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->ignoreNextGetDeleteRenderer(I)V
 
-    .line 1817
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+    .line 2335
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$000(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0, v4}, Lcom/sonyericsson/paneview/PaneView;->requestDisallowInterceptTouchEvent(Z)V
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    move v0, v4
+    .line 2336
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    .line 1820
-    :goto_0
-    return v0
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
-    :cond_0
-    const/4 v0, 0x0
+    move-result-object v2
 
-    goto :goto_0
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$5700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->remove(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)Z
+
+    .line 2337
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$5700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getInfo()Lcom/sonyericsson/home/data/Info;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v0, v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->addLast(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)V
+
+    .line 2338
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6200(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getInfo()Lcom/sonyericsson/home/data/Info;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v0, v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->addLast(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)V
+
+    .line 2339
+    new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+
+    new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;
+
+    invoke-direct {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopRect;-><init>()V
+
+    invoke-direct {v1, v0, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;-><init>(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/layer/desktop/DesktopRect;)V
+
+    .line 2341
+    .local v1, infoGroupItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$5300(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/HintInfo;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->addHint(Lcom/sonyericsson/home/data/Info;)I
+
+    .line 2342
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$5300(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/HintInfo;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6300(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopRect;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->setHint(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
+
+    .line 2343
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->addItemAtHint(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)I
+
+    .line 2344
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->removeHint()V
+
+    .line 2345
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2, v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$100(Lcom/sonyericsson/home/layer/desktop/DesktopController;Z)V
+
+    .line 2346
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$000(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
+
+    .line 2348
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
+
+    .line 2349
+    return-void
 .end method

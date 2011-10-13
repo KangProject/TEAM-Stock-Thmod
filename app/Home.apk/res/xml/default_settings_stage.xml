@@ -10,29 +10,29 @@
             </groups>
             <groups type="activities">
                 <group>
-                    <setting key="name">com.sonyericsson.conversations.ui.ConversationListActivity</setting>
+                    <setting key="name">.ui.ConversationListActivity</setting>
                     <setting key="package-name">com.sonyericsson.conversations</setting>
                 </group>
                 <group>
-                    <setting key="name">com.sonyericsson.android.socialphonebook.LaunchActivity</setting>
+                    <setting key="name">.LaunchActivity</setting>
                     <setting key="package-name">com.sonyericsson.android.socialphonebook</setting>
                 </group>
                 <group>
-                    <setting key="name">com.sonyericsson.android.socialphonebook.DialerEntryActivity</setting>
+                    <setting key="name">.DialerEntryActivity</setting>
                     <setting key="package-name">com.sonyericsson.android.socialphonebook</setting>
                 </group>
                 <group>
-                    <setting key="name">com.sonyericsson.gallery.Gallery</setting>
+                    <setting key="name">.Gallery</setting>
                     <setting key="package-name">com.sonyericsson.gallery</setting>
                     <setting key="folder">media</setting>
                 </group>
                 <group>
-                    <setting key="name">com.sonyericsson.music.PlayerActivity</setting>
+                    <setting key="name">.PlayerActivity</setting>
                     <setting key="package-name">com.sonyericsson.music</setting>
                     <setting key="folder">media</setting>
                 </group>
                 <group>
-                    <setting key="name">com.sonyericsson.fmradio.FMRadioActivity</setting>
+                    <setting key="name">.FMRadioActivity</setting>
                     <setting key="package-name">com.sonyericsson.fmradio</setting>
                     <setting key="folder">media</setting>
                 </group>

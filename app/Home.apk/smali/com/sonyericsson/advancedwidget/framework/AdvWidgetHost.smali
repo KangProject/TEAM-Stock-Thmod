@@ -183,7 +183,7 @@
 
     .prologue
     .line 32
-    const/16 v0, 0x110
+    const/16 v0, 0x120
 
     return v0
 .end method

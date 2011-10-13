@@ -30,15 +30,15 @@
     .parameter "newData"
 
     .prologue
-    .line 142
+    .line 139
     iput-object p1, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataSetChangedRunnable;->this$0:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 143
+    .line 140
     iput-object p2, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataSetChangedRunnable;->mNewData:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataCache;
 
-    .line 144
+    .line 141
     return-void
 .end method
 
@@ -48,18 +48,18 @@
     .locals 2
 
     .prologue
-    .line 147
+    .line 144
     iget-object v0, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataSetChangedRunnable;->this$0:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;
 
     iget-object v1, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataSetChangedRunnable;->mNewData:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataCache;
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;->access$102(Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataCache;)Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataCache;
 
-    .line 148
+    .line 145
     iget-object v0, p0, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter$DataSetChangedRunnable;->this$0:Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/ScrollableAppWidgetAdapter;->notifyDataSetChanged()V
 
-    .line 149
+    .line 146
     return-void
 .end method

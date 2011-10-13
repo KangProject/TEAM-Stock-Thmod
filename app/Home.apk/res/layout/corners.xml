@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/corner_layer" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/cornerbutton_dim" android:background="#b0000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sonyericsson.cornerbutton.TopLeft android:id="@id/topleft_corner" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sonyericsson.cornerbutton.TopRight android:id="@id/topright_corner" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sonyericsson.cornerbutton.BottomLeft android:id="@id/bottomleft_corner" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.sonyericsson.cornerbutton.BottomRight android:id="@id/bottomright_corner" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

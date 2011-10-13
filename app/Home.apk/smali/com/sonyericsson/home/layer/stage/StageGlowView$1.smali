@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 61
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageGlowView$1;->this$0:Lcom/sonyericsson/home/layer/stage/StageGlowView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .prologue
     const-wide/high16 v6, 0x3fe0
 
-    .line 59
+    .line 63
     const-wide/high16 v0, 0x4010
 
     float-to-double v2, p1

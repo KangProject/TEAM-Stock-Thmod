@@ -75,9 +75,17 @@
 
 .field public static final home_option_set_wallpaper_txt:I = 0x7f07000a
 
+.field public static final home_permission_broadcast_badge_description:I = 0x7f07002f
+
+.field public static final home_permission_broadcast_badge_label:I = 0x7f07002e
+
 .field public static final home_permission_install_shortcut_description:I = 0x7f070029
 
 .field public static final home_permission_install_shortcut_label:I = 0x7f070028
+
+.field public static final home_permission_receive_badge_description:I = 0x7f07002d
+
+.field public static final home_permission_receive_badge_label:I = 0x7f07002c
 
 .field public static final home_permission_uninstall_shortcut_description:I = 0x7f07002b
 
@@ -109,7 +117,7 @@
     .locals 0
 
     .prologue
-    .line 294
+    .line 437
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

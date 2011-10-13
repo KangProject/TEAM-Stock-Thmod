@@ -9,41 +9,57 @@
 # instance fields
 .field private mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
+.field private mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+.field private mLocator:Lcom/sonyericsson/home/layer/folder/FolderLocator;
+
 .field private mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/layer/folder/FolderModelManager;)V
+.method public constructor <init>(Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/layer/folder/FolderModelManager;Lcom/sonyericsson/home/layer/folder/FolderLocator;)V
     .locals 0
-    .parameter "context"
-    .parameter "resourceLoader"
     .parameter "adapterHelper"
+    .parameter "infoGroupManager"
     .parameter "modelManager"
+    .parameter "locator"
 
     .prologue
-    .line 37
+    .line 40
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 38
-    iput-object p3, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+    .line 41
+    iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    .line 39
-    iput-object p4, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
+    .line 42
+    iput-object p2, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    .line 40
+    .line 43
+    iput-object p3, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
+
+    .line 44
+    iput-object p4, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mLocator:Lcom/sonyericsson/home/layer/folder/FolderLocator;
+
+    .line 45
     return-void
 .end method
 
 
 # virtual methods
 .method public getCount()I
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
+    .line 49
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->getCount()I
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->getFolder()Lcom/sonyericsson/home/data/InfoGroup;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/InfoGroupManager;->getInfoCount(Lcom/sonyericsson/home/data/InfoGroup;)I
 
     move-result v0
 
@@ -51,14 +67,20 @@
 .end method
 
 .method public getItem(I)Lcom/sonyericsson/home/data/Info;
-    .locals 1
+    .locals 2
     .parameter "position"
 
     .prologue
-    .line 47
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
+    .line 54
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->get(I)Lcom/sonyericsson/home/data/Info;
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->getFolder()Lcom/sonyericsson/home/data/InfoGroup;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, p1}, Lcom/sonyericsson/home/layer/InfoGroupManager;->getInfo(Lcom/sonyericsson/home/data/InfoGroup;I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
 
@@ -70,7 +92,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 29
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
@@ -83,7 +105,7 @@
     .parameter "position"
 
     .prologue
-    .line 51
+    .line 59
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
@@ -100,12 +122,12 @@
     .parameter "position"
 
     .prologue
-    .line 75
+    .line 84
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
 
-    .line 76
+    .line 85
     .local v0, info:Lcom/sonyericsson/home/data/Info;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
@@ -122,12 +144,12 @@
     .parameter "outPlacement"
 
     .prologue
-    .line 96
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
+    .line 110
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mLocator:Lcom/sonyericsson/home/layer/folder/FolderLocator;
 
-    invoke-virtual {v0, p1, p2}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->getLocation(ILcom/sonyericsson/paneview/PaneLocation;)V
+    invoke-virtual {v0, p1, p2}, Lcom/sonyericsson/home/layer/folder/FolderLocator;->getLocation(ILcom/sonyericsson/paneview/PaneLocation;)V
 
-    .line 97
+    .line 111
     return-void
 .end method
 
@@ -135,7 +157,7 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 115
     const/4 v0, 0x1
 
     return v0
@@ -148,35 +170,35 @@
     .parameter "parent"
 
     .prologue
-    .line 55
+    .line 64
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
 
-    .line 57
+    .line 66
     .local v0, info:Lcom/sonyericsson/home/data/Info;
     if-nez v0, :cond_0
 
-    .line 58
+    .line 67
     const/4 v2, 0x0
 
-    .line 70
+    .line 79
     .end local v0           #info:Lcom/sonyericsson/home/data/Info;
     :goto_0
     return-object v2
 
-    .line 61
+    .line 70
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     :cond_0
     const/4 v1, 0x0
 
-    .line 62
+    .line 71
     .local v1, infoView:Landroid/view/View;
     instance-of v2, v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v2, :cond_1
 
-    .line 63
+    .line 72
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     check-cast v0, Lcom/sonyericsson/home/data/ActivityInfo;
@@ -189,17 +211,17 @@
     :goto_1
     move-object v2, v1
 
-    .line 70
+    .line 79
     goto :goto_0
 
-    .line 64
+    .line 73
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     instance-of v2, v0, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     if-eqz v2, :cond_2
 
-    .line 65
+    .line 74
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     check-cast v0, Lcom/sonyericsson/home/data/ShortcutInfo;
@@ -211,7 +233,7 @@
 
     goto :goto_1
 
-    .line 67
+    .line 76
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     :cond_2
     const-string v2, "FolderAdapter"
@@ -227,7 +249,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 90
     const/4 v0, 0x1
 
     return v0
@@ -237,7 +259,7 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 95
     const/4 v0, 0x1
 
     return v0
@@ -248,14 +270,19 @@
     .parameter "position"
 
     .prologue
-    .line 91
-    invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
+    .line 100
+    const/4 v0, 0x1
 
-    move-result-object v0
+    return v0
+.end method
 
-    invoke-virtual {v0}, Lcom/sonyericsson/home/data/Info;->isEnabled()Z
+.method public isInteractive(I)Z
+    .locals 1
+    .parameter "position"
 
-    move-result v0
+    .prologue
+    .line 105
+    const/4 v0, 0x0
 
     return v0
 .end method

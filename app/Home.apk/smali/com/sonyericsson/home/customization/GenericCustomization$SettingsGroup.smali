@@ -39,23 +39,23 @@
     .parameter "id"
 
     .prologue
-    .line 85
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 83
+    .line 81
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/customization/GenericCustomization$SettingsGroup;->settings:Ljava/util/HashMap;
 
-    .line 86
+    .line 84
     iput-object p1, p0, Lcom/sonyericsson/home/customization/GenericCustomization$SettingsGroup;->type:Ljava/lang/String;
 
-    .line 87
+    .line 85
     iput-object p2, p0, Lcom/sonyericsson/home/customization/GenericCustomization$SettingsGroup;->id:Ljava/lang/String;
 
-    .line 88
+    .line 86
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 78
     iget-object v0, p0, Lcom/sonyericsson/home/customization/GenericCustomization$SettingsGroup;->settings:Ljava/util/HashMap;
 
     return-object v0
@@ -78,11 +78,11 @@
     .parameter "value"
 
     .prologue
-    .line 91
+    .line 89
     iget-object v0, p0, Lcom/sonyericsson/home/customization/GenericCustomization$SettingsGroup;->settings:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 92
+    .line 90
     return-void
 .end method

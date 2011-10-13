@@ -24,13 +24,10 @@
 .method public abstract onCreateFolder(Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;Z)V
 .end method
 
-.method public abstract onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
+.method public abstract onInfoClicked(Lcom/sonyericsson/home/data/Info;Ljava/lang/Object;)V
 .end method
 
 .method public abstract onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
-.end method
-
-.method public abstract onItemDropped()V
 .end method
 
 .method public abstract onItemPickedUp()V

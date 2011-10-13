@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="apptray_height">450.0dip</dimen>
-    <dimen name="stage_width">480.0px</dimen>
-    <dimen name="stage_height">140.0px</dimen>
+    <dimen name="apptray_cell_width">75.0dip</dimen>
+    <dimen name="apptray_cell_height">105.0dip</dimen>
+    <dimen name="apptray_portrait_height">450.0dip</dimen>
+    <dimen name="desktop_focus_padding_right">0.0dip</dimen>
+    <dimen name="desktop_focus_padding_bottom">88.0dip</dimen>
+    <dimen name="switch_apptray_button_padding_side">26.0dip</dimen>
+    <dimen name="trashcan_padding_side">26.0dip</dimen>
 </resources>

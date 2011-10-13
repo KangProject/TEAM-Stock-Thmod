@@ -15,9 +15,7 @@
 
 
 # static fields
-.field public static final Button:I = 0x7f080000
-
-.field public static final HomeTheme:I = 0x7f080001
+.field public static final HomeTheme:I = 0x7f080000
 
 
 # direct methods
@@ -25,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 504
+    .line 589
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

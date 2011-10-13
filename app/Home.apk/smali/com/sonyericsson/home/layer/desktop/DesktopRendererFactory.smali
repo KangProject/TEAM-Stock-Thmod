@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public createDefaultMoveRenderer()Lcom/sonyericsson/animation/Renderer;
+.method protected createDefaultMoveRenderer()Lcom/sonyericsson/animation/Renderer;
     .locals 1
 
     .prologue

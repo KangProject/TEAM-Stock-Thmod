@@ -3,7 +3,7 @@
 .source "AppTrayController.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/LayerController$Syncable;
+.implements Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 285
+    .line 287
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,47 +37,48 @@
 
 
 # virtual methods
-.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 1
     .parameter "info"
 
     .prologue
-    .line 288
+    .line 290
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$000(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getSyncable()Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getSyncable()Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/LayerController$Syncable;->addDuringSync(Lcom/sonyericsson/home/data/Info;)V
+    invoke-interface {v0, p1}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
-    .line 289
-    return-void
+    move-result v0
+
+    return v0
 .end method
 
-.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)V
+.method public removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
     .locals 1
     .parameter "info"
 
     .prologue
-    .line 292
+    .line 294
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$000(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getSyncable()Lcom/sonyericsson/home/layer/LayerController$Syncable;
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getSyncable()Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/LayerController$Syncable;->removeDuringSync(Lcom/sonyericsson/home/data/Info;)V
+    invoke-interface {v0, p1}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
-    .line 293
+    .line 295
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
@@ -86,7 +87,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 294
+    .line 296
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
@@ -95,7 +96,9 @@
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 296
+    .line 298
     :cond_0
-    return-void
+    const/4 v0, 0x1
+
+    return v0
 .end method

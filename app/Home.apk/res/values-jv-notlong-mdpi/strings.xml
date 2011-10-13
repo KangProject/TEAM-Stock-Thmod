@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_popup_cancel_txt">Batal</string>
+    <string name="gui_cancel_txt">Batal</string>
+</resources>
