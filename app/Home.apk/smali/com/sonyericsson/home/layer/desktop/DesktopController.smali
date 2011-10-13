@@ -192,7 +192,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/layer/InfoGroupManager;)V
-    .locals 3
+    .locals 7
     .parameter "context"
     .parameter "packageLoader"
     .parameter "infoGroupManager"
@@ -371,18 +371,23 @@
 
     iput v1, v0, Lcom/sonyericsson/grid/GridSize;->cols:I
 
-    .line 792
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const v1, 0x7f09000a
+    .line 114
+    .local v0, resolver:Landroid/content/ContentResolver;
+    const-string v1, "tweaks_home_screens"
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+    const/4 v4, 0x5
 
-    move-result v0
+    invoke-static {v0, v1, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
+    move-result v5
+
+    iput v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
 
     .line 794
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -2269,7 +2274,7 @@
 .end method
 
 .method private setContextDependentData()V
-    .locals 4
+    .locals 7
 
     .prologue
     const/high16 v3, 0x4020
@@ -2402,19 +2407,23 @@
     iput v1, v0, Lcom/sonyericsson/grid/GridSize;->cols:I
 
     .line 918
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const v1, 0x7f09000a
+    .line 114
+    .local v0, resolver:Landroid/content/ContentResolver;
+    const-string v1, "tweaks_home_screens"
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+    const/4 v4, 0x5
 
-    move-result v0
+    invoke-static {v0, v1, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
+    move-result v5
+
+    iput v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
 
     .line 920
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;

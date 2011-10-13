@@ -22,7 +22,7 @@
 
 .field private static final NO_PREVIOUS_VALUE:I = -0x1
 
-.field private static final POSITON_TOLERANCE:F = 0.001f
+.field private static final POSITON_TOLERANCE:F = 0.0010f
 
 .field private static final VELOCITY_TOLERANCE:F = 0.01f
 
