@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ActivityManagerService$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 8628
@@ -61,7 +61,7 @@
     monitor-enter v0
 
     .line 8629
-    :try_start_0
+    :try_start_3
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$ServiceRestarter;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$ServiceRestarter;->mService:Lcom/android/server/am/ServiceRecord;
@@ -75,18 +75,18 @@
     return-void
 
     .line 8630
-    :catchall_0
+    :catchall_c
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_e
+    .catchall {:try_start_3 .. :try_end_e} :catchall_c
 
     throw v1
 .end method
 
 .method setService(Lcom/android/server/am/ServiceRecord;)V
-    .locals 0
+    .registers 2
     .parameter "service"
 
     .prologue

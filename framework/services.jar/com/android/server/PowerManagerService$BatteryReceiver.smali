@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/PowerManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -33,7 +33,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .registers 7
     .parameter "context"
     .parameter "intent"
 
@@ -62,7 +62,7 @@
     monitor-enter v1
 
     .line 363
-    :try_start_0
+    :try_start_7
     iget-object v2, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v2}, Lcom/android/server/PowerManagerService;->access$600(Lcom/android/server/PowerManagerService;)Z
@@ -92,7 +92,7 @@
 
     move-result v2
 
-    if-eq v2, v0, :cond_2
+    if-eq v2, v0, :cond_48
 
     .line 368
     iget-object v2, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -107,13 +107,13 @@
     move-result-object v2
 
     monitor-enter v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    :try_end_30
+    .catchall {:try_start_7 .. :try_end_30} :catchall_4d
 
     .line 381
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_42
 
-    :try_start_1
+    :try_start_32
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v3}, Lcom/android/server/PowerManagerService;->access$900(Lcom/android/server/PowerManagerService;)I
@@ -122,56 +122,56 @@
 
     and-int/lit8 v3, v3, 0x1
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_42
 
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-boolean v3, v3, Lcom/android/server/PowerManagerService;->mUnplugTurnsOnScreen:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_47
 
     .line 383
-    :cond_0
+    :cond_42
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v3}, Lcom/android/server/PowerManagerService;->access$1000(Lcom/android/server/PowerManagerService;)V
 
     .line 385
-    :cond_1
+    :cond_47
     monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_48
+    .catchall {:try_start_32 .. :try_end_48} :catchall_4a
 
     .line 387
-    :cond_2
-    :try_start_2
+    :cond_48
+    :try_start_48
     monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_49
+    .catchall {:try_start_48 .. :try_end_49} :catchall_4d
 
     .line 388
     return-void
 
     .line 385
-    :catchall_0
+    :catchall_4a
     move-exception v3
 
-    :try_start_3
+    :try_start_4b
     monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_4c
+    .catchall {:try_start_4b .. :try_end_4c} :catchall_4a
 
-    :try_start_4
+    :try_start_4c
     throw v3
 
     .line 387
     .end local v0           #wasPowered:Z
-    :catchall_1
+    :catchall_4d
     move-exception v2
 
     monitor-exit v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_4f
+    .catchall {:try_start_4c .. :try_end_4f} :catchall_4d
 
     throw v2
 .end method

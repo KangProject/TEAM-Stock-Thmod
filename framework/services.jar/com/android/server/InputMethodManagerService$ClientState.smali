@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;Lcom/android/internal/view/IInputMethodClient;Lcom/android/internal/view/IInputContext;II)V
-    .locals 5
+    .registers 11
     .parameter
     .parameter "_client"
     .parameter "_inputContext"
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 166

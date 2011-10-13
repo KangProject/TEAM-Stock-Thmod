@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/location/GpsLocationProvider;)V
-    .locals 1
+    .registers 3
     .parameter
 
     .prologue
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 1552

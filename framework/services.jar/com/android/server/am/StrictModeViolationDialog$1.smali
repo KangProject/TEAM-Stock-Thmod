@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/StrictModeViolationDialog;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .registers 5
     .parameter "msg"
 
     .prologue
@@ -49,14 +49,14 @@
     monitor-enter v0
 
     .line 87
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/am/StrictModeViolationDialog$1;->this$0:Lcom/android/server/am/StrictModeViolationDialog;
 
     invoke-static {v1}, Lcom/android/server/am/StrictModeViolationDialog;->access$000(Lcom/android/server/am/StrictModeViolationDialog;)Lcom/android/server/am/ProcessRecord;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_24
 
     iget-object v1, p0, Lcom/android/server/am/StrictModeViolationDialog$1;->this$0:Lcom/android/server/am/StrictModeViolationDialog;
 
@@ -68,7 +68,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/StrictModeViolationDialog$1;->this$0:Lcom/android/server/am/StrictModeViolationDialog;
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_24
 
     .line 88
     iget-object v1, p0, Lcom/android/server/am/StrictModeViolationDialog$1;->this$0:Lcom/android/server/am/StrictModeViolationDialog;
@@ -82,10 +82,10 @@
     iput-object v2, v1, Lcom/android/server/am/ProcessRecord;->crashDialog:Landroid/app/Dialog;
 
     .line 90
-    :cond_0
+    :cond_24
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_25
+    .catchall {:try_start_7 .. :try_end_25} :catchall_36
 
     .line 91
     iget-object v0, p0, Lcom/android/server/am/StrictModeViolationDialog$1;->this$0:Lcom/android/server/am/StrictModeViolationDialog;
@@ -107,13 +107,13 @@
     return-void
 
     .line 90
-    :catchall_0
+    :catchall_36
     move-exception v1
 
-    :try_start_1
+    :try_start_37
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_38
+    .catchall {:try_start_37 .. :try_end_38} :catchall_36
 
     throw v1
 .end method

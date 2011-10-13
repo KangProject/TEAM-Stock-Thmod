@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/app/admin/DeviceAdminInfo;)V
-    .locals 3
+    .registers 5
     .parameter "_info"
 
     .prologue
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method dump(Ljava/lang/String;Ljava/io/PrintWriter;)V
-    .locals 4
+    .registers 7
     .parameter "prefix"
     .parameter "pw"
 
@@ -95,18 +95,18 @@
 
     .line 167
     .local v1, pols:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/admin/DeviceAdminInfo$PolicyInfo;>;"
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_3c
 
     .line 168
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_0
+    :goto_20
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_0
+    if-ge v0, v2, :cond_3c
 
     .line 169
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -128,11 +128,11 @@
     .line 168
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_20
 
     .line 172
     .end local v0           #i:I
-    :cond_0
+    :cond_3c
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v2, "passwordQuality=0x"
@@ -187,7 +187,7 @@
 .end method
 
 .method getUid()I
-    .locals 1
+    .registers 2
 
     .prologue
     .line 103
@@ -205,7 +205,7 @@
 .end method
 
 .method readFromXml(Lorg/xmlpull/v1/XmlPullParser;)V
-    .locals 9
+    .registers 11
     .parameter "parser"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -228,8 +228,8 @@
 
     .line 137
     .local v0, outerDepth:I
-    :cond_0
-    :goto_0
+    :cond_8
+    :goto_8
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v2
@@ -237,23 +237,23 @@
     .local v2, type:I
     const/4 v3, 0x1
 
-    if-eq v2, v3, :cond_7
+    if-eq v2, v3, :cond_9e
 
-    if-ne v2, v8, :cond_1
+    if-ne v2, v8, :cond_17
 
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v3
 
-    if-le v3, v0, :cond_7
+    if-le v3, v0, :cond_9e
 
     .line 138
-    :cond_1
-    if-eq v2, v8, :cond_0
+    :cond_17
+    if-eq v2, v8, :cond_8
 
     const/4 v3, 0x4
 
-    if-eq v2, v3, :cond_0
+    if-eq v2, v3, :cond_8
 
     .line 141
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -268,7 +268,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_31
 
     .line 143
     iget-object v3, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->info:Landroid/app/admin/DeviceAdminInfo;
@@ -276,20 +276,20 @@
     invoke-virtual {v3, p1}, Landroid/app/admin/DeviceAdminInfo;->readPoliciesFromXml(Lorg/xmlpull/v1/XmlPullParser;)V
 
     .line 159
-    :goto_1
+    :goto_2d
     invoke-static {p1}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    goto :goto_0
+    goto :goto_8
 
     .line 144
-    :cond_2
+    :cond_31
     const-string v3, "password-quality"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_46
 
     .line 145
     const-string v3, "value"
@@ -304,17 +304,17 @@
 
     iput v3, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->passwordQuality:I
 
-    goto :goto_1
+    goto :goto_2d
 
     .line 147
-    :cond_3
+    :cond_46
     const-string v3, "min-password-length"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5b
 
     .line 148
     const-string v3, "value"
@@ -329,17 +329,17 @@
 
     iput v3, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->minimumPasswordLength:I
 
-    goto :goto_1
+    goto :goto_2d
 
     .line 150
-    :cond_4
+    :cond_5b
     const-string v3, "max-time-to-unlock"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_70
 
     .line 151
     const-string v3, "value"
@@ -354,17 +354,17 @@
 
     iput-wide v3, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->maximumTimeToUnlock:J
 
-    goto :goto_1
+    goto :goto_2d
 
     .line 153
-    :cond_5
+    :cond_70
     const-string v3, "max-failed-password-wipe"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_85
 
     .line 154
     const-string v3, "value"
@@ -379,10 +379,10 @@
 
     iput v3, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->maximumFailedPasswordsForWipe:I
 
-    goto :goto_1
+    goto :goto_2d
 
     .line 157
-    :cond_6
+    :cond_85
     const-string v3, "DevicePolicyManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -405,16 +405,16 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_2d
 
     .line 161
     .end local v1           #tag:Ljava/lang/String;
-    :cond_7
+    :cond_9e
     return-void
 .end method
 
 .method writeToXml(Lorg/xmlpull/v1/XmlSerializer;)V
-    .locals 8
+    .registers 10
     .parameter "out"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -453,7 +453,7 @@
     .line 110
     iget v0, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->passwordQuality:I
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_4a
 
     .line 111
     const-string v0, "password-quality"
@@ -479,7 +479,7 @@
     .line 114
     iget v0, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->minimumPasswordLength:I
 
-    if-lez v0, :cond_0
+    if-lez v0, :cond_4a
 
     .line 115
     const-string v0, "min-password-length"
@@ -503,14 +503,14 @@
     invoke-interface {p1, v4, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 120
-    :cond_0
+    :cond_4a
     iget-wide v0, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->maximumTimeToUnlock:J
 
     const-wide/16 v2, 0x0
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_67
 
     .line 121
     const-string v0, "max-time-to-unlock"
@@ -534,10 +534,10 @@
     invoke-interface {p1, v4, v7}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 125
-    :cond_1
+    :cond_67
     iget v0, p0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->maximumFailedPasswordsForWipe:I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_80
 
     .line 126
     const-string v0, "max-failed-password-wipe"
@@ -561,6 +561,6 @@
     invoke-interface {p1, v4, v6}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 130
-    :cond_2
+    :cond_80
     return-void
 .end method

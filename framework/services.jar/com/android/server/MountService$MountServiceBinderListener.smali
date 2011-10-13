@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Landroid/os/storage/IMountServiceListener;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "listener"
 
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 523
@@ -58,7 +58,7 @@
     monitor-enter v0
 
     .line 524
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/MountService$MountServiceBinderListener;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v1}, Lcom/android/server/MountService;->access$1200(Lcom/android/server/MountService;)Ljava/util/ArrayList;
@@ -85,12 +85,12 @@
     return-void
 
     .line 526
-    :catchall_0
+    :catchall_1c
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1e
+    .catchall {:try_start_7 .. :try_end_1e} :catchall_1c
 
     throw v1
 .end method

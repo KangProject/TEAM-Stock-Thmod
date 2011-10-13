@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter "app"
     .parameter "annotation"
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .registers 5
 
     .prologue
     const/4 v3, 0x0

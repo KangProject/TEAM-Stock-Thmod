@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/PowerManagerService;Z)V
-    .locals 1
+    .registers 5
     .parameter "context"
     .parameter "pm"
     .parameter "haveInputMethods"
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 550
@@ -87,7 +87,7 @@
     monitor-enter p0
 
     .line 558
-    :try_start_0
+    :try_start_18
     iput-object v0, p0, Lcom/android/server/WindowManagerService$WMThread;->mService:Lcom/android/server/WindowManagerService;
 
     .line 559
@@ -95,8 +95,8 @@
 
     .line 560
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1e
+    .catchall {:try_start_18 .. :try_end_1e} :catchall_22
 
     .line 562
     invoke-static {}, Landroid/os/Looper;->loop()V
@@ -105,13 +105,13 @@
     return-void
 
     .line 560
-    :catchall_0
+    :catchall_22
     move-exception v1
 
-    :try_start_1
+    :try_start_23
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_24
+    .catchall {:try_start_23 .. :try_end_24} :catchall_22
 
     throw v1
 .end method

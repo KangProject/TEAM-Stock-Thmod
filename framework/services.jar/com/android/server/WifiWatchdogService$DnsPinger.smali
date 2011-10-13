@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 1217
@@ -38,7 +38,7 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 1208
@@ -48,7 +48,7 @@
 .end method
 
 .method private static fillQuery([B)V
-    .locals 5
+    .registers 6
     .parameter "buf"
 
     .prologue
@@ -62,19 +62,19 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_0
+    :goto_5
     array-length v1, p0
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v1, :cond_d
 
     aput-byte v2, p0, v0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1296
-    :cond_0
+    :cond_d
     sget-object v1, Lcom/android/server/WifiWatchdogService$DnsPinger;->sRandom:Ljava/util/Random;
 
     invoke-virtual {v1, v4}, Ljava/util/Random;->nextInt(I)I
@@ -142,7 +142,7 @@
 .end method
 
 .method static isDnsReachable(II)Z
-    .locals 12
+    .registers 14
     .parameter "dns"
     .parameter "timeout"
 
@@ -156,22 +156,22 @@
 
     .line 1222
     .local v6, socket:Ljava/net/DatagramSocket;
-    :try_start_0
+    :try_start_3
     new-instance v7, Ljava/net/DatagramSocket;
 
     invoke-direct {v7}, Ljava/net/DatagramSocket;-><init>()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_4
+    :try_end_8
+    .catchall {:try_start_3 .. :try_end_8} :catchall_87
+    .catch Ljava/net/SocketException; {:try_start_3 .. :try_end_8} :catch_53
+    .catch Ljava/net/UnknownHostException; {:try_start_3 .. :try_end_8} :catch_5c
+    .catch Ljava/net/SocketTimeoutException; {:try_start_3 .. :try_end_8} :catch_65
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_8} :catch_6e
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_8} :catch_77
 
     .line 1225
     .end local v6           #socket:Ljava/net/DatagramSocket;
     .local v7, socket:Ljava/net/DatagramSocket;
-    :try_start_1
+    :try_start_8
     invoke-virtual {v7, p1}, Ljava/net/DatagramSocket;->setSoTimeout(I)V
 
     .line 1227
@@ -260,21 +260,21 @@
     .line 1244
     .local v5, replyPacket:Ljava/net/DatagramPacket;
     invoke-virtual {v7, v5}, Ljava/net/DatagramSocket;->receive(Ljava/net/DatagramPacket;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_9
-    .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_8
-    .catch Ljava/net/SocketTimeoutException; {:try_start_1 .. :try_end_1} :catch_7
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_5
+    :try_end_4b
+    .catchall {:try_start_8 .. :try_end_4b} :catchall_8e
+    .catch Ljava/net/SocketException; {:try_start_8 .. :try_end_4b} :catch_a1
+    .catch Ljava/net/UnknownHostException; {:try_start_8 .. :try_end_4b} :catch_9d
+    .catch Ljava/net/SocketTimeoutException; {:try_start_8 .. :try_end_4b} :catch_99
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_4b} :catch_95
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_4b} :catch_91
 
     .line 1276
-    if-eqz v7, :cond_0
+    if-eqz v7, :cond_50
 
     .line 1277
     invoke-virtual {v7}, Ljava/net/DatagramSocket;->close()V
 
-    :cond_0
+    :cond_50
     move-object v6, v7
 
     .end local v7           #socket:Ljava/net/DatagramSocket;
@@ -287,153 +287,153 @@
     .end local v3           #packet:Ljava/net/DatagramPacket;
     .end local v4           #parts:[B
     .end local v5           #replyPacket:Ljava/net/DatagramPacket;
-    :goto_0
+    :goto_52
     return v8
 
     .line 1249
-    :catch_0
+    :catch_53
     move-exception v8
 
     move-object v2, v8
 
     .line 1276
     .local v2, e:Ljava/net/SocketException;
-    :goto_1
-    if-eqz v6, :cond_1
+    :goto_55
+    if-eqz v6, :cond_5a
 
     .line 1277
     invoke-virtual {v6}, Ljava/net/DatagramSocket;->close()V
 
-    :cond_1
+    :cond_5a
     move v8, v10
 
     .line 1253
-    goto :goto_0
+    goto :goto_52
 
     .line 1255
     .end local v2           #e:Ljava/net/SocketException;
-    :catch_1
+    :catch_5c
     move-exception v8
 
     move-object v2, v8
 
     .line 1276
     .local v2, e:Ljava/net/UnknownHostException;
-    :goto_2
-    if-eqz v6, :cond_2
+    :goto_5e
+    if-eqz v6, :cond_63
 
     .line 1277
     invoke-virtual {v6}, Ljava/net/DatagramSocket;->close()V
 
-    :cond_2
+    :cond_63
     move v8, v10
 
     .line 1259
-    goto :goto_0
+    goto :goto_52
 
     .line 1261
     .end local v2           #e:Ljava/net/UnknownHostException;
-    :catch_2
+    :catch_65
     move-exception v8
 
     move-object v2, v8
 
     .line 1276
     .local v2, e:Ljava/net/SocketTimeoutException;
-    :goto_3
-    if-eqz v6, :cond_3
+    :goto_67
+    if-eqz v6, :cond_6c
 
     .line 1277
     invoke-virtual {v6}, Ljava/net/DatagramSocket;->close()V
 
-    :cond_3
+    :cond_6c
     move v8, v10
 
     .line 1262
-    goto :goto_0
+    goto :goto_52
 
     .line 1264
     .end local v2           #e:Ljava/net/SocketTimeoutException;
-    :catch_3
+    :catch_6e
     move-exception v8
 
     move-object v2, v8
 
     .line 1276
     .local v2, e:Ljava/io/IOException;
-    :goto_4
-    if-eqz v6, :cond_4
+    :goto_70
+    if-eqz v6, :cond_75
 
     .line 1277
     invoke-virtual {v6}, Ljava/net/DatagramSocket;->close()V
 
-    :cond_4
+    :cond_75
     move v8, v10
 
     .line 1268
-    goto :goto_0
+    goto :goto_52
 
     .line 1270
     .end local v2           #e:Ljava/io/IOException;
-    :catch_4
+    :catch_77
     move-exception v8
 
     move-object v2, v8
 
     .line 1272
     .local v2, e:Ljava/lang/Exception;
-    :goto_5
-    :try_start_2
+    :goto_79
+    :try_start_79
     const-string v8, "WifiWatchdogService"
 
     const-string v9, "DnsPinger.isReachable got an unknown exception"
 
     invoke-static {v8, v9, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_80
+    .catchall {:try_start_79 .. :try_end_80} :catchall_87
 
     .line 1276
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_85
 
     .line 1277
     invoke-virtual {v6}, Ljava/net/DatagramSocket;->close()V
 
-    :cond_5
+    :cond_85
     move v8, v10
 
     .line 1274
-    goto :goto_0
+    goto :goto_52
 
     .line 1276
     .end local v2           #e:Ljava/lang/Exception;
-    :catchall_0
+    :catchall_87
     move-exception v8
 
-    :goto_6
-    if-eqz v6, :cond_6
+    :goto_88
+    if-eqz v6, :cond_8d
 
     .line 1277
     invoke-virtual {v6}, Ljava/net/DatagramSocket;->close()V
 
     .line 1276
-    :cond_6
+    :cond_8d
     throw v8
 
     .end local v6           #socket:Ljava/net/DatagramSocket;
     .restart local v7       #socket:Ljava/net/DatagramSocket;
-    :catchall_1
+    :catchall_8e
     move-exception v8
 
     move-object v6, v7
 
     .end local v7           #socket:Ljava/net/DatagramSocket;
     .restart local v6       #socket:Ljava/net/DatagramSocket;
-    goto :goto_6
+    goto :goto_88
 
     .line 1270
     .end local v6           #socket:Ljava/net/DatagramSocket;
     .restart local v7       #socket:Ljava/net/DatagramSocket;
-    :catch_5
+    :catch_91
     move-exception v8
 
     move-object v2, v8
@@ -442,12 +442,12 @@
 
     .end local v7           #socket:Ljava/net/DatagramSocket;
     .restart local v6       #socket:Ljava/net/DatagramSocket;
-    goto :goto_5
+    goto :goto_79
 
     .line 1264
     .end local v6           #socket:Ljava/net/DatagramSocket;
     .restart local v7       #socket:Ljava/net/DatagramSocket;
-    :catch_6
+    :catch_95
     move-exception v8
 
     move-object v2, v8
@@ -456,12 +456,12 @@
 
     .end local v7           #socket:Ljava/net/DatagramSocket;
     .restart local v6       #socket:Ljava/net/DatagramSocket;
-    goto :goto_4
+    goto :goto_70
 
     .line 1261
     .end local v6           #socket:Ljava/net/DatagramSocket;
     .restart local v7       #socket:Ljava/net/DatagramSocket;
-    :catch_7
+    :catch_99
     move-exception v8
 
     move-object v2, v8
@@ -470,12 +470,12 @@
 
     .end local v7           #socket:Ljava/net/DatagramSocket;
     .restart local v6       #socket:Ljava/net/DatagramSocket;
-    goto :goto_3
+    goto :goto_67
 
     .line 1255
     .end local v6           #socket:Ljava/net/DatagramSocket;
     .restart local v7       #socket:Ljava/net/DatagramSocket;
-    :catch_8
+    :catch_9d
     move-exception v8
 
     move-object v2, v8
@@ -484,12 +484,12 @@
 
     .end local v7           #socket:Ljava/net/DatagramSocket;
     .restart local v6       #socket:Ljava/net/DatagramSocket;
-    goto :goto_2
+    goto :goto_5e
 
     .line 1249
     .end local v6           #socket:Ljava/net/DatagramSocket;
     .restart local v7       #socket:Ljava/net/DatagramSocket;
-    :catch_9
+    :catch_a1
     move-exception v8
 
     move-object v2, v8
@@ -498,11 +498,11 @@
 
     .end local v7           #socket:Ljava/net/DatagramSocket;
     .restart local v6       #socket:Ljava/net/DatagramSocket;
-    goto :goto_1
+    goto :goto_55
 .end method
 
 .method private static writeString([BILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "buf"
     .parameter "startPos"
     .parameter "string"
@@ -533,12 +533,12 @@
 
     .end local v2           #pos:I
     .restart local v1       #pos:I
-    :goto_0
+    :goto_c
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-ge v0, v3, :cond_0
+    if-ge v0, v3, :cond_1f
 
     .line 1329
     add-int/lit8 v2, v1, 0x1
@@ -560,9 +560,9 @@
 
     .end local v2           #pos:I
     .restart local v1       #pos:I
-    goto :goto_0
+    goto :goto_c
 
     .line 1331
-    :cond_0
+    :cond_1f
     return-void
 .end method

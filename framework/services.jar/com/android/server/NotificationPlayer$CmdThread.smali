@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/NotificationPlayer;)V
-    .locals 2
+    .registers 4
     .parameter
 
     .prologue
@@ -59,13 +59,13 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .registers 10
 
     .prologue
     const/4 v8, 0x0
 
     .line 160
-    :goto_0
+    :goto_1
     const/4 v1, 0x0
 
     .line 162
@@ -79,7 +79,7 @@
     monitor-enter v5
 
     .line 164
-    :try_start_0
+    :try_start_9
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v4}, Lcom/android/server/NotificationPlayer;->access$400(Lcom/android/server/NotificationPlayer;)Ljava/util/LinkedList;
@@ -98,17 +98,17 @@
 
     .line 165
     monitor-exit v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_18
+    .catchall {:try_start_9 .. :try_end_18} :catchall_3d
 
     .line 167
     iget v4, v1, Lcom/android/server/NotificationPlayer$Command;->code:I
 
-    packed-switch v4, :pswitch_data_0
+    packed-switch v4, :pswitch_data_dc
 
     .line 194
-    :cond_0
-    :goto_1
+    :cond_1d
+    :goto_1d
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v4}, Lcom/android/server/NotificationPlayer;->access$400(Lcom/android/server/NotificationPlayer;)Ljava/util/LinkedList;
@@ -118,7 +118,7 @@
     monitor-enter v4
 
     .line 195
-    :try_start_1
+    :try_start_24
     iget-object v5, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v5}, Lcom/android/server/NotificationPlayer;->access$400(Lcom/android/server/NotificationPlayer;)Ljava/util/LinkedList;
@@ -129,7 +129,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_d5
 
     .line 200
     iget-object v5, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
@@ -145,39 +145,39 @@
 
     .line 202
     monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :try_end_3c
+    .catchall {:try_start_24 .. :try_end_3c} :catchall_d8
 
     return-void
 
     .line 165
-    :catchall_0
+    :catchall_3d
     move-exception v4
 
-    :try_start_2
+    :try_start_3e
     monitor-exit v5
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_3f
+    .catchall {:try_start_3e .. :try_end_3f} :catchall_3d
 
     throw v4
 
     .line 170
-    :pswitch_0
+    :pswitch_40
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v4, v1}, Lcom/android/server/NotificationPlayer;->access$500(Lcom/android/server/NotificationPlayer;Lcom/android/server/NotificationPlayer$Command;)V
 
-    goto :goto_1
+    goto :goto_1d
 
     .line 174
-    :pswitch_1
+    :pswitch_46
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v4}, Lcom/android/server/NotificationPlayer;->access$100(Lcom/android/server/NotificationPlayer;)Landroid/media/MediaPlayer;
 
     move-result-object v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_c8
 
     .line 175
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -194,7 +194,7 @@
 
     cmp-long v4, v2, v4
 
-    if-lez v4, :cond_1
+    if-lez v4, :cond_7e
 
     .line 177
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
@@ -230,7 +230,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 179
-    :cond_1
+    :cond_7e
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v4}, Lcom/android/server/NotificationPlayer;->access$100(Lcom/android/server/NotificationPlayer;)Landroid/media/MediaPlayer;
@@ -274,7 +274,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1d
 
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
@@ -292,7 +292,7 @@
 
     sget-object v5, Ljava/lang/Thread$State;->TERMINATED:Ljava/lang/Thread$State;
 
-    if-eq v4, v5, :cond_0
+    if-eq v4, v5, :cond_1d
 
     .line 186
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
@@ -303,11 +303,11 @@
 
     invoke-virtual {v4}, Landroid/os/Looper;->quit()V
 
-    goto/16 :goto_1
+    goto/16 :goto_1d
 
     .line 189
     .end local v2           #delay:J
-    :cond_2
+    :cond_c8
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CmdThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v4}, Lcom/android/server/NotificationPlayer;->access$200(Lcom/android/server/NotificationPlayer;)Ljava/lang/String;
@@ -318,30 +318,30 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_1d
 
     .line 204
-    :cond_3
-    :try_start_3
+    :cond_d5
+    :try_start_d5
     monitor-exit v4
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    :catchall_1
+    :catchall_d8
     move-exception v5
 
     monitor-exit v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_da
+    .catchall {:try_start_d5 .. :try_end_da} :catchall_d8
 
     throw v5
 
     .line 167
     nop
 
-    :pswitch_data_0
+    :pswitch_data_dc
     .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
+        :pswitch_40
+        :pswitch_46
     .end packed-switch
 .end method

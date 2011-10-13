@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/BackupManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onRemoveCompleted(Ljava/lang/String;Z)V
-    .locals 3
+    .registers 6
     .parameter "packageName"
     .parameter "succeeded"
 
@@ -48,7 +48,7 @@
     monitor-enter v0
 
     .line 1182
-    :try_start_0
+    :try_start_5
     iget-object v1, p0, Lcom/android/server/BackupManagerService$ClearDataObserver;->this$0:Lcom/android/server/BackupManagerService;
 
     const/4 v2, 0x0
@@ -69,12 +69,12 @@
     return-void
 
     .line 1184
-    :catchall_0
+    :catchall_13
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_15
+    .catchall {:try_start_5 .. :try_end_15} :catchall_13
 
     throw v1
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -40,13 +40,13 @@
 
 # virtual methods
 .method public run()V
-    .locals 8
+    .registers 9
 
     .prologue
     const-string v7, "MountService"
 
     .line 718
-    :try_start_0
+    :try_start_2
     iget-object v2, p0, Lcom/android/server/MountService$3;->this$0:Lcom/android/server/MountService;
 
     iget-object v3, p0, Lcom/android/server/MountService$3;->val$path:Ljava/lang/String;
@@ -56,7 +56,7 @@
     move-result v1
 
     .local v1, rc:I
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_21
 
     .line 719
     const-string v2, "MountService"
@@ -80,17 +80,17 @@
     move-result-object v3
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_21
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_21} :catch_22
 
     .line 724
     .end local v1           #rc:I
-    :cond_0
-    :goto_0
+    :cond_21
+    :goto_21
     return-void
 
     .line 721
-    :catch_0
+    :catch_22
     move-exception v2
 
     move-object v0, v2
@@ -103,5 +103,5 @@
 
     invoke-static {v7, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_21
 .end method

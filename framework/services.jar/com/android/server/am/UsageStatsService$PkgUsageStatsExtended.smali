@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/UsageStatsService;)V
-    .locals 2
+    .registers 4
     .parameter
 
     .prologue
@@ -71,7 +71,7 @@
 .end method
 
 .method constructor <init>(Lcom/android/server/am/UsageStatsService;Landroid/os/Parcel;)V
-    .locals 6
+    .registers 9
     .parameter
     .parameter "in"
 
@@ -112,8 +112,8 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_0
-    if-ge v2, v0, :cond_0
+    :goto_1d
+    if-ge v2, v0, :cond_30
 
     .line 166
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -135,19 +135,19 @@
     .line 165
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_0
+    goto :goto_1d
 
     .line 171
     .end local v1           #comp:Ljava/lang/String;
     .end local v3           #times:Lcom/android/server/am/UsageStatsService$TimeStats;
-    :cond_0
+    :cond_30
     return-void
 .end method
 
 
 # virtual methods
 .method addLaunchCount(Ljava/lang/String;)V
-    .locals 2
+    .registers 4
     .parameter "comp"
 
     .prologue
@@ -162,7 +162,7 @@
 
     .line 187
     .local v0, times:Lcom/android/server/am/UsageStatsService$TimeStats;
-    if-nez v0, :cond_0
+    if-nez v0, :cond_14
 
     .line 188
     new-instance v0, Lcom/android/server/am/UsageStatsService$TimeStats;
@@ -177,7 +177,7 @@
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 191
-    :cond_0
+    :cond_14
     invoke-virtual {v0}, Lcom/android/server/am/UsageStatsService$TimeStats;->incCount()V
 
     .line 192
@@ -185,7 +185,7 @@
 .end method
 
 .method addLaunchTime(Ljava/lang/String;I)V
-    .locals 2
+    .registers 5
     .parameter "comp"
     .parameter "millis"
 
@@ -201,7 +201,7 @@
 
     .line 196
     .local v0, times:Lcom/android/server/am/UsageStatsService$TimeStats;
-    if-nez v0, :cond_0
+    if-nez v0, :cond_14
 
     .line 197
     new-instance v0, Lcom/android/server/am/UsageStatsService$TimeStats;
@@ -216,7 +216,7 @@
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 200
-    :cond_0
+    :cond_14
     invoke-virtual {v0, p2}, Lcom/android/server/am/UsageStatsService$TimeStats;->add(I)V
 
     .line 201
@@ -224,7 +224,7 @@
 .end method
 
 .method clear()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 218
@@ -247,7 +247,7 @@
 .end method
 
 .method updatePause()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 181
@@ -275,12 +275,12 @@
 .end method
 
 .method updateResume(Z)V
-    .locals 2
+    .registers 4
     .parameter "launched"
 
     .prologue
     .line 174
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_8
 
     .line 175
     iget v0, p0, Lcom/android/server/am/UsageStatsService$PkgUsageStatsExtended;->mLaunchCount:I
@@ -290,7 +290,7 @@
     iput v0, p0, Lcom/android/server/am/UsageStatsService$PkgUsageStatsExtended;->mLaunchCount:I
 
     .line 177
-    :cond_0
+    :cond_8
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -302,7 +302,7 @@
 .end method
 
 .method writeToParcel(Landroid/os/Parcel;)V
-    .locals 6
+    .registers 8
     .parameter "out"
 
     .prologue
@@ -328,7 +328,7 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 208
-    if-lez v0, :cond_0
+    if-lez v0, :cond_3e
 
     .line 209
     iget-object v4, p0, Lcom/android/server/am/UsageStatsService$PkgUsageStatsExtended;->mLaunchTimes:Ljava/util/HashMap;
@@ -343,12 +343,12 @@
 
     .end local p0
     .local v2, i$:Ljava/util/Iterator;
-    :goto_0
+    :goto_1f
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_3e
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -377,12 +377,12 @@
     .local v3, times:Lcom/android/server/am/UsageStatsService$TimeStats;
     invoke-virtual {v3, p1}, Lcom/android/server/am/UsageStatsService$TimeStats;->writeToParcel(Landroid/os/Parcel;)V
 
-    goto :goto_0
+    goto :goto_1f
 
     .line 215
     .end local v1           #ent:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/am/UsageStatsService$TimeStats;>;"
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #times:Lcom/android/server/am/UsageStatsService$TimeStats;
-    :cond_0
+    :cond_3e
     return-void
 .end method

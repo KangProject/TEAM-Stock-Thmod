@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;I)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "m"
 
@@ -53,7 +53,7 @@
 .end method
 
 .method private finishAnimationLocked(ZI)V
-    .locals 2
+    .registers 5
     .parameter "more"
     .parameter "curIntValue"
 
@@ -62,16 +62,16 @@
     iput-boolean p1, p0, Lcom/android/server/PowerManagerService$BrightnessState;->animating:Z
 
     .line 2047
-    if-nez p1, :cond_0
+    if-nez p1, :cond_16
 
     .line 2048
     iget v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->mask:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_16
 
-    if-nez p2, :cond_0
+    if-nez p2, :cond_16
 
     .line 2049
     iget-object v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
@@ -85,14 +85,14 @@
     invoke-static {v0, v1}, Lcom/android/server/PowerManagerService;->access$4300(Lcom/android/server/PowerManagerService;I)I
 
     .line 2052
-    :cond_0
+    :cond_16
     return-void
 .end method
 
 
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 2
+    .registers 5
     .parameter "pw"
     .parameter "prefix"
 
@@ -165,7 +165,7 @@
 .end method
 
 .method jumpToTargetLocked()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 2038
@@ -201,7 +201,7 @@
 .end method
 
 .method public run()V
-    .locals 9
+    .registers 10
 
     .prologue
     const/4 v8, 0x0
@@ -211,7 +211,7 @@
 
     iget-boolean v4, v4, Lcom/android/server/PowerManagerService;->mAnimateScreenLights:Z
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2f
 
     .line 2056
     iget-object v4, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
@@ -223,7 +223,7 @@
     monitor-enter v4
 
     .line 2057
-    :try_start_0
+    :try_start_e
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -242,7 +242,7 @@
 
     .line 2059
     .local v1, more:Z
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2a
 
     .line 2060
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
@@ -258,27 +258,27 @@
     invoke-virtual {v5, p0, v6, v7}, Landroid/os/Handler;->postAtTime(Ljava/lang/Runnable;J)Z
 
     .line 2062
-    :cond_0
+    :cond_2a
     monitor-exit v4
 
     .line 2077
     .end local v1           #more:Z
     .end local v2           #now:J
-    :goto_0
+    :goto_2b
     return-void
 
     .line 2062
-    :catchall_0
+    :catchall_2c
     move-exception v5
 
     monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2e
+    .catchall {:try_start_e .. :try_end_2e} :catchall_2c
 
     throw v5
 
     .line 2064
-    :cond_1
+    :cond_2f
     iget-object v4, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v4}, Lcom/android/server/PowerManagerService;->access$500(Lcom/android/server/PowerManagerService;)Lcom/android/server/PowerManagerService$LockList;
@@ -288,14 +288,14 @@
     monitor-enter v4
 
     .line 2066
-    :try_start_1
+    :try_start_36
     iget-boolean v5, p0, Lcom/android/server/PowerManagerService$BrightnessState;->animating:Z
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_5f
 
     iget v5, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_5f
 
     const/4 v5, 0x1
 
@@ -303,8 +303,8 @@
 
     .line 2067
     .local v0, animate:Z
-    :goto_1
-    if-eqz v0, :cond_2
+    :goto_40
+    if-eqz v0, :cond_51
 
     .line 2070
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
@@ -317,15 +317,15 @@
 
     const/4 v7, 0x4
 
-    if-ne v6, v7, :cond_4
+    if-ne v6, v7, :cond_61
 
     move v6, v8
 
-    :goto_2
+    :goto_4e
     invoke-static {v5, v6}, Lcom/android/server/PowerManagerService;->access$4500(Lcom/android/server/PowerManagerService;I)V
 
     .line 2074
-    :cond_2
+    :cond_51
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v5}, Lcom/android/server/PowerManagerService;->access$4400(Lcom/android/server/PowerManagerService;)Lcom/android/server/PowerManagerService$BrightnessState;
@@ -337,41 +337,41 @@
     .line 2075
     monitor-exit v4
 
-    goto :goto_0
+    goto :goto_2b
 
     .end local v0           #animate:Z
-    :catchall_1
+    :catchall_5c
     move-exception v5
 
     monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :try_end_5e
+    .catchall {:try_start_36 .. :try_end_5e} :catchall_5c
 
     throw v5
 
-    :cond_3
+    :cond_5f
     move v0, v8
 
     .line 2066
-    goto :goto_1
+    goto :goto_40
 
     .line 2070
     .restart local v0       #animate:Z
-    :cond_4
-    :try_start_2
+    :cond_61
+    :try_start_61
     iget-object v6, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v6}, Lcom/android/server/PowerManagerService;->access$1700(Lcom/android/server/PowerManagerService;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_66
+    .catchall {:try_start_61 .. :try_end_66} :catchall_5c
 
     move-result v6
 
-    goto :goto_2
+    goto :goto_4e
 .end method
 
 .method setTargetLocked(IIII)V
-    .locals 3
+    .registers 8
     .parameter "target"
     .parameter "stepsToTarget"
     .parameter "initialValue"
@@ -383,7 +383,7 @@
     .line 1981
     iget-boolean v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->initialized:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2c
 
     .line 1982
     iput-boolean v2, p0, Lcom/android/server/PowerManagerService$BrightnessState;->initialized:Z
@@ -394,7 +394,7 @@
     iput v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->curValue:F
 
     .line 1987
-    :cond_0
+    :cond_a
     iput p1, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
 
     .line 1988
@@ -402,11 +402,11 @@
 
     int-to-float v0, v0
 
-    if-ltz p4, :cond_2
+    if-ltz p4, :cond_31
 
     int-to-float v1, p4
 
-    :goto_0
+    :goto_12
     sub-float/2addr v0, v1
 
     int-to-float v1, p2
@@ -437,26 +437,26 @@
     invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 2005
-    :goto_1
+    :goto_2b
     return-void
 
     .line 1984
-    :cond_1
+    :cond_2c
     iget v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
 
-    if-ne v0, p1, :cond_0
+    if-ne v0, p1, :cond_a
 
-    goto :goto_1
+    goto :goto_2b
 
     .line 1988
-    :cond_2
+    :cond_31
     iget v1, p0, Lcom/android/server/PowerManagerService$BrightnessState;->curValue:F
 
-    goto :goto_0
+    goto :goto_12
 .end method
 
 .method stepLocked()Z
-    .locals 5
+    .registers 6
 
     .prologue
     const/4 v4, 0x0
@@ -464,16 +464,16 @@
     .line 2008
     iget-boolean v2, p0, Lcom/android/server/PowerManagerService$BrightnessState;->animating:Z
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_7
 
     const/4 v2, 0x0
 
     .line 2033
-    :goto_0
+    :goto_6
     return v2
 
     .line 2013
-    :cond_0
+    :cond_7
     iget v2, p0, Lcom/android/server/PowerManagerService$BrightnessState;->curValue:F
 
     iget v3, p0, Lcom/android/server/PowerManagerService$BrightnessState;->delta:F
@@ -497,7 +497,7 @@
 
     cmpl-float v2, v2, v4
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_2a
 
     .line 2017
     iget v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
@@ -510,8 +510,8 @@
     const/4 v1, 0x0
 
     .line 2031
-    :cond_1
-    :goto_1
+    :cond_1e
+    :goto_1e
     iget-object v2, p0, Lcom/android/server/PowerManagerService$BrightnessState;->this$0:Lcom/android/server/PowerManagerService;
 
     iget v3, p0, Lcom/android/server/PowerManagerService$BrightnessState;->mask:I
@@ -524,20 +524,20 @@
     move v2, v1
 
     .line 2033
-    goto :goto_0
+    goto :goto_6
 
     .line 2019
-    :cond_2
+    :cond_2a
     iget v2, p0, Lcom/android/server/PowerManagerService$BrightnessState;->delta:F
 
     cmpl-float v2, v2, v4
 
-    if-lez v2, :cond_3
+    if-lez v2, :cond_3b
 
     .line 2020
     iget v2, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
 
-    if-lt v0, v2, :cond_1
+    if-lt v0, v2, :cond_1e
 
     .line 2021
     iget v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
@@ -549,13 +549,13 @@
     .line 2022
     const/4 v1, 0x0
 
-    goto :goto_1
+    goto :goto_1e
 
     .line 2025
-    :cond_3
+    :cond_3b
     iget v2, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
 
-    if-gt v0, v2, :cond_1
+    if-gt v0, v2, :cond_1e
 
     .line 2026
     iget v0, p0, Lcom/android/server/PowerManagerService$BrightnessState;->targetValue:I
@@ -567,5 +567,5 @@
     .line 2027
     const/4 v1, 0x0
 
-    goto :goto_1
+    goto :goto_1e
 .end method

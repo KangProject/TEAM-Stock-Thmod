@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkManagementService$NetdCallbackReceiver;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 195

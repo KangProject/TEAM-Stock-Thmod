@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiWatchdogService;)V
-    .locals 1
+    .registers 3
     .parameter
 
     .prologue
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 969
@@ -51,7 +51,7 @@
     monitor-enter v0
 
     .line 972
-    :try_start_0
+    :try_start_6
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogThread;->this$0:Lcom/android/server/WifiWatchdogService;
 
     new-instance v2, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;
@@ -71,8 +71,8 @@
 
     .line 976
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_19
+    .catchall {:try_start_6 .. :try_end_19} :catchall_1d
 
     .line 979
     invoke-static {}, Landroid/os/Looper;->loop()V
@@ -81,13 +81,13 @@
     return-void
 
     .line 976
-    :catchall_0
+    :catchall_1d
     move-exception v1
 
-    :try_start_1
+    :try_start_1e
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_1f
+    .catchall {:try_start_1e .. :try_end_1f} :catchall_1d
 
     throw v1
 .end method

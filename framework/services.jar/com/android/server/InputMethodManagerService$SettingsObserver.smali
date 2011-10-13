@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;Landroid/os/Handler;)V
-    .locals 3
+    .registers 6
     .parameter
     .parameter "handler"
 
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 2
+    .registers 4
     .parameter "selfChange"
 
     .prologue
@@ -69,7 +69,7 @@
     monitor-enter v0
 
     .line 306
-    :try_start_0
+    :try_start_5
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/InputMethodManagerService;->updateFromSettingsLocked()V
@@ -81,12 +81,12 @@
     return-void
 
     .line 307
-    :catchall_0
+    :catchall_c
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_e
+    .catchall {:try_start_5 .. :try_end_e} :catchall_c
 
     throw v1
 .end method

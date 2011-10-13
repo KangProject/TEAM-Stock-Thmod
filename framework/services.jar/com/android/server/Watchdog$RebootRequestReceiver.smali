@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/Watchdog;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .registers 8
     .parameter "c"
     .parameter "intent"
 
@@ -55,11 +55,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_a8
 
     move v1, v4
 
-    :goto_0
+    :goto_e
     iput-boolean v1, v0, Lcom/android/server/Watchdog;->mReqRebootNoWait:Z
 
     .line 156
@@ -139,11 +139,11 @@
 
     iget-boolean v2, v2, Lcom/android/server/Watchdog;->mReqRebootNoWait:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_ab
 
     move v2, v4
 
-    :goto_1
+    :goto_58
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -230,15 +230,15 @@
     .line 167
     return-void
 
-    :cond_0
+    :cond_a8
     move v1, v3
 
     .line 155
-    goto/16 :goto_0
+    goto/16 :goto_e
 
-    :cond_1
+    :cond_ab
     move v2, v3
 
     .line 162
-    goto :goto_1
+    goto :goto_58
 .end method

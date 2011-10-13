@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityStack;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .registers 11
     .parameter "context"
     .parameter "intent"
 
@@ -57,7 +57,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_56
 
     .line 3612
     iget-object v3, p0, Lcom/android/server/am/ActivityStack$ScreenStatusReceiver;->this$0:Lcom/android/server/am/ActivityStack;
@@ -77,7 +77,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_56
 
     .line 3614
     iget-object v3, p0, Lcom/android/server/am/ActivityStack$ScreenStatusReceiver;->this$0:Lcom/android/server/am/ActivityStack;
@@ -92,7 +92,7 @@
 
     .line 3615
     .local v2, top:I
-    if-ltz v2, :cond_0
+    if-ltz v2, :cond_56
 
     .line 3616
     new-instance v0, Landroid/content/Intent;
@@ -123,7 +123,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_57
 
     .line 3619
     const-string v3, "SCREEN_IDLE"
@@ -131,7 +131,7 @@
     invoke-virtual {v0, v7, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     .line 3623
-    :goto_0
+    :goto_4f
     iget-object v3, p0, Lcom/android/server/am/ActivityStack$ScreenStatusReceiver;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityStack;->mContext:Landroid/content/Context;
@@ -142,17 +142,17 @@
     .end local v0           #StkIntent:Landroid/content/Intent;
     .end local v1           #p:Lcom/android/server/am/ActivityRecord;
     .end local v2           #top:I
-    :cond_0
+    :cond_56
     return-void
 
     .line 3621
     .restart local v0       #StkIntent:Landroid/content/Intent;
     .restart local v1       #p:Lcom/android/server/am/ActivityRecord;
     .restart local v2       #top:I
-    :cond_1
+    :cond_57
     const-string v3, "SCREEN_IDLE"
 
     invoke-virtual {v0, v7, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    goto :goto_0
+    goto :goto_4f
 .end method

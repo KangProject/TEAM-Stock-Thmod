@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ProcessRecord;ILandroid/app/IApplicationThread;)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter "app"
     .parameter "pid"
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 944
@@ -66,7 +66,7 @@
     monitor-enter v0
 
     .line 945
-    :try_start_0
+    :try_start_3
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$AppDeathRecipient;->mApp:Lcom/android/server/am/ProcessRecord;
@@ -84,12 +84,12 @@
     return-void
 
     .line 946
-    :catchall_0
+    :catchall_10
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_12
+    .catchall {:try_start_3 .. :try_end_12} :catchall_10
 
     throw v1
 .end method

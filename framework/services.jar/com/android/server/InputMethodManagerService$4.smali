@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 4
+    .registers 7
     .parameter "dialog"
     .parameter "which"
 
@@ -51,12 +51,12 @@
     monitor-enter v1
 
     .line 1570
-    :try_start_0
+    :try_start_5
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
     iget-object v2, v2, Lcom/android/server/InputMethodManagerService;->mIms:[Landroid/view/inputmethod/InputMethodInfo;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_12
 
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -64,18 +64,18 @@
 
     array-length v2, v2
 
-    if-gt v2, p2, :cond_1
+    if-gt v2, p2, :cond_14
 
     .line 1571
-    :cond_0
+    :cond_12
     monitor-exit v1
 
     .line 1579
-    :goto_0
+    :goto_13
     return-void
 
     .line 1573
-    :cond_1
+    :cond_14
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
     iget-object v2, v2, Lcom/android/server/InputMethodManagerService;->mIms:[Landroid/view/inputmethod/InputMethodInfo;
@@ -89,7 +89,7 @@
     invoke-virtual {v2}, Lcom/android/server/InputMethodManagerService;->hideInputMethodMenu()V
 
     .line 1575
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_2a
 
     .line 1576
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
@@ -101,18 +101,18 @@
     invoke-virtual {v2, v3}, Lcom/android/server/InputMethodManagerService;->setInputMethodLocked(Ljava/lang/String;)V
 
     .line 1578
-    :cond_2
+    :cond_2a
     monitor-exit v1
 
-    goto :goto_0
+    goto :goto_13
 
     .end local v0           #im:Landroid/view/inputmethod/InputMethodInfo;
-    :catchall_0
+    :catchall_2c
     move-exception v2
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2e
+    .catchall {:try_start_5 .. :try_end_2e} :catchall_2c
 
     throw v2
 .end method

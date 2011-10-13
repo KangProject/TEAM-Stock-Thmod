@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkManagementService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onDaemonConnected()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 192
@@ -58,7 +58,7 @@
 .end method
 
 .method public onEvent(ILjava/lang/String;[Ljava/lang/String;)Z
-    .locals 7
+    .registers 11
     .parameter "code"
     .parameter "raw"
     .parameter "cooked"
@@ -77,12 +77,12 @@
     .line 199
     const/16 v0, 0x258
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_7b
 
     .line 206
     array-length v0, p3
 
-    if-lt v0, v6, :cond_0
+    if-lt v0, v6, :cond_16
 
     aget-object v0, p3, v4
 
@@ -92,10 +92,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_26
 
     .line 207
-    :cond_0
+    :cond_16
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Invalid event from daemon (%s)"
@@ -113,7 +113,7 @@
     throw v0
 
     .line 210
-    :cond_1
+    :cond_26
     aget-object v0, p3, v2
 
     const-string v1, "added"
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_39
 
     .line 211
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$NetdCallbackReceiver;->this$0:Lcom/android/server/NetworkManagementService;
@@ -134,11 +134,11 @@
     move v0, v4
 
     .line 223
-    :goto_0
+    :goto_38
     return v0
 
     .line 213
-    :cond_2
+    :cond_39
     aget-object v0, p3, v2
 
     const-string v1, "removed"
@@ -147,7 +147,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4c
 
     .line 214
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$NetdCallbackReceiver;->this$0:Lcom/android/server/NetworkManagementService;
@@ -159,10 +159,10 @@
     move v0, v4
 
     .line 215
-    goto :goto_0
+    goto :goto_38
 
     .line 216
-    :cond_3
+    :cond_4c
     aget-object v0, p3, v2
 
     const-string v1, "changed"
@@ -171,13 +171,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_6b
 
     array-length v0, p3
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_4
+    if-ne v0, v1, :cond_6b
 
     .line 217
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$NetdCallbackReceiver;->this$0:Lcom/android/server/NetworkManagementService;
@@ -197,10 +197,10 @@
     move v0, v4
 
     .line 218
-    goto :goto_0
+    goto :goto_38
 
     .line 220
-    :cond_4
+    :cond_6b
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Invalid event from daemon (%s)"
@@ -217,9 +217,9 @@
 
     throw v0
 
-    :cond_5
+    :cond_7b
     move v0, v3
 
     .line 223
-    goto :goto_0
+    goto :goto_38
 .end method

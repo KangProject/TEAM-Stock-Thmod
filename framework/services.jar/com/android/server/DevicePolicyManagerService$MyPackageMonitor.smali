@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/DevicePolicyManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onSomePackagesChanged()V
-    .locals 9
+    .registers 10
 
     .prologue
     const-string v5, "DevicePolicyManagerService"
@@ -50,7 +50,7 @@
 
     .line 187
     .local v4, removed:Z
-    :try_start_0
+    :try_start_6
     iget-object v6, p0, Lcom/android/server/DevicePolicyManagerService$MyPackageMonitor;->this$0:Lcom/android/server/DevicePolicyManagerService;
 
     iget-object v6, v6, Lcom/android/server/DevicePolicyManagerService;->mAdminList:Ljava/util/ArrayList;
@@ -64,8 +64,8 @@
     sub-int v3, v6, v7
 
     .local v3, i:I
-    :goto_0
-    if-ltz v3, :cond_3
+    :goto_11
+    if-ltz v3, :cond_a1
 
     .line 188
     iget-object v6, p0, Lcom/android/server/DevicePolicyManagerService$MyPackageMonitor;->this$0:Lcom/android/server/DevicePolicyManagerService;
@@ -94,14 +94,14 @@
     .local v1, change:I
     const/4 v6, 0x3
 
-    if-eq v1, v6, :cond_0
+    if-eq v1, v6, :cond_2d
 
     const/4 v6, 0x2
 
-    if-ne v1, v6, :cond_2
+    if-ne v1, v6, :cond_56
 
     .line 192
-    :cond_0
+    :cond_2d
     const-string v6, "DevicePolicyManagerService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -141,14 +141,14 @@
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 187
-    :cond_1
-    :goto_1
+    :cond_53
+    :goto_53
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_0
+    goto :goto_11
 
     .line 196
-    :cond_2
+    :cond_56
     iget-object v6, v0, Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;->info:Landroid/app/admin/DeviceAdminInfo;
 
     invoke-virtual {v6}, Landroid/app/admin/DeviceAdminInfo;->getPackageName()Ljava/lang/String;
@@ -156,15 +156,15 @@
     move-result-object v6
 
     invoke-virtual {p0, v6}, Lcom/android/server/DevicePolicyManagerService$MyPackageMonitor;->isPackageModified(Ljava/lang/String;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_5f
+    .catchall {:try_start_6 .. :try_end_5f} :catchall_9e
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_53
 
     .line 198
-    :try_start_1
+    :try_start_62
     iget-object v6, p0, Lcom/android/server/DevicePolicyManagerService$MyPackageMonitor;->this$0:Lcom/android/server/DevicePolicyManagerService;
 
     iget-object v6, v6, Lcom/android/server/DevicePolicyManagerService;->mContext:Landroid/content/Context;
@@ -182,21 +182,21 @@
     const/4 v8, 0x0
 
     invoke-virtual {v6, v7, v8}, Landroid/content/pm/PackageManager;->getReceiverInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ActivityInfo;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_74
+    .catchall {:try_start_62 .. :try_end_74} :catchall_9e
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_62 .. :try_end_74} :catch_75
 
-    goto :goto_1
+    goto :goto_53
 
     .line 200
-    :catch_0
+    :catch_75
     move-exception v6
 
     move-object v2, v6
 
     .line 201
     .local v2, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :try_start_2
+    :try_start_77
     const-string v6, "DevicePolicyManagerService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -235,38 +235,38 @@
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    goto :goto_1
+    goto :goto_53
 
     .line 211
     .end local v0           #aa:Lcom/android/server/DevicePolicyManagerService$ActiveAdmin;
     .end local v1           #change:I
     .end local v2           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v3           #i:I
-    :catchall_0
+    :catchall_9e
     move-exception v6
 
     monitor-exit v5
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_a0
+    .catchall {:try_start_77 .. :try_end_a0} :catchall_9e
 
     throw v6
 
     .line 208
     .restart local v3       #i:I
-    :cond_3
-    if-eqz v4, :cond_4
+    :cond_a1
+    if-eqz v4, :cond_a8
 
     .line 209
-    :try_start_3
+    :try_start_a3
     iget-object v6, p0, Lcom/android/server/DevicePolicyManagerService$MyPackageMonitor;->this$0:Lcom/android/server/DevicePolicyManagerService;
 
     invoke-virtual {v6}, Lcom/android/server/DevicePolicyManagerService;->validatePasswordOwnerLocked()V
 
     .line 211
-    :cond_4
+    :cond_a8
     monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_a9
+    .catchall {:try_start_a3 .. :try_end_a9} :catchall_9e
 
     .line 212
     return-void

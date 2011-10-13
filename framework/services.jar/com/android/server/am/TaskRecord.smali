@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(ILandroid/content/pm/ActivityInfo;Landroid/content/Intent;Z)V
-    .locals 1
+    .registers 6
     .parameter "_taskId"
     .parameter "info"
     .parameter "_intent"
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 6
+    .registers 9
     .parameter "pw"
     .parameter "prefix"
 
@@ -76,18 +76,18 @@
     .line 89
     iget-boolean v1, p0, Lcom/android/server/am/TaskRecord;->clearOnBackground:Z
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_12
 
     iget v1, p0, Lcom/android/server/am/TaskRecord;->numActivities:I
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_12
 
     iget-boolean v1, p0, Lcom/android/server/am/TaskRecord;->rootWasReset:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_33
 
     .line 90
-    :cond_0
+    :cond_12
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "clearOnBackground="
@@ -117,10 +117,10 @@
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
     .line 94
-    :cond_1
+    :cond_33
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinity:Ljava/lang/String;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_44
 
     .line 95
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -134,10 +134,10 @@
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 97
-    :cond_2
+    :cond_44
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_64
 
     .line 98
     new-instance v0, Ljava/lang/StringBuilder;
@@ -169,10 +169,10 @@
 
     .line 104
     .end local v0           #sb:Ljava/lang/StringBuilder;
-    :cond_3
+    :cond_64
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinityIntent:Landroid/content/Intent;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_84
 
     .line 105
     new-instance v0, Ljava/lang/StringBuilder;
@@ -204,10 +204,10 @@
 
     .line 111
     .end local v0           #sb:Ljava/lang/StringBuilder;
-    :cond_4
+    :cond_84
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->origActivity:Landroid/content/ComponentName;
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_99
 
     .line 112
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -226,10 +226,10 @@
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 115
-    :cond_5
+    :cond_99
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_ae
 
     .line 116
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -248,7 +248,7 @@
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 119
-    :cond_6
+    :cond_ae
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "lastActiveTime="
@@ -284,7 +284,7 @@
 .end method
 
 .method getInactiveDuration()J
-    .locals 4
+    .registers 5
 
     .prologue
     .line 54
@@ -300,7 +300,7 @@
 .end method
 
 .method setIntent(Landroid/content/Intent;Landroid/content/pm/ActivityInfo;)V
-    .locals 5
+    .registers 8
     .parameter "_intent"
     .parameter "info"
 
@@ -313,29 +313,29 @@
     .line 60
     iget-object v2, p2, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_28
 
     .line 61
     iput-object p1, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     .line 62
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_26
 
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v2
 
-    :goto_0
+    :goto_f
     iput-object v2, p0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     .line 63
     iput-object v4, p0, Lcom/android/server/am/TaskRecord;->origActivity:Landroid/content/ComponentName;
 
     .line 80
-    :goto_1
+    :goto_13
     iget-object v2, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_25
 
     iget-object v2, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
@@ -347,7 +347,7 @@
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_25
 
     .line 84
     const/4 v2, 0x1
@@ -355,17 +355,17 @@
     iput-boolean v2, p0, Lcom/android/server/am/TaskRecord;->rootWasReset:Z
 
     .line 86
-    :cond_0
+    :cond_25
     return-void
 
-    :cond_1
+    :cond_26
     move-object v2, v4
 
     .line 62
-    goto :goto_0
+    goto :goto_f
 
     .line 65
-    :cond_2
+    :cond_28
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v2, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -376,7 +376,7 @@
 
     .line 67
     .local v0, targetComponent:Landroid/content/ComponentName;
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_46
 
     .line 68
     new-instance v1, Landroid/content/Intent;
@@ -400,11 +400,11 @@
 
     iput-object v2, p0, Lcom/android/server/am/TaskRecord;->origActivity:Landroid/content/ComponentName;
 
-    goto :goto_1
+    goto :goto_13
 
     .line 74
     .end local v1           #targetIntent:Landroid/content/Intent;
-    :cond_3
+    :cond_46
     iput-object v4, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     .line 75
@@ -421,27 +421,27 @@
 
     iput-object v2, p0, Lcom/android/server/am/TaskRecord;->origActivity:Landroid/content/ComponentName;
 
-    goto :goto_1
+    goto :goto_13
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 125
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->stringName:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_7
 
     .line 126
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->stringName:Ljava/lang/String;
 
     .line 146
-    :goto_0
+    :goto_6
     return-object v1
 
     .line 128
-    :cond_0
+    :cond_7
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
@@ -478,7 +478,7 @@
     .line 133
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinity:Ljava/lang/String;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_42
 
     .line 134
     const-string v1, " A "
@@ -491,7 +491,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 145
-    :goto_1
+    :goto_36
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -503,13 +503,13 @@
 
     iput-object v1, p0, Lcom/android/server/am/TaskRecord;->stringName:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_6
 
     .line 136
-    :cond_1
+    :cond_42
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_59
 
     .line 137
     const-string v1, " I "
@@ -529,13 +529,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    goto :goto_36
 
     .line 139
-    :cond_2
+    :cond_59
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinityIntent:Landroid/content/Intent;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_70
 
     .line 140
     const-string v1, " aI "
@@ -555,19 +555,19 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    goto :goto_36
 
     .line 143
-    :cond_3
+    :cond_70
     const-string v1, " ??"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    goto :goto_36
 .end method
 
 .method touchActiveTime()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 50

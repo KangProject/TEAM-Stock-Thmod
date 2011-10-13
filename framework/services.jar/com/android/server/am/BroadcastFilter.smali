@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/IntentFilter;Lcom/android/server/am/ReceiverList;Ljava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter "_filter"
     .parameter "_receiverList"
     .parameter "_requiredPermission"
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 1
+    .registers 4
     .parameter "pw"
     .parameter "prefix"
 
@@ -55,7 +55,7 @@
 .end method
 
 .method public dumpBrief(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter "pw"
     .parameter "prefix"
 
@@ -68,7 +68,7 @@
 .end method
 
 .method dumpBroadcastFilterState(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 1
+    .registers 4
     .parameter "pw"
     .parameter "prefix"
 
@@ -76,7 +76,7 @@
     .line 52
     iget-object v0, p0, Lcom/android/server/am/BroadcastFilter;->requiredPermission:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_11
 
     .line 53
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -90,12 +90,12 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 55
-    :cond_0
+    :cond_11
     return-void
 .end method
 
 .method public dumpInReceiverList(Ljava/io/PrintWriter;Landroid/util/Printer;Ljava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter "pw"
     .parameter "pr"
     .parameter "prefix"
@@ -112,7 +112,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 58

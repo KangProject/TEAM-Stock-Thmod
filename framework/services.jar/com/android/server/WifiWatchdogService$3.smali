@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .registers 3
 
     .prologue
     .line 1131
@@ -34,7 +34,7 @@
 
     sput-object v0, Lcom/android/server/WifiWatchdogService$3;->$SwitchMap$android$net$NetworkInfo$State:[I
 
-    :try_start_0
+    :try_start_9
     sget-object v0, Lcom/android/server/WifiWatchdogService$3;->$SwitchMap$android$net$NetworkInfo$State:[I
 
     sget-object v1, Landroid/net/NetworkInfo$State;->CONNECTED:Landroid/net/NetworkInfo$State;
@@ -46,11 +46,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
 
-    :goto_0
-    :try_start_1
+    :goto_14
+    :try_start_14
     sget-object v0, Lcom/android/server/WifiWatchdogService$3;->$SwitchMap$android$net$NetworkInfo$State:[I
 
     sget-object v1, Landroid/net/NetworkInfo$State;->DISCONNECTED:Landroid/net/NetworkInfo$State;
@@ -62,19 +62,19 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
 
-    :goto_1
+    :goto_1f
     return-void
 
-    :catch_0
+    :catch_20
     move-exception v0
 
-    goto :goto_1
+    goto :goto_1f
 
-    :catch_1
+    :catch_22
     move-exception v0
 
-    goto :goto_0
+    goto :goto_14
 .end method

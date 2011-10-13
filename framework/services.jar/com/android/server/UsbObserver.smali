@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 40
@@ -73,7 +73,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+    .registers 3
     .parameter "context"
 
     .prologue
@@ -130,7 +130,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/server/UsbObserver;)Ljava/util/ArrayList;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -141,7 +141,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/UsbObserver;)Ljava/util/ArrayList;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -152,7 +152,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/server/UsbObserver;)Landroid/content/Context;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -163,7 +163,7 @@
 .end method
 
 .method static synthetic access$300()Ljava/lang/String;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 39
@@ -173,7 +173,7 @@
 .end method
 
 .method static synthetic access$400(Lcom/android/server/UsbObserver;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -184,7 +184,7 @@
 .end method
 
 .method private final init()V
-    .locals 12
+    .registers 13
 
     .prologue
     const/16 v9, 0x400
@@ -196,7 +196,7 @@
 
     .line 119
     .local v0, buffer:[C
-    :try_start_0
+    :try_start_6
     new-instance v2, Ljava/io/FileReader;
 
     const-string v9, "/sys/class/switch/usb_configuration/state"
@@ -236,15 +236,15 @@
     iput v9, p0, Lcom/android/server/UsbObserver;->mUsbConfig:I
 
     iput v9, p0, Lcom/android/server/UsbObserver;->mPreviousUsbConfig:I
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    :try_end_2a
+    .catch Ljava/io/FileNotFoundException; {:try_start_6 .. :try_end_2a} :catch_71
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_2a} :catch_7b
 
     .line 130
     .end local v2           #file:Ljava/io/FileReader;
     .end local v6           #len:I
-    :goto_0
-    :try_start_1
+    :goto_2a
+    :try_start_2a
     new-instance v9, Ljava/io/File;
 
     const-string v10, "/sys/class/usb_composite"
@@ -260,10 +260,10 @@
     const/4 v5, 0x0
 
     .local v5, i:I
-    :goto_1
+    :goto_36
     array-length v9, v3
 
-    if-ge v5, v9, :cond_1
+    if-ge v5, v9, :cond_94
 
     .line 132
     new-instance v2, Ljava/io/File;
@@ -322,21 +322,21 @@
     .local v4, functionName:Ljava/lang/String;
     const/4 v9, 0x1
 
-    if-ne v8, v9, :cond_0
+    if-ne v8, v9, :cond_85
 
     .line 138
     iget-object v9, p0, Lcom/android/server/UsbObserver;->mEnabledFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_1
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+    :try_end_6e
+    .catch Ljava/io/FileNotFoundException; {:try_start_2a .. :try_end_6e} :catch_8b
+    .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_6e} :catch_95
 
     .line 131
-    :goto_2
+    :goto_6e
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1
+    goto :goto_36
 
     .line 123
     .end local v2           #file:Ljava/io/File;
@@ -346,7 +346,7 @@
     .end local v6           #len:I
     .end local v7           #reader:Ljava/io/FileReader;
     .end local v8           #value:I
-    :catch_0
+    :catch_71
     move-exception v9
 
     move-object v1, v9
@@ -359,11 +359,11 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_2a
 
     .line 125
     .end local v1           #e:Ljava/io/FileNotFoundException;
-    :catch_1
+    :catch_7b
     move-exception v9
 
     move-object v1, v9
@@ -376,7 +376,7 @@
 
     invoke-static {v9, v11, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_2a
 
     .line 140
     .end local v1           #e:Ljava/lang/Exception;
@@ -387,16 +387,16 @@
     .restart local v6       #len:I
     .restart local v7       #reader:Ljava/io/FileReader;
     .restart local v8       #value:I
-    :cond_0
-    :try_start_2
+    :cond_85
+    :try_start_85
     iget-object v9, p0, Lcom/android/server/UsbObserver;->mDisabledFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_2
-    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
+    :try_end_8a
+    .catch Ljava/io/FileNotFoundException; {:try_start_85 .. :try_end_8a} :catch_8b
+    .catch Ljava/lang/Exception; {:try_start_85 .. :try_end_8a} :catch_95
 
-    goto :goto_2
+    goto :goto_6e
 
     .line 143
     .end local v2           #file:Ljava/io/File;
@@ -406,7 +406,7 @@
     .end local v6           #len:I
     .end local v7           #reader:Ljava/io/FileReader;
     .end local v8           #value:I
-    :catch_2
+    :catch_8b
     move-exception v9
 
     move-object v1, v9
@@ -421,12 +421,12 @@
 
     .line 148
     .end local v1           #e:Ljava/io/FileNotFoundException;
-    :cond_1
-    :goto_3
+    :cond_94
+    :goto_94
     return-void
 
     .line 145
-    :catch_3
+    :catch_95
     move-exception v9
 
     move-object v1, v9
@@ -439,11 +439,11 @@
 
     invoke-static {v9, v11, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_3
+    goto :goto_94
 .end method
 
 .method private final update()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 158
@@ -460,7 +460,7 @@
 
 # virtual methods
 .method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
-    .locals 9
+    .registers 11
     .parameter "event"
 
     .prologue
@@ -473,7 +473,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    if-eqz v6, :cond_25
 
     .line 74
     sget-object v6, Lcom/android/server/UsbObserver;->TAG:Ljava/lang/String;
@@ -503,25 +503,25 @@
     invoke-static {v6, v7}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 77
-    :cond_0
+    :cond_25
     monitor-enter p0
 
     .line 78
-    :try_start_0
+    :try_start_26
     const-string v6, "SWITCH_STATE"
 
     invoke-virtual {p1, v6}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2b
+    .catchall {:try_start_26 .. :try_end_2b} :catchall_60
 
     move-result-object v5
 
     .line 79
     .local v5, switchState:Ljava/lang/String;
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_63
 
     .line 81
-    :try_start_1
+    :try_start_2e
     invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v4
@@ -530,7 +530,7 @@
     .local v4, newConfig:I
     iget v6, p0, Lcom/android/server/UsbObserver;->mUsbConfig:I
 
-    if-eq v4, v6, :cond_1
+    if-eq v4, v6, :cond_43
 
     .line 83
     iget v6, p0, Lcom/android/server/UsbObserver;->mUsbConfig:I
@@ -543,26 +543,26 @@
     .line 86
     iget-boolean v6, p0, Lcom/android/server/UsbObserver;->mSystemReady:Z
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_43
 
     .line 87
     invoke-direct {p0}, Lcom/android/server/UsbObserver;->update()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_43
+    .catchall {:try_start_2e .. :try_end_43} :catchall_60
+    .catch Ljava/lang/NumberFormatException; {:try_start_2e .. :try_end_43} :catch_45
 
     .line 113
     .end local v4           #newConfig:I
-    :cond_1
-    :goto_0
-    :try_start_2
+    :cond_43
+    :goto_43
+    :try_start_43
     monitor-exit p0
 
     .line 114
     return-void
 
     .line 90
-    :catch_0
+    :catch_45
     move-exception v6
 
     move-object v0, v6
@@ -591,24 +591,24 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_43
 
     .line 113
     .end local v0           #e:Ljava/lang/NumberFormatException;
     .end local v5           #switchState:Ljava/lang/String;
-    :catchall_0
+    :catchall_60
     move-exception v6
 
     monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_62
+    .catchall {:try_start_43 .. :try_end_62} :catchall_60
 
     throw v6
 
     .line 94
     .restart local v5       #switchState:Ljava/lang/String;
-    :cond_2
-    :try_start_3
+    :cond_63
+    :try_start_63
     const-string v6, "FUNCTION"
 
     invoke-virtual {p1, v6}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -625,9 +625,9 @@
 
     .line 96
     .local v2, enabledStr:Ljava/lang/String;
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_43
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_43
 
     .line 99
     const-string v6, "1"
@@ -638,7 +638,7 @@
 
     .line 100
     .local v1, enabled:Z
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_8e
 
     .line 101
     iget-object v6, p0, Lcom/android/server/UsbObserver;->mEnabledFunctions:Ljava/util/ArrayList;
@@ -647,7 +647,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_88
 
     .line 102
     iget-object v6, p0, Lcom/android/server/UsbObserver;->mEnabledFunctions:Ljava/util/ArrayList;
@@ -655,22 +655,22 @@
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 104
-    :cond_3
+    :cond_88
     iget-object v6, p0, Lcom/android/server/UsbObserver;->mDisabledFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_43
 
     .line 106
-    :cond_4
+    :cond_8e
     iget-object v6, p0, Lcom/android/server/UsbObserver;->mDisabledFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_5
+    if-nez v6, :cond_9b
 
     .line 107
     iget-object v6, p0, Lcom/android/server/UsbObserver;->mDisabledFunctions:Ljava/util/ArrayList;
@@ -678,25 +678,25 @@
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 109
-    :cond_5
+    :cond_9b
     iget-object v6, p0, Lcom/android/server/UsbObserver;->mEnabledFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_a0
+    .catchall {:try_start_63 .. :try_end_a0} :catchall_60
 
-    goto :goto_0
+    goto :goto_43
 .end method
 
 .method systemReady()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 151
     monitor-enter p0
 
     .line 152
-    :try_start_0
+    :try_start_1
     invoke-direct {p0}, Lcom/android/server/UsbObserver;->update()V
 
     .line 153
@@ -711,12 +711,12 @@
     return-void
 
     .line 154
-    :catchall_0
+    :catchall_9
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_b
+    .catchall {:try_start_1 .. :try_end_b} :catchall_9
 
     throw v0
 .end method

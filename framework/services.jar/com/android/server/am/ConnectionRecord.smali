@@ -21,7 +21,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/AppBindRecord;Lcom/android/server/am/ActivityRecord;Landroid/app/IServiceConnection;IILandroid/app/PendingIntent;)V
-    .locals 0
+    .registers 7
     .parameter "_binding"
     .parameter "_activity"
     .parameter "_conn"
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 2
+    .registers 5
     .parameter "pw"
     .parameter "prefix"
 
@@ -93,7 +93,7 @@
     .line 38
     iget-object v0, p0, Lcom/android/server/am/ConnectionRecord;->activity:Lcom/android/server/am/ActivityRecord;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3c
 
     .line 39
     new-instance v0, Ljava/lang/StringBuilder;
@@ -123,7 +123,7 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 41
-    :cond_0
+    :cond_3c
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -175,23 +175,23 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 57
     iget-object v1, p0, Lcom/android/server/am/ConnectionRecord;->stringName:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_7
 
     .line 58
     iget-object v1, p0, Lcom/android/server/am/ConnectionRecord;->stringName:Ljava/lang/String;
 
     .line 68
-    :goto_0
+    :goto_6
     return-object v1
 
     .line 60
-    :cond_0
+    :cond_7
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
@@ -263,5 +263,5 @@
 
     iput-object v1, p0, Lcom/android/server/am/ConnectionRecord;->stringName:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_6
 .end method

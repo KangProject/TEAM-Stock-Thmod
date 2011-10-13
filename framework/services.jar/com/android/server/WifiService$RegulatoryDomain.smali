@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/WifiService;)V
-    .locals 11
+    .registers 13
     .parameter
 
     .prologue
@@ -369,8 +369,8 @@
     const/4 v3, 0x0
 
     .local v3, i$:I
-    :goto_0
-    if-ge v3, v4, :cond_0
+    :goto_121
+    if-ge v3, v4, :cond_12d
 
     aget-object v5, v0, v3
 
@@ -383,16 +383,16 @@
     .line 2629
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_0
+    goto :goto_121
 
     .line 2632
     .end local v5           #mcc:Ljava/lang/String;
-    :cond_0
+    :cond_12d
     return-void
 .end method
 
 .method private getMccChannels()I
-    .locals 6
+    .registers 7
 
     .prologue
     const-string v5, "WifiService"
@@ -404,13 +404,13 @@
     .local v0, channels:I
     iget-object v3, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2c
 
     invoke-static {}, Lcom/android/server/WifiService;->access$4100()[I
 
     move-result-object v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2c
 
     .line 2700
     iget-object v3, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mTelephonyManager:Landroid/telephony/TelephonyManager;
@@ -421,7 +421,7 @@
 
     .line 2701
     .local v2, plmn:Ljava/lang/String;
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_25
 
     const-string v3, ""
 
@@ -429,7 +429,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_25
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -437,10 +437,10 @@
 
     const/4 v4, 0x5
 
-    if-ge v3, v4, :cond_2
+    if-ge v3, v4, :cond_2d
 
     .line 2702
-    :cond_0
+    :cond_25
     const-string v3, "WifiService"
 
     const-string v3, "Could not get PLMN!"
@@ -449,13 +449,13 @@
 
     .line 2712
     .end local v2           #plmn:Ljava/lang/String;
-    :cond_1
-    :goto_0
+    :cond_2c
+    :goto_2c
     return v0
 
     .line 2704
     .restart local v2       #plmn:Ljava/lang/String;
-    :cond_2
+    :cond_2d
     const-string v3, "WifiService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -489,7 +489,7 @@
 
     .line 2706
     .local v1, mcc:Ljava/lang/String;
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2c
 
     .line 2707
     iget-object v3, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mHighChannelMap:Ljava/util/HashMap;
@@ -498,25 +498,25 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_59
 
     const/16 v3, 0xd
 
     move v0, v3
 
-    :goto_1
-    goto :goto_0
+    :goto_58
+    goto :goto_2c
 
-    :cond_3
+    :cond_59
     const/16 v3, 0xb
 
     move v0, v3
 
-    goto :goto_1
+    goto :goto_58
 .end method
 
 .method private isValidChannel(I)Z
-    .locals 5
+    .registers 7
     .parameter "channel"
 
     .prologue
@@ -536,33 +536,33 @@
     const/4 v1, 0x0
 
     .local v1, i$:I
-    :goto_0
-    if-ge v1, v3, :cond_0
+    :goto_7
+    if-ge v1, v3, :cond_e
 
     aget v4, v0, v1
 
     .line 2729
     .local v4, validChan:I
-    if-ne v4, p1, :cond_1
+    if-ne v4, p1, :cond_f
 
     .line 2730
     const/4 v2, 0x1
 
     .line 2734
     .end local v4           #validChan:I
-    :cond_0
+    :cond_e
     return v2
 
     .line 2728
     .restart local v4       #validChan:I
-    :cond_1
+    :cond_f
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_7
 .end method
 
 .method private sendChannelMessage(IZ)Z
-    .locals 5
+    .registers 8
     .parameter "channels"
     .parameter "persist"
 
@@ -578,7 +578,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3b
 
     .line 2717
     const-string v0, "WifiService"
@@ -615,11 +615,11 @@
 
     const/16 v1, 0x8
 
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_39
 
     move v2, v4
 
-    :goto_0
+    :goto_30
     invoke-static {v0, v1, p1, v2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object v0
@@ -629,33 +629,33 @@
     move v0, v4
 
     .line 2723
-    :goto_1
+    :goto_38
     return v0
 
-    :cond_0
+    :cond_39
     move v2, v3
 
     .line 2719
-    goto :goto_0
+    goto :goto_30
 
-    :cond_1
+    :cond_3b
     move v0, v3
 
     .line 2723
-    goto :goto_1
+    goto :goto_38
 .end method
 
 .method private declared-synchronized startHysteresisTimer()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 2738
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     iget-boolean v2, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mHysteresisTimerStarted:Z
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_27
 
     .line 2739
     iget-object v2, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mHysteresisAlarmManager:Landroid/app/AlarmManager;
@@ -694,18 +694,18 @@
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mHysteresisTimerStarted:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_27
+    .catchall {:try_start_1 .. :try_end_27} :catchall_29
 
     .line 2745
     .end local v0           #timeout:J
-    :cond_0
+    :cond_27
     monitor-exit p0
 
     return-void
 
     .line 2738
-    :catchall_0
+    :catchall_29
     move-exception v2
 
     monitor-exit p0
@@ -714,13 +714,13 @@
 .end method
 
 .method private declared-synchronized stopHysteresisTimer()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 2748
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     iget-object v0, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mHysteresisAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v1, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mHysteresisIntent:Landroid/app/PendingIntent;
@@ -731,8 +731,8 @@
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/WifiService$RegulatoryDomain;->mHysteresisTimerStarted:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_b
+    .catchall {:try_start_1 .. :try_end_b} :catchall_d
 
     .line 2750
     monitor-exit p0
@@ -740,7 +740,7 @@
     return-void
 
     .line 2748
-    :catchall_0
+    :catchall_d
     move-exception v0
 
     monitor-exit p0
@@ -751,7 +751,7 @@
 
 # virtual methods
 .method setChannels(IZ)Z
-    .locals 1
+    .registers 4
     .parameter "channels"
     .parameter "persist"
 
@@ -761,13 +761,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_12
 
     invoke-direct {p0}, Lcom/android/server/WifiService$RegulatoryDomain;->getMccChannels()I
 
     move-result v0
 
-    if-gt p1, v0, :cond_0
+    if-gt p1, v0, :cond_12
 
     .line 2687
     const/4 v0, 0x1
@@ -777,17 +777,17 @@
     move-result v0
 
     .line 2689
-    :goto_0
+    :goto_11
     return v0
 
-    :cond_0
+    :cond_12
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_11
 .end method
 
 .method stop()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 2671
@@ -802,7 +802,7 @@
 .end method
 
 .method updateChannels(Z)V
-    .locals 4
+    .registers 6
     .parameter "force"
 
     .prologue
@@ -823,36 +823,36 @@
 
     .line 2653
     .local v1, mccChannels:I
-    if-le v1, v0, :cond_0
+    if-le v1, v0, :cond_11
 
     .line 2654
     invoke-direct {p0, v1, v3}, Lcom/android/server/WifiService$RegulatoryDomain;->sendChannelMessage(IZ)Z
 
     .line 2664
-    :goto_0
+    :goto_10
     return-void
 
     .line 2655
-    :cond_0
-    if-ge v1, v0, :cond_2
+    :cond_11
+    if-ge v1, v0, :cond_1d
 
     .line 2656
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_19
 
     .line 2657
     invoke-direct {p0, v1, v3}, Lcom/android/server/WifiService$RegulatoryDomain;->sendChannelMessage(IZ)Z
 
-    goto :goto_0
+    goto :goto_10
 
     .line 2659
-    :cond_1
+    :cond_19
     invoke-direct {p0}, Lcom/android/server/WifiService$RegulatoryDomain;->startHysteresisTimer()V
 
-    goto :goto_0
+    goto :goto_10
 
     .line 2662
-    :cond_2
+    :cond_1d
     invoke-direct {p0, v1, v3}, Lcom/android/server/WifiService$RegulatoryDomain;->sendChannelMessage(IZ)Z
 
-    goto :goto_0
+    goto :goto_10
 .end method

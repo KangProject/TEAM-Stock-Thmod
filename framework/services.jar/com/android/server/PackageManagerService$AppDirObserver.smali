@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/PackageManagerService;Ljava/lang/String;IZ)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter "path"
     .parameter "mask"
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
-    .locals 19
+    .registers 22
     .parameter "event"
     .parameter "path"
 
@@ -91,10 +91,10 @@
 
     .line 4447
     .local v5, fullPath:Ljava/io/File;
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_26
 
     .line 4448
-    :try_start_0
+    :try_start_13
     new-instance v15, Ljava/io/File;
 
     move-object/from16 v0, p0
@@ -110,16 +110,16 @@
     move-object/from16 v2, p2
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_21
+    .catchall {:try_start_13 .. :try_end_21} :catchall_36
 
     .line 4449
     .end local v5           #fullPath:Ljava/io/File;
     .local v15, fullPath:Ljava/io/File;
-    :try_start_1
+    :try_start_21
     invoke-virtual {v15}, Ljava/io/File;->getPath()Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_4
+    :try_end_24
+    .catchall {:try_start_21 .. :try_end_24} :catchall_11b
 
     move-result-object v16
 
@@ -128,55 +128,55 @@
     .line 4456
     .end local v15           #fullPath:Ljava/io/File;
     .restart local v5       #fullPath:Ljava/io/File;
-    :cond_0
-    :try_start_2
+    :cond_26
+    :try_start_26
     invoke-static/range {p2 .. p2}, Lcom/android/server/PackageManagerService;->access$1800(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_2e
 
     .line 4459
     monitor-exit v14
 
     .line 4517
     .end local v5           #fullPath:Ljava/io/File;
-    :cond_1
-    :goto_0
+    :cond_2d
+    :goto_2d
     return-void
 
     .line 4464
     .restart local v5       #fullPath:Ljava/io/File;
-    :cond_2
+    :cond_2e
     invoke-static/range {v16 .. v16}, Lcom/android/server/PackageManagerService;->access$1900(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_39
 
     .line 4465
     monitor-exit v14
 
-    goto :goto_0
+    goto :goto_2d
 
     .line 4502
-    :catchall_0
+    :catchall_36
     move-exception v4
 
-    :goto_1
+    :goto_37
     monitor-exit v14
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_38
+    .catchall {:try_start_26 .. :try_end_38} :catchall_36
 
     throw v4
 
     .line 4467
-    :cond_3
+    :cond_39
     const/4 v8, 0x0
 
     .line 4468
     .local v8, p:Landroid/content/pm/PackageParser$Package;
-    :try_start_3
+    :try_start_3a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/PackageManagerService$AppDirObserver;->this$0:Lcom/android/server/PackageManagerService;
@@ -186,11 +186,11 @@
     iget-object v4, v4, Lcom/android/server/PackageManagerService;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_42
+    .catchall {:try_start_3a .. :try_end_42} :catchall_36
 
     .line 4469
-    :try_start_4
+    :try_start_42
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/PackageManagerService$AppDirObserver;->this$0:Lcom/android/server/PackageManagerService;
@@ -215,8 +215,8 @@
 
     .line 4470
     monitor-exit v4
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_55
+    .catchall {:try_start_42 .. :try_end_55} :catchall_10d
 
     .line 4471
     move/from16 v0, p1
@@ -225,13 +225,13 @@
 
     move v4, v0
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_75
 
     .line 4472
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_75
 
     .line 4473
-    :try_start_5
+    :try_start_5e
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/PackageManagerService$AppDirObserver;->this$0:Lcom/android/server/PackageManagerService;
@@ -261,17 +261,17 @@
     move/from16 v18, v0
 
     .line 4479
-    :cond_4
+    :cond_75
     move/from16 v0, p1
 
     and-int/lit16 v0, v0, 0x88
 
     move v4, v0
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_c2
 
     .line 4480
-    if-nez v8, :cond_5
+    if-nez v8, :cond_c2
 
     .line 4481
     move-object/from16 v0, p0
@@ -286,11 +286,11 @@
 
     move v6, v0
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_110
 
     const/16 v6, 0x41
 
-    :goto_2
+    :goto_8c
     or-int/lit8 v6, v6, 0x2
 
     or-int/lit8 v6, v6, 0x4
@@ -308,7 +308,7 @@
 
     .line 4488
     .restart local v8       #p:Landroid/content/pm/PackageParser$Package;
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_c2
 
     .line 4489
     move-object/from16 v0, p0
@@ -320,11 +320,11 @@
     iget-object v4, v4, Lcom/android/server/PackageManagerService;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v4
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_a4
+    .catchall {:try_start_5e .. :try_end_a4} :catchall_36
 
     .line 4490
-    :try_start_6
+    :try_start_a4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/PackageManagerService$AppDirObserver;->this$0:Lcom/android/server/PackageManagerService;
@@ -339,11 +339,11 @@
 
     move-result v9
 
-    if-lez v9, :cond_8
+    if-lez v9, :cond_113
 
     const/4 v9, 0x1
 
-    :goto_3
+    :goto_b4
     const/4 v10, 0x0
 
     const/4 v11, 0x0
@@ -352,11 +352,11 @@
 
     .line 4492
     monitor-exit v4
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+    :try_end_ba
+    .catchall {:try_start_a4 .. :try_end_ba} :catchall_115
 
     .line 4493
-    :try_start_7
+    :try_start_ba
     iget-object v4, v8, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v12, v4, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -367,7 +367,7 @@
     iget v13, v4, Landroid/content/pm/ApplicationInfo;->uid:I
 
     .line 4499
-    :cond_5
+    :cond_c2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/PackageManagerService$AppDirObserver;->this$0:Lcom/android/server/PackageManagerService;
@@ -377,11 +377,11 @@
     iget-object v4, v4, Lcom/android/server/PackageManagerService;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v4
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    :try_end_ca
+    .catchall {:try_start_ba .. :try_end_ca} :catchall_36
 
     .line 4500
-    :try_start_8
+    :try_start_ca
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/PackageManagerService$AppDirObserver;->this$0:Lcom/android/server/PackageManagerService;
@@ -394,17 +394,17 @@
 
     .line 4501
     monitor-exit v4
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_3
+    :try_end_d5
+    .catchall {:try_start_ca .. :try_end_d5} :catchall_118
 
     .line 4502
-    :try_start_9
+    :try_start_d5
     monitor-exit v14
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+    :try_end_d6
+    .catchall {:try_start_d5 .. :try_end_d6} :catchall_36
 
     .line 4504
-    if-eqz v17, :cond_6
+    if-eqz v17, :cond_f8
 
     .line 4505
     new-instance v14, Landroid/os/Bundle;
@@ -450,8 +450,8 @@
 
     .line 4511
     .end local v14           #extras:Landroid/os/Bundle;
-    :cond_6
-    if-eqz v12, :cond_1
+    :cond_f8
+    if-eqz v12, :cond_2d
 
     .line 4512
     new-instance v14, Landroid/os/Bundle;
@@ -473,74 +473,74 @@
 
     invoke-static {v4, v12, v14, v5}, Lcom/android/server/PackageManagerService;->access$600(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Landroid/content/IIntentReceiver;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_2d
 
     .line 4470
     .end local v14           #extras:Landroid/os/Bundle;
     .restart local v5       #fullPath:Ljava/io/File;
-    :catchall_1
+    :catchall_10d
     move-exception v6
 
-    :try_start_a
+    :try_start_10e
     monitor-exit v4
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_1
+    :try_end_10f
+    .catchall {:try_start_10e .. :try_end_10f} :catchall_10d
 
-    :try_start_b
+    :try_start_10f
     throw v6
-    :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_0
+    :try_end_110
+    .catchall {:try_start_10f .. :try_end_110} :catchall_36
 
     .line 4481
-    :cond_7
+    :cond_110
     const/4 v6, 0x0
 
-    goto/16 :goto_2
+    goto/16 :goto_8c
 
     .line 4490
-    :cond_8
+    :cond_113
     const/4 v9, 0x0
 
-    goto :goto_3
+    goto :goto_b4
 
     .line 4492
-    :catchall_2
+    :catchall_115
     move-exception v6
 
-    :try_start_c
+    :try_start_116
     monitor-exit v4
-    :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_2
+    :try_end_117
+    .catchall {:try_start_116 .. :try_end_117} :catchall_115
 
-    :try_start_d
+    :try_start_117
     throw v6
-    :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_0
+    :try_end_118
+    .catchall {:try_start_117 .. :try_end_118} :catchall_36
 
     .line 4501
-    :catchall_3
+    :catchall_118
     move-exception v6
 
-    :try_start_e
+    :try_start_119
     monitor-exit v4
-    :try_end_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_3
+    :try_end_11a
+    .catchall {:try_start_119 .. :try_end_11a} :catchall_118
 
-    :try_start_f
+    :try_start_11a
     throw v6
-    :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_0
+    :try_end_11b
+    .catchall {:try_start_11a .. :try_end_11b} :catchall_36
 
     .line 4502
     .end local v5           #fullPath:Ljava/io/File;
     .end local v8           #p:Landroid/content/pm/PackageParser$Package;
     .restart local v15       #fullPath:Ljava/io/File;
-    :catchall_4
+    :catchall_11b
     move-exception v4
 
     move-object v5, v15
 
     .end local v15           #fullPath:Ljava/io/File;
     .restart local v5       #fullPath:Ljava/io/File;
-    goto/16 :goto_1
+    goto/16 :goto_37
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public enter()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 756
@@ -64,7 +64,7 @@
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
-    .locals 4
+    .registers 6
     .parameter "message"
 
     .prologue
@@ -100,18 +100,18 @@
     .local v0, retValue:Z
     iget v1, p1, Landroid/os/Message;->what:I
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v1, :pswitch_data_4e
 
     .line 776
-    :pswitch_0
+    :pswitch_20
     const/4 v0, 0x0
 
     .line 779
-    :goto_0
+    :goto_21
     return v0
 
     .line 767
-    :pswitch_1
+    :pswitch_22
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$InitialState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/4 v2, 0x0
@@ -144,10 +144,10 @@
 
     invoke-static {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$1300(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/HierarchicalState;)V
 
-    goto :goto_0
+    goto :goto_21
 
     .line 773
-    :pswitch_2
+    :pswitch_42
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$InitialState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$InitialState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -158,13 +158,13 @@
 
     invoke-static {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$1500(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/HierarchicalState;)V
 
-    goto :goto_0
+    goto :goto_21
 
     .line 765
-    :pswitch_data_0
+    :pswitch_data_4e
     .packed-switch 0x2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_2
+        :pswitch_22
+        :pswitch_20
+        :pswitch_42
     .end packed-switch
 .end method

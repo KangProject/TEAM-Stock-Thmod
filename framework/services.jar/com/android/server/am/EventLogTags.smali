@@ -85,7 +85,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 11
@@ -95,7 +95,7 @@
 .end method
 
 .method public static writeActivityLaunchTime(ILjava/lang/String;J)V
-    .locals 4
+    .registers 8
     .parameter "token"
     .parameter "componentName"
     .parameter "time"
@@ -135,7 +135,7 @@
 .end method
 
 .method public static writeAmAnr(ILjava/lang/String;ILjava/lang/String;)V
-    .locals 4
+    .registers 8
     .parameter "pid"
     .parameter "packageName"
     .parameter "flags"
@@ -180,7 +180,7 @@
 .end method
 
 .method public static writeAmBroadcastDiscardApp(ILjava/lang/String;ILjava/lang/String;)V
-    .locals 4
+    .registers 8
     .parameter "broadcast"
     .parameter "action"
     .parameter "receiverNumber"
@@ -225,7 +225,7 @@
 .end method
 
 .method public static writeAmBroadcastDiscardFilter(ILjava/lang/String;II)V
-    .locals 4
+    .registers 8
     .parameter "broadcast"
     .parameter "action"
     .parameter "receiverNumber"
@@ -274,7 +274,7 @@
 .end method
 
 .method public static writeAmCrash(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 4
+    .registers 11
     .parameter "pid"
     .parameter "processName"
     .parameter "flags"
@@ -338,7 +338,7 @@
 .end method
 
 .method public static writeAmCreateActivity(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 4
+    .registers 11
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -402,7 +402,7 @@
 .end method
 
 .method public static writeAmCreateService(ILjava/lang/String;Ljava/lang/String;I)V
-    .locals 4
+    .registers 8
     .parameter "serviceRecord"
     .parameter "name"
     .parameter "intent"
@@ -447,7 +447,7 @@
 .end method
 
 .method public static writeAmCreateTask(I)V
-    .locals 1
+    .registers 2
     .parameter "taskId"
 
     .prologue
@@ -461,7 +461,7 @@
 .end method
 
 .method public static writeAmDestroyActivity(IILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -501,7 +501,7 @@
 .end method
 
 .method public static writeAmDestroyService(ILjava/lang/String;I)V
-    .locals 4
+    .registers 7
     .parameter "serviceRecord"
     .parameter "name"
     .parameter "pid"
@@ -541,7 +541,7 @@
 .end method
 
 .method public static writeAmDropProcess(I)V
-    .locals 1
+    .registers 2
     .parameter "pid"
 
     .prologue
@@ -555,7 +555,7 @@
 .end method
 
 .method public static writeAmFailedToPause(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "token"
     .parameter "wantingToPause"
     .parameter "currentlyPausing"
@@ -591,7 +591,7 @@
 .end method
 
 .method public static writeAmFinishActivity(IILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .registers 8
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -636,7 +636,7 @@
 .end method
 
 .method public static writeAmKill(ILjava/lang/String;ILjava/lang/String;)V
-    .locals 4
+    .registers 8
     .parameter "pid"
     .parameter "processName"
     .parameter "oomadj"
@@ -681,7 +681,7 @@
 .end method
 
 .method public static writeAmLowMemory(I)V
-    .locals 1
+    .registers 2
     .parameter "numProcesses"
 
     .prologue
@@ -695,7 +695,7 @@
 .end method
 
 .method public static writeAmNewIntent(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 4
+    .registers 11
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -759,7 +759,7 @@
 .end method
 
 .method public static writeAmOnPausedCalled(Ljava/lang/String;)V
-    .locals 1
+    .registers 2
     .parameter "componentName"
 
     .prologue
@@ -773,7 +773,7 @@
 .end method
 
 .method public static writeAmOnResumeCalled(Ljava/lang/String;)V
-    .locals 1
+    .registers 2
     .parameter "componentName"
 
     .prologue
@@ -787,7 +787,7 @@
 .end method
 
 .method public static writeAmPauseActivity(ILjava/lang/String;)V
-    .locals 4
+    .registers 6
     .parameter "token"
     .parameter "componentName"
 
@@ -818,7 +818,7 @@
 .end method
 
 .method public static writeAmProcBad(ILjava/lang/String;)V
-    .locals 4
+    .registers 6
     .parameter "uid"
     .parameter "processName"
 
@@ -849,7 +849,7 @@
 .end method
 
 .method public static writeAmProcBound(ILjava/lang/String;)V
-    .locals 4
+    .registers 6
     .parameter "pid"
     .parameter "processName"
 
@@ -880,7 +880,7 @@
 .end method
 
 .method public static writeAmProcDied(ILjava/lang/String;)V
-    .locals 4
+    .registers 6
     .parameter "pid"
     .parameter "processName"
 
@@ -911,7 +911,7 @@
 .end method
 
 .method public static writeAmProcGood(ILjava/lang/String;)V
-    .locals 4
+    .registers 6
     .parameter "uid"
     .parameter "processName"
 
@@ -942,7 +942,7 @@
 .end method
 
 .method public static writeAmProcStart(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .registers 9
     .parameter "pid"
     .parameter "uid"
     .parameter "processName"
@@ -992,7 +992,7 @@
 .end method
 
 .method public static writeAmProcessCrashedTooMuch(Ljava/lang/String;I)V
-    .locals 4
+    .registers 6
     .parameter "name"
     .parameter "pid"
 
@@ -1023,7 +1023,7 @@
 .end method
 
 .method public static writeAmProcessStartTimeout(IILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "pid"
     .parameter "uid"
     .parameter "processName"
@@ -1063,7 +1063,7 @@
 .end method
 
 .method public static writeAmProviderLostProcess(Ljava/lang/String;ILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "packageName"
     .parameter "uid"
     .parameter "name"
@@ -1099,7 +1099,7 @@
 .end method
 
 .method public static writeAmRelaunchActivity(IILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -1139,7 +1139,7 @@
 .end method
 
 .method public static writeAmRelaunchResumeActivity(IILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -1179,7 +1179,7 @@
 .end method
 
 .method public static writeAmRestartActivity(IILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -1219,7 +1219,7 @@
 .end method
 
 .method public static writeAmResumeActivity(IILjava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "token"
     .parameter "taskId"
     .parameter "componentName"
@@ -1259,7 +1259,7 @@
 .end method
 
 .method public static writeAmScheduleServiceRestart(Ljava/lang/String;J)V
-    .locals 4
+    .registers 7
     .parameter "componentName"
     .parameter "time"
 
@@ -1290,7 +1290,7 @@
 .end method
 
 .method public static writeAmServiceCrashedTooMuch(ILjava/lang/String;I)V
-    .locals 4
+    .registers 7
     .parameter "crashCount"
     .parameter "componentName"
     .parameter "pid"
@@ -1330,7 +1330,7 @@
 .end method
 
 .method public static writeAmTaskToFront(I)V
-    .locals 1
+    .registers 2
     .parameter "task"
 
     .prologue
@@ -1344,7 +1344,7 @@
 .end method
 
 .method public static writeAmWtf(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .registers 9
     .parameter "pid"
     .parameter "processName"
     .parameter "flags"
@@ -1394,7 +1394,7 @@
 .end method
 
 .method public static writeBootProgressAmsReady(J)V
-    .locals 1
+    .registers 3
     .parameter "time"
 
     .prologue
@@ -1408,7 +1408,7 @@
 .end method
 
 .method public static writeBootProgressEnableScreen(J)V
-    .locals 1
+    .registers 3
     .parameter "time"
 
     .prologue
@@ -1422,7 +1422,7 @@
 .end method
 
 .method public static writeConfigurationChanged(I)V
-    .locals 1
+    .registers 2
     .parameter "configMask"
 
     .prologue
@@ -1436,7 +1436,7 @@
 .end method
 
 .method public static writeCpu(IIIIII)V
-    .locals 4
+    .registers 10
     .parameter "total"
     .parameter "user"
     .parameter "system"

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityStack;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 9
+    .registers 11
     .parameter "msg"
 
     .prologue
@@ -52,15 +52,15 @@
     .line 261
     iget v2, p1, Landroid/os/Message;->what:I
 
-    packed-switch v2, :pswitch_data_0
+    packed-switch v2, :pswitch_data_f8
 
     .line 314
-    :goto_0
-    :pswitch_0
+    :goto_c
+    :pswitch_c
     return-void
 
     .line 263
-    :pswitch_1
+    :pswitch_d
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/IBinder;
@@ -94,18 +94,18 @@
 
     invoke-virtual {v2, v1, v4, v6}, Lcom/android/server/am/ActivityStack;->activityPaused(Landroid/os/IBinder;Landroid/os/Bundle;Z)V
 
-    goto :goto_0
+    goto :goto_c
 
     .line 270
     .end local v1           #token:Landroid/os/IBinder;
-    :pswitch_2
+    :pswitch_2f
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-boolean v2, v2, Lcom/android/server/am/ActivityManagerService;->mDidDexOpt:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_53
 
     .line 271
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
@@ -138,11 +138,11 @@
 
     invoke-virtual {v2, v0, v7, v8}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    goto :goto_0
+    goto :goto_c
 
     .line 279
     .end local v0           #nmsg:Landroid/os/Message;
-    :cond_0
+    :cond_53
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/IBinder;
@@ -176,11 +176,11 @@
 
     invoke-virtual {v2, v1, v6, v4}, Lcom/android/server/am/ActivityStack;->activityIdleInternal(Landroid/os/IBinder;ZLandroid/content/res/Configuration;)V
 
-    goto :goto_0
+    goto :goto_c
 
     .line 284
     .end local v1           #token:Landroid/os/IBinder;
-    :pswitch_3
+    :pswitch_75
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/IBinder;
@@ -214,11 +214,11 @@
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/ActivityStack;->activityDestroyed(Landroid/os/IBinder;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_c
 
     .line 291
     .end local v1           #token:Landroid/os/IBinder;
-    :pswitch_4
+    :pswitch_98
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/IBinder;
@@ -229,18 +229,18 @@
 
     invoke-virtual {v2, v1, v3, v4}, Lcom/android/server/am/ActivityStack;->activityIdleInternal(Landroid/os/IBinder;ZLandroid/content/res/Configuration;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_c
 
     .line 295
     .end local v1           #token:Landroid/os/IBinder;
-    :pswitch_5
+    :pswitch_a3
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-boolean v2, v2, Lcom/android/server/am/ActivityManagerService;->mDidDexOpt:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_c4
 
     .line 296
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
@@ -268,11 +268,11 @@
 
     invoke-virtual {v2, v0, v7, v8}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    goto/16 :goto_0
+    goto/16 :goto_c
 
     .line 301
     .end local v0           #nmsg:Landroid/os/Message;
-    :cond_1
+    :cond_c4
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -280,7 +280,7 @@
     monitor-enter v2
 
     .line 302
-    :try_start_0
+    :try_start_c9
     iget-object v3, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityStack;->mLaunchingActivity:Landroid/os/PowerManager$WakeLock;
@@ -289,7 +289,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_e1
 
     .line 303
     const-string v3, "ActivityManager"
@@ -306,22 +306,22 @@
     invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->release()V
 
     .line 306
-    :cond_2
+    :cond_e1
     monitor-exit v2
 
-    goto/16 :goto_0
+    goto/16 :goto_c
 
-    :catchall_0
+    :catchall_e4
     move-exception v3
 
     monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_e6
+    .catchall {:try_start_c9 .. :try_end_e6} :catchall_e4
 
     throw v3
 
     .line 309
-    :pswitch_6
+    :pswitch_e7
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -329,7 +329,7 @@
     monitor-enter v2
 
     .line 310
-    :try_start_1
+    :try_start_ec
     iget-object v3, p0, Lcom/android/server/am/ActivityStack$1;->this$0:Lcom/android/server/am/ActivityStack;
 
     const/4 v4, 0x0
@@ -339,30 +339,30 @@
     .line 311
     monitor-exit v2
 
-    goto/16 :goto_0
+    goto/16 :goto_c
 
-    :catchall_1
+    :catchall_f5
     move-exception v3
 
     monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :try_end_f7
+    .catchall {:try_start_ec .. :try_end_f7} :catchall_f5
 
     throw v3
 
     .line 261
-    :pswitch_data_0
+    :pswitch_data_f8
     .packed-switch 0x9
-        :pswitch_1
-        :pswitch_2
-        :pswitch_4
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_5
-        :pswitch_3
-        :pswitch_0
-        :pswitch_6
+        :pswitch_d
+        :pswitch_2f
+        :pswitch_98
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_a3
+        :pswitch_75
+        :pswitch_c
+        :pswitch_e7
     .end packed-switch
 .end method

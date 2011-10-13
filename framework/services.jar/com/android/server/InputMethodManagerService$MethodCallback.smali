@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;Lcom/android/internal/view/IInputMethod;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "method"
 
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public finishedEvent(IZ)V
-    .locals 0
+    .registers 3
     .parameter "seq"
     .parameter "handled"
     .annotation system Ldalvik/annotation/Throws;
@@ -57,7 +57,7 @@
 .end method
 
 .method public sessionCreated(Lcom/android/internal/view/IInputMethodSession;)V
-    .locals 2
+    .registers 4
     .parameter "session"
     .annotation system Ldalvik/annotation/Throws;
         value = {

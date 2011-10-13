@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/AppWidgetService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 19
+    .registers 22
     .parameter "context"
     .parameter "intent"
 
@@ -57,7 +57,7 @@
 
     move-result v16
 
-    if-eqz v16, :cond_1
+    if-eqz v16, :cond_19
 
     .line 1080
     move-object/from16 v0, p0
@@ -69,12 +69,12 @@
     invoke-virtual/range {v16 .. v16}, Lcom/android/server/AppWidgetService;->sendInitialBroadcasts()V
 
     .line 1151
-    :cond_0
-    :goto_0
+    :cond_18
+    :goto_18
     return-void
 
     .line 1081
-    :cond_1
+    :cond_19
     const-string v16, "android.intent.action.CONFIGURATION_CHANGED"
 
     move-object/from16 v0, v16
@@ -85,7 +85,7 @@
 
     move-result v16
 
-    if-eqz v16, :cond_4
+    if-eqz v16, :cond_bd
 
     .line 1082
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
@@ -94,7 +94,7 @@
 
     .line 1083
     .local v14, revised:Ljava/util/Locale;
-    if-eqz v14, :cond_2
+    if-eqz v14, :cond_4d
 
     move-object/from16 v0, p0
 
@@ -108,7 +108,7 @@
 
     move-object/from16 v16, v0
 
-    if-eqz v16, :cond_2
+    if-eqz v16, :cond_4d
 
     move-object/from16 v0, p0
 
@@ -130,10 +130,10 @@
 
     move-result v16
 
-    if-nez v16, :cond_0
+    if-nez v16, :cond_18
 
     .line 1085
-    :cond_2
+    :cond_4d
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
@@ -162,7 +162,7 @@
     monitor-enter v16
 
     .line 1088
-    :try_start_0
+    :try_start_65
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
@@ -186,8 +186,8 @@
     sub-int v8, v3, v17
 
     .local v8, i:I
-    :goto_1
-    if-ltz v8, :cond_3
+    :goto_79
+    if-ltz v8, :cond_ae
 
     .line 1090
     move-object/from16 v0, p0
@@ -247,12 +247,12 @@
     .line 1089
     add-int/lit8 v8, v8, -0x1
 
-    goto :goto_1
+    goto :goto_79
 
     .line 1094
     .end local v11           #p:Lcom/android/server/AppWidgetService$Provider;
     .end local v13           #pkgName:Ljava/lang/String;
-    :cond_3
+    :cond_ae
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
@@ -264,22 +264,22 @@
     .line 1095
     monitor-exit v16
 
-    goto/16 :goto_0
+    goto/16 :goto_18
 
     .end local v3           #N:I
     .end local v8           #i:I
-    :catchall_0
+    :catchall_ba
     move-exception v17
 
     monitor-exit v16
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_bc
+    .catchall {:try_start_65 .. :try_end_bc} :catchall_ba
 
     throw v17
 
     .line 1098
     .end local v14           #revised:Ljava/util/Locale;
-    :cond_4
+    :cond_bd
     const/4 v5, 0x0
 
     .line 1099
@@ -298,7 +298,7 @@
 
     move-result v16
 
-    if-eqz v16, :cond_5
+    if-eqz v16, :cond_117
 
     .line 1101
     const-string v16, "android.intent.extra.changed_package_list"
@@ -315,8 +315,8 @@
     const/4 v5, 0x1
 
     .line 1118
-    :goto_2
-    if-eqz v12, :cond_0
+    :goto_d5
+    if-eqz v12, :cond_18
 
     move-object v0, v12
 
@@ -324,10 +324,10 @@
 
     move/from16 v16, v0
 
-    if-eqz v16, :cond_0
+    if-eqz v16, :cond_18
 
     .line 1121
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_174
 
     .line 1122
     move-object/from16 v0, p0
@@ -345,14 +345,14 @@
     monitor-enter v16
 
     .line 1123
-    :try_start_1
+    :try_start_ec
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v7
 
     .line 1124
     .local v7, extras:Landroid/os/Bundle;
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_14f
 
     const-string v17, "android.intent.extra.REPLACING"
 
@@ -368,7 +368,7 @@
 
     move-result v17
 
-    if-eqz v17, :cond_7
+    if-eqz v17, :cond_14f
 
     .line 1125
     move-object v6, v12
@@ -380,8 +380,8 @@
     const/4 v9, 0x0
 
     .local v9, i$:I
-    :goto_3
-    if-ge v9, v10, :cond_8
+    :goto_104
+    if-ge v9, v10, :cond_165
 
     aget-object v13, v6, v9
 
@@ -398,13 +398,13 @@
     move-object v1, v13
 
     invoke-virtual {v0, v1}, Lcom/android/server/AppWidgetService;->updateProvidersForPackageLocked(Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :try_end_114
+    .catchall {:try_start_ec .. :try_end_114} :catchall_171
 
     .line 1125
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_3
+    goto :goto_104
 
     .line 1103
     .end local v6           #arr$:[Ljava/lang/String;
@@ -412,7 +412,7 @@
     .end local v9           #i$:I
     .end local v10           #len$:I
     .end local v13           #pkgName:Ljava/lang/String;
-    :cond_5
+    :cond_117
     const-string v16, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
     move-object/from16 v0, v16
@@ -423,7 +423,7 @@
 
     move-result v16
 
-    if-eqz v16, :cond_6
+    if-eqz v16, :cond_12e
 
     .line 1104
     const-string v16, "android.intent.extra.changed_package_list"
@@ -439,17 +439,17 @@
     .line 1105
     const/4 v5, 0x0
 
-    goto :goto_2
+    goto :goto_d5
 
     .line 1107
-    :cond_6
+    :cond_12e
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v15
 
     .line 1108
     .local v15, uri:Landroid/net/Uri;
-    if-eqz v15, :cond_0
+    if-eqz v15, :cond_18
 
     .line 1111
     invoke-virtual {v15}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
@@ -458,7 +458,7 @@
 
     .line 1112
     .restart local v13       #pkgName:Ljava/lang/String;
-    if-eqz v13, :cond_0
+    if-eqz v13, :cond_18
 
     .line 1115
     const/16 v16, 0x1
@@ -486,25 +486,25 @@
 
     move-result v5
 
-    goto :goto_2
+    goto :goto_d5
 
     .line 1131
     .end local v13           #pkgName:Ljava/lang/String;
     .end local v15           #uri:Landroid/net/Uri;
     .restart local v7       #extras:Landroid/os/Bundle;
-    :cond_7
+    :cond_14f
     move-object v6, v12
 
     .restart local v6       #arr$:[Ljava/lang/String;
-    :try_start_2
+    :try_start_150
     array-length v10, v6
 
     .restart local v10       #len$:I
     const/4 v9, 0x0
 
     .restart local v9       #i$:I
-    :goto_4
-    if-ge v9, v10, :cond_8
+    :goto_152
+    if-ge v9, v10, :cond_165
 
     aget-object v13, v6, v9
 
@@ -525,11 +525,11 @@
     .line 1131
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_4
+    goto :goto_152
 
     .line 1135
     .end local v13           #pkgName:Ljava/lang/String;
-    :cond_8
+    :cond_165
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
@@ -541,30 +541,30 @@
     .line 1136
     monitor-exit v16
 
-    goto/16 :goto_0
+    goto/16 :goto_18
 
     .end local v6           #arr$:[Ljava/lang/String;
     .end local v7           #extras:Landroid/os/Bundle;
     .end local v9           #i$:I
     .end local v10           #len$:I
-    :catchall_1
+    :catchall_171
     move-exception v17
 
     monitor-exit v16
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_173
+    .catchall {:try_start_150 .. :try_end_173} :catchall_171
 
     throw v17
 
     .line 1138
-    :cond_9
+    :cond_174
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v7
 
     .line 1139
     .restart local v7       #extras:Landroid/os/Bundle;
-    if-eqz v7, :cond_a
+    if-eqz v7, :cond_189
 
     const-string v16, "android.intent.extra.REPLACING"
 
@@ -580,10 +580,10 @@
 
     move-result v16
 
-    if-nez v16, :cond_0
+    if-nez v16, :cond_18
 
     .line 1142
-    :cond_a
+    :cond_189
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
@@ -602,15 +602,15 @@
     move-object v6, v12
 
     .restart local v6       #arr$:[Ljava/lang/String;
-    :try_start_3
+    :try_start_197
     array-length v10, v6
 
     .restart local v10       #len$:I
     const/4 v9, 0x0
 
     .restart local v9       #i$:I
-    :goto_5
-    if-ge v9, v10, :cond_b
+    :goto_199
+    if-ge v9, v10, :cond_1b5
 
     aget-object v13, v6, v9
 
@@ -640,23 +640,23 @@
     .line 1143
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_5
+    goto :goto_199
 
     .line 1147
     .end local v13           #pkgName:Ljava/lang/String;
-    :cond_b
+    :cond_1b5
     monitor-exit v16
 
-    goto/16 :goto_0
+    goto/16 :goto_18
 
     .end local v9           #i$:I
     .end local v10           #len$:I
-    :catchall_2
+    :catchall_1b8
     move-exception v17
 
     monitor-exit v16
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+    :try_end_1ba
+    .catchall {:try_start_197 .. :try_end_1ba} :catchall_1b8
 
     throw v17
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
-    .locals 0
+    .registers 3
     .parameter "c"
     .parameter "ta"
 

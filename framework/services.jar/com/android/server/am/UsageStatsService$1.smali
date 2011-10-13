@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/UsageStatsService;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,20 +36,20 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x0
 
     .line 411
-    :try_start_0
+    :try_start_1
     iget-object v0, p0, Lcom/android/server/am/UsageStatsService$1;->this$0:Lcom/android/server/am/UsageStatsService;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/server/am/UsageStatsService;->access$100(Lcom/android/server/am/UsageStatsService;Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_11
 
     .line 413
     iget-object v0, p0, Lcom/android/server/am/UsageStatsService$1;->this$0:Lcom/android/server/am/UsageStatsService;
@@ -64,7 +64,7 @@
     return-void
 
     .line 413
-    :catchall_0
+    :catchall_11
     move-exception v0
 
     iget-object v1, p0, Lcom/android/server/am/UsageStatsService$1;->this$0:Lcom/android/server/am/UsageStatsService;

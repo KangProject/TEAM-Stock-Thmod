@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiService;Ljava/lang/String;Landroid/os/IBinder;)V
-    .locals 6
+    .registers 10
     .parameter
     .parameter "tag"
     .parameter "binder"
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 2501
@@ -73,7 +73,7 @@
     monitor-enter v1
 
     .line 2503
-    :try_start_0
+    :try_start_e
     iget-object v2, p0, Lcom/android/server/WifiService$Multicaster;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v2}, Lcom/android/server/WifiService;->access$3900(Lcom/android/server/WifiService;)Ljava/util/List;
@@ -88,7 +88,7 @@
     .local v0, i:I
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v2, :cond_22
 
     .line 2505
     iget-object v2, p0, Lcom/android/server/WifiService$Multicaster;->this$0:Lcom/android/server/WifiService;
@@ -98,7 +98,7 @@
     invoke-static {v2, v0, v3}, Lcom/android/server/WifiService;->access$4000(Lcom/android/server/WifiService;II)V
 
     .line 2507
-    :cond_0
+    :cond_22
     monitor-exit v1
 
     .line 2508
@@ -106,18 +106,18 @@
 
     .line 2507
     .end local v0           #i:I
-    :catchall_0
+    :catchall_24
     move-exception v2
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_26
+    .catchall {:try_start_e .. :try_end_26} :catchall_24
 
     throw v2
 .end method
 
 .method public getUid()I
-    .locals 1
+    .registers 2
 
     .prologue
     .line 2515
@@ -127,7 +127,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 2511

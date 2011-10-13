@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;)V
-    .locals 0
+    .registers 5
     .parameter "packageURI"
     .parameter "observer"
     .parameter "flags"

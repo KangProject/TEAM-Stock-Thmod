@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/EntropyService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 2
+    .registers 4
     .parameter "msg"
 
     .prologue
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_d
 
     .line 67
     const-string v0, "EntropyService"
@@ -54,11 +54,11 @@
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 72
-    :goto_0
+    :goto_c
     return-void
 
     .line 70
-    :cond_0
+    :cond_d
     iget-object v0, p0, Lcom/android/server/EntropyService$1;->this$0:Lcom/android/server/EntropyService;
 
     invoke-static {v0}, Lcom/android/server/EntropyService;->access$000(Lcom/android/server/EntropyService;)V
@@ -68,5 +68,5 @@
 
     invoke-static {v0}, Lcom/android/server/EntropyService;->access$100(Lcom/android/server/EntropyService;)V
 
-    goto :goto_0
+    goto :goto_c
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .registers 11
     .parameter "context"
     .parameter "intent"
 
@@ -54,7 +54,7 @@
 
     const/4 v2, 0x3
 
-    :try_start_0
+    :try_start_a
     new-array v2, v2, [Ljava/lang/Object;
 
     const/4 v3, 0x0
@@ -119,12 +119,12 @@
     return-void
 
     .line 1440
-    :catchall_0
+    :catchall_41
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_43
+    .catchall {:try_start_a .. :try_end_43} :catchall_41
 
     throw v1
 .end method

@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ServiceRecord;Landroid/content/Intent$FilterComparison;)V
-    .locals 1
+    .registers 4
     .parameter "_service"
     .parameter "_intent"
 
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 1
+    .registers 4
     .parameter "pw"
     .parameter "prefix"
 
@@ -87,7 +87,7 @@
 .end method
 
 .method dumpInService(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 6
+    .registers 9
     .parameter "pw"
     .parameter "prefix"
 
@@ -177,7 +177,7 @@
 
     move-result v2
 
-    if-lez v2, :cond_0
+    if-lez v2, :cond_a9
 
     .line 65
     iget-object v2, p0, Lcom/android/server/am/IntentBindRecord;->apps:Ljava/util/HashMap;
@@ -192,12 +192,12 @@
 
     .line 66
     .local v1, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/AppBindRecord;>;"
-    :goto_0
+    :goto_66
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_a9
 
     .line 67
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -257,17 +257,17 @@
 
     invoke-virtual {v0, p1, v2}, Lcom/android/server/am/AppBindRecord;->dumpInIntentBind(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_66
 
     .line 74
     .end local v0           #a:Lcom/android/server/am/AppBindRecord;
     .end local v1           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/AppBindRecord;>;"
-    :cond_0
+    :cond_a9
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x0
@@ -275,17 +275,17 @@
     .line 82
     iget-object v1, p0, Lcom/android/server/am/IntentBindRecord;->stringName:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_8
 
     .line 83
     iget-object v1, p0, Lcom/android/server/am/IntentBindRecord;->stringName:Ljava/lang/String;
 
     .line 95
-    :goto_0
+    :goto_7
     return-object v1
 
     .line 85
-    :cond_0
+    :cond_8
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
@@ -329,7 +329,7 @@
     .line 91
     iget-object v1, p0, Lcom/android/server/am/IntentBindRecord;->intent:Landroid/content/Intent$FilterComparison;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3d
 
     .line 92
     iget-object v1, p0, Lcom/android/server/am/IntentBindRecord;->intent:Landroid/content/Intent$FilterComparison;
@@ -341,7 +341,7 @@
     invoke-virtual {v1, v0, v2, v2}, Landroid/content/Intent;->toShortString(Ljava/lang/StringBuilder;ZZ)V
 
     .line 94
-    :cond_1
+    :cond_3d
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -353,5 +353,5 @@
 
     iput-object v1, p0, Lcom/android/server/am/IntentBindRecord;->stringName:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_7
 .end method

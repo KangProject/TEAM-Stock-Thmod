@@ -48,7 +48,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/LoadAverageService;Landroid/content/Context;)V
-    .locals 10
+    .registers 13
     .parameter
     .parameter "c"
 
@@ -349,7 +349,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/server/LoadAverageService$LoadView;)Lcom/android/server/LoadAverageService$Stats;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -362,7 +362,7 @@
 
 # virtual methods
 .method protected onAttachedToWindow()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 145
@@ -380,7 +380,7 @@
 .end method
 
 .method protected onDetachedFromWindow()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 151
@@ -398,7 +398,7 @@
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 31
+    .registers 33
     .parameter "canvas"
 
     .prologue
@@ -468,14 +468,14 @@
 
     .line 174
     .local v26, totalTime:I
-    if-nez v26, :cond_1
+    if-nez v26, :cond_32
 
     .line 242
-    :cond_0
+    :cond_31
     return-void
 
     .line 177
-    :cond_1
+    :cond_32
     mul-int v5, v27, v12
 
     div-int v28, v5, v26
@@ -538,7 +538,7 @@
 
     .line 185
     .local v13, bottom:I
-    if-lez v18, :cond_2
+    if-lez v18, :cond_77
 
     .line 186
     sub-int v5, v29, v18
@@ -573,8 +573,8 @@
     sub-int v29, v29, v18
 
     .line 189
-    :cond_2
-    if-lez v24, :cond_3
+    :cond_77
+    if-lez v24, :cond_91
 
     .line 190
     sub-int v5, v29, v24
@@ -609,8 +609,8 @@
     sub-int v29, v29, v24
 
     .line 193
-    :cond_3
-    if-lez v28, :cond_4
+    :cond_91
+    if-lez v28, :cond_ab
 
     .line 194
     sub-int v5, v29, v28
@@ -645,7 +645,7 @@
     sub-int v29, v29, v28
 
     .line 198
-    :cond_4
+    :cond_ab
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/LoadAverageService$LoadView;->mPaddingTop:I
@@ -926,8 +926,8 @@
     const/4 v14, 0x0
 
     .local v14, i:I
-    :goto_0
-    if-ge v14, v11, :cond_0
+    :goto_17c
+    if-ge v14, v11, :cond_31
 
     .line 212
     move-object/from16 v0, v22
@@ -998,7 +998,7 @@
     sub-int v29, v12, v5
 
     .line 220
-    if-lez v24, :cond_5
+    if-lez v24, :cond_1ca
 
     .line 221
     sub-int v5, v29, v24
@@ -1033,8 +1033,8 @@
     sub-int v29, v29, v24
 
     .line 224
-    :cond_5
-    if-lez v28, :cond_6
+    :cond_1ca
+    if-lez v28, :cond_1e4
 
     .line 225
     sub-int v5, v29, v28
@@ -1069,7 +1069,7 @@
     sub-int v29, v29, v28
 
     .line 229
-    :cond_6
+    :cond_1e4
     move-object/from16 v0, v21
 
     iget-object v0, v0, Lcom/android/server/ProcessStats$Stats;->name:Ljava/lang/String;
@@ -1288,7 +1288,7 @@
 
     move v5, v0
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_291
 
     move-object/from16 v0, p0
 
@@ -1297,14 +1297,14 @@
     move-object/from16 v19, v0
 
     .line 239
-    :cond_7
+    :cond_291
     move-object/from16 v0, v21
 
     iget-boolean v0, v0, Lcom/android/server/ProcessStats$Stats;->removed:Z
 
     move v5, v0
 
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_29e
 
     move-object/from16 v0, p0
 
@@ -1313,7 +1313,7 @@
     move-object/from16 v19, v0
 
     .line 240
-    :cond_8
+    :cond_29e
     move-object/from16 v0, v21
 
     iget-object v0, v0, Lcom/android/server/ProcessStats$Stats;->name:Ljava/lang/String;
@@ -1359,11 +1359,11 @@
     .line 211
     add-int/lit8 v14, v14, 0x1
 
-    goto/16 :goto_0
+    goto/16 :goto_17c
 .end method
 
 .method protected onMeasure(II)V
-    .locals 2
+    .registers 5
     .parameter "widthMeasureSpect"
     .parameter "heightMeasureSpec"
 
@@ -1380,7 +1380,7 @@
 .end method
 
 .method updateDisplay()V
-    .locals 10
+    .registers 11
 
     .prologue
     .line 245
@@ -1401,8 +1401,8 @@
     const/4 v1, 0x0
 
     .local v1, i:I
-    :goto_0
-    if-ge v1, v0, :cond_1
+    :goto_9
+    if-ge v1, v0, :cond_18
 
     .line 250
     invoke-virtual {v6, v1}, Lcom/android/server/LoadAverageService$Stats;->getWorkingStats(I)Lcom/android/server/ProcessStats$Stats;
@@ -1413,20 +1413,20 @@
     .local v5, st:Lcom/android/server/ProcessStats$Stats;
     iget v7, v5, Lcom/android/server/ProcessStats$Stats;->nameWidth:I
 
-    if-le v7, v2, :cond_0
+    if-le v7, v2, :cond_15
 
     .line 252
     iget v2, v5, Lcom/android/server/ProcessStats$Stats;->nameWidth:I
 
     .line 249
-    :cond_0
+    :cond_15
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_9
 
     .line 256
     .end local v5           #st:Lcom/android/server/ProcessStats$Stats;
-    :cond_1
+    :cond_18
     iget v7, p0, Lcom/android/server/LoadAverageService$LoadView;->mPaddingLeft:I
 
     iget v8, p0, Lcom/android/server/LoadAverageService$LoadView;->mPaddingRight:I
@@ -1455,14 +1455,14 @@
     .local v3, neededHeight:I
     iget v7, p0, Lcom/android/server/LoadAverageService$LoadView;->mNeededWidth:I
 
-    if-ne v4, v7, :cond_2
+    if-ne v4, v7, :cond_33
 
     iget v7, p0, Lcom/android/server/LoadAverageService$LoadView;->mNeededHeight:I
 
-    if-eq v3, v7, :cond_3
+    if-eq v3, v7, :cond_3b
 
     .line 259
-    :cond_2
+    :cond_33
     iput v4, p0, Lcom/android/server/LoadAverageService$LoadView;->mNeededWidth:I
 
     .line 260
@@ -1472,12 +1472,12 @@
     invoke-virtual {p0}, Lcom/android/server/LoadAverageService$LoadView;->requestLayout()V
 
     .line 265
-    :goto_1
+    :goto_3a
     return-void
 
     .line 263
-    :cond_3
+    :cond_3b
     invoke-virtual {p0}, Lcom/android/server/LoadAverageService$LoadView;->invalidate()V
 
-    goto :goto_1
+    goto :goto_3a
 .end method

@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/LightsService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -39,13 +39,13 @@
 
 # virtual methods
 .method public getFlashlightEnabled()Z
-    .locals 6
+    .registers 7
 
     .prologue
     const/4 v5, 0x0
 
     .line 152
-    :try_start_0
+    :try_start_1
     new-instance v1, Ljava/io/FileInputStream;
 
     const-string v3, "/sys/class/leds/spotlight/brightness"
@@ -61,34 +61,34 @@
     .line 154
     .local v2, result:I
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_f
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_f} :catch_17
 
     .line 155
     const/16 v3, 0x30
 
-    if-eq v2, v3, :cond_0
+    if-eq v2, v3, :cond_15
 
     const/4 v3, 0x1
 
     .line 158
     .end local v1           #fis:Ljava/io/FileInputStream;
     .end local v2           #result:I
-    :goto_0
+    :goto_14
     return v3
 
     .restart local v1       #fis:Ljava/io/FileInputStream;
     .restart local v2       #result:I
-    :cond_0
+    :cond_15
     move v3, v5
 
     .line 155
-    goto :goto_0
+    goto :goto_14
 
     .line 156
     .end local v1           #fis:Ljava/io/FileInputStream;
     .end local v2           #result:I
-    :catch_0
+    :catch_17
     move-exception v3
 
     move-object v0, v3
@@ -104,11 +104,11 @@
     move v3, v5
 
     .line 158
-    goto :goto_0
+    goto :goto_14
 .end method
 
 .method public setFlashlightEnabled(Z)V
-    .locals 5
+    .registers 7
     .parameter "on"
 
     .prologue
@@ -125,7 +125,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_24
 
     iget-object v3, p0, Lcom/android/server/LightsService$1;->this$0:Lcom/android/server/LightsService;
 
@@ -139,7 +139,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_24
 
     .line 167
     new-instance v3, Ljava/lang/SecurityException;
@@ -151,8 +151,8 @@
     throw v3
 
     .line 170
-    :cond_0
-    :try_start_0
+    :cond_24
+    :try_start_24
     new-instance v2, Ljava/io/FileOutputStream;
 
     const-string v3, "/sys/class/leds/spotlight/brightness"
@@ -169,11 +169,11 @@
     .local v0, bytes:[B
     const/4 v3, 0x0
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_42
 
     const/16 v4, 0x31
 
-    :goto_0
+    :goto_33
     int-to-byte v4, v4
 
     aput-byte v4, v0, v3
@@ -190,27 +190,27 @@
 
     .line 175
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_41
+    .catch Ljava/lang/Exception; {:try_start_24 .. :try_end_41} :catch_45
 
     .line 179
     .end local v0           #bytes:[B
     .end local v2           #fos:Ljava/io/FileOutputStream;
-    :goto_1
+    :goto_41
     return-void
 
     .line 172
     .restart local v0       #bytes:[B
     .restart local v2       #fos:Ljava/io/FileOutputStream;
-    :cond_1
+    :cond_42
     const/16 v4, 0x30
 
-    goto :goto_0
+    goto :goto_33
 
     .line 176
     .end local v0           #bytes:[B
     .end local v2           #fos:Ljava/io/FileOutputStream;
-    :catch_0
+    :catch_45
     move-exception v3
 
     move-object v1, v3
@@ -223,5 +223,5 @@
 
     invoke-static {v3, v4, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_41
 .end method

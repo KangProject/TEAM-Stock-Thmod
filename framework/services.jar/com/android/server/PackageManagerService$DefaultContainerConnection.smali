@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 4
+    .registers 7
     .parameter "name"
     .parameter "service"
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 0
+    .registers 2
     .parameter "name"
 
     .prologue

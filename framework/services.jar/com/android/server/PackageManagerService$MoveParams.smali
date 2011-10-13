@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;Lcom/android/server/PackageManagerService$InstallArgs;Landroid/content/pm/IPackageMoveObserver;ILjava/lang/String;Ljava/lang/String;)V
-    .locals 3
+    .registers 10
     .parameter
     .parameter "srcArgs"
     .parameter "observer"
@@ -59,7 +59,7 @@
     iput-object p5, p0, Lcom/android/server/PackageManagerService$MoveParams;->packageName:Ljava/lang/String;
 
     .line 4826
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_23
 
     .line 4827
     new-instance v1, Ljava/io/File;
@@ -84,22 +84,22 @@
 
     .line 4832
     .end local v0           #packageUri:Landroid/net/Uri;
-    :goto_0
+    :goto_22
     return-void
 
     .line 4830
-    :cond_0
+    :cond_23
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/PackageManagerService$MoveParams;->targetArgs:Lcom/android/server/PackageManagerService$InstallArgs;
 
-    goto :goto_0
+    goto :goto_22
 .end method
 
 
 # virtual methods
 .method handleReturnCode()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 4860
@@ -118,14 +118,14 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_1
+    if-ne v1, v2, :cond_14
 
     .line 4863
     const/4 v0, 0x1
 
     .line 4867
-    :cond_0
-    :goto_0
+    :cond_e
+    :goto_e
     iget-object v1, p0, Lcom/android/server/PackageManagerService$MoveParams;->this$0:Lcom/android/server/PackageManagerService;
 
     invoke-static {v1, p0, v0}, Lcom/android/server/PackageManagerService;->access$2700(Lcom/android/server/PackageManagerService;Lcom/android/server/PackageManagerService$MoveParams;I)V
@@ -134,21 +134,21 @@
     return-void
 
     .line 4864
-    :cond_1
+    :cond_14
     iget v1, p0, Lcom/android/server/PackageManagerService$MoveParams;->mRet:I
 
     const/4 v2, -0x4
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_e
 
     .line 4865
     const/4 v0, -0x1
 
-    goto :goto_0
+    goto :goto_e
 .end method
 
 .method handleServiceError()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 4872
@@ -161,7 +161,7 @@
 .end method
 
 .method public handleStartCopy()V
-    .locals 3
+    .registers 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -187,7 +187,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_19
 
     .line 4838
     const-string v0, "PackageManager"
@@ -197,11 +197,11 @@
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 4856
-    :goto_0
+    :goto_18
     return-void
 
     .line 4842
-    :cond_0
+    :cond_19
     iget-object v0, p0, Lcom/android/server/PackageManagerService$MoveParams;->targetArgs:Lcom/android/server/PackageManagerService$InstallArgs;
 
     iget-object v1, p0, Lcom/android/server/PackageManagerService$MoveParams;->this$0:Lcom/android/server/PackageManagerService;
@@ -225,5 +225,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/PackageManagerService$InstallArgs;->doPreInstall(I)I
 
-    goto :goto_0
+    goto :goto_18
 .end method

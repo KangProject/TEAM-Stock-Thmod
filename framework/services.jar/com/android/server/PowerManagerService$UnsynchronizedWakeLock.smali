@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;ILjava/lang/String;Z)V
-    .locals 1
+    .registers 6
     .parameter
     .parameter "flags"
     .parameter "tag"
@@ -72,13 +72,13 @@
 
 # virtual methods
 .method public acquire()V
-    .locals 9
+    .registers 10
 
     .prologue
     .line 326
     iget-boolean v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mRefCounted:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_c
 
     iget v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mCount:I
 
@@ -86,17 +86,17 @@
 
     iput v1, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mCount:I
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2e
 
     .line 327
-    :cond_0
+    :cond_c
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v7
 
     .line 329
     .local v7, ident:J
-    :try_start_0
+    :try_start_10
     iget-object v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->this$0:Lcom/android/server/PowerManagerService;
 
     iget v1, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mFlags:I
@@ -125,20 +125,20 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mHeld:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2b
+    .catchall {:try_start_10 .. :try_end_2b} :catchall_2f
 
     .line 333
     invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 336
     .end local v7           #ident:J
-    :cond_1
+    :cond_2e
     return-void
 
     .line 333
     .restart local v7       #ident:J
-    :catchall_0
+    :catchall_2f
     move-exception v0
 
     invoke-static {v7, v8}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -147,7 +147,7 @@
 .end method
 
 .method public isHeld()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 350
@@ -157,7 +157,7 @@
 .end method
 
 .method public release()V
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x0
@@ -165,7 +165,7 @@
     .line 339
     iget-boolean v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mRefCounted:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_d
 
     iget v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mCount:I
 
@@ -175,10 +175,10 @@
 
     iput v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mCount:I
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_16
 
     .line 340
-    :cond_0
+    :cond_d
     iget-object v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v1, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mToken:Landroid/os/IBinder;
@@ -189,10 +189,10 @@
     iput-boolean v2, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mHeld:Z
 
     .line 343
-    :cond_1
+    :cond_16
     iget v0, p0, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->mCount:I
 
-    if-gez v0, :cond_2
+    if-gez v0, :cond_35
 
     .line 344
     new-instance v0, Ljava/lang/RuntimeException;
@@ -222,12 +222,12 @@
     throw v0
 
     .line 346
-    :cond_2
+    :cond_35
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 354

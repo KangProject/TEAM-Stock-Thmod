@@ -124,7 +124,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 99
@@ -141,7 +141,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 7
+    .registers 9
     .parameter "context"
 
     .prologue
@@ -275,7 +275,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/server/ThrottleService;)Landroid/os/Handler;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -286,7 +286,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/ThrottleService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -297,7 +297,7 @@
 .end method
 
 .method static synthetic access$1000(Lcom/android/server/ThrottleService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -308,7 +308,7 @@
 .end method
 
 .method static synthetic access$1002(Lcom/android/server/ThrottleService;I)I
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -320,7 +320,7 @@
 .end method
 
 .method static synthetic access$102(Lcom/android/server/ThrottleService;I)I
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -332,7 +332,7 @@
 .end method
 
 .method static synthetic access$1100(Lcom/android/server/ThrottleService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -343,7 +343,7 @@
 .end method
 
 .method static synthetic access$1200(Lcom/android/server/ThrottleService;)Landroid/os/INetworkManagementService;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -354,7 +354,7 @@
 .end method
 
 .method static synthetic access$1300(Lcom/android/server/ThrottleService;)J
-    .locals 2
+    .registers 3
     .parameter "x0"
 
     .prologue
@@ -365,7 +365,7 @@
 .end method
 
 .method static synthetic access$1302(Lcom/android/server/ThrottleService;J)J
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -377,7 +377,7 @@
 .end method
 
 .method static synthetic access$1314(Lcom/android/server/ThrottleService;J)J
-    .locals 2
+    .registers 5
     .parameter "x0"
     .parameter "x1"
 
@@ -393,7 +393,7 @@
 .end method
 
 .method static synthetic access$1400(Lcom/android/server/ThrottleService;)J
-    .locals 2
+    .registers 3
     .parameter "x0"
 
     .prologue
@@ -404,7 +404,7 @@
 .end method
 
 .method static synthetic access$1402(Lcom/android/server/ThrottleService;J)J
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -416,7 +416,7 @@
 .end method
 
 .method static synthetic access$1414(Lcom/android/server/ThrottleService;J)J
-    .locals 2
+    .registers 5
     .parameter "x0"
     .parameter "x1"
 
@@ -432,7 +432,7 @@
 .end method
 
 .method static synthetic access$1500(Lcom/android/server/ThrottleService;)Landroid/app/PendingIntent;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -443,7 +443,7 @@
 .end method
 
 .method static synthetic access$1600(Lcom/android/server/ThrottleService;)Landroid/app/AlarmManager;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -454,7 +454,7 @@
 .end method
 
 .method static synthetic access$1700(Lcom/android/server/ThrottleService;)Ljava/lang/String;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -465,7 +465,7 @@
 .end method
 
 .method static synthetic access$1800(Lcom/android/server/ThrottleService;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -476,7 +476,7 @@
 .end method
 
 .method static synthetic access$1802(Lcom/android/server/ThrottleService;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -488,7 +488,7 @@
 .end method
 
 .method static synthetic access$1900(Lcom/android/server/ThrottleService;)Landroid/app/NotificationManager;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -499,7 +499,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/server/ThrottleService;)Lcom/android/server/ThrottleService$DataRecorder;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -510,7 +510,7 @@
 .end method
 
 .method static synthetic access$2000(Lcom/android/server/ThrottleService;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -521,7 +521,7 @@
 .end method
 
 .method static synthetic access$2002(Lcom/android/server/ThrottleService;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -533,7 +533,7 @@
 .end method
 
 .method static synthetic access$202(Lcom/android/server/ThrottleService;Lcom/android/server/ThrottleService$DataRecorder;)Lcom/android/server/ThrottleService$DataRecorder;
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -545,7 +545,7 @@
 .end method
 
 .method static synthetic access$2100(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -556,7 +556,7 @@
 .end method
 
 .method static synthetic access$2102(Lcom/android/server/ThrottleService;Landroid/app/Notification;)Landroid/app/Notification;
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -568,7 +568,7 @@
 .end method
 
 .method static synthetic access$2200(Lcom/android/server/ThrottleService;)J
-    .locals 2
+    .registers 3
     .parameter "x0"
 
     .prologue
@@ -581,7 +581,7 @@
 .end method
 
 .method static synthetic access$2300(Lcom/android/server/ThrottleService;)Landroid/app/PendingIntent;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -592,7 +592,7 @@
 .end method
 
 .method static synthetic access$2402(Lcom/android/server/ThrottleService;J)J
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -604,7 +604,7 @@
 .end method
 
 .method static synthetic access$2502(Lcom/android/server/ThrottleService;J)J
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -616,7 +616,7 @@
 .end method
 
 .method static synthetic access$2600(Lcom/android/server/ThrottleService;)Ljava/lang/Object;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -627,7 +627,7 @@
 .end method
 
 .method static synthetic access$2702(Lcom/android/server/ThrottleService;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -639,7 +639,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/server/ThrottleService;)Landroid/content/Context;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -650,7 +650,7 @@
 .end method
 
 .method static synthetic access$400(Lcom/android/server/ThrottleService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -661,7 +661,7 @@
 .end method
 
 .method static synthetic access$402(Lcom/android/server/ThrottleService;I)I
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -673,7 +673,7 @@
 .end method
 
 .method static synthetic access$500(Lcom/android/server/ThrottleService;)J
-    .locals 2
+    .registers 3
     .parameter "x0"
 
     .prologue
@@ -684,7 +684,7 @@
 .end method
 
 .method static synthetic access$502(Lcom/android/server/ThrottleService;J)J
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -696,7 +696,7 @@
 .end method
 
 .method static synthetic access$600(Lcom/android/server/ThrottleService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -707,7 +707,7 @@
 .end method
 
 .method static synthetic access$602(Lcom/android/server/ThrottleService;I)I
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -719,7 +719,7 @@
 .end method
 
 .method static synthetic access$700(Lcom/android/server/ThrottleService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -730,7 +730,7 @@
 .end method
 
 .method static synthetic access$702(Lcom/android/server/ThrottleService;I)I
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -742,7 +742,7 @@
 .end method
 
 .method static synthetic access$800(Lcom/android/server/ThrottleService;)Ljava/lang/String;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -753,7 +753,7 @@
 .end method
 
 .method static synthetic access$900(Lcom/android/server/ThrottleService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -764,7 +764,7 @@
 .end method
 
 .method static synthetic access$902(Lcom/android/server/ThrottleService;I)I
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -776,32 +776,32 @@
 .end method
 
 .method private checkForAuthoritativeTime()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 722
     iget-boolean v0, p0, Lcom/android/server/ThrottleService;->mNtpActive:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_8
 
     iget-object v0, p0, Lcom/android/server/ThrottleService;->mNtpServer:Ljava/lang/String;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_9
 
     .line 727
-    :cond_0
-    :goto_0
+    :cond_8
+    :goto_8
     return-void
 
     .line 726
-    :cond_1
+    :cond_9
     invoke-direct {p0}, Lcom/android/server/ThrottleService;->getBestTime()J
 
-    goto :goto_0
+    goto :goto_8
 .end method
 
 .method private enforceAccessPermission()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 215
@@ -818,13 +818,13 @@
 .end method
 
 .method private getBestTime()J
-    .locals 8
+    .registers 9
 
     .prologue
     .line 738
     iget-object v4, p0, Lcom/android/server/ThrottleService;->mNtpServer:Ljava/lang/String;
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_49
 
     .line 742
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -839,7 +839,7 @@
     .local v0, ntpAge:J
     iget-boolean v4, p0, Lcom/android/server/ThrottleService;->mNtpActive:Z
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_22
 
     .line 744
     iget v4, p0, Lcom/android/server/ThrottleService;->mMaxNtpCacheAgeSec:I
@@ -856,7 +856,7 @@
 
     cmp-long v4, v0, v4
 
-    if-gez v4, :cond_0
+    if-gez v4, :cond_22
 
     .line 746
     iget-wide v4, p0, Lcom/android/server/ThrottleService;->cachedNtp:J
@@ -865,21 +865,21 @@
 
     .line 785
     .end local v0           #ntpAge:J
-    :goto_0
+    :goto_21
     return-wide v4
 
     .line 750
     .restart local v0       #ntpAge:J
-    :cond_0
+    :cond_22
     iget-object v4, p0, Lcom/android/server/ThrottleService;->mNtpRequestPendingGuard:Ljava/lang/Object;
 
     monitor-enter v4
 
     .line 751
-    :try_start_0
+    :try_start_25
     iget-boolean v5, p0, Lcom/android/server/ThrottleService;->mNtpRequestPending:Z
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_34
 
     .line 752
     const/4 v5, 0x1
@@ -894,15 +894,15 @@
     invoke-virtual {v5}, Lcom/android/server/ThrottleService$3;->start()V
 
     .line 772
-    :cond_1
+    :cond_34
     monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_35
+    .catchall {:try_start_25 .. :try_end_35} :catchall_46
 
     .line 775
     iget-boolean v4, p0, Lcom/android/server/ThrottleService;->mNtpActive:Z
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_49
 
     .line 776
     iget v4, p0, Lcom/android/server/ThrottleService;->mMaxNtpCacheAgeSec:I
@@ -913,29 +913,29 @@
 
     cmp-long v4, v0, v4
 
-    if-gez v4, :cond_2
+    if-gez v4, :cond_49
 
     .line 778
     iget-wide v4, p0, Lcom/android/server/ThrottleService;->cachedNtp:J
 
     add-long/2addr v4, v0
 
-    goto :goto_0
+    goto :goto_21
 
     .line 772
-    :catchall_0
+    :catchall_46
     move-exception v5
 
-    :try_start_1
+    :try_start_47
     monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_48
+    .catchall {:try_start_47 .. :try_end_48} :catchall_46
 
     throw v5
 
     .line 782
     .end local v0           #ntpAge:J
-    :cond_2
+    :cond_49
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -949,11 +949,11 @@
     move-wide v4, v2
 
     .line 785
-    goto :goto_0
+    goto :goto_21
 .end method
 
 .method private ntpToWallTime(J)J
-    .locals 6
+    .registers 9
     .parameter "ntpTime"
 
     .prologue
@@ -980,7 +980,7 @@
 
 # virtual methods
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 8
+    .registers 12
     .parameter "fd"
     .parameter "pw"
     .parameter "args"
@@ -997,7 +997,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_35
 
     .line 1116
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1039,11 +1039,11 @@
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 1138
-    :cond_0
+    :cond_34
     return-void
 
     .line 1121
-    :cond_1
+    :cond_35
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
     .line 1123
@@ -1239,14 +1239,14 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_0
+    :goto_f7
     iget-object v1, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
 
     invoke-virtual {v1}, Lcom/android/server/ThrottleService$DataRecorder;->getPeriodCount()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v1, :cond_34
 
     .line 1135
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1304,11 +1304,11 @@
     .line 1134
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_f7
 .end method
 
 .method public declared-synchronized getByteCount(Ljava/lang/String;III)J
-    .locals 2
+    .registers 7
     .parameter "iface"
     .parameter "dir"
     .parameter "period"
@@ -1318,58 +1318,58 @@
     .line 275
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     invoke-direct {p0}, Lcom/android/server/ThrottleService;->enforceAccessPermission()V
 
     .line 276
-    if-nez p3, :cond_1
+    if-nez p3, :cond_1e
 
     iget-object v0, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_1e
 
     .line 278
-    if-nez p2, :cond_0
+    if-nez p2, :cond_14
 
     iget-object v0, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
 
     invoke-virtual {v0, p4}, Lcom/android/server/ThrottleService$DataRecorder;->getPeriodTx(I)J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_11
+    .catchall {:try_start_1 .. :try_end_11} :catchall_21
 
     move-result-wide v0
 
     .line 281
-    :goto_0
+    :goto_12
     monitor-exit p0
 
     return-wide v0
 
     .line 279
-    :cond_0
+    :cond_14
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_1
+    if-ne p2, v0, :cond_1e
 
-    :try_start_1
+    :try_start_17
     iget-object v0, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
 
     invoke-virtual {v0, p4}, Lcom/android/server/ThrottleService$DataRecorder;->getPeriodRx(I)J
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_1c
+    .catchall {:try_start_17 .. :try_end_1c} :catchall_21
 
     move-result-wide v0
 
-    goto :goto_0
+    goto :goto_12
 
     .line 281
-    :cond_1
+    :cond_1e
     const-wide/16 v0, 0x0
 
-    goto :goto_0
+    goto :goto_12
 
     .line 275
-    :catchall_0
+    :catchall_21
     move-exception v0
 
     monitor-exit p0
@@ -1378,7 +1378,7 @@
 .end method
 
 .method public declared-synchronized getCliffLevel(Ljava/lang/String;I)I
-    .locals 1
+    .registers 4
     .parameter "iface"
     .parameter "cliff"
 
@@ -1386,32 +1386,32 @@
     .line 260
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     invoke-direct {p0}, Lcom/android/server/ThrottleService;->enforceAccessPermission()V
 
     .line 261
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_0
+    if-ne p2, v0, :cond_b
 
     .line 262
     iget v0, p0, Lcom/android/server/ThrottleService;->mPolicyThrottleValue:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_9
+    .catchall {:try_start_1 .. :try_end_9} :catchall_d
 
     .line 264
-    :goto_0
+    :goto_9
     monitor-exit p0
 
     return v0
 
-    :cond_0
+    :cond_b
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_9
 
     .line 260
-    :catchall_0
+    :catchall_d
     move-exception v0
 
     monitor-exit p0
@@ -1420,7 +1420,7 @@
 .end method
 
 .method public declared-synchronized getCliffThreshold(Ljava/lang/String;I)J
-    .locals 2
+    .registers 5
     .parameter "iface"
     .parameter "cliff"
 
@@ -1428,32 +1428,32 @@
     .line 251
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     invoke-direct {p0}, Lcom/android/server/ThrottleService;->enforceAccessPermission()V
 
     .line 252
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_0
+    if-ne p2, v0, :cond_b
 
     .line 253
     iget-wide v0, p0, Lcom/android/server/ThrottleService;->mPolicyThreshold:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_9
+    .catchall {:try_start_1 .. :try_end_9} :catchall_e
 
     .line 255
-    :goto_0
+    :goto_9
     monitor-exit p0
 
     return-wide v0
 
-    :cond_0
+    :cond_b
     const-wide/16 v0, 0x0
 
-    goto :goto_0
+    goto :goto_9
 
     .line 251
-    :catchall_0
+    :catchall_e
     move-exception v0
 
     monitor-exit p0
@@ -1462,7 +1462,7 @@
 .end method
 
 .method public getHelpUri()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 268
@@ -1485,14 +1485,14 @@
 .end method
 
 .method public declared-synchronized getPeriodStartTime(Ljava/lang/String;)J
-    .locals 4
+    .registers 6
     .parameter "iface"
 
     .prologue
     .line 241
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     invoke-direct {p0}, Lcom/android/server/ThrottleService;->enforceAccessPermission()V
 
     .line 242
@@ -1502,7 +1502,7 @@
     .local v0, startTime:J
     iget-object v2, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_14
 
     .line 244
     iget-object v2, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
@@ -1512,20 +1512,20 @@
     move-result-wide v2
 
     invoke-direct {p0, v2, v3}, Lcom/android/server/ThrottleService;->ntpToWallTime(J)J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_13
+    .catchall {:try_start_1 .. :try_end_13} :catchall_16
 
     move-result-wide v0
 
     .line 246
-    :cond_0
+    :cond_14
     monitor-exit p0
 
     return-wide v0
 
     .line 241
     .end local v0           #startTime:J
-    :catchall_0
+    :catchall_16
     move-exception v2
 
     monitor-exit p0
@@ -1534,14 +1534,14 @@
 .end method
 
 .method public declared-synchronized getResetTime(Ljava/lang/String;)J
-    .locals 4
+    .registers 6
     .parameter "iface"
 
     .prologue
     .line 230
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     invoke-direct {p0}, Lcom/android/server/ThrottleService;->enforceAccessPermission()V
 
     .line 231
@@ -1551,7 +1551,7 @@
     .local v0, resetTime:J
     iget-object v2, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_14
 
     .line 233
     iget-object v2, p0, Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
@@ -1561,20 +1561,20 @@
     move-result-wide v2
 
     invoke-direct {p0, v2, v3}, Lcom/android/server/ThrottleService;->ntpToWallTime(J)J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_13
+    .catchall {:try_start_1 .. :try_end_13} :catchall_16
 
     move-result-wide v0
 
     .line 235
-    :cond_0
+    :cond_14
     monitor-exit p0
 
     return-wide v0
 
     .line 230
     .end local v0           #resetTime:J
-    :catchall_0
+    :catchall_16
     move-exception v2
 
     monitor-exit p0
@@ -1583,14 +1583,14 @@
 .end method
 
 .method public declared-synchronized getThrottle(Ljava/lang/String;)I
-    .locals 2
+    .registers 4
     .parameter "iface"
 
     .prologue
     .line 287
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     invoke-direct {p0}, Lcom/android/server/ThrottleService;->enforceAccessPermission()V
 
     .line 288
@@ -1598,26 +1598,26 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_d
 
     .line 289
     iget v0, p0, Lcom/android/server/ThrottleService;->mPolicyThrottleValue:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_b
+    .catchall {:try_start_1 .. :try_end_b} :catchall_f
 
     .line 291
-    :goto_0
+    :goto_b
     monitor-exit p0
 
     return v0
 
-    :cond_0
+    :cond_d
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_b
 
     .line 287
-    :catchall_0
+    :catchall_f
     move-exception v0
 
     monitor-exit p0
@@ -1626,7 +1626,7 @@
 .end method
 
 .method systemReady()V
-    .locals 10
+    .registers 11
 
     .prologue
     const-string v9, "ThrottleService"
@@ -1713,17 +1713,17 @@
     iput-object v5, p0, Lcom/android/server/ThrottleService;->mInterfaceObserver:Lcom/android/server/ThrottleService$InterfaceObserver;
 
     .line 320
-    :try_start_0
+    :try_start_55
     iget-object v5, p0, Lcom/android/server/ThrottleService;->mNMService:Landroid/os/INetworkManagementService;
 
     iget-object v6, p0, Lcom/android/server/ThrottleService;->mInterfaceObserver:Lcom/android/server/ThrottleService$InterfaceObserver;
 
     invoke-interface {v5, v6}, Landroid/os/INetworkManagementService;->registerObserver(Landroid/net/INetworkManagementEventObserver;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_5c
+    .catch Landroid/os/RemoteException; {:try_start_55 .. :try_end_5c} :catch_92
 
     .line 325
-    :goto_0
+    :goto_5c
     new-instance v5, Lcom/android/server/ThrottleService$SettingsObserver;
 
     iget-object v6, p0, Lcom/android/server/ThrottleService;->mHandler:Landroid/os/Handler;
@@ -1746,7 +1746,7 @@
 
     .line 330
     .local v3, stream:Ljava/io/FileInputStream;
-    :try_start_1
+    :try_start_6e
     new-instance v2, Ljava/util/Properties;
 
     invoke-direct {v2}, Ljava/util/Properties;-><init>()V
@@ -1764,14 +1764,14 @@
     new-instance v4, Ljava/io/FileInputStream;
 
     invoke-direct {v4, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_7f
+    .catchall {:try_start_6e .. :try_end_7f} :catchall_be
+    .catch Ljava/io/IOException; {:try_start_6e .. :try_end_7f} :catch_ad
 
     .line 333
     .end local v3           #stream:Ljava/io/FileInputStream;
     .local v4, stream:Ljava/io/FileInputStream;
-    :try_start_2
+    :try_start_7f
     invoke-virtual {v2, v4}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
 
     .line 334
@@ -1784,21 +1784,21 @@
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/server/ThrottleService;->mNtpServer:Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
+    :try_end_8b
+    .catchall {:try_start_7f .. :try_end_8b} :catchall_c9
+    .catch Ljava/io/IOException; {:try_start_7f .. :try_end_8b} :catch_cc
 
     .line 338
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_90
 
     .line 340
-    :try_start_3
+    :try_start_8d
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_4
+    :try_end_90
+    .catch Ljava/lang/Exception; {:try_start_8d .. :try_end_90} :catch_c7
 
-    :cond_0
-    :goto_1
+    :cond_90
+    :goto_90
     move-object v3, v4
 
     .line 344
@@ -1806,13 +1806,13 @@
     .end local v2           #properties:Ljava/util/Properties;
     .end local v4           #stream:Ljava/io/FileInputStream;
     .restart local v3       #stream:Ljava/io/FileInputStream;
-    :cond_1
-    :goto_2
+    :cond_91
+    :goto_91
     return-void
 
     .line 321
     .end local v3           #stream:Ljava/io/FileInputStream;
-    :catch_0
+    :catch_92
     move-exception v5
 
     move-object v0, v5
@@ -1841,93 +1841,93 @@
 
     invoke-static {v9, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_5c
 
     .line 335
     .end local v0           #e:Landroid/os/RemoteException;
     .restart local v3       #stream:Ljava/io/FileInputStream;
-    :catch_1
+    :catch_ad
     move-exception v5
 
     move-object v0, v5
 
     .line 336
     .local v0, e:Ljava/io/IOException;
-    :goto_3
-    :try_start_4
+    :goto_af
+    :try_start_af
     const-string v5, "ThrottleService"
 
     const-string v6, "Could not open GPS configuration file /etc/gps.conf"
 
     invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_b6
+    .catchall {:try_start_af .. :try_end_b6} :catchall_be
 
     .line 338
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_91
 
     .line 340
-    :try_start_5
+    :try_start_b8
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
+    :try_end_bb
+    .catch Ljava/lang/Exception; {:try_start_b8 .. :try_end_bb} :catch_bc
 
-    goto :goto_2
+    goto :goto_91
 
     .line 341
-    :catch_2
+    :catch_bc
     move-exception v5
 
-    goto :goto_2
+    goto :goto_91
 
     .line 338
     .end local v0           #e:Ljava/io/IOException;
-    :catchall_0
+    :catchall_be
     move-exception v5
 
-    :goto_4
-    if-eqz v3, :cond_2
+    :goto_bf
+    if-eqz v3, :cond_c4
 
     .line 340
-    :try_start_6
+    :try_start_c1
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
+    :try_end_c4
+    .catch Ljava/lang/Exception; {:try_start_c1 .. :try_end_c4} :catch_c5
 
     .line 338
-    :cond_2
-    :goto_5
+    :cond_c4
+    :goto_c4
     throw v5
 
     .line 341
-    :catch_3
+    :catch_c5
     move-exception v6
 
-    goto :goto_5
+    goto :goto_c4
 
     .end local v3           #stream:Ljava/io/FileInputStream;
     .restart local v1       #file:Ljava/io/File;
     .restart local v2       #properties:Ljava/util/Properties;
     .restart local v4       #stream:Ljava/io/FileInputStream;
-    :catch_4
+    :catch_c7
     move-exception v5
 
-    goto :goto_1
+    goto :goto_90
 
     .line 338
-    :catchall_1
+    :catchall_c9
     move-exception v5
 
     move-object v3, v4
 
     .end local v4           #stream:Ljava/io/FileInputStream;
     .restart local v3       #stream:Ljava/io/FileInputStream;
-    goto :goto_4
+    goto :goto_bf
 
     .line 335
     .end local v3           #stream:Ljava/io/FileInputStream;
     .restart local v4       #stream:Ljava/io/FileInputStream;
-    :catch_5
+    :catch_cc
     move-exception v5
 
     move-object v0, v5
@@ -1936,5 +1936,5 @@
 
     .end local v4           #stream:Ljava/io/FileInputStream;
     .restart local v3       #stream:Ljava/io/FileInputStream;
-    goto :goto_3
+    goto :goto_af
 .end method

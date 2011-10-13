@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 20
@@ -28,42 +28,42 @@
 
 # virtual methods
 .method public get()I
-    .locals 1
+    .registers 2
 
     .prologue
     .line 30
     monitor-enter p0
 
     .line 31
-    :goto_0
-    :try_start_0
+    :goto_1
+    :try_start_1
     iget-boolean v0, p0, Lcom/android/server/am/AppErrorResult;->mHasResult:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_f
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_b
 
     .line 33
-    :try_start_1
+    :try_start_5
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_8
+    .catchall {:try_start_5 .. :try_end_8} :catchall_f
+    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_8} :catch_9
 
-    goto :goto_0
+    goto :goto_1
 
     .line 34
-    :catch_0
+    :catch_9
     move-exception v0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 37
-    :cond_0
-    :try_start_2
+    :cond_b
+    :try_start_b
     monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_c
+    .catchall {:try_start_b .. :try_end_c} :catchall_f
 
     .line 38
     iget v0, p0, Lcom/android/server/am/AppErrorResult;->mResult:I
@@ -71,19 +71,19 @@
     return v0
 
     .line 37
-    :catchall_0
+    :catchall_f
     move-exception v0
 
-    :try_start_3
+    :try_start_10
     monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_11
+    .catchall {:try_start_10 .. :try_end_11} :catchall_f
 
     throw v0
 .end method
 
 .method public set(I)V
-    .locals 1
+    .registers 3
     .parameter "res"
 
     .prologue
@@ -93,7 +93,7 @@
     .line 23
     const/4 v0, 0x1
 
-    :try_start_0
+    :try_start_2
     iput-boolean v0, p0, Lcom/android/server/am/AppErrorResult;->mHasResult:Z
 
     .line 24
@@ -109,12 +109,12 @@
     return-void
 
     .line 26
-    :catchall_0
+    :catchall_b
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_d
+    .catchall {:try_start_2 .. :try_end_d} :catchall_b
 
     throw v0
 .end method

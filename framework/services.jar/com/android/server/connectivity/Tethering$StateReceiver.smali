@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/connectivity/Tethering;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -33,7 +33,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/connectivity/Tethering;Lcom/android/server/connectivity/Tethering$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 7
+    .registers 10
     .parameter "content"
     .parameter "intent"
 
@@ -69,7 +69,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_41
 
     .line 446
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
@@ -90,11 +90,11 @@
 
     move-result-object v3
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3c
 
     move v4, v5
 
-    :goto_0
+    :goto_21
     invoke-static {v3, v5, v4, v6}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object v2
@@ -116,45 +116,45 @@
 
     move-result-object v3
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3e
 
     const-wide/16 v4, 0x0
 
-    :goto_1
+    :goto_38
     invoke-virtual {v3, v2, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .line 464
     .end local v1           #connected:Z
     .end local v2           #msg:Landroid/os/Message;
-    :cond_0
-    :goto_2
+    :cond_3b
+    :goto_3b
     return-void
 
     .restart local v1       #connected:Z
-    :cond_1
+    :cond_3c
     move v4, v6
 
     .line 447
-    goto :goto_0
+    goto :goto_21
 
     .line 450
     .restart local v2       #msg:Landroid/os/Message;
-    :cond_2
+    :cond_3e
     const-wide/16 v4, 0x3e8
 
-    goto :goto_1
+    goto :goto_38
 
     .line 451
     .end local v1           #connected:Z
     .end local v2           #msg:Landroid/os/Message;
-    :cond_3
+    :cond_41
     const-string v3, "android.intent.action.MEDIA_SHARED"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_54
 
     .line 452
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$StateReceiver;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -166,17 +166,17 @@
 
     invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->access$200(Lcom/android/server/connectivity/Tethering;)V
 
-    goto :goto_2
+    goto :goto_3b
 
     .line 455
-    :cond_4
+    :cond_54
     const-string v3, "android.intent.action.MEDIA_UNSHARED"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_67
 
     .line 456
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$StateReceiver;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -188,17 +188,17 @@
 
     invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->access$200(Lcom/android/server/connectivity/Tethering;)V
 
-    goto :goto_2
+    goto :goto_3b
 
     .line 458
-    :cond_5
+    :cond_67
     const-string v3, "android.net.conn.CONNECTIVITY_CHANGE"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7a
 
     .line 459
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$StateReceiver;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -211,17 +211,17 @@
 
     invoke-virtual {v3, v4}, Lcom/android/internal/util/HierarchicalStateMachine;->sendMessage(I)V
 
-    goto :goto_2
+    goto :goto_3b
 
     .line 460
-    :cond_6
+    :cond_7a
     const-string v3, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_3b
 
     .line 461
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$StateReceiver;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -233,5 +233,5 @@
 
     invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->access$200(Lcom/android/server/connectivity/Tethering;)V
 
-    goto :goto_2
+    goto :goto_3b
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
-    .locals 0
+    .registers 2
     .parameter "activityManagerService"
 
     .prologue
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 8
+    .registers 12
     .parameter "fd"
     .parameter "pw"
     .parameter "args"
@@ -53,12 +53,12 @@
     monitor-enter v5
 
     .line 1360
-    if-eqz p3, :cond_3
+    if-eqz p3, :cond_73
 
-    :try_start_0
+    :try_start_7
     array-length v6, p3
 
-    if-lez v6, :cond_3
+    if-lez v6, :cond_73
 
     const/4 v6, 0x0
 
@@ -72,14 +72,14 @@
 
     const/16 v7, 0x2d
 
-    if-eq v6, v7, :cond_3
+    if-eq v6, v7, :cond_73
 
     .line 1362
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1b
+    .catchall {:try_start_7 .. :try_end_1b} :catchall_4f
 
     .line 1363
     .local v3, procs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ProcessRecord;>;"
@@ -89,19 +89,19 @@
     .local v1, pid:I
     const/4 v6, 0x0
 
-    :try_start_1
+    :try_start_1d
     aget-object v6, p3, v6
 
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_22
+    .catchall {:try_start_1d .. :try_end_22} :catchall_4f
+    .catch Ljava/lang/NumberFormatException; {:try_start_1d .. :try_end_22} :catch_81
 
     move-result v1
 
     .line 1369
-    :goto_0
-    :try_start_2
+    :goto_23
+    :try_start_23
     iget-object v6, v4, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -113,8 +113,8 @@
     sub-int v0, v6, v7
 
     .local v0, i:I
-    :goto_1
-    if-ltz v0, :cond_2
+    :goto_2c
+    if-ltz v0, :cond_52
 
     .line 1370
     iget-object v6, v4, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
@@ -129,20 +129,20 @@
     .local v2, proc:Lcom/android/server/am/ProcessRecord;
     iget v6, v2, Lcom/android/server/am/ProcessRecord;->pid:I
 
-    if-ne v6, v1, :cond_1
+    if-ne v6, v1, :cond_40
 
     .line 1372
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 1369
-    :cond_0
-    :goto_2
+    :cond_3d
+    :goto_3d
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_1
+    goto :goto_2c
 
     .line 1373
-    :cond_1
+    :cond_40
     iget-object v6, v2, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     const/4 v7, 0x0
@@ -153,24 +153,24 @@
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    if-eqz v6, :cond_3d
 
     .line 1374
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2
+    goto :goto_3d
 
     .line 1384
     .end local v0           #i:I
     .end local v1           #pid:I
     .end local v2           #proc:Lcom/android/server/am/ProcessRecord;
     .end local v3           #procs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ProcessRecord;>;"
-    :catchall_0
+    :catchall_4f
     move-exception v6
 
     monitor-exit v5
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_51
+    .catchall {:try_start_23 .. :try_end_51} :catchall_4f
 
     throw v6
 
@@ -178,13 +178,13 @@
     .restart local v0       #i:I
     .restart local v1       #pid:I
     .restart local v3       #procs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ProcessRecord;>;"
-    :cond_2
-    :try_start_3
+    :cond_52
+    :try_start_52
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    if-gtz v6, :cond_4
+    if-gtz v6, :cond_7a
 
     .line 1378
     new-instance v6, Ljava/lang/StringBuilder;
@@ -217,12 +217,12 @@
     .line 1386
     .end local v0           #i:I
     .end local v1           #pid:I
-    :goto_3
+    :goto_72
     return-void
 
     .line 1382
     .end local v3           #procs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ProcessRecord;>;"
-    :cond_3
+    :cond_73
     new-instance v3, Ljava/util/ArrayList;
 
     iget-object v6, v4, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
@@ -231,22 +231,22 @@
 
     .line 1384
     .restart local v3       #procs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ProcessRecord;>;"
-    :cond_4
+    :cond_7a
     monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_7b
+    .catchall {:try_start_52 .. :try_end_7b} :catchall_4f
 
     .line 1385
     const-string v5, "  "
 
     invoke-static {p1, p2, v3, v5, p3}, Lcom/android/server/am/ActivityManagerService;->dumpApplicationMemoryUsage(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;Ljava/util/List;Ljava/lang/String;[Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_72
 
     .line 1366
     .restart local v1       #pid:I
-    :catch_0
+    :catch_81
     move-exception v6
 
-    goto :goto_0
+    goto :goto_23
 .end method

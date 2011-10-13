@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .registers 3
 
     .prologue
     const-wide/16 v0, 0x0
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;J)V
-    .locals 2
+    .registers 7
     .parameter "pw"
     .parameter "prefix"
     .parameter "now"
@@ -114,7 +114,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 623

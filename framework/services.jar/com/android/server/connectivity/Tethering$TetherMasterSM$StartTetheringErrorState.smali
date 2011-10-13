@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering$TetherMasterSM;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public enter()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 1415
@@ -67,18 +67,18 @@
     .local v1, service:Landroid/os/INetworkManagementService;
     const/4 v2, 0x0
 
-    :try_start_0
+    :try_start_17
     invoke-interface {v1, v2}, Landroid/os/INetworkManagementService;->setIpForwardingEnabled(Z)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1a
+    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_1a} :catch_1b
 
     .line 1423
-    :goto_0
+    :goto_1a
     return-void
 
     .line 1422
-    :catch_0
+    :catch_1b
     move-exception v2
 
-    goto :goto_0
+    goto :goto_1a
 .end method

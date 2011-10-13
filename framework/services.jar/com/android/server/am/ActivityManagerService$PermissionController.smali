@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
-    .locals 0
+    .registers 2
     .parameter "activityManagerService"
 
     .prologue
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public checkPermission(Ljava/lang/String;II)Z
-    .locals 1
+    .registers 5
     .parameter "permission"
     .parameter "pid"
     .parameter "uid"
@@ -50,15 +50,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_a
 
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_9
     return v0
 
-    :cond_0
+    :cond_a
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_9
 .end method

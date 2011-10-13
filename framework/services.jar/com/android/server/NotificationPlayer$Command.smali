@@ -30,7 +30,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 48
@@ -40,7 +40,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/NotificationPlayer$1;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 57

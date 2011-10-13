@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/location/GeocoderProxy;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/location/GeocoderProxy;Lcom/android/server/location/GeocoderProxy$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -52,14 +52,14 @@
 
 # virtual methods
 .method public getProvider()Landroid/location/IGeocodeProvider;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 84
     monitor-enter p0
 
     .line 85
-    :try_start_0
+    :try_start_1
     iget-object v0, p0, Lcom/android/server/location/GeocoderProxy$Connection;->mProvider:Landroid/location/IGeocodeProvider;
 
     monitor-exit p0
@@ -67,18 +67,18 @@
     return-object v0
 
     .line 86
-    :catchall_0
+    :catchall_5
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_5
 
     throw v0
 .end method
 
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 3
+    .registers 6
     .parameter "className"
     .parameter "service"
 
@@ -110,7 +110,7 @@
     monitor-enter p0
 
     .line 72
-    :try_start_0
+    :try_start_19
     invoke-static {p2}, Landroid/location/IGeocodeProvider$Stub;->asInterface(Landroid/os/IBinder;)Landroid/location/IGeocodeProvider;
 
     move-result-object v0
@@ -124,18 +124,18 @@
     return-void
 
     .line 73
-    :catchall_0
+    :catchall_21
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_23
+    .catchall {:try_start_19 .. :try_end_23} :catchall_21
 
     throw v0
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 3
+    .registers 5
     .parameter "className"
 
     .prologue
@@ -168,7 +168,7 @@
     .line 79
     const/4 v0, 0x0
 
-    :try_start_0
+    :try_start_1a
     iput-object v0, p0, Lcom/android/server/location/GeocoderProxy$Connection;->mProvider:Landroid/location/IGeocodeProvider;
 
     .line 80
@@ -178,12 +178,12 @@
     return-void
 
     .line 80
-    :catchall_0
+    :catchall_1e
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_20
+    .catchall {:try_start_1a .. :try_end_20} :catchall_1e
 
     throw v0
 .end method

@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/graphics/Paint;)V
-    .locals 1
+    .registers 3
     .parameter "paint"
 
     .prologue
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public onLoadChanged(FFF)V
-    .locals 3
+    .registers 7
     .parameter "load1"
     .parameter "load5"
     .parameter "load15"
@@ -104,7 +104,7 @@
 .end method
 
 .method public onMeasureProcessName(Ljava/lang/String;)I
-    .locals 1
+    .registers 3
     .parameter "name"
 
     .prologue

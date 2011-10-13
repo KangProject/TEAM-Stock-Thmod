@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .registers 8
 
     .prologue
     const/4 v7, 0x4
@@ -204,7 +204,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -221,7 +221,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/am/ActivityStack$ActivityState;
-    .locals 1
+    .registers 2
     .parameter "name"
 
     .prologue
@@ -239,7 +239,7 @@
 .end method
 
 .method public static values()[Lcom/android/server/am/ActivityStack$ActivityState;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 119

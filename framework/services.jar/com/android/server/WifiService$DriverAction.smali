@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .registers 4
 
     .prologue
     const/4 v3, 0x1
@@ -75,7 +75,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -92,7 +92,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/WifiService$DriverAction;
-    .locals 1
+    .registers 2
     .parameter "name"
 
     .prologue
@@ -110,7 +110,7 @@
 .end method
 
 .method public static values()[Lcom/android/server/WifiService$DriverAction;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 119

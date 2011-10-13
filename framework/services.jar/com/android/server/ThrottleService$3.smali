@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/ThrottleService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 756
@@ -57,7 +57,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_41
 
     .line 758
     iget-object v1, p0, Lcom/android/server/ThrottleService$3;->this$0:Lcom/android/server/ThrottleService;
@@ -84,7 +84,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_41
 
     .line 761
     iget-object v1, p0, Lcom/android/server/ThrottleService$3;->this$0:Lcom/android/server/ThrottleService;
@@ -109,7 +109,7 @@
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
     .line 766
-    :cond_0
+    :cond_41
     iget-object v1, p0, Lcom/android/server/ThrottleService$3;->this$0:Lcom/android/server/ThrottleService;
 
     invoke-static {v1}, Lcom/android/server/ThrottleService;->access$2600(Lcom/android/server/ThrottleService;)Ljava/lang/Object;
@@ -119,7 +119,7 @@
     monitor-enter v1
 
     .line 767
-    :try_start_0
+    :try_start_48
     iget-object v2, p0, Lcom/android/server/ThrottleService$3;->this$0:Lcom/android/server/ThrottleService;
 
     const/4 v3, 0x0
@@ -133,12 +133,12 @@
     return-void
 
     .line 768
-    :catchall_0
+    :catchall_50
     move-exception v2
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_52
+    .catchall {:try_start_48 .. :try_end_52} :catchall_50
 
     throw v2
 .end method

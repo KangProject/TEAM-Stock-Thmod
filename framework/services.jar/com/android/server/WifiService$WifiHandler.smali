@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/WifiService;Landroid/os/Looper;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "looper"
 
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 6
+    .registers 8
     .parameter "msg"
 
     .prologue
@@ -51,25 +51,25 @@
     .line 2081
     iget v1, p1, Landroid/os/Message;->what:I
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v1, :pswitch_data_13e
 
     .line 2165
     .end local p0
-    :goto_0
+    :goto_8
     return-void
 
     .line 2084
     .restart local p0
-    :pswitch_0
+    :pswitch_9
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    if-ne v2, v4, :cond_1
+    if-ne v2, v4, :cond_3b
 
     move v2, v4
 
-    :goto_1
+    :goto_10
     iget v3, p1, Landroid/os/Message;->arg2:I
 
     invoke-static {v1, v4, v2, v3}, Lcom/android/server/WifiService;->access$2100(Lcom/android/server/WifiService;ZZI)Z
@@ -81,7 +81,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_33
 
     .line 2086
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
@@ -105,23 +105,23 @@
     invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$2202(Lcom/android/server/WifiService;Lcom/android/server/WifiWatchdogService;)Lcom/android/server/WifiWatchdogService;
 
     .line 2088
-    :cond_0
+    :cond_33
     invoke-static {}, Lcom/android/server/WifiService;->access$2300()Landroid/os/PowerManager$WakeLock;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    goto :goto_0
+    goto :goto_8
 
-    :cond_1
+    :cond_3b
     move v2, v5
 
     .line 2084
-    goto :goto_1
+    goto :goto_10
 
     .line 2092
-    :pswitch_1
+    :pswitch_3d
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$2400(Lcom/android/server/WifiService;)V
@@ -135,11 +135,11 @@
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    if-ne v2, v3, :cond_2
+    if-ne v2, v3, :cond_70
 
     move v2, v4
 
-    :goto_2
+    :goto_4d
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiStateTracker;->setScanOnlyMode(Z)V
 
     .line 2094
@@ -162,11 +162,11 @@
 
     const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_3
+    if-ne v2, v3, :cond_72
 
     move v2, v4
 
-    :goto_3
+    :goto_65
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiStateTracker;->setHighPerfMode(Z)V
 
     .line 2097
@@ -176,39 +176,39 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    goto :goto_0
+    goto :goto_8
 
-    :cond_2
+    :cond_70
     move v2, v5
 
     .line 2093
-    goto :goto_2
+    goto :goto_4d
 
-    :cond_3
+    :cond_72
     move v2, v5
 
     .line 2095
-    goto :goto_3
+    goto :goto_65
 
     .line 2101
-    :pswitch_2
+    :pswitch_74
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$2500(Lcom/android/server/WifiService;)V
 
-    goto :goto_0
+    goto :goto_8
 
     .line 2107
-    :pswitch_3
+    :pswitch_7a
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    if-ne v2, v4, :cond_4
+    if-ne v2, v4, :cond_95
 
     move v2, v4
 
-    :goto_4
+    :goto_81
     iget v3, p1, Landroid/os/Message;->arg2:I
 
     invoke-static {v1, v5, v2, v3}, Lcom/android/server/WifiService;->access$2100(Lcom/android/server/WifiService;ZZI)Z
@@ -227,16 +227,16 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
-    :cond_4
+    :cond_95
     move v2, v5
 
     .line 2107
-    goto :goto_4
+    goto :goto_81
 
     .line 2113
-    :pswitch_4
+    :pswitch_97
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1400(Lcom/android/server/WifiService;)Landroid/net/wifi/WifiStateTracker;
@@ -245,20 +245,20 @@
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiStateTracker;->disconnectAndStop()Z
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
     .line 2118
-    :pswitch_5
+    :pswitch_a2
     invoke-static {}, Lcom/android/server/WifiService;->access$2600()Landroid/os/PowerManager$WakeLock;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
     .line 2122
-    :pswitch_6
+    :pswitch_ab
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
@@ -277,11 +277,11 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
     .line 2129
     .restart local p0
-    :pswitch_7
+    :pswitch_bf
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
@@ -300,33 +300,33 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
     .line 2136
     .restart local p0
-    :pswitch_8
+    :pswitch_d3
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     iget v3, p1, Landroid/os/Message;->arg2:I
 
-    if-ne v3, v4, :cond_5
+    if-ne v3, v4, :cond_e1
 
     move v3, v4
 
-    :goto_5
+    :goto_dc
     invoke-static {v1, v2, v3}, Lcom/android/server/WifiService;->access$2800(Lcom/android/server/WifiService;IZ)Z
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
-    :cond_5
+    :cond_e1
     move v3, v5
 
-    goto :goto_5
+    goto :goto_dc
 
     .line 2140
-    :pswitch_9
+    :pswitch_e3
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1400(Lcom/android/server/WifiService;)Landroid/net/wifi/WifiStateTracker;
@@ -341,19 +341,19 @@
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiStateTracker;->enableAllNetworks(Ljava/util/List;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
     .line 2144
-    :pswitch_a
+    :pswitch_f4
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    if-ne v1, v4, :cond_6
+    if-ne v1, v4, :cond_122
 
     move v0, v4
 
     .line 2145
     .local v0, forceActive:Z
-    :goto_6
+    :goto_f9
     sget-object v1, Lcom/android/server/WifiService$5;->$SwitchMap$android$net$wifi$SupplicantState:[I
 
     iget-object v2, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
@@ -372,7 +372,7 @@
 
     aget v1, v1, v2
 
-    packed-switch v1, :pswitch_data_1
+    packed-switch v1, :pswitch_data_15c
 
     .line 2152
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
@@ -384,7 +384,7 @@
     invoke-virtual {v1, v3}, Landroid/net/wifi/WifiStateTracker;->setScanResultHandling(I)Z
 
     .line 2156
-    :pswitch_b
+    :pswitch_117
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1400(Lcom/android/server/WifiService;)Landroid/net/wifi/WifiStateTracker;
@@ -393,25 +393,25 @@
 
     invoke-virtual {v1, v0}, Landroid/net/wifi/WifiStateTracker;->scan(Z)Z
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
     .end local v0           #forceActive:Z
-    :cond_6
+    :cond_122
     move v0, v5
 
     .line 2144
-    goto :goto_6
+    goto :goto_f9
 
     .line 2159
-    :pswitch_c
+    :pswitch_124
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$2400(Lcom/android/server/WifiService;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
     .line 2162
-    :pswitch_d
+    :pswitch_12b
     iget-object v1, p0, Lcom/android/server/WifiService$WifiHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1400(Lcom/android/server/WifiService;)Landroid/net/wifi/WifiStateTracker;
@@ -420,46 +420,46 @@
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    if-ne v2, v4, :cond_7
+    if-ne v2, v4, :cond_13b
 
     move v2, v4
 
-    :goto_7
+    :goto_136
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiStateTracker;->enableRssiPolling(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
-    :cond_7
+    :cond_13b
     move v2, v5
 
-    goto :goto_7
+    goto :goto_136
 
     .line 2081
     nop
 
-    :pswitch_data_0
+    :pswitch_data_13e
     .packed-switch 0x0
-        :pswitch_0
-        :pswitch_3
-        :pswitch_4
-        :pswitch_1
-        :pswitch_5
-        :pswitch_2
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
         :pswitch_9
-        :pswitch_a
-        :pswitch_c
-        :pswitch_d
+        :pswitch_7a
+        :pswitch_97
+        :pswitch_3d
+        :pswitch_a2
+        :pswitch_74
+        :pswitch_ab
+        :pswitch_bf
+        :pswitch_d3
+        :pswitch_e3
+        :pswitch_f4
+        :pswitch_124
+        :pswitch_12b
     .end packed-switch
 
     .line 2145
-    :pswitch_data_1
+    :pswitch_data_15c
     .packed-switch 0x1
-        :pswitch_b
-        :pswitch_b
-        :pswitch_b
-        :pswitch_b
+        :pswitch_117
+        :pswitch_117
+        :pswitch_117
+        :pswitch_117
     .end packed-switch
 .end method

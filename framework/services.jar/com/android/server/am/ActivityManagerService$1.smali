@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method protected bridge synthetic allowFilterResult(Landroid/content/IntentFilter;Ljava/util/List;)Z
-    .locals 1
+    .registers 4
     .parameter "x0"
     .parameter "x1"
 
@@ -62,7 +62,7 @@
 .end method
 
 .method protected allowFilterResult(Lcom/android/server/am/BroadcastFilter;Ljava/util/List;)Z
-    .locals 4
+    .registers 7
     .parameter "filter"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -99,8 +99,8 @@
 
     .end local p0
     .local v0, i:I
-    :goto_0
-    if-ltz v0, :cond_1
+    :goto_f
+    if-ltz v0, :cond_26
 
     .line 619
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -117,24 +117,24 @@
 
     move-result-object v2
 
-    if-ne v2, v1, :cond_0
+    if-ne v2, v1, :cond_23
 
     .line 620
     const/4 v2, 0x0
 
     .line 623
-    :goto_1
+    :goto_22
     return v2
 
     .line 618
-    :cond_0
+    :cond_23
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_0
+    goto :goto_f
 
-    :cond_1
+    :cond_26
     move v2, v3
 
     .line 623
-    goto :goto_1
+    goto :goto_22
 .end method

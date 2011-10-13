@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;JLandroid/content/pm/IPackageDataObserver;)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter
     .parameter
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .registers 7
 
     .prologue
     const-string v5, "PackageManager"
@@ -69,7 +69,7 @@
 
     iget-object v2, v2, Lcom/android/server/PackageManagerService;->mInstaller:Lcom/android/server/Installer;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_23
 
     .line 1540
     iget-object v2, p0, Lcom/android/server/PackageManagerService$1;->this$0:Lcom/android/server/PackageManagerService;
@@ -83,7 +83,7 @@
     move-result v1
 
     .line 1541
-    if-gez v1, :cond_0
+    if-gez v1, :cond_23
 
     .line 1542
     const-string v2, "PackageManager"
@@ -93,39 +93,39 @@
     invoke-static {v5, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1545
-    :cond_0
+    :cond_23
     iget-object v2, p0, Lcom/android/server/PackageManagerService$1;->val$observer:Landroid/content/pm/IPackageDataObserver;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_30
 
     .line 1547
-    :try_start_0
+    :try_start_27
     iget-object v2, p0, Lcom/android/server/PackageManagerService$1;->val$observer:Landroid/content/pm/IPackageDataObserver;
 
     const/4 v3, 0x0
 
-    if-ltz v1, :cond_2
+    if-ltz v1, :cond_31
 
     const/4 v4, 0x1
 
-    :goto_0
+    :goto_2d
     invoke-interface {v2, v3, v4}, Landroid/content/pm/IPackageDataObserver;->onRemoveCompleted(Ljava/lang/String;Z)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_30
+    .catch Landroid/os/RemoteException; {:try_start_27 .. :try_end_30} :catch_33
 
     .line 1552
-    :cond_1
-    :goto_1
+    :cond_30
+    :goto_30
     return-void
 
     .line 1547
-    :cond_2
+    :cond_31
     const/4 v4, 0x0
 
-    goto :goto_0
+    goto :goto_2d
 
     .line 1548
-    :catch_0
+    :catch_33
     move-exception v2
 
     move-object v0, v2
@@ -138,5 +138,5 @@
 
     invoke-static {v5, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_30
 .end method

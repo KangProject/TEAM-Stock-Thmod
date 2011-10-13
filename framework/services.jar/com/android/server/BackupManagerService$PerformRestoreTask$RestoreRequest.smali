@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/BackupManagerService$PerformRestoreTask;Landroid/content/pm/PackageInfo;I)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter "_app"
     .parameter "_version"

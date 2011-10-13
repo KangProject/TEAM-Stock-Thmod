@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,16 +36,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 11
+    .registers 12
 
     .prologue
     .line 1446
     :goto_0
     :try_start_0
     monitor-enter p0
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_1} :catch_47
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1} :catch_3a
 
     .line 1447
     :try_start_1
@@ -85,18 +85,18 @@
     .local v3, nextWriteDelay:J
     cmp-long v7, v3, v1
 
-    if-gez v7, :cond_0
+    if-gez v7, :cond_22
 
     .line 1453
     move-wide v1, v3
 
     .line 1455
-    :cond_0
+    :cond_22
     const-wide/16 v7, 0x0
 
     cmp-long v7, v1, v7
 
-    if-lez v7, :cond_1
+    if-lez v7, :cond_33
 
     .line 1456
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerService$3;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -111,27 +111,27 @@
     invoke-virtual {p0, v1, v2}, Ljava/lang/Object;->wait(J)V
 
     .line 1459
-    :cond_1
+    :cond_33
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_34
+    .catchall {:try_start_1 .. :try_end_34} :catchall_44
 
     .line 1462
     .end local v1           #nextCpuDelay:J
     .end local v3           #nextWriteDelay:J
     .end local v5           #now:J
-    :goto_1
-    :try_start_2
+    :goto_34
+    :try_start_34
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerService$3;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v7}, Lcom/android/server/am/ActivityManagerService;->updateCpuStatsNow()V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_39
+    .catch Ljava/lang/Exception; {:try_start_34 .. :try_end_39} :catch_3a
 
     goto :goto_0
 
     .line 1463
-    :catch_0
+    :catch_3a
     move-exception v7
 
     move-object v0, v7
@@ -148,23 +148,23 @@
 
     .line 1459
     .end local v0           #e:Ljava/lang/Exception;
-    :catchall_0
+    :catchall_44
     move-exception v7
 
-    :try_start_3
+    :try_start_45
     monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_46
+    .catchall {:try_start_45 .. :try_end_46} :catchall_44
 
-    :try_start_4
+    :try_start_46
     throw v7
-    :try_end_4
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+    :try_end_47
+    .catch Ljava/lang/InterruptedException; {:try_start_46 .. :try_end_47} :catch_47
+    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_47} :catch_3a
 
     .line 1460
-    :catch_1
+    :catch_47
     move-exception v7
 
-    goto :goto_1
+    goto :goto_34
 .end method

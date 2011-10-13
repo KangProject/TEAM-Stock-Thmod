@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .registers 5
     .parameter "msg"
 
     .prologue
@@ -46,11 +46,11 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_11
 
     move v1, v2
 
-    :goto_0
+    :goto_8
     invoke-static {v0, v1}, Lcom/android/server/connectivity/Tethering;->access$102(Lcom/android/server/connectivity/Tethering;Z)Z
 
     .line 436
@@ -62,8 +62,8 @@
     return-void
 
     .line 435
-    :cond_0
+    :cond_11
     const/4 v1, 0x0
 
-    goto :goto_0
+    goto :goto_8
 .end method

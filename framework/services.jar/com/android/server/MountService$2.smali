@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 18
+    .registers 19
 
     .prologue
     .line 603
@@ -53,7 +53,7 @@
 
     .line 607
     .local v9, state:Ljava/lang/String;
-    :try_start_0
+    :try_start_a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
@@ -83,8 +83,8 @@
     const/4 v5, 0x0
 
     .local v5, i$:I
-    :goto_0
-    if-ge v5, v6, :cond_6
+    :goto_1e
+    if-ge v5, v6, :cond_ed
 
     aget-object v12, v1, v5
 
@@ -106,7 +106,7 @@
 
     move-result v13
 
-    if-nez v13, :cond_0
+    if-nez v13, :cond_4a
 
     .line 613
     const-string v13, "MountService"
@@ -132,13 +132,13 @@
     invoke-static {v13, v14}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 609
-    :goto_1
+    :goto_47
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_0
+    goto :goto_1e
 
     .line 617
-    :cond_0
+    :cond_4a
     const/4 v13, 0x2
 
     aget-object v13, v10, v13
@@ -149,13 +149,13 @@
 
     .line 618
     .local v8, st:I
-    if-nez v8, :cond_2
+    if-nez v8, :cond_b6
 
     .line 619
     const-string v9, "removed"
 
     .line 631
-    :goto_2
+    :goto_55
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
@@ -201,10 +201,10 @@
     move-result v15
 
     invoke-static {v13, v14, v15}, Lcom/android/server/MountService;->access$1400(Lcom/android/server/MountService;Ljava/lang/String;Z)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_83
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_83} :catch_84
 
-    goto :goto_1
+    goto :goto_47
 
     .line 638
     .end local v1           #arr$:[Ljava/lang/String;
@@ -214,7 +214,7 @@
     .end local v10           #tok:[Ljava/lang/String;
     .end local v11           #vols:[Ljava/lang/String;
     .end local v12           #volstr:Ljava/lang/String;
-    :catch_0
+    :catch_84
     move-exception v13
 
     move-object v3, v13
@@ -240,9 +240,9 @@
 
     .line 644
     .end local v3           #e:Ljava/lang/Exception;
-    :cond_1
-    :goto_3
-    :try_start_1
+    :cond_97
+    :goto_97
+    :try_start_97
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
@@ -266,12 +266,12 @@
     const-string v14, "ums"
 
     invoke-static {v13, v14, v2}, Lcom/android/server/MountService;->access$1700(Lcom/android/server/MountService;Ljava/lang/String;Z)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_ac
+    .catch Ljava/lang/Exception; {:try_start_97 .. :try_end_ac} :catch_f8
 
     .line 653
     .end local v2           #avail:Z
-    :goto_4
+    :goto_ac
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
@@ -293,22 +293,22 @@
     .restart local v10       #tok:[Ljava/lang/String;
     .restart local v11       #vols:[Ljava/lang/String;
     .restart local v12       #volstr:Ljava/lang/String;
-    :cond_2
+    :cond_b6
     const/4 v13, 0x1
 
-    if-ne v8, v13, :cond_3
+    if-ne v8, v13, :cond_bc
 
     .line 621
-    :try_start_2
+    :try_start_b9
     const-string v9, "unmounted"
 
-    goto :goto_2
+    goto :goto_55
 
     .line 622
-    :cond_3
+    :cond_bc
     const/4 v13, 0x4
 
-    if-ne v8, v13, :cond_4
+    if-ne v8, v13, :cond_c9
 
     .line 623
     const-string v9, "mounted"
@@ -320,13 +320,13 @@
 
     invoke-static {v13, v14}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_2
+    goto :goto_55
 
     .line 625
-    :cond_4
+    :cond_c9
     const/4 v13, 0x7
 
-    if-ne v8, v13, :cond_5
+    if-ne v8, v13, :cond_d6
 
     .line 626
     const-string v9, "shared"
@@ -338,10 +338,10 @@
 
     invoke-static {v13, v14}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_2
+    goto :goto_55
 
     .line 629
-    :cond_5
+    :cond_d6
     new-instance v13, Ljava/lang/Exception;
 
     const-string v14, "Unexpected state %d"
@@ -370,8 +370,8 @@
     .end local v8           #st:I
     .end local v10           #tok:[Ljava/lang/String;
     .end local v12           #volstr:Ljava/lang/String;
-    :cond_6
-    if-eqz v9, :cond_1
+    :cond_ed
+    if-eqz v9, :cond_97
 
     .line 636
     move-object/from16 v0, p0
@@ -381,17 +381,17 @@
     move-object v13, v0
 
     invoke-static {v13, v7, v9}, Lcom/android/server/MountService;->access$1500(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_f7
+    .catch Ljava/lang/Exception; {:try_start_b9 .. :try_end_f7} :catch_84
 
-    goto :goto_3
+    goto :goto_97
 
     .line 646
     .end local v1           #arr$:[Ljava/lang/String;
     .end local v5           #i$:I
     .end local v6           #len$:I
     .end local v11           #vols:[Ljava/lang/String;
-    :catch_1
+    :catch_f8
     move-exception v13
 
     move-object v4, v13
@@ -404,5 +404,5 @@
 
     invoke-static {v13, v14}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4
+    goto :goto_ac
 .end method

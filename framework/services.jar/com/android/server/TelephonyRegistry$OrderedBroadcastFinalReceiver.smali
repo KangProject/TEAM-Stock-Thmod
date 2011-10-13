@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/TelephonyRegistry;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -33,7 +33,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/TelephonyRegistry;Lcom/android/server/TelephonyRegistry$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .registers 11
     .parameter "context"
     .parameter "intent"
 
@@ -62,7 +62,7 @@
     monitor-enter v7
 
     .line 610
-    :try_start_0
+    :try_start_7
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -73,7 +73,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3b
 
     .line 613
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$OrderedBroadcastFinalReceiver;->this$0:Lcom/android/server/TelephonyRegistry;
@@ -86,7 +86,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3b
 
     .line 615
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$OrderedBroadcastFinalReceiver;->this$0:Lcom/android/server/TelephonyRegistry;
@@ -103,7 +103,7 @@
 
     .line 616
     .local v1, nextIntent:Landroid/content/Intent;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_3b
 
     .line 617
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$OrderedBroadcastFinalReceiver;->this$0:Lcom/android/server/TelephonyRegistry;
@@ -126,19 +126,19 @@
 
     .line 622
     .end local v1           #nextIntent:Landroid/content/Intent;
-    :cond_0
+    :cond_3b
     monitor-exit v7
 
     .line 623
     return-void
 
     .line 622
-    :catchall_0
+    :catchall_3d
     move-exception v0
 
     monitor-exit v7
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3f
+    .catchall {:try_start_7 .. :try_end_3f} :catchall_3d
 
     throw v0
 .end method

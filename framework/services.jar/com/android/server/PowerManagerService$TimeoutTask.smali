@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/PowerManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -40,7 +40,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .registers 8
 
     .prologue
     .line 1277
@@ -67,22 +67,22 @@
     monitor-enter v6
 
     .line 1282
-    :try_start_0
+    :try_start_7
     iget v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->nextState:I
 
     const/4 v3, -0x1
 
-    if-ne v0, v3, :cond_0
+    if-ne v0, v3, :cond_e
 
     .line 1283
     monitor-exit v6
 
     .line 1303
-    :goto_0
+    :goto_d
     return-void
 
     .line 1286
-    :cond_0
+    :cond_e
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
     iget v3, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->nextState:I
@@ -113,36 +113,36 @@
     .local v1, now:J
     iget v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->nextState:I
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch v0, :pswitch_data_4c
 
     .line 1302
-    :goto_1
-    :pswitch_0
+    :goto_2c
+    :pswitch_2c
     monitor-exit v6
 
-    goto :goto_0
+    goto :goto_d
 
     .end local v1           #now:J
-    :catchall_0
+    :catchall_2e
     move-exception v0
 
     monitor-exit v6
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_30
+    .catchall {:try_start_7 .. :try_end_30} :catchall_2e
 
     throw v0
 
     .line 1294
     .restart local v1       #now:J
-    :pswitch_1
-    :try_start_1
+    :pswitch_31
+    :try_start_31
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$2900(Lcom/android/server/PowerManagerService;)I
 
     move-result v0
 
-    if-ltz v0, :cond_1
+    if-ltz v0, :cond_42
 
     .line 1295
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
@@ -153,11 +153,11 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/server/PowerManagerService;->access$3000(Lcom/android/server/PowerManagerService;JJI)V
 
-    goto :goto_1
+    goto :goto_2c
 
     .line 1299
-    :cond_1
-    :pswitch_2
+    :cond_42
+    :pswitch_42
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-wide v3, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->remainingTimeoutOverride:J
@@ -165,18 +165,18 @@
     const/4 v5, 0x0
 
     invoke-static/range {v0 .. v5}, Lcom/android/server/PowerManagerService;->access$3000(Lcom/android/server/PowerManagerService;JJI)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_4a
+    .catchall {:try_start_31 .. :try_end_4a} :catchall_2e
 
-    goto :goto_1
+    goto :goto_2c
 
     .line 1291
     nop
 
-    :pswitch_data_0
+    :pswitch_data_4c
     .packed-switch 0x1
-        :pswitch_2
-        :pswitch_0
-        :pswitch_1
+        :pswitch_42
+        :pswitch_2c
+        :pswitch_31
     .end packed-switch
 .end method

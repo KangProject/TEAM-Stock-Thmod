@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/UiModeManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .registers 7
     .parameter "context"
     .parameter "intent"
 
@@ -51,11 +51,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_25
 
     const/4 v1, 0x1
 
-    :goto_0
+    :goto_c
     invoke-static {v0, v1}, Lcom/android/server/UiModeManagerService;->access$502(Lcom/android/server/UiModeManagerService;Z)Z
 
     .line 213
@@ -66,14 +66,14 @@
     monitor-enter v0
 
     .line 214
-    :try_start_0
+    :try_start_14
     iget-object v1, p0, Lcom/android/server/UiModeManagerService$4;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-static {v1}, Lcom/android/server/UiModeManagerService;->access$600(Lcom/android/server/UiModeManagerService;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_23
 
     .line 215
     iget-object v1, p0, Lcom/android/server/UiModeManagerService$4;->this$0:Lcom/android/server/UiModeManagerService;
@@ -85,25 +85,25 @@
     invoke-virtual {v1, v2, v3}, Lcom/android/server/UiModeManagerService;->updateLocked(II)V
 
     .line 217
-    :cond_0
+    :cond_23
     monitor-exit v0
 
     .line 218
     return-void
 
-    :cond_1
+    :cond_25
     move v1, v2
 
     .line 212
-    goto :goto_0
+    goto :goto_c
 
     .line 217
-    :catchall_0
+    :catchall_27
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_29
+    .catchall {:try_start_14 .. :try_end_29} :catchall_27
 
     throw v1
 .end method

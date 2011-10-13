@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 0
+    .registers 2
     .parameter "context"
 
     .prologue
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 5
+    .registers 9
     .parameter "fd"
     .parameter "pw"
     .parameter "args"
@@ -178,7 +178,7 @@
 .end method
 
 .method public getMobileRxBytes()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 47
@@ -190,7 +190,7 @@
 .end method
 
 .method public getMobileRxPackets()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 39
@@ -202,7 +202,7 @@
 .end method
 
 .method public getMobileTxBytes()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 43
@@ -214,7 +214,7 @@
 .end method
 
 .method public getMobileTxPackets()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 35
@@ -226,7 +226,7 @@
 .end method
 
 .method public getTotalRxBytes()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 63
@@ -238,7 +238,7 @@
 .end method
 
 .method public getTotalRxPackets()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 55
@@ -250,7 +250,7 @@
 .end method
 
 .method public getTotalTxBytes()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 59
@@ -262,7 +262,7 @@
 .end method
 
 .method public getTotalTxPackets()J
-    .locals 2
+    .registers 3
 
     .prologue
     .line 51

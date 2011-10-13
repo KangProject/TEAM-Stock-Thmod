@@ -55,7 +55,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WindowManagerService;Landroid/os/IBinder;IZ)V
-    .locals 1
+    .registers 6
     .parameter
     .parameter "_token"
     .parameter "type"
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 1
+    .registers 4
     .parameter "pw"
     .parameter "prefix"
 
@@ -154,22 +154,22 @@
     .line 7345
     iget-boolean v0, p0, Lcom/android/server/WindowManagerService$WindowToken;->waitingToShow:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_4b
 
     iget-boolean v0, p0, Lcom/android/server/WindowManagerService$WindowToken;->waitingToHide:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_4b
 
     iget-boolean v0, p0, Lcom/android/server/WindowManagerService$WindowToken;->sendingToBottom:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_4b
 
     iget-boolean v0, p0, Lcom/android/server/WindowManagerService$WindowToken;->sendingToTop:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_76
 
     .line 7346
-    :cond_0
+    :cond_4b
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "waitingToShow="
@@ -208,18 +208,18 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
     .line 7351
-    :cond_1
+    :cond_76
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 7355
     iget-object v1, p0, Lcom/android/server/WindowManagerService$WindowToken;->stringName:Ljava/lang/String;
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2e
 
     .line 7356
     new-instance v0, Ljava/lang/StringBuilder;
@@ -265,7 +265,7 @@
 
     .line 7362
     .end local v0           #sb:Ljava/lang/StringBuilder;
-    :cond_0
+    :cond_2e
     iget-object v1, p0, Lcom/android/server/WindowManagerService$WindowToken;->stringName:Ljava/lang/String;
 
     return-object v1

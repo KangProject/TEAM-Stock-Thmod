@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/BackupManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 12
+    .registers 15
     .parameter "context"
     .parameter "intent"
 
@@ -71,7 +71,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_0
+    if-nez v10, :cond_1b
 
     const-string v10, "android.intent.action.PACKAGE_REMOVED"
 
@@ -79,34 +79,34 @@
 
     move-result v10
 
-    if-eqz v10, :cond_5
+    if-eqz v10, :cond_58
 
     .line 808
-    :cond_0
+    :cond_1b
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v9
 
     .line 809
     .local v9, uri:Landroid/net/Uri;
-    if-nez v9, :cond_2
+    if-nez v9, :cond_22
 
     .line 851
     .end local v9           #uri:Landroid/net/Uri;
-    :cond_1
-    :goto_0
+    :cond_21
+    :goto_21
     return-void
 
     .line 812
     .restart local v9       #uri:Landroid/net/Uri;
-    :cond_2
+    :cond_22
     invoke-virtual {v9}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v7
 
     .line 813
     .local v7, pkgName:Ljava/lang/String;
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_2e
 
     .line 814
     const/4 v10, 0x1
@@ -120,7 +120,7 @@
 
     .line 816
     .restart local v6       #pkgList:[Ljava/lang/String;
-    :cond_3
+    :cond_2e
     const-string v10, "android.intent.action.PACKAGE_ADDED"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -139,16 +139,16 @@
     .line 825
     .end local v7           #pkgName:Ljava/lang/String;
     .end local v9           #uri:Landroid/net/Uri;
-    :cond_4
-    :goto_1
-    if-eqz v6, :cond_1
+    :cond_3b
+    :goto_3b
+    if-eqz v6, :cond_21
 
     array-length v10, v6
 
-    if-eqz v10, :cond_1
+    if-eqz v10, :cond_21
 
     .line 828
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_83
 
     .line 829
     iget-object v10, p0, Lcom/android/server/BackupManagerService$1;->this$0:Lcom/android/server/BackupManagerService;
@@ -161,48 +161,48 @@
     move-object v2, v6
 
     .local v2, arr$:[Ljava/lang/String;
-    :try_start_0
+    :try_start_48
     array-length v5, v2
 
     .local v5, len$:I
     const/4 v4, 0x0
 
     .local v4, i$:I
-    :goto_2
-    if-ge v4, v5, :cond_8
+    :goto_4a
+    if-ge v4, v5, :cond_81
 
     aget-object v7, v2, v4
 
     .line 831
     .restart local v7       #pkgName:Ljava/lang/String;
-    if-eqz v8, :cond_7
+    if-eqz v8, :cond_78
 
     .line 833
     iget-object v11, p0, Lcom/android/server/BackupManagerService$1;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-virtual {v11, v7}, Lcom/android/server/BackupManagerService;->updatePackageParticipantsLocked(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_55
+    .catchall {:try_start_48 .. :try_end_55} :catchall_7e
 
     .line 830
-    :goto_3
+    :goto_55
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_2
+    goto :goto_4a
 
     .line 818
     .end local v2           #arr$:[Ljava/lang/String;
     .end local v4           #i$:I
     .end local v5           #len$:I
     .end local v7           #pkgName:Ljava/lang/String;
-    :cond_5
+    :cond_58
     const-string v10, "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_6
+    if-eqz v10, :cond_68
 
     .line 819
     const/4 v1, 0x1
@@ -214,17 +214,17 @@
 
     move-result-object v6
 
-    goto :goto_1
+    goto :goto_3b
 
     .line 821
-    :cond_6
+    :cond_68
     const-string v10, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_4
+    if-eqz v10, :cond_3b
 
     .line 822
     const/4 v1, 0x0
@@ -236,50 +236,50 @@
 
     move-result-object v6
 
-    goto :goto_1
+    goto :goto_3b
 
     .line 836
     .restart local v2       #arr$:[Ljava/lang/String;
     .restart local v4       #i$:I
     .restart local v5       #len$:I
     .restart local v7       #pkgName:Ljava/lang/String;
-    :cond_7
-    :try_start_1
+    :cond_78
+    :try_start_78
     iget-object v11, p0, Lcom/android/server/BackupManagerService$1;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-virtual {v11, v7}, Lcom/android/server/BackupManagerService;->addPackageParticipantsLocked(Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_55
 
     .line 839
     .end local v4           #i$:I
     .end local v5           #len$:I
     .end local v7           #pkgName:Ljava/lang/String;
-    :catchall_0
+    :catchall_7e
     move-exception v11
 
     monitor-exit v10
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_80
+    .catchall {:try_start_78 .. :try_end_80} :catchall_7e
 
     throw v11
 
     .restart local v4       #i$:I
     .restart local v5       #len$:I
-    :cond_8
-    :try_start_2
+    :cond_81
+    :try_start_81
     monitor-exit v10
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_82
+    .catchall {:try_start_81 .. :try_end_82} :catchall_7e
 
-    goto :goto_0
+    goto :goto_21
 
     .line 841
     .end local v2           #arr$:[Ljava/lang/String;
     .end local v4           #i$:I
     .end local v5           #len$:I
-    :cond_9
-    if-nez v8, :cond_1
+    :cond_83
+    if-nez v8, :cond_21
 
     .line 844
     iget-object v10, p0, Lcom/android/server/BackupManagerService$1;->this$0:Lcom/android/server/BackupManagerService;
@@ -292,15 +292,15 @@
     move-object v2, v6
 
     .restart local v2       #arr$:[Ljava/lang/String;
-    :try_start_3
+    :try_start_8b
     array-length v5, v2
 
     .restart local v5       #len$:I
     const/4 v4, 0x0
 
     .restart local v4       #i$:I
-    :goto_4
-    if-ge v4, v5, :cond_a
+    :goto_8d
+    if-ge v4, v5, :cond_99
 
     aget-object v7, v2, v4
 
@@ -313,23 +313,23 @@
     .line 845
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_4
+    goto :goto_8d
 
     .line 848
     .end local v7           #pkgName:Ljava/lang/String;
-    :cond_a
+    :cond_99
     monitor-exit v10
 
-    goto :goto_0
+    goto :goto_21
 
     .end local v4           #i$:I
     .end local v5           #len$:I
-    :catchall_1
+    :catchall_9b
     move-exception v11
 
     monitor-exit v10
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_9d
+    .catchall {:try_start_8b .. :try_end_9d} :catchall_9b
 
     throw v11
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter "path"
     .parameter "method"
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method handleFinished()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 311

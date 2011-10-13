@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 1
+    .registers 3
     .parameter "context"
 
     .prologue
@@ -37,7 +37,7 @@
 .end method
 
 .method public static getServiceInstance(Landroid/content/Context;)Lcom/android/server/ConnectivityService;
-    .locals 4
+    .registers 5
     .parameter "context"
 
     .prologue
@@ -54,56 +54,56 @@
     monitor-enter v1
 
     .line 239
-    :goto_0
-    :try_start_0
+    :goto_9
+    :try_start_9
     invoke-static {}, Lcom/android/server/ConnectivityService;->access$000()Lcom/android/server/ConnectivityService;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_c
+    .catchall {:try_start_9 .. :try_end_c} :catchall_1c
 
     move-result-object v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1f
 
     .line 242
-    :try_start_1
+    :try_start_f
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_12
+    .catchall {:try_start_f .. :try_end_12} :catchall_1c
+    .catch Ljava/lang/InterruptedException; {:try_start_f .. :try_end_12} :catch_13
 
-    goto :goto_0
+    goto :goto_9
 
     .line 243
-    :catch_0
+    :catch_13
     move-exception v0
 
     .line 244
     .local v0, ignore:Ljava/lang/InterruptedException;
-    :try_start_2
+    :try_start_14
     const-string v2, "ConnectivityService"
 
     const-string v3, "Unexpected InterruptedException while waiting for ConnectivityService thread"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_9
 
     .line 249
     .end local v0           #ignore:Ljava/lang/InterruptedException;
-    :catchall_0
+    :catchall_1c
     move-exception v2
 
     monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1e
+    .catchall {:try_start_14 .. :try_end_1e} :catchall_1c
 
     throw v2
 
-    :cond_0
-    :try_start_3
+    :cond_1f
+    :try_start_1f
     monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_20
+    .catchall {:try_start_1f .. :try_end_20} :catchall_1c
 
     .line 251
     invoke-static {}, Lcom/android/server/ConnectivityService;->access$000()Lcom/android/server/ConnectivityService;
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 226
@@ -126,7 +126,7 @@
     monitor-enter p0
 
     .line 228
-    :try_start_0
+    :try_start_4
     new-instance v0, Lcom/android/server/ConnectivityService;
 
     iget-object v1, p0, Lcom/android/server/ConnectivityService$ConnectivityThread;->mContext:Landroid/content/Context;
@@ -142,8 +142,8 @@
 
     .line 230
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_13
+    .catchall {:try_start_4 .. :try_end_13} :catchall_17
 
     .line 231
     invoke-static {}, Landroid/os/Looper;->loop()V
@@ -152,13 +152,13 @@
     return-void
 
     .line 230
-    :catchall_0
+    :catchall_17
     move-exception v0
 
-    :try_start_1
+    :try_start_18
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_19
+    .catchall {:try_start_18 .. :try_end_19} :catchall_17
 
     throw v0
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -33,7 +33,7 @@
 .end method
 
 .method private shouldDeviceStayAwake(II)Z
-    .locals 1
+    .registers 4
     .parameter "stayAwakeConditions"
     .parameter "pluggedType"
 
@@ -41,21 +41,21 @@
     .line 1922
     and-int v0, p1, p2
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_6
 
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_5
     return v0
 
-    :cond_0
+    :cond_6
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 .method private shouldWifiStayAwake(II)Z
-    .locals 5
+    .registers 8
     .parameter "stayAwakeConditions"
     .parameter "pluggedType"
 
@@ -85,38 +85,38 @@
     .local v0, wifiSleepPolicy:I
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_17
 
     move v1, v4
 
     .line 1903
-    :goto_0
+    :goto_16
     return v1
 
     .line 1897
-    :cond_0
-    if-ne v0, v4, :cond_1
+    :cond_17
+    if-ne v0, v4, :cond_1d
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_1d
 
     move v1, v4
 
     .line 1900
-    goto :goto_0
+    goto :goto_16
 
     .line 1903
-    :cond_1
+    :cond_1d
     invoke-direct {p0, p1, p2}, Lcom/android/server/WifiService$4;->shouldDeviceStayAwake(II)Z
 
     move-result v1
 
-    goto :goto_0
+    goto :goto_16
 .end method
 
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 22
+    .registers 25
     .parameter "context"
     .parameter "intent"
 
@@ -186,7 +186,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_2
+    if-eqz v18, :cond_a0
 
     .line 1775
     move-object/from16 v0, p0
@@ -268,7 +268,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_0
+    if-eqz v18, :cond_96
 
     .line 1786
     move-object/from16 v0, p0
@@ -280,8 +280,8 @@
     invoke-static/range {v18 .. v18}, Lcom/android/server/WifiService;->access$1500(Lcom/android/server/WifiService;)V
 
     .line 1880
-    :cond_0
-    :goto_0
+    :cond_96
+    :goto_96
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/WifiService$4;->this$0:Lcom/android/server/WifiService;
@@ -291,12 +291,12 @@
     invoke-static/range {v18 .. v18}, Lcom/android/server/WifiService;->access$500(Lcom/android/server/WifiService;)V
 
     .line 1881
-    :cond_1
-    :goto_1
+    :cond_9f
+    :goto_9f
     return-void
 
     .line 1788
-    :cond_2
+    :cond_a0
     const-string v18, "android.intent.action.SCREEN_OFF"
 
     move-object v0, v6
@@ -307,7 +307,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_4
+    if-eqz v18, :cond_144
 
     .line 1792
     move-object/from16 v0, p0
@@ -352,7 +352,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_1
+    if-nez v18, :cond_9f
 
     .line 1801
     move-object/from16 v0, p0
@@ -381,7 +381,7 @@
 
     move-object/from16 v1, v19
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_11b
 
     .line 1807
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -426,11 +426,11 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    goto :goto_1
+    goto :goto_9f
 
     .line 1816
     .end local v16           #triggerTime:J
-    :cond_3
+    :cond_11b
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v18
@@ -471,12 +471,12 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_9f
 
     .line 1826
     .end local v10           #info:Landroid/net/wifi/WifiInfo;
     .end local v16           #triggerTime:J
-    :cond_4
+    :cond_144
     const-string v18, "com.android.server.WifiManager.action.DEVICE_IDLE"
 
     move-object v0, v6
@@ -487,7 +487,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_5
+    if-eqz v18, :cond_165
 
     .line 1830
     move-object/from16 v0, p0
@@ -509,10 +509,10 @@
 
     invoke-static/range {v18 .. v18}, Lcom/android/server/WifiService;->access$1200(Lcom/android/server/WifiService;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_96
 
     .line 1832
-    :cond_5
+    :cond_165
     const-string v18, "android.intent.action.BATTERY_CHANGED"
 
     move-object v0, v6
@@ -523,7 +523,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_7
+    if-eqz v18, :cond_1ec
 
     .line 1840
     const-string v18, "plugged"
@@ -552,7 +552,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_6
+    if-eqz v18, :cond_1de
 
     move-object/from16 v0, p0
 
@@ -574,7 +574,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_6
+    if-eqz v18, :cond_1de
 
     move-object/from16 v0, p0
 
@@ -586,7 +586,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_6
+    if-nez v18, :cond_1de
 
     .line 1846
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -642,11 +642,11 @@
 
     invoke-static {v0, v1}, Lcom/android/server/WifiService;->access$1602(Lcom/android/server/WifiService;I)I
 
-    goto/16 :goto_1
+    goto/16 :goto_9f
 
     .line 1854
     .end local v16           #triggerTime:J
-    :cond_6
+    :cond_1de
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/WifiService$4;->this$0:Lcom/android/server/WifiService;
@@ -659,11 +659,11 @@
 
     invoke-static {v0, v1}, Lcom/android/server/WifiService;->access$1602(Lcom/android/server/WifiService;I)I
 
-    goto/16 :goto_0
+    goto/16 :goto_96
 
     .line 1855
     .end local v12           #pluggedType:I
-    :cond_7
+    :cond_1ec
     const-string v18, "android.bluetooth.a2dp.action.SINK_STATE_CHANGED"
 
     move-object v0, v6
@@ -674,7 +674,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_a
+    if-eqz v18, :cond_23e
 
     .line 1856
     new-instance v5, Landroid/bluetooth/BluetoothA2dp;
@@ -712,13 +712,13 @@
     move-result-object v7
 
     .local v7, i$:Ljava/util/Iterator;
-    :cond_8
-    :goto_2
+    :cond_212
+    :goto_212
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v18
 
-    if-eqz v18, :cond_9
+    if-eqz v18, :cond_22c
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -738,16 +738,16 @@
 
     move/from16 v1, v19
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_212
 
     .line 1861
     const/4 v11, 0x1
 
-    goto :goto_2
+    goto :goto_212
 
     .line 1864
     .end local v13           #sink:Landroid/bluetooth/BluetoothDevice;
-    :cond_9
+    :cond_22c
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/WifiService$4;->this$0:Lcom/android/server/WifiService;
@@ -764,14 +764,14 @@
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiStateTracker;->setBluetoothScanMode(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_96
 
     .line 1865
     .end local v5           #a2dp:Landroid/bluetooth/BluetoothA2dp;
     .end local v7           #i$:Ljava/util/Iterator;
     .end local v11           #isBluetoothPlaying:Z
     .end local v14           #sinks:Ljava/util/Set;,"Ljava/util/Set<Landroid/bluetooth/BluetoothDevice;>;"
-    :cond_a
+    :cond_23e
     const-string v18, "android.intent.action.HYSTERESIS_TIMER"
 
     move-object v0, v6
@@ -782,7 +782,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_b
+    if-eqz v18, :cond_25a
 
     .line 1870
     move-object/from16 v0, p0
@@ -799,10 +799,10 @@
 
     invoke-virtual/range {v18 .. v19}, Lcom/android/server/WifiService$RegulatoryDomain;->updateChannels(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_96
 
     .line 1871
-    :cond_b
+    :cond_25a
     const-string v18, "android.intent.action.SERVICE_STATE"
 
     move-object v0, v6
@@ -813,7 +813,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_1
+    if-eqz v18, :cond_9f
 
     .line 1875
     move-object/from16 v0, p0
@@ -830,5 +830,5 @@
 
     invoke-virtual/range {v18 .. v19}, Lcom/android/server/WifiService$RegulatoryDomain;->updateChannels(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_96
 .end method

@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;Ljava/lang/String;Landroid/content/pm/IPackageDataObserver;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter
     .parameter
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 6339
@@ -66,7 +66,7 @@
     monitor-enter v3
 
     .line 6342
-    :try_start_0
+    :try_start_c
     iget-object v4, p0, Lcom/android/server/PackageManagerService$8;->this$0:Lcom/android/server/PackageManagerService;
 
     iget-object v5, p0, Lcom/android/server/PackageManagerService$8;->val$packageName:Ljava/lang/String;
@@ -78,11 +78,11 @@
     .line 6343
     .local v2, succeeded:Z
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_15
+    .catchall {:try_start_c .. :try_end_15} :catchall_30
 
     .line 6344
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_24
 
     .line 6346
     const-string v3, "devicestoragemonitor"
@@ -95,48 +95,48 @@
 
     .line 6348
     .local v0, dsm:Lcom/android/server/DeviceStorageMonitorService;
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_24
 
     .line 6349
     invoke-virtual {v0}, Lcom/android/server/DeviceStorageMonitorService;->updateMemory()V
 
     .line 6352
     .end local v0           #dsm:Lcom/android/server/DeviceStorageMonitorService;
-    :cond_0
+    :cond_24
     iget-object v3, p0, Lcom/android/server/PackageManagerService$8;->val$observer:Landroid/content/pm/IPackageDataObserver;
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2f
 
     .line 6354
-    :try_start_1
+    :try_start_28
     iget-object v3, p0, Lcom/android/server/PackageManagerService$8;->val$observer:Landroid/content/pm/IPackageDataObserver;
 
     iget-object v4, p0, Lcom/android/server/PackageManagerService$8;->val$packageName:Ljava/lang/String;
 
     invoke-interface {v3, v4, v2}, Landroid/content/pm/IPackageDataObserver;->onRemoveCompleted(Ljava/lang/String;Z)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_2f
+    .catch Landroid/os/RemoteException; {:try_start_28 .. :try_end_2f} :catch_33
 
     .line 6359
-    :cond_1
-    :goto_0
+    :cond_2f
+    :goto_2f
     return-void
 
     .line 6343
     .end local v2           #succeeded:Z
-    :catchall_0
+    :catchall_30
     move-exception v4
 
-    :try_start_2
+    :try_start_31
     monitor-exit v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_32
+    .catchall {:try_start_31 .. :try_end_32} :catchall_30
 
     throw v4
 
     .line 6355
     .restart local v2       #succeeded:Z
-    :catch_0
+    :catch_33
     move-exception v3
 
     move-object v1, v3
@@ -149,5 +149,5 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_2f
 .end method

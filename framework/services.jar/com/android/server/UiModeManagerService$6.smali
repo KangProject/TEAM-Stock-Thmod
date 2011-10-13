@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/UiModeManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onLocationChanged(Landroid/location/Location;)V
-    .locals 0
+    .registers 2
     .parameter "location"
 
     .prologue
@@ -47,7 +47,7 @@
 .end method
 
 .method public onProviderDisabled(Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "provider"
 
     .prologue
@@ -56,7 +56,7 @@
 .end method
 
 .method public onProviderEnabled(Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "provider"
 
     .prologue
@@ -65,7 +65,7 @@
 .end method
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .locals 0
+    .registers 4
     .parameter "provider"
     .parameter "status"
     .parameter "extras"

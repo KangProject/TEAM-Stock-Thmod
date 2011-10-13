@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService$5;Landroid/app/Dialog;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 2997
@@ -54,7 +54,7 @@
     monitor-enter v0
 
     .line 2998
-    :try_start_0
+    :try_start_5
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$5$1;->val$d:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
@@ -75,12 +75,12 @@
     return-void
 
     .line 3000
-    :catchall_0
+    :catchall_13
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_15
+    .catchall {:try_start_5 .. :try_end_15} :catchall_13
 
     throw v1
 .end method

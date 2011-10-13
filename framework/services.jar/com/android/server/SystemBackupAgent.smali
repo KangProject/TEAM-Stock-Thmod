@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 37
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public onBackup(Landroid/os/ParcelFileDescriptor;Landroid/app/backup/BackupDataOutput;Landroid/os/ParcelFileDescriptor;)V
-    .locals 7
+    .registers 11
     .parameter "oldState"
     .parameter "data"
     .parameter "newState"
@@ -69,11 +69,11 @@
 
     .line 51
     .local v0, files:[Ljava/lang/String;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2d
 
     iget-object v2, v1, Lcom/android/server/WallpaperManagerService;->mName:Ljava/lang/String;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2d
 
     iget-object v2, v1, Lcom/android/server/WallpaperManagerService;->mName:Ljava/lang/String;
 
@@ -81,7 +81,7 @@
 
     move-result v2
 
-    if-lez v2, :cond_0
+    if-lez v2, :cond_2d
 
     .line 55
     new-array v0, v4, [Ljava/lang/String;
@@ -93,7 +93,7 @@
 
     .line 57
     .restart local v0       #files:[Ljava/lang/String;
-    :cond_0
+    :cond_2d
     const-string v2, "wallpaper"
 
     new-instance v2, Landroid/app/backup/AbsoluteFileBackupHelper;
@@ -110,7 +110,7 @@
 .end method
 
 .method public onRestore(Landroid/app/backup/BackupDataInput;ILandroid/os/ParcelFileDescriptor;)V
-    .locals 11
+    .registers 15
     .parameter "data"
     .parameter "appVersionCode"
     .parameter "newState"
@@ -172,7 +172,7 @@
 
     .line 72
     .local v1, success:Z
-    :try_start_0
+    :try_start_2e
     invoke-super {p0, p1, p2, p3}, Landroid/app/backup/BackupAgentHelper;->onRestore(Landroid/app/backup/BackupDataInput;ILandroid/os/ParcelFileDescriptor;)V
 
     .line 74
@@ -187,16 +187,16 @@
     .line 76
     .local v2, wallpaper:Lcom/android/server/WallpaperManagerService;
     invoke-virtual {v2}, Lcom/android/server/WallpaperManagerService;->settingsRestored()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_3c
+    .catch Ljava/io/IOException; {:try_start_2e .. :try_end_3c} :catch_3d
 
     .line 84
     .end local v2           #wallpaper:Lcom/android/server/WallpaperManagerService;
-    :goto_0
+    :goto_3c
     return-void
 
     .line 77
-    :catch_0
+    :catch_3d
     move-exception v3
 
     move-object v0, v3
@@ -227,5 +227,5 @@
 
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    goto :goto_0
+    goto :goto_3c
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -40,13 +40,13 @@
 
 # virtual methods
 .method public run()V
-    .locals 8
+    .registers 9
 
     .prologue
     const-string v7, "MountService"
 
     .line 1048
-    :try_start_0
+    :try_start_2
     const-string v2, "MountService"
 
     const-string v3, "Disabling UMS after cable disconnect"
@@ -74,7 +74,7 @@
     move-result v1
 
     .local v1, rc:I
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_37
 
     .line 1051
     const-string v2, "MountService"
@@ -104,17 +104,17 @@
     move-result-object v3
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_37
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_37} :catch_38
 
     .line 1058
     .end local v1           #rc:I
-    :cond_0
-    :goto_0
+    :cond_37
+    :goto_37
     return-void
 
     .line 1055
-    :catch_0
+    :catch_38
     move-exception v2
 
     move-object v0, v2
@@ -127,5 +127,5 @@
 
     invoke-static {v7, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_37
 .end method

@@ -32,7 +32,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/LightsService;I)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "id"
 
@@ -50,7 +50,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/LightsService;ILcom/android/server/LightsService$1;)V
-    .locals 0
+    .registers 4
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -63,7 +63,7 @@
 .end method
 
 .method static synthetic access$500(Lcom/android/server/LightsService$Light;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -74,7 +74,7 @@
 .end method
 
 .method private setLightLocked(IIIII)V
-    .locals 7
+    .registers 13
     .parameter "color"
     .parameter "mode"
     .parameter "onMS"
@@ -85,22 +85,22 @@
     .line 125
     iget v0, p0, Lcom/android/server/LightsService$Light;->mColor:I
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v0, :cond_10
 
     iget v0, p0, Lcom/android/server/LightsService$Light;->mMode:I
 
-    if-ne p2, v0, :cond_0
+    if-ne p2, v0, :cond_10
 
     iget v0, p0, Lcom/android/server/LightsService$Light;->mOnMS:I
 
-    if-ne p3, v0, :cond_0
+    if-ne p3, v0, :cond_10
 
     iget v0, p0, Lcom/android/server/LightsService$Light;->mOffMS:I
 
-    if-eq p4, v0, :cond_1
+    if-eq p4, v0, :cond_28
 
     .line 126
-    :cond_0
+    :cond_10
     iput p1, p0, Lcom/android/server/LightsService$Light;->mColor:I
 
     .line 127
@@ -134,19 +134,19 @@
     invoke-static/range {v0 .. v6}, Lcom/android/server/LightsService;->access$200(IIIIIII)V
 
     .line 132
-    :cond_1
+    :cond_28
     return-void
 .end method
 
 .method private stopFlashing()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 119
     monitor-enter p0
 
     .line 120
-    :try_start_0
+    :try_start_1
     iget v1, p0, Lcom/android/server/LightsService$Light;->mColor:I
 
     const/4 v2, 0x0
@@ -168,12 +168,12 @@
     return-void
 
     .line 121
-    :catchall_0
+    :catchall_d
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_f
+    .catchall {:try_start_1 .. :try_end_f} :catchall_d
 
     throw v0
 .end method
@@ -181,7 +181,7 @@
 
 # virtual methods
 .method public pulse()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 96
@@ -196,7 +196,7 @@
 .end method
 
 .method public pulse(II)V
-    .locals 6
+    .registers 9
     .parameter "color"
     .parameter "onMS"
 
@@ -205,14 +205,14 @@
     monitor-enter p0
 
     .line 101
-    :try_start_0
+    :try_start_1
     iget v0, p0, Lcom/android/server/LightsService$Light;->mColor:I
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2b
 
     iget-boolean v0, p0, Lcom/android/server/LightsService$Light;->mFlashing:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2b
 
     .line 102
     const/4 v2, 0x2
@@ -258,25 +258,25 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .line 109
-    :cond_0
+    :cond_2b
     monitor-exit p0
 
     .line 110
     return-void
 
     .line 109
-    :catchall_0
+    :catchall_2d
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2f
+    .catchall {:try_start_1 .. :try_end_2f} :catchall_2d
 
     throw v0
 .end method
 
 .method public setBrightness(I)V
-    .locals 1
+    .registers 3
     .parameter "brightness"
 
     .prologue
@@ -290,7 +290,7 @@
 .end method
 
 .method public setBrightness(II)V
-    .locals 6
+    .registers 9
     .parameter "brightness"
     .parameter "brightnessMode"
 
@@ -326,7 +326,7 @@
 
     move v5, p2
 
-    :try_start_0
+    :try_start_11
     invoke-direct/range {v0 .. v5}, Lcom/android/server/LightsService$Light;->setLightLocked(IIIII)V
 
     .line 79
@@ -336,18 +336,18 @@
     return-void
 
     .line 79
-    :catchall_0
+    :catchall_16
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_18
+    .catchall {:try_start_11 .. :try_end_18} :catchall_16
 
     throw v0
 .end method
 
 .method public setColor(I)V
-    .locals 6
+    .registers 8
     .parameter "color"
 
     .prologue
@@ -367,7 +367,7 @@
 
     move v1, p1
 
-    :try_start_0
+    :try_start_7
     invoke-direct/range {v0 .. v5}, Lcom/android/server/LightsService$Light;->setLightLocked(IIIII)V
 
     .line 85
@@ -377,18 +377,18 @@
     return-void
 
     .line 85
-    :catchall_0
+    :catchall_c
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_e
+    .catchall {:try_start_7 .. :try_end_e} :catchall_c
 
     throw v0
 .end method
 
 .method public setFlashing(IIII)V
-    .locals 6
+    .registers 11
     .parameter "color"
     .parameter "mode"
     .parameter "onMS"
@@ -411,7 +411,7 @@
 
     move v4, p4
 
-    :try_start_0
+    :try_start_7
     invoke-direct/range {v0 .. v5}, Lcom/android/server/LightsService$Light;->setLightLocked(IIIII)V
 
     .line 91
@@ -421,18 +421,18 @@
     return-void
 
     .line 91
-    :catchall_0
+    :catchall_c
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_e
+    .catchall {:try_start_7 .. :try_end_e} :catchall_c
 
     throw v0
 .end method
 
 .method public turnOff()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 113
@@ -451,7 +451,7 @@
 
     move-object v0, p0
 
-    :try_start_0
+    :try_start_7
     invoke-direct/range {v0 .. v5}, Lcom/android/server/LightsService$Light;->setLightLocked(IIIII)V
 
     .line 115
@@ -461,12 +461,12 @@
     return-void
 
     .line 115
-    :catchall_0
+    :catchall_c
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_e
+    .catchall {:try_start_7 .. :try_end_e} :catchall_c
 
     throw v0
 .end method

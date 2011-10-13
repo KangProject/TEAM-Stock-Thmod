@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter
     .parameter
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 6468
@@ -74,7 +74,7 @@
     monitor-enter v3
 
     .line 6472
-    :try_start_0
+    :try_start_13
     iget-object v4, p0, Lcom/android/server/PackageManagerService$10;->this$0:Lcom/android/server/PackageManagerService;
 
     iget-object v5, p0, Lcom/android/server/PackageManagerService$10;->val$packageName:Ljava/lang/String;
@@ -86,42 +86,42 @@
     .line 6473
     .local v2, succeded:Z
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1c
+    .catchall {:try_start_13 .. :try_end_1c} :catchall_26
 
     .line 6474
     iget-object v3, p0, Lcom/android/server/PackageManagerService$10;->val$observer:Landroid/content/pm/IPackageStatsObserver;
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_25
 
     .line 6476
-    :try_start_1
+    :try_start_20
     iget-object v3, p0, Lcom/android/server/PackageManagerService$10;->val$observer:Landroid/content/pm/IPackageStatsObserver;
 
     invoke-interface {v3, v1, v2}, Landroid/content/pm/IPackageStatsObserver;->onGetStatsCompleted(Landroid/content/pm/PackageStats;Z)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_25
+    .catch Landroid/os/RemoteException; {:try_start_20 .. :try_end_25} :catch_29
 
     .line 6481
-    :cond_0
-    :goto_0
+    :cond_25
+    :goto_25
     return-void
 
     .line 6473
     .end local v2           #succeded:Z
-    :catchall_0
+    :catchall_26
     move-exception v4
 
-    :try_start_2
+    :try_start_27
     monitor-exit v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_28
+    .catchall {:try_start_27 .. :try_end_28} :catchall_26
 
     throw v4
 
     .line 6477
     .restart local v2       #succeded:Z
-    :catch_0
+    :catch_29
     move-exception v3
 
     move-object v0, v3
@@ -134,5 +134,5 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_25
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/WindowManagerService$WindowState;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -36,7 +36,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/WindowManagerService$WindowState;Lcom/android/server/WindowManagerService$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 7028
@@ -62,11 +62,11 @@
     iget-object v1, v1, Lcom/android/server/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
 
     monitor-enter v1
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_7
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_7} :catch_42
 
     .line 7029
-    :try_start_1
+    :try_start_7
     iget-object v2, p0, Lcom/android/server/WindowManagerService$WindowState$DeathRecipient;->this$1:Lcom/android/server/WindowManagerService$WindowState;
 
     iget-object v2, v2, Lcom/android/server/WindowManagerService$WindowState;->this$0:Lcom/android/server/WindowManagerService;
@@ -110,7 +110,7 @@
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 7031
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3d
 
     .line 7032
     iget-object v2, p0, Lcom/android/server/WindowManagerService$WindowState$DeathRecipient;->this$1:Lcom/android/server/WindowManagerService$WindowState;
@@ -124,30 +124,30 @@
     invoke-virtual {v2, v3, v0}, Lcom/android/server/WindowManagerService;->removeWindowLocked(Lcom/android/server/WindowManagerService$Session;Lcom/android/server/WindowManagerService$WindowState;)V
 
     .line 7034
-    :cond_0
+    :cond_3d
     monitor-exit v1
 
     .line 7039
     .end local v0           #win:Lcom/android/server/WindowManagerService$WindowState;
-    :goto_0
+    :goto_3e
     return-void
 
     .line 7034
-    :catchall_0
+    :catchall_3f
     move-exception v2
 
     monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_41
+    .catchall {:try_start_7 .. :try_end_41} :catchall_3f
 
-    :try_start_2
+    :try_start_41
     throw v2
-    :try_end_2
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_42
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_41 .. :try_end_42} :catch_42
 
     .line 7035
-    :catch_0
+    :catch_42
     move-exception v1
 
-    goto :goto_0
+    goto :goto_3e
 .end method

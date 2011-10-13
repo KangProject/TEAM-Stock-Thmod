@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public compare(Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ProcessRecord;)I
-    .locals 4
+    .registers 7
     .parameter "object1"
     .parameter "object2"
 
@@ -62,106 +62,106 @@
 
     iget v1, p2, Lcom/android/server/am/ProcessRecord;->setAdj:I
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_12
 
     .line 7533
     iget v0, p1, Lcom/android/server/am/ProcessRecord;->setAdj:I
 
     iget v1, p2, Lcom/android/server/am/ProcessRecord;->setAdj:I
 
-    if-le v0, v1, :cond_0
+    if-le v0, v1, :cond_10
 
     move v0, v2
 
     .line 7544
-    :goto_0
+    :goto_f
     return v0
 
-    :cond_0
+    :cond_10
     move v0, v3
 
     .line 7533
-    goto :goto_0
+    goto :goto_f
 
     .line 7535
-    :cond_1
+    :cond_12
     iget v0, p1, Lcom/android/server/am/ProcessRecord;->setSchedGroup:I
 
     iget v1, p2, Lcom/android/server/am/ProcessRecord;->setSchedGroup:I
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_22
 
     .line 7536
     iget v0, p1, Lcom/android/server/am/ProcessRecord;->setSchedGroup:I
 
     iget v1, p2, Lcom/android/server/am/ProcessRecord;->setSchedGroup:I
 
-    if-le v0, v1, :cond_2
+    if-le v0, v1, :cond_20
 
     move v0, v2
 
-    goto :goto_0
+    goto :goto_f
 
-    :cond_2
+    :cond_20
     move v0, v3
 
-    goto :goto_0
+    goto :goto_f
 
     .line 7538
-    :cond_3
+    :cond_22
     iget-boolean v0, p1, Lcom/android/server/am/ProcessRecord;->keeping:Z
 
     iget-boolean v1, p2, Lcom/android/server/am/ProcessRecord;->keeping:Z
 
-    if-eq v0, v1, :cond_5
+    if-eq v0, v1, :cond_30
 
     .line 7539
     iget-boolean v0, p1, Lcom/android/server/am/ProcessRecord;->keeping:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2e
 
     move v0, v2
 
-    goto :goto_0
+    goto :goto_f
 
-    :cond_4
+    :cond_2e
     move v0, v3
 
-    goto :goto_0
+    goto :goto_f
 
     .line 7541
-    :cond_5
+    :cond_30
     iget v0, p1, Lcom/android/server/am/ProcessRecord;->pid:I
 
     iget v1, p2, Lcom/android/server/am/ProcessRecord;->pid:I
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_40
 
     .line 7542
     iget v0, p1, Lcom/android/server/am/ProcessRecord;->pid:I
 
     iget v1, p2, Lcom/android/server/am/ProcessRecord;->pid:I
 
-    if-le v0, v1, :cond_6
+    if-le v0, v1, :cond_3e
 
     move v0, v2
 
-    goto :goto_0
+    goto :goto_f
 
-    :cond_6
+    :cond_3e
     move v0, v3
 
-    goto :goto_0
+    goto :goto_f
 
     .line 7544
-    :cond_7
+    :cond_40
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_f
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+    .registers 4
     .parameter "x0"
     .parameter "x1"
 

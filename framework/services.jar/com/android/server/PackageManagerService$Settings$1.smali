@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService$Settings;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method protected bridge synthetic dumpFilter(Ljava/io/PrintWriter;Ljava/lang/String;Landroid/content/IntentFilter;)V
-    .locals 0
+    .registers 4
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -61,7 +61,7 @@
 .end method
 
 .method protected dumpFilter(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/PackageManagerService$PreferredActivity;)V
-    .locals 2
+    .registers 6
     .parameter "out"
     .parameter "prefix"
     .parameter "filter"
@@ -111,7 +111,7 @@
     .line 7933
     iget-object v1, p3, Lcom/android/server/PackageManagerService$PreferredActivity;->mSetComponents:[Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_4e
 
     .line 7934
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -124,12 +124,12 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_0
+    :goto_37
     iget-object v1, p3, Lcom/android/server/PackageManagerService$PreferredActivity;->mSetComponents:[Ljava/lang/String;
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v1, :cond_4e
 
     .line 7936
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -148,16 +148,16 @@
     .line 7935
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_37
 
     .line 7940
     .end local v0           #i:I
-    :cond_0
+    :cond_4e
     return-void
 .end method
 
 .method protected bridge synthetic packageForFilter(Landroid/content/IntentFilter;)Ljava/lang/String;
-    .locals 1
+    .registers 3
     .parameter "x0"
 
     .prologue
@@ -173,7 +173,7 @@
 .end method
 
 .method protected packageForFilter(Lcom/android/server/PackageManagerService$PreferredActivity;)Ljava/lang/String;
-    .locals 1
+    .registers 3
     .parameter "filter"
 
     .prologue

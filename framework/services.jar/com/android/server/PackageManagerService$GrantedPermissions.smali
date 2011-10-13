@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(I)V
-    .locals 1
+    .registers 3
     .parameter "pkgFlags"
 
     .prologue
@@ -55,7 +55,7 @@
 .end method
 
 .method constructor <init>(Lcom/android/server/PackageManagerService$GrantedPermissions;)V
-    .locals 1
+    .registers 3
     .parameter "base"
 
     .prologue
@@ -88,7 +88,7 @@
     .line 7669
     iget-object v0, p1, Lcom/android/server/PackageManagerService$GrantedPermissions;->gids:[I
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_26
 
     .line 7670
     iget-object v0, p1, Lcom/android/server/PackageManagerService$GrantedPermissions;->gids:[I
@@ -102,14 +102,14 @@
     iput-object v0, p0, Lcom/android/server/PackageManagerService$GrantedPermissions;->gids:[I
 
     .line 7672
-    :cond_0
+    :cond_26
     return-void
 .end method
 
 
 # virtual methods
 .method setFlags(I)V
-    .locals 1
+    .registers 3
     .parameter "pkgFlags"
 
     .prologue

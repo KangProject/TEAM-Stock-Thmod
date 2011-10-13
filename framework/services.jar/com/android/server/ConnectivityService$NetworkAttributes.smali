@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 2
+    .registers 4
     .parameter "init"
 
     .prologue
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public isDefault()Z
-    .locals 2
+    .registers 3
 
     .prologue
     .line 199
@@ -107,15 +107,15 @@
 
     iget v1, p0, Lcom/android/server/ConnectivityService$NetworkAttributes;->mRadio:I
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_8
 
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_7
     return v0
 
-    :cond_0
+    :cond_8
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_7
 .end method

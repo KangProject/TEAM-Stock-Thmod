@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MasterClearReceiver;Ljava/lang/String;Landroid/content/Intent;Landroid/content/Context;)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter "x0"
     .parameter
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .registers 7
 
     .prologue
     const-string v1, "enableEFS"
@@ -54,7 +54,7 @@
     const-string v5, "MasterClear"
 
     .line 46
-    :try_start_0
+    :try_start_4
     iget-object v1, p0, Lcom/android/server/MasterClearReceiver$1;->val$intent:Landroid/content/Intent;
 
     const-string v2, "enableEFS"
@@ -63,7 +63,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_24
 
     .line 47
     iget-object v1, p0, Lcom/android/server/MasterClearReceiver$1;->val$context:Landroid/content/Context;
@@ -81,7 +81,7 @@
     invoke-static {v1, v2}, Landroid/os/RecoverySystem;->rebootToggleEFS(Landroid/content/Context;Z)V
 
     .line 51
-    :goto_0
+    :goto_1c
     const-string v1, "MasterClear"
 
     const-string v2, "Still running after master clear?!"
@@ -89,21 +89,21 @@
     invoke-static {v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 55
-    :goto_1
+    :goto_23
     return-void
 
     .line 49
-    :cond_0
+    :cond_24
     iget-object v1, p0, Lcom/android/server/MasterClearReceiver$1;->val$context:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/os/RecoverySystem;->rebootWipeUserData(Landroid/content/Context;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_29
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_29} :catch_2a
 
-    goto :goto_0
+    goto :goto_1c
 
     .line 52
-    :catch_0
+    :catch_2a
     move-exception v1
 
     move-object v0, v1
@@ -116,5 +116,5 @@
 
     invoke-static {v5, v1, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_23
 .end method

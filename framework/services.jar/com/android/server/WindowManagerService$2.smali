@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WindowManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .registers 6
     .parameter "context"
     .parameter "intent"
 
@@ -57,7 +57,7 @@
     monitor-enter v0
 
     .line 259
-    :try_start_0
+    :try_start_d
     iget-object v1, p0, Lcom/android/server/WindowManagerService$2;->this$0:Lcom/android/server/WindowManagerService;
 
     const/4 v2, -0x1
@@ -78,12 +78,12 @@
     return-void
 
     .line 261
-    :catchall_0
+    :catchall_1b
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1d
+    .catchall {:try_start_d .. :try_end_1d} :catchall_1b
 
     throw v1
 .end method

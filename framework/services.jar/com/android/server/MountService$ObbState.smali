@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;ILandroid/os/storage/IObbActionListener;I)V
-    .locals 0
+    .registers 6
     .parameter
     .parameter "filename"
     .parameter "callerUid"
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 4
+    .registers 5
 
     .prologue
     const/4 v3, 0x1
@@ -105,7 +105,7 @@
 .end method
 
 .method public getBinder()Landroid/os/IBinder;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 211
@@ -119,7 +119,7 @@
 .end method
 
 .method public link()V
-    .locals 2
+    .registers 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -141,7 +141,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 230
@@ -200,7 +200,7 @@
 .end method
 
 .method public unlink()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 225

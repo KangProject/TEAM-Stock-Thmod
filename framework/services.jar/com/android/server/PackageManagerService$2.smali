@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;JLandroid/content/IntentSender;)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter
     .parameter
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .registers 10
 
     .prologue
     const-string v8, "PackageManager"
@@ -69,7 +69,7 @@
 
     iget-object v0, v0, Lcom/android/server/PackageManagerService;->mInstaller:Lcom/android/server/Installer;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_23
 
     .line 1565
     iget-object v0, p0, Lcom/android/server/PackageManagerService$2;->this$0:Lcom/android/server/PackageManagerService;
@@ -83,7 +83,7 @@
     move-result v7
 
     .line 1566
-    if-gez v7, :cond_0
+    if-gez v7, :cond_23
 
     .line 1567
     const-string v0, "PackageManager"
@@ -93,13 +93,13 @@
     invoke-static {v8, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1570
-    :cond_0
+    :cond_23
     iget-object v0, p0, Lcom/android/server/PackageManagerService$2;->val$pi:Landroid/content/IntentSender;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_34
 
     .line 1573
-    if-ltz v7, :cond_2
+    if-ltz v7, :cond_35
 
     const/4 v0, 0x1
 
@@ -107,8 +107,8 @@
 
     .line 1574
     .local v2, code:I
-    :goto_0
-    :try_start_0
+    :goto_2b
+    :try_start_2b
     iget-object v0, p0, Lcom/android/server/PackageManagerService$2;->val$pi:Landroid/content/IntentSender;
 
     const/4 v1, 0x0
@@ -120,26 +120,26 @@
     const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/IntentSender;->sendIntent(Landroid/content/Context;ILandroid/content/Intent;Landroid/content/IntentSender$OnFinished;Landroid/os/Handler;)V
-    :try_end_0
-    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_34
+    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_2b .. :try_end_34} :catch_38
 
     .line 1580
     .end local v2           #code:I
-    :cond_1
-    :goto_1
+    :cond_34
+    :goto_34
     return-void
 
     .line 1573
-    :cond_2
+    :cond_35
     const/4 v0, 0x0
 
     move v2, v0
 
-    goto :goto_0
+    goto :goto_2b
 
     .line 1576
     .restart local v2       #code:I
-    :catch_0
+    :catch_38
     move-exception v0
 
     move-object v6, v0
@@ -152,5 +152,5 @@
 
     invoke-static {v8, v0}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_34
 .end method

@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/BackupManagerService;Landroid/content/pm/ApplicationInfo;Z)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter "app"
     .parameter "isFull"
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 148

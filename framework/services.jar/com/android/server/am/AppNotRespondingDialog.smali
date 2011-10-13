@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;)V
-    .locals 9
+    .registers 14
     .parameter "service"
     .parameter "context"
     .parameter "app"
@@ -62,7 +62,7 @@
     invoke-virtual {p0, v6}, Lcom/android/server/am/AppNotRespondingDialog;->setCancelable(Z)V
 
     .line 53
-    if-eqz p4, :cond_1
+    if-eqz p4, :cond_c0
 
     iget-object v4, p4, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
 
@@ -78,7 +78,7 @@
 
     .line 56
     .local v0, name1:Ljava/lang/CharSequence;
-    :goto_0
+    :goto_25
     const/4 v1, 0x0
 
     .line 57
@@ -89,7 +89,7 @@
 
     move-result v4
 
-    if-ne v4, v7, :cond_3
+    if-ne v4, v7, :cond_cc
 
     invoke-virtual {p2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -101,18 +101,18 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_cc
 
     .line 59
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_c4
 
     .line 60
     const v3, 0x1040323
 
     .line 76
     .local v3, resid:I
-    :goto_1
-    if-eqz v1, :cond_5
+    :goto_3f
+    if-eqz v1, :cond_dc
 
     new-array v4, v8, [Ljava/lang/Object;
 
@@ -132,7 +132,7 @@
 
     move-result-object v4
 
-    :goto_2
+    :goto_53
     invoke-virtual {p0, v4}, Lcom/android/server/am/AppNotRespondingDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 80
@@ -172,7 +172,7 @@
     .line 87
     iget-object v4, p3, Lcom/android/server/am/ProcessRecord;->errorReportReceiver:Landroid/content/ComponentName;
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_8e
 
     .line 88
     const/4 v4, -0x2
@@ -194,7 +194,7 @@
     invoke-virtual {p0, v4, v5, v6}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     .line 93
-    :cond_0
+    :cond_8e
     const v4, 0x1040322
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
@@ -248,17 +248,17 @@
     .end local v0           #name1:Ljava/lang/CharSequence;
     .end local v1           #name2:Ljava/lang/CharSequence;
     .end local v3           #resid:I
-    :cond_1
+    :cond_c0
     const/4 v4, 0x0
 
     move-object v0, v4
 
-    goto/16 :goto_0
+    goto/16 :goto_25
 
     .line 62
     .restart local v0       #name1:Ljava/lang/CharSequence;
     .restart local v1       #name2:Ljava/lang/CharSequence;
-    :cond_2
+    :cond_c4
     move-object v0, v1
 
     .line 63
@@ -268,12 +268,12 @@
     const v3, 0x1040325
 
     .restart local v3       #resid:I
-    goto/16 :goto_1
+    goto/16 :goto_3f
 
     .line 67
     .end local v3           #resid:I
-    :cond_3
-    if-eqz v0, :cond_4
+    :cond_cc
+    if-eqz v0, :cond_d5
 
     .line 68
     iget-object v1, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
@@ -282,21 +282,21 @@
     const v3, 0x1040324
 
     .restart local v3       #resid:I
-    goto/16 :goto_1
+    goto/16 :goto_3f
 
     .line 71
     .end local v3           #resid:I
-    :cond_4
+    :cond_d5
     iget-object v0, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 72
     const v3, 0x1040326
 
     .restart local v3       #resid:I
-    goto/16 :goto_1
+    goto/16 :goto_3f
 
     .line 76
-    :cond_5
+    :cond_dc
     new-array v4, v7, [Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -309,11 +309,11 @@
 
     move-result-object v4
 
-    goto/16 :goto_2
+    goto/16 :goto_53
 .end method
 
 .method static synthetic access$000(Lcom/android/server/am/AppNotRespondingDialog;)Lcom/android/server/am/ProcessRecord;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -324,7 +324,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/am/AppNotRespondingDialog;)Lcom/android/server/am/ActivityManagerService;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -337,7 +337,7 @@
 
 # virtual methods
 .method public onStop()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 99

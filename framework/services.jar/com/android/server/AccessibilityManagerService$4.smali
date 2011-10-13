@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/AccessibilityManagerService;Landroid/os/Handler;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 2
+    .registers 4
     .parameter "selfChange"
 
     .prologue
@@ -51,7 +51,7 @@
     monitor-enter v0
 
     .line 266
-    :try_start_0
+    :try_start_8
     iget-object v1, p0, Lcom/android/server/AccessibilityManagerService$4;->this$0:Lcom/android/server/AccessibilityManagerService;
 
     invoke-static {v1}, Lcom/android/server/AccessibilityManagerService;->access$300(Lcom/android/server/AccessibilityManagerService;)V
@@ -63,12 +63,12 @@
     return-void
 
     .line 267
-    :catchall_0
+    :catchall_f
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_11
+    .catchall {:try_start_8 .. :try_end_11} :catchall_f
 
     throw v1
 .end method

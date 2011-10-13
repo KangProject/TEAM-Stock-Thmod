@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;Landroid/os/storage/IMountShutdownObserver;)V
-    .locals 1
+    .registers 5
     .parameter
     .parameter "path"
     .parameter "observer"
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method handleFinished()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 325
@@ -64,23 +64,23 @@
     .local v1, ret:I
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->observer:Landroid/os/storage/IMountShutdownObserver;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_12
 
     .line 328
-    :try_start_0
+    :try_start_d
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->observer:Landroid/os/storage/IMountShutdownObserver;
 
     invoke-interface {v2, v1}, Landroid/os/storage/IMountShutdownObserver;->onShutDownComplete(I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_12
+    .catch Landroid/os/RemoteException; {:try_start_d .. :try_end_12} :catch_13
 
     .line 333
-    :cond_0
-    :goto_0
+    :cond_12
+    :goto_12
     return-void
 
     .line 329
-    :catch_0
+    :catch_13
     move-exception v2
 
     move-object v0, v2
@@ -93,5 +93,5 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_12
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 7334
@@ -31,7 +31,7 @@
 .end method
 
 .method constructor <init>(Lcom/android/server/PackageManagerService$PackageSignatures;)V
-    .locals 1
+    .registers 3
     .parameter "orig"
 
     .prologue
@@ -39,11 +39,11 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7325
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_13
 
     iget-object v0, p1, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_13
 
     .line 7326
     iget-object v0, p1, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
@@ -57,12 +57,12 @@
     iput-object v0, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
     .line 7328
-    :cond_0
+    :cond_13
     return-void
 .end method
 
 .method constructor <init>([Landroid/content/pm/Signature;)V
-    .locals 0
+    .registers 2
     .parameter "sigs"
 
     .prologue
@@ -77,7 +77,7 @@
 .end method
 
 .method static synthetic access$1100(Lcom/android/server/PackageManagerService$PackageSignatures;)[Landroid/content/pm/Signature;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -88,7 +88,7 @@
 .end method
 
 .method static synthetic access$1102(Lcom/android/server/PackageManagerService$PackageSignatures;[Landroid/content/pm/Signature;)[Landroid/content/pm/Signature;
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -100,7 +100,7 @@
 .end method
 
 .method static synthetic access$3800(Lcom/android/server/PackageManagerService$PackageSignatures;[Landroid/content/pm/Signature;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -112,12 +112,12 @@
 .end method
 
 .method private assignSignatures([Landroid/content/pm/Signature;)V
-    .locals 3
+    .registers 5
     .parameter "sigs"
 
     .prologue
     .line 7462
-    if-nez p1, :cond_1
+    if-nez p1, :cond_6
 
     .line 7463
     const/4 v1, 0x0
@@ -125,11 +125,11 @@
     iput-object v1, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
     .line 7470
-    :cond_0
+    :cond_5
     return-void
 
     .line 7466
-    :cond_1
+    :cond_6
     array-length v1, p1
 
     new-array v1, v1, [Landroid/content/pm/Signature;
@@ -140,10 +140,10 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_0
+    :goto_c
     array-length v1, p1
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v1, :cond_5
 
     .line 7468
     iget-object v1, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
@@ -155,13 +155,13 @@
     .line 7467
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_c
 .end method
 
 
 # virtual methods
 .method readXml(Lorg/xmlpull/v1/XmlPullParser;Ljava/util/ArrayList;)V
-    .locals 20
+    .registers 23
     .parameter "parser"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -201,7 +201,7 @@
 
     .line 7371
     .local v6, countStr:Ljava/lang/String;
-    if-nez v6, :cond_0
+    if-nez v6, :cond_2f
 
     .line 7372
     const/16 v17, 0x5
@@ -234,7 +234,7 @@
     invoke-static/range {p1 .. p1}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
     .line 7377
-    :cond_0
+    :cond_2f
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
@@ -265,8 +265,8 @@
     .line 7384
     .end local v6           #countStr:Ljava/lang/String;
     .local v12, outerDepth:I
-    :cond_1
-    :goto_0
+    :cond_43
+    :goto_43
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v16
@@ -278,7 +278,7 @@
 
     move/from16 v1, v17
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_1e7
 
     const/16 v17, 0x3
 
@@ -286,7 +286,7 @@
 
     move/from16 v1, v17
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_60
 
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
@@ -296,17 +296,17 @@
 
     move v1, v12
 
-    if-le v0, v1, :cond_a
+    if-le v0, v1, :cond_1e7
 
     .line 7386
-    :cond_2
+    :cond_60
     const/16 v17, 0x3
 
     move/from16 v0, v16
 
     move/from16 v1, v17
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_43
 
     const/16 v17, 0x4
 
@@ -314,7 +314,7 @@
 
     move/from16 v1, v17
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_43
 
     .line 7391
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -333,10 +333,10 @@
 
     move-result v17
 
-    if-eqz v17, :cond_9
+    if-eqz v17, :cond_1c9
 
     .line 7393
-    if-ge v13, v5, :cond_8
+    if-ge v13, v5, :cond_19e
 
     .line 7394
     const/16 v17, 0x0
@@ -355,10 +355,10 @@
 
     .line 7395
     .local v9, index:Ljava/lang/String;
-    if-eqz v9, :cond_7
+    if-eqz v9, :cond_180
 
     .line 7397
-    :try_start_0
+    :try_start_91
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v8
@@ -381,10 +381,10 @@
 
     .line 7399
     .local v10, key:Ljava/lang/String;
-    if-nez v10, :cond_5
+    if-nez v10, :cond_155
 
     .line 7400
-    if-ltz v8, :cond_4
+    if-ltz v8, :cond_12a
 
     invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->size()I
 
@@ -394,7 +394,7 @@
 
     move/from16 v1, v17
 
-    if-ge v0, v1, :cond_4
+    if-ge v0, v1, :cond_12a
 
     .line 7401
     move-object/from16 v0, p2
@@ -409,7 +409,7 @@
 
     .line 7402
     .local v14, sig:Landroid/content/pm/Signature;
-    if-eqz v14, :cond_3
+    if-eqz v14, :cond_d3
 
     .line 7403
     move-object/from16 v0, p0
@@ -429,8 +429,8 @@
     check-cast v6, Landroid/content/pm/Signature;
 
     aput-object v6, v17, v13
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_cc
+    .catch Ljava/lang/NumberFormatException; {:try_start_91 .. :try_end_cc} :catch_fd
 
     .line 7404
     add-int/lit8 v13, v13, 0x1
@@ -440,20 +440,20 @@
     .end local v9           #index:Ljava/lang/String;
     .end local v10           #key:Ljava/lang/String;
     .end local v14           #sig:Landroid/content/pm/Signature;
-    :goto_1
+    :goto_ce
     invoke-static/range {p1 .. p1}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_43
 
     .line 7406
     .restart local v8       #idx:I
     .restart local v9       #index:Ljava/lang/String;
     .restart local v10       #key:Ljava/lang/String;
     .restart local v14       #sig:Landroid/content/pm/Signature;
-    :cond_3
+    :cond_d3
     const/16 v17, 0x5
 
-    :try_start_1
+    :try_start_d5
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -491,16 +491,16 @@
     move-result-object v18
 
     invoke-static/range {v17 .. v18}, Lcom/android/server/PackageManagerService;->access$3700(ILjava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_fc
+    .catch Ljava/lang/NumberFormatException; {:try_start_d5 .. :try_end_fc} :catch_fd
 
-    goto :goto_1
+    goto :goto_ce
 
     .line 7426
     .end local v8           #idx:I
     .end local v10           #key:Ljava/lang/String;
     .end local v14           #sig:Landroid/content/pm/Signature;
-    :catch_0
+    :catch_fd
     move-exception v17
 
     move-object/from16 v7, v17
@@ -547,16 +547,16 @@
 
     invoke-static/range {v17 .. v18}, Lcom/android/server/PackageManagerService;->access$3700(ILjava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_ce
 
     .line 7412
     .end local v7           #e:Ljava/lang/NumberFormatException;
     .restart local v8       #idx:I
     .restart local v10       #key:Ljava/lang/String;
-    :cond_4
+    :cond_12a
     const/16 v17, 0x5
 
-    :try_start_2
+    :try_start_12c
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -595,11 +595,11 @@
 
     invoke-static/range {v17 .. v18}, Lcom/android/server/PackageManagerService;->access$3700(ILjava/lang/String;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_ce
 
     .line 7418
-    :cond_5
-    :goto_2
+    :cond_155
+    :goto_155
     invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->size()I
 
     move-result v17
@@ -608,7 +608,7 @@
 
     move v1, v8
 
-    if-gt v0, v1, :cond_6
+    if-gt v0, v1, :cond_168
 
     .line 7419
     const/16 v17, 0x0
@@ -619,10 +619,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2
+    goto :goto_155
 
     .line 7421
-    :cond_6
+    :cond_168
     new-instance v14, Landroid/content/pm/Signature;
 
     invoke-direct {v14, v10}, Landroid/content/pm/Signature;-><init>(Ljava/lang/String;)V
@@ -645,19 +645,19 @@
     move-object/from16 v17, v0
 
     aput-object v14, v17, v13
-    :try_end_2
-    .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_17c
+    .catch Ljava/lang/NumberFormatException; {:try_start_12c .. :try_end_17c} :catch_fd
 
     .line 7424
     add-int/lit8 v13, v13, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_ce
 
     .line 7433
     .end local v8           #idx:I
     .end local v10           #key:Ljava/lang/String;
     .end local v14           #sig:Landroid/content/pm/Signature;
-    :cond_7
+    :cond_180
     const/16 v17, 0x5
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -684,11 +684,11 @@
 
     invoke-static/range {v17 .. v18}, Lcom/android/server/PackageManagerService;->access$3700(ILjava/lang/String;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_ce
 
     .line 7438
     .end local v9           #index:Ljava/lang/String;
-    :cond_8
+    :cond_19e
     const/16 v17, 0x5
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -729,10 +729,10 @@
 
     invoke-static/range {v17 .. v18}, Lcom/android/server/PackageManagerService;->access$3700(ILjava/lang/String;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_ce
 
     .line 7444
-    :cond_9
+    :cond_1c9
     const/16 v17, 0x5
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -759,12 +759,12 @@
 
     invoke-static/range {v17 .. v18}, Lcom/android/server/PackageManagerService;->access$3700(ILjava/lang/String;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_ce
 
     .line 7451
     .end local v15           #tagName:Ljava/lang/String;
-    :cond_a
-    if-ge v13, v5, :cond_b
+    :cond_1e7
+    if-ge v13, v5, :cond_205
 
     .line 7455
     new-array v11, v13, [Landroid/content/pm/Signature;
@@ -802,12 +802,12 @@
 
     .line 7459
     .end local v11           #newSigs:[Landroid/content/pm/Signature;
-    :cond_b
+    :cond_205
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .registers 4
 
     .prologue
     .line 7474
@@ -842,28 +842,28 @@
     .line 7478
     iget-object v2, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3f
 
     .line 7479
     const/4 v1, 0x0
 
     .local v1, i:I
-    :goto_0
+    :goto_21
     iget-object v2, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_1
+    if-ge v1, v2, :cond_3f
 
     .line 7480
-    if-lez v1, :cond_0
+    if-lez v1, :cond_2d
 
     const-string v2, ", "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 7481
-    :cond_0
+    :cond_2d
     iget-object v2, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
     aget-object v2, v2, v1
@@ -881,11 +881,11 @@
     .line 7479
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_21
 
     .line 7485
     .end local v1           #i:I
-    :cond_1
+    :cond_3f
     const-string v2, "]}"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -899,7 +899,7 @@
 .end method
 
 .method writeXml(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;Ljava/util/ArrayList;)V
-    .locals 11
+    .registers 15
     .parameter "serializer"
     .parameter "tagName"
     .parameter
@@ -932,14 +932,14 @@
     .line 7339
     iget-object v6, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
-    if-nez v6, :cond_0
+    if-nez v6, :cond_a
 
     .line 7366
-    :goto_0
+    :goto_9
     return-void
 
     .line 7342
-    :cond_0
+    :cond_a
     invoke-interface {p1, v8, p2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 7343
@@ -959,12 +959,12 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_1
+    :goto_1a
     iget-object v6, p0, Lcom/android/server/PackageManagerService$PackageSignatures;->mSignatures:[Landroid/content/pm/Signature;
 
     array-length v6, v6
 
-    if-ge v0, v6, :cond_4
+    if-ge v0, v6, :cond_70
 
     .line 7346
     const-string v6, "cert"
@@ -993,8 +993,8 @@
     const/4 v1, 0x0
 
     .local v1, j:I
-    :goto_2
-    if-ge v1, v2, :cond_1
+    :goto_31
+    if-ge v1, v2, :cond_4e
 
     .line 7352
     invoke-virtual {p3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1009,13 +1009,13 @@
 
     move-result v6
 
-    if-ne v6, v5, :cond_3
+    if-ne v6, v5, :cond_6d
 
     invoke-virtual {v3, v4}, Landroid/content/pm/Signature;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_6d
 
     .line 7354
     const-string v6, "index"
@@ -1028,8 +1028,8 @@
 
     .line 7358
     .end local v3           #pastSig:Landroid/content/pm/Signature;
-    :cond_1
-    if-lt v1, v2, :cond_2
+    :cond_4e
+    if-lt v1, v2, :cond_65
 
     .line 7359
     invoke-virtual {p3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1053,7 +1053,7 @@
     invoke-interface {p1, v8, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 7363
-    :cond_2
+    :cond_65
     const-string v6, "cert"
 
     invoke-interface {p1, v8, v9}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
@@ -1061,14 +1061,14 @@
     .line 7345
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_1a
 
     .line 7351
     .restart local v3       #pastSig:Landroid/content/pm/Signature;
-    :cond_3
+    :cond_6d
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_31
 
     .line 7365
     .end local v1           #j:I
@@ -1076,8 +1076,8 @@
     .end local v3           #pastSig:Landroid/content/pm/Signature;
     .end local v4           #sig:Landroid/content/pm/Signature;
     .end local v5           #sigHash:I
-    :cond_4
+    :cond_70
     invoke-interface {p1, v8, p2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    goto :goto_0
+    goto :goto_9
 .end method

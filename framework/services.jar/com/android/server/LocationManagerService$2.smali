@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onPackageUpdateFinished(Ljava/lang/String;I)V
-    .locals 2
+    .registers 5
     .parameter "packageName"
     .parameter "uid"
 

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering$TetherMasterSM;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method notify(I)V
-    .locals 5
+    .registers 7
     .parameter "msgType"
 
     .prologue
@@ -56,12 +56,12 @@
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :goto_0
+    :goto_c
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1e
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -79,17 +79,17 @@
     .local v3, sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
     invoke-virtual {v3, p1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
 
-    goto :goto_0
+    goto :goto_c
 
     .line 1393
     .end local v2           #o:Ljava/lang/Object;
     .end local v3           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :cond_0
+    :cond_1e
     return-void
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
-    .locals 3
+    .registers 5
     .parameter "message"
 
     .prologue
@@ -100,17 +100,17 @@
     .local v0, retValue:Z
     iget v2, p1, Landroid/os/Message;->what:I
 
-    packed-switch v2, :pswitch_data_0
+    packed-switch v2, :pswitch_data_12
 
     .line 1383
     const/4 v0, 0x0
 
     .line 1385
-    :goto_0
+    :goto_7
     return v0
 
     .line 1379
-    :pswitch_0
+    :pswitch_8
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -121,11 +121,11 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 1377
-    :pswitch_data_0
+    :pswitch_data_12
     .packed-switch 0x1
-        :pswitch_0
+        :pswitch_8
     .end packed-switch
 .end method

@@ -91,7 +91,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;)V
-    .locals 10
+    .registers 13
     .parameter "context"
     .parameter "looper"
 
@@ -146,13 +146,13 @@
 
     .line 130
     .local v3, service:Landroid/os/INetworkManagementService;
-    :try_start_0
+    :try_start_25
     invoke-interface {v3, p0}, Landroid/os/INetworkManagementService;->registerObserver(Landroid/net/INetworkManagementEventObserver;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_28
+    .catch Landroid/os/RemoteException; {:try_start_25 .. :try_end_28} :catch_113
 
     .line 135
-    :goto_0
+    :goto_28
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
@@ -275,11 +275,11 @@
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_12e
 
     move v4, v8
 
-    :goto_1
+    :goto_a0
     iput-boolean v4, p0, Lcom/android/server/connectivity/Tethering;->mUsbMassStorageOff:Z
 
     .line 160
@@ -300,7 +300,7 @@
 
     array-length v4, v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_bb
 
     iget-object v4, p0, Lcom/android/server/connectivity/Tethering;->mDhcpRange:[Ljava/lang/String;
 
@@ -308,10 +308,10 @@
 
     rem-int/lit8 v4, v4, 0x2
 
-    if-ne v4, v8, :cond_1
+    if-ne v4, v8, :cond_d9
 
     .line 163
-    :cond_0
+    :cond_bb
     const/4 v4, 0x4
 
     new-array v4, v4, [Ljava/lang/String;
@@ -349,7 +349,7 @@
     aput-object v6, v4, v5
 
     .line 169
-    :cond_1
+    :cond_d9
     iput-boolean v7, p0, Lcom/android/server/connectivity/Tethering;->mDunRequired:Z
 
     .line 171
@@ -415,7 +415,7 @@
 
     .line 131
     .end local v2           #filter:Landroid/content/IntentFilter;
-    :catch_0
+    :catch_113
     move-exception v1
 
     .line 132
@@ -442,19 +442,19 @@
 
     invoke-static {v6, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_0
+    goto/16 :goto_28
 
     .end local v1           #e:Landroid/os/RemoteException;
     .restart local v2       #filter:Landroid/content/IntentFilter;
-    :cond_2
+    :cond_12e
     move v4, v7
 
     .line 157
-    goto/16 :goto_1
+    goto/16 :goto_a0
 .end method
 
 .method static synthetic access$1000(Lcom/android/server/connectivity/Tethering;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -465,7 +465,7 @@
 .end method
 
 .method static synthetic access$102(Lcom/android/server/connectivity/Tethering;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -477,7 +477,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/server/connectivity/Tethering;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -488,7 +488,7 @@
 .end method
 
 .method static synthetic access$2300(Lcom/android/server/connectivity/Tethering;Z)Z
-    .locals 1
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -502,7 +502,7 @@
 .end method
 
 .method static synthetic access$2900(Lcom/android/server/connectivity/Tethering;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -513,7 +513,7 @@
 .end method
 
 .method static synthetic access$2902(Lcom/android/server/connectivity/Tethering;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -525,7 +525,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/server/connectivity/Tethering;)Landroid/os/Handler;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -536,7 +536,7 @@
 .end method
 
 .method static synthetic access$3300(Lcom/android/server/connectivity/Tethering;)[Ljava/lang/String;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -547,7 +547,7 @@
 .end method
 
 .method static synthetic access$3600(Lcom/android/server/connectivity/Tethering;)[Ljava/lang/String;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -558,7 +558,7 @@
 .end method
 
 .method static synthetic access$402(Lcom/android/server/connectivity/Tethering;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -570,7 +570,7 @@
 .end method
 
 .method static synthetic access$4500(Lcom/android/server/connectivity/Tethering;)[Ljava/lang/String;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -581,7 +581,7 @@
 .end method
 
 .method static synthetic access$500(Lcom/android/server/connectivity/Tethering;)Lcom/android/internal/util/HierarchicalStateMachine;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -592,7 +592,7 @@
 .end method
 
 .method static synthetic access$602(Lcom/android/server/connectivity/Tethering;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -604,7 +604,7 @@
 .end method
 
 .method static synthetic access$700(Lcom/android/server/connectivity/Tethering;Z)Z
-    .locals 1
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -618,7 +618,7 @@
 .end method
 
 .method private clearTetheredNotification()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 416
@@ -634,11 +634,11 @@
 
     .line 418
     .local v0, notificationManager:Landroid/app/NotificationManager;
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1a
 
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1a
 
     .line 419
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
@@ -653,12 +653,12 @@
     iput-object v1, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
 
     .line 422
-    :cond_0
+    :cond_1a
     return-void
 .end method
 
 .method private configureUsbIface(Z)Z
-    .locals 13
+    .registers 15
     .parameter "enabled"
 
     .prologue
@@ -712,10 +712,10 @@
 
     .line 524
     .local v6, ifaces:[Ljava/lang/String;
-    :try_start_0
+    :try_start_2b
     invoke-interface {v9}, Landroid/os/INetworkManagementService;->listInterfaces()[Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_2e
+    .catch Ljava/lang/Exception; {:try_start_2b .. :try_end_2e} :catch_ce
 
     move-result-object v6
 
@@ -729,8 +729,8 @@
     const/4 v4, 0x0
 
     .local v4, i$:I
-    :goto_0
-    if-ge v4, v8, :cond_2
+    :goto_32
+    if-ge v4, v8, :cond_11c
 
     aget-object v5, v1, v4
 
@@ -740,20 +740,20 @@
 
     move-result v10
 
-    if-eqz v10, :cond_0
+    if-eqz v10, :cond_ca
 
     .line 531
     const/4 v7, 0x0
 
     .line 533
     .local v7, ifcg:Landroid/net/InterfaceConfiguration;
-    :try_start_1
+    :try_start_3d
     invoke-interface {v9, v5}, Landroid/os/INetworkManagementService;->getInterfaceConfig(Ljava/lang/String;)Landroid/net/InterfaceConfiguration;
 
     move-result-object v7
 
     .line 534
-    if-eqz v7, :cond_0
+    if-eqz v7, :cond_ca
 
     .line 535
     const-string v10, "192.168.42.129"
@@ -869,7 +869,7 @@
     iput v10, v7, Landroid/net/InterfaceConfiguration;->netmask:I
 
     .line 545
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_e9
 
     .line 546
     iget-object v10, v7, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
@@ -885,7 +885,7 @@
     iput-object v10, v7, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
 
     .line 550
-    :goto_1
+    :goto_af
     iget-object v10, v7, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
 
     const-string v11, "running"
@@ -913,23 +913,23 @@
 
     .line 552
     invoke-interface {v9, v5, v7}, Landroid/os/INetworkManagementService;->setInterfaceConfig(Ljava/lang/String;Landroid/net/InterfaceConfiguration;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_ca
+    .catch Ljava/lang/Exception; {:try_start_3d .. :try_end_ca} :catch_f6
 
     .line 529
     .end local v0           #addr:[Ljava/lang/String;
     .end local v7           #ifcg:Landroid/net/InterfaceConfiguration;
-    :cond_0
+    :cond_ca
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_0
+    goto/16 :goto_32
 
     .line 525
     .end local v1           #arr$:[Ljava/lang/String;
     .end local v4           #i$:I
     .end local v5           #iface:Ljava/lang/String;
     .end local v8           #len$:I
-    :catch_0
+    :catch_ce
     move-exception v3
 
     .line 526
@@ -961,7 +961,7 @@
 
     .line 561
     .end local v3           #e:Ljava/lang/Exception;
-    :goto_2
+    :goto_e8
     return v10
 
     .line 548
@@ -971,8 +971,8 @@
     .restart local v5       #iface:Ljava/lang/String;
     .restart local v7       #ifcg:Landroid/net/InterfaceConfiguration;
     .restart local v8       #len$:I
-    :cond_1
-    :try_start_2
+    :cond_e9
+    :try_start_e9
     iget-object v10, v7, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
 
     const-string v11, "up"
@@ -984,14 +984,14 @@
     move-result-object v10
 
     iput-object v10, v7, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    :try_end_f5
+    .catch Ljava/lang/Exception; {:try_start_e9 .. :try_end_f5} :catch_f6
 
-    goto :goto_1
+    goto :goto_af
 
     .line 554
     .end local v0           #addr:[Ljava/lang/String;
-    :catch_1
+    :catch_f6
     move-exception v10
 
     move-object v3, v10
@@ -1033,20 +1033,20 @@
     .line 556
     const/4 v10, 0x0
 
-    goto :goto_2
+    goto :goto_e8
 
     .line 561
     .end local v3           #e:Ljava/lang/Exception;
     .end local v5           #iface:Ljava/lang/String;
     .end local v7           #ifcg:Landroid/net/InterfaceConfiguration;
-    :cond_2
+    :cond_11c
     const/4 v10, 0x1
 
-    goto :goto_2
+    goto :goto_e8
 .end method
 
 .method private enableUsbIfaces(Z)V
-    .locals 11
+    .registers 13
     .parameter "enable"
 
     .prologue
@@ -1071,10 +1071,10 @@
 
     .line 473
     .local v5, ifaces:[Ljava/lang/String;
-    :try_start_0
+    :try_start_d
     invoke-interface {v7}, Landroid/os/INetworkManagementService;->listInterfaces()[Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_10
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_10} :catch_26
 
     move-result-object v5
 
@@ -1088,8 +1088,8 @@
     const/4 v3, 0x0
 
     .local v3, i$:I
-    :goto_0
-    if-ge v3, v6, :cond_1
+    :goto_14
+    if-ge v3, v6, :cond_3f
 
     aget-object v4, v0, v3
 
@@ -1099,27 +1099,27 @@
 
     move-result v8
 
-    if-eqz v8, :cond_0
+    if-eqz v8, :cond_23
 
     .line 480
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_40
 
     .line 481
     invoke-virtual {p0, v4}, Lcom/android/server/connectivity/Tethering;->interfaceAdded(Ljava/lang/String;)V
 
     .line 478
-    :cond_0
-    :goto_1
+    :cond_23
+    :goto_23
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_0
+    goto :goto_14
 
     .line 474
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v3           #i$:I
     .end local v4           #iface:Ljava/lang/String;
     .end local v6           #len$:I
-    :catch_0
+    :catch_26
     move-exception v2
 
     .line 475
@@ -1148,7 +1148,7 @@
 
     .line 487
     .end local v2           #e:Ljava/lang/Exception;
-    :cond_1
+    :cond_3f
     return-void
 
     .line 483
@@ -1156,14 +1156,14 @@
     .restart local v3       #i$:I
     .restart local v4       #iface:Ljava/lang/String;
     .restart local v6       #len$:I
-    :cond_2
+    :cond_40
     invoke-virtual {p0, v4}, Lcom/android/server/connectivity/Tethering;->interfaceRemoved(Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_23
 .end method
 
 .method private enableUsbRndis(Z)Z
-    .locals 6
+    .registers 8
     .parameter "enabled"
 
     .prologue
@@ -1213,52 +1213,52 @@
 
     .line 496
     .local v2, service:Landroid/os/INetworkManagementService;
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_58
 
     .line 497
-    :try_start_0
+    :try_start_2c
     monitor-enter p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_2d
+    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_2d} :catch_3c
 
     .line 498
-    :try_start_1
+    :try_start_2d
     invoke-interface {v2}, Landroid/os/INetworkManagementService;->isUsbRNDISStarted()Z
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_36
 
     .line 499
     invoke-interface {v2}, Landroid/os/INetworkManagementService;->startUsbRNDIS()V
 
     .line 501
-    :cond_0
+    :cond_36
     monitor-exit p0
 
     .line 511
-    :cond_1
-    :goto_0
+    :cond_37
+    :goto_37
     const/4 v3, 0x1
 
-    :goto_1
+    :goto_38
     return v3
 
     .line 501
-    :catchall_0
+    :catchall_39
     move-exception v3
 
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_3b
+    .catchall {:try_start_2d .. :try_end_3b} :catchall_39
 
-    :try_start_2
+    :try_start_3b
     throw v3
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_3c
+    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_3c} :catch_3c
 
     .line 507
-    :catch_0
+    :catch_3c
     move-exception v3
 
     move-object v1, v3
@@ -1290,28 +1290,28 @@
     .line 509
     const/4 v3, 0x0
 
-    goto :goto_1
+    goto :goto_38
 
     .line 503
     .end local v1           #e:Ljava/lang/Exception;
-    :cond_2
-    :try_start_3
+    :cond_58
+    :try_start_58
     invoke-interface {v2}, Landroid/os/INetworkManagementService;->isUsbRNDISStarted()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_37
 
     .line 504
     invoke-interface {v2}, Landroid/os/INetworkManagementService;->stopUsbRNDIS()V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    :try_end_61
+    .catch Ljava/lang/Exception; {:try_start_58 .. :try_end_61} :catch_3c
 
-    goto :goto_0
+    goto :goto_37
 .end method
 
 .method private isUsb(Ljava/lang/String;)Z
-    .locals 5
+    .registers 7
     .parameter "iface"
 
     .prologue
@@ -1325,8 +1325,8 @@
     const/4 v1, 0x0
 
     .local v1, i$:I
-    :goto_0
-    if-ge v1, v2, :cond_1
+    :goto_4
+    if-ge v1, v2, :cond_13
 
     aget-object v3, v0, v1
 
@@ -1336,32 +1336,32 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_10
 
     const/4 v4, 0x1
 
     .line 217
     .end local v3           #regex:Ljava/lang/String;
-    :goto_1
+    :goto_f
     return v4
 
     .line 214
     .restart local v3       #regex:Ljava/lang/String;
-    :cond_0
+    :cond_10
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_4
 
     .line 217
     .end local v3           #regex:Ljava/lang/String;
-    :cond_1
+    :cond_13
     const/4 v4, 0x0
 
-    goto :goto_1
+    goto :goto_f
 .end method
 
 .method private sendTetherStateChangedBroadcast()V
-    .locals 18
+    .registers 19
 
     .prologue
     .line 318
@@ -1379,30 +1379,30 @@
 
     .line 321
     .local v11, service:Landroid/net/IConnectivityManager;
-    :try_start_0
+    :try_start_a
     invoke-interface {v11}, Landroid/net/IConnectivityManager;->isTetheringSupported()Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_d
+    .catch Landroid/os/RemoteException; {:try_start_a .. :try_end_d} :catch_11
 
     move-result v15
 
-    if-nez v15, :cond_0
+    if-nez v15, :cond_13
 
     .line 375
-    :goto_0
+    :goto_10
     return-void
 
     .line 322
-    :catch_0
+    :catch_11
     move-exception v6
 
     .line 323
     .local v6, e:Landroid/os/RemoteException;
-    goto :goto_0
+    goto :goto_10
 
     .line 326
     .end local v6           #e:Landroid/os/RemoteException;
-    :cond_0
+    :cond_13
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
@@ -1438,7 +1438,7 @@
     monitor-enter v15
 
     .line 334
-    :try_start_1
+    :try_start_2a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
@@ -1457,13 +1457,13 @@
 
     .end local v10           #ifaces:Ljava/util/Set;
     .local v8, i$:Ljava/util/Iterator;
-    :cond_1
-    :goto_1
+    :cond_38
+    :goto_38
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v16
 
-    if-eqz v16, :cond_6
+    if-eqz v16, :cond_97
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1489,14 +1489,14 @@
 
     .line 337
     .local v12, sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    if-eqz v12, :cond_1
+    if-eqz v12, :cond_38
 
     .line 338
     invoke-virtual {v12}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->isErrored()Z
 
     move-result v16
 
-    if-eqz v16, :cond_2
+    if-eqz v16, :cond_62
 
     .line 339
     check-cast v9, Ljava/lang/String;
@@ -1504,17 +1504,17 @@
     .end local v9           #iface:Ljava/lang/Object;
     invoke-virtual {v7, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1
+    goto :goto_38
 
     .line 352
     .end local v8           #i$:Ljava/util/Iterator;
     .end local v12           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_5f
     move-exception v16
 
     monitor-exit v15
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_61
+    .catchall {:try_start_2a .. :try_end_61} :catchall_5f
 
     throw v16
 
@@ -1522,13 +1522,13 @@
     .restart local v8       #i$:Ljava/util/Iterator;
     .restart local v9       #iface:Ljava/lang/Object;
     .restart local v12       #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :cond_2
-    :try_start_2
+    :cond_62
+    :try_start_62
     invoke-virtual {v12}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->isAvailable()Z
 
     move-result v16
 
-    if-eqz v16, :cond_3
+    if-eqz v16, :cond_6e
 
     .line 341
     check-cast v9, Ljava/lang/String;
@@ -1536,16 +1536,16 @@
     .end local v9           #iface:Ljava/lang/Object;
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1
+    goto :goto_38
 
     .line 342
     .restart local v9       #iface:Ljava/lang/Object;
-    :cond_3
+    :cond_6e
     invoke-virtual {v12}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->isTethered()Z
 
     move-result v16
 
-    if-eqz v16, :cond_1
+    if-eqz v16, :cond_38
 
     .line 343
     move-object v0, v9
@@ -1562,24 +1562,24 @@
 
     move-result v16
 
-    if-eqz v16, :cond_5
+    if-eqz v16, :cond_88
 
     .line 344
     const/4 v13, 0x1
 
     .line 348
-    :cond_4
-    :goto_2
+    :cond_82
+    :goto_82
     check-cast v9, Ljava/lang/String;
 
     .end local v9           #iface:Ljava/lang/Object;
     invoke-virtual {v2, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1
+    goto :goto_38
 
     .line 345
     .restart local v9       #iface:Ljava/lang/Object;
-    :cond_5
+    :cond_88
     move-object v0, v9
 
     check-cast v0, Ljava/lang/String;
@@ -1594,20 +1594,20 @@
 
     move-result v16
 
-    if-eqz v16, :cond_4
+    if-eqz v16, :cond_82
 
     .line 346
     const/4 v14, 0x1
 
-    goto :goto_2
+    goto :goto_82
 
     .line 352
     .end local v9           #iface:Ljava/lang/Object;
     .end local v12           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :cond_6
+    :cond_97
     monitor-exit v15
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_98
+    .catchall {:try_start_62 .. :try_end_98} :catchall_5f
 
     .line 353
     new-instance v5, Landroid/content/Intent;
@@ -1702,10 +1702,10 @@
     invoke-static/range {v15 .. v16}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 364
-    if-eqz v13, :cond_8
+    if-eqz v13, :cond_10d
 
     .line 365
-    if-eqz v14, :cond_7
+    if-eqz v14, :cond_102
 
     .line 366
     const v15, 0x10804a6
@@ -1716,10 +1716,10 @@
 
     invoke-direct {v0, v1}, Lcom/android/server/connectivity/Tethering;->showTetheredNotification(I)V
 
-    goto/16 :goto_0
+    goto/16 :goto_10
 
     .line 368
-    :cond_7
+    :cond_102
     const v15, 0x10804a7
 
     move-object/from16 v0, p0
@@ -1728,11 +1728,11 @@
 
     invoke-direct {v0, v1}, Lcom/android/server/connectivity/Tethering;->showTetheredNotification(I)V
 
-    goto/16 :goto_0
+    goto/16 :goto_10
 
     .line 370
-    :cond_8
-    if-eqz v14, :cond_9
+    :cond_10d
+    if-eqz v14, :cond_11a
 
     .line 371
     const v15, 0x10804a8
@@ -1743,17 +1743,17 @@
 
     invoke-direct {v0, v1}, Lcom/android/server/connectivity/Tethering;->showTetheredNotification(I)V
 
-    goto/16 :goto_0
+    goto/16 :goto_10
 
     .line 373
-    :cond_9
+    :cond_11a
     invoke-direct/range {p0 .. p0}, Lcom/android/server/connectivity/Tethering;->clearTetheredNotification()V
 
-    goto/16 :goto_0
+    goto/16 :goto_10
 .end method
 
 .method private showTetheredNotification(I)V
-    .locals 9
+    .registers 11
     .parameter "icon"
 
     .prologue
@@ -1772,25 +1772,25 @@
 
     .line 380
     .local v2, notificationManager:Landroid/app/NotificationManager;
-    if-nez v2, :cond_1
+    if-nez v2, :cond_e
 
     .line 413
-    :cond_0
-    :goto_0
+    :cond_d
+    :goto_d
     return-void
 
     .line 384
-    :cond_1
+    :cond_e
     iget-object v6, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
 
-    if-eqz v6, :cond_2
+    if-eqz v6, :cond_1f
 
     .line 385
     iget-object v6, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
 
     iget v6, v6, Landroid/app/Notification;->icon:I
 
-    if-eq v6, p1, :cond_0
+    if-eq v6, p1, :cond_d
 
     .line 388
     iget-object v6, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
@@ -1800,7 +1800,7 @@
     invoke-virtual {v2, v6}, Landroid/app/NotificationManager;->cancel(I)V
 
     .line 391
-    :cond_2
+    :cond_1f
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
@@ -1851,7 +1851,7 @@
     .local v1, message:Ljava/lang/CharSequence;
     iget-object v6, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_59
 
     .line 403
     new-instance v6, Landroid/app/Notification;
@@ -1868,7 +1868,7 @@
     iput-wide v7, v6, Landroid/app/Notification;->when:J
 
     .line 406
-    :cond_3
+    :cond_59
     iget-object v6, p0, Lcom/android/server/connectivity/Tethering;->mTetheredNotification:Landroid/app/Notification;
 
     iput p1, v6, Landroid/app/Notification;->icon:I
@@ -1910,21 +1910,21 @@
 
     invoke-virtual {v2, v6, v7}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
-    goto :goto_0
+    goto :goto_d
 .end method
 
 .method private updateUsbStatus()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 425
     iget-boolean v1, p0, Lcom/android/server/connectivity/Tethering;->mUsbConnected:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_12
 
     iget-boolean v1, p0, Lcom/android/server/connectivity/Tethering;->mUsbMassStorageOff:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_12
 
     const/4 v1, 0x1
 
@@ -1932,32 +1932,32 @@
 
     .line 427
     .local v0, enable:Z
-    :goto_0
+    :goto_a
     iget-boolean v1, p0, Lcom/android/server/connectivity/Tethering;->mBooted:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_11
 
     .line 428
     invoke-direct {p0, v0}, Lcom/android/server/connectivity/Tethering;->enableUsbIfaces(Z)V
 
     .line 430
-    :cond_0
+    :cond_11
     return-void
 
     .line 425
     .end local v0           #enable:Z
-    :cond_1
+    :cond_12
     const/4 v1, 0x0
 
     move v0, v1
 
-    goto :goto_0
+    goto :goto_a
 .end method
 
 
 # virtual methods
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 5
+    .registers 9
     .parameter "fd"
     .parameter "pw"
     .parameter "args"
@@ -1972,7 +1972,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_33
 
     .line 1461
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2014,11 +2014,11 @@
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 1475
-    :goto_0
+    :goto_32
     return-void
 
     .line 1467
-    :cond_0
+    :cond_33
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
     .line 1468
@@ -2032,7 +2032,7 @@
     monitor-enter v2
 
     .line 1470
-    :try_start_0
+    :try_start_3e
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -2044,12 +2044,12 @@
     move-result-object v0
 
     .local v0, i$:Ljava/util/Iterator;
-    :goto_1
+    :goto_48
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_72
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2083,35 +2083,35 @@
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_48
 
     .line 1473
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #o:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_6f
     move-exception v3
 
     monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_71
+    .catchall {:try_start_3e .. :try_end_71} :catchall_6f
 
     throw v3
 
     .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1
-    :try_start_1
+    :cond_72
+    :try_start_72
     monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_73
+    .catchall {:try_start_72 .. :try_end_73} :catchall_6f
 
     .line 1474
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
-    goto :goto_0
+    goto :goto_32
 .end method
 
 .method public getErroredIfaces()[Ljava/lang/String;
-    .locals 9
+    .registers 10
 
     .prologue
     .line 621
@@ -2126,7 +2126,7 @@
     monitor-enter v7
 
     .line 623
-    :try_start_0
+    :try_start_8
     iget-object v8, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -2140,13 +2140,13 @@
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
+    :cond_12
+    :goto_12
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_33
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2168,7 +2168,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_0
+    if-eqz v8, :cond_12
 
     .line 627
     check-cast v2, Ljava/lang/String;
@@ -2176,28 +2176,28 @@
     .end local v2           #key:Ljava/lang/Object;
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_12
 
     .line 630
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v3           #keys:Ljava/util/Set;
     .end local v6           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_30
     move-exception v8
 
     monitor-exit v7
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_32
+    .catchall {:try_start_8 .. :try_end_32} :catchall_30
 
     throw v8
 
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v3       #keys:Ljava/util/Set;
-    :cond_1
-    :try_start_1
+    :cond_33
+    :try_start_33
     monitor-exit v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_34
+    .catchall {:try_start_33 .. :try_end_34} :catchall_30
 
     .line 631
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -2212,12 +2212,12 @@
 
     .end local p0
     .local v0, i:I
-    :goto_1
+    :goto_3b
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    if-ge v0, v7, :cond_2
+    if-ge v0, v7, :cond_4c
 
     .line 633
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2231,15 +2231,15 @@
     .line 632
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_3b
 
     .line 635
-    :cond_2
+    :cond_4c
     return-object v5
 .end method
 
 .method public getLastTetherError(Ljava/lang/String;)I
-    .locals 5
+    .registers 7
     .parameter "iface"
 
     .prologue
@@ -2253,7 +2253,7 @@
     monitor-enter v3
 
     .line 308
-    :try_start_0
+    :try_start_4
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2268,11 +2268,11 @@
 
     .line 309
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_f
+    .catchall {:try_start_4 .. :try_end_f} :catchall_31
 
     .line 310
-    if-nez v1, :cond_0
+    if-nez v1, :cond_34
 
     .line 311
     const-string v2, "Tethering"
@@ -2307,31 +2307,31 @@
     const/4 v2, 0x1
 
     .line 314
-    :goto_0
+    :goto_30
     return v2
 
     .line 309
-    :catchall_0
+    :catchall_31
     move-exception v2
 
-    :try_start_1
+    :try_start_32
     monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_33
+    .catchall {:try_start_32 .. :try_end_33} :catchall_31
 
     throw v2
 
     .line 314
-    :cond_0
+    :cond_34
     invoke-virtual {v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->getLastError()I
 
     move-result v2
 
-    goto :goto_0
+    goto :goto_30
 .end method
 
 .method public getTetherableIfaces()[Ljava/lang/String;
-    .locals 9
+    .registers 10
 
     .prologue
     .line 603
@@ -2346,7 +2346,7 @@
     monitor-enter v7
 
     .line 605
-    :try_start_0
+    :try_start_8
     iget-object v8, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -2360,13 +2360,13 @@
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
+    :cond_12
+    :goto_12
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_33
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2388,7 +2388,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_0
+    if-eqz v8, :cond_12
 
     .line 609
     check-cast v2, Ljava/lang/String;
@@ -2396,28 +2396,28 @@
     .end local v2           #key:Ljava/lang/Object;
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_12
 
     .line 612
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v3           #keys:Ljava/util/Set;
     .end local v6           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_30
     move-exception v8
 
     monitor-exit v7
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_32
+    .catchall {:try_start_8 .. :try_end_32} :catchall_30
 
     throw v8
 
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v3       #keys:Ljava/util/Set;
-    :cond_1
-    :try_start_1
+    :cond_33
+    :try_start_33
     monitor-exit v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_34
+    .catchall {:try_start_33 .. :try_end_34} :catchall_30
 
     .line 613
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -2432,12 +2432,12 @@
 
     .end local p0
     .local v0, i:I
-    :goto_1
+    :goto_3b
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    if-ge v0, v7, :cond_2
+    if-ge v0, v7, :cond_4c
 
     .line 615
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2451,15 +2451,15 @@
     .line 614
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_3b
 
     .line 617
-    :cond_2
+    :cond_4c
     return-object v5
 .end method
 
 .method public getTetherableUsbRegexs()[Ljava/lang/String;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 565
@@ -2469,7 +2469,7 @@
 .end method
 
 .method public getTetherableWifiRegexs()[Ljava/lang/String;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 569
@@ -2479,7 +2479,7 @@
 .end method
 
 .method public getTetheredIfaces()[Ljava/lang/String;
-    .locals 9
+    .registers 10
 
     .prologue
     .line 585
@@ -2494,7 +2494,7 @@
     monitor-enter v7
 
     .line 587
-    :try_start_0
+    :try_start_8
     iget-object v8, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -2508,13 +2508,13 @@
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
+    :cond_12
+    :goto_12
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_33
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2536,7 +2536,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_0
+    if-eqz v8, :cond_12
 
     .line 591
     check-cast v2, Ljava/lang/String;
@@ -2544,28 +2544,28 @@
     .end local v2           #key:Ljava/lang/Object;
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_12
 
     .line 594
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v3           #keys:Ljava/util/Set;
     .end local v6           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_30
     move-exception v8
 
     monitor-exit v7
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_32
+    .catchall {:try_start_8 .. :try_end_32} :catchall_30
 
     throw v8
 
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v3       #keys:Ljava/util/Set;
-    :cond_1
-    :try_start_1
+    :cond_33
+    :try_start_33
     monitor-exit v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_34
+    .catchall {:try_start_33 .. :try_end_34} :catchall_30
 
     .line 595
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -2580,12 +2580,12 @@
 
     .end local p0
     .local v0, i:I
-    :goto_1
+    :goto_3b
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    if-ge v0, v7, :cond_2
+    if-ge v0, v7, :cond_4c
 
     .line 597
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2599,15 +2599,15 @@
     .line 596
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_3b
 
     .line 599
-    :cond_2
+    :cond_4c
     return-object v5
 .end method
 
 .method public getUpstreamIfaceRegexs()[Ljava/lang/String;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 573
@@ -2617,7 +2617,7 @@
 .end method
 
 .method public interfaceAdded(Ljava/lang/String;)V
-    .locals 9
+    .registers 11
     .parameter "iface"
 
     .prologue
@@ -2650,18 +2650,18 @@
 
     move-result v5
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_15
 
     .line 233
     const/4 v1, 0x1
 
     .line 235
-    :cond_0
+    :cond_15
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/Tethering;->isUsb(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_1d
 
     .line 236
     const/4 v1, 0x1
@@ -2670,8 +2670,8 @@
     const/4 v4, 0x1
 
     .line 239
-    :cond_1
-    if-nez v1, :cond_2
+    :cond_1d
+    if-nez v1, :cond_38
 
     .line 240
     const-string v5, "Tethering"
@@ -2697,17 +2697,17 @@
     invoke-static {v7, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 255
-    :goto_0
+    :goto_37
     return-void
 
     .line 244
-    :cond_2
+    :cond_38
     iget-object v5, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     monitor-enter v5
 
     .line 245
-    :try_start_0
+    :try_start_3b
     iget-object v6, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v6, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2718,7 +2718,7 @@
 
     .line 246
     .local v3, sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_68
 
     .line 247
     const-string v6, "Tethering"
@@ -2752,23 +2752,23 @@
     .line 248
     monitor-exit v5
 
-    goto :goto_0
+    goto :goto_37
 
     .line 253
     .end local v3           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_65
     move-exception v6
 
     monitor-exit v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_67
+    .catchall {:try_start_3b .. :try_end_67} :catchall_65
 
     throw v6
 
     .line 250
     .restart local v3       #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :cond_3
-    :try_start_1
+    :cond_68
+    :try_start_68
     new-instance v3, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     .end local v3           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -2787,8 +2787,8 @@
 
     .line 253
     monitor-exit v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_78
+    .catchall {:try_start_68 .. :try_end_78} :catchall_65
 
     .line 254
     const-string v5, "Tethering"
@@ -2813,11 +2813,11 @@
 
     invoke-static {v7, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_37
 .end method
 
 .method public interfaceLinkStatusChanged(Ljava/lang/String;Z)V
-    .locals 6
+    .registers 9
     .parameter "iface"
     .parameter "link"
 
@@ -2868,27 +2868,27 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2e
 
     .line 189
     const/4 v0, 0x1
 
     .line 194
-    :cond_0
-    :goto_0
-    if-nez v0, :cond_2
+    :cond_2b
+    :goto_2b
+    if-nez v0, :cond_37
 
     .line 211
-    :goto_1
+    :goto_2d
     return-void
 
     .line 190
-    :cond_1
+    :cond_2e
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/Tethering;->isUsb(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_2b
 
     .line 191
     const/4 v0, 0x1
@@ -2896,16 +2896,16 @@
     .line 192
     const/4 v2, 0x1
 
-    goto :goto_0
+    goto :goto_2b
 
     .line 196
-    :cond_2
+    :cond_37
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     monitor-enter v3
 
     .line 197
-    :try_start_0
+    :try_start_3a
     iget-object v4, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2916,10 +2916,10 @@
 
     .line 198
     .local v1, sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_5a
 
     .line 199
-    if-nez v1, :cond_3
+    if-nez v1, :cond_55
 
     .line 200
     new-instance v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -2939,45 +2939,45 @@
     invoke-virtual {v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->start()V
 
     .line 210
-    :cond_3
-    :goto_2
+    :cond_55
+    :goto_55
     monitor-exit v3
 
-    goto :goto_1
+    goto :goto_2d
 
     .end local v1           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_57
     move-exception v4
 
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_59
+    .catchall {:try_start_3a .. :try_end_59} :catchall_57
 
     throw v4
 
     .line 205
     .restart local v1       #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :cond_4
-    if-eqz v1, :cond_3
+    :cond_5a
+    if-eqz v1, :cond_55
 
     .line 206
     const/4 v4, 0x4
 
-    :try_start_1
+    :try_start_5d
     invoke-virtual {v1, v4}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
 
     .line 207
     iget-object v4, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_65
+    .catchall {:try_start_5d .. :try_end_65} :catchall_57
 
-    goto :goto_2
+    goto :goto_55
 .end method
 
 .method public interfaceRemoved(Ljava/lang/String;)V
-    .locals 5
+    .registers 7
     .parameter "iface"
 
     .prologue
@@ -2987,7 +2987,7 @@
     monitor-enter v1
 
     .line 259
-    :try_start_0
+    :try_start_3
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2998,7 +2998,7 @@
 
     .line 260
     .local v0, sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2d
 
     .line 261
     const-string v2, "Tethering"
@@ -3033,11 +3033,11 @@
     monitor-exit v1
 
     .line 267
-    :goto_0
+    :goto_2c
     return-void
 
     .line 264
-    :cond_0
+    :cond_2d
     const/4 v2, 0x4
 
     invoke-virtual {v0, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
@@ -3050,21 +3050,21 @@
     .line 266
     monitor-exit v1
 
-    goto :goto_0
+    goto :goto_2c
 
     .end local v0           #sm:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :catchall_0
+    :catchall_38
     move-exception v2
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3a
+    .catchall {:try_start_3 .. :try_end_3a} :catchall_38
 
     throw v2
 .end method
 
 .method public isDunRequired()Z
-    .locals 7
+    .registers 8
 
     .prologue
     const/4 v6, 0x0
@@ -3094,39 +3094,39 @@
 
     const-string v3, "tether_dun_required"
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_22
 
     move v4, v5
 
-    :goto_0
+    :goto_1a
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v2
 
-    if-ne v2, v5, :cond_1
+    if-ne v2, v5, :cond_24
 
     move v1, v5
 
     .line 581
     .local v1, result:Z
-    :goto_1
+    :goto_21
     return v1
 
     .end local v1           #result:Z
-    :cond_0
+    :cond_22
     move v4, v6
 
     .line 579
-    goto :goto_0
+    goto :goto_1a
 
-    :cond_1
+    :cond_24
     move v1, v6
 
-    goto :goto_1
+    goto :goto_21
 .end method
 
 .method public isWifi(Ljava/lang/String;)Z
-    .locals 5
+    .registers 7
     .parameter "iface"
 
     .prologue
@@ -3140,8 +3140,8 @@
     const/4 v1, 0x0
 
     .local v1, i$:I
-    :goto_0
-    if-ge v1, v2, :cond_1
+    :goto_4
+    if-ge v1, v2, :cond_13
 
     aget-object v3, v0, v1
 
@@ -3151,32 +3151,32 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_10
 
     const/4 v4, 0x1
 
     .line 224
     .end local v3           #regex:Ljava/lang/String;
-    :goto_1
+    :goto_f
     return v4
 
     .line 221
     .restart local v3       #regex:Ljava/lang/String;
-    :cond_0
+    :cond_10
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_4
 
     .line 224
     .end local v3           #regex:Ljava/lang/String;
-    :cond_1
+    :cond_13
     const/4 v4, 0x0
 
-    goto :goto_1
+    goto :goto_f
 .end method
 
 .method public tether(Ljava/lang/String;)I
-    .locals 6
+    .registers 8
     .parameter "iface"
 
     .prologue
@@ -3217,7 +3217,7 @@
     monitor-enter v3
 
     .line 273
-    :try_start_0
+    :try_start_20
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3232,11 +3232,11 @@
 
     .line 274
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2b
+    .catchall {:try_start_20 .. :try_end_2b} :catchall_4d
 
     .line 275
-    if-nez v1, :cond_0
+    if-nez v1, :cond_50
 
     .line 276
     const-string v2, "Tethering"
@@ -3271,33 +3271,33 @@
     const/4 v2, 0x1
 
     .line 284
-    :goto_0
+    :goto_4c
     return v2
 
     .line 274
-    :catchall_0
+    :catchall_4d
     move-exception v2
 
-    :try_start_1
+    :try_start_4e
     monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_4f
+    .catchall {:try_start_4e .. :try_end_4f} :catchall_4d
 
     throw v2
 
     .line 279
-    :cond_0
+    :cond_50
     invoke-virtual {v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->isAvailable()Z
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_7c
 
     invoke-virtual {v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->isErrored()Z
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_7c
 
     .line 280
     const-string v2, "Tethering"
@@ -3331,10 +3331,10 @@
     .line 281
     const/4 v2, 0x4
 
-    goto :goto_0
+    goto :goto_4c
 
     .line 283
-    :cond_1
+    :cond_7c
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
@@ -3342,11 +3342,11 @@
     .line 284
     const/4 v2, 0x0
 
-    goto :goto_0
+    goto :goto_4c
 .end method
 
 .method public untether(Ljava/lang/String;)I
-    .locals 6
+    .registers 8
     .parameter "iface"
 
     .prologue
@@ -3387,7 +3387,7 @@
     monitor-enter v3
 
     .line 291
-    :try_start_0
+    :try_start_20
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering;->mIfaces:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3402,11 +3402,11 @@
 
     .line 292
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2b
+    .catchall {:try_start_20 .. :try_end_2b} :catchall_4d
 
     .line 293
-    if-nez v1, :cond_0
+    if-nez v1, :cond_50
 
     .line 294
     const-string v2, "Tethering"
@@ -3441,27 +3441,27 @@
     const/4 v2, 0x1
 
     .line 302
-    :goto_0
+    :goto_4c
     return v2
 
     .line 292
-    :catchall_0
+    :catchall_4d
     move-exception v2
 
-    :try_start_1
+    :try_start_4e
     monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_4f
+    .catchall {:try_start_4e .. :try_end_4f} :catchall_4d
 
     throw v2
 
     .line 297
-    :cond_0
+    :cond_50
     invoke-virtual {v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->isErrored()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_76
 
     .line 298
     const-string v2, "Tethering"
@@ -3495,10 +3495,10 @@
     .line 299
     const/4 v2, 0x4
 
-    goto :goto_0
+    goto :goto_4c
 
     .line 301
-    :cond_1
+    :cond_76
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->sendMessage(I)V
@@ -3506,5 +3506,5 @@
     .line 302
     const/4 v2, 0x0
 
-    goto :goto_0
+    goto :goto_4c
 .end method

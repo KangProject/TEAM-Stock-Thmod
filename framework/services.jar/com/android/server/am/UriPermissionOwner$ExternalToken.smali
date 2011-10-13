@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/UriPermissionOwner;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method getOwner()Lcom/android/server/am/UriPermissionOwner;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 38

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiService;ILjava/lang/String;Landroid/os/IBinder;Landroid/os/WorkSource;)V
-    .locals 0
+    .registers 6
     .parameter
     .parameter "lockMode"
     .parameter "tag"
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 2234
@@ -54,7 +54,7 @@
     monitor-enter v0
 
     .line 2235
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/WifiService$WifiLock;->this$0:Lcom/android/server/WifiService;
 
     iget-object v2, p0, Lcom/android/server/WifiService$WifiLock;->mBinder:Landroid/os/IBinder;
@@ -68,18 +68,18 @@
     return-void
 
     .line 2236
-    :catchall_0
+    :catchall_10
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_12
+    .catchall {:try_start_7 .. :try_end_12} :catchall_10
 
     throw v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 2240

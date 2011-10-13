@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 26
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public recycle()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 81

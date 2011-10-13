@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 4341
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public compare(Landroid/content/pm/ResolveInfo;Landroid/content/pm/ResolveInfo;)I
-    .locals 6
+    .registers 9
     .parameter "r1"
     .parameter "r2"
 
@@ -59,96 +59,96 @@
 
     .line 4346
     .local v1, v2:I
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_e
 
     .line 4347
-    if-le v0, v1, :cond_0
+    if-le v0, v1, :cond_c
 
     move v2, v4
 
     .line 4360
-    :goto_0
+    :goto_b
     return v2
 
-    :cond_0
+    :cond_c
     move v2, v5
 
     .line 4347
-    goto :goto_0
+    goto :goto_b
 
     .line 4349
-    :cond_1
+    :cond_e
     iget v0, p1, Landroid/content/pm/ResolveInfo;->preferredOrder:I
 
     .line 4350
     iget v1, p2, Landroid/content/pm/ResolveInfo;->preferredOrder:I
 
     .line 4351
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_1a
 
     .line 4352
-    if-le v0, v1, :cond_2
+    if-le v0, v1, :cond_18
 
     move v2, v4
 
-    goto :goto_0
+    goto :goto_b
 
-    :cond_2
+    :cond_18
     move v2, v5
 
-    goto :goto_0
+    goto :goto_b
 
     .line 4354
-    :cond_3
+    :cond_1a
     iget-boolean v2, p1, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
     iget-boolean v3, p2, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
-    if-eq v2, v3, :cond_5
+    if-eq v2, v3, :cond_28
 
     .line 4355
     iget-boolean v2, p1, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_26
 
     move v2, v4
 
-    goto :goto_0
+    goto :goto_b
 
-    :cond_4
+    :cond_26
     move v2, v5
 
-    goto :goto_0
+    goto :goto_b
 
     .line 4357
-    :cond_5
+    :cond_28
     iget v0, p1, Landroid/content/pm/ResolveInfo;->match:I
 
     .line 4358
     iget v1, p2, Landroid/content/pm/ResolveInfo;->match:I
 
     .line 4360
-    if-le v0, v1, :cond_6
+    if-le v0, v1, :cond_30
 
     move v2, v4
 
-    goto :goto_0
+    goto :goto_b
 
-    :cond_6
-    if-ge v0, v1, :cond_7
+    :cond_30
+    if-ge v0, v1, :cond_34
 
     move v2, v5
 
-    goto :goto_0
+    goto :goto_b
 
-    :cond_7
+    :cond_34
     const/4 v2, 0x0
 
-    goto :goto_0
+    goto :goto_b
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+    .registers 4
     .parameter "x0"
     .parameter "x1"
 

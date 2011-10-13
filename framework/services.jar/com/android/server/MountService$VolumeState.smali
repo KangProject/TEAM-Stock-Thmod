@@ -42,7 +42,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue

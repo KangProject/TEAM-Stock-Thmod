@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 38
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public add()Lcom/android/server/InputWindow;
-    .locals 5
+    .registers 6
 
     .prologue
     const/4 v4, 0x0
@@ -45,7 +45,7 @@
 
     array-length v3, v3
 
-    if-ne v2, v3, :cond_0
+    if-ne v2, v3, :cond_1a
 
     .line 65
     iget-object v1, p0, Lcom/android/server/InputWindowList;->mArray:[Lcom/android/server/InputWindow;
@@ -69,7 +69,7 @@
 
     .line 71
     .end local v1           #oldArray:[Lcom/android/server/InputWindow;
-    :cond_0
+    :cond_1a
     iget-object v2, p0, Lcom/android/server/InputWindowList;->mArray:[Lcom/android/server/InputWindow;
 
     iget v3, p0, Lcom/android/server/InputWindowList;->mCount:I
@@ -80,7 +80,7 @@
 
     .line 72
     .local v0, item:Lcom/android/server/InputWindow;
-    if-nez v0, :cond_1
+    if-nez v0, :cond_29
 
     .line 73
     new-instance v0, Lcom/android/server/InputWindow;
@@ -90,7 +90,7 @@
 
     .line 76
     .restart local v0       #item:Lcom/android/server/InputWindow;
-    :cond_1
+    :cond_29
     iget-object v2, p0, Lcom/android/server/InputWindowList;->mArray:[Lcom/android/server/InputWindow;
 
     iget v3, p0, Lcom/android/server/InputWindowList;->mCount:I
@@ -118,7 +118,7 @@
 .end method
 
 .method public clear()V
-    .locals 4
+    .registers 5
 
     .prologue
     const/4 v3, 0x0
@@ -126,14 +126,14 @@
     .line 46
     iget v1, p0, Lcom/android/server/InputWindowList;->mCount:I
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_6
 
     .line 58
-    :goto_0
+    :goto_5
     return-void
 
     .line 50
-    :cond_0
+    :cond_6
     iget v0, p0, Lcom/android/server/InputWindowList;->mCount:I
 
     .line 51
@@ -150,8 +150,8 @@
     aput-object v2, v1, v0
 
     .line 53
-    :goto_1
-    if-lez v0, :cond_1
+    :goto_12
+    if-lez v0, :cond_1e
 
     .line 54
     add-int/lit8 v0, v0, -0x1
@@ -163,21 +163,21 @@
 
     invoke-virtual {v1}, Lcom/android/server/InputWindow;->recycle()V
 
-    goto :goto_1
+    goto :goto_12
 
     .line 57
-    :cond_1
+    :cond_1e
     iget-object v1, p0, Lcom/android/server/InputWindowList;->mArray:[Lcom/android/server/InputWindow;
 
     const/4 v2, 0x0
 
     aput-object v2, v1, v3
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 .method public toNullTerminatedArray()[Lcom/android/server/InputWindow;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 87

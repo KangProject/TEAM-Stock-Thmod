@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 234
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public final compare(Lcom/android/server/ProcessStats$Stats;Lcom/android/server/ProcessStats$Stats;)I
-    .locals 6
+    .registers 9
     .parameter "sta"
     .parameter "stb"
 
@@ -67,76 +67,76 @@
 
     .line 239
     .local v1, tb:I
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_16
 
     .line 240
-    if-le v0, v1, :cond_0
+    if-le v0, v1, :cond_14
 
     move v2, v4
 
     .line 248
-    :goto_0
+    :goto_13
     return v2
 
-    :cond_0
+    :cond_14
     move v2, v5
 
     .line 240
-    goto :goto_0
+    goto :goto_13
 
     .line 242
-    :cond_1
+    :cond_16
     iget-boolean v2, p1, Lcom/android/server/ProcessStats$Stats;->added:Z
 
     iget-boolean v3, p2, Lcom/android/server/ProcessStats$Stats;->added:Z
 
-    if-eq v2, v3, :cond_3
+    if-eq v2, v3, :cond_24
 
     .line 243
     iget-boolean v2, p1, Lcom/android/server/ProcessStats$Stats;->added:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_22
 
     move v2, v4
 
-    goto :goto_0
+    goto :goto_13
 
-    :cond_2
+    :cond_22
     move v2, v5
 
-    goto :goto_0
+    goto :goto_13
 
     .line 245
-    :cond_3
+    :cond_24
     iget-boolean v2, p1, Lcom/android/server/ProcessStats$Stats;->removed:Z
 
     iget-boolean v3, p2, Lcom/android/server/ProcessStats$Stats;->removed:Z
 
-    if-eq v2, v3, :cond_5
+    if-eq v2, v3, :cond_32
 
     .line 246
     iget-boolean v2, p1, Lcom/android/server/ProcessStats$Stats;->added:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_30
 
     move v2, v4
 
-    goto :goto_0
+    goto :goto_13
 
-    :cond_4
+    :cond_30
     move v2, v5
 
-    goto :goto_0
+    goto :goto_13
 
     .line 248
-    :cond_5
+    :cond_32
     const/4 v2, 0x0
 
-    goto :goto_0
+    goto :goto_13
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+    .registers 4
     .parameter "x0"
     .parameter "x1"
 

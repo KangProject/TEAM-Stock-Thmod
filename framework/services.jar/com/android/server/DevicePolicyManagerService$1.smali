@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/DevicePolicyManagerService;Landroid/os/RemoteCallback;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+    .registers 5
     .parameter "context"
     .parameter "intent"
 
@@ -56,16 +56,16 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/RemoteCallback;->sendResult(Landroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_a
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_a} :catch_b
 
     .line 921
-    :goto_0
+    :goto_a
     return-void
 
     .line 919
-    :catch_0
+    :catch_b
     move-exception v0
 
-    goto :goto_0
+    goto :goto_a
 .end method

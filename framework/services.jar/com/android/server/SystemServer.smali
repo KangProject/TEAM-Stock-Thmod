@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 583
@@ -31,7 +31,7 @@
 .end method
 
 .method private static checkStorageSpace()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 650
@@ -39,13 +39,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_9
 
     .line 651
     invoke-static {}, Lcom/android/server/DeviceStorageMonitorService;->deleteReserveSpace()V
 
     .line 653
-    :cond_0
+    :cond_9
     return-void
 .end method
 
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final init2()V
-    .locals 3
+    .registers 3
 
     .prologue
     .line 638
@@ -82,7 +82,7 @@
 .end method
 
 .method public static main([Ljava/lang/String;)V
-    .locals 6
+    .registers 7
     .parameter "args"
 
     .prologue
@@ -97,7 +97,7 @@
 
     cmp-long v0, v0, v4
 
-    if-gez v0, :cond_0
+    if-gez v0, :cond_18
 
     .line 612
     const-string v0, "SystemServer"
@@ -110,7 +110,7 @@
     invoke-static {v4, v5}, Landroid/os/SystemClock;->setCurrentTimeMillis(J)Z
 
     .line 616
-    :cond_0
+    :cond_18
     invoke-static {}, Lcom/android/server/SystemServer;->checkStorageSpace()V
 
     .line 618
@@ -118,7 +118,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_36
 
     .line 619
     invoke-static {}, Lcom/android/internal/os/SamplingProfilerIntegration;->start()V
@@ -142,7 +142,7 @@
     invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;JJ)V
 
     .line 631
-    :cond_1
+    :cond_36
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v0

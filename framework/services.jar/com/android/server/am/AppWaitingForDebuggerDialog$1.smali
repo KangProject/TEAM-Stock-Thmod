@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/AppWaitingForDebuggerDialog;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,21 +35,21 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .registers 5
     .parameter "msg"
 
     .prologue
     .line 62
     iget v0, p1, Landroid/os/Message;->what:I
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch v0, :pswitch_data_14
 
     .line 68
-    :goto_0
+    :goto_5
     return-void
 
     .line 65
-    :pswitch_0
+    :pswitch_6
     iget-object v0, p0, Lcom/android/server/am/AppWaitingForDebuggerDialog$1;->this$0:Lcom/android/server/am/AppWaitingForDebuggerDialog;
 
     iget-object v0, v0, Lcom/android/server/am/AppWaitingForDebuggerDialog;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -62,11 +62,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/am/ActivityManagerService;->killAppAtUsersRequest(Lcom/android/server/am/ProcessRecord;Landroid/app/Dialog;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 62
-    :pswitch_data_0
+    :pswitch_data_14
     .packed-switch 0x1
-        :pswitch_0
+        :pswitch_6
     .end packed-switch
 .end method

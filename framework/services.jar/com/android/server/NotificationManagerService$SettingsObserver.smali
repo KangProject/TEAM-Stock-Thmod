@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/NotificationManagerService;Landroid/os/Handler;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "handler"
 
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method observe()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 440
@@ -70,7 +70,7 @@
 .end method
 
 .method public onChange(Z)V
-    .locals 0
+    .registers 2
     .parameter "selfChange"
 
     .prologue
@@ -82,7 +82,7 @@
 .end method
 
 .method public update()V
-    .locals 4
+    .registers 5
 
     .prologue
     const/4 v3, 0x0
@@ -104,7 +104,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_26
 
     const/4 v2, 0x1
 
@@ -112,14 +112,14 @@
 
     .line 454
     .local v0, pulseEnabled:Z
-    :goto_0
+    :goto_13
     iget-object v2, p0, Lcom/android/server/NotificationManagerService$SettingsObserver;->this$0:Lcom/android/server/NotificationManagerService;
 
     invoke-static {v2}, Lcom/android/server/NotificationManagerService;->access$2100(Lcom/android/server/NotificationManagerService;)Z
 
     move-result v2
 
-    if-eq v2, v0, :cond_0
+    if-eq v2, v0, :cond_25
 
     .line 455
     iget-object v2, p0, Lcom/android/server/NotificationManagerService$SettingsObserver;->this$0:Lcom/android/server/NotificationManagerService;
@@ -132,13 +132,13 @@
     invoke-static {v2}, Lcom/android/server/NotificationManagerService;->access$1900(Lcom/android/server/NotificationManagerService;)V
 
     .line 458
-    :cond_0
+    :cond_25
     return-void
 
     .end local v0           #pulseEnabled:Z
-    :cond_1
+    :cond_26
     move v0, v3
 
     .line 452
-    goto :goto_0
+    goto :goto_13
 .end method

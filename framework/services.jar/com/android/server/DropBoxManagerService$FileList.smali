@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 399
@@ -66,7 +66,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/DropBoxManagerService$1;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public final compareTo(Lcom/android/server/DropBoxManagerService$FileList;)I
-    .locals 3
+    .registers 5
     .parameter "o"
 
     .prologue
@@ -90,7 +90,7 @@
 
     iget v1, p1, Lcom/android/server/DropBoxManagerService$FileList;->blocks:I
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v1, :cond_d
 
     iget v0, p1, Lcom/android/server/DropBoxManagerService$FileList;->blocks:I
 
@@ -99,19 +99,19 @@
     sub-int/2addr v0, v1
 
     .line 409
-    :goto_0
+    :goto_c
     return v0
 
     .line 406
-    :cond_0
-    if-ne p0, p1, :cond_1
+    :cond_d
+    if-ne p0, p1, :cond_11
 
     move v0, v2
 
-    goto :goto_0
+    goto :goto_c
 
     .line 407
-    :cond_1
+    :cond_11
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
@@ -120,14 +120,14 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_2
+    if-ge v0, v1, :cond_1d
 
     const/4 v0, -0x1
 
-    goto :goto_0
+    goto :goto_c
 
     .line 408
-    :cond_2
+    :cond_1d
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
@@ -136,21 +136,21 @@
 
     move-result v1
 
-    if-le v0, v1, :cond_3
+    if-le v0, v1, :cond_29
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    goto :goto_c
 
-    :cond_3
+    :cond_29
     move v0, v2
 
     .line 409
-    goto :goto_0
+    goto :goto_c
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 1
+    .registers 3
     .parameter "x0"
 
     .prologue

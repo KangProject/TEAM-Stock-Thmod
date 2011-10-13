@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering$TetherMasterSM;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public enter()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 1281
@@ -50,7 +50,7 @@
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
-    .locals 6
+    .registers 8
     .parameter "message"
 
     .prologue
@@ -88,18 +88,18 @@
     .local v1, retValue:Z
     iget v3, p1, Landroid/os/Message;->what:I
 
-    packed-switch v3, :pswitch_data_0
+    packed-switch v3, :pswitch_data_a0
 
     .line 1304
     const/4 v1, 0x0
 
     .line 1307
-    :cond_0
-    :goto_0
+    :cond_23
+    :goto_23
     return v1
 
     .line 1289
-    :pswitch_0
+    :pswitch_24
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$InitialState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;
 
     iget-object v3, v3, Lcom/android/server/connectivity/Tethering$TetherMasterSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -167,11 +167,11 @@
 
     invoke-static {v3, v4}, Lcom/android/server/connectivity/Tethering$TetherMasterSM;->access$4900(Lcom/android/server/connectivity/Tethering$TetherMasterSM;Lcom/android/internal/util/HierarchicalState;)V
 
-    goto :goto_0
+    goto :goto_23
 
     .line 1296
     .end local v2           #who:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
-    :pswitch_1
+    :pswitch_68
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -219,7 +219,7 @@
     .local v0, index:I
     const/4 v3, -0x1
 
-    if-eq v0, v3, :cond_0
+    if-eq v0, v3, :cond_23
 
     .line 1300
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$InitialState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;
@@ -230,14 +230,14 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_23
 
     .line 1287
     nop
 
-    :pswitch_data_0
+    :pswitch_data_a0
     .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
+        :pswitch_24
+        :pswitch_68
     .end packed-switch
 .end method

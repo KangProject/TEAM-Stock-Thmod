@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 27
@@ -27,7 +27,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .registers 8
     .parameter "code"
     .parameter "cmd"
     .parameter "error"
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+    .registers 3
     .parameter "error"
 
     .prologue
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public getCmd()Ljava/lang/String;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 46
@@ -107,7 +107,7 @@
 .end method
 
 .method public getCode()I
-    .locals 1
+    .registers 2
 
     .prologue
     .line 42

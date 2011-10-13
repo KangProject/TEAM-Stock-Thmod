@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 27
@@ -23,7 +23,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/server/ShutdownActivity;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 4
+    .registers 6
     .parameter "savedInstanceState"
 
     .prologue

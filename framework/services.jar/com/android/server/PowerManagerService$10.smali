@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -43,14 +43,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 2451
     monitor-enter p0
 
     .line 2452
-    :try_start_0
+    :try_start_1
     iget-object v0, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$3300(Lcom/android/server/PowerManagerService;)Landroid/content/Context;
@@ -70,12 +70,12 @@
     return-void
 
     .line 2453
-    :catchall_0
+    :catchall_f
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_11
+    .catchall {:try_start_1 .. :try_end_11} :catchall_f
 
     throw v0
 .end method

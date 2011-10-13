@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService$8;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 6167
@@ -49,7 +49,7 @@
     monitor-enter v0
 
     .line 6168
-    :try_start_0
+    :try_start_5
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$8$1;->this$1:Lcom/android/server/am/ActivityManagerService$8;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService$8;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -60,8 +60,8 @@
 
     .line 6169
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_d
+    .catchall {:try_start_5 .. :try_end_d} :catchall_20
 
     .line 6170
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$8$1;->this$1:Lcom/android/server/am/ActivityManagerService$8;
@@ -85,13 +85,13 @@
     return-void
 
     .line 6169
-    :catchall_0
+    :catchall_20
     move-exception v1
 
-    :try_start_1
+    :try_start_21
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_22
+    .catchall {:try_start_21 .. :try_end_22} :catchall_20
 
     throw v1
 .end method

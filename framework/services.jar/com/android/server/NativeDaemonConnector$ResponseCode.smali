@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/NativeDaemonConnector;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue

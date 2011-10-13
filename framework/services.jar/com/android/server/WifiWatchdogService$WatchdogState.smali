@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .registers 6
 
     .prologue
     const/4 v5, 0x3
@@ -111,7 +111,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -128,7 +128,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/WifiWatchdogService$WatchdogState;
-    .locals 1
+    .registers 2
     .parameter "name"
 
     .prologue
@@ -146,7 +146,7 @@
 .end method
 
 .method public static values()[Lcom/android/server/WifiWatchdogService$WatchdogState;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 946

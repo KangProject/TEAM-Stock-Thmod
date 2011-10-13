@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WallpaperManagerService;Ljava/lang/String;I)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -37,20 +37,20 @@
 
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
-    .locals 6
+    .registers 9
     .parameter "event"
     .parameter "path"
 
     .prologue
     .line 110
-    if-nez p2, :cond_0
+    if-nez p2, :cond_3
 
     .line 125
-    :goto_0
+    :goto_2
     return-void
 
     .line 113
-    :cond_0
+    :cond_3
     iget-object v4, p0, Lcom/android/server/WallpaperManagerService$1;->this$0:Lcom/android/server/WallpaperManagerService;
 
     iget-object v4, v4, Lcom/android/server/WallpaperManagerService;->mLock:Ljava/lang/Object;
@@ -58,7 +58,7 @@
     monitor-enter v4
 
     .line 115
-    :try_start_0
+    :try_start_8
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
@@ -95,7 +95,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_2f
 
     .line 122
     iget-object v5, p0, Lcom/android/server/WallpaperManagerService$1;->this$0:Lcom/android/server/WallpaperManagerService;
@@ -103,20 +103,20 @@
     invoke-static {v5}, Lcom/android/server/WallpaperManagerService;->access$000(Lcom/android/server/WallpaperManagerService;)V
 
     .line 124
-    :cond_1
+    :cond_2f
     monitor-exit v4
 
-    goto :goto_0
+    goto :goto_2
 
     .end local v0           #bm:Landroid/app/backup/BackupManager;
     .end local v1           #changedFile:Ljava/io/File;
     .end local v2           #origId:J
-    :catchall_0
+    :catchall_31
     move-exception v5
 
     monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_33
+    .catchall {:try_start_8 .. :try_end_33} :catchall_31
 
     throw v5
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/NotificationPlayer;Lcom/android/server/NotificationPlayer$Command;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "cmd"
 
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 80
@@ -62,7 +62,7 @@
     monitor-enter p0
 
     .line 83
-    :try_start_0
+    :try_start_d
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->mCmd:Lcom/android/server/NotificationPlayer$Command;
 
     iget-object v3, v3, Lcom/android/server/NotificationPlayer$Command;->context:Landroid/content/Context;
@@ -74,12 +74,12 @@
     move-result-object v0
 
     check-cast v0, Landroid/media/AudioManager;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_19
+    .catchall {:try_start_d .. :try_end_19} :catchall_bf
 
     .line 86
     .local v0, audioManager:Landroid/media/AudioManager;
-    :try_start_1
+    :try_start_19
     new-instance v2, Landroid/media/MediaPlayer;
 
     invoke-direct {v2}, Landroid/media/MediaPlayer;-><init>()V
@@ -118,7 +118,7 @@
 
     iget-object v3, v3, Lcom/android/server/NotificationPlayer$Command;->uri:Landroid/net/Uri;
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_67
 
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->mCmd:Lcom/android/server/NotificationPlayer$Command;
 
@@ -128,7 +128,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_67
 
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->mCmd:Lcom/android/server/NotificationPlayer$Command;
 
@@ -142,14 +142,14 @@
 
     move-result v3
 
-    if-lez v3, :cond_0
+    if-lez v3, :cond_67
 
     .line 93
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->mCmd:Lcom/android/server/NotificationPlayer$Command;
 
     iget-boolean v3, v3, Lcom/android/server/NotificationPlayer$Command;->looping:Z
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_92
 
     .line 94
     const/4 v3, 0x0
@@ -163,8 +163,8 @@
     invoke-virtual {v0, v3, v4, v5}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
     .line 101
-    :cond_0
-    :goto_0
+    :cond_67
+    :goto_67
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-virtual {v2, v3}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
@@ -179,7 +179,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_80
 
     .line 104
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->this$0:Lcom/android/server/NotificationPlayer;
@@ -191,18 +191,18 @@
     invoke-virtual {v3}, Landroid/media/MediaPlayer;->release()V
 
     .line 106
-    :cond_1
+    :cond_80
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v3, v2}, Lcom/android/server/NotificationPlayer;->access$102(Lcom/android/server/NotificationPlayer;Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_85
+    .catchall {:try_start_19 .. :try_end_85} :catchall_bf
+    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_85} :catch_9c
 
     .line 111
     .end local v2           #player:Landroid/media/MediaPlayer;
-    :goto_1
-    :try_start_2
+    :goto_85
+    :try_start_85
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v3, v0}, Lcom/android/server/NotificationPlayer;->access$302(Lcom/android/server/NotificationPlayer;Landroid/media/AudioManager;)Landroid/media/AudioManager;
@@ -212,8 +212,8 @@
 
     .line 113
     monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_8e
+    .catchall {:try_start_85 .. :try_end_8e} :catchall_bf
 
     .line 114
     invoke-static {}, Landroid/os/Looper;->loop()V
@@ -223,10 +223,10 @@
 
     .line 97
     .restart local v2       #player:Landroid/media/MediaPlayer;
-    :cond_2
+    :cond_92
     const/4 v3, 0x0
 
-    :try_start_3
+    :try_start_93
     iget-object v4, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->mCmd:Lcom/android/server/NotificationPlayer$Command;
 
     iget v4, v4, Lcom/android/server/NotificationPlayer$Command;->stream:I
@@ -234,22 +234,22 @@
     const/4 v5, 0x3
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    :try_end_9b
+    .catchall {:try_start_93 .. :try_end_9b} :catchall_bf
+    .catch Ljava/lang/Exception; {:try_start_93 .. :try_end_9b} :catch_9c
 
-    goto :goto_0
+    goto :goto_67
 
     .line 108
     .end local v2           #player:Landroid/media/MediaPlayer;
-    :catch_0
+    :catch_9c
     move-exception v3
 
     move-object v1, v3
 
     .line 109
     .local v1, e:Ljava/lang/Exception;
-    :try_start_4
+    :try_start_9e
     iget-object v3, p0, Lcom/android/server/NotificationPlayer$CreationAndCompletionThread;->this$0:Lcom/android/server/NotificationPlayer;
 
     invoke-static {v3}, Lcom/android/server/NotificationPlayer;->access$200(Lcom/android/server/NotificationPlayer;)Ljava/lang/String;
@@ -280,17 +280,17 @@
 
     invoke-static {v3, v4, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_85
 
     .line 113
     .end local v0           #audioManager:Landroid/media/AudioManager;
     .end local v1           #e:Ljava/lang/Exception;
-    :catchall_0
+    :catchall_bf
     move-exception v3
 
     monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_c1
+    .catchall {:try_start_9e .. :try_end_c1} :catchall_bf
 
     throw v3
 .end method

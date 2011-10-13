@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/AppErrorDialog;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .registers 5
     .parameter "msg"
 
     .prologue
@@ -49,14 +49,14 @@
     monitor-enter v0
 
     .line 86
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
 
     invoke-static {v1}, Lcom/android/server/am/AppErrorDialog;->access$000(Lcom/android/server/am/AppErrorDialog;)Lcom/android/server/am/ProcessRecord;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_24
 
     iget-object v1, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
 
@@ -68,7 +68,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_24
 
     .line 87
     iget-object v1, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
@@ -82,10 +82,10 @@
     iput-object v2, v1, Lcom/android/server/am/ProcessRecord;->crashDialog:Landroid/app/Dialog;
 
     .line 89
-    :cond_0
+    :cond_24
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_25
+    .catchall {:try_start_7 .. :try_end_25} :catchall_36
 
     .line 90
     iget-object v0, p0, Lcom/android/server/am/AppErrorDialog$1;->this$0:Lcom/android/server/am/AppErrorDialog;
@@ -107,13 +107,13 @@
     return-void
 
     .line 89
-    :catchall_0
+    :catchall_36
     move-exception v1
 
-    :try_start_1
+    :try_start_37
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_38
+    .catchall {:try_start_37 .. :try_end_38} :catchall_36
 
     throw v1
 .end method

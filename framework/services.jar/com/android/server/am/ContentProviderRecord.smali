@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/pm/ProviderInfo;Landroid/content/pm/ApplicationInfo;)V
-    .locals 3
+    .registers 6
     .parameter "_info"
     .parameter "ai"
 
@@ -69,32 +69,32 @@
     .line 44
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_25
 
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
     const/16 v1, 0x3e8
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_29
 
-    :cond_0
+    :cond_25
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_26
     iput-boolean v0, p0, Lcom/android/server/am/ContentProviderRecord;->noReleaseNeeded:Z
 
     .line 45
     return-void
 
     .line 44
-    :cond_1
+    :cond_29
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_26
 .end method
 
 .method public constructor <init>(Lcom/android/server/am/ContentProviderRecord;)V
-    .locals 1
+    .registers 3
     .parameter "cpr"
 
     .prologue
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public canRunHere(Lcom/android/server/am/ProcessRecord;)Z
-    .locals 2
+    .registers 4
     .parameter "app"
 
     .prologue
@@ -146,7 +146,7 @@
 
     iget-boolean v0, v0, Landroid/content/pm/ProviderInfo;->multiprocess:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_12
 
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
@@ -158,14 +158,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_22
 
-    :cond_0
+    :cond_12
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
     const/16 v1, 0x3e8
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_20
 
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
@@ -173,22 +173,22 @@
 
     iget v1, v1, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_22
 
-    :cond_1
+    :cond_20
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_21
     return v0
 
-    :cond_2
+    :cond_22
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_21
 .end method
 
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 1
+    .registers 4
     .parameter "pw"
     .parameter "prefix"
 
@@ -234,7 +234,7 @@
     .line 65
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->launchingApp:Lcom/android/server/am/ProcessRecord;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3b
 
     .line 66
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -248,7 +248,7 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 68
-    :cond_0
+    :cond_3b
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "uid="
@@ -286,22 +286,22 @@
 
     iget-boolean v0, v0, Landroid/content/pm/ProviderInfo;->isSyncable:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_73
 
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
     iget-boolean v0, v0, Landroid/content/pm/ProviderInfo;->multiprocess:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_73
 
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
     iget v0, v0, Landroid/content/pm/ProviderInfo;->initOrder:I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_9a
 
     .line 72
-    :cond_1
+    :cond_73
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "isSyncable="
@@ -337,14 +337,14 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
     .line 76
-    :cond_2
+    :cond_9a
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->clients:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_3
+    if-lez v0, :cond_af
 
     .line 77
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -358,10 +358,10 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 79
-    :cond_3
+    :cond_af
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->externals:I
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_c0
 
     .line 80
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -375,28 +375,28 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
     .line 82
-    :cond_4
+    :cond_c0
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 85
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->stringName:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_7
 
     .line 86
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->stringName:Ljava/lang/String;
 
     .line 94
-    :goto_0
+    :goto_6
     return-object v1
 
     .line 88
-    :cond_0
+    :cond_7
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
@@ -444,5 +444,5 @@
 
     iput-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->stringName:Ljava/lang/String;
 
-    goto :goto_0
+    goto :goto_6
 .end method

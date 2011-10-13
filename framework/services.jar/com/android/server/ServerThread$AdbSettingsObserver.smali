@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/ServerThread;)V
-    .locals 1
+    .registers 3
     .parameter
 
     .prologue
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 4
+    .registers 6
     .parameter "selfChange"
 
     .prologue
@@ -58,7 +58,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_0
+    if-lez v1, :cond_1b
 
     const/4 v1, 0x1
 
@@ -66,30 +66,30 @@
 
     .line 79
     .local v0, enableAdb:Z
-    :goto_0
+    :goto_11
     const-string v1, "persist.service.adb.enable"
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_1d
 
     const-string v2, "1"
 
-    :goto_1
+    :goto_17
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 80
     return-void
 
     .end local v0           #enableAdb:Z
-    :cond_0
+    :cond_1b
     move v0, v3
 
     .line 76
-    goto :goto_0
+    goto :goto_11
 
     .line 79
     .restart local v0       #enableAdb:Z
-    :cond_1
+    :cond_1d
     const-string v2, "0"
 
-    goto :goto_1
+    goto :goto_17
 .end method

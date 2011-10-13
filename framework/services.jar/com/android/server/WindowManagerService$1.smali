@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WindowManagerService;Landroid/os/Handler;Ljava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public acquired()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 237
@@ -47,7 +47,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_17
 
     .line 238
     iget-object v0, p0, Lcom/android/server/WindowManagerService$1;->this$0:Lcom/android/server/WindowManagerService;
@@ -66,22 +66,22 @@
     invoke-static {v0, v1}, Lcom/android/server/WindowManagerService;->access$102(Lcom/android/server/WindowManagerService;Z)Z
 
     .line 243
-    :goto_0
+    :goto_16
     return-void
 
     .line 241
-    :cond_0
+    :cond_17
     const-string v0, "WindowManager"
 
     const-string v1, "Not disabling keyguard since device policy is enforced"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_16
 .end method
 
 .method public released()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 245
@@ -101,7 +101,7 @@
     monitor-enter v0
 
     .line 247
-    :try_start_0
+    :try_start_d
     iget-object v1, p0, Lcom/android/server/WindowManagerService$1;->this$0:Lcom/android/server/WindowManagerService;
 
     const/4 v2, 0x0
@@ -122,12 +122,12 @@
     return-void
 
     .line 249
-    :catchall_0
+    :catchall_1c
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1e
+    .catchall {:try_start_d .. :try_end_1e} :catchall_1c
 
     throw v1
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/VibratorService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+    .registers 5
     .parameter "context"
     .parameter "intent"
 
@@ -51,7 +51,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_22
 
     .line 389
     iget-object v0, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
@@ -63,7 +63,7 @@
     monitor-enter v0
 
     .line 390
-    :try_start_0
+    :try_start_13
     iget-object v1, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v1}, Lcom/android/server/VibratorService;->access$200(Lcom/android/server/VibratorService;)V
@@ -81,16 +81,16 @@
     monitor-exit v0
 
     .line 394
-    :cond_0
+    :cond_22
     return-void
 
     .line 392
-    :catchall_0
+    :catchall_23
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_25
+    .catchall {:try_start_13 .. :try_end_25} :catchall_23
 
     throw v1
 .end method

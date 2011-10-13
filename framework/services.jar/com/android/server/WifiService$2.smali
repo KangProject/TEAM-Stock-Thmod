@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+    .registers 5
     .parameter "context"
     .parameter "intent"
 
@@ -54,7 +54,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1c
 
     iget-object v0, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
@@ -62,7 +62,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1c
 
     .line 274
     iget-object v0, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
@@ -72,7 +72,7 @@
     invoke-static {v0, v1}, Lcom/android/server/WifiService;->access$400(Lcom/android/server/WifiService;Z)V
 
     .line 276
-    :cond_0
+    :cond_1c
     iget-object v0, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v0}, Lcom/android/server/WifiService;->access$500(Lcom/android/server/WifiService;)V

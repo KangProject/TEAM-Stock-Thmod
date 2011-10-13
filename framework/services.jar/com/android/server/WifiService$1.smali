@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiService;IFZ)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public removeEldestEntry(Ljava/util/Map$Entry;)Z
-    .locals 2
+    .registers 4
     .parameter "eldest"
 
     .prologue
@@ -59,15 +59,15 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v1, :cond_a
 
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_9
     return v0
 
-    :cond_0
+    :cond_a
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_9
 .end method

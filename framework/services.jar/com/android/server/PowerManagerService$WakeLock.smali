@@ -41,7 +41,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;ILandroid/os/IBinder;Ljava/lang/String;II)V
-    .locals 5
+    .registers 12
     .parameter
     .parameter "f"
     .parameter "b"
@@ -77,11 +77,11 @@
 
     move-result v1
 
-    if-ne p5, v1, :cond_1
+    if-ne p5, v1, :cond_41
 
     const/16 v1, 0x3e8
 
-    :goto_0
+    :goto_17
     iput v1, p0, Lcom/android/server/PowerManagerService$WakeLock;->uid:I
 
     .line 662
@@ -92,7 +92,7 @@
 
     move-result v1
 
-    if-ne p5, v1, :cond_0
+    if-ne p5, v1, :cond_35
 
     const-string v1, "KEEP_SCREEN_ON_FLAG"
 
@@ -102,7 +102,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_45
 
     const-string v1, "KeyInputQueue"
 
@@ -112,67 +112,67 @@
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_45
 
     .line 666
-    :cond_0
+    :cond_35
     and-int/lit8 v1, p2, 0x3f
 
-    if-ne v1, v3, :cond_2
+    if-ne v1, v3, :cond_43
 
     move v1, v4
 
-    :goto_1
+    :goto_3a
     iput v1, p0, Lcom/android/server/PowerManagerService$WakeLock;->monitorType:I
 
     .line 673
-    :goto_2
+    :goto_3c
     const/4 v1, 0x0
 
-    :try_start_0
+    :try_start_3d
     invoke-interface {p3, p0, v1}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_40
+    .catch Landroid/os/RemoteException; {:try_start_3d .. :try_end_40} :catch_49
 
     .line 677
-    :goto_3
+    :goto_40
     return-void
 
-    :cond_1
+    :cond_41
     move v1, p5
 
     .line 661
-    goto :goto_0
+    goto :goto_17
 
-    :cond_2
+    :cond_43
     move v1, v3
 
     .line 666
-    goto :goto_1
+    goto :goto_3a
 
     .line 670
-    :cond_3
+    :cond_45
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/android/server/PowerManagerService$WakeLock;->monitorType:I
 
-    goto :goto_2
+    goto :goto_3c
 
     .line 674
-    :catch_0
+    :catch_49
     move-exception v0
 
     .line 675
     .local v0, e:Landroid/os/RemoteException;
     invoke-virtual {p0}, Lcom/android/server/PowerManagerService$WakeLock;->binderDied()V
 
-    goto :goto_3
+    goto :goto_40
 .end method
 
 
 # virtual methods
 .method public binderDied()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 679
@@ -185,7 +185,7 @@
     monitor-enter v0
 
     .line 680
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/PowerManagerService$WakeLock;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v2, p0, Lcom/android/server/PowerManagerService$WakeLock;->binder:Landroid/os/IBinder;
@@ -203,12 +203,12 @@
     return-void
 
     .line 681
-    :catchall_0
+    :catchall_12
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_14
+    .catchall {:try_start_7 .. :try_end_14} :catchall_12
 
     throw v1
 .end method

@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/Handler;ILjava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter "handler"
     .parameter "msg"
     .parameter "iface"
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public interfaceAdded(Ljava/lang/String;)V
-    .locals 2
+    .registers 4
     .parameter "iface"
 
     .prologue
@@ -60,7 +60,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_13
 
     .line 173
     iget-object v0, p0, Lcom/android/server/ThrottleService$InterfaceObserver;->mHandler:Landroid/os/Handler;
@@ -74,18 +74,18 @@
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     .line 175
-    :cond_0
+    :cond_13
     return-void
 .end method
 
 .method public interfaceLinkStatusChanged(Ljava/lang/String;Z)V
-    .locals 2
+    .registers 5
     .parameter "iface"
     .parameter "link"
 
     .prologue
     .line 162
-    if-eqz p2, :cond_0
+    if-eqz p2, :cond_15
 
     .line 163
     iget-object v0, p0, Lcom/android/server/ThrottleService$InterfaceObserver;->mIface:Ljava/lang/String;
@@ -94,7 +94,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_15
 
     .line 164
     iget-object v0, p0, Lcom/android/server/ThrottleService$InterfaceObserver;->mHandler:Landroid/os/Handler;
@@ -108,12 +108,12 @@
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     .line 167
-    :cond_0
+    :cond_15
     return-void
 .end method
 
 .method public interfaceRemoved(Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "iface"
 
     .prologue

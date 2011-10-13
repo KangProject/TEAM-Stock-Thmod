@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/net/wifi/WifiStateTracker;)V
-    .locals 1
+    .registers 4
     .parameter "context"
     .parameter "wifiStateTracker"
 
@@ -107,18 +107,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_31
 
     .line 122
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->registerForWifiBroadcasts()V
 
     .line 128
-    :cond_0
+    :cond_31
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/WifiWatchdogService;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -131,7 +131,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -142,7 +142,7 @@
 .end method
 
 .method static synthetic access$1000(Lcom/android/server/WifiWatchdogService;Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -154,7 +154,7 @@
 .end method
 
 .method static synthetic access$1100(Lcom/android/server/WifiWatchdogService;Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -166,7 +166,7 @@
 .end method
 
 .method static synthetic access$1200(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -177,7 +177,7 @@
 .end method
 
 .method static synthetic access$1300(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -188,7 +188,7 @@
 .end method
 
 .method static synthetic access$1400(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -199,7 +199,7 @@
 .end method
 
 .method static synthetic access$1500(Lcom/android/server/WifiWatchdogService;)Landroid/net/wifi/WifiManager;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -210,7 +210,7 @@
 .end method
 
 .method static synthetic access$1600(Lcom/android/server/WifiWatchdogService;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -223,7 +223,7 @@
 .end method
 
 .method static synthetic access$1700(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -234,7 +234,7 @@
 .end method
 
 .method static synthetic access$1800(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -245,7 +245,7 @@
 .end method
 
 .method static synthetic access$1900(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -256,7 +256,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -267,7 +267,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/server/WifiWatchdogService;)Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -278,7 +278,7 @@
 .end method
 
 .method static synthetic access$302(Lcom/android/server/WifiWatchdogService;Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;)Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -290,7 +290,7 @@
 .end method
 
 .method static synthetic access$600(Lcom/android/server/WifiWatchdogService;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -303,7 +303,7 @@
 .end method
 
 .method static synthetic access$700(Lcom/android/server/WifiWatchdogService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -316,7 +316,7 @@
 .end method
 
 .method static synthetic access$800(Lcom/android/server/WifiWatchdogService;Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -328,7 +328,7 @@
 .end method
 
 .method static synthetic access$900(Lcom/android/server/WifiWatchdogService;Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -340,7 +340,7 @@
 .end method
 
 .method private backgroundCheckDnsConnectivity()Z
-    .locals 2
+    .registers 3
 
     .prologue
     .line 424
@@ -352,16 +352,16 @@
     .local v0, dns:I
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_9
 
     .line 434
     const/4 v1, 0x0
 
     .line 437
-    :goto_0
+    :goto_8
     return v1
 
-    :cond_0
+    :cond_9
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->getBackgroundCheckTimeoutMs()I
 
     move-result v1
@@ -370,11 +370,11 @@
 
     move-result v1
 
-    goto :goto_0
+    goto :goto_8
 .end method
 
 .method private blacklistAp(Ljava/lang/String;)V
-    .locals 2
+    .registers 4
     .parameter "bssid"
 
     .prologue
@@ -383,20 +383,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_7
 
     .line 773
-    :cond_0
-    :goto_0
+    :cond_6
+    :goto_6
     return-void
 
     .line 763
-    :cond_1
+    :cond_7
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->shouldCancel()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_6
 
     .line 765
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService;->mWifiStateTracker:Landroid/net/wifi/WifiStateTracker;
@@ -405,10 +405,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_15
 
     .line 771
-    :cond_2
+    :cond_15
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -429,11 +429,11 @@
 
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->myLogD(Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_6
 .end method
 
 .method private cancelCurrentAction()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 444
@@ -446,7 +446,7 @@
 .end method
 
 .method private checkDnsConnectivity()Z
-    .locals 14
+    .registers 15
 
     .prologue
     .line 335
@@ -458,17 +458,17 @@
     .local v1, dns:I
     const/4 v11, -0x1
 
-    if-ne v1, v11, :cond_0
+    if-ne v1, v11, :cond_9
 
     .line 340
     const/4 v11, 0x0
 
     .line 420
-    :goto_0
+    :goto_8
     return v11
 
     .line 348
-    :cond_0
+    :cond_9
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->getInitialIgnoredPingCount()I
 
     move-result v5
@@ -505,44 +505,44 @@
 
     .line 359
     .local v10, successCounter:I
-    if-nez v6, :cond_2
+    if-nez v6, :cond_26
 
     .line 360
     const/4 v11, 0x1
 
-    goto :goto_0
+    goto :goto_8
 
     .line 384
     .local v2, dnsAlive:Z
-    :cond_1
+    :cond_20
     int-to-long v11, v9
 
-    :try_start_0
+    :try_start_21
     invoke-static {v11, v12}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_24
+    .catch Ljava/lang/InterruptedException; {:try_start_21 .. :try_end_24} :catch_46
 
     .line 364
-    :goto_1
+    :goto_24
     add-int/lit8 v4, v4, 0x1
 
     .end local v2           #dnsAlive:Z
-    :cond_2
-    if-ge v4, v5, :cond_6
+    :cond_26
+    if-ge v4, v5, :cond_55
 
     .line 365
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->shouldCancel()Z
 
     move-result v11
 
-    if-eqz v11, :cond_3
+    if-eqz v11, :cond_30
 
     const/4 v11, 0x0
 
-    goto :goto_0
+    goto :goto_8
 
     .line 367
-    :cond_3
+    :cond_30
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->getPingTimeoutMs()I
 
     move-result v11
@@ -553,7 +553,7 @@
 
     .line 368
     .restart local v2       #dnsAlive:Z
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3e
 
     .line 373
     add-int/lit8 v8, v8, 0x1
@@ -562,19 +562,19 @@
     add-int/lit8 v10, v10, 0x1
 
     .line 381
-    :cond_4
+    :cond_3e
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->shouldCancel()Z
 
     move-result v11
 
-    if-eqz v11, :cond_1
+    if-eqz v11, :cond_20
 
     const/4 v11, 0x0
 
-    goto :goto_0
+    goto :goto_8
 
     .line 385
-    :catch_0
+    :catch_46
     move-exception v3
 
     .line 386
@@ -585,39 +585,39 @@
 
     invoke-static {v11, v12, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_24
 
     .line 408
     .end local v2           #dnsAlive:Z
     .end local v3           #e:Ljava/lang/InterruptedException;
-    :cond_5
+    :cond_4f
     int-to-long v11, v9
 
-    :try_start_1
+    :try_start_50
     invoke-static {v11, v12}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_53
+    .catch Ljava/lang/InterruptedException; {:try_start_50 .. :try_end_53} :catch_73
 
     .line 391
-    :goto_2
+    :goto_53
     add-int/lit8 v8, v8, 0x1
 
-    :cond_6
-    if-ge v8, v6, :cond_9
+    :cond_55
+    if-ge v8, v6, :cond_7c
 
     .line 392
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->shouldCancel()Z
 
     move-result v11
 
-    if-eqz v11, :cond_7
+    if-eqz v11, :cond_5f
 
     const/4 v11, 0x0
 
-    goto :goto_0
+    goto :goto_8
 
     .line 394
-    :cond_7
+    :cond_5f
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->getPingTimeoutMs()I
 
     move-result v11
@@ -626,25 +626,25 @@
 
     move-result v11
 
-    if-eqz v11, :cond_8
+    if-eqz v11, :cond_6b
 
     .line 395
     add-int/lit8 v10, v10, 0x1
 
     .line 405
-    :cond_8
+    :cond_6b
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->shouldCancel()Z
 
     move-result v11
 
-    if-eqz v11, :cond_5
+    if-eqz v11, :cond_4f
 
     const/4 v11, 0x0
 
-    goto :goto_0
+    goto :goto_8
 
     .line 409
-    :catch_1
+    :catch_73
     move-exception v3
 
     .line 410
@@ -655,11 +655,11 @@
 
     invoke-static {v11, v12, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_2
+    goto :goto_53
 
     .line 414
     .end local v3           #e:Ljava/lang/InterruptedException;
-    :cond_9
+    :cond_7c
     sub-int v11, v6, v10
 
     mul-int/lit8 v11, v11, 0x64
@@ -705,22 +705,22 @@
 
     move-result v11
 
-    if-nez v11, :cond_a
+    if-nez v11, :cond_af
 
-    if-gt v7, v0, :cond_a
+    if-gt v7, v0, :cond_af
 
     const/4 v11, 0x1
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 
-    :cond_a
+    :cond_af
     const/4 v11, 0x0
 
-    goto/16 :goto_0
+    goto/16 :goto_8
 .end method
 
 .method private createThread()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 270
@@ -743,7 +743,7 @@
 .end method
 
 .method private getAcceptablePacketLossPercentage()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 203
@@ -761,7 +761,7 @@
 .end method
 
 .method private getApCount()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 163
@@ -779,7 +779,7 @@
 .end method
 
 .method private getBackgroundCheckDelayMs()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 227
@@ -797,7 +797,7 @@
 .end method
 
 .method private getBackgroundCheckTimeoutMs()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 235
@@ -815,7 +815,7 @@
 .end method
 
 .method private getDns()I
-    .locals 2
+    .registers 3
 
     .prologue
     .line 320
@@ -827,23 +827,23 @@
 
     .line 321
     .local v0, addressInfo:Landroid/net/DhcpInfo;
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_b
 
     .line 322
     iget v1, v0, Landroid/net/DhcpInfo;->dns1:I
 
     .line 324
-    :goto_0
+    :goto_a
     return v1
 
-    :cond_0
+    :cond_b
     const/4 v1, -0x1
 
-    goto :goto_0
+    goto :goto_a
 .end method
 
 .method private getInitialIgnoredPingCount()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 171
@@ -861,7 +861,7 @@
 .end method
 
 .method private getMaxApChecks()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 211
@@ -879,7 +879,7 @@
 .end method
 
 .method private getPingCount()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 179
@@ -897,7 +897,7 @@
 .end method
 
 .method private getPingDelayMs()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 195
@@ -915,7 +915,7 @@
 .end method
 
 .method private getPingTimeoutMs()I
-    .locals 3
+    .registers 4
 
     .prologue
     .line 187
@@ -933,7 +933,7 @@
 .end method
 
 .method private getWatchList()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 244
@@ -949,7 +949,7 @@
 .end method
 
 .method private handleApAlive(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 2
+    .registers 4
     .parameter "ap"
 
     .prologue
@@ -958,14 +958,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_7
 
     .line 734
-    :goto_0
+    :goto_6
     return-void
 
     .line 726
-    :cond_0
+    :cond_7
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/WifiWatchdogService;->setIdleState(Z)V
@@ -1000,11 +1000,11 @@
 
     invoke-virtual {v0, p1}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->backgroundCheckAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
-    goto :goto_0
+    goto :goto_6
 .end method
 
 .method private handleApUnresponsive(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 2
+    .registers 4
     .parameter "ap"
 
     .prologue
@@ -1013,14 +1013,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_7
 
     .line 755
-    :goto_0
+    :goto_6
     return-void
 
     .line 745
-    :cond_0
+    :cond_7
     sget-object v0, Lcom/android/server/WifiWatchdogService$WatchdogState;->SWITCHING_AP:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
     iput-object v0, p0, Lcom/android/server/WifiWatchdogService;->mState:Lcom/android/server/WifiWatchdogService$WatchdogState;
@@ -1060,11 +1060,11 @@
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiStateTracker;->reassociate()Z
 
-    goto :goto_0
+    goto :goto_6
 .end method
 
 .method private handleBackgroundCheckAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 4
+    .registers 6
     .parameter "ap"
 
     .prologue
@@ -1078,15 +1078,15 @@
 
     sget-object v3, Lcom/android/server/WifiWatchdogService$WatchdogState;->SLEEP:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v3, :cond_a
 
     .line 841
-    :cond_0
-    :goto_0
+    :cond_9
+    :goto_9
     return-void
 
     .line 800
-    :cond_1
+    :cond_a
     iget-object v2, p0, Lcom/android/server/WifiWatchdogService;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v2}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
@@ -1099,7 +1099,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_9
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
 
@@ -1111,14 +1111,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_9
 
     .line 809
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_9
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
@@ -1130,7 +1130,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_9
 
     .line 818
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->backgroundCheckDnsConnectivity()Z
@@ -1143,20 +1143,20 @@
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_9
 
     .line 829
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_46
 
     .line 831
     iget-object v2, p0, Lcom/android/server/WifiWatchdogService;->mHandler:Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;
 
     invoke-virtual {v2, p1}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->backgroundCheckAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
-    goto :goto_0
+    goto :goto_9
 
     .line 835
-    :cond_2
+    :cond_46
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1186,11 +1186,11 @@
 
     invoke-virtual {v2, p1}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->checkAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
-    goto :goto_0
+    goto :goto_9
 .end method
 
 .method private handleCheckAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 3
+    .registers 5
     .parameter "ap"
 
     .prologue
@@ -1204,14 +1204,14 @@
 
     sget-object v2, Lcom/android/server/WifiWatchdogService$WatchdogState;->SLEEP:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_a
 
     .line 715
-    :goto_0
+    :goto_9
     return-void
 
     .line 686
-    :cond_0
+    :cond_a
     sget-object v1, Lcom/android/server/WifiWatchdogService$WatchdogState;->CHECKING_AP:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
     iput-object v1, p0, Lcom/android/server/WifiWatchdogService;->mState:Lcom/android/server/WifiWatchdogService$WatchdogState;
@@ -1230,7 +1230,7 @@
 
     move-result v2
 
-    if-le v1, v2, :cond_1
+    if-le v1, v2, :cond_24
 
     .line 698
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService;->mHandler:Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;
@@ -1239,32 +1239,32 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->sleep(Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_9
 
     .line 703
-    :cond_1
+    :cond_24
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->checkDnsConnectivity()Z
 
     move-result v0
 
     .line 710
     .local v0, isApAlive:Z
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_2e
 
     .line 711
     invoke-direct {p0, p1}, Lcom/android/server/WifiWatchdogService;->handleApAlive(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
-    goto :goto_0
+    goto :goto_9
 
     .line 713
-    :cond_2
+    :cond_2e
     invoke-direct {p0, p1}, Lcom/android/server/WifiWatchdogService;->handleApUnresponsive(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
-    goto :goto_0
+    goto :goto_9
 .end method
 
 .method private handleDisconnected()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 892
@@ -1277,7 +1277,7 @@
 .end method
 
 .method private handleIdle()V
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x0
@@ -1290,7 +1290,7 @@
 
     sget-object v1, Lcom/android/server/WifiWatchdogService$WatchdogState;->SLEEP:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_2a
 
     .line 909
     const-string v0, "WifiWatchdogService"
@@ -1324,18 +1324,18 @@
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 919
-    :goto_0
+    :goto_29
     return-void
 
     .line 914
-    :cond_0
+    :cond_2a
     invoke-direct {p0, v2}, Lcom/android/server/WifiWatchdogService;->setIdleState(Z)V
 
-    goto :goto_0
+    goto :goto_29
 .end method
 
 .method private handleNetworkChanged(Ljava/lang/String;)V
-    .locals 1
+    .registers 3
     .parameter "ssid"
 
     .prologue
@@ -1352,7 +1352,7 @@
 .end method
 
 .method private handleReset()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 937
@@ -1370,12 +1370,12 @@
 .end method
 
 .method private handleSleep(Ljava/lang/String;)V
-    .locals 2
+    .registers 4
     .parameter "ssid"
 
     .prologue
     .line 851
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_2c
 
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService;->mSsid:Ljava/lang/String;
 
@@ -1383,7 +1383,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2c
 
     .line 852
     sget-object v0, Lcom/android/server/WifiWatchdogService$WatchdogState;->SLEEP:Lcom/android/server/WifiWatchdogService$WatchdogState;
@@ -1418,15 +1418,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2c
 
     .line 872
-    :cond_0
+    :cond_2c
     return-void
 .end method
 
 .method private hasRequiredNumberOfAps(Ljava/lang/String;)Z
-    .locals 8
+    .registers 10
     .parameter "ssid"
 
     .prologue
@@ -1441,16 +1441,16 @@
 
     .line 620
     .local v4, results:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
-    if-nez v4, :cond_0
+    if-nez v4, :cond_b
 
     move v6, v7
 
     .line 650
-    :goto_0
+    :goto_a
     return v6
 
     .line 627
-    :cond_0
+    :cond_b
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->getApCount()I
 
     move-result v2
@@ -1470,8 +1470,8 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_1
-    if-ge v0, v5, :cond_3
+    :goto_15
+    if-ge v0, v5, :cond_34
 
     .line 631
     invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1482,19 +1482,19 @@
 
     .line 632
     .local v3, result:Landroid/net/wifi/ScanResult;
-    if-nez v3, :cond_2
+    if-nez v3, :cond_22
 
     .line 630
-    :cond_1
+    :cond_1f
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_15
 
     .line 633
-    :cond_2
+    :cond_22
     iget-object v6, v3, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_1f
 
     .line 635
     iget-object v6, v3, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
@@ -1503,29 +1503,29 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_1f
 
     .line 636
     add-int/lit8 v1, v1, 0x1
 
     .line 638
-    if-lt v1, v2, :cond_1
+    if-lt v1, v2, :cond_1f
 
     .line 642
     const/4 v6, 0x1
 
-    goto :goto_0
+    goto :goto_a
 
     .end local v3           #result:Landroid/net/wifi/ScanResult;
-    :cond_3
+    :cond_34
     move v6, v7
 
     .line 650
-    goto :goto_0
+    goto :goto_a
 .end method
 
 .method private isBackgroundCheckEnabled()Z
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x1
@@ -1539,47 +1539,47 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v2, :cond_d
 
     move v0, v2
 
-    :goto_0
+    :goto_c
     return v0
 
-    :cond_0
+    :cond_d
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_c
 .end method
 
 .method private isOnWatchList(Ljava/lang/String;)Z
-    .locals 8
+    .registers 10
     .parameter "ssid"
 
     .prologue
     const/4 v7, 0x0
 
     .line 597
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_9
 
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService;->getWatchList()Ljava/lang/String;
 
     move-result-object v5
 
     .local v5, watchList:Ljava/lang/String;
-    if-nez v5, :cond_1
+    if-nez v5, :cond_b
 
     .end local v5           #watchList:Ljava/lang/String;
-    :cond_0
+    :cond_9
     move v6, v7
 
     .line 609
-    :goto_0
+    :goto_a
     return v6
 
     .line 601
     .restart local v5       #watchList:Ljava/lang/String;
-    :cond_1
+    :cond_b
     const-string v6, " *, *"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -1597,8 +1597,8 @@
     const/4 v1, 0x0
 
     .local v1, i$:I
-    :goto_1
-    if-ge v1, v2, :cond_3
+    :goto_14
+    if-ge v1, v2, :cond_23
 
     aget-object v4, v0, v1
 
@@ -1608,29 +1608,29 @@
 
     move-result v6
 
-    if-eqz v6, :cond_2
+    if-eqz v6, :cond_20
 
     .line 605
     const/4 v6, 0x1
 
-    goto :goto_0
+    goto :goto_a
 
     .line 603
-    :cond_2
+    :cond_20
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1
+    goto :goto_14
 
     .end local v4           #name:Ljava/lang/String;
-    :cond_3
+    :cond_23
     move v6, v7
 
     .line 609
-    goto :goto_0
+    goto :goto_a
 .end method
 
 .method private isWatchdogEnabled()Z
-    .locals 3
+    .registers 4
 
     .prologue
     const/4 v2, 0x1
@@ -1644,21 +1644,21 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v2, :cond_d
 
     move v0, v2
 
-    :goto_0
+    :goto_c
     return v0
 
-    :cond_0
+    :cond_d
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_c
 .end method
 
 .method private static myLogD(Ljava/lang/String;)V
-    .locals 3
+    .registers 4
     .parameter "message"
 
     .prologue
@@ -1708,7 +1708,7 @@
 .end method
 
 .method private static myLogV(Ljava/lang/String;)V
-    .locals 3
+    .registers 4
     .parameter "message"
 
     .prologue
@@ -1758,7 +1758,7 @@
 .end method
 
 .method private onConnected(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
+    .registers 6
     .parameter "ssid"
     .parameter "bssid"
 
@@ -1771,7 +1771,7 @@
     .line 480
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService;->mSsid:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_11
 
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService;->mSsid:Ljava/lang/String;
 
@@ -1779,21 +1779,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_16
 
     .line 485
-    :cond_0
+    :cond_11
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService;->mHandler:Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;
 
     invoke-virtual {v0, p1}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->dispatchNetworkChanged(Ljava/lang/String;)V
 
     .line 488
-    :cond_1
+    :cond_16
     invoke-direct {p0, p1, p2}, Lcom/android/server/WifiWatchdogService;->requiresWatchdog(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_47
 
     .line 490
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1836,11 +1836,11 @@
     invoke-virtual {v0, v1}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->checkAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
     .line 504
-    :goto_0
+    :goto_46
     return-void
 
     .line 498
-    :cond_2
+    :cond_47
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1876,11 +1876,11 @@
 
     invoke-virtual {v0}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->idle()V
 
-    goto :goto_0
+    goto :goto_46
 .end method
 
 .method private onDisconnected()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 527
@@ -1901,7 +1901,7 @@
 .end method
 
 .method private onEnabled()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 510
@@ -1917,7 +1917,7 @@
 .end method
 
 .method private quit()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 279
@@ -1953,7 +1953,7 @@
 .end method
 
 .method private registerForSettingsChanges()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 134
@@ -1988,7 +1988,7 @@
 .end method
 
 .method private registerForWifiBroadcasts()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 252
@@ -2019,7 +2019,7 @@
 .end method
 
 .method private requiresWatchdog(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 3
+    .registers 6
     .parameter "ssid"
     .parameter "bssid"
 
@@ -2031,7 +2031,7 @@
 
     .line 548
     .local v0, info:Landroid/net/wifi/WifiInfo;
-    if-nez p1, :cond_0
+    if-nez p1, :cond_12
 
     .line 553
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -2046,24 +2046,24 @@
     move-result-object p1
 
     .line 555
-    if-nez p1, :cond_0
+    if-nez p1, :cond_12
 
     move v1, v2
 
     .line 591
-    :goto_0
+    :goto_11
     return v1
 
     .line 564
-    :cond_0
+    :cond_12
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_2c
 
     .line 566
-    if-nez v0, :cond_1
+    if-nez v0, :cond_20
 
     .line 567
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -2073,7 +2073,7 @@
     move-result-object v0
 
     .line 569
-    :cond_1
+    :cond_20
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
     move-result-object p2
@@ -2083,68 +2083,68 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_2c
 
     move v1, v2
 
     .line 575
-    goto :goto_0
+    goto :goto_11
 
     .line 579
-    :cond_2
+    :cond_2c
     invoke-direct {p0, p1}, Lcom/android/server/WifiWatchdogService;->isOnWatchList(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_34
 
     move v1, v2
 
     .line 583
-    goto :goto_0
+    goto :goto_11
 
     .line 587
-    :cond_3
+    :cond_34
     invoke-direct {p0, p1}, Lcom/android/server/WifiWatchdogService;->hasRequiredNumberOfAps(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_3c
 
     move v1, v2
 
     .line 588
-    goto :goto_0
+    goto :goto_11
 
     .line 591
-    :cond_4
+    :cond_3c
     const/4 v1, 0x1
 
-    goto :goto_0
+    goto :goto_11
 .end method
 
 .method private setIdleState(Z)V
-    .locals 2
+    .registers 4
     .parameter "forceIdleState"
 
     .prologue
     .line 926
-    if-nez p1, :cond_0
+    if-nez p1, :cond_8
 
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService;->mState:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
     sget-object v1, Lcom/android/server/WifiWatchdogService$WatchdogState;->SLEEP:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_c
 
     .line 927
-    :cond_0
+    :cond_8
     sget-object v0, Lcom/android/server/WifiWatchdogService$WatchdogState;->IDLE:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
     iput-object v0, p0, Lcom/android/server/WifiWatchdogService;->mState:Lcom/android/server/WifiWatchdogService$WatchdogState;
 
     .line 929
-    :cond_1
+    :cond_c
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/WifiWatchdogService;->mNumApsChecked:I
@@ -2154,7 +2154,7 @@
 .end method
 
 .method private shouldCancel()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 457
@@ -2164,7 +2164,7 @@
 .end method
 
 .method private unregisterForWifiBroadcasts()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 262
@@ -2179,61 +2179,61 @@
 .end method
 
 .method private waitForHandlerCreation()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 289
     monitor-enter p0
 
     .line 290
-    :goto_0
-    :try_start_0
+    :goto_1
+    :try_start_1
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService;->mHandler:Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_12
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_15
 
     .line 293
-    :try_start_1
+    :try_start_5
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_8
+    .catchall {:try_start_5 .. :try_end_8} :catchall_12
+    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_8} :catch_9
 
-    goto :goto_0
+    goto :goto_1
 
     .line 294
-    :catch_0
+    :catch_9
     move-exception v0
 
     .line 295
     .local v0, e:Ljava/lang/InterruptedException;
-    :try_start_2
+    :try_start_a
     const-string v1, "WifiWatchdogService"
 
     const-string v2, "Interrupted while waiting on handler."
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_1
 
     .line 298
     .end local v0           #e:Ljava/lang/InterruptedException;
-    :catchall_0
+    :catchall_12
     move-exception v1
 
     monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_14
+    .catchall {:try_start_a .. :try_end_14} :catchall_12
 
     throw v1
 
-    :cond_0
-    :try_start_3
+    :cond_15
+    :try_start_15
     monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_16
+    .catchall {:try_start_15 .. :try_end_16} :catchall_12
 
     .line 299
     return-void

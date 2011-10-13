@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 103

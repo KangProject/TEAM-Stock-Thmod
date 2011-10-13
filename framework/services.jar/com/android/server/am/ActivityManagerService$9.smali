@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Ljava/lang/String;Ljava/lang/StringBuilder;Landroid/os/DropBoxManager;Ljava/lang/String;)V
-    .locals 0
+    .registers 6
     .parameter
     .parameter "x0"
     .parameter
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 6645
@@ -60,7 +60,7 @@
     monitor-enter v1
 
     .line 6646
-    :try_start_0
+    :try_start_3
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$9;->val$sb:Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -88,15 +88,15 @@
 
     .line 6649
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1b
+    .catchall {:try_start_3 .. :try_end_1b} :catchall_29
 
     .line 6650
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_28
 
     .line 6651
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$9;->val$dbox:Landroid/os/DropBoxManager;
@@ -106,18 +106,18 @@
     invoke-virtual {v1, v2, v0}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 6653
-    :cond_0
+    :cond_28
     return-void
 
     .line 6649
     .end local v0           #report:Ljava/lang/String;
-    :catchall_0
+    :catchall_29
     move-exception v2
 
-    :try_start_1
+    :try_start_2a
     monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2b
+    .catchall {:try_start_2a .. :try_end_2b} :catchall_29
 
     throw v2
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/UiModeManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -36,7 +36,7 @@
 .end method
 
 .method private hasMoved(Landroid/location/Location;)Z
-    .locals 8
+    .registers 10
     .parameter "location"
 
     .prologue
@@ -45,31 +45,31 @@
     const/4 v6, 0x0
 
     .line 283
-    if-nez p1, :cond_0
+    if-nez p1, :cond_6
 
     move v2, v6
 
     .line 306
-    :goto_0
+    :goto_5
     return v2
 
     .line 286
-    :cond_0
+    :cond_6
     iget-object v2, p0, Lcom/android/server/UiModeManagerService$7;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-static {v2}, Lcom/android/server/UiModeManagerService;->access$700(Lcom/android/server/UiModeManagerService;)Landroid/location/Location;
 
     move-result-object v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_10
 
     move v2, v7
 
     .line 287
-    goto :goto_0
+    goto :goto_5
 
     .line 293
-    :cond_1
+    :cond_10
     invoke-virtual {p1}, Landroid/location/Location;->getTime()J
 
     move-result-wide v2
@@ -86,15 +86,15 @@
 
     cmp-long v2, v2, v4
 
-    if-gez v2, :cond_2
+    if-gez v2, :cond_24
 
     move v2, v6
 
     .line 294
-    goto :goto_0
+    goto :goto_5
 
     .line 298
-    :cond_2
+    :cond_24
     iget-object v2, p0, Lcom/android/server/UiModeManagerService$7;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-static {v2}, Lcom/android/server/UiModeManagerService;->access$700(Lcom/android/server/UiModeManagerService;)Landroid/location/Location;
@@ -127,22 +127,22 @@
     .local v1, totalAccuracy:F
     cmpl-float v2, v0, v1
 
-    if-ltz v2, :cond_3
+    if-ltz v2, :cond_44
 
     move v2, v7
 
-    goto :goto_0
+    goto :goto_5
 
-    :cond_3
+    :cond_44
     move v2, v6
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 
 # virtual methods
 .method public onLocationChanged(Landroid/location/Location;)V
-    .locals 5
+    .registers 7
     .parameter "location"
 
     .prologue
@@ -161,7 +161,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1f
 
     invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
 
@@ -179,22 +179,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-gez v2, :cond_4
+    if-gez v2, :cond_4d
 
-    :cond_0
+    :cond_1f
     const/4 v2, 0x1
 
     move v0, v2
 
     .line 258
     .local v0, hasBetterAccuracy:Z
-    :goto_0
-    if-nez v1, :cond_1
+    :goto_21
+    if-nez v1, :cond_25
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4c
 
     .line 259
-    :cond_1
+    :cond_25
     iget-object v2, p0, Lcom/android/server/UiModeManagerService$7;->this$0:Lcom/android/server/UiModeManagerService;
 
     iget-object v2, v2, Lcom/android/server/UiModeManagerService;->mLock:Ljava/lang/Object;
@@ -202,13 +202,13 @@
     monitor-enter v2
 
     .line 260
-    :try_start_0
+    :try_start_2a
     iget-object v3, p0, Lcom/android/server/UiModeManagerService$7;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-static {v3, p1}, Lcom/android/server/UiModeManagerService;->access$702(Lcom/android/server/UiModeManagerService;Landroid/location/Location;)Landroid/location/Location;
 
     .line 261
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_4b
 
     iget-object v3, p0, Lcom/android/server/UiModeManagerService$7;->this$0:Lcom/android/server/UiModeManagerService;
 
@@ -216,7 +216,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_4b
 
     iget-object v3, p0, Lcom/android/server/UiModeManagerService$7;->this$0:Lcom/android/server/UiModeManagerService;
 
@@ -224,7 +224,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_2
+    if-nez v3, :cond_4b
 
     .line 263
     iget-object v3, p0, Lcom/android/server/UiModeManagerService$7;->this$0:Lcom/android/server/UiModeManagerService;
@@ -238,34 +238,34 @@
     invoke-virtual {v3, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     .line 265
-    :cond_2
+    :cond_4b
     monitor-exit v2
 
     .line 267
-    :cond_3
+    :cond_4c
     return-void
 
     .end local v0           #hasBetterAccuracy:Z
-    :cond_4
+    :cond_4d
     move v0, v4
 
     .line 256
-    goto :goto_0
+    goto :goto_21
 
     .line 265
     .restart local v0       #hasBetterAccuracy:Z
-    :catchall_0
+    :catchall_4f
     move-exception v3
 
     monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_51
+    .catchall {:try_start_2a .. :try_end_51} :catchall_4f
 
     throw v3
 .end method
 
 .method public onProviderDisabled(Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "provider"
 
     .prologue
@@ -274,7 +274,7 @@
 .end method
 
 .method public onProviderEnabled(Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "provider"
 
     .prologue
@@ -283,7 +283,7 @@
 .end method
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .locals 0
+    .registers 4
     .parameter "provider"
     .parameter "status"
     .parameter "extras"

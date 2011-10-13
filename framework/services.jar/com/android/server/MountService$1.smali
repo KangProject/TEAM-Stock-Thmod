@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 6
+    .registers 9
     .parameter "context"
     .parameter "intent"
 
@@ -53,7 +53,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2a
 
     .line 449
     iget-object v1, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
@@ -75,7 +75,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2b
 
     .line 456
     iget-object v1, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
@@ -91,17 +91,17 @@
     invoke-static {v1, v2, v3, v4, v5}, Lcom/android/server/MountService;->access$600(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;II)V
 
     .line 510
-    :cond_0
-    :goto_0
+    :cond_2a
+    :goto_2a
     return-void
 
     .line 459
-    :cond_1
+    :cond_2b
     new-instance v1, Lcom/android/server/MountService$1$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/MountService$1$1;-><init>(Lcom/android/server/MountService$1;)V
 
     invoke-virtual {v1}, Lcom/android/server/MountService$1$1;->start()V
 
-    goto :goto_0
+    goto :goto_2a
 .end method

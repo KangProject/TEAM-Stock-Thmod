@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Ljava/lang/Object;)V
-    .locals 0
+    .registers 3
     .parameter "_service"
     .parameter "_owner"
 
@@ -62,14 +62,14 @@
 .end method
 
 .method static fromExternalToken(Landroid/os/IBinder;)Lcom/android/server/am/UriPermissionOwner;
-    .locals 1
+    .registers 2
     .parameter "token"
 
     .prologue
     .line 55
     instance-of v0, p0, Lcom/android/server/am/UriPermissionOwner$ExternalToken;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_b
 
     .line 56
     check-cast p0, Lcom/android/server/am/UriPermissionOwner$ExternalToken;
@@ -80,27 +80,27 @@
     move-result-object v0
 
     .line 58
-    :goto_0
+    :goto_a
     return-object v0
 
     .restart local p0
-    :cond_0
+    :cond_b
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_a
 .end method
 
 
 # virtual methods
 .method public addReadPermission(Lcom/android/server/am/UriPermission;)V
-    .locals 1
+    .registers 3
     .parameter "perm"
 
     .prologue
     .line 135
     iget-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_b
 
     .line 136
     new-instance v0, Ljava/util/HashSet;
@@ -110,7 +110,7 @@
     iput-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
     .line 138
-    :cond_0
+    :cond_b
     iget-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -120,14 +120,14 @@
 .end method
 
 .method public addWritePermission(Lcom/android/server/am/UriPermission;)V
-    .locals 1
+    .registers 3
     .parameter "perm"
 
     .prologue
     .line 142
     iget-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_b
 
     .line 143
     new-instance v0, Ljava/util/HashSet;
@@ -137,7 +137,7 @@
     iput-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
     .line 145
-    :cond_0
+    :cond_b
     iget-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -147,13 +147,13 @@
 .end method
 
 .method getExternalTokenLocked()Landroid/os/Binder;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 48
     iget-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->externalToken:Landroid/os/Binder;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_b
 
     .line 49
     new-instance v0, Lcom/android/server/am/UriPermissionOwner$ExternalToken;
@@ -163,14 +163,14 @@
     iput-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->externalToken:Landroid/os/Binder;
 
     .line 51
-    :cond_0
+    :cond_b
     iget-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->externalToken:Landroid/os/Binder;
 
     return-object v0
 .end method
 
 .method public removeReadPermission(Lcom/android/server/am/UriPermission;)V
-    .locals 1
+    .registers 3
     .parameter "perm"
 
     .prologue
@@ -186,7 +186,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_10
 
     .line 151
     const/4 v0, 0x0
@@ -194,12 +194,12 @@
     iput-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
     .line 153
-    :cond_0
+    :cond_10
     return-void
 .end method
 
 .method removeUriPermissionLocked(Landroid/net/Uri;I)V
-    .locals 4
+    .registers 7
     .parameter "uri"
     .parameter "mode"
 
@@ -209,11 +209,11 @@
     .line 94
     and-int/lit8 v2, p2, 0x1
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4f
 
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4f
 
     .line 96
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
@@ -224,13 +224,13 @@
 
     .line 97
     .local v0, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/UriPermission;>;"
-    :cond_0
-    :goto_0
+    :cond_f
+    :goto_f
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_45
 
     .line 98
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -247,7 +247,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_f
 
     .line 100
     iget-object v2, v1, Lcom/android/server/am/UriPermission;->readOwners:Ljava/util/HashSet;
@@ -261,13 +261,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_41
 
     iget v2, v1, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
     and-int/lit8 v2, v2, 0x1
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_41
 
     .line 103
     iget v2, v1, Lcom/android/server/am/UriPermission;->modeFlags:I
@@ -282,35 +282,35 @@
     invoke-virtual {v2, v1}, Lcom/android/server/am/ActivityManagerService;->removeUriPermissionIfNeededLocked(Lcom/android/server/am/UriPermission;)V
 
     .line 106
-    :cond_1
+    :cond_41
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_0
+    goto :goto_f
 
     .line 109
     .end local v1           #perm:Lcom/android/server/am/UriPermission;
-    :cond_2
+    :cond_45
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
     invoke-virtual {v2}, Ljava/util/HashSet;->size()I
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_4f
 
     .line 110
     iput-object v3, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
     .line 113
     .end local v0           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/UriPermission;>;"
-    :cond_3
+    :cond_4f
     and-int/lit8 v2, p2, 0x2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_9d
 
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_9d
 
     .line 115
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
@@ -321,13 +321,13 @@
 
     .line 116
     .restart local v0       #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/UriPermission;>;"
-    :cond_4
-    :goto_1
+    :cond_5d
+    :goto_5d
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_93
 
     .line 117
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -344,7 +344,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5d
 
     .line 119
     iget-object v2, v1, Lcom/android/server/am/UriPermission;->writeOwners:Ljava/util/HashSet;
@@ -358,13 +358,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_8f
 
     iget v2, v1, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
     and-int/lit8 v2, v2, 0x2
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_8f
 
     .line 122
     iget v2, v1, Lcom/android/server/am/UriPermission;->modeFlags:I
@@ -379,33 +379,33 @@
     invoke-virtual {v2, v1}, Lcom/android/server/am/ActivityManagerService;->removeUriPermissionIfNeededLocked(Lcom/android/server/am/UriPermission;)V
 
     .line 125
-    :cond_5
+    :cond_8f
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_1
+    goto :goto_5d
 
     .line 128
     .end local v1           #perm:Lcom/android/server/am/UriPermission;
-    :cond_6
+    :cond_93
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
     invoke-virtual {v2}, Ljava/util/HashSet;->size()I
 
     move-result v2
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_9d
 
     .line 129
     iput-object v3, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
     .line 132
     .end local v0           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/UriPermission;>;"
-    :cond_7
+    :cond_9d
     return-void
 .end method
 
 .method removeUriPermissionsLocked()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 62
@@ -418,7 +418,7 @@
 .end method
 
 .method removeUriPermissionsLocked(I)V
-    .locals 4
+    .registers 6
     .parameter "mode"
 
     .prologue
@@ -427,11 +427,11 @@
     .line 67
     and-int/lit8 v2, p1, 0x1
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3c
 
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3c
 
     .line 69
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
@@ -441,13 +441,13 @@
     move-result-object v0
 
     .local v0, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
+    :cond_f
+    :goto_f
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3a
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -468,13 +468,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_f
 
     iget v2, v1, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
     and-int/lit8 v2, v2, 0x1
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_f
 
     .line 73
     iget v2, v1, Lcom/android/server/am/UriPermission;->modeFlags:I
@@ -488,23 +488,23 @@
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/ActivityManagerService;->removeUriPermissionIfNeededLocked(Lcom/android/server/am/UriPermission;)V
 
-    goto :goto_0
+    goto :goto_f
 
     .line 77
     .end local v1           #perm:Lcom/android/server/am/UriPermission;
-    :cond_1
+    :cond_3a
     iput-object v3, p0, Lcom/android/server/am/UriPermissionOwner;->readUriPermissions:Ljava/util/HashSet;
 
     .line 79
     .end local v0           #i$:Ljava/util/Iterator;
-    :cond_2
+    :cond_3c
     and-int/lit8 v2, p1, 0x2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_77
 
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_77
 
     .line 81
     iget-object v2, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
@@ -514,13 +514,13 @@
     move-result-object v0
 
     .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_3
-    :goto_1
+    :cond_4a
+    :goto_4a
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_75
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -541,13 +541,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_4a
 
     iget v2, v1, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
     and-int/lit8 v2, v2, 0x2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_4a
 
     .line 85
     iget v2, v1, Lcom/android/server/am/UriPermission;->modeFlags:I
@@ -561,21 +561,21 @@
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/ActivityManagerService;->removeUriPermissionIfNeededLocked(Lcom/android/server/am/UriPermission;)V
 
-    goto :goto_1
+    goto :goto_4a
 
     .line 89
     .end local v1           #perm:Lcom/android/server/am/UriPermission;
-    :cond_4
+    :cond_75
     iput-object v3, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
     .line 91
     .end local v0           #i$:Ljava/util/Iterator;
-    :cond_5
+    :cond_77
     return-void
 .end method
 
 .method public removeWritePermission(Lcom/android/server/am/UriPermission;)V
-    .locals 1
+    .registers 3
     .parameter "perm"
 
     .prologue
@@ -591,7 +591,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_10
 
     .line 158
     const/4 v0, 0x0
@@ -599,12 +599,12 @@
     iput-object v0, p0, Lcom/android/server/am/UriPermissionOwner;->writeUriPermissions:Ljava/util/HashSet;
 
     .line 160
-    :cond_0
+    :cond_10
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 164

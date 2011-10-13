@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 4365
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public compare(Landroid/content/pm/ProviderInfo;Landroid/content/pm/ProviderInfo;)I
-    .locals 3
+    .registers 6
     .parameter "p1"
     .parameter "p2"
 
@@ -55,28 +55,28 @@
 
     .line 4369
     .local v1, v2:I
-    if-le v0, v1, :cond_0
+    if-le v0, v1, :cond_8
 
     const/4 v2, -0x1
 
-    :goto_0
+    :goto_7
     return v2
 
-    :cond_0
-    if-ge v0, v1, :cond_1
+    :cond_8
+    if-ge v0, v1, :cond_c
 
     const/4 v2, 0x1
 
-    goto :goto_0
+    goto :goto_7
 
-    :cond_1
+    :cond_c
     const/4 v2, 0x0
 
-    goto :goto_0
+    goto :goto_7
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+    .registers 4
     .parameter "x0"
     .parameter "x1"
 

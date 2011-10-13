@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GpsLocationProvider;Landroid/location/IGpsStatusListener;)V
-    .locals 1
+    .registers 4
     .parameter
     .parameter "listener"
 
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 833
@@ -65,7 +65,7 @@
     monitor-enter v0
 
     .line 834
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     invoke-static {v1}, Lcom/android/server/location/GpsLocationProvider;->access$000(Lcom/android/server/location/GpsLocationProvider;)Ljava/util/ArrayList;
@@ -76,13 +76,13 @@
 
     .line 835
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_11
+    .catchall {:try_start_7 .. :try_end_11} :catchall_20
 
     .line 836
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->mListener:Landroid/location/IGpsStatusListener;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1f
 
     .line 837
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->mListener:Landroid/location/IGpsStatusListener;
@@ -96,17 +96,17 @@
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
     .line 839
-    :cond_0
+    :cond_1f
     return-void
 
     .line 835
-    :catchall_0
+    :catchall_20
     move-exception v1
 
-    :try_start_1
+    :try_start_21
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_22
+    .catchall {:try_start_21 .. :try_end_22} :catchall_20
 
     throw v1
 .end method

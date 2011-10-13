@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .locals 5
+    .registers 7
     .parameter "context"
 
     .prologue
@@ -106,8 +106,8 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_0
-    if-ge v0, v4, :cond_0
+    :goto_27
+    if-ge v0, v4, :cond_36
 
     .line 190
     iget-object v1, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -123,15 +123,15 @@
     .line 189
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_27
 
     .line 192
-    :cond_0
+    :cond_36
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/LightsService;)Landroid/os/Handler;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -142,7 +142,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/LightsService;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic access$200(IIIIIII)V
-    .locals 0
+    .registers 7
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -170,7 +170,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/server/LightsService;)Landroid/content/Context;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -192,7 +192,7 @@
 
 # virtual methods
 .method protected finalize()V
-    .locals 1
+    .registers 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Throwable;
@@ -213,7 +213,7 @@
 .end method
 
 .method public getLight(I)Lcom/android/server/LightsService$Light;
-    .locals 1
+    .registers 3
     .parameter "id"
 
     .prologue

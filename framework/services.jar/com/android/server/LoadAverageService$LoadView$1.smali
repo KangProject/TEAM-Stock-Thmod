@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/LoadAverageService$LoadView;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .registers 5
     .parameter "msg"
 
     .prologue
@@ -44,7 +44,7 @@
     .line 63
     iget v1, p1, Landroid/os/Message;->what:I
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_1c
 
     .line 64
     iget-object v1, p0, Lcom/android/server/LoadAverageService$LoadView$1;->this$1:Lcom/android/server/LoadAverageService$LoadView;
@@ -73,6 +73,6 @@
 
     .line 69
     .end local v0           #m:Landroid/os/Message;
-    :cond_0
+    :cond_1c
     return-void
 .end method

@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/BootReceiver;Ljava/lang/String;ILandroid/os/DropBoxManager;Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 0
+    .registers 7
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
-    .locals 7
+    .registers 10
     .parameter "event"
     .parameter "path"
 
@@ -84,16 +84,16 @@
     const-string v5, "SYSTEM_TOMBSTONE"
 
     invoke-static/range {v0 .. v5}, Lcom/android/server/BootReceiver;->access$300(Landroid/os/DropBoxManager;Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1a
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_1a} :catch_1b
 
     .line 150
     .end local v3           #filename:Ljava/lang/String;
-    :goto_0
+    :goto_1a
     return-void
 
     .line 147
-    :catch_0
+    :catch_1b
     move-exception v0
 
     move-object v6, v0
@@ -106,5 +106,5 @@
 
     invoke-static {v0, v1, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_1a
 .end method

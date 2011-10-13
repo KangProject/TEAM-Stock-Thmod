@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 25
+    .registers 28
     .parameter "context"
     .parameter "intent"
 
@@ -59,7 +59,7 @@
 
     .line 1863
     .local v14, queryRestart:Z
-    if-nez v14, :cond_0
+    if-nez v14, :cond_30
 
     const-string v21, "android.intent.action.PACKAGE_REMOVED"
 
@@ -71,7 +71,7 @@
 
     move-result v21
 
-    if-nez v21, :cond_0
+    if-nez v21, :cond_30
 
     const-string v21, "android.intent.action.PACKAGE_RESTARTED"
 
@@ -83,7 +83,7 @@
 
     move-result v21
 
-    if-nez v21, :cond_0
+    if-nez v21, :cond_30
 
     const-string v21, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
@@ -95,10 +95,10 @@
 
     move-result v21
 
-    if-eqz v21, :cond_11
+    if-eqz v21, :cond_19e
 
     .line 1867
-    :cond_0
+    :cond_30
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
@@ -116,7 +116,7 @@
 
     .line 1869
     .local v18, uidList:[I
-    :try_start_0
+    :try_start_3d
     const-string v22, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
     move-object v0, v3
@@ -127,7 +127,7 @@
 
     move-result v22
 
-    if-eqz v22, :cond_3
+    if-eqz v22, :cond_5d
 
     .line 1870
     const-string v22, "android.intent.extra.changed_uid_list"
@@ -141,8 +141,8 @@
     move-result-object v18
 
     .line 1874
-    :goto_0
-    if-eqz v18, :cond_1
+    :goto_52
+    if-eqz v18, :cond_5b
 
     move-object/from16 v0, v18
 
@@ -150,23 +150,23 @@
 
     move/from16 v22, v0
 
-    if-nez v22, :cond_4
+    if-nez v22, :cond_7a
 
     .line 1875
-    :cond_1
+    :cond_5b
     monitor-exit v21
 
     .line 1946
     .end local v18           #uidList:[I
     .end local p1
-    :cond_2
-    :goto_1
+    :cond_5c
+    :goto_5c
     return-void
 
     .line 1872
     .restart local v18       #uidList:[I
     .restart local p1
-    :cond_3
+    :cond_5d
     const/16 v22, 0x1
 
     move/from16 v0, v22
@@ -199,10 +199,10 @@
 
     .end local v19           #uidList:[I
     .restart local v18       #uidList:[I
-    goto :goto_0
+    goto :goto_52
 
     .line 1877
-    :cond_4
+    :cond_7a
     move-object/from16 v4, v18
 
     .local v4, arr$:[I
@@ -217,14 +217,14 @@
     .end local v7           #i$:I
     .end local p1
     .local v8, i$:I
-    :goto_2
-    if-ge v8, v11, :cond_10
+    :goto_7f
+    if-ge v8, v11, :cond_19b
 
     aget v17, v4, v8
 
     .line 1878
     .local v17, uid:I
-    if-ltz v17, :cond_f
+    if-ltz v17, :cond_196
 
     .line 1879
     const/16 v16, 0x0
@@ -251,12 +251,12 @@
 
     .end local v8           #i$:I
     .local v7, i$:Ljava/util/Iterator;
-    :cond_5
+    :cond_99
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v22
 
-    if-eqz v22, :cond_9
+    if-eqz v22, :cond_104
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -275,8 +275,8 @@
     sub-int v10, v22, v23
 
     .local v10, j:I
-    :goto_3
-    if-ltz v10, :cond_5
+    :goto_ad
+    if-ltz v10, :cond_99
 
     .line 1882
     invoke-virtual {v6, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -297,7 +297,7 @@
 
     move-result v22
 
-    if-eqz v22, :cond_8
+    if-eqz v22, :cond_101
 
     move-object/from16 v0, v20
 
@@ -309,10 +309,10 @@
 
     move/from16 v1, v17
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_101
 
     .line 1884
-    if-eqz v14, :cond_6
+    if-eqz v14, :cond_dd
 
     .line 1885
     const/16 v22, -0x1
@@ -326,7 +326,7 @@
     .line 1886
     monitor-exit v21
 
-    goto :goto_1
+    goto :goto_5c
 
     .line 1924
     .end local v4           #arr$:[I
@@ -337,12 +337,12 @@
     .end local v16           #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
     .end local v17           #uid:I
     .end local v20           #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
-    :catchall_0
+    :catchall_da
     move-exception v22
 
     monitor-exit v21
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_dc
+    .catchall {:try_start_3d .. :try_end_dc} :catchall_da
 
     throw v22
 
@@ -355,11 +355,11 @@
     .restart local v16       #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
     .restart local v17       #uid:I
     .restart local v20       #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
-    :cond_6
-    if-nez v16, :cond_7
+    :cond_dd
+    if-nez v16, :cond_e4
 
     .line 1889
-    :try_start_1
+    :try_start_df
     new-instance v16, Ljava/util/ArrayList;
 
     .end local v16           #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
@@ -367,7 +367,7 @@
 
     .line 1891
     .restart local v16       #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
-    :cond_7
+    :cond_e4
     move-object/from16 v0, v20
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$UpdateRecord;->mReceiver:Lcom/android/server/LocationManagerService$Receiver;
@@ -382,7 +382,7 @@
 
     move-result v22
 
-    if-nez v22, :cond_8
+    if-nez v22, :cond_101
 
     .line 1892
     move-object/from16 v0, v20
@@ -398,16 +398,16 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 1881
-    :cond_8
+    :cond_101
     add-int/lit8 v10, v10, -0x1
 
-    goto :goto_3
+    goto :goto_ad
 
     .line 1897
     .end local v6           #i:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$UpdateRecord;>;"
     .end local v10           #j:I
     .end local v20           #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
-    :cond_9
+    :cond_104
     const/4 v15, 0x0
 
     .line 1898
@@ -430,13 +430,13 @@
 
     move-result-object v7
 
-    :cond_a
-    :goto_4
+    :cond_117
+    :goto_117
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v22
 
-    if-eqz v22, :cond_d
+    if-eqz v22, :cond_14d
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -456,10 +456,10 @@
 
     move/from16 v1, v17
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_117
 
     .line 1900
-    if-eqz v14, :cond_b
+    if-eqz v14, :cond_13c
 
     .line 1901
     const/16 v22, -0x1
@@ -473,11 +473,11 @@
     .line 1902
     monitor-exit v21
 
-    goto/16 :goto_1
+    goto/16 :goto_5c
 
     .line 1904
-    :cond_b
-    if-nez v15, :cond_c
+    :cond_13c
+    if-nez v15, :cond_143
 
     .line 1905
     new-instance v15, Ljava/util/ArrayList;
@@ -487,22 +487,22 @@
 
     .line 1907
     .restart local v15       #removedAlerts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$ProximityAlert;>;"
-    :cond_c
+    :cond_143
     invoke-virtual {v15, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v22
 
-    if-nez v22, :cond_a
+    if-nez v22, :cond_117
 
     .line 1908
     invoke-virtual {v15, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4
+    goto :goto_117
 
     .line 1912
     .end local v5           #i:Lcom/android/server/LocationManagerService$ProximityAlert;
-    :cond_d
-    if-eqz v16, :cond_e
+    :cond_14d
+    if-eqz v16, :cond_172
 
     .line 1913
     invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->size()I
@@ -514,8 +514,8 @@
     sub-int v5, v22, v23
 
     .local v5, i:I
-    :goto_5
-    if-ltz v5, :cond_e
+    :goto_157
+    if-ltz v5, :cond_172
 
     .line 1914
     move-object/from16 v0, p0
@@ -543,12 +543,12 @@
     .line 1913
     add-int/lit8 v5, v5, -0x1
 
-    goto :goto_5
+    goto :goto_157
 
     .line 1917
     .end local v5           #i:I
-    :cond_e
-    if-eqz v15, :cond_f
+    :cond_172
+    if-eqz v15, :cond_196
 
     .line 1918
     invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
@@ -560,8 +560,8 @@
     sub-int v5, v22, v23
 
     .restart local v5       #i:I
-    :goto_6
-    if-ltz v5, :cond_f
+    :goto_17c
+    if-ltz v5, :cond_196
 
     .line 1919
     move-object/from16 v0, p0
@@ -587,14 +587,14 @@
     .line 1918
     add-int/lit8 v5, v5, -0x1
 
-    goto :goto_6
+    goto :goto_17c
 
     .line 1877
     .end local v5           #i:I
     .end local v7           #i$:Ljava/util/Iterator;
     .end local v15           #removedAlerts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$ProximityAlert;>;"
     .end local v16           #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
-    :cond_f
+    :cond_196
     add-int/lit8 v7, v8, 0x1
 
     .local v7, i$:I
@@ -602,16 +602,16 @@
 
     .end local v7           #i$:I
     .restart local v8       #i$:I
-    goto/16 :goto_2
+    goto/16 :goto_7f
 
     .line 1924
     .end local v17           #uid:I
-    :cond_10
+    :cond_19b
     monitor-exit v21
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_19c
+    .catchall {:try_start_df .. :try_end_19c} :catchall_da
 
-    goto/16 :goto_1
+    goto/16 :goto_5c
 
     .line 1925
     .end local v4           #arr$:[I
@@ -619,7 +619,7 @@
     .end local v11           #len$:I
     .end local v18           #uidList:[I
     .restart local p1
-    :cond_11
+    :cond_19e
     const-string v21, "android.net.conn.CONNECTIVITY_CHANGE"
 
     move-object v0, v3
@@ -630,7 +630,7 @@
 
     move-result v21
 
-    if-eqz v21, :cond_2
+    if-eqz v21, :cond_5c
 
     .line 1926
     const-string v21, "noConnectivity"
@@ -649,7 +649,7 @@
 
     .line 1928
     .local v12, noConnectivity:Z
-    if-nez v12, :cond_13
+    if-nez v12, :cond_21c
 
     .line 1929
     move-object/from16 v0, p0
@@ -663,7 +663,7 @@
     invoke-static/range {v21 .. v22}, Lcom/android/server/LocationManagerService;->access$2402(Lcom/android/server/LocationManagerService;I)I
 
     .line 1933
-    :goto_7
+    :goto_1c4
     const-string v21, "networkInfo"
 
     move-object/from16 v0, p2
@@ -691,7 +691,7 @@
     monitor-enter v21
 
     .line 1938
-    :try_start_2
+    :try_start_1db
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
@@ -711,8 +711,8 @@
     sub-int v5, v22, v23
 
     .restart local v5       #i:I
-    :goto_8
-    if-ltz v5, :cond_14
+    :goto_1ed
+    if-ltz v5, :cond_228
 
     .line 1939
     move-object/from16 v0, p0
@@ -741,7 +741,7 @@
 
     move-result v22
 
-    if-eqz v22, :cond_12
+    if-eqz v22, :cond_219
 
     .line 1941
     move-object/from16 v0, p0
@@ -761,20 +761,20 @@
     move-object v2, v9
 
     invoke-interface {v0, v1, v2}, Lcom/android/server/location/LocationProviderInterface;->updateNetworkState(ILandroid/net/NetworkInfo;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_219
+    .catchall {:try_start_1db .. :try_end_219} :catchall_22b
 
     .line 1938
-    :cond_12
+    :cond_219
     add-int/lit8 v5, v5, -0x1
 
-    goto :goto_8
+    goto :goto_1ed
 
     .line 1931
     .end local v5           #i:I
     .end local v9           #info:Landroid/net/NetworkInfo;
     .end local v13           #provider:Lcom/android/server/location/LocationProviderInterface;
-    :cond_13
+    :cond_21c
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
@@ -785,24 +785,24 @@
 
     invoke-static/range {v21 .. v22}, Lcom/android/server/LocationManagerService;->access$2402(Lcom/android/server/LocationManagerService;I)I
 
-    goto :goto_7
+    goto :goto_1c4
 
     .line 1944
     .restart local v5       #i:I
     .restart local v9       #info:Landroid/net/NetworkInfo;
-    :cond_14
-    :try_start_3
+    :cond_228
+    :try_start_228
     monitor-exit v21
 
-    goto/16 :goto_1
+    goto/16 :goto_5c
 
     .end local v5           #i:I
-    :catchall_1
+    :catchall_22b
     move-exception v22
 
     monitor-exit v21
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_22d
+    .catchall {:try_start_228 .. :try_end_22d} :catchall_22b
 
     throw v22
 .end method

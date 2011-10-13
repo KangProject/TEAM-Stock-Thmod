@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public enter()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 786
@@ -50,7 +50,7 @@
 
     iget-boolean v0, v0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mUsb:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_38
 
     .line 788
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -63,7 +63,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_38
 
     .line 789
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -99,11 +99,11 @@
     invoke-static {v0, v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$1700(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/HierarchicalState;)V
 
     .line 801
-    :goto_0
+    :goto_37
     return-void
 
     .line 797
-    :cond_0
+    :cond_38
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v0, v0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -121,11 +121,11 @@
 
     invoke-static {v0, v1}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$1900(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/HierarchicalState;)V
 
-    goto :goto_0
+    goto :goto_37
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
-    .locals 5
+    .registers 7
     .parameter "message"
 
     .prologue
@@ -163,18 +163,18 @@
     .local v0, retValue:Z
     iget v1, p1, Landroid/os/Message;->what:I
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v1, :pswitch_data_76
 
     .line 835
-    :pswitch_0
+    :pswitch_21
     const/4 v0, 0x0
 
     .line 837
-    :goto_0
+    :goto_22
     return v0
 
     .line 809
-    :pswitch_1
+    :pswitch_23
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v1, v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -192,7 +192,7 @@
 
     iget-boolean v1, v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->mUsb:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_49
 
     .line 812
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -205,7 +205,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_49
 
     .line 813
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -214,10 +214,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->setLastErrorAndTransitionToInitialState(I)V
 
-    goto :goto_0
+    goto :goto_22
 
     .line 818
-    :cond_0
+    :cond_49
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -228,20 +228,20 @@
 
     invoke-static {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2000(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/HierarchicalState;)V
 
-    goto :goto_0
+    goto :goto_22
 
     .line 826
-    :pswitch_2
+    :pswitch_55
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     const/4 v2, 0x5
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->setLastErrorAndTransitionToInitialState(I)V
 
-    goto :goto_0
+    goto :goto_22
 
     .line 830
-    :pswitch_3
+    :pswitch_5c
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$StartingState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v1, v1, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->this$0:Lcom/android/server/connectivity/Tethering;
@@ -265,21 +265,21 @@
 
     invoke-static {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2100(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/HierarchicalState;)V
 
-    goto :goto_0
+    goto :goto_22
 
     .line 806
     nop
 
-    :pswitch_data_0
+    :pswitch_data_76
     .packed-switch 0x3
-        :pswitch_1
-        :pswitch_3
-        :pswitch_0
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
+        :pswitch_23
+        :pswitch_5c
+        :pswitch_21
+        :pswitch_55
+        :pswitch_55
+        :pswitch_55
+        :pswitch_55
+        :pswitch_55
+        :pswitch_55
     .end packed-switch
 .end method

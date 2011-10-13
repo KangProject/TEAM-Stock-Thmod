@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/StatusBarManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+    .registers 5
     .parameter "context"
     .parameter "intent"
 
@@ -53,7 +53,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_14
 
     const-string v1, "android.intent.action.SCREEN_OFF"
 
@@ -61,15 +61,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_19
 
     .line 455
-    :cond_0
+    :cond_14
     iget-object v1, p0, Lcom/android/server/StatusBarManagerService$2;->this$0:Lcom/android/server/StatusBarManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/StatusBarManagerService;->collapse()V
 
     .line 468
-    :cond_1
+    :cond_19
     return-void
 .end method

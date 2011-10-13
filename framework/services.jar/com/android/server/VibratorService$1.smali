@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/VibratorService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 228
@@ -51,7 +51,7 @@
     monitor-enter v0
 
     .line 229
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/VibratorService$1;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v1}, Lcom/android/server/VibratorService;->access$200(Lcom/android/server/VibratorService;)V
@@ -68,12 +68,12 @@
     return-void
 
     .line 231
-    :catchall_0
+    :catchall_13
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_15
+    .catchall {:try_start_7 .. :try_end_15} :catchall_13
 
     throw v1
 .end method

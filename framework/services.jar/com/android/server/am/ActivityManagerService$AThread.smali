@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 1319
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 1323
@@ -70,7 +70,7 @@
     monitor-enter p0
 
     .line 1332
-    :try_start_0
+    :try_start_12
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService$AThread;->mService:Lcom/android/server/am/ActivityManagerService;
 
     .line 1333
@@ -78,53 +78,53 @@
 
     .line 1334
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_18
+    .catchall {:try_start_12 .. :try_end_18} :catchall_23
 
     .line 1336
     monitor-enter p0
 
     .line 1337
-    :goto_0
-    :try_start_1
+    :goto_19
+    :try_start_19
     iget-boolean v1, p0, Lcom/android/server/am/ActivityManagerService$AThread;->mReady:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :try_end_1b
+    .catchall {:try_start_19 .. :try_end_1b} :catchall_2b
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_26
 
     .line 1339
-    :try_start_2
+    :try_start_1d
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_20
+    .catchall {:try_start_1d .. :try_end_20} :catchall_2b
+    .catch Ljava/lang/InterruptedException; {:try_start_1d .. :try_end_20} :catch_21
 
-    goto :goto_0
+    goto :goto_19
 
     .line 1340
-    :catch_0
+    :catch_21
     move-exception v1
 
-    goto :goto_0
+    goto :goto_19
 
     .line 1334
-    :catchall_0
+    :catchall_23
     move-exception v1
 
-    :try_start_3
+    :try_start_24
     monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_25
+    .catchall {:try_start_24 .. :try_end_25} :catchall_23
 
     throw v1
 
     .line 1343
-    :cond_0
-    :try_start_4
+    :cond_26
+    :try_start_26
     monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_27
+    .catchall {:try_start_26 .. :try_end_27} :catchall_2b
 
     .line 1345
     invoke-static {}, Landroid/os/Looper;->loop()V
@@ -133,13 +133,13 @@
     return-void
 
     .line 1343
-    :catchall_1
+    :catchall_2b
     move-exception v1
 
-    :try_start_5
+    :try_start_2c
     monitor-exit p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    :try_end_2d
+    .catchall {:try_start_2c .. :try_end_2d} :catchall_2b
 
     throw v1
 .end method

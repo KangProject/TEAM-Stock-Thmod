@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/DropBoxManagerService;Landroid/os/Handler;Landroid/content/Context;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter "x0"
     .parameter
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 2
+    .registers 4
     .parameter "selfChange"
 
     .prologue

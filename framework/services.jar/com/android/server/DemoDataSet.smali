@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 37
@@ -23,7 +23,7 @@
 .end method
 
 .method private final addDefaultData()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 84
@@ -61,7 +61,7 @@
 .end method
 
 .method private final addDefaultImages()V
-    .locals 10
+    .registers 11
 
     .prologue
     const-string v9, "DemoDataSet"
@@ -89,7 +89,7 @@
 
     .line 64
     .local v0, count:I
-    if-nez v0, :cond_1
+    if-nez v0, :cond_1c
 
     .line 65
     const-string v7, "DemoDataSet"
@@ -99,16 +99,16 @@
     invoke-static {v9, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 80
-    :cond_0
+    :cond_1b
     return-void
 
     .line 69
-    :cond_1
+    :cond_1c
     const/4 v3, 0x0
 
     .local v3, i:I
-    :goto_0
-    if-ge v3, v0, :cond_0
+    :goto_1d
+    if-ge v3, v0, :cond_1b
 
     .line 71
     aget-object v4, v2, v3
@@ -139,23 +139,23 @@
 
     .line 75
     .local v5, path:Ljava/lang/String;
-    :try_start_0
+    :try_start_38
     iget-object v7, p0, Lcom/android/server/DemoDataSet;->mContentResolver:Landroid/content/ContentResolver;
 
     const/4 v8, 0x0
 
     invoke-static {v7, v5, v4, v8}, Landroid/provider/MediaStore$Images$Media;->insertImage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_3e
+    .catch Ljava/io/FileNotFoundException; {:try_start_38 .. :try_end_3e} :catch_41
 
     .line 69
-    :goto_1
+    :goto_3e
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_0
+    goto :goto_1d
 
     .line 76
-    :catch_0
+    :catch_41
     move-exception v7
 
     move-object v1, v7
@@ -184,11 +184,11 @@
 
     invoke-static {v9, v7, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_3e
 .end method
 
 .method private final addImage(Ljava/lang/String;Landroid/net/Uri;)Landroid/net/Uri;
-    .locals 12
+    .registers 15
     .parameter "name"
     .parameter "file"
 
@@ -223,7 +223,7 @@
 
     .line 108
     .local v6, out:Ljava/io/OutputStream;
-    :try_start_0
+    :try_start_11
     invoke-virtual {p2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v9
@@ -263,7 +263,7 @@
 
     .line 119
     .local v2, count:I
-    :cond_0
+    :cond_2e
     const/4 v9, 0x0
 
     const/16 v10, 0x2000
@@ -273,28 +273,28 @@
     move-result v2
 
     .line 120
-    if-lez v2, :cond_1
+    if-lez v2, :cond_3b
 
     .line 121
     const/4 v9, 0x0
 
     invoke-virtual {v6, v1, v9, v2}, Ljava/io/OutputStream;->write([BII)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_3b
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_3b} :catch_3e
 
     .line 123
-    :cond_1
-    if-gtz v2, :cond_0
+    :cond_3b
+    if-gtz v2, :cond_2e
 
     .line 131
     .end local v1           #buf:[B
     .end local v2           #count:I
     .end local v7           #size:I
-    :goto_0
+    :goto_3d
     return-object v8
 
     .line 125
-    :catch_0
+    :catch_3e
     move-exception v9
 
     move-object v3, v9
@@ -332,11 +332,11 @@
     .line 128
     const/4 v8, 0x0
 
-    goto :goto_0
+    goto :goto_3d
 .end method
 
 .method private final addShortcut(Ljava/lang/String;Landroid/content/Intent;)Landroid/net/Uri;
-    .locals 6
+    .registers 9
     .parameter "shortcut"
     .parameter "intent"
 
@@ -348,7 +348,7 @@
     .line 137
     iget-object v0, p0, Lcom/android/server/DemoDataSet;->mContentResolver:Landroid/content/ContentResolver;
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_12
 
     invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
 
@@ -356,7 +356,7 @@
 
     move v4, v1
 
-    :goto_0
+    :goto_b
     move-object v1, p2
 
     move-object v3, v2
@@ -367,16 +367,16 @@
 
     return-object v0
 
-    :cond_0
+    :cond_12
     move v4, v5
 
-    goto :goto_0
+    goto :goto_b
 .end method
 
 
 # virtual methods
 .method public final add(Landroid/content/Context;)V
-    .locals 3
+    .registers 5
     .parameter "context"
 
     .prologue

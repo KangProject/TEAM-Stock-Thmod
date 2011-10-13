@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 44
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/PowerManagerService;)V
-    .locals 1
+    .registers 4
     .parameter "context"
     .parameter "pm"
 
@@ -89,7 +89,7 @@
 .end method
 
 .method static synthetic access$000()Ljava/lang/String;
-    .locals 1
+    .registers 1
 
     .prologue
     .line 43
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/DockObserver;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -110,7 +110,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/server/DockObserver;)Landroid/content/Context;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -121,7 +121,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/server/DockObserver;)I
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -132,7 +132,7 @@
 .end method
 
 .method private final init()V
-    .locals 6
+    .registers 7
 
     .prologue
     const/16 v4, 0x400
@@ -142,7 +142,7 @@
 
     .line 103
     .local v0, buffer:[C
-    :try_start_0
+    :try_start_4
     new-instance v2, Ljava/io/FileReader;
 
     const-string v4, "/sys/class/switch/dock/state"
@@ -182,18 +182,18 @@
     iput v4, p0, Lcom/android/server/DockObserver;->mDockState:I
 
     iput v4, p0, Lcom/android/server/DockObserver;->mPreviousDockState:I
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    :try_end_28
+    .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_28} :catch_29
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_28} :catch_33
 
     .line 112
     .end local v2           #file:Ljava/io/FileReader;
     .end local v3           #len:I
-    :goto_0
+    :goto_28
     return-void
 
     .line 107
-    :catch_0
+    :catch_29
     move-exception v4
 
     move-object v1, v4
@@ -206,11 +206,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_28
 
     .line 109
     .end local v1           #e:Ljava/io/FileNotFoundException;
-    :catch_1
+    :catch_33
     move-exception v4
 
     move-object v1, v4
@@ -223,11 +223,11 @@
 
     invoke-static {v4, v5, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_28
 .end method
 
 .method private final update()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 125
@@ -244,7 +244,7 @@
 
 # virtual methods
 .method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
-    .locals 7
+    .registers 9
     .parameter "event"
 
     .prologue
@@ -259,7 +259,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_26
 
     .line 72
     sget-object v2, Lcom/android/server/DockObserver;->TAG:Ljava/lang/String;
@@ -289,11 +289,11 @@
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 75
-    :cond_0
+    :cond_26
     monitor-enter p0
 
     .line 77
-    :try_start_0
+    :try_start_27
     const-string v2, "SWITCH_STATE"
 
     invoke-virtual {p1, v2}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -308,7 +308,7 @@
     .local v1, newState:I
     iget v2, p0, Lcom/android/server/DockObserver;->mDockState:I
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v2, :cond_55
 
     .line 79
     iget v2, p0, Lcom/android/server/DockObserver;->mDockState:I
@@ -321,19 +321,19 @@
     .line 81
     iget-boolean v2, p0, Lcom/android/server/DockObserver;->mSystemReady:Z
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_55
 
     .line 85
     iget v2, p0, Lcom/android/server/DockObserver;->mPreviousDockState:I
 
-    if-ne v2, v5, :cond_1
+    if-ne v2, v5, :cond_47
 
     iget v2, p0, Lcom/android/server/DockObserver;->mDockState:I
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_52
 
     .line 87
-    :cond_1
+    :cond_47
     iget-object v2, p0, Lcom/android/server/DockObserver;->mPowerManager:Lcom/android/server/PowerManagerService;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -347,24 +347,24 @@
     invoke-virtual {v2, v3, v4, v5, v6}, Lcom/android/server/PowerManagerService;->userActivityWithForce(JZZ)V
 
     .line 90
-    :cond_2
+    :cond_52
     invoke-direct {p0}, Lcom/android/server/DockObserver;->update()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_55
+    .catchall {:try_start_27 .. :try_end_55} :catchall_72
+    .catch Ljava/lang/NumberFormatException; {:try_start_27 .. :try_end_55} :catch_57
 
     .line 96
     .end local v1           #newState:I
-    :cond_3
-    :goto_0
-    :try_start_1
+    :cond_55
+    :goto_55
+    :try_start_55
     monitor-exit p0
 
     .line 97
     return-void
 
     .line 93
-    :catch_0
+    :catch_57
     move-exception v2
 
     move-object v0, v2
@@ -393,38 +393,38 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_55
 
     .line 96
     .end local v0           #e:Ljava/lang/NumberFormatException;
-    :catchall_0
+    :catchall_72
     move-exception v2
 
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_74
+    .catchall {:try_start_55 .. :try_end_74} :catchall_72
 
     throw v2
 .end method
 
 .method systemReady()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 115
     monitor-enter p0
 
     .line 117
-    :try_start_0
+    :try_start_1
     iget v0, p0, Lcom/android/server/DockObserver;->mDockState:I
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_8
 
     .line 118
     invoke-direct {p0}, Lcom/android/server/DockObserver;->update()V
 
     .line 120
-    :cond_0
+    :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/DockObserver;->mSystemReady:Z
@@ -436,12 +436,12 @@
     return-void
 
     .line 121
-    :catchall_0
+    :catchall_d
     move-exception v0
 
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_f
+    .catchall {:try_start_1 .. :try_end_f} :catchall_d
 
     throw v0
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .registers 4
     .parameter "context"
 
     .prologue
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method findAvailRecognizer(Ljava/lang/String;)Landroid/content/ComponentName;
-    .locals 9
+    .registers 11
     .parameter "prefPackage"
 
     .prologue
@@ -87,7 +87,7 @@
 
     .line 94
     .local v2, numAvailable:I
-    if-nez v2, :cond_0
+    if-nez v2, :cond_23
 
     .line 95
     const-string v4, "RecognitionManagerService"
@@ -101,21 +101,21 @@
 
     .line 111
     .end local p0
-    :goto_0
+    :goto_22
     return-object v4
 
     .line 98
     .restart local p0
-    :cond_0
-    if-eqz p1, :cond_2
+    :cond_23
+    if-eqz p1, :cond_45
 
     .line 99
     const/4 v1, 0x0
 
     .end local p0
     .local v1, i:I
-    :goto_1
-    if-ge v1, v2, :cond_2
+    :goto_26
+    if-ge v1, v2, :cond_45
 
     .line 100
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -134,7 +134,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_42
 
     .line 102
     new-instance v4, Landroid/content/ComponentName;
@@ -145,21 +145,21 @@
 
     invoke-direct {v4, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_22
 
     .line 99
-    :cond_1
+    :cond_42
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1
+    goto :goto_26
 
     .line 106
     .end local v1           #i:I
     .end local v3           #serviceInfo:Landroid/content/pm/ServiceInfo;
-    :cond_2
+    :cond_45
     const/4 v4, 0x1
 
-    if-le v2, v4, :cond_3
+    if-le v2, v4, :cond_4f
 
     .line 107
     const-string v4, "RecognitionManagerService"
@@ -169,7 +169,7 @@
     invoke-static {v8, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 110
-    :cond_3
+    :cond_4f
     invoke-interface {v0, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -188,11 +188,11 @@
 
     invoke-direct {v4, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_22
 .end method
 
 .method getCurRecognizer()Landroid/content/ComponentName;
-    .locals 3
+    .registers 4
 
     .prologue
     .line 116
@@ -214,25 +214,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_14
 
     .line 120
     const/4 v1, 0x0
 
     .line 122
-    :goto_0
+    :goto_13
     return-object v1
 
-    :cond_0
+    :cond_14
     invoke-static {v0}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v1
 
-    goto :goto_0
+    goto :goto_13
 .end method
 
 .method setCurRecognizer(Landroid/content/ComponentName;)V
-    .locals 3
+    .registers 5
     .parameter "comp"
 
     .prologue
@@ -245,27 +245,27 @@
 
     const-string v1, "voice_recognition_service"
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_12
 
     invoke-virtual {p1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v2
 
-    :goto_0
+    :goto_e
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     .line 129
     return-void
 
     .line 126
-    :cond_0
+    :cond_12
     const-string v2, ""
 
-    goto :goto_0
+    goto :goto_e
 .end method
 
 .method public systemReady()V
-    .locals 5
+    .registers 6
 
     .prologue
     const/4 v4, 0x0
@@ -277,10 +277,10 @@
 
     .line 73
     .local v0, comp:Landroid/content/ComponentName;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_18
 
     .line 76
-    :try_start_0
+    :try_start_7
     iget-object v2, p0, Lcom/android/server/RecognitionManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -290,16 +290,16 @@
     const/4 v3, 0x0
 
     invoke-virtual {v2, v0, v3}, Landroid/content/pm/PackageManager;->getServiceInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ServiceInfo;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_11
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_7 .. :try_end_11} :catch_12
 
     .line 86
-    :cond_0
-    :goto_0
+    :cond_11
+    :goto_11
     return-void
 
     .line 77
-    :catch_0
+    :catch_12
     move-exception v2
 
     move-object v1, v2
@@ -308,20 +308,20 @@
     .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {p0, v4}, Lcom/android/server/RecognitionManagerService;->setCurRecognizer(Landroid/content/ComponentName;)V
 
-    goto :goto_0
+    goto :goto_11
 
     .line 81
     .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :cond_1
+    :cond_18
     invoke-virtual {p0, v4}, Lcom/android/server/RecognitionManagerService;->findAvailRecognizer(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v0
 
     .line 82
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_11
 
     .line 83
     invoke-virtual {p0, v0}, Lcom/android/server/RecognitionManagerService;->setCurRecognizer(Landroid/content/ComponentName;)V
 
-    goto :goto_0
+    goto :goto_11
 .end method

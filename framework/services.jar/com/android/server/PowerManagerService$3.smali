@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;Landroid/os/Handler;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 1
+    .registers 3
     .parameter "selfChange"
 
     .prologue

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -33,7 +33,7 @@
 .end method
 
 .method private handleNetworkStateChanged(Landroid/net/NetworkInfo;)V
-    .locals 4
+    .registers 6
     .parameter "info"
 
     .prologue
@@ -50,15 +50,15 @@
 
     aget v1, v1, v2
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v1, :pswitch_data_3a
 
     .line 1150
-    :cond_0
-    :goto_0
+    :cond_f
+    :goto_f
     return-void
 
     .line 1133
-    :pswitch_0
+    :pswitch_10
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService$2;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v1}, Lcom/android/server/WifiWatchdogService;->access$1500(Lcom/android/server/WifiWatchdogService;)Landroid/net/wifi/WifiManager;
@@ -75,13 +75,13 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_f
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_f
 
     .line 1143
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService$2;->this$0:Lcom/android/server/WifiWatchdogService;
@@ -96,34 +96,34 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/server/WifiWatchdogService;->access$1600(Lcom/android/server/WifiWatchdogService;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_f
 
     .line 1147
     .end local v0           #wifiInfo:Landroid/net/wifi/WifiInfo;
-    :pswitch_1
+    :pswitch_34
     iget-object v1, p0, Lcom/android/server/WifiWatchdogService$2;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v1}, Lcom/android/server/WifiWatchdogService;->access$1700(Lcom/android/server/WifiWatchdogService;)V
 
-    goto :goto_0
+    goto :goto_f
 
     .line 1131
-    :pswitch_data_0
+    :pswitch_data_3a
     .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
+        :pswitch_10
+        :pswitch_34
     .end packed-switch
 .end method
 
 .method private handleWifiStateChanged(I)V
-    .locals 1
+    .registers 3
     .parameter "wifiState"
 
     .prologue
     .line 1153
     const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_9
 
     .line 1154
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$2;->this$0:Lcom/android/server/WifiWatchdogService;
@@ -131,28 +131,28 @@
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$1800(Lcom/android/server/WifiWatchdogService;)V
 
     .line 1158
-    :cond_0
-    :goto_0
+    :cond_8
+    :goto_8
     return-void
 
     .line 1155
-    :cond_1
+    :cond_9
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v0, :cond_8
 
     .line 1156
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$2;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$1900(Lcom/android/server/WifiWatchdogService;)V
 
-    goto :goto_0
+    goto :goto_8
 .end method
 
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .registers 6
     .parameter "context"
     .parameter "intent"
 
@@ -170,7 +170,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_18
 
     .line 1117
     const-string v1, "networkInfo"
@@ -184,19 +184,19 @@
     invoke-direct {p0, v1}, Lcom/android/server/WifiWatchdogService$2;->handleNetworkStateChanged(Landroid/net/NetworkInfo;)V
 
     .line 1123
-    :cond_0
-    :goto_0
+    :cond_17
+    :goto_17
     return-void
 
     .line 1119
-    :cond_1
+    :cond_18
     const-string v1, "android.net.wifi.WIFI_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_17
 
     .line 1120
     const-string v1, "wifi_state"
@@ -209,5 +209,5 @@
 
     invoke-direct {p0, v1}, Lcom/android/server/WifiWatchdogService$2;->handleWifiStateChanged(I)V
 
-    goto :goto_0
+    goto :goto_17
 .end method

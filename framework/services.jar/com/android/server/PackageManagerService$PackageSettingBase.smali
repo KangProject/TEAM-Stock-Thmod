@@ -78,7 +78,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService$PackageSettingBase;)V
-    .locals 2
+    .registers 4
     .parameter "base"
 
     .prologue
@@ -242,7 +242,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Ljava/io/File;Ljava/lang/String;II)V
-    .locals 2
+    .registers 10
     .parameter "name"
     .parameter "realName"
     .parameter "codePath"
@@ -302,7 +302,7 @@
 
 # virtual methods
 .method public copyFrom(Lcom/android/server/PackageManagerService$PackageSettingBase;)V
-    .locals 2
+    .registers 4
     .parameter "base"
 
     .prologue
@@ -371,7 +371,7 @@
 .end method
 
 .method currentEnabledStateLP(Ljava/lang/String;)I
-    .locals 1
+    .registers 3
     .parameter "componentName"
 
     .prologue
@@ -382,39 +382,39 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_a
 
     .line 7832
     const/4 v0, 0x1
 
     .line 7836
-    :goto_0
+    :goto_9
     return v0
 
     .line 7833
-    :cond_0
+    :cond_a
     iget-object v0, p0, Lcom/android/server/PackageManagerService$PackageSettingBase;->disabledComponents:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_14
 
     .line 7834
     const/4 v0, 0x2
 
-    goto :goto_0
+    goto :goto_9
 
     .line 7836
-    :cond_1
+    :cond_14
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_9
 .end method
 
 .method disableComponentLP(Ljava/lang/String;)Z
-    .locals 2
+    .registers 4
     .parameter "componentClassName"
 
     .prologue
@@ -440,7 +440,7 @@
 .end method
 
 .method enableComponentLP(Ljava/lang/String;)Z
-    .locals 2
+    .registers 4
     .parameter "componentClassName"
 
     .prologue
@@ -466,7 +466,7 @@
 .end method
 
 .method public getInstallStatus()I
-    .locals 1
+    .registers 2
 
     .prologue
     .line 7786
@@ -476,7 +476,7 @@
 .end method
 
 .method getInstallerPackageName()Ljava/lang/String;
-    .locals 1
+    .registers 2
 
     .prologue
     .line 7778
@@ -486,7 +486,7 @@
 .end method
 
 .method init(Ljava/io/File;Ljava/io/File;Ljava/lang/String;I)V
-    .locals 1
+    .registers 6
     .parameter "codePath"
     .parameter "resourcePath"
     .parameter "nativeLibraryPathString"
@@ -524,7 +524,7 @@
 .end method
 
 .method restoreComponentLP(Ljava/lang/String;)Z
-    .locals 2
+    .registers 4
     .parameter "componentClassName"
 
     .prologue
@@ -550,7 +550,7 @@
 .end method
 
 .method public setInstallStatus(I)V
-    .locals 0
+    .registers 2
     .parameter "newStatus"
 
     .prologue
@@ -562,7 +562,7 @@
 .end method
 
 .method public setInstallerPackageName(Ljava/lang/String;)V
-    .locals 0
+    .registers 2
     .parameter "packageName"
 
     .prologue
@@ -574,7 +574,7 @@
 .end method
 
 .method public setTimeStamp(J)V
-    .locals 0
+    .registers 3
     .parameter "newStamp"
 
     .prologue

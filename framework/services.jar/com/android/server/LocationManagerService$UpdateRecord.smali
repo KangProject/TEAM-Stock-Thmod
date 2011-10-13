@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;Ljava/lang/String;JFZLcom/android/server/LocationManagerService$Receiver;I)V
-    .locals 2
+    .registers 11
     .parameter
     .parameter "provider"
     .parameter "minTime"
@@ -82,7 +82,7 @@
 
     .line 987
     .local v0, records:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$UpdateRecord;>;"
-    if-nez v0, :cond_0
+    if-nez v0, :cond_29
 
     .line 988
     new-instance v0, Ljava/util/ArrayList;
@@ -99,25 +99,25 @@
     invoke-virtual {v1, p2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 991
-    :cond_0
+    :cond_29
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_32
 
     .line 992
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 994
-    :cond_1
+    :cond_32
     return-void
 .end method
 
 
 # virtual methods
 .method disposeLocked()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 1001
@@ -137,18 +137,18 @@
 
     .line 1002
     .local v0, records:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$UpdateRecord;>;"
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_13
 
     .line 1003
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 1005
-    :cond_0
+    :cond_13
     return-void
 .end method
 
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "pw"
     .parameter "prefix"
 
@@ -328,7 +328,7 @@
     .line 1021
     iget-object v0, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->mLastFixBroadcast:Landroid/location/Location;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_d3
 
     .line 1022
     iget-object v0, p0, Lcom/android/server/LocationManagerService$UpdateRecord;->mLastFixBroadcast:Landroid/location/Location;
@@ -358,7 +358,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/location/Location;->dump(Landroid/util/Printer;Ljava/lang/String;)V
 
     .line 1024
-    :cond_0
+    :cond_d3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -390,7 +390,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 1009

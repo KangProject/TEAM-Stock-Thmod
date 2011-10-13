@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .registers 5
 
     .prologue
     const/4 v3, 0x1
@@ -55,14 +55,14 @@
     monitor-enter v0
 
     .line 2319
-    :try_start_0
+    :try_start_9
     iget-object v1, p0, Lcom/android/server/PowerManagerService$8;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v1}, Lcom/android/server/PowerManagerService;->access$4600(Lcom/android/server/PowerManagerService;)I
 
     move-result v1
 
-    if-eq v1, v2, :cond_0
+    if-eq v1, v2, :cond_25
 
     .line 2320
     iget-object v1, p0, Lcom/android/server/PowerManagerService$8;->this$0:Lcom/android/server/PowerManagerService;
@@ -73,11 +73,11 @@
 
     move-result v2
 
-    if-ne v2, v3, :cond_2
+    if-ne v2, v3, :cond_3c
 
     move v2, v3
 
-    :goto_0
+    :goto_1c
     invoke-static {v1, v2}, Lcom/android/server/PowerManagerService;->access$4700(Lcom/android/server/PowerManagerService;Z)V
 
     .line 2321
@@ -88,7 +88,7 @@
     invoke-static {v1, v2}, Lcom/android/server/PowerManagerService;->access$4602(Lcom/android/server/PowerManagerService;I)I
 
     .line 2323
-    :cond_0
+    :cond_25
     iget-object v1, p0, Lcom/android/server/PowerManagerService$8;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v1}, Lcom/android/server/PowerManagerService;->access$4800(Lcom/android/server/PowerManagerService;)Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;
@@ -99,7 +99,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3a
 
     .line 2324
     iget-object v1, p0, Lcom/android/server/PowerManagerService$8;->this$0:Lcom/android/server/PowerManagerService;
@@ -111,25 +111,25 @@
     invoke-virtual {v1}, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->release()V
 
     .line 2326
-    :cond_1
+    :cond_3a
     monitor-exit v0
 
     .line 2327
     return-void
 
     .line 2320
-    :cond_2
+    :cond_3c
     const/4 v2, 0x0
 
-    goto :goto_0
+    goto :goto_1c
 
     .line 2326
-    :catchall_0
+    :catchall_3e
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_40
+    .catchall {:try_start_9 .. :try_end_40} :catchall_3e
 
     throw v1
 .end method

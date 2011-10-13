@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 37
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .registers 5
     .parameter "context"
 
     .prologue
@@ -113,7 +113,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/server/HeadsetObserver;IILjava/lang/String;)V
-    .locals 0
+    .registers 4
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -127,7 +127,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/HeadsetObserver;)Landroid/os/PowerManager$WakeLock;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -138,7 +138,7 @@
 .end method
 
 .method private final declared-synchronized init()V
-    .locals 8
+    .registers 9
 
     .prologue
     .line 79
@@ -146,7 +146,7 @@
 
     const/16 v6, 0x400
 
-    :try_start_0
+    :try_start_3
     new-array v0, v6, [C
 
     .line 81
@@ -162,11 +162,11 @@
     iget v6, p0, Lcom/android/server/HeadsetObserver;->mHeadsetState:I
 
     iput v6, p0, Lcom/android/server/HeadsetObserver;->mPrevHeadsetState:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_d
+    .catchall {:try_start_3 .. :try_end_d} :catchall_54
 
     .line 85
-    :try_start_1
+    :try_start_d
     new-instance v2, Ljava/io/FileReader;
 
     const-string v6, "/sys/class/switch/h2w/state"
@@ -229,21 +229,21 @@
     invoke-direct {v6, v0, v7, v3}, Ljava/lang/String;-><init>([CII)V
 
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_44
+    .catchall {:try_start_d .. :try_end_44} :catchall_54
+    .catch Ljava/io/FileNotFoundException; {:try_start_d .. :try_end_44} :catch_4a
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_44} :catch_57
 
     move-result-object v4
 
     .line 99
     .end local v2           #file:Ljava/io/FileReader;
     .end local v3           #len:I
-    :goto_0
-    :try_start_2
+    :goto_45
+    :try_start_45
     invoke-direct {p0, v4, v5}, Lcom/android/server/HeadsetObserver;->update(Ljava/lang/String;I)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_48
+    .catchall {:try_start_45 .. :try_end_48} :catchall_54
 
     .line 100
     monitor-exit p0
@@ -251,30 +251,30 @@
     return-void
 
     .line 93
-    :catch_0
+    :catch_4a
     move-exception v6
 
     move-object v1, v6
 
     .line 94
     .local v1, e:Ljava/io/FileNotFoundException;
-    :try_start_3
+    :try_start_4c
     sget-object v6, Lcom/android/server/HeadsetObserver;->TAG:Ljava/lang/String;
 
     const-string v7, "This kernel does not have wired headset support"
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_53
+    .catchall {:try_start_4c .. :try_end_53} :catchall_54
 
-    goto :goto_0
+    goto :goto_45
 
     .line 79
     .end local v0           #buffer:[C
     .end local v1           #e:Ljava/io/FileNotFoundException;
     .end local v4           #newName:Ljava/lang/String;
     .end local v5           #newState:I
-    :catchall_0
+    :catchall_54
     move-exception v6
 
     monitor-exit p0
@@ -285,27 +285,27 @@
     .restart local v0       #buffer:[C
     .restart local v4       #newName:Ljava/lang/String;
     .restart local v5       #newState:I
-    :catch_1
+    :catch_57
     move-exception v6
 
     move-object v1, v6
 
     .line 96
     .local v1, e:Ljava/lang/Exception;
-    :try_start_4
+    :try_start_59
     sget-object v6, Lcom/android/server/HeadsetObserver;->TAG:Ljava/lang/String;
 
     const-string v7, ""
 
     invoke-static {v6, v7, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_60
+    .catchall {:try_start_59 .. :try_end_60} :catchall_54
 
-    goto :goto_0
+    goto :goto_45
 .end method
 
 .method private final sendIntent(IIILjava/lang/String;)V
-    .locals 6
+    .registers 11
     .parameter "headset"
     .parameter "headsetState"
     .parameter "prevHeadsetState"
@@ -317,7 +317,7 @@
 
     and-int v4, p3, p1
 
-    if-eq v3, v4, :cond_2
+    if-eq v3, v4, :cond_5d
 
     .line 155
     new-instance v0, Landroid/content/Intent;
@@ -343,22 +343,22 @@
     .local v1, microphone:I
     and-int/lit8 v3, p1, 0x1
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_19
 
     .line 161
     const/4 v1, 0x1
 
     .line 163
-    :cond_0
+    :cond_19
     and-int v3, p2, p1
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_1e
 
     .line 164
     const/4 v2, 0x1
 
     .line 166
-    :cond_1
+    :cond_1e
     const-string v3, "state"
 
     invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
@@ -425,12 +425,12 @@
     .end local v0           #intent:Landroid/content/Intent;
     .end local v1           #microphone:I
     .end local v2           #state:I
-    :cond_2
+    :cond_5d
     return-void
 .end method
 
 .method private final declared-synchronized sendIntents(IILjava/lang/String;)V
-    .locals 3
+    .registers 7
     .parameter "headsetState"
     .parameter "prevHeadsetState"
     .parameter "headsetName"
@@ -446,19 +446,19 @@
     const/4 v1, 0x1
 
     .local v1, curHeadset:I
-    :goto_0
-    if-eqz v0, :cond_1
+    :goto_3
+    if-eqz v0, :cond_12
 
     .line 145
     and-int v2, v1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_f
 
     .line 146
-    :try_start_0
+    :try_start_9
     invoke-direct {p0, v1, p1, p2, p3}, Lcom/android/server/HeadsetObserver;->sendIntent(IIILjava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_c
+    .catchall {:try_start_9 .. :try_end_c} :catchall_14
 
     .line 147
     xor-int/lit8 v2, v1, -0x1
@@ -466,19 +466,19 @@
     and-int/2addr v0, v2
 
     .line 144
-    :cond_0
+    :cond_f
     shl-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_3
 
     .line 150
-    :cond_1
+    :cond_12
     monitor-exit p0
 
     return-void
 
     .line 143
-    :catchall_0
+    :catchall_14
     move-exception v2
 
     monitor-exit p0
@@ -487,7 +487,7 @@
 .end method
 
 .method private final declared-synchronized update(Ljava/lang/String;I)V
-    .locals 10
+    .registers 13
     .parameter "newName"
     .parameter "newState"
 
@@ -499,7 +499,7 @@
 
     .line 105
     .local v1, headsetState:I
-    :try_start_0
+    :try_start_3
     iget v4, p0, Lcom/android/server/HeadsetObserver;->mHeadsetState:I
 
     or-int v3, v1, v4
@@ -511,10 +511,10 @@
     .line 110
     .local v0, delay:I
     iget v4, p0, Lcom/android/server/HeadsetObserver;->mHeadsetState:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_a
+    .catchall {:try_start_3 .. :try_end_a} :catchall_45
 
-    if-eq v4, v1, :cond_0
+    if-eq v4, v1, :cond_12
 
     const/4 v4, 0x1
 
@@ -522,18 +522,18 @@
 
     and-int/2addr v4, v3
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_14
 
     .line 140
-    :cond_0
-    :goto_0
+    :cond_12
+    :goto_12
     monitor-exit p0
 
     return-void
 
     .line 114
-    :cond_1
-    :try_start_1
+    :cond_14
+    :try_start_14
     iput-object p1, p0, Lcom/android/server/HeadsetObserver;->mHeadsetName:Ljava/lang/String;
 
     .line 115
@@ -545,7 +545,7 @@
     iput v1, p0, Lcom/android/server/HeadsetObserver;->mHeadsetState:I
 
     .line 118
-    if-nez v1, :cond_3
+    if-nez v1, :cond_48
 
     .line 119
     new-instance v2, Landroid/content/Intent;
@@ -565,8 +565,8 @@
 
     .line 134
     .end local v2           #intent:Landroid/content/Intent;
-    :cond_2
-    :goto_1
+    :cond_2c
+    :goto_2c
     iget-object v4, p0, Lcom/android/server/HeadsetObserver;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v4}, Landroid/os/PowerManager$WakeLock;->acquire()V
@@ -591,15 +591,15 @@
     int-to-long v6, v0
 
     invoke-virtual {v4, v5, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_44
+    .catchall {:try_start_14 .. :try_end_44} :catchall_45
 
-    goto :goto_0
+    goto :goto_12
 
     .line 104
     .end local v0           #delay:I
     .end local v3           #newOrOld:I
-    :catchall_0
+    :catchall_45
     move-exception v4
 
     monitor-exit p0
@@ -609,30 +609,30 @@
     .line 130
     .restart local v0       #delay:I
     .restart local v3       #newOrOld:I
-    :cond_3
-    :try_start_2
+    :cond_48
+    :try_start_48
     iget-object v4, p0, Lcom/android/server/HeadsetObserver;->mHandler:Landroid/os/Handler;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->hasMessages(I)Z
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_4e
+    .catchall {:try_start_48 .. :try_end_4e} :catchall_45
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_2c
 
     .line 131
     const/16 v0, 0x3e8
 
-    goto :goto_1
+    goto :goto_2c
 .end method
 
 
 # virtual methods
 .method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
-    .locals 4
+    .registers 6
     .parameter "event"
 
     .prologue
@@ -664,7 +664,7 @@
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 72
-    :try_start_0
+    :try_start_1c
     const-string v1, "SWITCH_NAME"
 
     invoke-virtual {p1, v1}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -682,15 +682,15 @@
     move-result v2
 
     invoke-direct {p0, v1, v2}, Lcom/android/server/HeadsetObserver;->update(Ljava/lang/String;I)V
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_2f
+    .catch Ljava/lang/NumberFormatException; {:try_start_1c .. :try_end_2f} :catch_30
 
     .line 76
-    :goto_0
+    :goto_2f
     return-void
 
     .line 73
-    :catch_0
+    :catch_30
     move-exception v1
 
     move-object v0, v1
@@ -719,5 +719,5 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_2f
 .end method

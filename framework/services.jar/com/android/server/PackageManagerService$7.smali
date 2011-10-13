@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;Ljava/lang/String;ILandroid/content/pm/IPackageDeleteObserver;)V
-    .locals 0
+    .registers 5
     .parameter
     .parameter
     .parameter
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .registers 7
 
     .prologue
     const/4 v5, 0x1
@@ -80,23 +80,23 @@
     .local v1, succeded:Z
     iget-object v2, p0, Lcom/android/server/PackageManagerService$7;->val$observer:Landroid/content/pm/IPackageDeleteObserver;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1b
 
     .line 6027
-    :try_start_0
+    :try_start_16
     iget-object v2, p0, Lcom/android/server/PackageManagerService$7;->val$observer:Landroid/content/pm/IPackageDeleteObserver;
 
     invoke-interface {v2, v1}, Landroid/content/pm/IPackageDeleteObserver;->packageDeleted(Z)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1b
+    .catch Landroid/os/RemoteException; {:try_start_16 .. :try_end_1b} :catch_1c
 
     .line 6032
-    :cond_0
-    :goto_0
+    :cond_1b
+    :goto_1b
     return-void
 
     .line 6028
-    :catch_0
+    :catch_1c
     move-exception v2
 
     move-object v0, v2
@@ -109,5 +109,5 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_1b
 .end method

@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/StatusBarManagerService;I)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 161

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/server/AlarmManagerService;)V
-    .locals 2
+    .registers 4
     .parameter
 
     .prologue
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .registers 8
     .parameter "context"
     .parameter "intent"
 
@@ -75,18 +75,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_10
 
     .line 778
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ClockReceiver;->scheduleTimeTickEvent()V
 
     .line 792
-    :cond_0
-    :goto_0
+    :cond_f
+    :goto_f
     return-void
 
     .line 779
-    :cond_1
+    :cond_10
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -97,7 +97,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_f
 
     .line 784
     const-string v2, "persist.sys.timezone"
@@ -130,7 +130,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3e
 
     .line 787
     invoke-virtual {v1}, Ljava/util/TimeZone;->getDSTSavings()I
@@ -140,7 +140,7 @@
     add-int/2addr v0, v2
 
     .line 789
-    :cond_2
+    :cond_3e
     iget-object v2, p0, Lcom/android/server/AlarmManagerService$ClockReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
     iget-object v3, p0, Lcom/android/server/AlarmManagerService$ClockReceiver;->this$0:Lcom/android/server/AlarmManagerService;
@@ -160,11 +160,11 @@
     .line 790
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ClockReceiver;->scheduleDateChangedEvent()V
 
-    goto :goto_0
+    goto :goto_f
 .end method
 
 .method public scheduleDateChangedEvent()V
-    .locals 6
+    .registers 7
 
     .prologue
     const/4 v5, 0x1
@@ -229,7 +229,7 @@
 .end method
 
 .method public scheduleTimeTickEvent()V
-    .locals 6
+    .registers 7
 
     .prologue
     const/4 v5, 0x1

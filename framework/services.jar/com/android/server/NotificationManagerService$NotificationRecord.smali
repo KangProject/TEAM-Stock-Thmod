@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;IIILandroid/app/Notification;)V
-    .locals 0
+    .registers 7
     .parameter "pkg"
     .parameter "tag"
     .parameter "id"
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;Landroid/content/Context;)V
-    .locals 3
+    .registers 7
     .parameter "pw"
     .parameter "prefix"
     .parameter "baseContext"
@@ -461,7 +461,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 228

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .registers 5
     .parameter "context"
 
     .prologue
@@ -69,7 +69,7 @@
 .end method
 
 .method static synthetic access$002(Lcom/android/server/am/BaseErrorDialog;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -81,7 +81,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/am/BaseErrorDialog;Z)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -93,7 +93,7 @@
 .end method
 
 .method private setEnabled(Z)V
-    .locals 2
+    .registers 4
     .parameter "enabled"
 
     .prologue
@@ -108,13 +108,13 @@
 
     .line 57
     .local v0, b:Landroid/widget/Button;
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_e
 
     .line 58
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 60
-    :cond_0
+    :cond_e
     const v1, 0x102001a
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
@@ -126,13 +126,13 @@
 
     .line 61
     .restart local v0       #b:Landroid/widget/Button;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_1c
 
     .line 62
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 64
-    :cond_1
+    :cond_1c
     const v1, 0x102001b
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
@@ -144,45 +144,45 @@
 
     .line 65
     .restart local v0       #b:Landroid/widget/Button;
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_2a
 
     .line 66
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 68
-    :cond_2
+    :cond_2a
     return-void
 .end method
 
 
 # virtual methods
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .locals 1
+    .registers 3
     .parameter "event"
 
     .prologue
     .line 47
     iget-boolean v0, p0, Lcom/android/server/am/BaseErrorDialog;->mConsuming:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_6
 
     .line 49
     const/4 v0, 0x1
 
     .line 52
-    :goto_0
+    :goto_5
     return v0
 
-    :cond_0
+    :cond_6
     invoke-super {p0, p1}, Landroid/app/AlertDialog;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 .method public onStart()V
-    .locals 4
+    .registers 5
 
     .prologue
     const/4 v2, 0x0

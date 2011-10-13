@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiWatchdogService;Landroid/os/Handler;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 1
+    .registers 3
     .parameter "selfChange"
 
     .prologue
@@ -47,7 +47,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_e
 
     .line 141
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$1;->this$0:Lcom/android/server/WifiWatchdogService;
@@ -55,12 +55,12 @@
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$100(Lcom/android/server/WifiWatchdogService;)V
 
     .line 148
-    :cond_0
-    :goto_0
+    :cond_d
+    :goto_d
     return-void
 
     .line 143
-    :cond_1
+    :cond_e
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$1;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$200(Lcom/android/server/WifiWatchdogService;)V
@@ -72,7 +72,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_d
 
     .line 145
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$1;->this$0:Lcom/android/server/WifiWatchdogService;
@@ -83,5 +83,5 @@
 
     invoke-virtual {v0}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->disableWatchdog()V
 
-    goto :goto_0
+    goto :goto_d
 .end method

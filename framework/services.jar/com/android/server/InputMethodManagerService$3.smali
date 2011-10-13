@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
-    .locals 1
+    .registers 3
     .parameter "dialog"
 
     .prologue

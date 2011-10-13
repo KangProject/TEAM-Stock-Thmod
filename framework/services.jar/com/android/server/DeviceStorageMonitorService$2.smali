@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/DeviceStorageMonitorService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+    .registers 5
     .parameter "context"
     .parameter "intent"
 
@@ -47,12 +47,12 @@
 
     const-string v1, "android.intent.action.BOOT_COMPLETED"
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_b
 
     .line 429
     invoke-static {}, Lcom/android/server/DeviceStorageMonitorService;->reserveSpace()Z
 
     .line 431
-    :cond_0
+    :cond_b
     return-void
 .end method

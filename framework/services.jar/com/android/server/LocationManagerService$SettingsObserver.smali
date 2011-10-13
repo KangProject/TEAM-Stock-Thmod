@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/LocationManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -36,7 +36,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/LocationManagerService;Lcom/android/server/LocationManagerService$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public update(Ljava/util/Observable;Ljava/lang/Object;)V
-    .locals 2
+    .registers 5
     .parameter "o"
     .parameter "arg"
 
@@ -65,7 +65,7 @@
     monitor-enter v0
 
     .line 430
-    :try_start_0
+    :try_start_7
     iget-object v1, p0, Lcom/android/server/LocationManagerService$SettingsObserver;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v1}, Lcom/android/server/LocationManagerService;->access$800(Lcom/android/server/LocationManagerService;)V
@@ -77,12 +77,12 @@
     return-void
 
     .line 431
-    :catchall_0
+    :catchall_e
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_10
+    .catchall {:try_start_7 .. :try_end_10} :catchall_e
 
     throw v1
 .end method

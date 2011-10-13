@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WindowManagerService;Landroid/view/SurfaceSession;[Ljava/lang/String;)V
-    .locals 27
+    .registers 31
     .parameter
     .parameter "session"
     .parameter "tokens"
@@ -118,12 +118,12 @@
     const/16 v21, 0x0
 
     .local v21, i:I
-    :goto_0
+    :goto_36
     move/from16 v0, v21
 
     move/from16 v1, v22
 
-    if-ge v0, v1, :cond_4
+    if-ge v0, v1, :cond_b3
 
     .line 10089
     move-object/from16 v0, p0
@@ -166,11 +166,11 @@
     .local v16, c2:I
     const/16 v5, 0x61
 
-    if-lt v15, v5, :cond_0
+    if-lt v15, v5, :cond_89
 
     const/16 v5, 0x66
 
-    if-gt v15, v5, :cond_0
+    if-gt v15, v5, :cond_89
 
     const/16 v5, 0x61
 
@@ -179,14 +179,14 @@
     add-int/lit8 v15, v5, 0xa
 
     .line 10094
-    :goto_1
+    :goto_67
     const/16 v5, 0x61
 
     move/from16 v0, v16
 
     move v1, v5
 
-    if-lt v0, v1, :cond_2
+    if-lt v0, v1, :cond_9b
 
     const/16 v5, 0x66
 
@@ -194,7 +194,7 @@
 
     move v1, v5
 
-    if-gt v0, v1, :cond_2
+    if-gt v0, v1, :cond_9b
 
     const/16 v5, 0x61
 
@@ -203,7 +203,7 @@
     add-int/lit8 v16, v5, 0xa
 
     .line 10097
-    :goto_2
+    :goto_7b
     const/16 v5, 0xff
 
     mul-int/lit8 v6, v15, 0x10
@@ -219,17 +219,17 @@
     .line 10088
     add-int/lit8 v21, v21, 0x2
 
-    goto :goto_0
+    goto :goto_36
 
     .line 10092
-    :cond_0
+    :cond_89
     const/16 v5, 0x41
 
-    if-lt v15, v5, :cond_1
+    if-lt v15, v5, :cond_98
 
     const/16 v5, 0x46
 
-    if-gt v15, v5, :cond_1
+    if-gt v15, v5, :cond_98
 
     const/16 v5, 0x41
 
@@ -237,23 +237,23 @@
 
     add-int/lit8 v15, v5, 0xa
 
-    goto :goto_1
+    goto :goto_67
 
     .line 10093
-    :cond_1
+    :cond_98
     add-int/lit8 v15, v15, -0x30
 
-    goto :goto_1
+    goto :goto_67
 
     .line 10095
-    :cond_2
+    :cond_9b
     const/16 v5, 0x41
 
     move/from16 v0, v16
 
     move v1, v5
 
-    if-lt v0, v1, :cond_3
+    if-lt v0, v1, :cond_b0
 
     const/16 v5, 0x46
 
@@ -261,7 +261,7 @@
 
     move v1, v5
 
-    if-gt v0, v1, :cond_3
+    if-gt v0, v1, :cond_b0
 
     const/16 v5, 0x41
 
@@ -269,18 +269,18 @@
 
     add-int/lit8 v16, v5, 0xa
 
-    goto :goto_2
+    goto :goto_7b
 
     .line 10096
-    :cond_3
+    :cond_b0
     add-int/lit8 v16, v16, -0x30
 
-    goto :goto_2
+    goto :goto_7b
 
     .line 10099
     .end local v15           #c1:I
     .end local v16           #c2:I
-    :cond_4
+    :cond_b3
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -669,7 +669,7 @@
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
     .line 10136
-    :try_start_0
+    :try_start_1d4
     new-instance v5, Landroid/view/Surface;
 
     const/4 v7, 0x0
@@ -728,24 +728,24 @@
     move-object v5, v0
 
     invoke-virtual {v5}, Landroid/view/Surface;->show()V
-    :try_end_0
-    .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_205
+    .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_1d4 .. :try_end_205} :catch_206
 
     .line 10143
-    :goto_3
+    :goto_205
     return-void
 
     .line 10141
-    :catch_0
+    :catch_206
     move-exception v5
 
-    goto :goto_3
+    goto :goto_205
 .end method
 
 
 # virtual methods
 .method drawIfNeeded()V
-    .locals 15
+    .registers 16
 
     .prologue
     const/4 v12, 0x0
@@ -753,7 +753,7 @@
     .line 10155
     iget-boolean v11, p0, Lcom/android/server/WindowManagerService$Watermark;->mDrawNeeded:Z
 
-    if-eqz v11, :cond_4
+    if-eqz v11, :cond_56
 
     .line 10156
     iget v6, p0, Lcom/android/server/WindowManagerService$Watermark;->mLastDW:I
@@ -777,19 +777,19 @@
 
     .line 10163
     .local v0, c:Landroid/graphics/Canvas;
-    :try_start_0
+    :try_start_11
     iget-object v11, p0, Lcom/android/server/WindowManagerService$Watermark;->mSurface:Landroid/view/Surface;
 
     invoke-virtual {v11, v4}, Landroid/view/Surface;->lockCanvas(Landroid/graphics/Rect;)Landroid/graphics/Canvas;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_16
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_11 .. :try_end_16} :catch_59
+    .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_11 .. :try_end_16} :catch_57
 
     move-result-object v0
 
     .line 10167
-    :goto_0
-    if-eqz v0, :cond_4
+    :goto_17
+    if-eqz v0, :cond_56
 
     .line 10168
     iget v1, p0, Lcom/android/server/WindowManagerService$Watermark;->mDeltaX:I
@@ -822,20 +822,20 @@
 
     .line 10176
     .local v7, qdelta:I
-    if-lt v8, v7, :cond_0
+    if-lt v8, v7, :cond_31
 
     sub-int v11, v1, v7
 
-    if-le v8, v11, :cond_1
+    if-le v8, v11, :cond_34
 
     .line 10177
-    :cond_0
+    :cond_31
     div-int/lit8 v11, v1, 0x3
 
     add-int/2addr v1, v11
 
     .line 10180
-    :cond_1
+    :cond_34
     iget v11, p0, Lcom/android/server/WindowManagerService$Watermark;->mTextHeight:I
 
     neg-int v10, v11
@@ -848,13 +848,13 @@
 
     .line 10182
     .local v9, x:I
-    :cond_2
-    :goto_1
+    :cond_3a
+    :goto_3a
     iget v11, p0, Lcom/android/server/WindowManagerService$Watermark;->mTextHeight:I
 
     add-int/2addr v11, v3
 
-    if-ge v10, v11, :cond_3
+    if-ge v10, v11, :cond_51
 
     .line 10183
     iget-object v11, p0, Lcom/android/server/WindowManagerService$Watermark;->mText:Ljava/lang/String;
@@ -871,7 +871,7 @@
     add-int/2addr v9, v1
 
     .line 10185
-    if-lt v9, v6, :cond_2
+    if-lt v9, v6, :cond_3a
 
     .line 10186
     iget v11, p0, Lcom/android/server/WindowManagerService$Watermark;->mTextWidth:I
@@ -883,10 +883,10 @@
     .line 10187
     add-int/2addr v10, v2
 
-    goto :goto_1
+    goto :goto_3a
 
     .line 10190
-    :cond_3
+    :cond_51
     iget-object v11, p0, Lcom/android/server/WindowManagerService$Watermark;->mSurface:Landroid/view/Surface;
 
     invoke-virtual {v11, v0}, Landroid/view/Surface;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
@@ -903,7 +903,7 @@
     .end local v8           #rem:I
     .end local v9           #x:I
     .end local v10           #y:I
-    :cond_4
+    :cond_56
     return-void
 
     .line 10165
@@ -911,20 +911,20 @@
     .restart local v3       #dh:I
     .restart local v4       #dirty:Landroid/graphics/Rect;
     .restart local v6       #dw:I
-    :catch_0
+    :catch_57
     move-exception v11
 
-    goto :goto_0
+    goto :goto_17
 
     .line 10164
-    :catch_1
+    :catch_59
     move-exception v11
 
-    goto :goto_0
+    goto :goto_17
 .end method
 
 .method positionSurface(II)V
-    .locals 1
+    .registers 4
     .parameter "dw"
     .parameter "dh"
 
@@ -932,14 +932,14 @@
     .line 10146
     iget v0, p0, Lcom/android/server/WindowManagerService$Watermark;->mLastDW:I
 
-    if-ne v0, p1, :cond_0
+    if-ne v0, p1, :cond_8
 
     iget v0, p0, Lcom/android/server/WindowManagerService$Watermark;->mLastDH:I
 
-    if-eq v0, p2, :cond_1
+    if-eq v0, p2, :cond_14
 
     .line 10147
-    :cond_0
+    :cond_8
     iput p1, p0, Lcom/android/server/WindowManagerService$Watermark;->mLastDW:I
 
     .line 10148
@@ -956,6 +956,6 @@
     iput-boolean v0, p0, Lcom/android/server/WindowManagerService$Watermark;->mDrawNeeded:Z
 
     .line 10152
-    :cond_1
+    :cond_14
     return-void
 .end method

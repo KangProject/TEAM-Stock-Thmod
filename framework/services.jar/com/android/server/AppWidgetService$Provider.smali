@@ -39,7 +39,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 82

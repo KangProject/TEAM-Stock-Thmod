@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/UiModeManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 20
+    .registers 23
     .parameter "context"
     .parameter "intent"
 
@@ -47,14 +47,14 @@
 
     const/4 v4, -0x1
 
-    if-eq v3, v4, :cond_0
+    if-eq v3, v4, :cond_8
 
     .line 188
-    :goto_0
+    :goto_7
     return-void
 
     .line 129
-    :cond_0
+    :cond_8
     const-string v3, "enableFlags"
 
     const/4 v4, 0x0
@@ -106,7 +106,7 @@
 
     .line 135
     .local v15, category:Ljava/lang/String;
-    :try_start_0
+    :try_start_2a
     sget-object v3, Landroid/app/UiModeManager;->ACTION_ENTER_CAR_MODE:Ljava/lang/String;
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -117,20 +117,20 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_a5
 
     .line 138
     and-int/lit8 v3, v18, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_3c
 
     .line 139
     const-string v15, "android.intent.category.CAR_DOCK"
 
     .line 155
-    :cond_1
-    :goto_1
-    if-eqz v15, :cond_3
+    :cond_3c
+    :goto_3c
+    if-eqz v15, :cond_82
 
     .line 158
     invoke-static {v15}, Lcom/android/server/UiModeManagerService;->buildHomeIntent(Ljava/lang/String;)Landroid/content/Intent;
@@ -153,7 +153,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_69
 
     .line 169
     move-object/from16 v0, p0
@@ -185,14 +185,14 @@
     move-object v3, v0
 
     invoke-static {v3}, Lcom/android/server/UiModeManagerService;->access$100(Lcom/android/server/UiModeManagerService;)Landroid/content/res/Configuration;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_68
+    .catchall {:try_start_2a .. :try_end_68} :catchall_a2
 
     move-result-object v14
 
     .line 174
-    :cond_2
-    :try_start_1
+    :cond_69
+    :try_start_69
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v3
@@ -227,16 +227,16 @@
     const/4 v4, 0x0
 
     invoke-static {v3, v4}, Lcom/android/server/UiModeManagerService;->access$002(Lcom/android/server/UiModeManagerService;Z)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_82
+    .catchall {:try_start_69 .. :try_end_82} :catchall_a2
+    .catch Landroid/os/RemoteException; {:try_start_69 .. :try_end_82} :catch_c0
 
     .line 183
     .end local v5           #homeIntent:Landroid/content/Intent;
     .end local v14           #newConfig:Landroid/content/res/Configuration;
-    :cond_3
-    :goto_2
-    :try_start_2
+    :cond_82
+    :goto_82
+    :try_start_82
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/UiModeManagerService$1;->this$0:Lcom/android/server/UiModeManagerService;
@@ -247,7 +247,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_9f
 
     .line 184
     move-object/from16 v0, p0
@@ -272,23 +272,23 @@
     invoke-virtual {v3, v4}, Lcom/android/server/UiModeManagerService;->updateConfigurationLocked(Z)V
 
     .line 187
-    :cond_4
+    :cond_9f
     monitor-exit v19
 
-    goto/16 :goto_0
+    goto/16 :goto_7
 
-    :catchall_0
+    :catchall_a2
     move-exception v3
 
     monitor-exit v19
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_a4
+    .catchall {:try_start_82 .. :try_end_a4} :catchall_a2
 
     throw v3
 
     .line 141
-    :cond_5
-    :try_start_3
+    :cond_a5
+    :try_start_a5
     sget-object v3, Landroid/app/UiModeManager;->ACTION_ENTER_DESK_MODE:Ljava/lang/String;
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -299,33 +299,33 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_b8
 
     .line 145
     and-int/lit8 v3, v18, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_3c
 
     .line 146
     const-string v15, "android.intent.category.DESK_DOCK"
 
-    goto :goto_1
+    goto :goto_3c
 
     .line 150
-    :cond_6
+    :cond_b8
     and-int/lit8 v3, v16, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_3c
 
     .line 151
     const-string v15, "android.intent.category.HOME"
 
-    goto/16 :goto_1
+    goto/16 :goto_3c
 
     .line 178
     .restart local v5       #homeIntent:Landroid/content/Intent;
     .restart local v14       #newConfig:Landroid/content/res/Configuration;
-    :catch_0
+    :catch_c0
     move-exception v3
 
     move-object/from16 v17, v3
@@ -341,8 +341,8 @@
     move-result-object v4
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_ce
+    .catchall {:try_start_a5 .. :try_end_ce} :catchall_a2
 
-    goto :goto_2
+    goto :goto_82
 .end method

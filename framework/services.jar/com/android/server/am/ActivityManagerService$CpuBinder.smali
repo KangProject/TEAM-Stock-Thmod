@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
-    .locals 0
+    .registers 2
     .parameter "activityManagerService"
 
     .prologue
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 4
+    .registers 8
     .parameter "fd"
     .parameter "pw"
     .parameter "args"
@@ -51,7 +51,7 @@
     monitor-enter v0
 
     .line 1398
-    :try_start_0
+    :try_start_5
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$CpuBinder;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mProcessStats:Lcom/android/server/ProcessStats;
@@ -84,12 +84,12 @@
     return-void
 
     .line 1401
-    :catchall_0
+    :catchall_21
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_23
+    .catchall {:try_start_5 .. :try_end_23} :catchall_21
 
     throw v1
 .end method

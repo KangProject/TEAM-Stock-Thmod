@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WindowManagerService;Landroid/view/IOnKeyguardExitResult;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public onKeyguardExitResult(Z)V
-    .locals 1
+    .registers 3
     .parameter "success"
 
     .prologue
@@ -52,16 +52,16 @@
     iget-object v0, p0, Lcom/android/server/WindowManagerService$3;->val$callback:Landroid/view/IOnKeyguardExitResult;
 
     invoke-interface {v0, p1}, Landroid/view/IOnKeyguardExitResult;->onKeyguardExitResult(Z)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_5
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
     .line 4231
-    :goto_0
+    :goto_5
     return-void
 
     .line 4228
-    :catch_0
+    :catch_6
     move-exception v0
 
-    goto :goto_0
+    goto :goto_5
 .end method

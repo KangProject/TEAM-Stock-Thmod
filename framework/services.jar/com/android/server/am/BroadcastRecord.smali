@@ -69,7 +69,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Intent;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;IILjava/lang/String;Ljava/util/List;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;ZZZ)V
-    .locals 1
+    .registers 16
     .parameter "_intent"
     .parameter "_callerApp"
     .parameter "_callerPackage"
@@ -146,7 +146,7 @@
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 13
+    .registers 16
     .parameter "pw"
     .parameter "prefix"
 
@@ -172,7 +172,7 @@
     .line 81
     iget-boolean v9, p0, Lcom/android/server/am/BroadcastRecord;->sticky:Z
 
-    if-eqz v9, :cond_0
+    if-eqz v9, :cond_2d
 
     .line 82
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
@@ -183,7 +183,7 @@
 
     .line 83
     .local v1, bundle:Landroid/os/Bundle;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2d
 
     .line 84
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -200,7 +200,7 @@
 
     .line 87
     .end local v1           #bundle:Landroid/os/Bundle;
-    :cond_0
+    :cond_2d
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v9, "caller="
@@ -218,7 +218,7 @@
     .line 88
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->callerApp:Lcom/android/server/am/ProcessRecord;
 
-    if-eqz v9, :cond_e
+    if-eqz v9, :cond_204
 
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->callerApp:Lcom/android/server/am/ProcessRecord;
 
@@ -226,7 +226,7 @@
 
     move-result-object v9
 
-    :goto_0
+    :goto_49
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     .line 89
@@ -250,7 +250,7 @@
     .line 91
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->requiredPermission:Ljava/lang/String;
 
-    if-eqz v9, :cond_1
+    if-eqz v9, :cond_71
 
     .line 92
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -264,7 +264,7 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 94
-    :cond_1
+    :cond_71
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v9, "dispatchTime="
@@ -283,7 +283,7 @@
 
     cmp-long v9, v9, v11
 
-    if-eqz v9, :cond_f
+    if-eqz v9, :cond_208
 
     .line 97
     const-string v9, " finishTime="
@@ -295,7 +295,7 @@
     invoke-static {v9, v10, v3, v4, p1}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
     .line 101
-    :goto_1
+    :goto_90
     const-string v9, ""
 
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
@@ -303,7 +303,7 @@
     .line 102
     iget v9, p0, Lcom/android/server/am/BroadcastRecord;->anrCount:I
 
-    if-eqz v9, :cond_2
+    if-eqz v9, :cond_a6
 
     .line 103
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -317,23 +317,23 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(I)V
 
     .line 105
-    :cond_2
+    :cond_a6
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->resultTo:Landroid/content/IIntentReceiver;
 
-    if-nez v9, :cond_3
+    if-nez v9, :cond_b3
 
     iget v9, p0, Lcom/android/server/am/BroadcastRecord;->resultCode:I
 
     const/4 v10, -0x1
 
-    if-ne v9, v10, :cond_3
+    if-ne v9, v10, :cond_b3
 
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->resultData:Ljava/lang/String;
 
-    if-eqz v9, :cond_4
+    if-eqz v9, :cond_d4
 
     .line 106
-    :cond_3
+    :cond_b3
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v9, "resultTo="
@@ -363,10 +363,10 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 110
-    :cond_4
+    :cond_d4
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->resultExtras:Landroid/os/Bundle;
 
-    if-eqz v9, :cond_5
+    if-eqz v9, :cond_e5
 
     .line 111
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -380,25 +380,25 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 113
-    :cond_5
+    :cond_e5
     iget-boolean v9, p0, Lcom/android/server/am/BroadcastRecord;->resultAbort:Z
 
-    if-nez v9, :cond_6
+    if-nez v9, :cond_f5
 
     iget-boolean v9, p0, Lcom/android/server/am/BroadcastRecord;->ordered:Z
 
-    if-nez v9, :cond_6
+    if-nez v9, :cond_f5
 
     iget-boolean v9, p0, Lcom/android/server/am/BroadcastRecord;->sticky:Z
 
-    if-nez v9, :cond_6
+    if-nez v9, :cond_f5
 
     iget-boolean v9, p0, Lcom/android/server/am/BroadcastRecord;->initialSticky:Z
 
-    if-eqz v9, :cond_7
+    if-eqz v9, :cond_120
 
     .line 114
-    :cond_6
+    :cond_f5
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v9, "resultAbort="
@@ -437,17 +437,17 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Z)V
 
     .line 119
-    :cond_7
+    :cond_120
     iget v9, p0, Lcom/android/server/am/BroadcastRecord;->nextReceiver:I
 
-    if-nez v9, :cond_8
+    if-nez v9, :cond_128
 
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receiver:Landroid/os/IBinder;
 
-    if-eqz v9, :cond_9
+    if-eqz v9, :cond_13f
 
     .line 120
-    :cond_8
+    :cond_128
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v9, "nextReceiver="
@@ -468,10 +468,10 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 123
-    :cond_9
+    :cond_13f
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->curFilter:Lcom/android/server/am/BroadcastFilter;
 
-    if-eqz v9, :cond_a
+    if-eqz v9, :cond_150
 
     .line 124
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -485,10 +485,10 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 126
-    :cond_a
+    :cond_150
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->curReceiver:Landroid/content/pm/ActivityInfo;
 
-    if-eqz v9, :cond_b
+    if-eqz v9, :cond_161
 
     .line 127
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -502,10 +502,10 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 129
-    :cond_b
+    :cond_161
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->curApp:Lcom/android/server/am/ProcessRecord;
 
-    if-eqz v9, :cond_c
+    if-eqz v9, :cond_1a2
 
     .line 130
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -528,7 +528,7 @@
     .line 132
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
 
-    if-eqz v9, :cond_10
+    if-eqz v9, :cond_214
 
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->curComponent:Landroid/content/ComponentName;
 
@@ -536,19 +536,19 @@
 
     move-result-object v9
 
-    :goto_2
+    :goto_184
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 133
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->curReceiver:Landroid/content/pm/ActivityInfo;
 
-    if-eqz v9, :cond_c
+    if-eqz v9, :cond_1a2
 
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->curReceiver:Landroid/content/pm/ActivityInfo;
 
     iget-object v9, v9, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    if-eqz v9, :cond_c
+    if-eqz v9, :cond_1a2
 
     .line 134
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -567,17 +567,17 @@
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 138
-    :cond_c
+    :cond_1a2
     const-string v8, " (?)"
 
     .line 139
     .local v8, stateStr:Ljava/lang/String;
     iget v9, p0, Lcom/android/server/am/BroadcastRecord;->state:I
 
-    packed-switch v9, :pswitch_data_0
+    packed-switch v9, :pswitch_data_232
 
     .line 145
-    :goto_3
+    :goto_1a9
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v9, "state="
@@ -593,7 +593,7 @@
     .line 146
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
 
-    if-eqz v9, :cond_11
+    if-eqz v9, :cond_224
 
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
 
@@ -605,7 +605,7 @@
 
     .line 147
     .local v0, N:I
-    :goto_4
+    :goto_1c4
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -635,8 +635,8 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_5
-    if-ge v2, v0, :cond_13
+    :goto_1dd
+    if-ge v2, v0, :cond_231
 
     .line 150
     iget-object v9, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
@@ -665,7 +665,7 @@
     .line 153
     instance-of v9, v5, Lcom/android/server/am/BroadcastFilter;
 
-    if-eqz v9, :cond_12
+    if-eqz v9, :cond_227
 
     .line 154
     check-cast v5, Lcom/android/server/am/BroadcastFilter;
@@ -674,11 +674,11 @@
     invoke-virtual {v5, p1, v6}, Lcom/android/server/am/BroadcastFilter;->dumpBrief(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
     .line 149
-    :cond_d
-    :goto_6
+    :cond_201
+    :goto_201
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_1dd
 
     .line 88
     .end local v0           #N:I
@@ -686,13 +686,13 @@
     .end local v6           #p2:Ljava/lang/String;
     .end local v7           #printer:Landroid/util/PrintWriterPrinter;
     .end local v8           #stateStr:Ljava/lang/String;
-    :cond_e
+    :cond_204
     const-string v9, "null"
 
-    goto/16 :goto_0
+    goto/16 :goto_49
 
     .line 99
-    :cond_f
+    :cond_208
     const-string v9, " receiverTime="
 
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -701,46 +701,46 @@
 
     invoke-static {v9, v10, v3, v4, p1}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_90
 
     .line 132
-    :cond_10
+    :cond_214
     const-string v9, "--"
 
-    goto/16 :goto_2
+    goto/16 :goto_184
 
     .line 140
     .restart local v8       #stateStr:Ljava/lang/String;
-    :pswitch_0
+    :pswitch_218
     const-string v8, " (IDLE)"
 
-    goto :goto_3
+    goto :goto_1a9
 
     .line 141
-    :pswitch_1
+    :pswitch_21b
     const-string v8, " (APP_RECEIVE)"
 
-    goto :goto_3
+    goto :goto_1a9
 
     .line 142
-    :pswitch_2
+    :pswitch_21e
     const-string v8, " (CALL_IN_RECEIVE)"
 
-    goto :goto_3
+    goto :goto_1a9
 
     .line 143
-    :pswitch_3
+    :pswitch_221
     const-string v8, " (CALL_DONE_RECEIVE)"
 
-    goto :goto_3
+    goto :goto_1a9
 
     .line 146
-    :cond_11
+    :cond_224
     const/4 v9, 0x0
 
     move v0, v9
 
-    goto :goto_4
+    goto :goto_1c4
 
     .line 155
     .restart local v0       #N:I
@@ -748,10 +748,10 @@
     .restart local v5       #o:Ljava/lang/Object;
     .restart local v6       #p2:Ljava/lang/String;
     .restart local v7       #printer:Landroid/util/PrintWriterPrinter;
-    :cond_12
+    :cond_227
     instance-of v9, v5, Landroid/content/pm/ResolveInfo;
 
-    if-eqz v9, :cond_d
+    if-eqz v9, :cond_201
 
     .line 156
     check-cast v5, Landroid/content/pm/ResolveInfo;
@@ -759,24 +759,24 @@
     .end local v5           #o:Ljava/lang/Object;
     invoke-virtual {v5, v7, v6}, Landroid/content/pm/ResolveInfo;->dump(Landroid/util/Printer;Ljava/lang/String;)V
 
-    goto :goto_6
+    goto :goto_201
 
     .line 158
-    :cond_13
+    :cond_231
     return-void
 
     .line 139
-    :pswitch_data_0
+    :pswitch_data_232
     .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
+        :pswitch_218
+        :pswitch_21b
+        :pswitch_21e
+        :pswitch_221
     .end packed-switch
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 184

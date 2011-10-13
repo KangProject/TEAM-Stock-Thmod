@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public declared-synchronized onEvent(ILjava/lang/String;)V
-    .locals 1
+    .registers 4
     .parameter "event"
     .parameter "path"
 
@@ -38,16 +38,16 @@
     .line 2764
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_4
+    .catchall {:try_start_1 .. :try_end_4} :catchall_6
 
     monitor-exit p0
 
     return-void
 
-    :catchall_0
+    :catchall_6
     move-exception v0
 
     monitor-exit p0

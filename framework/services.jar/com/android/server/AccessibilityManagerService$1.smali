@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/AccessibilityManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 5
+    .registers 7
     .parameter "message"
 
     .prologue
@@ -57,7 +57,7 @@
     monitor-enter v3
 
     .line 121
-    :try_start_0
+    :try_start_b
     iget-object v4, p0, Lcom/android/server/AccessibilityManagerService$1;->this$0:Lcom/android/server/AccessibilityManagerService;
 
     invoke-static {v4, v2, v0}, Lcom/android/server/AccessibilityManagerService;->access$000(Lcom/android/server/AccessibilityManagerService;Lcom/android/server/AccessibilityManagerService$Service;I)V
@@ -90,12 +90,12 @@
 
     .line 125
     .end local v1           #oldEvent:Landroid/view/accessibility/AccessibilityEvent;
-    :catchall_0
+    :catchall_24
     move-exception v4
 
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_26
+    .catchall {:try_start_b .. :try_end_26} :catchall_24
 
     throw v4
 .end method

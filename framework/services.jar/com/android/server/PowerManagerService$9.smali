@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 2332
@@ -51,7 +51,7 @@
     monitor-enter v1
 
     .line 2333
-    :try_start_0
+    :try_start_7
     iget-object v2, p0, Lcom/android/server/PowerManagerService$9;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v2}, Lcom/android/server/PowerManagerService;->access$4900(Lcom/android/server/PowerManagerService;)F
@@ -62,7 +62,7 @@
 
     .line 2334
     .local v0, value:I
-    if-ltz v0, :cond_0
+    if-ltz v0, :cond_1c
 
     .line 2335
     iget-object v2, p0, Lcom/android/server/PowerManagerService$9;->this$0:Lcom/android/server/PowerManagerService;
@@ -77,7 +77,7 @@
     invoke-static {v2, v0}, Lcom/android/server/PowerManagerService;->access$5000(Lcom/android/server/PowerManagerService;I)V
 
     .line 2338
-    :cond_0
+    :cond_1c
     monitor-exit v1
 
     .line 2339
@@ -85,12 +85,12 @@
 
     .line 2338
     .end local v0           #value:I
-    :catchall_0
+    :catchall_1e
     move-exception v2
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_20
+    .catchall {:try_start_7 .. :try_end_20} :catchall_1e
 
     throw v2
 .end method

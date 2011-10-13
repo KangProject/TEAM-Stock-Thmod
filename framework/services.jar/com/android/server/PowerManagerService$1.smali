@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PowerManagerService;Ljava/lang/String;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method protected onLooperPrepared()V
-    .locals 3
+    .registers 4
 
     .prologue
     .line 521
@@ -58,7 +58,7 @@
     monitor-enter v0
 
     .line 523
-    :try_start_0
+    :try_start_11
     iget-object v1, p0, Lcom/android/server/PowerManagerService$1;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v2, 0x1
@@ -81,12 +81,12 @@
     return-void
 
     .line 525
-    :catchall_0
+    :catchall_22
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_24
+    .catchall {:try_start_11 .. :try_end_24} :catchall_22
 
     throw v1
 .end method

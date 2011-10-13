@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 112
@@ -30,7 +30,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/AlarmManagerService$1;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
 
     .prologue

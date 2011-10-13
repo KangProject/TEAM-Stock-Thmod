@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/PowerManagerService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -36,7 +36,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private getFloat(Ljava/lang/String;F)F
-    .locals 3
+    .registers 6
     .parameter "name"
     .parameter "defValue"
 
@@ -66,7 +66,7 @@
 
     .line 442
     .local v1, values:Landroid/content/ContentValues;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1a
 
     const-string v2, "value"
 
@@ -78,35 +78,35 @@
 
     .line 443
     .local v0, fVal:Ljava/lang/Float;
-    :goto_0
-    if-eqz v0, :cond_1
+    :goto_13
+    if-eqz v0, :cond_1d
 
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v2
 
-    :goto_1
+    :goto_19
     return v2
 
     .line 442
     .end local v0           #fVal:Ljava/lang/Float;
-    :cond_0
+    :cond_1a
     const/4 v2, 0x0
 
     move-object v0, v2
 
-    goto :goto_0
+    goto :goto_13
 
     .restart local v0       #fVal:Ljava/lang/Float;
-    :cond_1
+    :cond_1d
     move v2, p2
 
     .line 443
-    goto :goto_1
+    goto :goto_19
 .end method
 
 .method private getInt(Ljava/lang/String;I)I
-    .locals 3
+    .registers 6
     .parameter "name"
     .parameter "defValue"
 
@@ -124,7 +124,7 @@
 
     .line 436
     .local v1, values:Landroid/content/ContentValues;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1a
 
     const-string v2, "value"
 
@@ -136,37 +136,37 @@
 
     .line 437
     .local v0, iVal:Ljava/lang/Integer;
-    :goto_0
-    if-eqz v0, :cond_1
+    :goto_13
+    if-eqz v0, :cond_1d
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    :goto_1
+    :goto_19
     return v2
 
     .line 436
     .end local v0           #iVal:Ljava/lang/Integer;
-    :cond_0
+    :cond_1a
     const/4 v2, 0x0
 
     move-object v0, v2
 
-    goto :goto_0
+    goto :goto_13
 
     .restart local v0       #iVal:Ljava/lang/Integer;
-    :cond_1
+    :cond_1d
     move v2, p2
 
     .line 437
-    goto :goto_1
+    goto :goto_19
 .end method
 
 
 # virtual methods
 .method public update(Ljava/util/Observable;Ljava/lang/Object;)V
-    .locals 7
+    .registers 10
     .parameter "o"
     .parameter "arg"
 
@@ -183,7 +183,7 @@
     monitor-enter v2
 
     .line 449
-    :try_start_0
+    :try_start_9
     iget-object v3, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
 
     const-string v4, "stay_on_while_plugged_in"
@@ -262,7 +262,7 @@
     .line 469
     cmpl-float v3, v1, v6
 
-    if-lez v3, :cond_0
+    if-lez v3, :cond_59
 
     .line 470
     iget-object v3, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
@@ -272,13 +272,13 @@
     invoke-static {v3, v4}, Lcom/android/server/PowerManagerService;->access$1776(Lcom/android/server/PowerManagerService;I)I
 
     .line 472
-    :cond_0
+    :cond_59
     cmpl-float v3, v0, v6
 
-    if-lez v3, :cond_1
+    if-lez v3, :cond_5d
 
     .line 476
-    :cond_1
+    :cond_5d
     monitor-exit v2
 
     .line 477
@@ -287,12 +287,12 @@
     .line 476
     .end local v0           #transitionScale:F
     .end local v1           #windowScale:F
-    :catchall_0
+    :catchall_5f
     move-exception v3
 
     monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_61
+    .catchall {:try_start_9 .. :try_end_61} :catchall_5f
 
     throw v3
 .end method

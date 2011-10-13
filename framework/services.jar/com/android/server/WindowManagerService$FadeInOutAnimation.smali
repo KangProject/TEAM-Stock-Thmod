@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Z)V
-    .locals 2
+    .registers 4
     .parameter "fadeIn"
 
     .prologue
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method protected applyTransformation(FLandroid/view/animation/Transformation;)V
-    .locals 6
+    .registers 9
     .parameter "interpolatedTime"
     .parameter "t"
 
@@ -65,7 +65,7 @@
     .local v0, x:F
     iget-boolean v1, p0, Lcom/android/server/WindowManagerService$FadeInOutAnimation;->mFadeIn:Z
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_a
 
     .line 10636
     const/high16 v1, 0x3f80
@@ -73,14 +73,14 @@
     sub-float v0, v1, v0
 
     .line 10638
-    :cond_0
+    :cond_a
     float-to-double v1, v0
 
     const-wide/high16 v3, 0x3fe0
 
     cmpg-double v1, v1, v3
 
-    if-gez v1, :cond_1
+    if-gez v1, :cond_1c
 
     .line 10640
     invoke-virtual {p2}, Landroid/view/animation/Transformation;->getMatrix()Landroid/graphics/Matrix;
@@ -94,11 +94,11 @@
     invoke-virtual {v1, v2, v5}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 10645
-    :goto_0
+    :goto_1b
     return-void
 
     .line 10642
-    :cond_1
+    :cond_1c
     invoke-virtual {p2}, Landroid/view/animation/Transformation;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v1
@@ -116,11 +116,11 @@
 
     invoke-virtual {p2, v1}, Landroid/view/animation/Transformation;->setAlpha(F)V
 
-    goto :goto_0
+    goto :goto_1b
 .end method
 
 .method public getZAdjustment()I
-    .locals 1
+    .registers 2
 
     .prologue
     .line 10655
@@ -130,7 +130,7 @@
 .end method
 
 .method public initialize(IIII)V
-    .locals 0
+    .registers 5
     .parameter "width"
     .parameter "height"
     .parameter "parentWidth"

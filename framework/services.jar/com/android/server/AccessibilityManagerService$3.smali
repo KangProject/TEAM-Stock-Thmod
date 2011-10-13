@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/AccessibilityManagerService;Landroid/os/Handler;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter "x0"
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 5
+    .registers 7
     .parameter "selfChange"
 
     .prologue
@@ -64,11 +64,11 @@
 
     move-result v1
 
-    if-ne v1, v4, :cond_0
+    if-ne v1, v4, :cond_34
 
     move v1, v4
 
-    :goto_0
+    :goto_18
     invoke-static {v0, v1}, Lcom/android/server/AccessibilityManagerService;->access$502(Lcom/android/server/AccessibilityManagerService;Z)Z
 
     .line 246
@@ -79,14 +79,14 @@
     monitor-enter v0
 
     .line 247
-    :try_start_0
+    :try_start_20
     iget-object v1, p0, Lcom/android/server/AccessibilityManagerService$3;->this$0:Lcom/android/server/AccessibilityManagerService;
 
     invoke-static {v1}, Lcom/android/server/AccessibilityManagerService;->access$500(Lcom/android/server/AccessibilityManagerService;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_36
 
     .line 248
     iget-object v1, p0, Lcom/android/server/AccessibilityManagerService$3;->this$0:Lcom/android/server/AccessibilityManagerService;
@@ -94,7 +94,7 @@
     invoke-static {v1}, Lcom/android/server/AccessibilityManagerService;->access$300(Lcom/android/server/AccessibilityManagerService;)V
 
     .line 252
-    :goto_1
+    :goto_2d
     iget-object v1, p0, Lcom/android/server/AccessibilityManagerService$3;->this$0:Lcom/android/server/AccessibilityManagerService;
 
     invoke-static {v1}, Lcom/android/server/AccessibilityManagerService;->access$600(Lcom/android/server/AccessibilityManagerService;)V
@@ -105,27 +105,27 @@
     .line 254
     return-void
 
-    :cond_0
+    :cond_34
     move v1, v3
 
     .line 243
-    goto :goto_0
+    goto :goto_18
 
     .line 250
-    :cond_1
+    :cond_36
     iget-object v1, p0, Lcom/android/server/AccessibilityManagerService$3;->this$0:Lcom/android/server/AccessibilityManagerService;
 
     invoke-static {v1}, Lcom/android/server/AccessibilityManagerService;->access$700(Lcom/android/server/AccessibilityManagerService;)V
 
-    goto :goto_1
+    goto :goto_2d
 
     .line 253
-    :catchall_0
+    :catchall_3c
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3e
+    .catchall {:try_start_20 .. :try_end_3e} :catchall_3c
 
     throw v1
 .end method

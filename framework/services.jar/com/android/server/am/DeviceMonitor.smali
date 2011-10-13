@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .registers 5
 
     .prologue
     .line 30
@@ -66,7 +66,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_4b
 
     sget-object v0, Lcom/android/server/am/DeviceMonitor;->BASE:Ljava/io/File;
 
@@ -74,7 +74,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_4b
 
     .line 81
     new-instance v0, Ljava/lang/AssertionError;
@@ -110,7 +110,7 @@
     throw v0
 
     .line 85
-    :cond_0
+    :cond_4b
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/io/File;
@@ -176,7 +176,7 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 46
@@ -206,7 +206,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/server/am/DeviceMonitor;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -217,26 +217,26 @@
 .end method
 
 .method private static closeQuietly(Ljava/io/Closeable;)V
-    .locals 2
+    .registers 3
     .parameter "closeable"
 
     .prologue
     .line 177
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_5
 
     .line 178
-    :try_start_0
+    :try_start_2
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_5} :catch_6
 
     .line 183
-    :cond_0
-    :goto_0
+    :cond_5
+    :goto_5
     return-void
 
     .line 180
-    :catch_0
+    :catch_6
     move-exception v0
 
     .line 181
@@ -245,11 +245,11 @@
 
     invoke-static {v1, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 .method private dump()V
-    .locals 10
+    .registers 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -278,7 +278,7 @@
 
     .line 117
     .local v4, out:Ljava/io/OutputStream;
-    :try_start_0
+    :try_start_14
     sget-object v6, Lcom/android/server/am/DeviceMonitor;->PROC:Ljava/io/File;
 
     invoke-virtual {v6}, Ljava/io/File;->listFiles()[Ljava/io/File;
@@ -292,8 +292,8 @@
     const/4 v2, 0x0
 
     .local v2, i$:I
-    :goto_0
-    if-ge v2, v3, :cond_1
+    :goto_1c
+    if-ge v2, v3, :cond_33
 
     aget-object v5, v0, v2
 
@@ -303,7 +303,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    if-eqz v6, :cond_30
 
     .line 119
     new-instance v6, Ljava/io/File;
@@ -315,39 +315,39 @@
     invoke-direct {p0, v6, v4}, Lcom/android/server/am/DeviceMonitor;->dump(Ljava/io/File;Ljava/io/OutputStream;)V
 
     .line 117
-    :cond_0
+    :cond_30
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_0
+    goto :goto_1c
 
     .line 124
     .end local v5           #processDirectory:Ljava/io/File;
-    :cond_1
+    :cond_33
     sget-object v0, Lcom/android/server/am/DeviceMonitor;->PATHS:[Ljava/io/File;
 
     array-length v3, v0
 
     const/4 v2, 0x0
 
-    :goto_1
-    if-ge v2, v3, :cond_2
+    :goto_37
+    if-ge v2, v3, :cond_41
 
     aget-object v1, v0, v2
 
     .line 125
     .local v1, file:Ljava/io/File;
     invoke-direct {p0, v1, v4}, Lcom/android/server/am/DeviceMonitor;->dump(Ljava/io/File;Ljava/io/OutputStream;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3e
+    .catchall {:try_start_14 .. :try_end_3e} :catchall_45
 
     .line 124
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1
+    goto :goto_37
 
     .line 128
     .end local v1           #file:Ljava/io/File;
-    :cond_2
+    :cond_41
     invoke-static {v4}, Lcom/android/server/am/DeviceMonitor;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 130
@@ -357,7 +357,7 @@
     .end local v0           #arr$:[Ljava/io/File;
     .end local v2           #i$:I
     .end local v3           #len$:I
-    :catchall_0
+    :catchall_45
     move-exception v6
 
     invoke-static {v4}, Lcom/android/server/am/DeviceMonitor;->closeQuietly(Ljava/io/Closeable;)V
@@ -366,7 +366,7 @@
 .end method
 
 .method private dump(Ljava/io/File;Ljava/io/OutputStream;)V
-    .locals 5
+    .registers 8
     .parameter "from"
     .parameter "out"
     .annotation system Ldalvik/annotation/Throws;
@@ -384,18 +384,18 @@
 
     .line 152
     .local v1, in:Ljava/io/FileInputStream;
-    :try_start_0
+    :try_start_4
     new-instance v2, Ljava/io/FileInputStream;
 
     invoke-direct {v2, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    :try_end_9
+    .catchall {:try_start_4 .. :try_end_9} :catchall_23
 
     .line 154
     .end local v1           #in:Ljava/io/FileInputStream;
     .local v2, in:Ljava/io/FileInputStream;
-    :goto_0
-    :try_start_1
+    :goto_9
+    :try_start_9
     iget-object v3, p0, Lcom/android/server/am/DeviceMonitor;->buffer:[B
 
     invoke-virtual {v2, v3}, Ljava/io/FileInputStream;->read([B)I
@@ -405,7 +405,7 @@
     .local v0, count:I
     const/4 v3, -0x1
 
-    if-eq v0, v3, :cond_0
+    if-eq v0, v3, :cond_1f
 
     .line 155
     iget-object v3, p0, Lcom/android/server/am/DeviceMonitor;->buffer:[B
@@ -413,21 +413,21 @@
     const/4 v4, 0x0
 
     invoke-virtual {p2, v3, v4, v0}, Ljava/io/OutputStream;->write([BII)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_18
+    .catchall {:try_start_9 .. :try_end_18} :catchall_19
 
-    goto :goto_0
+    goto :goto_9
 
     .line 158
     .end local v0           #count:I
-    :catchall_0
+    :catchall_19
     move-exception v3
 
     move-object v1, v2
 
     .end local v2           #in:Ljava/io/FileInputStream;
     .restart local v1       #in:Ljava/io/FileInputStream;
-    :goto_1
+    :goto_1b
     invoke-static {v1}, Lcom/android/server/am/DeviceMonitor;->closeQuietly(Ljava/io/Closeable;)V
 
     throw v3
@@ -435,7 +435,7 @@
     .end local v1           #in:Ljava/io/FileInputStream;
     .restart local v0       #count:I
     .restart local v2       #in:Ljava/io/FileInputStream;
-    :cond_0
+    :cond_1f
     invoke-static {v2}, Lcom/android/server/am/DeviceMonitor;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 160
@@ -445,14 +445,14 @@
     .end local v0           #count:I
     .end local v2           #in:Ljava/io/FileInputStream;
     .restart local v1       #in:Ljava/io/FileInputStream;
-    :catchall_1
+    :catchall_23
     move-exception v3
 
-    goto :goto_1
+    goto :goto_1b
 .end method
 
 .method private static isProcessDirectory(Ljava/io/File;)Z
-    .locals 2
+    .registers 3
     .parameter "file"
 
     .prologue
@@ -466,17 +466,17 @@
 
     .line 138
     invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_a
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_a} :catch_c
 
     move-result v1
 
     .line 140
-    :goto_0
+    :goto_b
     return v1
 
     .line 139
-    :catch_0
+    :catch_c
     move-exception v1
 
     move-object v0, v1
@@ -485,11 +485,11 @@
     .local v0, e:Ljava/lang/NumberFormatException;
     const/4 v1, 0x0
 
-    goto :goto_0
+    goto :goto_b
 .end method
 
 .method private monitor()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 60
@@ -503,28 +503,28 @@
     const/4 v1, 0x0
 
     .local v1, i:I
-    :goto_1
+    :goto_7
     const/16 v2, 0xa
 
-    if-ge v1, v2, :cond_0
+    if-ge v1, v2, :cond_1d
 
     .line 66
-    :try_start_0
+    :try_start_b
     invoke-direct {p0}, Lcom/android/server/am/DeviceMonitor;->dump()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_e
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_e} :catch_14
 
     .line 70
-    :goto_2
+    :goto_e
     invoke-direct {p0}, Lcom/android/server/am/DeviceMonitor;->pause()V
 
     .line 64
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1
+    goto :goto_7
 
     .line 67
-    :catch_0
+    :catch_14
     move-exception v0
 
     .line 68
@@ -535,41 +535,41 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_2
+    goto :goto_e
 
     .line 73
     .end local v0           #e:Ljava/io/IOException;
-    :cond_0
+    :cond_1d
     invoke-direct {p0}, Lcom/android/server/am/DeviceMonitor;->stop()V
 
     goto :goto_0
 .end method
 
 .method private pause()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 190
     const-wide/16 v0, 0x3e8
 
-    :try_start_0
+    :try_start_2
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_5
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_5} :catch_6
 
     .line 192
-    :goto_0
+    :goto_5
     return-void
 
     .line 191
-    :catch_0
+    :catch_6
     move-exception v0
 
-    goto :goto_0
+    goto :goto_5
 .end method
 
 .method private purge()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 97
@@ -589,7 +589,7 @@
 
     .line 99
     .local v0, count:I
-    if-lez v0, :cond_1
+    if-lez v0, :cond_3e
 
     .line 100
     invoke-static {v1}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
@@ -598,8 +598,8 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_0
-    if-ge v2, v0, :cond_1
+    :goto_11
+    if-ge v2, v0, :cond_3e
 
     .line 102
     aget-object v3, v1, v2
@@ -608,7 +608,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_3b
 
     .line 103
     sget-object v3, Lcom/android/server/am/DeviceMonitor;->LOG_TAG:Ljava/lang/String;
@@ -642,19 +642,19 @@
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 101
-    :cond_0
+    :cond_3b
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_0
+    goto :goto_11
 
     .line 107
     .end local v2           #i:I
-    :cond_1
+    :cond_3e
     return-void
 .end method
 
 .method static start()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 228
@@ -667,16 +667,16 @@
 .end method
 
 .method private declared-synchronized startMonitoring()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 216
     monitor-enter p0
 
-    :try_start_0
+    :try_start_1
     iget-boolean v0, p0, Lcom/android/server/am/DeviceMonitor;->running:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_b
 
     .line 217
     const/4 v0, 0x1
@@ -685,17 +685,17 @@
 
     .line 218
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_b
+    .catchall {:try_start_1 .. :try_end_b} :catchall_d
 
     .line 220
-    :cond_0
+    :cond_b
     monitor-exit p0
 
     return-void
 
     .line 216
-    :catchall_0
+    :catchall_d
     move-exception v0
 
     monitor-exit p0
@@ -704,7 +704,7 @@
 .end method
 
 .method private declared-synchronized stop()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 198
@@ -712,10 +712,10 @@
 
     const/4 v0, 0x0
 
-    :try_start_0
+    :try_start_2
     iput-boolean v0, p0, Lcom/android/server/am/DeviceMonitor;->running:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_4
+    .catchall {:try_start_2 .. :try_end_4} :catchall_6
 
     .line 199
     monitor-exit p0
@@ -723,7 +723,7 @@
     return-void
 
     .line 198
-    :catchall_0
+    :catchall_6
     move-exception v0
 
     monitor-exit p0
@@ -732,43 +732,43 @@
 .end method
 
 .method private declared-synchronized waitForStart()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 205
     monitor-enter p0
 
-    :goto_0
-    :try_start_0
+    :goto_1
+    :try_start_1
     iget-boolean v0, p0, Lcom/android/server/am/DeviceMonitor;->running:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_d
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_b
 
     .line 207
-    :try_start_1
+    :try_start_5
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_8
+    .catchall {:try_start_5 .. :try_end_8} :catchall_d
+    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_8} :catch_9
 
-    goto :goto_0
+    goto :goto_1
 
     .line 208
-    :catch_0
+    :catch_9
     move-exception v0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 210
-    :cond_0
+    :cond_b
     monitor-exit p0
 
     return-void
 
     .line 205
-    :catchall_0
+    :catchall_d
     move-exception v0
 
     monitor-exit p0
@@ -777,7 +777,7 @@
 .end method
 
 .method private static writeHeader(Ljava/io/File;Ljava/io/OutputStream;)V
-    .locals 3
+    .registers 5
     .parameter "file"
     .parameter "out"
     .annotation system Ldalvik/annotation/Throws;

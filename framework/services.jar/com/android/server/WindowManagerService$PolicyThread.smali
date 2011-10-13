@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/WindowManagerPolicy;Lcom/android/server/WindowManagerService;Landroid/content/Context;Lcom/android/server/PowerManagerService;)V
-    .locals 1
+    .registers 6
     .parameter "policy"
     .parameter "service"
     .parameter "context"
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 584
@@ -104,7 +104,7 @@
     .line 595
     const/4 v0, 0x1
 
-    :try_start_0
+    :try_start_1f
     iput-boolean v0, p0, Lcom/android/server/WindowManagerService$PolicyThread;->mRunning:Z
 
     .line 596
@@ -112,8 +112,8 @@
 
     .line 597
     monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_25
+    .catchall {:try_start_1f .. :try_end_25} :catchall_29
 
     .line 599
     invoke-static {}, Landroid/os/Looper;->loop()V
@@ -122,13 +122,13 @@
     return-void
 
     .line 597
-    :catchall_0
+    :catchall_29
     move-exception v0
 
-    :try_start_1
+    :try_start_2a
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2b
+    .catchall {:try_start_2a .. :try_end_2b} :catchall_29
 
     throw v0
 .end method

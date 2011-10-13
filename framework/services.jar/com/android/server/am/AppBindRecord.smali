@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ServiceRecord;Lcom/android/server/am/IntentBindRecord;Lcom/android/server/am/ProcessRecord;)V
-    .locals 1
+    .registers 5
     .parameter "_service"
     .parameter "_intent"
     .parameter "_client"
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 2
+    .registers 5
     .parameter "pw"
     .parameter "prefix"
 
@@ -123,7 +123,7 @@
 .end method
 
 .method dumpInIntentBind(Ljava/io/PrintWriter;Ljava/lang/String;)V
-    .locals 4
+    .registers 7
     .parameter "pw"
     .parameter "prefix"
 
@@ -135,7 +135,7 @@
 
     move-result v2
 
-    if-lez v2, :cond_0
+    if-lez v2, :cond_4b
 
     .line 42
     new-instance v2, Ljava/lang/StringBuilder;
@@ -167,12 +167,12 @@
 
     .line 44
     .local v1, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/ConnectionRecord;>;"
-    :goto_0
+    :goto_24
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_4b
 
     .line 45
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -207,17 +207,17 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_24
 
     .line 49
     .end local v0           #c:Lcom/android/server/am/ConnectionRecord;
     .end local v1           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/server/am/ConnectionRecord;>;"
-    :cond_0
+    :cond_4b
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 59

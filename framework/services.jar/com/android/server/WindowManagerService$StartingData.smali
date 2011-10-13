@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILjava/lang/CharSequence;II)V
-    .locals 0
+    .registers 6
     .parameter "_pkg"
     .parameter "_theme"
     .parameter "_nonLocalizedLabel"

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .registers 1
 
     .prologue
     .line 33
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .locals 1
+    .registers 3
     .parameter "intent"
 
     .prologue
@@ -42,7 +42,7 @@
 .end method
 
 .method public onCreate()V
-    .locals 7
+    .registers 8
 
     .prologue
     const/4 v1, -0x2
@@ -101,7 +101,7 @@
 .end method
 
 .method public onDestroy()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 287

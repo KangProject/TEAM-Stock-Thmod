@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WindowManagerService;)V
-    .locals 1
+    .registers 3
     .parameter "windowManager"
 
     .prologue
@@ -64,7 +64,7 @@
 .end method
 
 .method constructor <init>(Lcom/android/server/WindowManagerService;I)V
-    .locals 0
+    .registers 3
     .parameter "windowManager"
     .parameter "port"
 
@@ -83,7 +83,7 @@
 .end method
 
 .method static synthetic access$000(Ljava/net/Socket;Ljava/lang/String;)Z
-    .locals 1
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -97,7 +97,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/ViewServer;)Lcom/android/server/WindowManagerService;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -108,7 +108,7 @@
 .end method
 
 .method private static writeValue(Ljava/net/Socket;Ljava/lang/String;)Z
-    .locals 7
+    .registers 9
     .parameter "client"
     .parameter "value"
 
@@ -118,7 +118,7 @@
 
     .line 198
     .local v2, out:Ljava/io/BufferedWriter;
-    :try_start_0
+    :try_start_1
     invoke-virtual {p0}, Ljava/net/Socket;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object v0
@@ -134,14 +134,14 @@
     const/16 v6, 0x2000
 
     invoke-direct {v3, v5, v6}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    :try_end_11
+    .catchall {:try_start_1 .. :try_end_11} :catchall_34
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_11} :catch_28
 
     .line 200
     .end local v2           #out:Ljava/io/BufferedWriter;
     .local v3, out:Ljava/io/BufferedWriter;
-    :try_start_1
+    :try_start_11
     invoke-virtual {v3, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
     .line 201
@@ -151,22 +151,22 @@
 
     .line 202
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->flush()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
+    :try_end_1c
+    .catchall {:try_start_11 .. :try_end_1c} :catchall_3d
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_1c} :catch_40
 
     .line 203
     const/4 v4, 0x1
 
     .line 207
     .local v4, result:Z
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_44
 
     .line 209
-    :try_start_2
+    :try_start_1f
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_22
+    .catch Ljava/io/IOException; {:try_start_1f .. :try_end_22} :catch_24
 
     move-object v2, v3
 
@@ -174,15 +174,15 @@
     .end local v0           #clientStream:Ljava/io/OutputStream;
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
-    :cond_0
-    :goto_0
+    :cond_23
+    :goto_23
     return v4
 
     .line 210
     .end local v2           #out:Ljava/io/BufferedWriter;
     .restart local v0       #clientStream:Ljava/io/OutputStream;
     .restart local v3       #out:Ljava/io/BufferedWriter;
-    :catch_0
+    :catch_24
     move-exception v1
 
     .line 211
@@ -194,36 +194,36 @@
     .line 212
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
-    goto :goto_0
+    goto :goto_23
 
     .line 204
     .end local v0           #clientStream:Ljava/io/OutputStream;
     .end local v1           #e:Ljava/io/IOException;
     .end local v4           #result:Z
-    :catch_1
+    :catch_28
     move-exception v5
 
     move-object v1, v5
 
     .line 205
     .local v1, e:Ljava/lang/Exception;
-    :goto_1
+    :goto_2a
     const/4 v4, 0x0
 
     .line 207
     .restart local v4       #result:Z
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_23
 
     .line 209
-    :try_start_3
+    :try_start_2d
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+    :try_end_30
+    .catch Ljava/io/IOException; {:try_start_2d .. :try_end_30} :catch_31
 
-    goto :goto_0
+    goto :goto_23
 
     .line 210
-    :catch_2
+    :catch_31
     move-exception v1
 
     .line 211
@@ -231,54 +231,54 @@
     const/4 v4, 0x0
 
     .line 212
-    goto :goto_0
+    goto :goto_23
 
     .line 207
     .end local v1           #e:Ljava/io/IOException;
     .end local v4           #result:Z
-    :catchall_0
+    :catchall_34
     move-exception v5
 
-    :goto_2
-    if-eqz v2, :cond_1
+    :goto_35
+    if-eqz v2, :cond_3a
 
     .line 209
-    :try_start_4
+    :try_start_37
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+    :try_end_3a
+    .catch Ljava/io/IOException; {:try_start_37 .. :try_end_3a} :catch_3b
 
     .line 212
-    :cond_1
-    :goto_3
+    :cond_3a
+    :goto_3a
     throw v5
 
     .line 210
-    :catch_3
+    :catch_3b
     move-exception v1
 
     .line 211
     .restart local v1       #e:Ljava/io/IOException;
-    goto :goto_3
+    goto :goto_3a
 
     .line 207
     .end local v1           #e:Ljava/io/IOException;
     .end local v2           #out:Ljava/io/BufferedWriter;
     .restart local v0       #clientStream:Ljava/io/OutputStream;
     .restart local v3       #out:Ljava/io/BufferedWriter;
-    :catchall_1
+    :catchall_3d
     move-exception v5
 
     move-object v2, v3
 
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
-    goto :goto_2
+    goto :goto_35
 
     .line 204
     .end local v2           #out:Ljava/io/BufferedWriter;
     .restart local v3       #out:Ljava/io/BufferedWriter;
-    :catch_4
+    :catch_40
     move-exception v5
 
     move-object v1, v5
@@ -287,29 +287,29 @@
 
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
-    goto :goto_1
+    goto :goto_2a
 
     .end local v2           #out:Ljava/io/BufferedWriter;
     .restart local v3       #out:Ljava/io/BufferedWriter;
     .restart local v4       #result:Z
-    :cond_2
+    :cond_44
     move-object v2, v3
 
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
-    goto :goto_0
+    goto :goto_23
 .end method
 
 
 # virtual methods
 .method isRunning()Z
-    .locals 1
+    .registers 2
 
     .prologue
     .line 168
     iget-object v0, p0, Lcom/android/server/ViewServer;->mThread:Ljava/lang/Thread;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_e
 
     iget-object v0, p0, Lcom/android/server/ViewServer;->mThread:Ljava/lang/Thread;
 
@@ -317,21 +317,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_e
 
     const/4 v0, 0x1
 
-    :goto_0
+    :goto_d
     return v0
 
-    :cond_0
+    :cond_e
     const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_d
 .end method
 
 .method public run()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 175
@@ -342,10 +342,10 @@
 
     iget-object v3, p0, Lcom/android/server/ViewServer;->mThread:Ljava/lang/Thread;
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v3, :cond_30
 
     .line 178
-    :try_start_0
+    :try_start_8
     iget-object v2, p0, Lcom/android/server/ViewServer;->mServer:Ljava/net/ServerSocket;
 
     invoke-virtual {v2}, Ljava/net/ServerSocket;->accept()Ljava/net/Socket;
@@ -356,7 +356,7 @@
     .local v0, client:Ljava/net/Socket;
     iget-object v2, p0, Lcom/android/server/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_27
 
     .line 180
     iget-object v2, p0, Lcom/android/server/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
@@ -366,14 +366,14 @@
     invoke-direct {v3, p0, v0}, Lcom/android/server/ViewServer$ViewServerWorker;-><init>(Lcom/android/server/ViewServer;Ljava/net/Socket;)V
 
     invoke-interface {v2, v3}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1c
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_1c} :catch_1d
 
     goto :goto_0
 
     .line 188
     .end local v0           #client:Ljava/net/Socket;
-    :catch_0
+    :catch_1d
     move-exception v2
 
     move-object v1, v2
@@ -391,37 +391,37 @@
     .line 183
     .end local v1           #e:Ljava/lang/Exception;
     .restart local v0       #client:Ljava/net/Socket;
-    :cond_0
-    :try_start_1
+    :cond_27
+    :try_start_27
     invoke-virtual {v0}, Ljava/net/Socket;->close()V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_2a
+    .catch Ljava/io/IOException; {:try_start_27 .. :try_end_2a} :catch_2b
+    .catch Ljava/lang/Exception; {:try_start_27 .. :try_end_2a} :catch_1d
 
     goto :goto_0
 
     .line 184
-    :catch_1
+    :catch_2b
     move-exception v1
 
     .line 185
     .local v1, e:Ljava/io/IOException;
-    :try_start_2
+    :try_start_2c
     invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_2f
+    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_2f} :catch_1d
 
     goto :goto_0
 
     .line 192
     .end local v0           #client:Ljava/net/Socket;
     .end local v1           #e:Ljava/io/IOException;
-    :cond_1
+    :cond_30
     return-void
 .end method
 
 .method start()Z
-    .locals 4
+    .registers 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -434,17 +434,17 @@
     .line 112
     iget-object v0, p0, Lcom/android/server/ViewServer;->mThread:Ljava/lang/Thread;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_8
 
     .line 113
     const/4 v0, 0x0
 
     .line 121
-    :goto_0
+    :goto_7
     return v0
 
     .line 116
-    :cond_0
+    :cond_8
     new-instance v0, Ljava/net/ServerSocket;
 
     iget v1, p0, Lcom/android/server/ViewServer;->mPort:I
@@ -505,11 +505,11 @@
     .line 121
     const/4 v0, 0x1
 
-    goto :goto_0
+    goto :goto_7
 .end method
 
 .method stop()Z
-    .locals 4
+    .registers 5
 
     .prologue
     const/4 v2, 0x0
@@ -519,7 +519,7 @@
     .line 135
     iget-object v1, p0, Lcom/android/server/ViewServer;->mThread:Ljava/lang/Thread;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_36
 
     .line 137
     iget-object v1, p0, Lcom/android/server/ViewServer;->mThread:Ljava/lang/Thread;
@@ -529,26 +529,26 @@
     .line 138
     iget-object v1, p0, Lcom/android/server/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_15
 
     .line 140
-    :try_start_0
+    :try_start_10
     iget-object v1, p0, Lcom/android/server/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v1}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_15
+    .catch Ljava/lang/SecurityException; {:try_start_10 .. :try_end_15} :catch_23
 
     .line 145
-    :cond_0
-    :goto_0
+    :cond_15
+    :goto_15
     iput-object v2, p0, Lcom/android/server/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
     .line 146
     iput-object v2, p0, Lcom/android/server/ViewServer;->mThread:Ljava/lang/Thread;
 
     .line 148
-    :try_start_1
+    :try_start_19
     iget-object v1, p0, Lcom/android/server/ViewServer;->mServer:Ljava/net/ServerSocket;
 
     invoke-virtual {v1}, Ljava/net/ServerSocket;->close()V
@@ -557,18 +557,18 @@
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/ViewServer;->mServer:Ljava/net/ServerSocket;
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_21
+    .catch Ljava/io/IOException; {:try_start_19 .. :try_end_21} :catch_2d
 
     .line 150
     const/4 v1, 0x1
 
     .line 155
-    :goto_1
+    :goto_22
     return v1
 
     .line 141
-    :catch_0
+    :catch_23
     move-exception v1
 
     move-object v0, v1
@@ -581,11 +581,11 @@
 
     invoke-static {v3, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_15
 
     .line 151
     .end local v0           #e:Ljava/lang/SecurityException;
-    :catch_1
+    :catch_2d
     move-exception v1
 
     move-object v0, v1
@@ -600,8 +600,8 @@
 
     .line 155
     .end local v0           #e:Ljava/io/IOException;
-    :cond_1
+    :cond_36
     const/4 v1, 0x0
 
-    goto :goto_1
+    goto :goto_22
 .end method

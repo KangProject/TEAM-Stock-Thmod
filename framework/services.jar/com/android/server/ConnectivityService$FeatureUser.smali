@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/ConnectivityService;ILjava/lang/String;Landroid/os/IBinder;)V
-    .locals 3
+    .registers 8
     .parameter
     .parameter "type"
     .parameter "feature"
@@ -79,21 +79,21 @@
     iput-wide v1, p0, Lcom/android/server/ConnectivityService$FeatureUser;->mCreateTime:J
 
     .line 577
-    :try_start_0
+    :try_start_1d
     iget-object v1, p0, Lcom/android/server/ConnectivityService$FeatureUser;->mBinder:Landroid/os/IBinder;
 
     const/4 v2, 0x0
 
     invoke-interface {v1, p0, v2}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_23
+    .catch Landroid/os/RemoteException; {:try_start_1d .. :try_end_23} :catch_24
 
     .line 581
-    :goto_0
+    :goto_23
     return-void
 
     .line 578
-    :catch_0
+    :catch_24
     move-exception v1
 
     move-object v0, v1
@@ -102,13 +102,13 @@
     .local v0, e:Landroid/os/RemoteException;
     invoke-virtual {p0}, Lcom/android/server/ConnectivityService$FeatureUser;->binderDied()V
 
-    goto :goto_0
+    goto :goto_23
 .end method
 
 
 # virtual methods
 .method public binderDied()V
-    .locals 6
+    .registers 7
 
     .prologue
     const-string v3, ", "
@@ -198,7 +198,7 @@
 .end method
 
 .method public expire()V
-    .locals 6
+    .registers 7
 
     .prologue
     const-string v3, ", "
@@ -288,7 +288,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 5
+    .registers 6
 
     .prologue
     const-string v2, ","
@@ -378,7 +378,7 @@
 .end method
 
 .method unlinkDeathRecipient()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 584

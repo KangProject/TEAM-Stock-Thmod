@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService$PackageSetting;)V
-    .locals 1
+    .registers 3
     .parameter "orig"
 
     .prologue
@@ -51,7 +51,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Ljava/io/File;Ljava/lang/String;II)V
-    .locals 0
+    .registers 8
     .parameter "name"
     .parameter "realName"
     .parameter "codePath"
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .registers 3
 
     .prologue
     .line 7869

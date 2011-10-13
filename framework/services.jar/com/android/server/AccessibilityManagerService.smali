@@ -100,7 +100,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .registers 1
 
     .prologue
     .line 78
@@ -119,7 +119,7 @@
 .end method
 
 .method constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .registers 4
     .parameter "context"
 
     .prologue
@@ -219,7 +219,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/server/AccessibilityManagerService;Lcom/android/server/AccessibilityManagerService$Service;I)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -232,7 +232,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/server/AccessibilityManagerService;Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -244,7 +244,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/server/AccessibilityManagerService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -255,7 +255,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/server/AccessibilityManagerService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -266,7 +266,7 @@
 .end method
 
 .method static synthetic access$400(Lcom/android/server/AccessibilityManagerService;)Ljava/util/Set;
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -277,7 +277,7 @@
 .end method
 
 .method static synthetic access$500(Lcom/android/server/AccessibilityManagerService;)Z
-    .locals 1
+    .registers 2
     .parameter "x0"
 
     .prologue
@@ -288,7 +288,7 @@
 .end method
 
 .method static synthetic access$502(Lcom/android/server/AccessibilityManagerService;Z)Z
-    .locals 0
+    .registers 2
     .parameter "x0"
     .parameter "x1"
 
@@ -300,7 +300,7 @@
 .end method
 
 .method static synthetic access$600(Lcom/android/server/AccessibilityManagerService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -311,7 +311,7 @@
 .end method
 
 .method static synthetic access$700(Lcom/android/server/AccessibilityManagerService;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -322,7 +322,7 @@
 .end method
 
 .method static synthetic access$808()I
-    .locals 2
+    .registers 2
 
     .prologue
     .line 73
@@ -336,7 +336,7 @@
 .end method
 
 .method private canDispathEventLocked(Lcom/android/server/AccessibilityManagerService$Service;Landroid/view/accessibility/AccessibilityEvent;I)Z
-    .locals 6
+    .registers 10
     .parameter "service"
     .parameter "event"
     .parameter "handledFeedbackTypes"
@@ -349,23 +349,23 @@
 
     move-result v4
 
-    if-nez v4, :cond_0
+    if-nez v4, :cond_9
 
     move v4, v5
 
     .line 531
-    :goto_0
+    :goto_8
     return v4
 
     .line 510
-    :cond_0
+    :cond_9
     iget-object v4, p1, Lcom/android/server/AccessibilityManagerService$Service;->mService:Landroid/os/IBinder;
 
     invoke-interface {v4}, Landroid/os/IBinder;->isBinderAlive()Z
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_16
 
     .line 511
     invoke-direct {p0, p1}, Lcom/android/server/AccessibilityManagerService;->removeDeadServiceLocked(Lcom/android/server/AccessibilityManagerService$Service;)Z
@@ -373,10 +373,10 @@
     move v4, v5
 
     .line 512
-    goto :goto_0
+    goto :goto_8
 
     .line 515
-    :cond_1
+    :cond_16
     invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v0
@@ -387,15 +387,15 @@
 
     and-int/2addr v4, v0
 
-    if-eq v4, v0, :cond_2
+    if-eq v4, v0, :cond_21
 
     move v4, v5
 
     .line 517
-    goto :goto_0
+    goto :goto_8
 
     .line 520
-    :cond_2
+    :cond_21
     iget-object v3, p1, Lcom/android/server/AccessibilityManagerService$Service;->mPackageNames:Ljava/util/Set;
 
     .line 521
@@ -410,44 +410,44 @@
 
     move-result v4
 
-    if-nez v4, :cond_3
+    if-nez v4, :cond_33
 
     invoke-interface {v3, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_3f
 
     .line 524
-    :cond_3
+    :cond_33
     iget v1, p1, Lcom/android/server/AccessibilityManagerService$Service;->mFeedbackType:I
 
     .line 525
     .local v1, feedbackType:I
     and-int v4, p3, v1
 
-    if-ne v4, v1, :cond_4
+    if-ne v4, v1, :cond_3d
 
     const/16 v4, 0x10
 
-    if-ne v1, v4, :cond_5
+    if-ne v1, v4, :cond_3f
 
     .line 527
-    :cond_4
+    :cond_3d
     const/4 v4, 0x1
 
-    goto :goto_0
+    goto :goto_8
 
     .end local v1           #feedbackType:I
-    :cond_5
+    :cond_3f
     move v4, v5
 
     .line 531
-    goto :goto_0
+    goto :goto_8
 .end method
 
 .method private manageServicesLocked()V
-    .locals 2
+    .registers 3
 
     .prologue
     .line 538
@@ -467,7 +467,7 @@
 .end method
 
 .method private notifyAccessibilityServiceDelayedLocked(Lcom/android/server/AccessibilityManagerService$Service;Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 8
+    .registers 11
     .parameter "service"
     .parameter "event"
 
@@ -478,7 +478,7 @@
     monitor-enter v4
 
     .line 402
-    :try_start_0
+    :try_start_3
     invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v0
@@ -508,7 +508,7 @@
 
     .line 407
     .local v3, what:I
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_24
 
     .line 408
     iget-object v5, p0, Lcom/android/server/AccessibilityManagerService;->mHandler:Landroid/os/Handler;
@@ -519,7 +519,7 @@
     invoke-direct {p0, v2}, Lcom/android/server/AccessibilityManagerService;->tryRecycleLocked(Landroid/view/accessibility/AccessibilityEvent;)V
 
     .line 412
-    :cond_0
+    :cond_24
     iget-object v5, p0, Lcom/android/server/AccessibilityManagerService;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v5, v3, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -552,18 +552,18 @@
     .end local v1           #message:Landroid/os/Message;
     .end local v2           #oldEvent:Landroid/view/accessibility/AccessibilityEvent;
     .end local v3           #what:I
-    :catchall_0
+    :catchall_39
     move-exception v5
 
     monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3b
+    .catchall {:try_start_3 .. :try_end_3b} :catchall_39
 
     throw v5
 .end method
 
 .method private notifyAccessibilityServicesDelayedLocked(Landroid/view/accessibility/AccessibilityEvent;Z)V
-    .locals 6
+    .registers 9
     .parameter "event"
     .parameter "isDefault"
 
@@ -572,7 +572,7 @@
     const/4 v1, 0x0
 
     .local v1, i:I
-    :try_start_0
+    :try_start_1
     iget-object v4, p0, Lcom/android/server/AccessibilityManagerService;->mServices:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
@@ -580,8 +580,8 @@
     move-result v0
 
     .local v0, count:I
-    :goto_0
-    if-ge v1, v0, :cond_1
+    :goto_7
+    if-ge v1, v0, :cond_2c
 
     .line 375
     iget-object v4, p0, Lcom/android/server/AccessibilityManagerService;->mServices:Ljava/util/List;
@@ -596,7 +596,7 @@
     .local v3, service:Lcom/android/server/AccessibilityManagerService$Service;
     iget-boolean v4, v3, Lcom/android/server/AccessibilityManagerService$Service;->mIsDefault:Z
 
-    if-ne v4, p2, :cond_0
+    if-ne v4, p2, :cond_27
 
     .line 378
     iget v4, p0, Lcom/android/server/AccessibilityManagerService;->mHandledFeedbackTypes:I
@@ -605,7 +605,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_27
 
     .line 379
     iget v4, p0, Lcom/android/server/AccessibilityManagerService;->mHandledFeedbackTypes:I
@@ -618,30 +618,30 @@
 
     .line 380
     invoke-direct {p0, v3, p1}, Lcom/android/server/AccessibilityManagerService;->notifyAccessibilityServiceDelayedLocked(Lcom/android/server/AccessibilityManagerService$Service;Landroid/view/accessibility/AccessibilityEvent;)V
-    :try_end_0
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_27
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_27} :catch_2a
 
     .line 374
-    :cond_0
+    :cond_27
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_7
 
     .line 384
     .end local v0           #count:I
     .end local v3           #service:Lcom/android/server/AccessibilityManagerService$Service;
-    :catch_0
+    :catch_2a
     move-exception v4
 
     move-object v2, v4
 
     .line 390
-    :cond_1
+    :cond_2c
     return-void
 .end method
 
 .method private notifyEventListenerLocked(Lcom/android/server/AccessibilityManagerService$Service;I)V
-    .locals 6
+    .registers 9
     .parameter "service"
     .parameter "eventType"
 
@@ -663,24 +663,24 @@
 
     .line 452
     .local v0, event:Landroid/view/accessibility/AccessibilityEvent;
-    :try_start_0
+    :try_start_c
     invoke-interface {v1, v0}, Landroid/accessibilityservice/IEventListener;->onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_f
+    .catch Landroid/os/RemoteException; {:try_start_c .. :try_end_f} :catch_10
 
     .line 466
-    :goto_0
+    :goto_f
     return-void
 
     .line 456
-    :catch_0
+    :catch_10
     move-exception v2
 
     .line 457
     .local v2, re:Landroid/os/RemoteException;
     instance-of v3, v2, Landroid/os/DeadObjectException;
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_40
 
     .line 458
     const-string v3, "AccessibilityManagerService"
@@ -719,25 +719,25 @@
     monitor-enter v3
 
     .line 460
-    :try_start_1
+    :try_start_38
     invoke-direct {p0, p1}, Lcom/android/server/AccessibilityManagerService;->removeDeadServiceLocked(Lcom/android/server/AccessibilityManagerService$Service;)Z
 
     .line 461
     monitor-exit v3
 
-    goto :goto_0
+    goto :goto_f
 
-    :catchall_0
+    :catchall_3d
     move-exception v4
 
     monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_3f
+    .catchall {:try_start_38 .. :try_end_3f} :catchall_3d
 
     throw v4
 
     .line 463
-    :cond_0
+    :cond_40
     const-string v3, "AccessibilityManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -772,11 +772,11 @@
 
     invoke-static {v5, v3, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_f
 .end method
 
 .method private populateAccessibilityServiceListLocked()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 354
@@ -809,8 +809,8 @@
     move-result v0
 
     .local v0, count:I
-    :goto_0
-    if-ge v1, v0, :cond_0
+    :goto_18
+    if-ge v1, v0, :cond_2a
 
     .line 360
     iget-object v4, p0, Lcom/android/server/AccessibilityManagerService;->mInstalledServices:Ljava/util/List;
@@ -828,15 +828,15 @@
     .line 359
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_18
 
     .line 362
-    :cond_0
+    :cond_2a
     return-void
 .end method
 
 .method private populateEnabledServicesLocked(Ljava/util/Set;)V
-    .locals 6
+    .registers 8
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -868,7 +868,7 @@
 
     .line 569
     .local v1, servicesValue:Ljava/lang/String;
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_32
 
     .line 570
     iget-object v2, p0, Lcom/android/server/AccessibilityManagerService;->mStringColonSplitter:Landroid/text/TextUtils$SimpleStringSplitter;
@@ -878,13 +878,13 @@
     invoke-virtual {v2, v1}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
 
     .line 572
-    :cond_0
-    :goto_0
+    :cond_16
+    :goto_16
     invoke-virtual {v2}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_32
 
     .line 573
     invoke-virtual {v2}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
@@ -893,13 +893,13 @@
 
     .line 574
     .local v3, str:Ljava/lang/String;
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_16
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    if-lez v4, :cond_0
+    if-lez v4, :cond_16
 
     .line 577
     invoke-static {v3}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
@@ -908,23 +908,23 @@
 
     .line 578
     .local v0, enabledService:Landroid/content/ComponentName;
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_16
 
     .line 579
     invoke-interface {p1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_16
 
     .line 583
     .end local v0           #enabledService:Landroid/content/ComponentName;
     .end local v2           #splitter:Landroid/text/TextUtils$SimpleStringSplitter;
     .end local v3           #str:Ljava/lang/String;
-    :cond_1
+    :cond_32
     return-void
 .end method
 
 .method private registerPackageChangeAndBootCompletedBroadcastReceiver()V
-    .locals 4
+    .registers 5
 
     .prologue
     .line 148
@@ -960,7 +960,7 @@
 .end method
 
 .method private registerSettingsContentObservers()V
-    .locals 6
+    .registers 7
 
     .prologue
     const/4 v5, 0x0
@@ -1016,7 +1016,7 @@
 .end method
 
 .method private removeDeadServiceLocked(Lcom/android/server/AccessibilityManagerService$Service;)Z
-    .locals 2
+    .registers 4
     .parameter "service"
 
     .prologue
@@ -1039,7 +1039,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1a
 
     .line 483
     const/4 v0, 0x0
@@ -1050,27 +1050,27 @@
     invoke-direct {p0}, Lcom/android/server/AccessibilityManagerService;->updateClientsLocked()V
 
     .line 487
-    :cond_0
+    :cond_1a
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method private tryRecycleLocked(Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 6
+    .registers 8
     .parameter "event"
 
     .prologue
     .line 425
-    if-nez p1, :cond_1
+    if-nez p1, :cond_3
 
     .line 439
-    :cond_0
-    :goto_0
+    :cond_2
+    :goto_2
     return-void
 
     .line 428
-    :cond_1
+    :cond_3
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v1
@@ -1089,8 +1089,8 @@
     move-result v0
 
     .local v0, count:I
-    :goto_1
-    if-ge v2, v0, :cond_2
+    :goto_e
+    if-ge v2, v0, :cond_21
 
     .line 433
     invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1107,23 +1107,23 @@
 
     move-result-object v5
 
-    if-eq v5, p1, :cond_0
+    if-eq v5, p1, :cond_2
 
     .line 432
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1
+    goto :goto_e
 
     .line 438
     .end local v3           #service:Lcom/android/server/AccessibilityManagerService$Service;
-    :cond_2
+    :cond_21
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
 
-    goto :goto_0
+    goto :goto_2
 .end method
 
 .method private unbindAllServicesLocked()V
-    .locals 6
+    .registers 7
 
     .prologue
     .line 546
@@ -1139,8 +1139,8 @@
     move-result v0
 
     .local v0, count:I
-    :goto_0
-    if-ge v1, v0, :cond_0
+    :goto_7
+    if-ge v1, v0, :cond_1c
 
     .line 549
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1163,11 +1163,11 @@
     .line 548
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_7
 
     .line 554
     .end local v2           #service:Lcom/android/server/AccessibilityManagerService$Service;
-    :cond_0
+    :cond_1c
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
     .line 555
@@ -1175,7 +1175,7 @@
 .end method
 
 .method private updateClientsLocked()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 623
@@ -1189,11 +1189,11 @@
     move-result v0
 
     .local v0, count:I
-    :goto_0
-    if-ge v1, v0, :cond_0
+    :goto_7
+    if-ge v1, v0, :cond_25
 
     .line 625
-    :try_start_0
+    :try_start_9
     iget-object v3, p0, Lcom/android/server/AccessibilityManagerService;->mClients:Ljava/util/List;
 
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1205,17 +1205,17 @@
     iget-boolean v4, p0, Lcom/android/server/AccessibilityManagerService;->mIsEnabled:Z
 
     invoke-interface {v3, v4}, Landroid/view/accessibility/IAccessibilityManagerClient;->setEnabled(Z)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_16
+    .catch Landroid/os/RemoteException; {:try_start_9 .. :try_end_16} :catch_19
 
     .line 623
-    :goto_1
+    :goto_16
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_7
 
     .line 626
-    :catch_0
+    :catch_19
     move-exception v3
 
     move-object v2, v3
@@ -1232,16 +1232,16 @@
     .line 629
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_1
+    goto :goto_16
 
     .line 632
     .end local v2           #re:Landroid/os/RemoteException;
-    :cond_0
+    :cond_25
     return-void
 .end method
 
 .method private updateServicesStateLocked(Ljava/util/List;Ljava/util/Set;)V
-    .locals 10
+    .registers 13
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -1282,8 +1282,8 @@
     move-result v2
 
     .local v2, count:I
-    :goto_0
-    if-ge v3, v2, :cond_2
+    :goto_b
+    if-ge v3, v2, :cond_43
 
     .line 600
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1312,16 +1312,16 @@
 
     .line 605
     .local v6, service:Lcom/android/server/AccessibilityManagerService$Service;
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_37
 
     invoke-interface {p2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_37
 
     .line 606
-    if-nez v6, :cond_0
+    if-nez v6, :cond_34
 
     .line 607
     new-instance v8, Lcom/android/server/AccessibilityManagerService$Service;
@@ -1331,15 +1331,15 @@
     invoke-virtual {v8}, Lcom/android/server/AccessibilityManagerService$Service;->bind()V
 
     .line 599
-    :cond_0
-    :goto_1
+    :cond_34
+    :goto_34
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_0
+    goto :goto_b
 
     .line 610
-    :cond_1
-    if-eqz v6, :cond_0
+    :cond_37
+    if-eqz v6, :cond_34
 
     .line 611
     invoke-virtual {v6}, Lcom/android/server/AccessibilityManagerService$Service;->unbind()V
@@ -1350,20 +1350,20 @@
     .line 613
     invoke-interface {v7, v6}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_1
+    goto :goto_34
 
     .line 617
     .end local v0           #componentName:Landroid/content/ComponentName;
     .end local v4           #intalledService:Landroid/content/pm/ServiceInfo;
     .end local v6           #service:Lcom/android/server/AccessibilityManagerService$Service;
-    :cond_2
+    :cond_43
     return-void
 .end method
 
 
 # virtual methods
 .method public addClient(Landroid/view/accessibility/IAccessibilityManagerClient;)V
-    .locals 5
+    .registers 7
     .parameter "client"
 
     .prologue
@@ -1373,7 +1373,7 @@
     monitor-enter v1
 
     .line 275
-    :try_start_0
+    :try_start_3
     iget-boolean v2, p0, Lcom/android/server/AccessibilityManagerService;->mIsEnabled:Z
 
     invoke-interface {p1, v2}, Landroid/view/accessibility/IAccessibilityManagerClient;->setEnabled(Z)V
@@ -1382,20 +1382,20 @@
     iget-object v2, p0, Lcom/android/server/AccessibilityManagerService;->mClients:Ljava/util/List;
 
     invoke-interface {v2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_d
+    .catchall {:try_start_3 .. :try_end_d} :catchall_2a
+    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_d} :catch_f
 
     .line 280
-    :goto_0
-    :try_start_1
+    :goto_d
+    :try_start_d
     monitor-exit v1
 
     .line 281
     return-void
 
     .line 277
-    :catch_0
+    :catch_f
     move-exception v2
 
     move-object v0, v2
@@ -1424,29 +1424,29 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_d
 
     .line 280
     .end local v0           #re:Landroid/os/RemoteException;
-    :catchall_0
+    :catchall_2a
     move-exception v2
 
     monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2c
+    .catchall {:try_start_d .. :try_end_2c} :catchall_2a
 
     throw v2
 .end method
 
 .method public executeMessage(Landroid/os/Message;)V
-    .locals 7
+    .registers 9
     .parameter "message"
 
     .prologue
     .line 327
     iget v4, p1, Landroid/os/Message;->what:I
 
-    packed-switch v4, :pswitch_data_0
+    packed-switch v4, :pswitch_data_58
 
     .line 346
     const-string v4, "AccessibilityManagerService"
@@ -1474,11 +1474,11 @@
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 348
-    :goto_0
+    :goto_1f
     return-void
 
     .line 329
-    :pswitch_0
+    :pswitch_20
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/HandlerCaller$SomeArgs;
@@ -1502,7 +1502,7 @@
     monitor-enter v4
 
     .line 335
-    :try_start_0
+    :try_start_2f
     iget v5, v1, Landroid/accessibilityservice/AccessibilityServiceInfo;->eventTypes:I
 
     iput v5, v3, Lcom/android/server/AccessibilityManagerService$Service;->mEventTypes:I
@@ -1517,7 +1517,7 @@
 
     .line 338
     .local v2, packageNames:[Ljava/lang/String;
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_44
 
     .line 339
     iget-object v5, v3, Lcom/android/server/AccessibilityManagerService$Service;->mPackageNames:Ljava/util/Set;
@@ -1529,7 +1529,7 @@
     invoke-interface {v5, v6}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     .line 341
-    :cond_0
+    :cond_44
     iget-wide v5, v1, Landroid/accessibilityservice/AccessibilityServiceInfo;->notificationTimeout:J
 
     iput-wide v5, v3, Lcom/android/server/AccessibilityManagerService$Service;->mNotificationTimeout:J
@@ -1539,44 +1539,44 @@
 
     and-int/lit8 v5, v5, 0x1
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_56
 
     const/4 v5, 0x1
 
-    :goto_1
+    :goto_4f
     iput-boolean v5, v3, Lcom/android/server/AccessibilityManagerService$Service;->mIsDefault:Z
 
     .line 343
     monitor-exit v4
 
-    goto :goto_0
+    goto :goto_1f
 
     .end local v2           #packageNames:[Ljava/lang/String;
-    :catchall_0
+    :catchall_53
     move-exception v5
 
     monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_55
+    .catchall {:try_start_2f .. :try_end_55} :catchall_53
 
     throw v5
 
     .line 342
     .restart local v2       #packageNames:[Ljava/lang/String;
-    :cond_1
+    :cond_56
     const/4 v5, 0x0
 
-    goto :goto_1
+    goto :goto_4f
 
     .line 327
-    :pswitch_data_0
+    :pswitch_data_58
     .packed-switch 0xa
-        :pswitch_0
+        :pswitch_20
     .end packed-switch
 .end method
 
 .method public getAccessibilityServiceList()Ljava/util/List;
-    .locals 2
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1594,7 +1594,7 @@
     monitor-enter v0
 
     .line 300
-    :try_start_0
+    :try_start_3
     iget-object v1, p0, Lcom/android/server/AccessibilityManagerService;->mInstalledServices:Ljava/util/List;
 
     monitor-exit v0
@@ -1602,18 +1602,18 @@
     return-object v1
 
     .line 301
-    :catchall_0
+    :catchall_7
     move-exception v1
 
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_9
+    .catchall {:try_start_3 .. :try_end_9} :catchall_7
 
     throw v1
 .end method
 
 .method public interrupt()V
-    .locals 8
+    .registers 9
 
     .prologue
     const-string v4, "AccessibilityManagerService"
@@ -1627,7 +1627,7 @@
     const/4 v1, 0x0
 
     .local v1, i:I
-    :try_start_0
+    :try_start_6
     iget-object v5, p0, Lcom/android/server/AccessibilityManagerService;->mServices:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->size()I
@@ -1635,8 +1635,8 @@
     move-result v0
 
     .local v0, count:I
-    :goto_0
-    if-ge v1, v0, :cond_2
+    :goto_c
+    if-ge v1, v0, :cond_6d
 
     .line 307
     iget-object v5, p0, Lcom/android/server/AccessibilityManagerService;->mServices:Ljava/util/List;
@@ -1646,38 +1646,38 @@
     move-result-object v3
 
     check-cast v3, Lcom/android/server/AccessibilityManagerService$Service;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_16
+    .catchall {:try_start_6 .. :try_end_16} :catchall_6a
 
     .line 309
     .local v3, service:Lcom/android/server/AccessibilityManagerService$Service;
-    :try_start_1
+    :try_start_16
     iget-object v5, v3, Lcom/android/server/AccessibilityManagerService$Service;->mServiceInterface:Landroid/accessibilityservice/IEventListener;
 
     invoke-interface {v5}, Landroid/accessibilityservice/IEventListener;->onInterrupt()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_1b
+    .catchall {:try_start_16 .. :try_end_1b} :catchall_6a
+    .catch Landroid/os/RemoteException; {:try_start_16 .. :try_end_1b} :catch_1e
 
     .line 306
-    :cond_0
-    :goto_1
+    :cond_1b
+    :goto_1b
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_c
 
     .line 310
-    :catch_0
+    :catch_1e
     move-exception v5
 
     move-object v2, v5
 
     .line 311
     .local v2, re:Landroid/os/RemoteException;
-    :try_start_2
+    :try_start_20
     instance-of v5, v2, Landroid/os/DeadObjectException;
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_4f
 
     .line 312
     const-string v5, "AccessibilityManagerService"
@@ -1715,7 +1715,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_1b
 
     .line 314
     add-int/lit8 v0, v0, -0x1
@@ -1723,10 +1723,10 @@
     .line 315
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_1
+    goto :goto_1b
 
     .line 318
-    :cond_1
+    :cond_4f
     const-string v5, "AccessibilityManagerService"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1751,34 +1751,34 @@
 
     invoke-static {v5, v6, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_1b
 
     .line 323
     .end local v0           #count:I
     .end local v2           #re:Landroid/os/RemoteException;
     .end local v3           #service:Lcom/android/server/AccessibilityManagerService$Service;
-    :catchall_0
+    :catchall_6a
     move-exception v5
 
     monitor-exit v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_6c
+    .catchall {:try_start_20 .. :try_end_6c} :catchall_6a
 
     throw v5
 
     .restart local v0       #count:I
-    :cond_2
-    :try_start_3
+    :cond_6d
+    :try_start_6d
     monitor-exit v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_6e
+    .catchall {:try_start_6d .. :try_end_6e} :catchall_6a
 
     .line 324
     return-void
 .end method
 
 .method public sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
-    .locals 4
+    .registers 6
     .parameter "event"
 
     .prologue
@@ -1794,7 +1794,7 @@
     .line 285
     const/4 v1, 0x0
 
-    :try_start_0
+    :try_start_6
     invoke-direct {p0, p1, v1}, Lcom/android/server/AccessibilityManagerService;->notifyAccessibilityServicesDelayedLocked(Landroid/view/accessibility/AccessibilityEvent;Z)V
 
     .line 286
@@ -1804,52 +1804,52 @@
 
     .line 287
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_e
+    .catchall {:try_start_6 .. :try_end_e} :catchall_1f
 
     .line 289
     iget v0, p0, Lcom/android/server/AccessibilityManagerService;->mHandledFeedbackTypes:I
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_22
 
     .line 290
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
 
     .line 295
-    :goto_0
+    :goto_15
     sget v0, Lcom/android/server/AccessibilityManagerService;->OWN_PROCESS_ID:I
 
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_25
 
     move v0, v3
 
-    :goto_1
+    :goto_1e
     return v0
 
     .line 287
-    :catchall_0
+    :catchall_1f
     move-exception v1
 
-    :try_start_1
+    :try_start_20
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_21
+    .catchall {:try_start_20 .. :try_end_21} :catchall_1f
 
     throw v1
 
     .line 292
-    :cond_0
+    :cond_22
     iput v2, p0, Lcom/android/server/AccessibilityManagerService;->mHandledFeedbackTypes:I
 
-    goto :goto_0
+    goto :goto_15
 
-    :cond_1
+    :cond_25
     move v0, v2
 
     .line 295
-    goto :goto_1
+    goto :goto_1e
 .end method

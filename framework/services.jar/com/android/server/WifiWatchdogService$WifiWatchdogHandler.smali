@@ -38,7 +38,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/WifiWatchdogService;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -51,7 +51,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/WifiWatchdogService;Lcom/android/server/WifiWatchdogService$1;)V
-    .locals 0
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
@@ -63,7 +63,7 @@
 .end method
 
 .method static synthetic access$400(Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;)V
-    .locals 0
+    .registers 1
     .parameter "x0"
 
     .prologue
@@ -74,7 +74,7 @@
 .end method
 
 .method private removeAllActions()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 1069
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method backgroundCheckAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 3
+    .registers 5
     .parameter "ap"
 
     .prologue
@@ -110,14 +110,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_9
 
     .line 1036
-    :goto_0
+    :goto_8
     return-void
 
     .line 1033
-    :cond_0
+    :cond_9
     invoke-direct {p0}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->removeAllActions()V
 
     .line 1034
@@ -137,11 +137,11 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    goto :goto_0
+    goto :goto_8
 .end method
 
 .method checkAp(Lcom/android/server/WifiWatchdogService$AccessPoint;)V
-    .locals 1
+    .registers 3
     .parameter "ap"
 
     .prologue
@@ -162,7 +162,7 @@
 .end method
 
 .method disableWatchdog()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 1049
@@ -182,7 +182,7 @@
 .end method
 
 .method dispatchDisconnected()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 1059
@@ -202,7 +202,7 @@
 .end method
 
 .method dispatchNetworkChanged(Ljava/lang/String;)V
-    .locals 1
+    .registers 3
     .parameter "ssid"
 
     .prologue
@@ -223,23 +223,23 @@
 .end method
 
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 1
+    .registers 3
     .parameter "msg"
 
     .prologue
     .line 1076
     iget v0, p1, Landroid/os/Message;->what:I
 
-    sparse-switch v0, :sswitch_data_0
+    sparse-switch v0, :sswitch_data_46
 
     .line 1102
     .end local p0
-    :goto_0
+    :goto_5
     return-void
 
     .line 1078
     .restart local p0
-    :sswitch_0
+    :sswitch_6
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -249,11 +249,11 @@
 
     invoke-static {v0, p0}, Lcom/android/server/WifiWatchdogService;->access$800(Lcom/android/server/WifiWatchdogService;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1081
     .restart local p0
-    :sswitch_1
+    :sswitch_10
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -263,11 +263,11 @@
 
     invoke-static {v0, p0}, Lcom/android/server/WifiWatchdogService;->access$900(Lcom/android/server/WifiWatchdogService;Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1084
     .restart local p0
-    :sswitch_2
+    :sswitch_1a
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -277,11 +277,11 @@
 
     invoke-static {v0, p0}, Lcom/android/server/WifiWatchdogService;->access$1000(Lcom/android/server/WifiWatchdogService;Lcom/android/server/WifiWatchdogService$AccessPoint;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1087
     .restart local p0
-    :sswitch_3
+    :sswitch_24
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -291,57 +291,57 @@
 
     invoke-static {v0, p0}, Lcom/android/server/WifiWatchdogService;->access$1100(Lcom/android/server/WifiWatchdogService;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1090
     .restart local p0
-    :sswitch_4
+    :sswitch_2e
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$1200(Lcom/android/server/WifiWatchdogService;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1093
-    :sswitch_5
+    :sswitch_34
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$1200(Lcom/android/server/WifiWatchdogService;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1096
-    :sswitch_6
+    :sswitch_3a
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$1300(Lcom/android/server/WifiWatchdogService;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1099
-    :sswitch_7
+    :sswitch_40
     iget-object v0, p0, Lcom/android/server/WifiWatchdogService$WifiWatchdogHandler;->this$0:Lcom/android/server/WifiWatchdogService;
 
     invoke-static {v0}, Lcom/android/server/WifiWatchdogService;->access$1400(Lcom/android/server/WifiWatchdogService;)V
 
-    goto :goto_0
+    goto :goto_5
 
     .line 1076
-    :sswitch_data_0
+    :sswitch_data_46
     .sparse-switch
-        0x1 -> :sswitch_1
-        0x2 -> :sswitch_4
-        0x3 -> :sswitch_2
-        0x65 -> :sswitch_3
-        0x66 -> :sswitch_5
-        0x67 -> :sswitch_0
-        0x68 -> :sswitch_6
-        0x69 -> :sswitch_7
+        0x1 -> :sswitch_10
+        0x2 -> :sswitch_2e
+        0x3 -> :sswitch_1a
+        0x65 -> :sswitch_24
+        0x66 -> :sswitch_34
+        0x67 -> :sswitch_6
+        0x68 -> :sswitch_3a
+        0x69 -> :sswitch_40
     .end sparse-switch
 .end method
 
 .method idle()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 1039
@@ -361,7 +361,7 @@
 .end method
 
 .method reset()V
-    .locals 1
+    .registers 2
 
     .prologue
     .line 1064
@@ -381,7 +381,7 @@
 .end method
 
 .method sleep(Ljava/lang/String;)V
-    .locals 1
+    .registers 3
     .parameter "ssid"
 
     .prologue

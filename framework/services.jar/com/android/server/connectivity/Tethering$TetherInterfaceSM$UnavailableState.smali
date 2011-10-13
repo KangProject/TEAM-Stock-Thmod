@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;)V
-    .locals 0
+    .registers 2
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public enter()V
-    .locals 2
+    .registers 3
 
     .prologue
     const/4 v1, 0x0
@@ -67,7 +67,7 @@
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
-    .locals 3
+    .registers 5
     .parameter "message"
 
     .prologue
@@ -78,17 +78,17 @@
     .local v0, retValue:Z
     iget v1, p1, Landroid/os/Message;->what:I
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v1, :pswitch_data_14
 
     .line 1016
     const/4 v0, 0x0
 
     .line 1019
-    :goto_0
+    :goto_7
     return v0
 
     .line 1013
-    :pswitch_0
+    :pswitch_8
     iget-object v1, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$UnavailableState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
 
     iget-object v2, p0, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM$UnavailableState;->this$1:Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;
@@ -99,11 +99,11 @@
 
     invoke-static {v1, v2}, Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;->access$2800(Lcom/android/server/connectivity/Tethering$TetherInterfaceSM;Lcom/android/internal/util/HierarchicalState;)V
 
-    goto :goto_0
+    goto :goto_7
 
     .line 1011
-    :pswitch_data_0
+    :pswitch_data_14
     .packed-switch 0x5
-        :pswitch_0
+        :pswitch_8
     .end packed-switch
 .end method

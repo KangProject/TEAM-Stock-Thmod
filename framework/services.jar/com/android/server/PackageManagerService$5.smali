@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/PackageManagerService;ILcom/android/server/PackageManagerService$InstallArgs;)V
-    .locals 0
+    .registers 4
     .parameter
     .parameter
     .parameter
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 15
+    .registers 16
 
     .prologue
     const/4 v13, 0x0
@@ -97,7 +97,7 @@
     .line 4559
     iget v8, v5, Lcom/android/server/PackageManagerService$PackageInstalledInfo;->returnCode:I
 
-    if-ne v8, v12, :cond_0
+    if-ne v8, v12, :cond_43
 
     .line 4560
     iget-object v8, p0, Lcom/android/server/PackageManagerService$5;->val$args:Lcom/android/server/PackageManagerService$InstallArgs;
@@ -114,7 +114,7 @@
     monitor-enter v8
 
     .line 4562
-    :try_start_0
+    :try_start_33
     iget-object v9, p0, Lcom/android/server/PackageManagerService$5;->this$0:Lcom/android/server/PackageManagerService;
 
     iget-object v10, p0, Lcom/android/server/PackageManagerService$5;->val$args:Lcom/android/server/PackageManagerService$InstallArgs;
@@ -125,8 +125,8 @@
 
     .line 4563
     monitor-exit v8
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3c
+    .catchall {:try_start_33 .. :try_end_3c} :catchall_aa
 
     .line 4564
     iget-object v8, p0, Lcom/android/server/PackageManagerService$5;->val$args:Lcom/android/server/PackageManagerService$InstallArgs;
@@ -136,23 +136,23 @@
     invoke-virtual {v8, v9}, Lcom/android/server/PackageManagerService$InstallArgs;->doPostInstall(I)I
 
     .line 4570
-    :cond_0
+    :cond_43
     iget-object v8, v5, Lcom/android/server/PackageManagerService$PackageInstalledInfo;->removedInfo:Lcom/android/server/PackageManagerService$PackageRemovedInfo;
 
     iget-object v8, v8, Lcom/android/server/PackageManagerService$PackageRemovedInfo;->removedPackage:Ljava/lang/String;
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_ad
 
     move v7, v12
 
     .line 4571
     .local v7, update:Z
-    :goto_0
-    if-nez v7, :cond_5
+    :goto_4a
+    if-nez v7, :cond_af
 
     iget-object v8, v5, Lcom/android/server/PackageManagerService$PackageInstalledInfo;->pkg:Landroid/content/pm/PackageParser$Package;
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_af
 
     iget-object v8, v5, Lcom/android/server/PackageManagerService$PackageInstalledInfo;->pkg:Landroid/content/pm/PackageParser$Package;
 
@@ -160,25 +160,25 @@
 
     iget-object v8, v8, Landroid/content/pm/ApplicationInfo;->backupAgentName:Ljava/lang/String;
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_af
 
     move v2, v12
 
     .line 4579
     .local v2, doRestore:Z
-    :goto_1
+    :goto_59
     iget-object v8, p0, Lcom/android/server/PackageManagerService$5;->this$0:Lcom/android/server/PackageManagerService;
 
     iget v8, v8, Lcom/android/server/PackageManagerService;->mNextInstallToken:I
 
-    if-gez v8, :cond_1
+    if-gez v8, :cond_63
 
     iget-object v8, p0, Lcom/android/server/PackageManagerService$5;->this$0:Lcom/android/server/PackageManagerService;
 
     iput v12, v8, Lcom/android/server/PackageManagerService;->mNextInstallToken:I
 
     .line 4580
-    :cond_1
+    :cond_63
     iget-object v8, p0, Lcom/android/server/PackageManagerService$5;->this$0:Lcom/android/server/PackageManagerService;
 
     iget v6, v8, Lcom/android/server/PackageManagerService;->mNextInstallToken:I
@@ -208,9 +208,9 @@
     .line 4586
     iget v8, v5, Lcom/android/server/PackageManagerService$PackageInstalledInfo;->returnCode:I
 
-    if-ne v8, v12, :cond_2
+    if-ne v8, v12, :cond_96
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_96
 
     .line 4591
     const-string v8, "backup"
@@ -225,10 +225,10 @@
 
     .line 4593
     .local v0, bm:Landroid/app/backup/IBackupManager;
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_bc
 
     .line 4597
-    :try_start_1
+    :try_start_8d
     iget-object v8, v5, Lcom/android/server/PackageManagerService$PackageInstalledInfo;->pkg:Landroid/content/pm/PackageParser$Package;
 
     iget-object v8, v8, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -236,15 +236,15 @@
     iget-object v8, v8, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-interface {v0, v8, v6}, Landroid/app/backup/IBackupManager;->restoreAtInstall(Ljava/lang/String;I)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_96
+    .catch Landroid/os/RemoteException; {:try_start_8d .. :try_end_96} :catch_c5
+    .catch Ljava/lang/Exception; {:try_start_8d .. :try_end_96} :catch_b1
 
     .line 4610
     .end local v0           #bm:Landroid/app/backup/IBackupManager;
-    :cond_2
-    :goto_2
-    if-nez v2, :cond_3
+    :cond_96
+    :goto_96
+    if-nez v2, :cond_a9
 
     .line 4614
     iget-object v8, p0, Lcom/android/server/PackageManagerService$5;->this$0:Lcom/android/server/PackageManagerService;
@@ -267,7 +267,7 @@
 
     .line 4617
     .end local v4           #msg:Landroid/os/Message;
-    :cond_3
+    :cond_a9
     return-void
 
     .line 4563
@@ -275,35 +275,35 @@
     .end local v2           #doRestore:Z
     .end local v6           #token:I
     .end local v7           #update:Z
-    :catchall_0
+    :catchall_aa
     move-exception v9
 
-    :try_start_2
+    :try_start_ab
     monitor-exit v8
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_ac
+    .catchall {:try_start_ab .. :try_end_ac} :catchall_aa
 
     throw v9
 
-    :cond_4
+    :cond_ad
     move v7, v13
 
     .line 4570
-    goto :goto_0
+    goto :goto_4a
 
     .restart local v7       #update:Z
-    :cond_5
+    :cond_af
     move v2, v13
 
     .line 4571
-    goto :goto_1
+    goto :goto_59
 
     .line 4600
     .restart local v0       #bm:Landroid/app/backup/IBackupManager;
     .restart local v1       #data:Lcom/android/server/PackageManagerService$PostInstallData;
     .restart local v2       #doRestore:Z
     .restart local v6       #token:I
-    :catch_0
+    :catch_b1
     move-exception v8
 
     move-object v3, v8
@@ -320,11 +320,11 @@
     const/4 v2, 0x0
 
     .line 4603
-    goto :goto_2
+    goto :goto_96
 
     .line 4605
     .end local v3           #e:Ljava/lang/Exception;
-    :cond_6
+    :cond_bc
     const-string v8, "PackageManager"
 
     const-string v8, "Backup Manager not found!"
@@ -334,11 +334,11 @@
     .line 4606
     const/4 v2, 0x0
 
-    goto :goto_2
+    goto :goto_96
 
     .line 4598
-    :catch_1
+    :catch_c5
     move-exception v8
 
-    goto :goto_2
+    goto :goto_96
 .end method

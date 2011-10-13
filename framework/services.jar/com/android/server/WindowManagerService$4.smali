@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/WindowManagerService;Landroid/os/IBinder;)V
-    .locals 0
+    .registers 3
     .parameter
     .parameter
 
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .locals 5
+    .registers 6
 
     .prologue
     .line 4579
@@ -57,8 +57,8 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_0
-    :try_start_0
+    :goto_6
+    :try_start_6
     iget-object v2, p0, Lcom/android/server/WindowManagerService$4;->this$0:Lcom/android/server/WindowManagerService;
 
     iget-object v2, v2, Lcom/android/server/WindowManagerService;->mRotationWatchers:Ljava/util/ArrayList;
@@ -67,7 +67,7 @@
 
     move-result v2
 
-    if-ge v0, v2, :cond_2
+    if-ge v0, v2, :cond_3b
 
     .line 4581
     iget-object v4, p0, Lcom/android/server/WindowManagerService$4;->val$watcherBinder:Landroid/os/IBinder;
@@ -86,7 +86,7 @@
 
     move-result-object v2
 
-    if-ne v4, v2, :cond_1
+    if-ne v4, v2, :cond_38
 
     .line 4582
     iget-object v2, p0, Lcom/android/server/WindowManagerService$4;->this$0:Lcom/android/server/WindowManagerService;
@@ -101,7 +101,7 @@
 
     .line 4583
     .local v1, removed:Landroid/view/IRotationWatcher;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_36
 
     .line 4584
     invoke-interface {v1}, Landroid/view/IRotationWatcher;->asBinder()Landroid/os/IBinder;
@@ -113,30 +113,30 @@
     invoke-interface {v2, p0, v4}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
     .line 4586
-    :cond_0
+    :cond_36
     add-int/lit8 v0, v0, -0x1
 
     .line 4580
     .end local v1           #removed:Landroid/view/IRotationWatcher;
-    :cond_1
+    :cond_38
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_6
 
     .line 4589
-    :cond_2
+    :cond_3b
     monitor-exit v3
 
     .line 4590
     return-void
 
     .line 4589
-    :catchall_0
+    :catchall_3d
     move-exception v2
 
     monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_3f
+    .catchall {:try_start_6 .. :try_end_3f} :catchall_3d
 
     throw v2
 .end method
