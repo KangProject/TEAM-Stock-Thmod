@@ -5,7 +5,7 @@
         <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
             <TextView android:textAppearance="@style/TextMedium" android:id="@id/headerText" android:paddingLeft="25.0dip" android:paddingBottom="13.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="22.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="22.0dip" android:lines="2" />
             <ImageView android:id="@id/lock_drawable" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_lock_idle_lock" android:layout_alignLeft="@id/headerText" android:layout_alignTop="@id/headerText" />
-            <View android:background="@android:drawable/btn_minus_default" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_below="@id/headerText" />
+            <View android:background="@android:drawable/code_lock_top" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_below="@id/headerText" />
             <com.android.internal.widget.LockPatternView android:gravity="center" android:layout_gravity="center" android:id="@id/lockPattern" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/headerText" />
         </RelativeLayout>
         <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
