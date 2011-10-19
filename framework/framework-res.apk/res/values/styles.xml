@@ -525,14 +525,14 @@
         <item name="textSize">16.0sp</item>
         <item name="textStyle">normal</item>
         <item name="textColor">?textColorPrimary</item>
-        <item name="textColorHighlight">#ffab7ddb</item>
+        <item name="textColorHighlight">#ffbbbbbb</item>
         <item name="textColorHint">?textColorHint</item>
-        <item name="textColorLink">#ff995cff</item>
+        <item name="textColorLink">#ff00c8fa</item>
     </style>
     <style name="TextAppearance.Inverse" parent="@style/TextAppearance">
         <item name="textColor">?textColorPrimaryInverse</item>
         <item name="textColorHint">?textColorHintInverse</item>
-        <item name="textColorLink">#ff7f46de</item>
+        <item name="textColorLink">#ff00c8fa</item>
     </style>
     <style name="TextAppearance.Theme" parent="@style/TextAppearance" />
     <style name="TextAppearance.DialogWindowTitle" parent="@style/TextAppearance">
@@ -817,8 +817,8 @@
     <style name="TextAppearance.StatusBar.Ticker" parent="@style/TextAppearance.StatusBar" />
     <style name="Widget.GestureOverlayView" parent="@style/Widget">
         <item name="gestureStrokeWidth">12.0</item>
-        <item name="gestureColor">#ffa567f2</item>
-        <item name="uncertainGestureColor">#489000ff</item>
+        <item name="gestureColor">#ff0067f2</item>
+        <item name="uncertainGestureColor">#480000ff</item>
         <item name="fadeOffset">420</item>
         <item name="fadeDuration">150</item>
         <item name="gestureStrokeLengthThreshold">50.0</item>
@@ -827,8 +827,8 @@
         <item name="eventsInterceptionEnabled">true</item>
     </style>
     <style name="Widget.GestureOverlayView.White" parent="@style/Widget.GestureOverlayView">
-        <item name="gestureColor">#ff7200ff</item>
-        <item name="uncertainGestureColor">#487200ff</item>
+        <item name="gestureColor">#ff0000ff</item>
+        <item name="uncertainGestureColor">#480000ff</item>
     </style>
     <style name="Widget.Button.Transparent" parent="@style/Widget.Button">
         <item name="textAppearance">?textAppearanceSmall</item>
@@ -921,7 +921,7 @@
         <item name="quickContactWindowSize">modeLarge</item>
     </style>
     <style name="TextAppearance.Theme.Dialog.AppError" parent="@style/TextAppearance.Theme.Dialog">
-        <item name="textColor">#ffc4a4f0</item>
+        <item name="textColor">#ff0a85ff</item>
     </style>
     <style name="TextAppearance.SlidingTabNormal" parent="@attr/textAppearanceMedium">
         <item name="textSize">28.0sp</item>
@@ -1299,7 +1299,7 @@
         <item name="textColor">?textColorPrimaryInverseDisableOnly</item>
     </style>
     <style name="SEMCTextAppearance.SearchResult" parent="@style/SEMCTextAppearance">
-        <item name="textColor">?textColorPrimaryInverse</item>
+        <item name="textColor">#ff282828</item>
     </style>
     <style name="SEMCTextAppearance.SearchResult.Title" parent="@style/SEMCTextAppearance.SearchResult">
         <item name="textSize">@dimen/semc_text_size_search_result_title</item>

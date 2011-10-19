@@ -11,7 +11,7 @@
 
 .field private static final COLS:I = 0x5
 
-.field private static final FREQUENCY_FACTOR:D = 0.0030
+.field private static final FREQUENCY_FACTOR:D = 0.003
 
 .field private static final ROWS:I = 0x5
 

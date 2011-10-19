@@ -32,11 +32,11 @@
 
 .field private static final FRAME_DELAY:J = 0xaL
 
-.field private static final POSITION_TOLERANCE:F = 0.0010f
+.field private static final POSITION_TOLERANCE:F = 0.001f
 
 .field private static final RUBBER_BAND_FACTOR:F = 0.4f
 
-.field private static final VELOCITY_TOLERANCE:F = 0.0010f
+.field private static final VELOCITY_TOLERANCE:F = 0.001f
 
 
 # instance fields
