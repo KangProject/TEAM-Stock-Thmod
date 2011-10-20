@@ -952,4 +952,5 @@
     <string name="seport_strings_accessory_not_supported_txt">アクセサリがサポートされていません</string>
     <string name="reboot_recovery">XRecovery</string>
     <string name="reboot">再起動</string>
+    <string name="app_killed_message">アプリケーションを終了しました</string>
 </resources>

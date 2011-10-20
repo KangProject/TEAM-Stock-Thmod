@@ -1504,6 +1504,8 @@
     <public type="string" name="sound_category_calls_title" id="0x7f0904a3" />
     <public type="string" name="sound_category_notification_title" id="0x7f0904a4" />
     <public type="string" name="sound_category_feedback_title" id="0x7f0904a5" />
+    <public type="string" name="kill_app_longpress_back" id="0x7f0904aa" />
+    <public type="string" name="kill_app_longpress_back_summary" id="0x7f0904ab" />
     <public type="string" name="wifi_context_menu_change_wapi_certificate" id="0x7f090020" />
     <public type="string" name="wifi_security_wapi_cert" id="0x7f090021" />
     <public type="string" name="wifi_security_wapi_psk" id="0x7f090022" />

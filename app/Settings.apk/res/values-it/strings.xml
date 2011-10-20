@@ -1163,4 +1163,6 @@ Fai clic su OK per installare lo screen reader."</string>
     <string name="sound_category_calls_title">Chiamate in arrivo</string>
     <string name="sound_category_notification_title">Notifiche</string>
     <string name="sound_category_feedback_title">Commenti</string>
+    <string name="kill_app_longpress_back">Termina via long-press</string>
+    <string name="kill_app_longpress_back_summary">"Tenendo premuto il tasto BACK verrà terminata l'app in esecuzione in primo piano."</string>
 </resources>

@@ -1157,4 +1157,6 @@ Klicken Sie auf \"OK\", um den Screenreader zu installieren."</string>
     <string name="sound_category_calls_title">Eingehende Anrufe</string>
     <string name="sound_category_notification_title">Benachrichtigungen</string>
     <string name="sound_category_feedback_title">Feedback</string>
+    <string name="kill_app_longpress_back">App beenden</string>
+    <string name="kill_app_longpress_back_summary">Gedrückthalten der Zurück-Taste beendet die Anwendung im Vordergrund.</string>
 </resources>

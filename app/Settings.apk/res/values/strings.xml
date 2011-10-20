@@ -1226,4 +1226,6 @@ Click OK to install the screen reader."</string>
     <string name="sound_category_calls_title">Incoming calls</string>
     <string name="sound_category_notification_title">Notifications</string>
     <string name="sound_category_feedback_title">Feedback</string>
+    <string name="kill_app_longpress_back">Stop app via long-press</string>
+    <string name="kill_app_longpress_back_summary">Long-pressing the BACK button will kill the foreground application.</string>
 </resources>

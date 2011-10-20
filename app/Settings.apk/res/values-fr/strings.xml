@@ -1162,4 +1162,6 @@ Cliquez sur OK pour installer le lecteur d'écran."</string>
     <string name="sound_category_calls_title">Appels entrants</string>
     <string name="sound_category_notification_title">Notifications</string>
     <string name="sound_category_feedback_title">Commentaires</string>
+    <string name="kill_app_longpress_back">Tuer par longue pression</string>
+    <string name="kill_app_longpress_back_summary">"Une pression longue sur le bouton retour tuera l'application en avant-plan"</string>
 </resources>

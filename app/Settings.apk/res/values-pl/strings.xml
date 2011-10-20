@@ -1163,4 +1163,6 @@ Aby zainstalować czytnik ekranowy, kliknij przycisk OK."</string>
     <string name="sound_category_calls_title">Połączenia przychodzące</string>
     <string name="sound_category_notification_title">Powiadomienia</string>
     <string name="sound_category_feedback_title">Reakcje</string>
+    <string name="kill_app_longpress_back">Przytrzymanie BACK zabija aplikację</string>
+    <string name="kill_app_longpress_back_summary">Przytrzymanie klawisza BACK zabije uruchomioną aplikację.</string>
 </resources>

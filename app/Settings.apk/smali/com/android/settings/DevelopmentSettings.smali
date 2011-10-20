@@ -14,6 +14,8 @@
 
 .field private mKeepScreenOn:Landroid/preference/CheckBoxPreference;
 
+.field private mKillAppLongpressBack:Landroid/preference/CheckBoxPreference;
+
 .field private mOkClicked:Z
 
 .field private mOkDialog:Landroid/app/Dialog;
@@ -145,6 +147,16 @@
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/CheckBoxPreference;
 
+    const-string v0, "kill_app_longpress_back"
+
+    invoke-virtual {p0, v0}, Lcom/android/settings/DevelopmentSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/preference/CheckBoxPreference;
+
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mKillAppLongpressBack:Landroid/preference/CheckBoxPreference;
+
     .line 68
     return-void
 .end method
@@ -186,11 +198,13 @@
 .end method
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
-    .locals 4
+    .locals 5
     .parameter "preferenceScreen"
     .parameter "preference"
 
     .prologue
+    const/4 v4, 0x1
+
     const/4 v3, 0x0
 
     .line 85
@@ -344,7 +358,7 @@
     :cond_6
     iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/CheckBoxPreference;
 
-    if-ne p2, v0, :cond_2
+    if-ne p2, v0, :cond_8
 
     .line 109
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -372,6 +386,39 @@
     move v2, v3
 
     goto :goto_3
+
+    .line 118
+    :cond_8
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mKillAppLongpressBack:Landroid/preference/CheckBoxPreference;
+
+    if-ne p2, v0, :cond_2
+
+    .line 119
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "kill_app_on_longpress_back"
+
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mKillAppLongpressBack:Landroid/preference/CheckBoxPreference;
+
+    invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    move v2, v4
+
+    :goto_4
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    goto :goto_1
+
+    :cond_9
+    move v2, v3
+
+    goto :goto_4
 .end method
 
 .method protected onResume()V
@@ -445,6 +492,25 @@
     :goto_2
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mKillAppLongpressBack:Landroid/preference/CheckBoxPreference;
+
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "kill_app_on_longpress_back"
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    move v1, v4
+
+    :goto_3
+    invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+
     .line 80
     return-void
 
@@ -465,4 +531,10 @@
 
     .line 78
     goto :goto_2
+
+    :cond_3
+    move v1, v3
+
+    .line 82
+    goto :goto_3
 .end method

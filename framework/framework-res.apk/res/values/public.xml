@@ -2703,6 +2703,7 @@
     <public type="string" name="seport_strings_accessory_not_supported_txt" id="0x010403d8" />
     <public type="string" name="reboot_recovery" id="0x010403d9" />
     <public type="string" name="reboot" id="0x010403da" />
+    <public type="string" name="app_killed_message" id="0x010403db" />
     <public type="dimen" name="app_icon_size" id="0x01050000" />
     <public type="dimen" name="thumbnail_height" id="0x01050001" />
     <public type="dimen" name="thumbnail_width" id="0x01050002" />
