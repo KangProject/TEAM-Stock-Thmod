@@ -134,7 +134,7 @@
 
     iget-object v5, v5, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
-    const v6, 0x10403da
+    const v6, 0x10403db
 
     const/4 v7, 0x0
 
