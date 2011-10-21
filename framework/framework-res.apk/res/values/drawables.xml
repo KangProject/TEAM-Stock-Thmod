@@ -59,9 +59,9 @@
     <item type="drawable" name="APKTOOL_DUMMY_0485">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_0487">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_048e">false</item>
-    <item type="drawable" name="status_bar_closed_default_background">#00000000</item>
-    <item type="drawable" name="status_bar_opened_default_background">#00000000</item>
-    <item type="drawable" name="search_bar_default_color">#ff282828</item>
+    <item type="drawable" name="status_bar_closed_default_background">#ff000000</item>
+    <item type="drawable" name="status_bar_opened_default_background">#ff000000</item>
+    <item type="drawable" name="search_bar_default_color">#ff000000</item>
     <item type="drawable" name="safe_mode_background">#60000000</item>
     <item type="drawable" name="input_method_fullscreen_background">#fff9f9f9</item>
     <item type="drawable" name="selected_day_background">#ff0092f4</item>

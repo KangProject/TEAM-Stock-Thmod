@@ -950,4 +950,5 @@ per l'account %s"</string>
     <string name="gui_ok_txt">OK</string>
     <string name="lockscreen_strings_locked_out_wrong_answer_txt">Risposta errata</string>
     <string name="seport_strings_accessory_not_supported_txt">Accessorio non supportato</string>
+    <string name="app_killed_message">Applicazione terminata</string>
 </resources>
