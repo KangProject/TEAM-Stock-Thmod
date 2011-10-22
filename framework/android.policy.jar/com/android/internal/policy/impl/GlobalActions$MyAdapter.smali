@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -33,7 +33,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$1;)V
-    .registers 3
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public areAllItemsEnabled()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 299
@@ -57,7 +57,7 @@
 .end method
 
 .method public getCount()I
-    .registers 5
+    .locals 4
 
     .prologue
     .line 276
@@ -68,7 +68,7 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_2
+    :goto_0
     iget-object v3, p0, Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {v3}, Lcom/android/internal/policy/impl/GlobalActions;->access$600(Lcom/android/internal/policy/impl/GlobalActions;)Ljava/util/ArrayList;
@@ -79,7 +79,7 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_3c
+    if-ge v2, v3, :cond_3
 
     .line 279
     iget-object v3, p0, Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -102,51 +102,51 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_1
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/GlobalActions$Action;->showDuringKeyguard()Z
 
     move-result v3
 
-    if-nez v3, :cond_2b
+    if-nez v3, :cond_1
 
     .line 278
-    :cond_28
-    :goto_28
+    :cond_0
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 284
-    :cond_2b
+    :cond_1
     iget-object v3, p0, Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {v3}, Lcom/android/internal/policy/impl/GlobalActions;->access$800(Lcom/android/internal/policy/impl/GlobalActions;)Z
 
     move-result v3
 
-    if-nez v3, :cond_39
+    if-nez v3, :cond_2
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/GlobalActions$Action;->showBeforeProvisioning()Z
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_0
 
     .line 287
-    :cond_39
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_28
+    goto :goto_1
 
     .line 289
     .end local v0           #action:Lcom/android/internal/policy/impl/GlobalActions$Action;
-    :cond_3c
+    :cond_3
     return v1
 .end method
 
 .method public getItem(I)Lcom/android/internal/policy/impl/GlobalActions$Action;
-    .registers 8
+    .locals 6
     .parameter "position"
 
     .prologue
@@ -158,7 +158,7 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_2
+    :goto_0
     iget-object v3, p0, Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {v3}, Lcom/android/internal/policy/impl/GlobalActions;->access$600(Lcom/android/internal/policy/impl/GlobalActions;)Ljava/util/ArrayList;
@@ -169,7 +169,7 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_3f
+    if-ge v2, v3, :cond_4
 
     .line 306
     iget-object v3, p0, Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -192,53 +192,53 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_1
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/GlobalActions$Action;->showDuringKeyguard()Z
 
     move-result v3
 
-    if-nez v3, :cond_2b
+    if-nez v3, :cond_1
 
     .line 305
-    :cond_28
-    :goto_28
+    :cond_0
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 310
-    :cond_2b
+    :cond_1
     iget-object v3, p0, Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {v3}, Lcom/android/internal/policy/impl/GlobalActions;->access$800(Lcom/android/internal/policy/impl/GlobalActions;)Z
 
     move-result v3
 
-    if-nez v3, :cond_39
+    if-nez v3, :cond_2
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/GlobalActions$Action;->showBeforeProvisioning()Z
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_0
 
     .line 313
-    :cond_39
-    if-ne v1, p1, :cond_3c
+    :cond_2
+    if-ne v1, p1, :cond_3
 
     .line 314
     return-object v0
 
     .line 316
-    :cond_3c
+    :cond_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_28
+    goto :goto_1
 
     .line 319
     .end local v0           #action:Lcom/android/internal/policy/impl/GlobalActions$Action;
-    :cond_3f
+    :cond_4
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -323,7 +323,7 @@
 .end method
 
 .method public bridge synthetic getItem(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -336,7 +336,7 @@
 .end method
 
 .method public getItemId(I)J
-    .registers 4
+    .locals 2
     .parameter "position"
 
     .prologue
@@ -347,7 +347,7 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 7
+    .locals 3
     .parameter "position"
     .parameter "convertView"
     .parameter "parent"
@@ -384,7 +384,7 @@
 .end method
 
 .method public isEnabled(I)Z
-    .registers 3
+    .locals 1
     .parameter "position"
 
     .prologue

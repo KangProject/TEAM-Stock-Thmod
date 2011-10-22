@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;III)V
-    .registers 7
+    .locals 2
     .parameter
     .parameter "iconId"
     .parameter "titleId"
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 8
+    .locals 6
     .parameter "event"
 
     .prologue
@@ -100,25 +100,25 @@
 
     .line 347
     .local v0, keyCode:I
-    if-eq v0, v4, :cond_1c
+    if-eq v0, v4, :cond_0
 
     const/16 v1, 0x19
 
-    if-ne v0, v1, :cond_58
+    if-ne v0, v1, :cond_4
 
     .line 349
-    :cond_1c
+    :cond_0
     monitor-enter p0
 
     .line 350
-    :try_start_1d
+    :try_start_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$InfoDialog;->this$0:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;
 
     invoke-static {v1}, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->access$600(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)Landroid/media/AudioManager;
 
     move-result-object v1
 
-    if-nez v1, :cond_36
+    if-nez v1, :cond_1
 
     .line 351
     iget-object v2, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$InfoDialog;->this$0:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;
@@ -138,10 +138,10 @@
     invoke-static {v2, v1}, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->access$602(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;Landroid/media/AudioManager;)Landroid/media/AudioManager;
 
     .line 355
-    :cond_36
+    :cond_1
     monitor-exit p0
-    :try_end_37
-    .catchall {:try_start_1d .. :try_end_37} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 357
     iget-object v1, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$InfoDialog;->this$0:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;
@@ -154,7 +154,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     .line 358
     iget-object v1, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$InfoDialog;->this$0:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;
@@ -165,50 +165,50 @@
 
     const/4 v2, 0x3
 
-    if-ne v0, v4, :cond_56
+    if-ne v0, v4, :cond_3
 
     move v3, v5
 
-    :goto_4d
+    :goto_0
     const/4 v4, 0x0
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    :cond_51
+    :cond_2
     move v1, v5
 
     .line 368
-    :goto_52
+    :goto_1
     return v1
 
     .line 355
-    :catchall_53
+    :catchall_0
     move-exception v1
 
-    :try_start_54
+    :try_start_1
     monitor-exit p0
-    :try_end_55
-    .catchall {:try_start_54 .. :try_end_55} :catchall_53
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 
     .line 358
-    :cond_56
+    :cond_3
     const/4 v3, -0x1
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 368
-    :cond_58
+    :cond_4
     invoke-super {p0, p1}, Landroid/app/AlertDialog;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v1
 
-    goto :goto_52
+    goto :goto_1
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
     .parameter "event"
 
     .prologue

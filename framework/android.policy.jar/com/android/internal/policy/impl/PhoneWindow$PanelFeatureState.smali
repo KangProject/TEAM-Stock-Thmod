@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(I)V
-    .registers 3
+    .locals 1
     .parameter "featureId"
 
     .prologue
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method onRestoreInstanceState(Landroid/os/Parcelable;)V
-    .registers 6
+    .locals 4
     .parameter "state"
 
     .prologue
@@ -137,7 +137,7 @@
 .end method
 
 .method onSaveInstanceState()Landroid/os/Parcelable;
-    .registers 3
+    .locals 2
 
     .prologue
     .line 2667
@@ -166,7 +166,7 @@
     .line 2672
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;->menu:Landroid/view/Menu;
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_0
 
     .line 2673
     new-instance v1, Landroid/os/Bundle;
@@ -186,12 +186,12 @@
     invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/MenuBuilder;->saveHierarchyState(Landroid/os/Bundle;)V
 
     .line 2677
-    :cond_26
+    :cond_0
     return-object v0
 .end method
 
 .method setMenu(Landroid/view/Menu;)V
-    .registers 3
+    .locals 1
     .parameter "menu"
 
     .prologue
@@ -201,7 +201,7 @@
     .line 2660
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;->frozenMenuState:Landroid/os/Bundle;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 2661
     check-cast p1, Lcom/android/internal/view/menu/MenuBuilder;
@@ -217,12 +217,12 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;->frozenMenuState:Landroid/os/Bundle;
 
     .line 2664
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method setStyle(Landroid/content/Context;)V
-    .registers 5
+    .locals 3
     .parameter "context"
 
     .prologue

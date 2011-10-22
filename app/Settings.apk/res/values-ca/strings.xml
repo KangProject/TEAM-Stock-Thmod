@@ -1162,4 +1162,6 @@ Feu clic a D'acord per instal·lar el lector de pantalles."</string>
     <string name="sound_category_calls_title">"Trucades d'entrada"</string>
     <string name="sound_category_notification_title">Notificacions</string>
     <string name="sound_category_feedback_title">Comentaris</string>
+    <string name="kill_app_longpress_back">Aturar aplicacions prement llarg</string>
+    <string name="kill_app_longpress_back_summary">"Prement llarg el botó Enrere matarà l'aplicació en primer pla."</string>
 </resources>

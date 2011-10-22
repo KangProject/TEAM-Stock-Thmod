@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 7
+    .locals 4
     .parameter "context"
     .parameter "intent"
 
@@ -53,7 +53,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     .line 2003
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$7;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -67,7 +67,7 @@
     iput v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mDockMode:I
 
     .line 2016
-    :goto_17
+    :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$7;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v2, 0x1
@@ -83,7 +83,7 @@
     return-void
 
     .line 2005
-    :cond_23
+    :cond_0
     const-string v1, "com.sonyericsson.intent.action.VIDEO_OUT_EVENT"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -94,7 +94,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_1
 
     .line 2006
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$7;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -107,11 +107,11 @@
 
     iput v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mVideoOutState:I
 
-    goto :goto_17
+    goto :goto_0
 
     .line 2010
-    :cond_3a
-    :try_start_3a
+    :cond_1
+    :try_start_0
     const-string v1, "uimode"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -131,15 +131,15 @@
     move-result v2
 
     iput v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mUiMode:I
-    :try_end_4c
-    .catch Landroid/os/RemoteException; {:try_start_3a .. :try_end_4c} :catch_4d
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 2013
     .end local v0           #uiModeService:Landroid/app/IUiModeManager;
-    :catch_4d
+    :catch_0
     move-exception v1
 
-    goto :goto_17
+    goto :goto_0
 .end method

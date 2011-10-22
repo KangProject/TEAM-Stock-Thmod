@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .prologue
     .line 497
@@ -36,7 +36,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$policy$impl$LockScreenSemc$Status:[I
 
-    :try_start_9
+    :try_start_0
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$policy$impl$LockScreenSemc$Status:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->Normal:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
@@ -48,11 +48,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_bc
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_c
 
-    :goto_14
-    :try_start_14
+    :goto_0
+    :try_start_1
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$policy$impl$LockScreenSemc$Status:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->NetworkLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
@@ -64,11 +64,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_b9
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_b
 
-    :goto_1f
-    :try_start_1f
+    :goto_1
+    :try_start_2
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$policy$impl$LockScreenSemc$Status:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissing:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
@@ -80,11 +80,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_b6
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_a
 
-    :goto_2a
-    :try_start_2a
+    :goto_2
+    :try_start_3
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$policy$impl$LockScreenSemc$Status:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimMissingLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
@@ -96,11 +96,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_35
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_b4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_9
 
-    :goto_35
-    :try_start_35
+    :goto_3
+    :try_start_4
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$policy$impl$LockScreenSemc$Status:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
@@ -112,11 +112,11 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
-    :try_end_40
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_b2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_8
 
-    :goto_40
-    :try_start_40
+    :goto_4
+    :try_start_5
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$policy$impl$LockScreenSemc$Status:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockScreenSemc$Status;->SimPukLocked:Lcom/android/internal/policy/impl/LockScreenSemc$Status;
@@ -128,11 +128,11 @@
     const/4 v2, 0x6
 
     aput v2, v0, v1
-    :try_end_4b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_40 .. :try_end_4b} :catch_b0
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_7
 
     .line 468
-    :goto_4b
+    :goto_5
     invoke-static {}, Lcom/android/internal/telephony/IccCard$State;->values()[Lcom/android/internal/telephony/IccCard$State;
 
     move-result-object v0
@@ -143,7 +143,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
-    :try_start_54
+    :try_start_6
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->ABSENT:Lcom/android/internal/telephony/IccCard$State;
@@ -155,11 +155,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_5f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_54 .. :try_end_5f} :catch_ae
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    :goto_5f
-    :try_start_5f
+    :goto_6
+    :try_start_7
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->NETWORK_LOCKED:Lcom/android/internal/telephony/IccCard$State;
@@ -171,11 +171,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_6a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5f .. :try_end_6a} :catch_ac
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_5
 
-    :goto_6a
-    :try_start_6a
+    :goto_7
+    :try_start_8
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->NOT_READY:Lcom/android/internal/telephony/IccCard$State;
@@ -187,11 +187,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_75
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6a .. :try_end_75} :catch_aa
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_4
 
-    :goto_75
-    :try_start_75
+    :goto_8
+    :try_start_9
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->PIN_REQUIRED:Lcom/android/internal/telephony/IccCard$State;
@@ -203,11 +203,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_80
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_75 .. :try_end_80} :catch_a8
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_3
 
-    :goto_80
-    :try_start_80
+    :goto_9
+    :try_start_a
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->PUK_REQUIRED:Lcom/android/internal/telephony/IccCard$State;
@@ -219,11 +219,11 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
-    :try_end_8b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_80 .. :try_end_8b} :catch_a6
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_2
 
-    :goto_8b
-    :try_start_8b
+    :goto_a
+    :try_start_b
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->READY:Lcom/android/internal/telephony/IccCard$State;
@@ -235,11 +235,11 @@
     const/4 v2, 0x6
 
     aput v2, v0, v1
-    :try_end_96
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8b .. :try_end_96} :catch_a4
+    :try_end_b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_1
 
-    :goto_96
-    :try_start_96
+    :goto_b
+    :try_start_c
     sget-object v0, Lcom/android/internal/policy/impl/LockScreenSemc$4;->$SwitchMap$com$android$internal$telephony$IccCard$State:[I
 
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->UNKNOWN:Lcom/android/internal/telephony/IccCard$State;
@@ -251,75 +251,75 @@
     const/4 v2, 0x7
 
     aput v2, v0, v1
-    :try_end_a1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_96 .. :try_end_a1} :catch_a2
+    :try_end_c
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_0
 
-    :goto_a1
+    :goto_c
     return-void
 
-    :catch_a2
+    :catch_0
     move-exception v0
 
-    goto :goto_a1
+    goto :goto_c
 
-    :catch_a4
+    :catch_1
     move-exception v0
 
-    goto :goto_96
+    goto :goto_b
 
-    :catch_a6
+    :catch_2
     move-exception v0
 
-    goto :goto_8b
+    goto :goto_a
 
-    :catch_a8
+    :catch_3
     move-exception v0
 
-    goto :goto_80
+    goto :goto_9
 
-    :catch_aa
+    :catch_4
     move-exception v0
 
-    goto :goto_75
+    goto :goto_8
 
-    :catch_ac
+    :catch_5
     move-exception v0
 
-    goto :goto_6a
+    goto :goto_7
 
-    :catch_ae
+    :catch_6
     move-exception v0
 
-    goto :goto_5f
+    goto :goto_6
 
     .line 497
-    :catch_b0
+    :catch_7
     move-exception v0
 
-    goto :goto_4b
+    goto :goto_5
 
-    :catch_b2
+    :catch_8
     move-exception v0
 
-    goto :goto_40
+    goto :goto_4
 
-    :catch_b4
+    :catch_9
     move-exception v0
 
-    goto :goto_35
+    goto :goto_3
 
-    :catch_b6
+    :catch_a
     move-exception v0
 
-    goto/16 :goto_2a
+    goto/16 :goto_2
 
-    :catch_b9
+    :catch_b
     move-exception v0
 
-    goto/16 :goto_1f
+    goto/16 :goto_1
 
-    :catch_bc
+    :catch_c
     move-exception v0
 
-    goto/16 :goto_14
+    goto/16 :goto_0
 .end method

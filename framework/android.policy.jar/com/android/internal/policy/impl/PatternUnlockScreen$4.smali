@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PatternUnlockScreen;JJ)V
-    .registers 6
+    .locals 0
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onFinish()V
-    .registers 4
+    .locals 3
 
     .prologue
     .line 603
@@ -87,7 +87,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_0
 
     .line 609
     iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$4;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
@@ -97,22 +97,22 @@
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->access$1100(Lcom/android/internal/policy/impl/PatternUnlockScreen;Lcom/android/internal/policy/impl/PatternUnlockScreen$FooterMode;)V
 
     .line 613
-    :goto_36
+    :goto_0
     return-void
 
     .line 611
-    :cond_37
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$4;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
     sget-object v1, Lcom/android/internal/policy/impl/PatternUnlockScreen$FooterMode;->Normal:Lcom/android/internal/policy/impl/PatternUnlockScreen$FooterMode;
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->access$1100(Lcom/android/internal/policy/impl/PatternUnlockScreen;Lcom/android/internal/policy/impl/PatternUnlockScreen$FooterMode;)V
 
-    goto :goto_36
+    goto :goto_0
 .end method
 
 .method public onTick(J)V
-    .registers 10
+    .locals 7
     .parameter "millisUntilFinished"
 
     .prologue

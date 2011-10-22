@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/BackupQuestionUnlockScreen;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .registers 7
+    .locals 3
     .parameter "v"
     .parameter "actionId"
     .parameter "event"
@@ -47,14 +47,14 @@
     const/4 v2, 0x0
 
     .line 154
-    packed-switch p2, :pswitch_data_28
+    packed-switch p2, :pswitch_data_0
 
     .line 162
-    :goto_4
+    :goto_0
     return v2
 
     .line 157
-    :pswitch_5
+    :pswitch_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/BackupQuestionUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/BackupQuestionUnlockScreen;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/BackupQuestionUnlockScreen;->access$200(Lcom/android/internal/policy/impl/BackupQuestionUnlockScreen;)Landroid/widget/Button;
@@ -69,11 +69,11 @@
 
     move-result v1
 
-    if-lez v1, :cond_25
+    if-lez v1, :cond_0
 
     const/4 v1, 0x1
 
-    :goto_16
+    :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 158
@@ -87,19 +87,19 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock(I)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     move v1, v2
 
     .line 157
-    goto :goto_16
+    goto :goto_1
 
     .line 154
     nop
 
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x6
-        :pswitch_5
+        :pswitch_0
     .end packed-switch
 .end method

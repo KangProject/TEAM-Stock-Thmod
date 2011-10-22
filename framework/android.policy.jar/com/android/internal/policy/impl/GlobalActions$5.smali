@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
-    .registers 5
+    .locals 3
     .parameter "serviceState"
 
     .prologue
@@ -46,7 +46,7 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_2b
+    if-ne v1, v2, :cond_0
 
     const/4 v1, 0x1
 
@@ -54,14 +54,14 @@
 
     .line 548
     .local v0, inAirplaneMode:Z
-    :goto_9
+    :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     sget-object v2, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->On:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    :goto_f
+    :goto_1
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$402(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     .line 549
@@ -93,17 +93,17 @@
 
     .line 547
     .end local v0           #inAirplaneMode:Z
-    :cond_2b
+    :cond_0
     const/4 v1, 0x0
 
     move v0, v1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 548
     .restart local v0       #inAirplaneMode:Z
-    :cond_2e
+    :cond_1
     sget-object v2, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    goto :goto_f
+    goto :goto_1
 .end method

@@ -1162,4 +1162,6 @@ PINが正しくない可能性があります。"</string>
     <string name="sound_category_calls_title">着信</string>
     <string name="sound_category_notification_title">通知</string>
     <string name="sound_category_feedback_title">フィードバック</string>
+    <string name="kill_app_longpress_back">長押しでアプリを終了</string>
+    <string name="kill_app_longpress_back_summary">戻るボタンを長押しすることでフォアグラウンドアプリケーションを終了させる</string>
 </resources>

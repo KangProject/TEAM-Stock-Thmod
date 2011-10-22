@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/CommonBackupUtil;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -36,7 +36,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/CommonBackupUtil;Lcom/android/internal/policy/impl/CommonBackupUtil$1;)V
-    .registers 3
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 6
+    .locals 3
     .parameter "dialog"
     .parameter "which"
 
@@ -58,7 +58,7 @@
     .line 84
     const/4 v1, -0x1
 
-    if-ne p2, v1, :cond_1d
+    if-ne p2, v1, :cond_0
 
     .line 87
     new-instance v0, Landroid/content/Intent;
@@ -89,7 +89,7 @@
 
     .line 94
     .end local v0           #intent:Landroid/content/Intent;
-    :cond_1d
+    :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/CommonBackupUtil$PopupListener;->this$0:Lcom/android/internal/policy/impl/CommonBackupUtil;
 
     invoke-static {v1}, Lcom/android/internal/policy/impl/CommonBackupUtil;->access$200(Lcom/android/internal/policy/impl/CommonBackupUtil;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;

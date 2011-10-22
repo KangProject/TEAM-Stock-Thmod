@@ -14,7 +14,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .prologue
     .line 36
@@ -76,26 +76,26 @@
     const/4 v2, 0x0
 
     .local v2, i$:I
-    :goto_2c
-    if-ge v2, v3, :cond_50
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     aget-object v4, v0, v2
 
     .line 51
     .local v4, s:Ljava/lang/String;
-    :try_start_30
+    :try_start_0
     invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_33
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_30 .. :try_end_33} :catch_36
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 49
-    :goto_33
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 52
-    :catch_36
+    :catch_0
     move-exception v1
 
     .line 53
@@ -122,17 +122,17 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_33
+    goto :goto_1
 
     .line 56
     .end local v1           #ex:Ljava/lang/ClassNotFoundException;
     .end local v4           #s:Ljava/lang/String;
-    :cond_50
+    :cond_0
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .prologue
     .line 33
@@ -144,7 +144,7 @@
 
 # virtual methods
 .method public bridge synthetic makeNewLayoutInflater(Landroid/content/Context;)Landroid/view/LayoutInflater;
-    .registers 3
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -157,7 +157,7 @@
 .end method
 
 .method public makeNewLayoutInflater(Landroid/content/Context;)Lcom/android/internal/policy/impl/PhoneLayoutInflater;
-    .registers 3
+    .locals 1
     .parameter "context"
 
     .prologue
@@ -170,7 +170,7 @@
 .end method
 
 .method public bridge synthetic makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
-    .registers 3
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -183,7 +183,7 @@
 .end method
 
 .method public makeNewWindow(Landroid/content/Context;)Lcom/android/internal/policy/impl/PhoneWindow;
-    .registers 3
+    .locals 1
     .parameter "context"
 
     .prologue
@@ -196,7 +196,7 @@
 .end method
 
 .method public bridge synthetic makeNewWindowManager()Landroid/view/WindowManagerPolicy;
-    .registers 2
+    .locals 1
 
     .prologue
     .line 33
@@ -208,7 +208,7 @@
 .end method
 
 .method public makeNewWindowManager()Lcom/android/internal/policy/impl/PhoneWindowManager;
-    .registers 2
+    .locals 1
 
     .prologue
     .line 67

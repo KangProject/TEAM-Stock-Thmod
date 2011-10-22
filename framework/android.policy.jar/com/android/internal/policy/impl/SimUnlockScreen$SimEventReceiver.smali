@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen;)V
-    .registers 3
+    .locals 1
     .parameter
 
     .prologue
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen;Lcom/android/internal/policy/impl/SimUnlockScreen$1;)V
-    .registers 3
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 8
+    .locals 5
     .parameter "context"
     .parameter "intent"
 
@@ -74,7 +74,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_1
 
     .line 189
     const-string v2, "attempts"
@@ -98,7 +98,7 @@
 
     .line 192
     .local v1, lockedReason:Ljava/lang/String;
-    if-eq v0, v4, :cond_2a
+    if-eq v0, v4, :cond_0
 
     .line 193
     iget-object v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$SimEventReceiver;->mHandler:Landroid/os/Handler;
@@ -110,8 +110,8 @@
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 201
-    :cond_2a
-    if-nez v0, :cond_49
+    :cond_0
+    if-nez v0, :cond_1
 
     const-string v2, "PUK"
 
@@ -119,7 +119,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_1
 
     .line 203
     iget-object v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$SimEventReceiver;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
@@ -142,6 +142,6 @@
     .line 212
     .end local v0           #attemptsRemaining:I
     .end local v1           #lockedReason:Ljava/lang/String;
-    :cond_49
+    :cond_1
     return-void
 .end method

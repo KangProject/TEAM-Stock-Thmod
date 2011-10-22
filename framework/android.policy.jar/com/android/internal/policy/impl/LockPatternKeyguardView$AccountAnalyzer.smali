@@ -39,7 +39,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Landroid/accounts/AccountManager;)V
-    .registers 4
+    .locals 1
     .parameter
     .parameter "accountManager"
 
@@ -66,7 +66,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Landroid/accounts/AccountManager;Lcom/android/internal/policy/impl/LockPatternKeyguardView$1;)V
-    .registers 4
+    .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -79,7 +79,7 @@
 .end method
 
 .method private next()V
-    .registers 7
+    .locals 6
 
     .prologue
     const/4 v2, 0x0
@@ -91,7 +91,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     iget v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->mAccountIndex:I
 
@@ -99,17 +99,17 @@
 
     array-length v1, v1
 
-    if-lt v0, v1, :cond_37
+    if-lt v0, v1, :cond_3
 
     .line 444
-    :cond_10
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$1700(Lcom/android/internal/policy/impl/LockPatternKeyguardView;)Landroid/view/View;
 
     move-result-object v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     .line 445
     const-string v0, "LockPatternKeyguardView"
@@ -120,13 +120,13 @@
 
     .line 454
     .end local p0
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     return-void
 
     .line 446
     .restart local p0
-    :cond_20
+    :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$1700(Lcom/android/internal/policy/impl/LockPatternKeyguardView;)Landroid/view/View;
@@ -135,7 +135,7 @@
 
     instance-of v0, v0, Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 447
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
@@ -151,11 +151,11 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->setEnableFallback(Z)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 453
     .restart local p0
-    :cond_37
+    :cond_3
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->mAccountManager:Landroid/accounts/AccountManager;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->mAccounts:[Landroid/accounts/Account;
@@ -172,13 +172,13 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/accounts/AccountManager;->confirmCredentials(Landroid/accounts/Account;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 
-    goto :goto_1f
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public run(Landroid/accounts/AccountManagerFuture;)V
-    .registers 5
+    .locals 3
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -208,7 +208,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 466
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
@@ -216,14 +216,14 @@
     const/4 v2, 0x1
 
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$1602(Lcom/android/internal/policy/impl/LockPatternKeyguardView;Z)Z
-    :try_end_14
-    .catchall {:try_start_0 .. :try_end_14} :catchall_3f
-    .catch Landroid/accounts/OperationCanceledException; {:try_start_0 .. :try_end_14} :catch_1e
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_14} :catch_29
-    .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_14} :catch_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Landroid/accounts/OperationCanceledException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 475
-    :cond_14
+    :cond_0
     iget v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->mAccountIndex:I
 
     add-int/lit8 v1, v1, 0x1
@@ -235,11 +235,11 @@
 
     .line 478
     .end local v0           #result:Landroid/os/Bundle;
-    :goto_1d
+    :goto_0
     return-void
 
     .line 468
-    :catch_1e
+    :catch_0
     move-exception v1
 
     .line 475
@@ -252,10 +252,10 @@
     .line 476
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->next()V
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 470
-    :catch_29
+    :catch_1
     move-exception v1
 
     .line 475
@@ -268,10 +268,10 @@
     .line 476
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->next()V
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 472
-    :catch_34
+    :catch_2
     move-exception v1
 
     .line 475
@@ -284,10 +284,10 @@
     .line 476
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->next()V
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 475
-    :catchall_3f
+    :catchall_0
     move-exception v1
 
     iget v2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$AccountAnalyzer;->mAccountIndex:I
@@ -303,7 +303,7 @@
 .end method
 
 .method public start()V
-    .registers 3
+    .locals 2
 
     .prologue
     const/4 v1, 0x0

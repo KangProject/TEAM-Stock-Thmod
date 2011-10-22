@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 14
+    .locals 11
     .parameter "context"
     .parameter "intent"
 
@@ -55,7 +55,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_1d
+    if-nez v5, :cond_0
 
     const-string v5, "android.intent.action.TIME_SET"
 
@@ -63,7 +63,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_1d
+    if-nez v5, :cond_0
 
     const-string v5, "android.intent.action.TIMEZONE_CHANGED"
 
@@ -71,10 +71,10 @@
 
     move-result v5
 
-    if-eqz v5, :cond_33
+    if-eqz v5, :cond_2
 
     .line 239
-    :cond_1d
+    :cond_0
     iget-object v5, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-static {v5}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$700(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)Landroid/os/Handler;
@@ -96,19 +96,19 @@
     invoke-virtual {v5, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     .line 264
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-void
 
     .line 240
-    :cond_33
+    :cond_2
     const-string v5, "android.provider.Telephony.SPN_STRINGS_UPDATED"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_67
+    if-eqz v5, :cond_3
 
     .line 241
     iget-object v5, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -153,17 +153,17 @@
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto :goto_32
+    goto :goto_0
 
     .line 244
-    :cond_67
+    :cond_3
     const-string v5, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_92
+    if-eqz v5, :cond_4
 
     .line 245
     const-string v5, "status"
@@ -206,20 +206,20 @@
 
     invoke-virtual {v5, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto :goto_32
+    goto :goto_0
 
     .line 253
     .end local v1           #batteryLevel:I
     .end local v2           #msg:Landroid/os/Message;
     .end local v3           #pluggedInStatus:I
-    :cond_92
+    :cond_4
     const-string v5, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_b7
+    if-eqz v5, :cond_5
 
     .line 254
     iget-object v5, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -248,17 +248,17 @@
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto/16 :goto_32
+    goto/16 :goto_0
 
     .line 257
-    :cond_b7
+    :cond_5
     const-string v5, "android.media.RINGER_MODE_CHANGED"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_dd
+    if-eqz v5, :cond_6
 
     .line 258
     iget-object v5, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -289,17 +289,17 @@
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto/16 :goto_32
+    goto/16 :goto_0
 
     .line 260
-    :cond_dd
+    :cond_6
     const-string v5, "android.intent.action.PHONE_STATE"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_32
+    if-eqz v5, :cond_1
 
     .line 261
     const-string v5, "state"
@@ -330,5 +330,5 @@
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto/16 :goto_32
+    goto/16 :goto_0
 .end method

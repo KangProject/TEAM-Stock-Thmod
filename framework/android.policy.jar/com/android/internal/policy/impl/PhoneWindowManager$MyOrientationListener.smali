@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;)V
-    .registers 3
+    .locals 0
     .parameter
     .parameter "context"
 
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onOrientationChanged(I)V
-    .registers 5
+    .locals 3
     .parameter "rotation"
 
     .prologue
@@ -55,16 +55,16 @@
     iget v2, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mFancyRotationAnimation:I
 
     invoke-interface {v0, p1, v1, v2}, Landroid/view/IWindowManager;->setRotation(IZI)V
-    :try_end_c
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 367
-    :goto_c
+    :goto_0
     return-void
 
     .line 363
-    :catch_d
+    :catch_0
     move-exception v0
 
-    goto :goto_c
+    goto :goto_0
 .end method

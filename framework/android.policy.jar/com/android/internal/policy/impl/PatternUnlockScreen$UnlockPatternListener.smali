@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/PatternUnlockScreen;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -36,7 +36,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/PatternUnlockScreen;Lcom/android/internal/policy/impl/PatternUnlockScreen$1;)V
-    .registers 3
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public onPatternCellAdded(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -71,7 +71,7 @@
 
     const/4 v1, 0x2
 
-    if-le v0, v1, :cond_13
+    if-le v0, v1, :cond_0
 
     .line 546
     iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
@@ -85,11 +85,11 @@
     invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock(I)V
 
     .line 551
-    :goto_12
+    :goto_0
     return-void
 
     .line 549
-    :cond_13
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->access$100(Lcom/android/internal/policy/impl/PatternUnlockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -100,11 +100,11 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock(I)V
 
-    goto :goto_12
+    goto :goto_0
 .end method
 
 .method public onPatternCleared()V
-    .registers 1
+    .locals 0
 
     .prologue
     .line 540
@@ -112,7 +112,7 @@
 .end method
 
 .method public onPatternDetected(Ljava/util/List;)V
-    .registers 8
+    .locals 6
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -137,7 +137,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_0
 
     .line 555
     iget-object v2, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
@@ -183,18 +183,18 @@
     invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->reportSuccessfulUnlockAttempt()V
 
     .line 583
-    :goto_36
+    :goto_0
     return-void
 
     .line 562
-    :cond_37
+    :cond_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
     const/4 v3, 0x2
 
-    if-le v2, v3, :cond_49
+    if-le v2, v3, :cond_1
 
     .line 563
     iget-object v2, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
@@ -208,7 +208,7 @@
     invoke-interface {v2, v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock(I)V
 
     .line 565
-    :cond_49
+    :cond_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
     invoke-static {v2}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->access$000(Lcom/android/internal/policy/impl/PatternUnlockScreen;)Lcom/android/internal/widget/LockPatternView;
@@ -226,7 +226,7 @@
 
     const/4 v3, 0x3
 
-    if-lt v2, v3, :cond_6e
+    if-lt v2, v3, :cond_2
 
     .line 567
     iget-object v2, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
@@ -248,7 +248,7 @@
     invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->reportFailedUnlockAttempt()V
 
     .line 571
-    :cond_6e
+    :cond_2
     iget-object v2, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
     invoke-static {v2}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->access$800(Lcom/android/internal/policy/impl/PatternUnlockScreen;)I
@@ -257,7 +257,7 @@
 
     const/4 v3, 0x5
 
-    if-lt v2, v3, :cond_87
+    if-lt v2, v3, :cond_3
 
     .line 572
     iget-object v2, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
@@ -276,11 +276,11 @@
 
     invoke-static {v2, v0, v1}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->access$900(Lcom/android/internal/policy/impl/PatternUnlockScreen;J)V
 
-    goto :goto_36
+    goto :goto_0
 
     .line 576
     .end local v0           #deadline:J
-    :cond_87
+    :cond_3
     iget-object v2, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
@@ -319,11 +319,11 @@
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/internal/widget/LockPatternView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_36
+    goto :goto_0
 .end method
 
 .method public onPatternStart()V
-    .registers 3
+    .locals 2
 
     .prologue
     .line 536
