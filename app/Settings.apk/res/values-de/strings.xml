@@ -1159,4 +1159,5 @@ Klicken Sie auf \"OK\", um den Screenreader zu installieren."</string>
     <string name="sound_category_feedback_title">Feedback</string>
     <string name="kill_app_longpress_back">App beenden</string>
     <string name="kill_app_longpress_back_summary">Gedrückthalten der Zurück-Taste beendet die Anwendung im Vordergrund.</string>
+    <string name="xloud_strings_xloud_desc_txt">Lautsprecherlautstärke verbessern</string>
 </resources>

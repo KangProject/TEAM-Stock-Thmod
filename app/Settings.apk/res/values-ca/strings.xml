@@ -1164,4 +1164,5 @@ Feu clic a D'acord per instal·lar el lector de pantalles."</string>
     <string name="sound_category_feedback_title">Comentaris</string>
     <string name="kill_app_longpress_back">Aturar aplicacions prement llarg</string>
     <string name="kill_app_longpress_back_summary">"Prement llarg el botó Enrere matarà l'aplicació en primer pla."</string>
+    <string name="xloud_strings_xloud_desc_txt">"Millora el volum de l'altaveu"</string>
 </resources>

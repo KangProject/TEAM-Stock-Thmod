@@ -12,11 +12,17 @@
     <public type="drawable" name="general_list_divider_small" id="0x7f02001a" />
     <public type="drawable" name="general_transparent_22x22" id="0x7f02001b" />
     <public type="drawable" name="ic_power_system" id="0x7f020039" />
+    <public type="drawable" name="APKTOOL_DUMMY_0049" id="0x7f020049" />
     <public type="drawable" name="ic_tab_all" id="0x7f020050" />
     <public type="drawable" name="ic_tab_download" id="0x7f020051" />
     <public type="drawable" name="ic_tab_running" id="0x7f020052" />
     <public type="drawable" name="ic_tab_sdcard" id="0x7f020053" />
     <public type="drawable" name="lock_anim" id="0x7f02006d" />
+    <public type="drawable" name="APKTOOL_DUMMY_006f" id="0x7f02006f" />
+    <public type="drawable" name="APKTOOL_DUMMY_0070" id="0x7f020070" />
+    <public type="drawable" name="APKTOOL_DUMMY_0071" id="0x7f020071" />
+    <public type="drawable" name="APKTOOL_DUMMY_0072" id="0x7f020072" />
+    <public type="drawable" name="APKTOOL_DUMMY_0073" id="0x7f020073" />
     <public type="drawable" name="semc_list_divider_small" id="0x7f020084" />
     <public type="drawable" name="semc_transparent_22x22" id="0x7f020086" />
     <public type="drawable" name="signal" id="0x7f020087" />
@@ -140,12 +146,7 @@
     <public type="drawable" name="password_field_default" id="0x7f020082" />
     <public type="drawable" name="semc_head_divider" id="0x7f020083" />
     <public type="drawable" name="semc_one_of_many" id="0x7f020085" />
-    <public type="drawable" name="APKTOOL_DUMMY_0049" id="0x7f020049" />
-    <public type="drawable" name="APKTOOL_DUMMY_006f" id="0x7f02006f" />
-    <public type="drawable" name="APKTOOL_DUMMY_0070" id="0x7f020070" />
-    <public type="drawable" name="APKTOOL_DUMMY_0071" id="0x7f020071" />
-    <public type="drawable" name="APKTOOL_DUMMY_0072" id="0x7f020072" />
-    <public type="drawable" name="APKTOOL_DUMMY_0073" id="0x7f020073" />
+    <public type="drawable" name="ic_settings_tweaks" id="0x7f02008f" />
     <public type="layout" name="apn_preference_layout" id="0x7f030000" />
     <public type="layout" name="backup_question_selector_layout" id="0x7f030001" />
     <public type="layout" name="backup_question_selector_list_item" id="0x7f030002" />
@@ -1504,6 +1505,10 @@
     <public type="string" name="sound_category_calls_title" id="0x7f0904a3" />
     <public type="string" name="sound_category_notification_title" id="0x7f0904a4" />
     <public type="string" name="sound_category_feedback_title" id="0x7f0904a5" />
+    <public type="string" name="kill_app_longpress_back" id="0x7f0904aa" />
+    <public type="string" name="kill_app_longpress_back_summary" id="0x7f0904ab" />
+    <public type="string" name="xloud_strings_xloud_txt" id="0x7f0904ac" />
+    <public type="string" name="xloud_strings_xloud_desc_txt" id="0x7f0904ad" />
     <public type="string" name="wifi_context_menu_change_wapi_certificate" id="0x7f090020" />
     <public type="string" name="wifi_security_wapi_cert" id="0x7f090021" />
     <public type="string" name="wifi_security_wapi_psk" id="0x7f090022" />
