@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 2382
+    .line 2446
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$18;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$18;->val$info:Lcom/sonyericsson/home/data/Info;
@@ -46,24 +46,28 @@
     .locals 2
 
     .prologue
-    .line 2386
+    .line 2450
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$18;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/widget/WidgetManager;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object p0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$18;->val$info:Lcom/sonyericsson/home/data/Info;
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$18;->val$info:Lcom/sonyericsson/home/data/Info;
 
-    .end local p0
-    check-cast p0, Lcom/sonyericsson/home/data/WidgetInfo;
+    check-cast v0, Lcom/sonyericsson/home/data/WidgetInfo;
 
-    invoke-virtual {p0}, Lcom/sonyericsson/home/data/WidgetInfo;->getId()I
+    invoke-virtual {v0}, Lcom/sonyericsson/home/data/WidgetInfo;->getId()I
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/widget/WidgetManager;->getWidgetView(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Lcom/sonyericsson/home/widget/WidgetManager;->getWidgetView(I)Landroid/view/View;
 
-    .line 2387
+    .line 2451
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$18;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
+
+    .line 2452
     return-void
 .end method

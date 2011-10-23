@@ -57,29 +57,29 @@
     .parameter
 
     .prologue
-    .line 247
+    .line 248
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    .line 248
+    .line 249
     const-string v0, "load all applications"
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/util/Worker$Task;-><init>(Ljava/lang/String;)V
 
-    .line 243
+    .line 244
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskAllAppPackages:Ljava/util/HashSet;
 
-    .line 245
+    .line 246
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskUnavailableApps:Ljava/util/HashSet;
 
-    .line 249
+    .line 250
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .locals 7
 
     .prologue
-    .line 253
+    .line 254
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     invoke-static {v4}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$100(Lcom/sonyericsson/home/resourceload/PackageLoader;)Landroid/content/pm/PackageManager;
@@ -108,19 +108,19 @@
 
     iput-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskResolveInfos:Ljava/util/List;
 
-    .line 254
+    .line 255
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskResolveInfos:Ljava/util/List;
 
     if-nez v4, :cond_0
 
-    .line 255
+    .line 256
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskResolveInfos:Ljava/util/List;
 
-    .line 258
+    .line 259
     :cond_0
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -134,7 +134,7 @@
 
     move-result-object v0
 
-    .line 260
+    .line 261
     .local v0, allApps:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -155,7 +155,7 @@
 
     check-cast v2, Landroid/content/pm/ApplicationInfo;
 
-    .line 261
+    .line 262
     .local v2, appInfo:Landroid/content/pm/ApplicationInfo;
     new-instance v1, Ljava/io/File;
 
@@ -163,7 +163,7 @@
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 262
+    .line 263
     .local v1, apkFile:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -171,7 +171,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 264
+    .line 265
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskAllAppPackages:Ljava/util/HashSet;
 
     iget-object v5, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -180,7 +180,7 @@
 
     goto :goto_0
 
-    .line 265
+    .line 266
     :cond_2
     iget v4, v2, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -190,7 +190,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 268
+    .line 269
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskUnavailableApps:Ljava/util/HashSet;
 
     iget-object v5, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -199,7 +199,7 @@
 
     goto :goto_0
 
-    .line 271
+    .line 272
     .end local v1           #apkFile:Ljava/io/File;
     .end local v2           #appInfo:Landroid/content/pm/ApplicationInfo;
     :cond_3
@@ -212,7 +212,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 275
+    .line 276
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     new-instance v4, Ljava/util/HashMap;
@@ -221,7 +221,7 @@
 
     invoke-static {v3, v4}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$202(Lcom/sonyericsson/home/resourceload/PackageLoader;Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 276
+    .line 277
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskResolveInfos:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -242,7 +242,7 @@
 
     check-cast v2, Landroid/content/pm/ResolveInfo;
 
-    .line 277
+    .line 278
     .local v2, resolveInfo:Landroid/content/pm/ResolveInfo;
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -258,7 +258,7 @@
 
     goto :goto_0
 
-    .line 280
+    .line 281
     .end local v2           #resolveInfo:Landroid/content/pm/ResolveInfo;
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -267,10 +267,10 @@
 
     invoke-static {v3, v4}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$302(Lcom/sonyericsson/home/resourceload/PackageLoader;Ljava/util/HashSet;)Ljava/util/HashSet;
 
-    .line 281
+    .line 282
     iput-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->mTaskAllAppPackages:Ljava/util/HashSet;
 
-    .line 282
+    .line 283
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     invoke-static {v3}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$400(Lcom/sonyericsson/home/resourceload/PackageLoader;)Ljava/util/HashSet;
@@ -281,7 +281,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
-    .line 284
+    .line 285
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     invoke-static {v3}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$500(Lcom/sonyericsson/home/resourceload/PackageLoader;)Ljava/util/LinkedList;
@@ -305,13 +305,13 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
-    .line 285
+    .line 286
     .local v0, callback:Ljava/lang/Runnable;
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
 
-    .line 287
+    .line 288
     .end local v0           #callback:Ljava/lang/Runnable;
     :cond_1
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -322,11 +322,11 @@
 
     invoke-virtual {v3}, Ljava/util/LinkedList;->clear()V
 
-    .line 288
+    .line 289
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     invoke-static {v3, v5}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$502(Lcom/sonyericsson/home/resourceload/PackageLoader;Ljava/util/LinkedList;)Ljava/util/LinkedList;
 
-    .line 289
+    .line 290
     return-void
 .end method

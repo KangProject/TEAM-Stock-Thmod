@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 1768
+    .line 1798
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->val$view:Landroid/view/View;
@@ -51,14 +51,14 @@
     .locals 2
 
     .prologue
-    .line 1785
+    .line 1815
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->val$dropListener:Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->access$6000(Lcom/sonyericsson/home/layer/desktop/DesktopController$10;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    .line 1786
+    .line 1816
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -67,22 +67,21 @@
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$5802(Lcom/sonyericsson/home/layer/desktop/DesktopController;Z)Z
 
-    .line 1787
+    .line 1817
     return-void
 .end method
 
-.method public onConfirmed(Ljava/lang/String;I)V
+.method public onConfirmed(Ljava/lang/String;)V
     .locals 5
     .parameter "folderName"
-    .parameter "icon"
 
     .prologue
-    .line 1770
+    .line 1800
     new-instance v0, Lcom/sonyericsson/home/data/InfoGroup;
 
-    invoke-direct {v0, p1, p2}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, p1}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/lang/String;)V
 
-    .line 1772
+    .line 1802
     .local v0, infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
@@ -102,7 +101,7 @@
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->remove(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)Z
 
-    .line 1773
+    .line 1803
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -125,7 +124,7 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->addLast(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1774
+    .line 1804
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -146,7 +145,7 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->addLast(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1776
+    .line 1806
     new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;
@@ -155,7 +154,7 @@
 
     invoke-direct {v1, v0, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;-><init>(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/layer/desktop/DesktopRect;)V
 
-    .line 1778
+    .line 1808
     .local v1, infoGroupItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
@@ -167,7 +166,7 @@
 
     invoke-virtual {v2, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->addItemAtHint(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)I
 
-    .line 1780
+    .line 1810
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->val$view:Landroid/view/View;
@@ -176,7 +175,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->access$5900(Lcom/sonyericsson/home/layer/desktop/DesktopController$10;Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    .line 1781
+    .line 1811
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -185,6 +184,6 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$5802(Lcom/sonyericsson/home/layer/desktop/DesktopController;Z)Z
 
-    .line 1782
+    .line 1812
     return-void
 .end method

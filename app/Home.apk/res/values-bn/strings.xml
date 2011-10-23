@@ -36,7 +36,18 @@
     <string name="home_hint_shortcut_message_txt">হোমস্ক্রীনে শর্টকাট তৈরি করতে, কোনও অ্যাপ্লিকেশন আইকন স্পর্শ করুন ও ধরে থাকুন৷</string>
     <string name="gui_ok_txt">ওকে</string>
     <string name="gui_done_txt">সম্পন্ন</string>
-    <string name="gui_cancel_txt">বাতিল</string>
+    <string name="gui_cancel_txt">বাতিল করুন</string>
     <string name="home_button_exit_overview">পূর্বরূপ থেকে প্রস্থান করুন</string>
     <string name="home_no_uninstallable_apps_txt">এই অ্যাপ্লিকেশনগুলি আনইনস্টল করা যায়না</string>
+    <string name="home_app_share_dropzone_hint_txt">আইটেম অংশীদারি করতে এখানে নিক্ষেপ করুন</string>
+    <string name="appdialog_title">Facebook এ পোস্ট করুন</string>
+    <string name="appdialog_comment_hint">আপনার মন্তব্য সংযোজন করুন</string>
+    <string name="appdialog_button_share">অংশীদারি করুন</string>
+    <string name="appdialog_button_cancel">বাতিল করুন</string>
+    <string name="appdialog_other_options_info">অংশীদা. অন্যান্য বিকল্পসমূহ</string>
+    <string name="appdialog_progress_info">পোস্ট তৈরি হচ্ছে</string>
+    <string name="appdialog_toast_cannot_be_shared">এই আইটেমটি অংশীদারি করতে পারা যায় না</string>
+    <string name="appdialog_toast_connection_error">সংযোগে ত্রুটি</string>
+    <string name="appdialog_toast_sharing">Facebook এ অংশীদারি করা হচ্ছে</string>
+    <string name="home_app_share_chooser_title_txt">বন্টন</string>
 </resources>

@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 729
+    .line 726
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$10;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$10;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
@@ -60,7 +60,7 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 731
+    .line 728
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$10;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
 
     invoke-virtual {v2, p2}, Lcom/sonyericsson/home/statistics/Statistics;->getStats(Lcom/sonyericsson/home/data/ActivityInfo;)Lcom/sonyericsson/home/statistics/ActivityStats;
@@ -83,31 +83,31 @@
 
     sub-long v0, v2, v4
 
-    .line 736
+    .line 733
     .local v0, diff:J
     cmp-long v2, v0, v6
 
     if-lez v2, :cond_0
 
-    .line 737
+    .line 734
     const/4 v2, 0x1
 
-    .line 741
+    .line 738
     :goto_0
     return v2
 
-    .line 738
+    .line 735
     :cond_0
     cmp-long v2, v0, v6
 
     if-gez v2, :cond_1
 
-    .line 739
+    .line 736
     const/4 v2, -0x1
 
     goto :goto_0
 
-    .line 741
+    .line 738
     :cond_1
     const/4 v2, 0x0
 
@@ -120,7 +120,7 @@
     .parameter "x1"
 
     .prologue
-    .line 729
+    .line 726
     check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     .end local p1

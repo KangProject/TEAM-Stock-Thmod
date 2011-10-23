@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 208
+    .line 220
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$4;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,15 +41,15 @@
     .locals 1
 
     .prologue
-    .line 211
+    .line 223
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$4;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->onGridChanged()V
 
-    .line 212
+    .line 224
     return-void
 .end method

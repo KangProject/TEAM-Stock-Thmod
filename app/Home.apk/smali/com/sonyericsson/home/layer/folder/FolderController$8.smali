@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 250
+    .line 264
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$8;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,11 +54,11 @@
     .end annotation
 
     .prologue
-    .line 253
+    .line 267
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$8;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 

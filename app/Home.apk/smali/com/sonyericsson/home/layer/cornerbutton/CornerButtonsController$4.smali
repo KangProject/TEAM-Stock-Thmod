@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 488
+    .line 505
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->val$resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
@@ -47,14 +47,14 @@
     .parameter "root"
 
     .prologue
-    .line 490
+    .line 507
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$902(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 491
+    .line 508
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$100(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;)Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnLoadCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 523
+    .line 540
     return-void
 .end method

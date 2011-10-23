@@ -27,6 +27,8 @@
 
 .field private mGridRect:Lcom/sonyericsson/grid/GridRect;
 
+.field private mLandscape:Z
+
 .field private mLocationArray:[I
 
 .field private mPaneOffset:I
@@ -40,7 +42,7 @@
     .parameter "grid"
 
     .prologue
-    .line 83
+    .line 86
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
     .line 61
@@ -57,16 +59,16 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGridRect:Lcom/sonyericsson/grid/GridRect;
 
-    .line 84
+    .line 87
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
-    .line 85
+    .line 88
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    .line 86
+    .line 89
     iput-object p3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGrid:Lcom/sonyericsson/grid/Grid;
 
-    .line 88
+    .line 91
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     new-instance v1, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$1;
@@ -75,7 +77,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->registerObserver(Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager$AppTrayModelObserver;)V
 
-    .line 93
+    .line 96
     return-void
 .end method
 
@@ -85,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 96
+    .line 99
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getNumberOfItems()I
@@ -100,7 +102,7 @@
     .parameter "position"
 
     .prologue
-    .line 100
+    .line 103
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getActivityInfo(I)Lcom/sonyericsson/home/data/ActivityInfo;
@@ -128,7 +130,7 @@
     .parameter "position"
 
     .prologue
-    .line 104
+    .line 107
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getActivityInfo(I)Lcom/sonyericsson/home/data/ActivityInfo;
@@ -150,25 +152,25 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 140
+    .line 145
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mLocationArray:[I
 
     invoke-virtual {v1, p1, v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getItemPaneLocation(I[I)V
 
-    .line 142
+    .line 147
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mLocationArray:[I
 
     aget v0, v1, v4
 
-    .line 145
+    .line 150
     .local v0, paneLocation:I
     iget-boolean v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mDoMirror:Z
 
     if-nez v1, :cond_0
 
-    .line 146
+    .line 151
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGridRect:Lcom/sonyericsson/grid/GridRect;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGrid:Lcom/sonyericsson/grid/Grid;
@@ -181,7 +183,7 @@
 
     iput v2, v1, Lcom/sonyericsson/grid/GridRect;->col:I
 
-    .line 151
+    .line 156
     :goto_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGridRect:Lcom/sonyericsson/grid/GridRect;
 
@@ -195,17 +197,17 @@
 
     iput v2, v1, Lcom/sonyericsson/grid/GridRect;->row:I
 
-    .line 152
+    .line 157
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGridRect:Lcom/sonyericsson/grid/GridRect;
 
     iput v4, v1, Lcom/sonyericsson/grid/GridRect;->colSpan:I
 
-    .line 153
+    .line 158
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGridRect:Lcom/sonyericsson/grid/GridRect;
 
     iput v4, v1, Lcom/sonyericsson/grid/GridRect;->rowSpan:I
 
-    .line 155
+    .line 160
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGrid:Lcom/sonyericsson/grid/Grid;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGridRect:Lcom/sonyericsson/grid/GridRect;
@@ -214,7 +216,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sonyericsson/grid/Grid;->calculateRect(Lcom/sonyericsson/grid/GridRect;Landroid/graphics/Rect;)V
 
-    .line 156
+    .line 161
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mLocationArray:[I
 
     const/4 v2, 0x0
@@ -227,10 +229,10 @@
 
     iput v1, p2, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
 
-    .line 157
+    .line 162
     return-void
 
-    .line 148
+    .line 153
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mGridRect:Lcom/sonyericsson/grid/GridRect;
 
@@ -261,7 +263,7 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 165
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getNumberOfPanes()I
@@ -278,23 +280,23 @@
     .parameter "parent"
 
     .prologue
-    .line 108
+    .line 111
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->getItem(I)Lcom/sonyericsson/home/data/ActivityInfo;
 
     move-result-object v0
 
-    .line 109
+    .line 112
     .local v0, activityInfo:Lcom/sonyericsson/home/data/ActivityInfo;
     if-nez v0, :cond_0
 
-    .line 110
+    .line 113
     const/4 v3, 0x0
 
-    .line 118
+    .line 123
     :goto_0
     return-object v3
 
-    .line 113
+    .line 116
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
@@ -302,9 +304,9 @@
 
     move-result-object v2
 
-    .line 114
+    .line 117
     .local v2, view:Landroid/view/View;
-    const v3, 0x7f0e002a
+    const v3, 0x7f0e003c
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -312,20 +314,26 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 115
+    .line 118
     .local v1, label:Landroid/widget/TextView;
+    iget-boolean v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mLandscape:Z
+
+    if-nez v3, :cond_1
+
+    .line 119
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 116
+    .line 120
     const/4 v3, 0x2
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
 
+    :cond_1
     move-object v3, v2
 
-    .line 118
+    .line 123
     goto :goto_0
 .end method
 
@@ -333,7 +341,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 128
     const/4 v0, 0x1
 
     return v0
@@ -344,19 +352,19 @@
     .parameter "position"
 
     .prologue
-    .line 128
+    .line 133
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mEnabledChecker:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
 
     if-eqz v0, :cond_0
 
-    .line 129
+    .line 134
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mEnabledChecker:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;->isEnabled(I)Z
 
     move-result v0
 
-    .line 131
+    .line 136
     :goto_0
     return v0
 
@@ -371,7 +379,7 @@
     .parameter "position"
 
     .prologue
-    .line 136
+    .line 141
     const/4 v0, 0x0
 
     return v0
@@ -382,10 +390,10 @@
     .parameter "offset"
 
     .prologue
-    .line 169
+    .line 174
     iput p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mPaneOffset:I
 
-    .line 170
+    .line 175
     return-void
 .end method
 
@@ -394,10 +402,10 @@
     .parameter "shouldMirror"
 
     .prologue
-    .line 173
+    .line 178
     iput-boolean p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mDoMirror:Z
 
-    .line 174
+    .line 179
     return-void
 .end method
 
@@ -406,12 +414,24 @@
     .parameter "enabledChecker"
 
     .prologue
-    .line 183
+    .line 188
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mEnabledChecker:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$AdaptorEnabledChecker;
 
-    .line 184
+    .line 189
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 185
+    .line 190
+    return-void
+.end method
+
+.method public setLandscapeMode(Z)V
+    .locals 0
+    .parameter "landscape"
+
+    .prologue
+    .line 199
+    iput-boolean p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->mLandscape:Z
+
+    .line 200
     return-void
 .end method

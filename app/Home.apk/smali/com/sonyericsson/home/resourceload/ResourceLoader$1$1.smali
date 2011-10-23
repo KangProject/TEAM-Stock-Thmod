@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 347
+    .line 507
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->this$1:Lcom/sonyericsson/home/resourceload/ResourceLoader$1;
 
     iput-object p2, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->val$root:Lcom/sonyericsson/storage/Root;
@@ -50,7 +50,7 @@
 
     const-class v8, Ljava/util/ArrayList;
 
-    .line 349
+    .line 509
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->this$1:Lcom/sonyericsson/home/resourceload/ResourceLoader$1;
 
     iget-object v4, v4, Lcom/sonyericsson/home/resourceload/ResourceLoader$1;->this$0:Lcom/sonyericsson/home/resourceload/ResourceLoader;
@@ -63,7 +63,7 @@
 
     move-result-object v2
 
-    .line 354
+    .line 516
     .local v2, items:Ljava/util/Set;,"Ljava/util/Set<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->this$1:Lcom/sonyericsson/home/resourceload/ResourceLoader$1;
 
@@ -77,19 +77,19 @@
 
     invoke-direct {v5, v6}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    invoke-static {v4, v5}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$402(Lcom/sonyericsson/home/resourceload/ResourceLoader;Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {v4, v5}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$802(Lcom/sonyericsson/home/resourceload/ResourceLoader;Ljava/util/Set;)Ljava/util/Set;
 
-    .line 364
+    .line 530
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->this$1:Lcom/sonyericsson/home/resourceload/ResourceLoader$1;
 
     iget-object v4, v4, Lcom/sonyericsson/home/resourceload/ResourceLoader$1;->this$0:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    invoke-static {v4, v7}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$102(Lcom/sonyericsson/home/resourceload/ResourceLoader;Z)Z
+    invoke-static {v4, v7}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$502(Lcom/sonyericsson/home/resourceload/ResourceLoader;Z)Z
 
-    .line 366
+    .line 532
     const/4 v3, 0x0
 
-    .line 367
+    .line 533
     .local v3, slowLoadingList:Ljava/util/List;,"Ljava/util/List<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->val$root:Lcom/sonyericsson/storage/Root;
 
@@ -107,7 +107,7 @@
 
     if-ne v4, v7, :cond_0
 
-    .line 369
+    .line 535
     const-class v4, Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->val$root:Lcom/sonyericsson/storage/Root;
@@ -125,7 +125,7 @@
     .end local v3           #slowLoadingList:Ljava/util/List;,"Ljava/util/List<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     check-cast v3, Ljava/util/List;
 
-    .line 373
+    .line 539
     .restart local v3       #slowLoadingList:Ljava/util/List;,"Ljava/util/List<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     :cond_0
     if-eqz v3, :cond_4
@@ -136,7 +136,7 @@
 
     if-nez v4, :cond_4
 
-    .line 375
+    .line 541
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -156,7 +156,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 376
+    .line 542
     .local v1, item:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-interface {v3, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -164,16 +164,16 @@
 
     if-nez v4, :cond_1
 
-    .line 377
+    .line 543
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->this$1:Lcom/sonyericsson/home/resourceload/ResourceLoader$1;
 
     iget-object v4, v4, Lcom/sonyericsson/home/resourceload/ResourceLoader$1;->this$0:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    invoke-static {v4, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$1800(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/data/Info;)V
+    invoke-static {v4, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$2000(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/data/Info;)V
 
     goto :goto_0
 
-    .line 385
+    .line 552
     .end local v1           #item:Lcom/sonyericsson/home/data/ActivityInfo;
     :cond_2
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -194,7 +194,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 386
+    .line 553
     .restart local v1       #item:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-interface {v2, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -202,16 +202,16 @@
 
     if-eqz v4, :cond_3
 
-    .line 387
+    .line 554
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->this$1:Lcom/sonyericsson/home/resourceload/ResourceLoader$1;
 
     iget-object v4, v4, Lcom/sonyericsson/home/resourceload/ResourceLoader$1;->this$0:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    invoke-static {v4, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$1800(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/data/Info;)V
+    invoke-static {v4, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$2000(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/data/Info;)V
 
     goto :goto_1
 
-    .line 391
+    .line 558
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #item:Lcom/sonyericsson/home/data/ActivityInfo;
     :cond_4
@@ -233,17 +233,17 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 392
+    .line 559
     .restart local v1       #item:Lcom/sonyericsson/home/data/ActivityInfo;
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/ResourceLoader$1$1;->this$1:Lcom/sonyericsson/home/resourceload/ResourceLoader$1;
 
     iget-object v4, v4, Lcom/sonyericsson/home/resourceload/ResourceLoader$1;->this$0:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    invoke-static {v4, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$1800(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/data/Info;)V
+    invoke-static {v4, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->access$2000(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/data/Info;)V
 
     goto :goto_2
 
-    .line 395
+    .line 562
     .end local v1           #item:Lcom/sonyericsson/home/data/ActivityInfo;
     :cond_5
     return-void

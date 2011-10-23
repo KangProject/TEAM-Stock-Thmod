@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 1375
+    .line 1376
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
     .parameter "y"
 
     .prologue
-    .line 1433
+    .line 1434
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v0}, Lcom/sonyericsson/paneview/PaneView;->access$400(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1436
+    .line 1437
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -141,13 +141,21 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/sonyericsson/paneview/PaneView;->performItemClick(Landroid/view/View;IJ)Z
 
-    .line 1440
+    .line 1441
     :cond_0
     :goto_0
     return-void
 
-    .line 1437
+    .line 1438
     :cond_1
+    iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-static {v0}, Lcom/sonyericsson/paneview/PaneView;->access$400(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v0}, Lcom/sonyericsson/paneview/PaneView;->access$1100(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
@@ -156,7 +164,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1438
+    .line 1439
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v0}, Lcom/sonyericsson/paneview/PaneView;->access$1100(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
@@ -174,12 +182,12 @@
     .parameter "velocityY"
 
     .prologue
-    .line 1412
+    .line 1413
     iget-boolean v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->horizontalDrag:Z
 
     if-eqz v3, :cond_0
 
-    .line 1413
+    .line 1414
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     neg-float v4, p1
@@ -188,7 +196,7 @@
 
     move-result v1
 
-    .line 1414
+    .line 1415
     .local v1, scaledVelocity:F
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -200,7 +208,7 @@
 
     move-result v0
 
-    .line 1415
+    .line 1416
     .local v0, position:F
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -214,7 +222,7 @@
 
     invoke-virtual {v3, v0, v1, v4, v5}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 1417
+    .line 1418
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v3
@@ -237,22 +245,13 @@
 
     int-to-float v2, v3
 
-    .line 1419
+    .line 1420
     .local v2, snapPosition:F
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v3, p1, v0, v2}, Lcom/sonyericsson/paneview/PaneView;->access$1500(Lcom/sonyericsson/paneview/PaneView;FFF)F
 
     move-result v2
-
-    .line 1420
-    iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
-
-    invoke-static {v3}, Lcom/sonyericsson/paneview/PaneView;->access$1300(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Lcom/sonyericsson/util/Dynamics;->setMaxPosition(F)V
 
     .line 1421
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -261,14 +260,23 @@
 
     move-result-object v3
 
+    invoke-virtual {v3, v2}, Lcom/sonyericsson/util/Dynamics;->setMaxPosition(F)V
+
+    .line 1422
+    iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-static {v3}, Lcom/sonyericsson/paneview/PaneView;->access$1300(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
+
+    move-result-object v3
+
     invoke-virtual {v3, v2}, Lcom/sonyericsson/util/Dynamics;->setMinPosition(F)V
 
-    .line 1430
+    .line 1431
     .end local v2           #snapPosition:F
     :goto_0
     return-void
 
-    .line 1423
+    .line 1424
     .end local v0           #position:F
     .end local v1           #scaledVelocity:F
     :cond_0
@@ -280,7 +288,7 @@
 
     move-result v1
 
-    .line 1424
+    .line 1425
     .restart local v1       #scaledVelocity:F
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -292,7 +300,7 @@
 
     move-result v0
 
-    .line 1425
+    .line 1426
     .restart local v0       #position:F
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -306,7 +314,7 @@
 
     invoke-virtual {v3, v0, v1, v4, v5}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 1427
+    .line 1428
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v3}, Lcom/sonyericsson/paneview/PaneView;->access$1600(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
@@ -321,7 +329,7 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/util/Dynamics;->setMaxPosition(F)V
 
-    .line 1428
+    .line 1429
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v3}, Lcom/sonyericsson/paneview/PaneView;->access$1600(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
@@ -344,12 +352,12 @@
 
     const/4 v2, 0x1
 
-    .line 1443
+    .line 1444
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$1800(Lcom/sonyericsson/paneview/PaneView;)V
 
-    .line 1444
+    .line 1445
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v1}, Lcom/sonyericsson/paneview/PaneView;->getParent()Landroid/view/ViewParent;
@@ -358,10 +366,10 @@
 
     invoke-interface {v1, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1445
+    .line 1446
     iput-boolean v2, p0, Lcom/sonyericsson/paneview/PaneView$5;->horizontalDrag:Z
 
-    .line 1446
+    .line 1447
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$1300(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
@@ -372,7 +380,7 @@
 
     move-result v0
 
-    .line 1447
+    .line 1448
     .local v0, currentPosition:F
     cmpg-float v1, v0, v5
 
@@ -392,7 +400,7 @@
 
     if-lez v1, :cond_1
 
-    .line 1448
+    .line 1449
     :cond_0
     int-to-float v1, p1
 
@@ -402,7 +410,7 @@
 
     float-to-int p1, v1
 
-    .line 1450
+    .line 1451
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -426,12 +434,12 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 1452
+    .line 1453
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$1900(Lcom/sonyericsson/paneview/PaneView;)V
 
-    .line 1453
+    .line 1454
     return-void
 .end method
 
@@ -443,7 +451,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1391
+    .line 1392
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$400(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
@@ -452,14 +460,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 1392
+    .line 1393
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v1}, Lcom/sonyericsson/paneview/PaneView;->getOnItemLongClickListener()Landroid/widget/AdapterView$OnItemLongClickListener;
 
     move-result-object v0
 
-    .line 1393
+    .line 1394
     .local v0, listener:Landroid/widget/AdapterView$OnItemLongClickListener;
     if-eqz v0, :cond_0
 
@@ -473,7 +481,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1394
+    .line 1395
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -506,14 +514,14 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/widget/AdapterView$OnItemLongClickListener;->onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
 
-    .line 1396
+    .line 1397
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/sonyericsson/paneview/PaneView;->access$402(Lcom/sonyericsson/paneview/PaneView;Lcom/sonyericsson/paneview/PaneView$AdapterItem;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1397
+    .line 1398
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -524,10 +532,10 @@
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/paneview/PaneView;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 1398
+    .line 1399
     const/4 v1, 0x1
 
-    .line 1408
+    .line 1409
     .end local v0           #listener:Landroid/widget/AdapterView$OnItemLongClickListener;
     :goto_0
     return v1
@@ -536,10 +544,10 @@
     :cond_0
     move v1, v2
 
-    .line 1400
+    .line 1401
     goto :goto_0
 
-    .line 1404
+    .line 1405
     .end local v0           #listener:Landroid/widget/AdapterView$OnItemLongClickListener;
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -550,7 +558,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 1405
+    .line 1406
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$1100(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
@@ -566,7 +574,7 @@
     :cond_2
     move v1, v2
 
-    .line 1408
+    .line 1409
     goto :goto_0
 .end method
 
@@ -574,14 +582,14 @@
     .locals 2
 
     .prologue
-    .line 1469
+    .line 1470
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->access$402(Lcom/sonyericsson/paneview/PaneView;Lcom/sonyericsson/paneview/PaneView$AdapterItem;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1470
+    .line 1471
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -592,7 +600,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 1471
+    .line 1472
     return-void
 .end method
 
@@ -600,21 +608,21 @@
     .locals 2
 
     .prologue
-    .line 1386
+    .line 1387
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->access$402(Lcom/sonyericsson/paneview/PaneView;Lcom/sonyericsson/paneview/PaneView$AdapterItem;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1387
+    .line 1388
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->access$1000(Lcom/sonyericsson/paneview/PaneView;Z)V
 
-    .line 1388
+    .line 1389
     return-void
 .end method
 
@@ -624,7 +632,7 @@
     .parameter "y"
 
     .prologue
-    .line 1380
+    .line 1381
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -635,7 +643,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1381
+    .line 1382
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -646,7 +654,7 @@
 
     invoke-static {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->access$402(Lcom/sonyericsson/paneview/PaneView;Lcom/sonyericsson/paneview/PaneView$AdapterItem;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1382
+    .line 1383
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -657,7 +665,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 1383
+    .line 1384
     return-void
 .end method
 
@@ -668,12 +676,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1456
+    .line 1457
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$1800(Lcom/sonyericsson/paneview/PaneView;)V
 
-    .line 1457
+    .line 1458
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v1}, Lcom/sonyericsson/paneview/PaneView;->getParent()Landroid/view/ViewParent;
@@ -684,12 +692,12 @@
 
     invoke-interface {v1, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1458
+    .line 1459
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->horizontalDrag:Z
 
-    .line 1459
+    .line 1460
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$1600(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
@@ -700,7 +708,7 @@
 
     move-result v0
 
-    .line 1460
+    .line 1461
     .local v0, currentPosition:F
     cmpg-float v1, v0, v5
 
@@ -716,7 +724,7 @@
 
     if-lez v1, :cond_1
 
-    .line 1461
+    .line 1462
     :cond_0
     int-to-float v1, p1
 
@@ -726,7 +734,7 @@
 
     float-to-int p1, v1
 
-    .line 1463
+    .line 1464
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -750,11 +758,11 @@
 
     invoke-virtual {v1, v2, v5, v3, v4}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 1465
+    .line 1466
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$5;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$1900(Lcom/sonyericsson/paneview/PaneView;)V
 
-    .line 1466
+    .line 1467
     return-void
 .end method

@@ -21,7 +21,7 @@
 .method public abstract addAdvWidget(Ljava/lang/String;)Z
 .end method
 
-.method public abstract addFolder(Ljava/lang/String;I)Z
+.method public abstract addFolder(Ljava/lang/String;)Z
 .end method
 
 .method public abstract addShortcut(Landroid/os/Bundle;)Z
@@ -42,13 +42,13 @@
 .method public abstract resolveRect(ILjava/lang/Object;)Landroid/graphics/Rect;
 .end method
 
-.method public abstract setFolderLabel(Lcom/sonyericsson/home/data/InfoGroup;Ljava/lang/String;I)V
+.method public abstract setFolderLabel(Lcom/sonyericsson/home/data/InfoGroup;Ljava/lang/String;)V
 .end method
 
 .method public abstract showDeleteDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;)V
 .end method
 
-.method public abstract showFolderDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;ILjava/lang/String;I)V
+.method public abstract showFolderDialog(Lcom/sonyericsson/home/HomeActivityFlow$OnDialogResultListener;ILjava/lang/String;)V
 .end method
 
 .method public abstract showToast(I)V

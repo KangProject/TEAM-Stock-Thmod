@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Huỷ</string>
     <string name="home_button_exit_overview">Thoát khỏi tổng quan</string>
     <string name="home_no_uninstallable_apps_txt">Không thể gỡ cài đặt các ứng dụng này</string>
+    <string name="home_app_share_dropzone_hint_txt">Thả vào đây để chia sẻ mục</string>
+    <string name="appdialog_title">Đăng lên Facebook</string>
+    <string name="appdialog_comment_hint">Thêm bình luận của bạn</string>
+    <string name="appdialog_button_share">Chia sẻ</string>
+    <string name="appdialog_button_cancel">Huỷ</string>
+    <string name="appdialog_other_options_info">Tuỳ chọn chia sẻ khác</string>
+    <string name="appdialog_progress_info">Đang tạo bài đăng</string>
+    <string name="appdialog_toast_cannot_be_shared">Không thể chia sẻ mục này</string>
+    <string name="appdialog_toast_connection_error">Lỗi kết nối</string>
+    <string name="appdialog_toast_sharing">Chia sẻ trên Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Chia sẻ</string>
 </resources>

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 216
+    .line 228
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$5;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,32 +41,67 @@
     .locals 1
 
     .prologue
-    .line 223
+    .line 231
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$5;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->onAppearanceChanged()V
 
-    .line 224
+    .line 232
     return-void
 .end method
 
-.method public onContentChanged()V
+.method public onContentChanged(Ljava/util/UUID;)V
     .locals 1
+    .parameter "infoGroupUuid"
 
     .prologue
-    .line 219
+    .line 235
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$5;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->isOpen()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$5;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->getFolder()Lcom/sonyericsson/home/data/InfoGroup;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/data/InfoGroup;->getUuid()Ljava/util/UUID;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 236
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$5;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->onContentChanged()V
 
-    .line 220
+    .line 238
+    :cond_0
     return-void
 .end method

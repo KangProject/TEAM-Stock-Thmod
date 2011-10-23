@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 175
+    .line 174
     iput-object p1, p0, Lcom/sonyericsson/home/badge/BadgeManager$2;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
     iput-object p2, p0, Lcom/sonyericsson/home/badge/BadgeManager$2;->val$message:Ljava/lang/String;
@@ -50,7 +50,7 @@
     .parameter "badgeMessage"
 
     .prologue
-    .line 178
+    .line 177
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager$2;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
     invoke-static {v1}, Lcom/sonyericsson/home/badge/BadgeManager;->access$200(Lcom/sonyericsson/home/badge/BadgeManager;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
@@ -61,18 +61,18 @@
 
     move-result-object v0
 
-    .line 180
+    .line 179
     .local v0, cacheValue:Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
     if-eqz v0, :cond_0
 
-    .line 181
+    .line 180
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager$2;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager$2;->val$message:Ljava/lang/String;
 
     invoke-static {v1, v2, p1, v0}, Lcom/sonyericsson/home/badge/BadgeManager;->access$600(Lcom/sonyericsson/home/badge/BadgeManager;Ljava/lang/String;Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;)V
 
-    .line 183
+    .line 182
     :cond_0
     return-void
 .end method

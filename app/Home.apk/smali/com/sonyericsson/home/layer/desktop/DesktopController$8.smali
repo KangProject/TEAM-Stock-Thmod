@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1538
+    .line 1568
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 1541
+    .line 1571
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -64,7 +64,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1542
+    .line 1572
     new-instance v1, Lcom/sonyericsson/grid/GridRect;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -83,7 +83,7 @@
 
     invoke-direct {v1, v2}, Lcom/sonyericsson/grid/GridRect;-><init>(Lcom/sonyericsson/grid/GridRect;)V
 
-    .line 1543
+    .line 1573
     .local v1, sourceRect:Lcom/sonyericsson/grid/GridRect;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -99,13 +99,13 @@
 
     move-result-object v0
 
-    .line 1544
+    .line 1574
     .local v0, info:Lcom/sonyericsson/home/data/Info;
     instance-of v2, v0, Lcom/sonyericsson/home/data/InfoGroup;
 
     if-eqz v2, :cond_1
 
-    .line 1548
+    .line 1578
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -128,7 +128,7 @@
 
     if-nez v2, :cond_0
 
-    .line 1549
+    .line 1579
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -137,14 +137,14 @@
 
     invoke-interface {v2, v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onInfoClicked(Lcom/sonyericsson/home/data/Info;Ljava/lang/Object;)V
 
-    .line 1555
+    .line 1585
     .end local v0           #info:Lcom/sonyericsson/home/data/Info;
     .end local v1           #sourceRect:Lcom/sonyericsson/grid/GridRect;
     :cond_0
     :goto_0
     return-void
 
-    .line 1552
+    .line 1582
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     .restart local v1       #sourceRect:Lcom/sonyericsson/grid/GridRect;
     :cond_1

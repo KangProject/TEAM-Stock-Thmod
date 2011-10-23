@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2340
+    .line 2485
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog$1;->this$1:Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 2384
+    .line 2529
     const/4 v0, 0x3
 
     return v0
@@ -49,7 +49,7 @@
     .parameter "position"
 
     .prologue
-    .line 2380
+    .line 2525
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -62,7 +62,7 @@
     .parameter "position"
 
     .prologue
-    .line 2376
+    .line 2521
     int-to-long v0, p1
 
     return-wide v0
@@ -75,14 +75,14 @@
     .parameter "parent"
 
     .prologue
-    .line 2343
+    .line 2488
     move-object v2, p2
 
-    .line 2345
+    .line 2490
     .local v2, view:Landroid/view/View;
     if-nez v2, :cond_0
 
-    .line 2346
+    .line 2491
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog$1;->this$1:Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;
 
     iget-object v3, v3, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
@@ -91,7 +91,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f03000b
+    const v4, 0x7f03000c
 
     const/4 v5, 0x0
 
@@ -99,9 +99,9 @@
 
     move-result-object v2
 
-    .line 2350
+    .line 2495
     :cond_0
-    const v3, 0x7f0e0017
+    const v3, 0x7f0e001e
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,9 +109,9 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 2351
+    .line 2496
     .local v0, icon:Landroid/widget/ImageView;
-    const v3, 0x7f0e0018
+    const v3, 0x7f0e001f
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -119,54 +119,54 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 2353
+    .line 2498
     .local v1, label:Landroid/widget/TextView;
     packed-switch p1, :pswitch_data_0
 
-    .line 2372
+    .line 2517
     :goto_0
     return-object v2
 
-    .line 2356
+    .line 2501
     :pswitch_0
-    const v3, 0x7f02000b
+    const v3, 0x7f020012
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2357
+    .line 2502
     const v3, 0x7f070007
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
-    .line 2361
+    .line 2506
     :pswitch_1
-    const v3, 0x7f02000a
+    const v3, 0x7f020011
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2362
+    .line 2507
     const v3, 0x7f070009
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
-    .line 2366
+    .line 2511
     :pswitch_2
-    const v3, 0x7f02000d
+    const v3, 0x7f020014
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2367
+    .line 2512
     const v3, 0x7f07000a
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
-    .line 2353
+    .line 2498
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

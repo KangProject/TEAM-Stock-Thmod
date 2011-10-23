@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 844
+    .line 841
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 846
+    .line 843
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/PaneIndicator;->hide(Z)V
 
-    .line 847
+    .line 844
     return-void
 .end method

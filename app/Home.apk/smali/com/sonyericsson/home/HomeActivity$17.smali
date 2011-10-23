@@ -1,11 +1,14 @@
 .class Lcom/sonyericsson/home/HomeActivity$17;
-.super Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;
+.super Ljava/lang/Object;
 .source "HomeActivity.java"
+
+# interfaces
+.implements Lcom/sonyericsson/home/layer/appshare/AppShareDialog$AppShareDialogListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/sonyericsson/home/HomeActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/sonyericsson/home/HomeActivity;->onCreateDialog(I)Landroid/app/Dialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,70 +27,74 @@
     .parameter
 
     .prologue
-    .line 2456
+    .line 1967
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$17;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-direct {p0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public addFullScreenEffect(Landroid/view/View;)V
-    .locals 1
-    .parameter "view"
-
-    .prologue
-    .line 2460
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$17;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$5300(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/ViewGroup;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    .line 2461
-    return-void
-.end method
-
-.method public onConfigured(I)V
+.method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .parameter "response"
+    .parameter "dialog"
 
     .prologue
-    .line 2470
+    .line 1977
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$17;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2100(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity$17;->getId()Ljava/util/UUID;
+    if-ne v0, p1, :cond_0
 
-    move-result-object v1
+    .line 1978
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$17;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-virtual {v0, v1, p1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->onConfigured(Ljava/util/UUID;I)V
+    const/4 v1, 0x0
 
-    .line 2471
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    .line 1980
+    :cond_0
     return-void
 .end method
 
-.method public removeFullScreenEffect(Landroid/view/View;)V
+.method public onShow(Landroid/content/DialogInterface;)V
     .locals 1
-    .parameter "view"
+    .parameter "dialog"
 
     .prologue
-    .line 2465
+    .line 1970
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$17;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$5300(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2100(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    if-eqz v0, :cond_0
 
-    .line 2466
+    .line 1971
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$17;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2100(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+
+    .line 1973
+    :cond_0
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$17;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    check-cast p1, Landroid/app/Dialog;
+
+    .end local p1
+    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    .line 1974
     return-void
 .end method

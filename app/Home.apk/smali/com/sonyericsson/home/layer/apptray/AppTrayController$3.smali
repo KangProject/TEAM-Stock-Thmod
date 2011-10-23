@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 385
+    .line 380
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$3;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "animation"
 
     .prologue
-    .line 396
+    .line 391
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$3;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$200(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Z)V
 
-    .line 397
+    .line 392
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .parameter "animation"
 
     .prologue
-    .line 393
+    .line 388
     return-void
 .end method
 
@@ -67,6 +67,6 @@
     .parameter "animation"
 
     .prologue
-    .line 389
+    .line 384
     return-void
 .end method

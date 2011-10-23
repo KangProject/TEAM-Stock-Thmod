@@ -34,29 +34,29 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
+    .line 40
     const/4 v0, 0x0
 
-    .line 43
+    .line 42
     .local v0, icon:Landroid/content/Intent$ShortcutIconResource;
     if-eqz p2, :cond_1
 
     if-eqz p3, :cond_1
 
-    .line 44
+    .line 43
     new-instance v0, Landroid/content/Intent$ShortcutIconResource;
 
     .end local v0           #icon:Landroid/content/Intent$ShortcutIconResource;
     invoke-direct {v0}, Landroid/content/Intent$ShortcutIconResource;-><init>()V
 
-    .line 45
+    .line 44
     .restart local v0       #icon:Landroid/content/Intent$ShortcutIconResource;
     iput-object p2, v0, Landroid/content/Intent$ShortcutIconResource;->packageName:Ljava/lang/String;
 
-    .line 46
+    .line 45
     iput-object p3, v0, Landroid/content/Intent$ShortcutIconResource;->resourceName:Ljava/lang/String;
 
-    .line 51
+    .line 50
     :cond_0
     new-instance v1, Lcom/sonyericsson/home/data/ShortcutInfo;
 
@@ -69,11 +69,11 @@
     :goto_0
     return-object v1
 
-    .line 47
+    .line 46
     :cond_1
     if-eqz p4, :cond_0
 
-    .line 48
+    .line 47
     new-instance v1, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     invoke-static {p1, v2}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
@@ -103,7 +103,7 @@
     goto :goto_0
 .end method
 
-.method public static getCategoryIndex([Ljava/lang/String;Ljava/lang/String;)I
+.method private static getCategoryIndex([Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
     .parameter "categories"
     .parameter "category"
@@ -159,12 +159,12 @@
     .parameter "category"
 
     .prologue
-    .line 55
+    .line 54
     invoke-static {p0, p2}, Lcom/sonyericsson/home/customization/CustomizationUtils;->getCategoryIndex([Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 56
+    .line 55
     .local v0, index:I
     aget-object v1, p1, v0
 
@@ -177,7 +177,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 67
+    .line 66
     if-eqz p1, :cond_0
 
     if-eqz p0, :cond_0
@@ -190,7 +190,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 68
+    .line 67
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -207,7 +207,7 @@
 
     move-result-object p0
 
-    .line 70
+    .line 69
     :cond_0
     return-object p0
 .end method

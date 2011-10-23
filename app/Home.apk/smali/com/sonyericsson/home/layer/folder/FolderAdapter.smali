@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Lcom/sonyericsson/paneview/PaneAdapter;
+.implements Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
 
 
 # instance fields
@@ -18,29 +19,34 @@
 
 # direct methods
 .method public constructor <init>(Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/layer/folder/FolderModelManager;Lcom/sonyericsson/home/layer/folder/FolderLocator;)V
-    .locals 0
+    .locals 1
     .parameter "adapterHelper"
     .parameter "infoGroupManager"
     .parameter "modelManager"
     .parameter "locator"
 
     .prologue
-    .line 40
+    .line 43
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 41
+    .line 44
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    .line 42
+    .line 45
     iput-object p2, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    .line 43
+    .line 46
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+    invoke-virtual {v0, p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->registerInfoGroupListener(Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;)V
+
+    .line 47
     iput-object p3, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
-    .line 44
+    .line 48
     iput-object p4, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mLocator:Lcom/sonyericsson/home/layer/folder/FolderLocator;
 
-    .line 45
+    .line 49
     return-void
 .end method
 
@@ -50,7 +56,7 @@
     .locals 2
 
     .prologue
-    .line 49
+    .line 53
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -71,7 +77,7 @@
     .parameter "position"
 
     .prologue
-    .line 54
+    .line 58
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -92,7 +98,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
@@ -105,7 +111,7 @@
     .parameter "position"
 
     .prologue
-    .line 59
+    .line 63
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
@@ -122,12 +128,12 @@
     .parameter "position"
 
     .prologue
-    .line 84
+    .line 88
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
 
-    .line 85
+    .line 89
     .local v0, info:Lcom/sonyericsson/home/data/Info;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
@@ -144,12 +150,12 @@
     .parameter "outPlacement"
 
     .prologue
-    .line 110
+    .line 114
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mLocator:Lcom/sonyericsson/home/layer/folder/FolderLocator;
 
     invoke-virtual {v0, p1, p2}, Lcom/sonyericsson/home/layer/folder/FolderLocator;->getLocation(ILcom/sonyericsson/paneview/PaneLocation;)V
 
-    .line 111
+    .line 115
     return-void
 .end method
 
@@ -157,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 119
     const/4 v0, 0x1
 
     return v0
@@ -170,35 +176,35 @@
     .parameter "parent"
 
     .prologue
-    .line 64
+    .line 68
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->getItem(I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
 
-    .line 66
+    .line 70
     .local v0, info:Lcom/sonyericsson/home/data/Info;
     if-nez v0, :cond_0
 
-    .line 67
+    .line 71
     const/4 v2, 0x0
 
-    .line 79
+    .line 83
     .end local v0           #info:Lcom/sonyericsson/home/data/Info;
     :goto_0
     return-object v2
 
-    .line 70
+    .line 74
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     :cond_0
     const/4 v1, 0x0
 
-    .line 71
+    .line 75
     .local v1, infoView:Landroid/view/View;
     instance-of v2, v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v2, :cond_1
 
-    .line 72
+    .line 76
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     check-cast v0, Lcom/sonyericsson/home/data/ActivityInfo;
@@ -211,17 +217,17 @@
     :goto_1
     move-object v2, v1
 
-    .line 79
+    .line 83
     goto :goto_0
 
-    .line 73
+    .line 77
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     instance-of v2, v0, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     if-eqz v2, :cond_2
 
-    .line 74
+    .line 78
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     check-cast v0, Lcom/sonyericsson/home/data/ShortcutInfo;
@@ -233,7 +239,7 @@
 
     goto :goto_1
 
-    .line 76
+    .line 80
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     :cond_2
     const-string v2, "FolderAdapter"
@@ -249,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 94
     const/4 v0, 0x1
 
     return v0
@@ -259,7 +265,7 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 99
     const/4 v0, 0x1
 
     return v0
@@ -270,7 +276,7 @@
     .parameter "position"
 
     .prologue
-    .line 100
+    .line 104
     const/4 v0, 0x1
 
     return v0
@@ -281,8 +287,28 @@
     .parameter "position"
 
     .prologue
-    .line 105
+    .line 109
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public onAppearanceChanged()V
+    .locals 0
+
+    .prologue
+    .line 129
+    return-void
+.end method
+
+.method public onContentChanged(Ljava/util/UUID;)V
+    .locals 0
+    .parameter "infoGroupUuid"
+
+    .prologue
+    .line 124
+    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->notifyDataSetChanged()V
+
+    .line 125
+    return-void
 .end method

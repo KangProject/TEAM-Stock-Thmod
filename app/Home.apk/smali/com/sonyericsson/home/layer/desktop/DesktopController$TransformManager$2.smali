@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 407
+    .line 418
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,12 +46,12 @@
 
     const/4 v10, 0x0
 
-    .line 428
+    .line 439
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 430
+    .line 441
     .local v2, now:J
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
@@ -63,10 +63,10 @@
 
     if-nez v5, :cond_0
 
-    .line 434
+    .line 445
     const/high16 v0, 0x4000
 
-    .line 435
+    .line 446
     .local v0, PROGRESS_RATIO:F
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
@@ -138,7 +138,7 @@
 
     invoke-static {v5, v6}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1302(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)F
 
-    .line 440
+    .line 451
     .end local v0           #PROGRESS_RATIO:F
     :cond_0
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getCurrentSpan()F
@@ -161,7 +161,7 @@
 
     mul-float v1, v5, v6
 
-    .line 444
+    .line 455
     .local v1, dProgress:F
     cmpl-float v5, v1, v10
 
@@ -183,7 +183,7 @@
 
     if-ltz v5, :cond_1
 
-    .line 445
+    .line 456
     const/high16 v5, 0x3fc0
 
     iget-object v6, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
@@ -204,7 +204,7 @@
 
     mul-float/2addr v1, v5
 
-    .line 448
+    .line 459
     :cond_1
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
@@ -234,7 +234,7 @@
 
     invoke-static {v5, v6}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$802(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)F
 
-    .line 449
+    .line 460
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
@@ -253,7 +253,7 @@
 
     move-result v4
 
-    .line 451
+    .line 462
     .local v4, progress:F
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
@@ -263,12 +263,12 @@
 
     invoke-virtual {v5, v4, v10, v2, v3}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 452
+    .line 463
     iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v5, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$500(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)V
 
-    .line 454
+    .line 465
     const/4 v5, 0x1
 
     return v5
@@ -281,7 +281,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 410
+    .line 421
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -298,14 +298,14 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 411
+    .line 422
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$802(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;F)F
 
-    .line 414
+    .line 425
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$900(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)I
@@ -314,12 +314,12 @@
 
     if-nez v0, :cond_0
 
-    .line 415
+    .line 426
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1000(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)V
 
-    .line 416
+    .line 427
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -330,7 +330,7 @@
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/PaneIndicator;->hide(Z)V
 
-    .line 420
+    .line 431
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
@@ -340,12 +340,12 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 421
+    .line 432
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)V
 
-    .line 424
+    .line 435
     :cond_1
     return v2
 .end method
@@ -361,7 +361,7 @@
 
     const/high16 v2, 0x3f00
 
-    .line 462
+    .line 473
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$800(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)F
@@ -376,7 +376,7 @@
 
     if-gez v1, :cond_1
 
-    .line 463
+    .line 474
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$200(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)Lcom/sonyericsson/util/SpringDynamics;
@@ -393,7 +393,7 @@
 
     move v0, v3
 
-    .line 468
+    .line 479
     .local v0, snap:I
     :goto_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
@@ -408,17 +408,17 @@
 
     invoke-static {v1, v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->access$1500(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;FF)V
 
-    .line 469
+    .line 480
     return-void
 
     .end local v0           #snap:I
     :cond_0
     move v0, v4
 
-    .line 463
+    .line 474
     goto :goto_0
 
-    .line 465
+    .line 476
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 

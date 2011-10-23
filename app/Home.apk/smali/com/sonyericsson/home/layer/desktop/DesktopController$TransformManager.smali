@@ -77,37 +77,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 472
+    .line 483
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 351
+    .line 362
     iput v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
-    .line 354
+    .line 365
     iput-boolean v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClick:Z
 
-    .line 362
+    .line 373
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mVelocity:F
 
-    .line 382
+    .line 393
     new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$1;
 
     invoke-direct {v2, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$1;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)V
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressRunnable:Ljava/lang/Runnable;
 
-    .line 407
+    .line 418
     new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;
 
     invoke-direct {v2, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager$2;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;)V
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mOnScaleGestureListener:Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
 
-    .line 473
+    .line 484
     new-instance v2, Landroid/view/ScaleGestureDetector;
 
     invoke-static {p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1600(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/content/Context;
@@ -120,14 +120,14 @@
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mScaleGestureDetector:Landroid/view/ScaleGestureDetector;
 
-    .line 474
+    .line 485
     new-instance v2, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v2}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
-    .line 475
+    .line 486
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     const/high16 v3, 0x42c8
@@ -136,7 +136,7 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 477
+    .line 488
     invoke-static {p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1600(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/content/Context;
 
     move-result-object v2
@@ -149,7 +149,7 @@
 
     check-cast v0, Landroid/hardware/SensorManager;
 
-    .line 479
+    .line 490
     .local v0, sensorManager:Landroid/hardware/SensorManager;
     invoke-static {p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1600(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/content/Context;
 
@@ -165,7 +165,7 @@
 
     move-result v1
 
-    .line 481
+    .line 492
     .local v1, transformBottomMargin:I
     new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
@@ -173,7 +173,7 @@
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->transformer:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
-    .line 484
+    .line 495
     invoke-static {p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1600(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/content/Context;
 
     move-result-object v2
@@ -188,7 +188,7 @@
 
     iput v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTouchSlop:I
 
-    .line 485
+    .line 496
     return-void
 .end method
 
@@ -197,7 +197,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->activateTransform()V
 
     return-void
@@ -208,7 +208,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->startTransformAnimations()V
 
     return-void
@@ -219,7 +219,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mScaleFactor:F
 
     return v0
@@ -231,7 +231,7 @@
     .parameter "x1"
 
     .prologue
-    .line 313
+    .line 324
     iput p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mScaleFactor:F
 
     return p1
@@ -244,7 +244,7 @@
     .parameter "x2"
 
     .prologue
-    .line 313
+    .line 324
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->runTransform(FF)V
 
     return-void
@@ -255,7 +255,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     return-object v0
@@ -266,7 +266,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->stopTransformAnimations()V
 
     return-void
@@ -277,7 +277,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->deactivateTransform()V
 
     return-void
@@ -289,7 +289,7 @@
     .parameter "x1"
 
     .prologue
-    .line 313
+    .line 324
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->setTransformProgress(F)V
 
     return-void
@@ -300,7 +300,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -311,7 +311,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mVelocity:F
 
     return v0
@@ -323,7 +323,7 @@
     .parameter "x1"
 
     .prologue
-    .line 313
+    .line 324
     iput p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mVelocity:F
 
     return p1
@@ -334,7 +334,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 324
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
     return v0
@@ -344,19 +344,19 @@
     .locals 3
 
     .prologue
-    .line 562
+    .line 573
     iget v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
     if-eqz v1, :cond_0
 
-    .line 563
+    .line 574
     const-string v1, "TransformManager"
 
     const-string v2, "Illegal state in activateTransform()"
 
     invoke-static {v1, v2}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 566
+    .line 577
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -368,14 +368,14 @@
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/paneview/PaneView;->transform(Lcom/sonyericsson/paneview/Transformer;)V
 
-    .line 569
+    .line 580
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v1}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
 
     move-result v0
 
-    .line 570
+    .line 581
     .local v0, progress:F
     const/4 v1, 0x0
 
@@ -383,12 +383,12 @@
 
     if-nez v1, :cond_1
 
-    .line 573
+    .line 584
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hideOpenGLAdvWidgets()V
 
-    .line 576
+    .line 587
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -398,7 +398,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 577
+    .line 588
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -407,7 +407,7 @@
 
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onOverviewActivated()V
 
-    .line 580
+    .line 591
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -422,16 +422,16 @@
 
     invoke-interface {v1, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onFreeCornersChanged([Z)V
 
-    .line 584
+    .line 595
     :cond_2
     const/4 v1, 0x1
 
     iput v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
-    .line 585
+    .line 596
     return-void
 
-    .line 580
+    .line 591
     :array_0
     .array-data 0x1
         0x0t
@@ -447,19 +447,19 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 621
+    .line 632
     iget v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
     if-eq v1, v3, :cond_0
 
-    .line 622
+    .line 633
     const-string v1, "TransformManager"
 
     const-string v2, "Illegal state in deactivateTransform()"
 
     invoke-static {v1, v2}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 625
+    .line 636
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -471,7 +471,7 @@
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/paneview/PaneView;->transform(Lcom/sonyericsson/paneview/Transformer;)V
 
-    .line 626
+    .line 637
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -480,14 +480,14 @@
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 629
+    .line 640
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v1}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
 
     move-result v0
 
-    .line 630
+    .line 641
     .local v0, progress:F
     const/4 v1, 0x0
 
@@ -495,18 +495,18 @@
 
     if-nez v1, :cond_1
 
-    .line 633
+    .line 644
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->showOpenGLAdvWidgets()V
 
-    .line 636
+    .line 647
     :cond_1
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
-    .line 637
+    .line 648
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -515,7 +515,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 638
+    .line 649
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -524,7 +524,7 @@
 
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onOverviewDeactivated()V
 
-    .line 641
+    .line 652
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -539,7 +539,7 @@
 
     invoke-static {v1, v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1800(Lcom/sonyericsson/home/layer/desktop/DesktopController;IZ)V
 
-    .line 643
+    .line 654
     :cond_2
     return-void
 .end method
@@ -550,12 +550,12 @@
     .parameter "velocity"
 
     .prologue
-    .line 549
+    .line 560
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 551
+    .line 562
     .local v0, now:J
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
@@ -567,17 +567,17 @@
 
     invoke-virtual {v2, v3, p2, v0, v1}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 552
+    .line 563
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v2, p1}, Lcom/sonyericsson/util/SpringDynamics;->setMinPosition(F)V
 
-    .line 553
+    .line 564
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v2, p1}, Lcom/sonyericsson/util/SpringDynamics;->setMaxPosition(F)V
 
-    .line 554
+    .line 565
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -588,7 +588,7 @@
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 555
+    .line 566
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -599,7 +599,7 @@
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/paneview/PaneView;->post(Ljava/lang/Runnable;)Z
 
-    .line 556
+    .line 567
     return-void
 .end method
 
@@ -608,7 +608,7 @@
     .parameter "progress"
 
     .prologue
-    .line 534
+    .line 545
     const/4 v1, 0x0
 
     const v2, 0x7f7fffff
@@ -617,13 +617,13 @@
 
     move-result v0
 
-    .line 535
+    .line 546
     .local v0, clampedProgress:F
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->transformer:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;->setProgress(F)V
 
-    .line 536
+    .line 547
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -632,7 +632,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 537
+    .line 548
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -641,7 +641,7 @@
 
     invoke-interface {v1, v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onOverviewProgress(F)V
 
-    .line 539
+    .line 550
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -651,7 +651,7 @@
 
     invoke-virtual {v1}, Lcom/sonyericsson/paneview/PaneView;->invalidate()V
 
-    .line 540
+    .line 551
     return-void
 .end method
 
@@ -659,27 +659,27 @@
     .locals 2
 
     .prologue
-    .line 591
+    .line 602
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 592
+    .line 603
     const-string v0, "TransformManager"
 
     const-string v1, "Illegal state in startTransformAnimations()"
 
     invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 596
+    .line 607
     :cond_0
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
-    .line 597
+    .line 608
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -688,7 +688,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 598
+    .line 609
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -697,7 +697,7 @@
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onOverviewAnimationsStarted()V
 
-    .line 600
+    .line 611
     :cond_1
     return-void
 .end method
@@ -706,27 +706,27 @@
     .locals 2
 
     .prologue
-    .line 606
+    .line 617
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
-    .line 607
+    .line 618
     const-string v0, "TransformManager"
 
     const-string v1, "Illegal state in stopTransformAnimations()"
 
     invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 611
+    .line 622
     :cond_0
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
-    .line 612
+    .line 623
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -735,7 +735,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 613
+    .line 624
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -744,7 +744,7 @@
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onOverviewAnimationsStopped()V
 
-    .line 615
+    .line 626
     :cond_1
     return-void
 .end method
@@ -755,7 +755,7 @@
     .locals 1
 
     .prologue
-    .line 492
+    .line 503
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v0}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
@@ -769,7 +769,7 @@
     .locals 1
 
     .prologue
-    .line 488
+    .line 499
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
     if-eqz v0, :cond_0
@@ -791,17 +791,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 504
+    .line 515
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 505
+    .line 516
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->startTransformAnimations()V
 
-    .line 508
+    .line 519
     :cond_0
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTransformState:I
 
@@ -809,15 +809,15 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 509
+    .line 520
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClickedItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 510
+    .line 521
     invoke-direct {p0, v2, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->runTransform(FF)V
 
-    .line 512
+    .line 523
     :cond_1
     return-void
 .end method
@@ -828,14 +828,14 @@
     .parameter "event"
 
     .prologue
-    .line 693
+    .line 704
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 694
+    .line 705
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
@@ -909,25 +909,25 @@
 
     if-nez v0, :cond_4
 
-    .line 699
+    .line 710
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mIsOkToTransform:Z
 
-    .line 705
+    .line 716
     :cond_2
     :goto_0
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mIsOkToTransform:Z
 
     if-eqz v0, :cond_3
 
-    .line 706
+    .line 717
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mScaleGestureDetector:Landroid/view/ScaleGestureDetector;
 
     invoke-virtual {v0, p2}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 709
+    .line 720
     :cond_3
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->isTransformed()Z
 
@@ -935,7 +935,7 @@
 
     return v0
 
-    .line 701
+    .line 712
     :cond_4
     const/4 v0, 0x0
 
@@ -948,12 +948,12 @@
     .locals 1
 
     .prologue
-    .line 518
+    .line 529
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->transformer:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;->onPause()V
 
-    .line 519
+    .line 530
     return-void
 .end method
 
@@ -961,12 +961,12 @@
     .locals 1
 
     .prologue
-    .line 525
+    .line 536
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->transformer:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;->onResume()V
 
-    .line 526
+    .line 537
     return-void
 .end method
 
@@ -984,7 +984,7 @@
 
     const/4 v5, 0x1
 
-    .line 647
+    .line 658
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->isTransformed()Z
 
     move-result v2
@@ -993,24 +993,24 @@
 
     move v2, v6
 
-    .line 688
+    .line 699
     :goto_0
     return v2
 
-    .line 651
+    .line 662
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mScaleGestureDetector:Landroid/view/ScaleGestureDetector;
 
     invoke-virtual {v2, p2}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 653
+    .line 664
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 654
+    .line 665
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
@@ -1019,7 +1019,7 @@
 
     iput v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTouchDownX:I
 
-    .line 655
+    .line 666
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
@@ -1028,7 +1028,7 @@
 
     iput v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTouchDownY:I
 
-    .line 657
+    .line 668
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-virtual {v2}, Lcom/sonyericsson/util/SpringDynamics;->getPosition()F
@@ -1039,10 +1039,10 @@
 
     if-lez v2, :cond_1
 
-    .line 658
+    .line 669
     iput-boolean v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClick:Z
 
-    .line 659
+    .line 670
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->transformer:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
     iget v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTouchDownX:I
@@ -1055,7 +1055,7 @@
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClickedItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 664
+    .line 675
     :cond_1
     iget v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mTouchDownX:I
 
@@ -1101,14 +1101,14 @@
 
     if-lez v2, :cond_3
 
-    .line 666
+    .line 677
     :cond_2
     iput-boolean v6, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClick:Z
 
-    .line 667
+    .line 678
     iput-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClickedItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 671
+    .line 682
     :cond_3
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -1116,13 +1116,13 @@
 
     if-le v2, v5, :cond_4
 
-    .line 672
+    .line 683
     iput-boolean v6, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClick:Z
 
-    .line 673
+    .line 684
     iput-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClickedItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 676
+    .line 687
     :cond_4
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1130,7 +1130,7 @@
 
     if-ne v2, v5, :cond_5
 
-    .line 677
+    .line 688
     iget-boolean v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClick:Z
 
     if-eqz v2, :cond_5
@@ -1145,12 +1145,12 @@
 
     if-lez v2, :cond_5
 
-    .line 678
+    .line 689
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClickedItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     if-eqz v2, :cond_5
 
-    .line 679
+    .line 690
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mClickedItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getLocation()Lcom/sonyericsson/home/layer/desktop/DesktopRect;
@@ -1159,7 +1159,7 @@
 
     iget v1, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->pane:I
 
-    .line 680
+    .line 691
     .local v1, pane:I
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -1171,18 +1171,18 @@
 
     move-result v0
 
-    .line 681
+    .line 692
     .local v0, offset:I
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->leaveTransform()V
 
-    .line 682
+    .line 693
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->transformer:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
     neg-int v3, v0
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;->offsetSourceRects(I)V
 
-    .line 683
+    .line 694
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -1196,7 +1196,7 @@
     :cond_5
     move v2, v5
 
-    .line 688
+    .line 699
     goto/16 :goto_0
 .end method
 
@@ -1207,10 +1207,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 496
+    .line 507
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->activateTransform()V
 
-    .line 497
+    .line 508
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -1221,10 +1221,10 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/PaneIndicator;->hide(Z)V
 
-    .line 498
+    .line 509
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->startTransformAnimations()V
 
-    .line 499
+    .line 510
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->mProgressDynamics:Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1233,7 +1233,7 @@
 
     invoke-virtual {v0, p1, v3, v1, v2}, Lcom/sonyericsson/util/SpringDynamics;->setState(FFJ)V
 
-    .line 500
+    .line 511
     const/high16 v0, 0x3f00
 
     cmpg-float v0, p1, v0
@@ -1247,10 +1247,10 @@
 
     invoke-direct {p0, v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->runTransform(FF)V
 
-    .line 501
+    .line 512
     return-void
 
-    .line 500
+    .line 511
     :cond_0
     const/high16 v0, 0x3f80
 

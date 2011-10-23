@@ -56,7 +56,7 @@
 .method public abstract setLockScrollbarRange(Z)V
 .end method
 
-.method public abstract setOpenFolderIcon(I)V
+.method public abstract setOpenFolderIcon(Lcom/sonyericsson/home/data/InfoGroup;)V
 .end method
 
 .method public abstract setScroll(I)V

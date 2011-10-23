@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 366
+    .line 367
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$5;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "animation"
 
     .prologue
-    .line 378
+    .line 379
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$5;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1300(Lcom/sonyericsson/home/layer/stage/StageController;)Landroid/view/View;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 388
+    .line 389
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .parameter "animation"
 
     .prologue
-    .line 371
+    .line 372
     return-void
 .end method
 
@@ -73,6 +73,6 @@
     .parameter "animation"
 
     .prologue
-    .line 368
+    .line 369
     return-void
 .end method

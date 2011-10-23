@@ -1,9 +1,6 @@
 .class Lcom/sonyericsson/home/HomeActivity$18;
-.super Ljava/lang/Object;
+.super Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;
 .source "HomeActivity.java"
-
-# interfaces
-.implements Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
 
 # annotations
@@ -27,44 +24,70 @@
     .parameter
 
     .prologue
-    .line 2474
+    .line 2600
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$18;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFolderCanceled()V
-    .locals 2
+.method public addFullScreenEffect(Landroid/view/View;)V
+    .locals 1
+    .parameter "view"
 
     .prologue
-    .line 2481
+    .line 2604
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$18;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$5700(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/ViewGroup;
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2302(Lcom/sonyericsson/home/HomeActivity;Z)Z
+    move-result-object v0
 
-    .line 2482
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 2605
     return-void
 .end method
 
-.method public onFolderConfirmed(Ljava/lang/String;I)V
+.method public onConfigured(I)V
     .locals 2
-    .parameter "folderName"
-    .parameter "icon"
+    .parameter "response"
 
     .prologue
-    .line 2477
+    .line 2614
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$18;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$3500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2302(Lcom/sonyericsson/home/HomeActivity;Z)Z
+    move-result-object v0
 
-    .line 2478
+    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity$18;->getId()Ljava/util/UUID;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, p1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->onConfigured(Ljava/util/UUID;I)V
+
+    .line 2615
+    return-void
+.end method
+
+.method public removeFullScreenEffect(Landroid/view/View;)V
+    .locals 1
+    .parameter "view"
+
+    .prologue
+    .line 2609
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$18;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$5700(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/ViewGroup;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 2610
     return-void
 .end method

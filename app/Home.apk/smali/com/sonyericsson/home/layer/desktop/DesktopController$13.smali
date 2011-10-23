@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1960
+    .line 1990
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$13;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 1975
+    .line 2005
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$13;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
@@ -50,7 +50,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->focus()V
 
-    .line 1976
+    .line 2006
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 1967
+    .line 1997
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$13;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->defocus()V
 
-    .line 1968
+    .line 1998
     return-void
 .end method

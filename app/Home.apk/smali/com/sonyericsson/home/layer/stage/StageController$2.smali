@@ -48,21 +48,32 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
+    if-eqz v0, :cond_0
 
     .line 228
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
+
+    .line 230
+    :cond_0
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$2;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
+
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$300(Lcom/sonyericsson/home/layer/stage/StageController;)V
 
-    .line 229
+    .line 231
     return-void
 .end method
 
-.method public onContentChanged()V
+.method public onContentChanged(Ljava/util/UUID;)V
     .locals 0
+    .parameter "infoGroupUuid"
 
     .prologue
-    .line 233
+    .line 234
     return-void
 .end method

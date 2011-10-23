@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 175
+    .line 179
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$1;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .parameter "v"
 
     .prologue
-    .line 177
+    .line 181
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$1;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->close()V
 
-    .line 178
+    .line 182
     return-void
 .end method

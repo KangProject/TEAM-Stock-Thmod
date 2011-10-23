@@ -193,7 +193,7 @@
     .parameter "statistics"
 
     .prologue
-    .line 336
+    .line 327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 264
@@ -230,35 +230,35 @@
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCustomizationDoneSyncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
-    .line 337
+    .line 328
     move-object/from16 v0, p1
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
-    .line 338
+    .line 329
     move-object/from16 v0, p5
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    .line 339
+    .line 330
     move-object/from16 v0, p2
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
-    .line 340
+    .line 331
     move-object/from16 v0, p4
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
 
-    .line 342
+    .line 333
     new-instance v12, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
 
     move-object v0, v12
@@ -269,7 +269,7 @@
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mResourceLoaderUtil:Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
 
-    .line 344
+    .line 335
     move-object v0, p0
 
     move-object/from16 v1, p6
@@ -278,7 +278,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createComparators(Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/statistics/Statistics;)V
 
-    .line 347
+    .line 338
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v12
@@ -289,7 +289,7 @@
 
     move-result v11
 
-    .line 348
+    .line 339
     .local v11, rows:I
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -301,7 +301,7 @@
 
     move-result v7
 
-    .line 349
+    .line 340
     .local v7, cols:I
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -313,7 +313,7 @@
 
     move-result v6
 
-    .line 351
+    .line 342
     .local v6, cellWidth:I
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -325,34 +325,34 @@
 
     move-result v5
 
-    .line 353
+    .line 344
     .local v5, cellHeight:I
     new-instance v9, Lcom/sonyericsson/grid/GridSize;
 
     invoke-direct {v9}, Lcom/sonyericsson/grid/GridSize;-><init>()V
 
-    .line 354
+    .line 345
     .local v9, gridSize:Lcom/sonyericsson/grid/GridSize;
     iput v11, v9, Lcom/sonyericsson/grid/GridSize;->rows:I
 
-    .line 355
+    .line 346
     iput v7, v9, Lcom/sonyericsson/grid/GridSize;->cols:I
 
-    .line 356
+    .line 347
     new-instance v12, Lcom/sonyericsson/grid/Grid;
 
     invoke-direct {v12, v6, v5, v9}, Lcom/sonyericsson/grid/Grid;-><init>(IILcom/sonyericsson/grid/GridSize;)V
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
-    .line 359
+    .line 350
     new-instance v12, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-direct {v12}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;-><init>()V
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
-    .line 360
+    .line 351
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     new-instance v13, Lcom/sonyericsson/util/PagedList;
@@ -363,7 +363,7 @@
 
     invoke-virtual {v12, v13}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->setModel(Lcom/sonyericsson/util/PagedList;)V
 
-    .line 363
+    .line 354
     new-instance v12, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     iget-object v13, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
@@ -382,7 +382,30 @@
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
-    .line 366
+    .line 356
+    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v12
+
+    iget v12, v12, Landroid/content/res/Configuration;->orientation:I
+
+    const/4 v13, 0x2
+
+    if-ne v12, v13, :cond_0
+
+    .line 357
+    iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
+
+    const/4 v13, 0x1
+
+    invoke-virtual {v12, v13}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->setLandscapeMode(Z)V
+
+    .line 361
+    :cond_0
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     invoke-static {v12}, Lcom/sonyericsson/home/bidi/Utils;->isRtlAlphabet(Landroid/content/Context;)Z
@@ -391,14 +414,14 @@
 
     iput-boolean v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsRtl:Z
 
-    .line 367
+    .line 362
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     iget-boolean v13, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsRtl:Z
 
     invoke-virtual {v12, v13}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->setDoMirror(Z)V
 
-    .line 370
+    .line 365
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     const-string v13, "home_apptray"
@@ -409,7 +432,7 @@
 
     move-result-object v10
 
-    .line 373
+    .line 368
     .local v10, prefs:Landroid/content/SharedPreferences;
     const-string v12, "preference_apptray_counter"
 
@@ -421,12 +444,12 @@
 
     iput v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayStartCounter:I
 
-    .line 376
+    .line 371
     iget v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayStartCounter:I
 
     iput v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSavedAppTrayStartCounter:I
 
-    .line 377
+    .line 372
     const-string v12, "preference_apptray_shortcut_created"
 
     iget-boolean v13, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mShortcutCreatedByLongPress:Z
@@ -437,14 +460,14 @@
 
     iput-boolean v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mShortcutCreatedByLongPress:Z
 
-    .line 381
+    .line 376
     new-instance v4, Landroid/view/animation/AccelerateInterpolator;
 
     const/high16 v12, 0x4020
 
     invoke-direct {v4, v12}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
 
-    .line 382
+    .line 377
     .local v4, accelerateInterpolator:Landroid/view/animation/AccelerateInterpolator;
     new-instance v8, Landroid/view/animation/DecelerateInterpolator;
 
@@ -452,7 +475,7 @@
 
     invoke-direct {v8, v12}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
-    .line 383
+    .line 378
     .local v8, decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
     const/high16 v12, 0x7f04
 
@@ -466,12 +489,12 @@
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCloseAnim:Landroid/view/animation/Animation;
 
-    .line 384
+    .line 379
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCloseAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v12, v4}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 385
+    .line 380
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCloseAnim:Landroid/view/animation/Animation;
 
     new-instance v13, Lcom/sonyericsson/home/layer/apptray/AppTrayController$3;
@@ -480,7 +503,7 @@
 
     invoke-virtual {v12, v13}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 399
+    .line 394
     const v12, 0x7f040003
 
     move-object/from16 v0, p1
@@ -493,12 +516,12 @@
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mOpenAnim:Landroid/view/animation/Animation;
 
-    .line 400
+    .line 395
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mOpenAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v12, v8}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 401
+    .line 396
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mOpenAnim:Landroid/view/animation/Animation;
 
     new-instance v13, Lcom/sonyericsson/home/layer/apptray/AppTrayController$4;
@@ -513,7 +536,7 @@
 
     invoke-virtual {v12, v13}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 427
+    .line 423
     const v12, 0x7f040001
 
     move-object/from16 v0, p1
@@ -526,12 +549,12 @@
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControlsHideAnim:Landroid/view/animation/Animation;
 
-    .line 428
+    .line 424
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControlsHideAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v12, v4}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 429
+    .line 425
     const v12, 0x7f040002
 
     move-object/from16 v0, p1
@@ -544,34 +567,34 @@
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControlsShowAnim:Landroid/view/animation/Animation;
 
-    .line 430
+    .line 426
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControlsShowAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v12, v8}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 432
+    .line 428
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createOnPackageUpdateListener()Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
     move-result-object v12
 
     iput-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
-    .line 433
+    .line 429
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     iget-object v13, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
     invoke-virtual {v12, v13}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnPackageUpdateListener(Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;)V
 
-    .line 436
+    .line 432
     move-object/from16 v0, p3
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControls:Landroid/view/ViewGroup;
 
-    .line 437
-    const v12, 0x7f0e0005
+    .line 433
+    const v12, 0x7f0e000c
 
     move-object/from16 v0, p3
 
@@ -590,8 +613,8 @@
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mEditButton:Landroid/widget/ImageView;
 
-    .line 438
-    const v12, 0x7f0e0004
+    .line 434
+    const v12, 0x7f0e000b
 
     move-object/from16 v0, p3
 
@@ -609,7 +632,7 @@
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    .line 439
+    .line 435
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mEditButton:Landroid/widget/ImageView;
 
     new-instance v13, Lcom/sonyericsson/home/layer/apptray/AppTrayController$5;
@@ -618,7 +641,7 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 451
+    .line 447
     iget-object v12, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
     new-instance v13, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;
@@ -627,7 +650,7 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 462
+    .line 458
     return-void
 .end method
 
@@ -916,18 +939,18 @@
     .parameter "grid"
 
     .prologue
-    .line 1148
+    .line 1147
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f020050
+    const v2, 0x7f020049
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
     move-result-object v10
 
-    .line 1150
+    .line 1149
     .local v10, uninstallIcon:Landroid/graphics/Bitmap;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -939,7 +962,7 @@
 
     move-result v9
 
-    .line 1152
+    .line 1151
     .local v9, badgeOffset:I
     new-instance v1, Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
@@ -951,7 +974,7 @@
 
     iput-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRendererFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
-    .line 1154
+    .line 1153
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRendererFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
@@ -972,7 +995,7 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;-><init>(Landroid/content/Context;Landroid/view/View;Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/grid/Grid;Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
 
-    .line 1156
+    .line 1155
     .local v0, editor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
     new-instance v1, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;
 
@@ -980,7 +1003,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->setEditorListener(Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$AppTrayEditorListener;)V
 
-    .line 1186
+    .line 1185
     return-object v0
 .end method
 
@@ -990,28 +1013,28 @@
     .parameter "statistics"
 
     .prologue
-    .line 712
+    .line 709
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$8;
 
     invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$8;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAlphabeticalComparator:Ljava/util/Comparator;
 
-    .line 721
+    .line 718
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$9;
 
     invoke-direct {v0, p0, p2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$9;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/statistics/Statistics;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mMostUsedComparator:Ljava/util/Comparator;
 
-    .line 729
+    .line 726
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$10;
 
     invoke-direct {v0, p0, p2}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$10;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/statistics/Statistics;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRecentlyInstalledComparator:Ljava/util/Comparator;
 
-    .line 745
+    .line 742
     return-void
 .end method
 
@@ -1022,18 +1045,18 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1136
+    .line 1135
     new-instance v2, Landroid/util/TypedValue;
 
     invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
 
-    .line 1137
+    .line 1136
     .local v2, stiffness:Landroid/util/TypedValue;
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 1138
+    .line 1137
     .local v0, damping:Landroid/util/TypedValue;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1043,7 +1066,7 @@
 
     invoke-virtual {v3, v4, v2, v5}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 1139
+    .line 1138
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -1052,12 +1075,12 @@
 
     invoke-virtual {v3, v4, v0, v5}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 1140
+    .line 1139
     new-instance v1, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v1}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
-    .line 1141
+    .line 1140
     .local v1, dynamics:Lcom/sonyericsson/util/SpringDynamics;
     invoke-virtual {v2}, Landroid/util/TypedValue;->getFloat()F
 
@@ -1069,7 +1092,7 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 1142
+    .line 1141
     return-object v1
 .end method
 
@@ -1077,7 +1100,7 @@
     .locals 1
 
     .prologue
-    .line 875
+    .line 872
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$13;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$13;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
@@ -1089,7 +1112,7 @@
     .locals 1
 
     .prologue
-    .line 1050
+    .line 1049
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
@@ -1101,7 +1124,7 @@
     .locals 1
 
     .prologue
-    .line 926
+    .line 923
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
@@ -1113,7 +1136,7 @@
     .locals 1
 
     .prologue
-    .line 893
+    .line 890
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$14;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$14;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
@@ -1126,7 +1149,7 @@
     .parameter "paneIndicator"
 
     .prologue
-    .line 861
+    .line 858
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;
 
     invoke-direct {v0, p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/layer/PaneIndicator;)V
@@ -1142,7 +1165,7 @@
 
     const/4 v5, 0x0
 
-    .line 789
+    .line 786
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->isEditingEnabled()Z
@@ -1151,44 +1174,44 @@
 
     if-nez v3, :cond_0
 
-    .line 790
+    .line 787
     const-string v3, "AppTrayControler"
 
     const-string v4, "exitEditMode() called when editing already was disabled."
 
     invoke-static {v3, v4}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 794
+    .line 791
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setEnabled(Z)V
 
-    .line 795
+    .line 792
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setFocusable(Z)V
 
-    .line 796
+    .line 793
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     if-eqz v3, :cond_1
 
-    .line 797
+    .line 794
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     invoke-interface {v3, v5}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onEditModeEnabled(Z)V
 
-    .line 799
+    .line 796
     :cond_1
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     invoke-virtual {v3, v5, v5}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->enableEditing(ZZ)V
 
-    .line 802
+    .line 799
     const/4 v1, 0x0
 
-    .line 803
+    .line 800
     .local v1, emptyPanes:I
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -1196,7 +1219,7 @@
 
     move-result v0
 
-    .line 804
+    .line 801
     .local v0, currentPane:I
     const/4 v2, 0x0
 
@@ -1204,7 +1227,7 @@
     :goto_0
     if-ge v2, v0, :cond_3
 
-    .line 805
+    .line 802
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v3, v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->isPaneEmpty(I)Z
@@ -1218,7 +1241,7 @@
     :goto_1
     add-int/2addr v1, v3
 
-    .line 804
+    .line 801
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
@@ -1226,21 +1249,21 @@
     :cond_2
     move v3, v5
 
-    .line 805
+    .line 802
     goto :goto_1
 
-    .line 809
+    .line 806
     :cond_3
     if-eqz v1, :cond_4
 
-    .line 812
+    .line 809
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     neg-int v4, v1
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->offsetAllPanes(I)V
 
-    .line 813
+    .line 810
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     sub-int v4, v0, v1
@@ -1249,31 +1272,31 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/paneview/PaneView;->setPosition(F)V
 
-    .line 814
+    .line 811
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 815
+    .line 812
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 816
+    .line 813
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRendererFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 817
+    .line 814
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v3, v5}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->offsetAllPanes(I)V
 
-    .line 821
+    .line 818
     :cond_4
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
@@ -1283,15 +1306,15 @@
 
     if-eqz v3, :cond_5
 
-    .line 822
+    .line 819
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 823
+    .line 820
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->writeToStorage()V
 
-    .line 826
+    .line 823
     :cond_5
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -1301,7 +1324,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02003d
+    const v5, 0x7f020036
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1309,14 +1332,14 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/paneview/PaneView;->setBackplate(Landroid/graphics/drawable/Drawable;)V
 
-    .line 827
+    .line 824
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mEditButton:Landroid/widget/ImageView;
 
     const v4, 0x7f020002
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 828
+    .line 825
     return-void
 .end method
 
@@ -1324,12 +1347,12 @@
     .locals 2
 
     .prologue
-    .line 1116
+    .line 1115
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsPackageSyncOngoing:Z
 
-    .line 1117
+    .line 1116
     iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPendingPackageSyncCounter:I
 
     const/4 v1, 0x1
@@ -1338,15 +1361,15 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPendingPackageSyncCounter:I
 
-    .line 1118
+    .line 1117
     iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPendingPackageSyncCounter:I
 
     if-nez v0, :cond_0
 
-    .line 1119
+    .line 1118
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->refreshModel()V
 
-    .line 1121
+    .line 1120
     :cond_0
     return-void
 .end method
@@ -1355,30 +1378,30 @@
     .locals 1
 
     .prologue
-    .line 1105
+    .line 1104
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsPackageSyncOngoing:Z
 
     if-nez v0, :cond_0
 
-    .line 1106
+    .line 1105
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPendingPackageSyncCounter:I
 
-    .line 1108
+    .line 1107
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsPackageSyncOngoing:Z
 
-    .line 1109
+    .line 1108
     iget v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPendingPackageSyncCounter:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPendingPackageSyncCounter:I
 
-    .line 1110
+    .line 1109
     return-void
 .end method
 
@@ -1387,17 +1410,17 @@
     .parameter "animating"
 
     .prologue
-    .line 549
+    .line 545
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     if-eqz v0, :cond_0
 
-    .line 550
+    .line 546
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onAppTrayClosed(Z)V
 
-    .line 552
+    .line 548
     :cond_0
     return-void
 .end method
@@ -1406,33 +1429,33 @@
     .locals 2
 
     .prologue
-    .line 1127
+    .line 1126
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     if-eqz v0, :cond_0
 
-    .line 1128
+    .line 1127
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->sort(Ljava/util/Comparator;)V
 
-    .line 1130
+    .line 1129
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->removeEmptyPanes()Z
 
-    .line 1131
+    .line 1130
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->writeToStorage()V
 
-    .line 1132
+    .line 1131
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 1133
+    .line 1132
     return-void
 .end method
 
@@ -1440,7 +1463,7 @@
     .locals 5
 
     .prologue
-    .line 627
+    .line 624
     iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSavedAppTrayStartCounter:I
 
     const/4 v3, 0x5
@@ -1453,7 +1476,7 @@
 
     if-le v2, v3, :cond_0
 
-    .line 629
+    .line 626
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     const-string v3, "home_apptray"
@@ -1464,13 +1487,13 @@
 
     move-result-object v1
 
-    .line 631
+    .line 628
     .local v1, prefs:Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 632
+    .line 629
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "preference_apptray_counter"
 
@@ -1478,22 +1501,22 @@
 
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 633
+    .line 630
     const-string v2, "preference_apptray_shortcut_created"
 
     iget-boolean v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mShortcutCreatedByLongPress:Z
 
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 634
+    .line 631
     invoke-static {v0}, Lcom/sonyericsson/util/SharedPreferencesCompat;->apply(Landroid/content/SharedPreferences$Editor;)V
 
-    .line 635
+    .line 632
     iget v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayStartCounter:I
 
     iput v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSavedAppTrayStartCounter:I
 
-    .line 637
+    .line 634
     .end local v0           #editor:Landroid/content/SharedPreferences$Editor;
     .end local v1           #prefs:Landroid/content/SharedPreferences;
     :cond_0
@@ -1505,7 +1528,7 @@
     .parameter "sortMode"
 
     .prologue
-    .line 1026
+    .line 1023
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     const-string v3, "home_apptray"
@@ -1516,22 +1539,22 @@
 
     move-result-object v1
 
-    .line 1028
+    .line 1025
     .local v1, prefs:Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 1029
+    .line 1026
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "preference_apptray_sort_order"
 
     invoke-interface {v0, v2, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 1030
+    .line 1027
     invoke-static {v0}, Lcom/sonyericsson/util/SharedPreferencesCompat;->apply(Landroid/content/SharedPreferences$Editor;)V
 
-    .line 1031
+    .line 1028
     return-void
 .end method
 
@@ -1541,22 +1564,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 748
+    .line 745
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->sort(Ljava/util/Comparator;)V
 
-    .line 749
+    .line 746
     iput-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
-    .line 750
+    .line 747
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v1, 0x7f02005e
+    const v1, 0x7f020058
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 751
+    .line 748
     return-void
 .end method
 
@@ -1566,7 +1589,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 980
+    .line 977
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     check-cast v0, Landroid/view/ViewStub;
@@ -1577,7 +1600,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
-    .line 983
+    .line 980
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
@@ -1588,18 +1611,18 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
-    .line 986
+    .line 983
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v10
 
-    .line 987
+    .line 984
     .local v10, res:Landroid/content/res/Resources;
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
-    const/high16 v1, 0x7f0e
+    const v1, 0x7f0e0007
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1609,7 +1632,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    .line 988
+    .line 985
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createOnItemClickListener()Landroid/widget/AdapterView$OnItemClickListener;
@@ -1618,7 +1641,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 989
+    .line 986
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->createPaneViewTouchListener()Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
@@ -1627,7 +1650,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setPaneViewTouchListener(Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;)V
 
-    .line 990
+    .line 987
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
@@ -1638,7 +1661,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setPaneDynamics(Lcom/sonyericsson/util/Dynamics;)V
 
-    .line 991
+    .line 988
     const v0, 0x7f090009
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getInteger(I)I
@@ -1651,16 +1674,16 @@
 
     div-float v9, v0, v1
 
-    .line 992
+    .line 989
     .local v9, paneMargin:F
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v9}, Lcom/sonyericsson/paneview/PaneView;->setPaneMargin(F)V
 
-    .line 993
+    .line 990
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    const v1, 0x7f020052
+    const v1, 0x7f02004b
 
     invoke-virtual {v10, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1668,10 +1691,10 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setSelectedItemDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 994
+    .line 991
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    const v1, 0x7f020004
+    const v1, 0x7f02000b
 
     invoke-virtual {v10, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1679,10 +1702,10 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setFocusedItemDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 996
+    .line 993
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    const v1, 0x7f02003d
+    const v1, 0x7f020036
 
     invoke-virtual {v10, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1690,14 +1713,14 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setBackplate(Landroid/graphics/drawable/Drawable;)V
 
-    .line 997
+    .line 994
     const v0, 0x7f0a0028
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v6
 
-    .line 998
+    .line 995
     .local v6, backPlateOffsetX:I
     const v0, 0x7f0a0029
 
@@ -1705,13 +1728,13 @@
 
     move-result v7
 
-    .line 999
+    .line 996
     .local v7, backPlateWidth:I
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v6, v7}, Lcom/sonyericsson/paneview/PaneView;->setBackplateModifiers(II)V
 
-    .line 1000
+    .line 997
     invoke-virtual {v10}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v0
@@ -1722,14 +1745,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1001
+    .line 998
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setPreferExternalFocus(Z)V
 
-    .line 1002
+    .line 999
     invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v0
@@ -1740,13 +1763,13 @@
 
     sub-int v8, v0, v1
 
-    .line 1004
+    .line 1001
     .local v8, focusPaddingRight:I
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v6, v2, v8, v2}, Lcom/sonyericsson/paneview/PaneView;->setFocusPadding(IIII)V
 
-    .line 1006
+    .line 1003
     .end local v8           #focusPaddingRight:I
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
@@ -1755,7 +1778,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setAdapter(Lcom/sonyericsson/paneview/PaneAdapter;)V
 
-    .line 1007
+    .line 1004
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -1766,14 +1789,14 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setScrollListener(Lcom/sonyericsson/paneview/PaneView$ScrollListener;)V
 
-    .line 1008
+    .line 1005
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/16 v1, 0x258
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setVelocityThreshold(I)V
 
-    .line 1011
+    .line 1008
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
@@ -1792,40 +1815,40 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
-    .line 1015
+    .line 1012
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     iget-boolean v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsRtl:Z
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->setDoMirror(Z)V
 
-    .line 1016
+    .line 1013
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     iget-boolean v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsRtl:Z
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/PaneIndicator;->setDoMirror(Z)V
 
-    .line 1017
+    .line 1014
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-boolean v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mIsRtl:Z
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setDoMirror(Z)V
 
-    .line 1020
+    .line 1017
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 1021
+    .line 1018
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setPosition(F)V
 
-    .line 1022
+    .line 1019
     return-void
 .end method
 
@@ -1835,8 +1858,8 @@
     .parameter "appTrayView"
 
     .prologue
-    .line 831
-    const v5, 0x7f0e0001
+    .line 828
+    const v5, 0x7f0e0008
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1844,13 +1867,13 @@
 
     check-cast v3, Lcom/sonyericsson/home/layer/PaneIndicator;
 
-    .line 833
+    .line 830
     .local v3, paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
     new-instance v1, Landroid/util/TypedValue;
 
     invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
 
-    .line 834
+    .line 831
     .local v1, indicatorSize:Landroid/util/TypedValue;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1862,30 +1885,30 @@
 
     invoke-virtual {v5, v6, v1, v7}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 835
+    .line 832
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    const v6, 0x7f020012
+    const v6, 0x7f020019
 
     invoke-static {v5, v6}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 837
+    .line 834
     .local v2, leftArrow:Landroid/graphics/Bitmap;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    const v6, 0x7f020013
+    const v6, 0x7f02001a
 
     invoke-static {v5, v6}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
-    .line 839
+    .line 836
     .local v4, rightArrow:Landroid/graphics/Bitmap;
     invoke-virtual {v1}, Landroid/util/TypedValue;->getFloat()F
 
@@ -1893,7 +1916,7 @@
 
     invoke-virtual {v3, v5, v2, v4}, Lcom/sonyericsson/home/layer/PaneIndicator;->setAppearance(FLandroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
 
-    .line 841
+    .line 838
     iget-object v5, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1906,18 +1929,18 @@
 
     move-result v0
 
-    .line 843
+    .line 840
     .local v0, fadeOnTimeout:Z
     if-eqz v0, :cond_0
 
-    .line 844
+    .line 841
     new-instance v5, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;
 
     invoke-direct {v5, p0, v3}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$11;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/home/layer/PaneIndicator;)V
 
     invoke-virtual {v3, v5}, Lcom/sonyericsson/home/layer/PaneIndicator;->setOnInactiveTimeoutListener(Lcom/sonyericsson/home/layer/PaneIndicator$InactiveTimeoutListener;)V
 
-    .line 851
+    .line 848
     :cond_0
     return-object v3
 .end method
@@ -1928,21 +1951,21 @@
     .parameter "addedDuration"
 
     .prologue
-    .line 465
+    .line 461
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;
 
     invoke-direct {v0, p0, p2, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;-><init>(Lcom/sonyericsson/home/layer/apptray/AppTrayController;ILandroid/widget/Toast;)V
 
-    .line 490
+    .line 486
     .local v0, t:Ljava/lang/Thread;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setDaemon(Z)V
 
-    .line 491
+    .line 487
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 492
+    .line 488
     return-void
 .end method
 
@@ -1964,13 +1987,13 @@
     .end annotation
 
     .prologue
-    .line 1034
+    .line 1031
     .local p1, model:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v1, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->setModel(Lcom/sonyericsson/util/PagedList;)V
 
-    .line 1035
+    .line 1032
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getAllInfos()Ljava/util/Collection;
@@ -1983,36 +2006,39 @@
 
     move-result v0
 
-    .line 1038
+    .line 1035
     .local v0, modelChanged:Z
+    invoke-virtual {p1}, Lcom/sonyericsson/util/PagedList;->removeGaps()V
+
+    .line 1037
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setUp()V
 
-    .line 1040
+    .line 1039
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSyncCompleted:Z
 
-    .line 1041
+    .line 1040
     if-nez p3, :cond_0
 
     if-eqz v0, :cond_1
 
-    .line 1042
+    .line 1041
     :cond_0
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->writeToStorage()V
 
-    .line 1044
+    .line 1043
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     if-eqz v1, :cond_2
 
-    .line 1045
+    .line 1044
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onSyncCompleted()V
 
-    .line 1047
+    .line 1046
     :cond_2
     return-void
 .end method
@@ -2023,32 +2049,32 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1190
+    .line 1189
     iget-boolean v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSyncCompleted:Z
 
     if-eqz v2, :cond_0
 
-    .line 1191
+    .line 1190
     new-instance v1, Lcom/sonyericsson/storage/Root;
 
     const-string v2, "apptray"
 
     invoke-direct {v1, v2}, Lcom/sonyericsson/storage/Root;-><init>(Ljava/lang/String;)V
 
-    .line 1192
+    .line 1191
     .local v1, root:Lcom/sonyericsson/storage/Root;
     const-string v2, "version"
 
     invoke-virtual {v1, v2, v4}, Lcom/sonyericsson/storage/Root;->put(Ljava/lang/String;I)V
 
-    .line 1193
+    .line 1192
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getModel()Lcom/sonyericsson/util/PagedList;
 
     move-result-object v0
 
-    .line 1194
+    .line 1193
     .local v0, model:Lcom/sonyericsson/util/PagedList;
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -2060,12 +2086,12 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sonyericsson/storage/Root;->addChild(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)V
 
-    .line 1195
+    .line 1194
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     invoke-static {v2, v1, v4}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Lcom/sonyericsson/storage/Root;Z)V
 
-    .line 1197
+    .line 1196
     .end local v0           #model:Lcom/sonyericsson/util/PagedList;
     .end local v1           #root:Lcom/sonyericsson/storage/Root;
     :cond_0
@@ -2083,7 +2109,7 @@
 
     const/4 v1, 0x1
 
-    .line 603
+    .line 600
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -2092,66 +2118,66 @@
 
     if-nez v0, :cond_1
 
-    .line 604
+    .line 601
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isEditing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 605
+    .line 602
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->exitEditMode()V
 
-    .line 608
+    .line 605
     :cond_0
     iput-boolean v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mDisabledWhileClosing:Z
 
-    .line 609
+    .line 606
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setTouchLocked(Z)V
 
-    .line 610
+    .line 607
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 611
+    .line 608
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControls:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 612
+    .line 609
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 613
+    .line 610
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->saveNudgeData()V
 
-    .line 615
+    .line 612
     if-eqz p1, :cond_2
 
-    .line 616
+    .line 613
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControls:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControlsHideAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 617
+    .line 614
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCloseAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 622
+    .line 619
     :cond_1
     :goto_0
     return-void
 
-    .line 619
+    .line 616
     :cond_2
     const/4 v0, 0x0
 
@@ -2168,7 +2194,7 @@
 
     const/4 v3, 0x0
 
-    .line 755
+    .line 752
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->isEditingEnabled()Z
@@ -2177,55 +2203,55 @@
 
     if-eqz v1, :cond_0
 
-    .line 756
+    .line 753
     const-string v1, "AppTrayControler"
 
     const-string v2, "forceEditMode() called when editing already was enabled."
 
     invoke-static {v1, v2}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 761
+    .line 758
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     if-nez v1, :cond_1
 
-    .line 763
+    .line 760
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->addEmptyPane()V
 
-    .line 764
+    .line 761
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->notifyObservers()V
 
-    .line 767
+    .line 764
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setEnabled(Z)V
 
-    .line 768
+    .line 765
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setFocusable(Z)V
 
-    .line 770
+    .line 767
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     if-eqz v1, :cond_4
 
     move v0, v4
 
-    .line 771
+    .line 768
     .local v0, onlyUninstall:Z
     :goto_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     invoke-virtual {v1, v4, v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->enableEditing(ZZ)V
 
-    .line 772
+    .line 769
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
@@ -2234,7 +2260,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f02003e
+    const v3, 0x7f020037
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2242,24 +2268,24 @@
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/paneview/PaneView;->setBackplate(Landroid/graphics/drawable/Drawable;)V
 
-    .line 773
+    .line 770
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mEditButton:Landroid/widget/ImageView;
 
     const v2, 0x7f020003
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 775
+    .line 772
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     if-eqz v1, :cond_2
 
-    .line 776
+    .line 773
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     invoke-interface {v1, v4}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onEditModeEnabled(Z)V
 
-    .line 779
+    .line 776
     :cond_2
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -2283,12 +2309,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 783
+    .line 780
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onNoUninstallableItems()V
 
-    .line 785
+    .line 782
     :cond_3
     return-void
 
@@ -2296,7 +2322,7 @@
     :cond_4
     move v0, v3
 
-    .line 770
+    .line 767
     goto :goto_0
 .end method
 
@@ -2304,7 +2330,7 @@
     .locals 1
 
     .prologue
-    .line 579
+    .line 575
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mDisableDuringSortDialog:Z
 
     return v0
@@ -2314,7 +2340,7 @@
     .locals 1
 
     .prologue
-    .line 567
+    .line 563
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
@@ -2328,21 +2354,21 @@
     .locals 2
 
     .prologue
-    .line 1204
+    .line 1203
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAlphabeticalComparator:Ljava/util/Comparator;
 
     if-ne v0, v1, :cond_0
 
-    .line 1205
+    .line 1204
     const/4 v0, 0x1
 
-    .line 1211
+    .line 1210
     :goto_0
     return v0
 
-    .line 1206
+    .line 1205
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
@@ -2350,12 +2376,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1207
+    .line 1206
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 1208
+    .line 1207
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
@@ -2363,12 +2389,12 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 1209
+    .line 1208
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 1211
+    .line 1210
     :cond_2
     const/4 v0, 0x0
 
@@ -2379,7 +2405,7 @@
     .locals 1
 
     .prologue
-    .line 922
+    .line 919
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;->getModel()Lcom/sonyericsson/util/PagedList;
@@ -2393,19 +2419,19 @@
     .locals 1
 
     .prologue
-    .line 571
+    .line 567
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     if-eqz v0, :cond_0
 
-    .line 572
+    .line 568
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->isEditingEnabled()Z
 
     move-result v0
 
-    .line 574
+    .line 570
     :goto_0
     return v0
 
@@ -2419,7 +2445,7 @@
     .locals 1
 
     .prologue
-    .line 563
+    .line 559
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -2443,7 +2469,7 @@
     .locals 1
 
     .prologue
-    .line 1200
+    .line 1199
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSyncCompleted:Z
 
     return v0
@@ -2453,7 +2479,7 @@
     .locals 3
 
     .prologue
-    .line 906
+    .line 903
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
 
     const-string v1, "apptray"
@@ -2468,7 +2494,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mReadHandle:Ljava/lang/Object;
 
-    .line 907
+    .line 904
     return-void
 .end method
 
@@ -2476,7 +2502,7 @@
     .locals 1
 
     .prologue
-    .line 705
+    .line 702
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->moveToLeftPane()Z
@@ -2485,12 +2511,12 @@
 
     if-nez v0, :cond_0
 
-    .line 707
+    .line 704
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 709
+    .line 706
     :cond_0
     return-void
 .end method
@@ -2500,14 +2526,14 @@
     .parameter "pane"
 
     .prologue
-    .line 694
+    .line 691
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     int-to-float v1, p1
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setPosition(F)V
 
-    .line 695
+    .line 692
     return-void
 .end method
 
@@ -2515,7 +2541,7 @@
     .locals 1
 
     .prologue
-    .line 698
+    .line 695
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->moveToRightPane()Z
@@ -2524,12 +2550,12 @@
 
     if-nez v0, :cond_0
 
-    .line 700
+    .line 697
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 702
+    .line 699
     :cond_0
     return-void
 .end method
@@ -2539,12 +2565,12 @@
     .parameter "info"
 
     .prologue
-    .line 1230
+    .line 1229
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 1231
+    .line 1230
     return-void
 .end method
 
@@ -2552,7 +2578,7 @@
     .locals 1
 
     .prologue
-    .line 1220
+    .line 1219
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isSyncCompleted()Z
 
     move-result v0
@@ -2565,13 +2591,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 1221
+    .line 1220
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->exitEditMode()V
 
-    .line 1222
+    .line 1221
     const/4 v0, 0x1
 
-    .line 1225
+    .line 1224
     :goto_0
     return v0
 
@@ -2587,62 +2613,67 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 587
+    .line 583
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 588
+    .line 584
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mEditButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 589
+    .line 585
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->removeOnPackageUpdateListener(Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;)V
 
-    .line 590
+    .line 586
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mReadHandle:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    .line 591
+    .line 587
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mReadHandle:Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/sonyericsson/storage/Storage;->cancelReadRoot(Ljava/lang/Object;)V
 
-    .line 593
+    .line 589
     :cond_0
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSyncCompleted:Z
 
     if-eqz v0, :cond_1
 
-    .line 594
+    .line 590
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 595
+    .line 591
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setScrollListener(Lcom/sonyericsson/paneview/PaneView$ScrollListener;)V
+
+    .line 592
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/PaneIndicator;->setOnInactiveTimeoutListener(Lcom/sonyericsson/home/layer/PaneIndicator$InactiveTimeoutListener;)V
 
-    .line 596
+    .line 593
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->removeCallbacks()V
 
-    .line 598
+    .line 595
     :cond_1
     iput-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
-    .line 599
+    .line 596
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->saveNudgeData()V
 
-    .line 600
+    .line 597
     return-void
 .end method
 
@@ -2655,7 +2686,7 @@
 
     const/4 v5, 0x0
 
-    .line 640
+    .line 637
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -2664,52 +2695,52 @@
 
     if-eqz v3, :cond_2
 
-    .line 641
+    .line 638
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v3, v5}, Lcom/sonyericsson/paneview/PaneView;->setTouchLocked(Z)V
 
-    .line 642
+    .line 639
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 643
+    .line 640
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 644
+    .line 641
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControls:Landroid/view/ViewGroup;
 
     invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 645
+    .line 642
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->clearAnimation()V
 
-    .line 647
+    .line 644
     iput-boolean v5, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mDisabledWhileClosing:Z
 
-    .line 649
+    .line 646
     if-eqz p1, :cond_3
 
-    .line 650
+    .line 647
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControls:Landroid/view/ViewGroup;
 
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mControlsShowAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 651
+    .line 648
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayView:Landroid/view/View;
 
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mOpenAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v3, v4}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 659
+    .line 656
     :cond_0
     :goto_0
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mContext:Landroid/content/Context;
@@ -2720,7 +2751,7 @@
 
     move-result-object v1
 
-    .line 661
+    .line 658
     .local v1, prefs:Landroid/content/SharedPreferences;
     const-string v3, "preference_apptray_sort_order"
 
@@ -2728,21 +2759,21 @@
 
     move-result v2
 
-    .line 664
+    .line 661
     .local v2, sortMode:I
     if-nez v2, :cond_4
 
-    .line 665
+    .line 662
     iput-object v6, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
-    .line 666
+    .line 663
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v4, 0x7f02005e
+    const v4, 0x7f020058
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 679
+    .line 676
     :cond_1
     :goto_1
     :try_start_0
@@ -2754,49 +2785,49 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 685
+    .line 682
     :goto_2
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v3}, Lcom/sonyericsson/paneview/PaneView;->clearAllRenderers()V
 
-    .line 686
+    .line 683
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v3, v6}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 687
+    .line 684
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 688
+    .line 685
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRendererFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 691
+    .line 688
     .end local v1           #prefs:Landroid/content/SharedPreferences;
     .end local v2           #sortMode:I
     :cond_2
     return-void
 
-    .line 653
+    .line 650
     :cond_3
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     if-eqz v3, :cond_0
 
-    .line 654
+    .line 651
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
     invoke-interface {v3}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onAppTrayOpened()V
 
     goto :goto_0
 
-    .line 667
+    .line 664
     .restart local v1       #prefs:Landroid/content/SharedPreferences;
     .restart local v2       #sortMode:I
     :cond_4
@@ -2804,71 +2835,71 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 668
+    .line 665
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAlphabeticalComparator:Ljava/util/Comparator;
+
+    iput-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
+
+    .line 666
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
+
+    const v4, 0x7f020057
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_1
+
+    .line 667
+    :cond_5
+    const/4 v3, 0x2
+
+    if-ne v2, v3, :cond_6
+
+    .line 668
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mMostUsedComparator:Ljava/util/Comparator;
 
     iput-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     .line 669
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v4, 0x7f02005d
+    const v4, 0x7f02005a
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_1
 
     .line 670
-    :cond_5
-    const/4 v3, 0x2
+    :cond_6
+    const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_6
+    if-ne v2, v3, :cond_1
 
     .line 671
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mMostUsedComparator:Ljava/util/Comparator;
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRecentlyInstalledComparator:Ljava/util/Comparator;
 
     iput-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     .line 672
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v4, 0x7f020060
+    const v4, 0x7f020059
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_1
 
-    .line 673
-    :cond_6
-    const/4 v3, 0x3
-
-    if-ne v2, v3, :cond_1
-
-    .line 674
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRecentlyInstalledComparator:Ljava/util/Comparator;
-
-    iput-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
-
-    .line 675
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
-
-    const v4, 0x7f02005f
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_1
-
-    .line 680
+    .line 677
     :catch_0
     move-exception v3
 
     move-object v0, v3
 
-    .line 681
+    .line 678
     .local v0, e:Ljava/lang/Exception;
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setFreeSort()V
 
-    .line 682
+    .line 679
     const-string v3, "apptray"
 
     const-string v4, "Sort failed"
@@ -2883,10 +2914,10 @@
     .parameter "listener"
 
     .prologue
-    .line 559
+    .line 555
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayControllerListener:Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
 
-    .line 560
+    .line 556
     return-void
 .end method
 
@@ -2895,10 +2926,10 @@
     .parameter "disable"
 
     .prologue
-    .line 583
+    .line 579
     iput-boolean p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mDisableDuringSortDialog:Z
 
-    .line 584
+    .line 580
     return-void
 .end method
 
@@ -2907,12 +2938,12 @@
     .parameter "rect"
 
     .prologue
-    .line 555
+    .line 551
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayEditor:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->setOriginRect(Landroid/graphics/Rect;)V
 
-    .line 556
+    .line 552
     return-void
 .end method
 
@@ -2921,7 +2952,7 @@
     .parameter "model"
 
     .prologue
-    .line 918
+    .line 915
     check-cast p1, Lcom/sonyericsson/util/PagedList;
 
     .end local p1
@@ -2931,7 +2962,7 @@
 
     invoke-direct {p0, p1, v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->syncAndSetup(Lcom/sonyericsson/util/PagedList;Lcom/sonyericsson/home/data/SyncHelper$Syncable;Z)V
 
-    .line 919
+    .line 916
     return-void
 .end method
 
@@ -2944,38 +2975,38 @@
 
     const/4 v4, 0x0
 
-    .line 495
+    .line 491
     const/4 v1, 0x0
 
-    .line 496
+    .line 492
     .local v1, sameSort:Z
     if-nez p1, :cond_3
 
-    .line 497
+    .line 493
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     if-nez v2, :cond_0
 
-    .line 498
+    .line 494
     const/4 v1, 0x1
 
-    .line 500
+    .line 496
     :cond_0
     iput-object v5, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
-    .line 501
+    .line 497
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v3, 0x7f02005e
+    const v3, 0x7f020058
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 522
+    .line 518
     :cond_1
     :goto_0
     if-nez v1, :cond_2
 
-    .line 523
+    .line 519
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
@@ -2988,31 +3019,31 @@
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->offsetAllPanes(I)V
 
-    .line 524
+    .line 520
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/paneview/PaneView;->setPosition(F)V
 
-    .line 525
+    .line 521
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v2, v5}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 526
+    .line 522
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 527
+    .line 523
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRendererFactory:Lcom/sonyericsson/home/layer/apptray/AppTrayRendererFactory;
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 531
+    .line 527
     :try_start_0
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAppTrayModelManager:Lcom/sonyericsson/home/layer/apptray/AppTrayModelManager;
 
@@ -3022,131 +3053,131 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 536
+    .line 532
     :goto_1
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v2, v4}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->offsetAllPanes(I)V
 
-    .line 537
+    .line 533
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAdapter:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 540
+    .line 536
     :cond_2
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->saveSortOrder(I)V
 
-    .line 541
+    .line 537
     iput-boolean v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mDisableDuringSortDialog:Z
 
-    .line 542
+    .line 538
     return-void
 
-    .line 502
+    .line 498
     :cond_3
     const/4 v2, 0x1
 
     if-ne p1, v2, :cond_5
 
-    .line 503
+    .line 499
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAlphabeticalComparator:Ljava/util/Comparator;
 
     if-ne v2, v3, :cond_4
 
-    .line 504
+    .line 500
     const/4 v1, 0x1
 
-    .line 506
+    .line 502
     :cond_4
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mAlphabeticalComparator:Ljava/util/Comparator;
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
-    .line 507
+    .line 503
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v3, 0x7f02005d
+    const v3, 0x7f020057
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_0
 
-    .line 508
+    .line 504
     :cond_5
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_7
 
-    .line 509
+    .line 505
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mMostUsedComparator:Ljava/util/Comparator;
 
     if-ne v2, v3, :cond_6
 
-    .line 510
+    .line 506
     const/4 v1, 0x1
 
-    .line 512
+    .line 508
     :cond_6
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mMostUsedComparator:Ljava/util/Comparator;
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
-    .line 513
+    .line 509
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v3, 0x7f020060
+    const v3, 0x7f02005a
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_0
 
-    .line 514
+    .line 510
     :cond_7
     const/4 v2, 0x3
 
     if-ne p1, v2, :cond_1
 
-    .line 515
+    .line 511
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRecentlyInstalledComparator:Ljava/util/Comparator;
 
     if-ne v2, v3, :cond_8
 
-    .line 516
+    .line 512
     const/4 v1, 0x1
 
-    .line 518
+    .line 514
     :cond_8
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mRecentlyInstalledComparator:Ljava/util/Comparator;
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mCurrentComparator:Ljava/util/Comparator;
 
-    .line 519
+    .line 515
     iget-object v2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mSortButton:Landroid/widget/ImageView;
 
-    const v3, 0x7f02005f
+    const v3, 0x7f020059
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_0
 
-    .line 532
+    .line 528
     :catch_0
     move-exception v2
 
     move-object v0, v2
 
-    .line 533
+    .line 529
     .local v0, e:Ljava/lang/Exception;
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setFreeSort()V
 
-    .line 534
+    .line 530
     const-string v2, "apptray"
 
     const-string v3, "Sort failed"
@@ -3160,11 +3191,11 @@
     .locals 1
 
     .prologue
-    .line 545
+    .line 541
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->mDisableDuringSortDialog:Z
 
-    .line 546
+    .line 542
     return-void
 .end method

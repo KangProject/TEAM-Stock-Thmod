@@ -172,7 +172,7 @@
     iput-object v0, p0, Lcom/sonyericsson/home/layer/PaneIndicator;->mOffsetRunnable:Ljava/lang/Runnable;
 
     .line 165
-    const v0, 0x7f040008
+    const v0, 0x7f040009
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -181,7 +181,7 @@
     iput-object v0, p0, Lcom/sonyericsson/home/layer/PaneIndicator;->mFadeInAnimation:Landroid/view/animation/Animation;
 
     .line 166
-    const v0, 0x7f040009
+    const v0, 0x7f04000a
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -413,7 +413,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f02003b
+    const v20, 0x7f020034
 
     invoke-static/range {v19 .. v20}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -444,7 +444,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f02003c
+    const v20, 0x7f020035
 
     invoke-static/range {v19 .. v20}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

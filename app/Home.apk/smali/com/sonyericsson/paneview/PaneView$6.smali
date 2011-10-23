@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1530
+    .line 1531
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .prologue
     const v3, 0x3a83126f
 
-    .line 1532
+    .line 1533
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 1533
+    .line 1534
     .local v0, now:J
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -58,7 +58,7 @@
 
     invoke-virtual {v2, v0, v1}, Lcom/sonyericsson/util/Dynamics;->update(J)V
 
-    .line 1534
+    .line 1535
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v2}, Lcom/sonyericsson/paneview/PaneView;->access$1600(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
@@ -67,12 +67,12 @@
 
     invoke-virtual {v2, v0, v1}, Lcom/sonyericsson/util/Dynamics;->update(J)V
 
-    .line 1535
+    .line 1536
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v2}, Lcom/sonyericsson/paneview/PaneView;->access$1900(Lcom/sonyericsson/paneview/PaneView;)V
 
-    .line 1537
+    .line 1538
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v2}, Lcom/sonyericsson/paneview/PaneView;->access$1300(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
@@ -97,7 +97,7 @@
 
     if-nez v2, :cond_1
 
-    .line 1540
+    .line 1541
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -105,11 +105,11 @@
 
     invoke-virtual {v2, p0, v3, v4}, Lcom/sonyericsson/paneview/PaneView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1548
+    .line 1549
     :goto_0
     return-void
 
-    .line 1544
+    .line 1545
     :cond_1
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
@@ -119,7 +119,7 @@
 
     invoke-virtual {v2}, Lcom/sonyericsson/util/Dynamics;->adjustPositionAndVelocity()V
 
-    .line 1545
+    .line 1546
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v2}, Lcom/sonyericsson/paneview/PaneView;->access$1600(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/util/Dynamics;
@@ -128,7 +128,7 @@
 
     invoke-virtual {v2}, Lcom/sonyericsson/util/Dynamics;->adjustPositionAndVelocity()V
 
-    .line 1546
+    .line 1547
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$6;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v2}, Lcom/sonyericsson/paneview/PaneView;->access$2000(Lcom/sonyericsson/paneview/PaneView;)V

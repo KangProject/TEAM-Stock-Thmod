@@ -28,7 +28,7 @@
 
     const-string v1, "com.android.internal.R$style"
 
-    .line 68
+    .line 70
     :try_start_0
     const-class v1, Landroid/view/ViewGroup;
 
@@ -50,7 +50,7 @@
 
     sput-object v1, Lcom/sonyericsson/home/bidi/Utils;->sSetDirectionalityMethod:Ljava/lang/reflect/Method;
 
-    .line 71
+    .line 73
     const-class v1, Landroid/view/ViewGroup;
 
     const-string v2, "DIRECTIONALITY_LEFT_TO_RIGHT"
@@ -67,7 +67,7 @@
 
     sput v1, Lcom/sonyericsson/home/bidi/Utils;->sLeftToRightField:I
 
-    .line 73
+    .line 75
     const-string v1, "com.android.internal.R$bool"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -88,7 +88,7 @@
 
     sput v1, Lcom/sonyericsson/home/bidi/Utils;->sRtlAlphabetField:I
 
-    .line 75
+    .line 77
     const-string v1, "com.android.internal.R$style"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -109,7 +109,7 @@
 
     sput v1, Lcom/sonyericsson/home/bidi/Utils;->sThemeBidiDialogAlert:I
 
-    .line 77
+    .line 79
     const-string v1, "com.android.internal.R$style"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -130,7 +130,7 @@
 
     sput v1, Lcom/sonyericsson/home/bidi/Utils;->sThemeDialogAlert:I
 
-    .line 79
+    .line 81
     const/4 v1, 0x1
 
     sput-boolean v1, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
@@ -142,82 +142,82 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_5
 
-    .line 93
+    .line 95
     :goto_0
     return-void
 
-    .line 80
+    .line 82
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 81
+    .line 83
     .local v0, e:Ljava/lang/SecurityException;
     sput-boolean v6, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     goto :goto_0
 
-    .line 82
+    .line 84
     .end local v0           #e:Ljava/lang/SecurityException;
     :catch_1
     move-exception v1
 
     move-object v0, v1
 
-    .line 83
+    .line 85
     .local v0, e:Ljava/lang/NoSuchMethodException;
     sput-boolean v6, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     goto :goto_0
 
-    .line 84
+    .line 86
     .end local v0           #e:Ljava/lang/NoSuchMethodException;
     :catch_2
     move-exception v1
 
     move-object v0, v1
 
-    .line 85
+    .line 87
     .local v0, e:Ljava/lang/NoSuchFieldException;
     sput-boolean v6, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     goto :goto_0
 
-    .line 86
+    .line 88
     .end local v0           #e:Ljava/lang/NoSuchFieldException;
     :catch_3
     move-exception v1
 
     move-object v0, v1
 
-    .line 87
+    .line 89
     .local v0, e:Ljava/lang/IllegalArgumentException;
     sput-boolean v6, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     goto :goto_0
 
-    .line 88
+    .line 90
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_4
     move-exception v1
 
     move-object v0, v1
 
-    .line 89
+    .line 91
     .local v0, e:Ljava/lang/IllegalAccessException;
     sput-boolean v6, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     goto :goto_0
 
-    .line 90
+    .line 92
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_5
     move-exception v1
 
     move-object v0, v1
 
-    .line 91
+    .line 93
     .local v0, e:Ljava/lang/ClassNotFoundException;
     sput-boolean v6, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
@@ -228,11 +228,63 @@
     .locals 0
 
     .prologue
-    .line 34
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 37
     return-void
+.end method
+
+.method public static final getAlertDialogBuilder(Landroid/content/Context;)Landroid/app/AlertDialog$Builder;
+    .locals 2
+    .parameter "context"
+
+    .prologue
+    .line 168
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    invoke-static {p0}, Lcom/sonyericsson/home/bidi/Utils;->getBidiContext(Landroid/content/Context;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
+.method public static final getBidiContext(Landroid/content/Context;)Landroid/content/Context;
+    .locals 3
+    .parameter "context"
+
+    .prologue
+    .line 157
+    invoke-static {p0}, Lcom/sonyericsson/home/bidi/Utils;->getDialogAlertThemeStyle(Landroid/content/Context;)I
+
+    move-result v1
+
+    .line 158
+    .local v1, theme:I
+    sget v2, Lcom/sonyericsson/home/bidi/Utils;->sThemeBidiDialogAlert:I
+
+    if-ne v1, v2, :cond_0
+
+    .line 159
+    new-instance v0, Landroid/view/ContextThemeWrapper;
+
+    invoke-direct {v0, p0, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    .local v0, ctx:Landroid/view/ContextThemeWrapper;
+    move-object v2, v0
+
+    .line 162
+    .end local v0           #ctx:Landroid/view/ContextThemeWrapper;
+    :goto_0
+    return-object v2
+
+    :cond_0
+    move-object v2, p0
+
+    goto :goto_0
 .end method
 
 .method public static final getDialogAlertThemeStyle(Landroid/content/Context;)I
@@ -240,10 +292,10 @@
     .parameter "context"
 
     .prologue
-    .line 140
+    .line 142
     const/4 v0, 0x0
 
-    .line 141
+    .line 143
     .local v0, retVal:I
     sget-boolean v1, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
@@ -255,14 +307,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 142
+    .line 144
     sget v0, Lcom/sonyericsson/home/bidi/Utils;->sThemeBidiDialogAlert:I
 
-    .line 148
+    .line 150
     :goto_0
     return v0
 
-    .line 146
+    .line 148
     :cond_0
     sget v0, Lcom/sonyericsson/home/bidi/Utils;->sThemeDialogAlert:I
 
@@ -274,16 +326,16 @@
     .parameter "context"
 
     .prologue
-    .line 122
+    .line 124
     const/4 v1, 0x0
 
-    .line 123
+    .line 125
     .local v1, retVal:Z
     sget-boolean v2, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     if-eqz v2, :cond_0
 
-    .line 125
+    .line 127
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -297,18 +349,18 @@
 
     move-result v1
 
-    .line 130
+    .line 132
     :cond_0
     :goto_0
     return v1
 
-    .line 126
+    .line 128
     :catch_0
     move-exception v2
 
     move-object v0, v2
 
-    .line 127
+    .line 129
     .local v0, e:Landroid/content/res/Resources$NotFoundException;
     const-string v2, "Bidi"
 
@@ -328,12 +380,12 @@
 
     const-string v5, "Bidi"
 
-    .line 102
+    .line 104
     sget-boolean v1, Lcom/sonyericsson/home/bidi/Utils;->sReflectionOk:Z
 
     if-eqz v1, :cond_0
 
-    .line 104
+    .line 106
     :try_start_0
     sget-object v1, Lcom/sonyericsson/home/bidi/Utils;->sSetDirectionalityMethod:Ljava/lang/reflect/Method;
 
@@ -357,18 +409,18 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 113
+    .line 115
     :cond_0
     :goto_0
     return-void
 
-    .line 105
+    .line 107
     :catch_0
     move-exception v1
 
     move-object v0, v1
 
-    .line 106
+    .line 108
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v1, "Bidi"
 
@@ -378,14 +430,14 @@
 
     goto :goto_0
 
-    .line 107
+    .line 109
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v1
 
     move-object v0, v1
 
-    .line 108
+    .line 110
     .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v1, "Bidi"
 
@@ -395,14 +447,14 @@
 
     goto :goto_0
 
-    .line 109
+    .line 111
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_2
     move-exception v1
 
     move-object v0, v1
 
-    .line 110
+    .line 112
     .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     const-string v1, "Bidi"
 

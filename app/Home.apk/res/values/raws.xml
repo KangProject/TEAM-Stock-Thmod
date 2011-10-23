@@ -5,4 +5,5 @@
     <item type="raw" name="scroll_dynamics_stiffness">400.0</item>
     <item type="raw" name="scroll_dynamics_damping">1.0</item>
     <item type="raw" name="pane_indicator_size">1.4</item>
+    <item type="raw" name="folder_minis_scale">0.44</item>
 </resources>

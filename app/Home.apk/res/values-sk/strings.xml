@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Zrušiť</string>
     <string name="home_button_exit_overview">Ukončiť prehľad</string>
     <string name="home_no_uninstallable_apps_txt">Tieto aplikácie nie je možné odinštalovať</string>
+    <string name="home_app_share_dropzone_hint_txt">Ak chcete položku zdieľať, pustite ju sem</string>
+    <string name="appdialog_title">Uverejniť na Facebook</string>
+    <string name="appdialog_comment_hint">Pridajte komentár</string>
+    <string name="appdialog_button_share">Zdieľať</string>
+    <string name="appdialog_button_cancel">Zrušiť</string>
+    <string name="appdialog_other_options_info">Iné možnosti zdieľania</string>
+    <string name="appdialog_progress_info">Vytvára sa príspevok</string>
+    <string name="appdialog_toast_cannot_be_shared">Túto položku nie je možné zdieľať</string>
+    <string name="appdialog_toast_connection_error">Chyba pripojenia</string>
+    <string name="appdialog_toast_sharing">Zdieľanie na lokalite Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Zdieľať</string>
 </resources>

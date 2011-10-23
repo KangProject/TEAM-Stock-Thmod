@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Cancelar</string>
     <string name="home_button_exit_overview">Sair da visão geral</string>
     <string name="home_no_uninstallable_apps_txt">Não é possível instalar estes aplicativos</string>
+    <string name="home_app_share_dropzone_hint_txt">Arraste aqui para compart. item</string>
+    <string name="appdialog_title">Postar no Facebook</string>
+    <string name="appdialog_comment_hint">Adicionar seu comentário</string>
+    <string name="appdialog_button_share">Compartilhar</string>
+    <string name="appdialog_button_cancel">Cancelar</string>
+    <string name="appdialog_other_options_info">Outras opções compart.</string>
+    <string name="appdialog_progress_info">Criando publicação</string>
+    <string name="appdialog_toast_cannot_be_shared">Esse item não pode ser compart.</string>
+    <string name="appdialog_toast_connection_error">Erro de conexão</string>
+    <string name="appdialog_toast_sharing">Compartilhando no Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Compartilhar</string>
 </resources>

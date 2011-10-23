@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/layout_root" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sonyericsson.home.bidi.BiDiRelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.sonyericsson.home.bidi.BiDiLinearLayout android:orientation="horizontal" android:id="@id/fbi_dialog_shared_app_info" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/fbi_dialog_shared_app_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:src="@drawable/fbi_widget_default_app_icn" android:scaleType="fitXY" />
+            <TextView android:textAppearance="@style/SEMCTextAppearance.Medium" android:id="@id/fbi_dialog_shared_app_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" />
+        </com.sonyericsson.home.bidi.BiDiLinearLayout>
+        <EditText android:textAppearance="@style/SEMCTextAppearance.Small" android:gravity="top" android:id="@id/fbi_dialog_app_share_comment_box" android:background="@drawable/semc_textfield_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="6.0dip" android:minHeight="85.0dip" android:hint="@string/appdialog_comment_hint" android:layout_below="@id/fbi_dialog_shared_app_info" />
+        <com.sonyericsson.home.bidi.BiDiLinearLayout android:id="@id/fbi_dialog_app_share_button_container" android:layout_marginBottom="5.0dip" android:layout_below="@id/fbi_dialog_app_share_comment_box" style="@style/ButtonContainer">
+            <Button android:id="@id/fbi_dialog_app_share_share_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="@string/appdialog_button_share" android:layout_weight="0.5" style="@android:style/Widget.Button" />
+            <Button android:id="@id/fbi_dialog_app_share_cancel_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:text="@string/appdialog_button_cancel" android:layout_weight="0.5" style="@android:style/Widget.Button" />
+        </com.sonyericsson.home.bidi.BiDiLinearLayout>
+        <com.sonyericsson.home.bidi.BiDiRelativeLayout android:id="@id/fbi_dialog_app_share_other" android:background="@android:drawable/list_selector_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fbi_dialog_app_share_button_container">
+            <TextView android:textAppearance="@style/SEMCTextAppearance.Medium" android:id="@id/appshare_dialog_other_options_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="6.0dip" android:text="@string/appdialog_other_options_info" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/fbi_other_options_image_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/fbi_media_expand_list_closed_icn" android:layout_alignParentRight="true" />
+        </com.sonyericsson.home.bidi.BiDiRelativeLayout>
+    </com.sonyericsson.home.bidi.BiDiRelativeLayout>
+</ScrollView>

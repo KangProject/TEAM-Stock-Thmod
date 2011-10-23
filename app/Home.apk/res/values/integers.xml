@@ -10,7 +10,7 @@
     <integer name="min_pane_switch_duration">1000</integer>
     <integer name="desktop_first_pane_switch_wait_duration">0</integer>
     <integer name="pane_margin">15</integer>
-    <integer name="number_of_desktop_panes">9</integer>
+    <integer name="number_of_desktop_panes">5</integer>
     <integer name="scale_up_transition_scale_duration">300</integer>
     <integer name="scale_up_transition_translate_duration">240</integer>
     <integer name="scale_up_transition_alpha_duration">240</integer>

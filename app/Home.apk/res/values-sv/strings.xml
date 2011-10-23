@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Avbryt</string>
     <string name="home_button_exit_overview">Avsluta översikt</string>
     <string name="home_no_uninstallable_apps_txt">Det går inte att avinstallera de här programmen</string>
+    <string name="home_app_share_dropzone_hint_txt">Släpp objekt som du vill dela här</string>
+    <string name="appdialog_title">Lägg till på Facebook</string>
+    <string name="appdialog_comment_hint">Kommentera</string>
+    <string name="appdialog_button_share">Dela</string>
+    <string name="appdialog_button_cancel">Avbryt</string>
+    <string name="appdialog_other_options_info">Andra alt. för delning</string>
+    <string name="appdialog_progress_info">Skapar post</string>
+    <string name="appdialog_toast_cannot_be_shared">Det går inte att dela det här objektet</string>
+    <string name="appdialog_toast_connection_error">Anslutningsproblem</string>
+    <string name="appdialog_toast_sharing">Delar på Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Dela</string>
 </resources>

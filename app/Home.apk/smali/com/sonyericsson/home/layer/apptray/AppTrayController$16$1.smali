@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1056
+    .line 1055
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16$1;->val$packageName:Ljava/lang/String;
@@ -46,7 +46,7 @@
     .locals 4
 
     .prologue
-    .line 1058
+    .line 1057
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -83,13 +83,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageAdded(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;)V
 
-    .line 1061
+    .line 1060
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1800(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
 
-    .line 1062
+    .line 1061
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/layer/folder/FolderDialog;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/GlobalCustomizationManager;)V
+    value = Lcom/sonyericsson/home/layer/folder/FolderDialog;-><init>(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 107
+    .line 87
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderDialog$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "s"
 
     .prologue
-    .line 121
+    .line 101
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "after"
 
     .prologue
-    .line 117
+    .line 97
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter "count"
 
     .prologue
-    .line 109
+    .line 89
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderDialog$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderDialog;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -75,7 +75,7 @@
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderDialog;->access$002(Lcom/sonyericsson/home/layer/folder/FolderDialog;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 110
+    .line 90
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderDialog$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderDialog;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderDialog;->access$100(Lcom/sonyericsson/home/layer/folder/FolderDialog;)Lcom/sonyericsson/home/layer/folder/FolderDialog$FolderDialogListener;
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 91
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderDialog$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderDialog;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderDialog;->access$100(Lcom/sonyericsson/home/layer/folder/FolderDialog;)Lcom/sonyericsson/home/layer/folder/FolderDialog$FolderDialogListener;
@@ -99,7 +99,7 @@
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderDialog$FolderDialogListener;->onNameChanged(Ljava/lang/String;)V
 
-    .line 113
+    .line 93
     :cond_0
     return-void
 .end method

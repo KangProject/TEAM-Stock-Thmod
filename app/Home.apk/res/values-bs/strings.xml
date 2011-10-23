@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Otkazati</string>
     <string name="home_button_exit_overview">Izaći iz pregleda</string>
     <string name="home_no_uninstallable_apps_txt">Ove aplikacije ne mogu se deinstalirati</string>
+    <string name="home_app_share_dropzone_hint_txt">Ispustite ovdje kako biste podijelili stavku</string>
+    <string name="appdialog_title">Pos. kom. na Facebook</string>
+    <string name="appdialog_comment_hint">Dodajte svoj komentar</string>
+    <string name="appdialog_button_share">Podijeli</string>
+    <string name="appdialog_button_cancel">Otkaži</string>
+    <string name="appdialog_other_options_info">Ostale opcije dijeljenja</string>
+    <string name="appdialog_progress_info">Kreiranje komentara u toku</string>
+    <string name="appdialog_toast_cannot_be_shared">Ova stavka se ne može dijeliti</string>
+    <string name="appdialog_toast_connection_error">Greška u vezi</string>
+    <string name="appdialog_toast_sharing">Dijeljenje na Facebooku u toku</string>
+    <string name="home_app_share_chooser_title_txt">Podijeliti</string>
 </resources>

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1050
+    .line 1049
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 1053
+    .line 1052
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1700(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
 
-    .line 1054
+    .line 1053
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1900(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->waitForResourcesLoaded(Ljava/util/Collection;Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;)V
 
-    .line 1064
+    .line 1063
     return-void
 .end method
 
@@ -79,12 +79,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 1067
+    .line 1066
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1700(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
 
-    .line 1068
+    .line 1067
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1900(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
@@ -107,7 +107,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->waitForResourcesLoaded(Ljava/util/Collection;Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;)V
 
-    .line 1078
+    .line 1077
     return-void
 .end method
 
@@ -116,12 +116,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 1081
+    .line 1080
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1700(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
 
-    .line 1082
+    .line 1081
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$16;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1900(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/ResourceLoaderUtil;
@@ -134,7 +134,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/ResourceLoaderUtil;->waitForResourcesLoaded(Lcom/sonyericsson/home/layer/ResourceLoaderUtil$ResourceLoaderUtilListener;)V
 
-    .line 1089
+    .line 1088
     return-void
 .end method
 
@@ -143,7 +143,7 @@
     .parameter "packageList"
 
     .prologue
-    .line 1093
+    .line 1092
     return-void
 .end method
 
@@ -152,6 +152,6 @@
     .parameter "packageList"
 
     .prologue
-    .line 1097
+    .line 1096
     return-void
 .end method

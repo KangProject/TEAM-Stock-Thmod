@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Wurung</string>
     <string name="home_button_exit_overview">Metu saka ikhtisar</string>
     <string name="home_no_uninstallable_apps_txt">Aplikasi iki ora bisa dibusak</string>
+    <string name="home_app_share_dropzone_hint_txt">Selehake ing kene kanggo nganggo bareng item</string>
+    <string name="appdialog_title">Kirim nyang Facebook</string>
+    <string name="appdialog_comment_hint">Tambahake komentar</string>
+    <string name="appdialog_button_share">Tuduhake</string>
+    <string name="appdialog_button_cancel">Batal</string>
+    <string name="appdialog_other_options_info">Pilihan nuduhake liyane</string>
+    <string name="appdialog_progress_info">Nggawe kiriman</string>
+    <string name="appdialog_toast_cannot_be_shared">Item iki ora bisa dituduhake</string>
+    <string name="appdialog_toast_connection_error">Kesalahan sambungan</string>
+    <string name="appdialog_toast_sharing">Nganggo bareng ing Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Bagi</string>
 </resources>

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 930
+    .line 927
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->val$root:Lcom/sonyericsson/storage/Root;
@@ -52,10 +52,10 @@
 
     const-class v9, Lcom/sonyericsson/util/PagedList;
 
-    .line 933
+    .line 930
     const/4 v2, 0x0
 
-    .line 934
+    .line 931
     .local v2, model:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->val$root:Lcom/sonyericsson/storage/Root;
 
@@ -73,7 +73,7 @@
 
     if-ne v4, v8, :cond_0
 
-    .line 936
+    .line 933
     const-class v4, Lcom/sonyericsson/util/PagedList;
 
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->val$root:Lcom/sonyericsson/storage/Root;
@@ -91,12 +91,12 @@
     .end local v2           #model:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     check-cast v2, Lcom/sonyericsson/util/PagedList;
 
-    .line 940
+    .line 937
     .restart local v2       #model:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     :cond_0
     if-nez v2, :cond_2
 
-    .line 945
+    .line 942
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;
 
     iget-object v4, v4, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -115,7 +115,7 @@
 
     move-result v3
 
-    .line 947
+    .line 944
     .local v3, rows:I
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;
 
@@ -135,7 +135,7 @@
 
     move-result v0
 
-    .line 949
+    .line 946
     .local v0, cols:I
     new-instance v2, Lcom/sonyericsson/util/PagedList;
 
@@ -144,7 +144,7 @@
 
     invoke-direct {v2, v4}, Lcom/sonyericsson/util/PagedList;-><init>(I)V
 
-    .line 957
+    .line 954
     .restart local v2       #model:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     new-instance v1, Lcom/sonyericsson/home/layer/apptray/AppTrayCustomization;
 
@@ -166,7 +166,7 @@
 
     invoke-direct {v1, v4, v2, v5}, Lcom/sonyericsson/home/layer/apptray/AppTrayCustomization;-><init>(Landroid/content/Context;Lcom/sonyericsson/util/PagedList;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
 
-    .line 960
+    .line 957
     .local v1, cust:Lcom/sonyericsson/home/layer/apptray/AppTrayCustomization;
     const-string v4, "/etc/customization/settings/com/sonyericsson/home/default_settings_apptray.xml"
 
@@ -176,12 +176,12 @@
 
     if-nez v4, :cond_1
 
-    .line 963
+    .line 960
     const/high16 v4, 0x7f05
 
     invoke-virtual {v1, v4, v7}, Lcom/sonyericsson/home/layer/apptray/AppTrayCustomization;->applyCustomization(IZ)Z
 
-    .line 967
+    .line 964
     :cond_1
     invoke-static {}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1200()Landroid/net/Uri;
 
@@ -189,7 +189,7 @@
 
     invoke-virtual {v1, v4, v8}, Lcom/sonyericsson/home/layer/apptray/AppTrayCustomization;->applyCustomization(Landroid/net/Uri;Z)Z
 
-    .line 968
+    .line 965
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;
 
     iget-object v4, v4, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -200,7 +200,7 @@
 
     invoke-static {v4, v5}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1300(Lcom/sonyericsson/home/layer/apptray/AppTrayController;I)V
 
-    .line 969
+    .line 966
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;
 
     iget-object v4, v4, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -215,14 +215,14 @@
 
     invoke-static {v4, v2, v5, v8}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1500(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Lcom/sonyericsson/util/PagedList;Lcom/sonyericsson/home/data/SyncHelper$Syncable;Z)V
 
-    .line 973
+    .line 970
     .end local v0           #cols:I
     .end local v1           #cust:Lcom/sonyericsson/home/layer/apptray/AppTrayCustomization;
     .end local v3           #rows:I
     :goto_0
     return-void
 
-    .line 971
+    .line 968
     :cond_2
     iget-object v4, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15$1;->this$1:Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;
 

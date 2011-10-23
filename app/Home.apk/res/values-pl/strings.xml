@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Anuluj</string>
     <string name="home_button_exit_overview">Zamknij omówienie</string>
     <string name="home_no_uninstallable_apps_txt">Nie można odinstalować tych aplikacji</string>
+    <string name="home_app_share_dropzone_hint_txt">Upuść element tu, aby udostępnić</string>
+    <string name="appdialog_title">Publik. na Facebooku</string>
+    <string name="appdialog_comment_hint">Dodaj komentarz</string>
+    <string name="appdialog_button_share">Udostępnij</string>
+    <string name="appdialog_button_cancel">Anuluj</string>
+    <string name="appdialog_other_options_info">Inne opcje udostępn.</string>
+    <string name="appdialog_progress_info">Tworzenie posta</string>
+    <string name="appdialog_toast_cannot_be_shared">Nie można udostępnić tego elementu</string>
+    <string name="appdialog_toast_connection_error">Błąd połączenia</string>
+    <string name="appdialog_toast_sharing">Udostępnianie w usłudze Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Udostępnij</string>
 </resources>
