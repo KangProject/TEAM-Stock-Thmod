@@ -173,6 +173,7 @@
     .line 102
     .local v1, icon:Landroid/widget/ImageView;
     const v6, 0x7f0a0032
+
     invoke-virtual {v3, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4

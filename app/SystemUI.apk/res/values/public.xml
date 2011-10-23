@@ -145,14 +145,14 @@
     <public type="drawable" name="quickpanel_icon_gps_on" id="0x7f02008e" />
     <public type="drawable" name="quickpanel_icon_ing" id="0x7f02008f" />
     <public type="drawable" name="quickpanel_icon_off" id="0x7f020090" />
-	<public type="drawable" name="quickpanel_icon_mobile_data_off" id="0x7f020093" />
+    <public type="drawable" name="quick_panel_icon_vibrate_mode_off" id="0x7f020091" />
+    <public type="drawable" name="quick_panel_icon_vibrate_mode_on" id="0x7f020092" />
+    <public type="drawable" name="quickpanel_icon_mobile_data_off" id="0x7f020093" />
     <public type="drawable" name="quickpanel_icon_mobile_data_on" id="0x7f020094" />
     <public type="drawable" name="quick_panel_icon_flight_mode_off" id="0x7f020095" />
     <public type="drawable" name="quick_panel_icon_flight_mode_on" id="0x7f020096" />
     <public type="drawable" name="quick_panel_icon_sync_mode_off" id="0x7f020097" />
     <public type="drawable" name="quick_panel_icon_sync_mode_on" id="0x7f020098" />
-    <public type="drawable" name="quick_panel_icon_vibrate_mode_off" id="0x7f020091" />
-    <public type="drawable" name="quick_panel_icon_vibrate_mode_on" id="0x7f020092" />
     <public type="layout" name="battery_low" id="0x7f030000" />
     <public type="layout" name="status_bar" id="0x7f030001" />
     <public type="layout" name="status_bar_expanded" id="0x7f030002" />
@@ -183,7 +183,7 @@
     <public type="string" name="quickpanel_rotation_text" id="0x7f080010" />
     <public type="string" name="quickpanel_error_text" id="0x7f080011" />
     <public type="string" name="quickpanel_wifi_text" id="0x7f080012" />
-	<public type="string" name="quickpanel_mobiledata_text" id="0x7f080013" />
+    <public type="string" name="quickpanel_mobiledata_text" id="0x7f080013" />
     <public type="string" name="quickpanel_flight_text" id="0x7f080014" />
     <public type="string" name="quickpanel_sync_text" id="0x7f080015" />
     <public type="string" name="quickpanel_vibrate_text" id="0x7f080016" />
@@ -227,9 +227,16 @@
     <public type="id" name="quickpanel_rotation_btn_icon" id="0x7f0a0023" />
     <public type="id" name="quickpanel_rotation_btn_text" id="0x7f0a0024" />
     <public type="id" name="quickpanel_rotation_btn_status_icon" id="0x7f0a0025" />
-	<public type="id" name="quickpanel_mobiledata_btn_icon" id="0x7f0a0027" />
+    <public type="id" name="date2" id="0x7f0a0026" />
+    <public type="id" name="quickpanel_mobiledata_btn_icon" id="0x7f0a0027" />
     <public type="id" name="quickpanel_mobiledata_btn_text" id="0x7f0a0028" />
     <public type="id" name="quickpanel_mobiledata_btn_status_icon" id="0x7f0a0029" />
+    <public type="id" name="wifi_bttn" id="0x7f0a002a" />
+    <public type="id" name="bt_bttn" id="0x7f0a002b" />
+    <public type="id" name="gps_bttn" id="0x7f0a002c" />
+    <public type="id" name="sound_bttn" id="0x7f0a002d" />
+    <public type="id" name="rotation_bttn" id="0x7f0a002e" />
+    <public type="id" name="data_bttn" id="0x7f0a002f" />
     <public type="id" name="quickpanel_flight_btn_icon" id="0x7f0a0030" />
     <public type="id" name="quickpanel_flight_btn_text" id="0x7f0a0031" />
     <public type="id" name="quickpanel_flight_btn_status_icon" id="0x7f0a0032" />
@@ -239,5 +246,7 @@
     <public type="id" name="quickpanel_vibrate_btn_icon" id="0x7f0a0036" />
     <public type="id" name="quickpanel_vibrate_btn_text" id="0x7f0a0037" />
     <public type="id" name="quickpanel_vibrate_btn_status_icon" id="0x7f0a0038" />
-    <public type="id" name="date2" id="0x7f0a0026" />
+    <public type="id" name="flight_bttn" id="0x7f0a0039" />
+    <public type="id" name="sync_bttn" id="0x7f0a003a" />
+    <public type="id" name="vibrate_bttn" id="0x7f0a003b" />
 </resources>
