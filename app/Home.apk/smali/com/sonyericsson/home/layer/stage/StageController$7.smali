@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 462
+    .line 463
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$7;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 465
+    .line 466
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$7;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 466
+    .line 467
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$7;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$100(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;
@@ -87,7 +87,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;->onInfoClicked(Lcom/sonyericsson/home/data/Info;Ljava/lang/Object;)V
 
-    .line 468
+    .line 469
     :cond_0
     return-void
 .end method

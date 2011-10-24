@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 174
+    .line 178
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->val$packageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -43,151 +43,127 @@
 
 # virtual methods
 .method public onReadCompleted(Lcom/sonyericsson/storage/Root;)V
-    .locals 6
+    .locals 5
     .parameter "root"
 
     .prologue
-    const-class v5, Ljava/util/HashMap;
+    const-class v4, Ljava/util/HashMap;
 
-    .line 176
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    .line 178
-    .local v0, changedInfoGroups:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
+    .line 180
     if-nez p1, :cond_0
 
-    .line 179
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
+    .line 181
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    new-instance v4, Ljava/util/HashMap;
+    new-instance v3, Ljava/util/HashMap;
 
-    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v3, v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$002(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/util/HashMap;)Ljava/util/HashMap;
+    invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$002(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 188
+    .line 190
     :goto_0
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->val$packageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->val$packageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$500(Lcom/sonyericsson/home/layer/InfoGroupManager;)Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnPackageUpdateListener(Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;)V
-
-    .line 191
     iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-static {v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$600(Lcom/sonyericsson/home/layer/InfoGroupManager;)Ljava/util/LinkedList;
+    invoke-static {v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$500(Lcom/sonyericsson/home/layer/InfoGroupManager;)Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2, v3}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnPackageUpdateListener(Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;)V
 
-    move-result-object v1
+    .line 193
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    .local v1, i$:Ljava/util/Iterator;
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$600(Lcom/sonyericsson/home/layer/InfoGroupManager;)Ljava/util/LinkedList;
 
     move-result-object v2
 
-    check-cast v2, Ljava/lang/Runnable;
+    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
-    .line 192
-    .local v2, r:Ljava/lang/Runnable;
-    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Runnable;
+
+    .line 194
+    .local v1, r:Ljava/lang/Runnable;
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
 
-    .line 180
-    .end local v1           #i$:Ljava/util/Iterator;
-    .end local v2           #r:Ljava/lang/Runnable;
+    .line 182
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #r:Ljava/lang/Runnable;
     :cond_0
-    const-string v3, "version"
+    const-string v2, "version"
 
-    const/4 v4, -0x1
+    const/4 v3, -0x1
 
-    invoke-virtual {p1, v3, v4}, Lcom/sonyericsson/storage/Root;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v2, v3}, Lcom/sonyericsson/storage/Root;->getInt(Ljava/lang/String;I)I
 
-    move-result v3
+    move-result v2
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    if-eq v3, v4, :cond_1
-
-    .line 181
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    new-instance v4, Ljava/util/HashMap;
-
-    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
-
-    invoke-static {v3, v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$002(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/util/HashMap;)Ljava/util/HashMap;
-
-    goto :goto_0
+    if-eq v2, v3, :cond_1
 
     .line 183
-    :cond_1
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    const-class v3, Ljava/util/HashMap;
+    new-instance v3, Ljava/util/HashMap;
 
-    const-class v3, Ljava/util/HashMap;
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    invoke-virtual {p1, v5}, Lcom/sonyericsson/storage/Root;->getFirstChild(Ljava/lang/Class;)Lcom/sonyericsson/storage/Node;
-
-    move-result-object v3
-
-    invoke-static {v5, v3}, Lcom/sonyericsson/storage/NodeManager;->fromNode(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/HashMap;
-
-    invoke-static {v4, v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$002(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/util/HashMap;)Ljava/util/HashMap;
+    invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$002(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/util/HashMap;)Ljava/util/HashMap;
 
     goto :goto_0
 
-    .line 194
-    .restart local v1       #i$:Ljava/util/Iterator;
-    :cond_2
+    .line 185
+    :cond_1
     iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-static {v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$600(Lcom/sonyericsson/home/layer/InfoGroupManager;)Ljava/util/LinkedList;
+    const-class v2, Ljava/util/HashMap;
 
-    move-result-object v3
+    const-class v2, Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/util/LinkedList;->clear()V
+    invoke-virtual {p1, v4}, Lcom/sonyericsson/storage/Root;->getFirstChild(Ljava/lang/Class;)Lcom/sonyericsson/storage/Node;
+
+    move-result-object v2
+
+    invoke-static {v4, v2}, Lcom/sonyericsson/storage/NodeManager;->fromNode(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/HashMap;
+
+    invoke-static {v3, v2}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$002(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/util/HashMap;)Ljava/util/HashMap;
+
+    goto :goto_0
 
     .line 196
-    invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_2
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    move-result v3
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$600(Lcom/sonyericsson/home/layer/InfoGroupManager;)Ljava/util/LinkedList;
 
-    if-nez v3, :cond_3
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->clear()V
 
     .line 197
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    invoke-static {v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$300(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
-
-    .line 198
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$2;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    invoke-static {v3}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$400(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
-
-    .line 200
-    :cond_3
     return-void
 .end method

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 799
+    .line 810
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->val$root:Lcom/sonyericsson/storage/Root;
@@ -46,7 +46,7 @@
     .locals 15
 
     .prologue
-    .line 803
+    .line 814
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -73,14 +73,14 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1902(Lcom/sonyericsson/home/layer/desktop/DesktopController;Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
-    .line 805
+    .line 816
     const/4 v12, 0x0
 
-    .line 806
+    .line 817
     .local v12, modelChanged:Z
     const/4 v3, 0x0
 
-    .line 807
+    .line 818
     .local v3, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/layer/desktop/DesktopItem;>;"
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->val$root:Lcom/sonyericsson/storage/Root;
 
@@ -100,7 +100,7 @@
 
     if-ne v2, v4, :cond_0
 
-    .line 809
+    .line 820
     const-class v2, Ljava/util/ArrayList;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->val$root:Lcom/sonyericsson/storage/Root;
@@ -118,7 +118,7 @@
 
     check-cast v3, Ljava/util/ArrayList;
 
-    .line 813
+    .line 824
     .restart local v3       #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/layer/desktop/DesktopItem;>;"
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
@@ -135,7 +135,7 @@
 
     invoke-static {v2, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2202(Lcom/sonyericsson/home/layer/desktop/DesktopController;Landroid/appwidget/AppWidgetManager;)Landroid/appwidget/AppWidgetManager;
 
-    .line 814
+    .line 825
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -152,16 +152,16 @@
 
     invoke-static {v2, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2302(Lcom/sonyericsson/home/layer/desktop/DesktopController;Landroid/appwidget/AppWidgetHost;)Landroid/appwidget/AppWidgetHost;
 
-    .line 817
+    .line 828
     if-nez v3, :cond_2
 
-    .line 819
+    .line 830
     new-instance v3, Ljava/util/ArrayList;
 
     .end local v3           #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/layer/desktop/DesktopItem;>;"
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 826
+    .line 838
     .restart local v3       #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/layer/desktop/DesktopItem;>;"
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
@@ -173,7 +173,7 @@
 
     invoke-virtual {v2}, Landroid/appwidget/AppWidgetHost;->deleteHost()V
 
-    .line 827
+    .line 839
     new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopCustomization;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
@@ -218,7 +218,7 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/sonyericsson/home/layer/desktop/DesktopCustomization;-><init>(Landroid/content/Context;Ljava/util/ArrayList;Lcom/sonyericsson/home/layer/InfoGroupManager;Landroid/appwidget/AppWidgetManager;Landroid/appwidget/AppWidgetHost;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
 
-    .line 831
+    .line 843
     .local v1, cust:Lcom/sonyericsson/home/layer/desktop/DesktopCustomization;
     const-string v2, "/etc/customization/settings/com/sonyericsson/home/default_settings_desktop.xml"
 
@@ -230,14 +230,14 @@
 
     if-nez v2, :cond_1
 
-    .line 835
+    .line 848
     const v2, 0x7f050003
 
     const/4 v4, 0x0
 
     invoke-virtual {v1, v2, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopCustomization;->applyCustomization(IZ)Z
 
-    .line 839
+    .line 851
     :cond_1
     invoke-static {}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2600()Landroid/net/Uri;
 
@@ -247,10 +247,10 @@
 
     invoke-virtual {v1, v2, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopCustomization;->applyCustomization(Landroid/net/Uri;Z)Z
 
-    .line 840
+    .line 852
     const/4 v12, 0x1
 
-    .line 844
+    .line 856
     .end local v1           #cust:Lcom/sonyericsson/home/layer/desktop/DesktopCustomization;
     :cond_2
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -272,26 +272,26 @@
 
     check-cast v11, Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 845
+    .line 857
     .local v11, item:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
     invoke-virtual {v11}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getInfo()Lcom/sonyericsson/home/data/Info;
 
     move-result-object v10
 
-    .line 846
+    .line 858
     .local v10, info:Lcom/sonyericsson/home/data/Info;
     instance-of v2, v10, Lcom/sonyericsson/home/data/WidgetInfo;
 
     if-eqz v2, :cond_3
 
-    .line 847
+    .line 859
     move-object v0, v10
 
     check-cast v0, Lcom/sonyericsson/home/data/WidgetInfo;
 
     move-object v13, v0
 
-    .line 848
+    .line 860
     .local v13, widgetInfo:Lcom/sonyericsson/home/data/WidgetInfo;
     invoke-virtual {v13}, Lcom/sonyericsson/home/data/WidgetInfo;->isInstallPending()Z
 
@@ -299,12 +299,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 849
+    .line 861
     invoke-virtual {v13}, Lcom/sonyericsson/home/data/WidgetInfo;->getPackageName()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 850
+    .line 862
     .local v14, widgetPackage:Ljava/lang/String;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
@@ -324,7 +324,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 851
+    .line 863
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -333,7 +333,7 @@
 
     goto :goto_0
 
-    .line 853
+    .line 865
     :cond_4
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
@@ -347,7 +347,7 @@
 
     goto :goto_0
 
-    .line 859
+    .line 871
     .end local v10           #info:Lcom/sonyericsson/home/data/Info;
     .end local v11           #item:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
     .end local v13           #widgetInfo:Lcom/sonyericsson/home/data/WidgetInfo;
@@ -363,7 +363,7 @@
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->setModel(Ljava/util/ArrayList;)V
 
-    .line 861
+    .line 873
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -403,7 +403,7 @@
 
     or-int/2addr v12, v2
 
-    .line 864
+    .line 876
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -414,7 +414,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 865
+    .line 877
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -425,11 +425,11 @@
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 868
+    .line 880
     :cond_6
     if-eqz v12, :cond_7
 
-    .line 869
+    .line 881
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -438,7 +438,7 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$100(Lcom/sonyericsson/home/layer/desktop/DesktopController;Z)V
 
-    .line 873
+    .line 885
     :cond_7
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
@@ -448,7 +448,7 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2802(Lcom/sonyericsson/home/layer/desktop/DesktopController;Lcom/sonyericsson/home/layer/desktop/DesktopController$State;)Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    .line 874
+    .line 886
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
 
     iget-object v2, v2, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -474,13 +474,13 @@
 
     check-cast v8, Ljava/lang/Runnable;
 
-    .line 875
+    .line 887
     .local v8, callback:Ljava/lang/Runnable;
     invoke-interface {v8}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
 
-    .line 877
+    .line 889
     .end local v8           #callback:Ljava/lang/Runnable;
     :cond_8
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$3;
@@ -491,6 +491,6 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2902(Lcom/sonyericsson/home/layer/desktop/DesktopController;Ljava/util/LinkedList;)Ljava/util/LinkedList;
 
-    .line 878
+    .line 890
     return-void
 .end method

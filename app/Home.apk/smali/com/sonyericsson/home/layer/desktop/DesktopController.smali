@@ -64,8 +64,6 @@
 
 .field private mCreatingFolder:Z
 
-.field private final mDeferredHandler:Lcom/sonyericsson/util/DeferredHandler;
-
 .field private final mDesktopHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
 .field private mDesktopView:Landroid/view/ViewGroup;
@@ -91,6 +89,8 @@
 .field private mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
 .field private mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
+
+.field private mIsWidgetLoadCompleted:Z
 
 .field private final mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
@@ -120,6 +120,19 @@
         }
     .end annotation
 .end field
+
+.field private final mOnWidgetsLoadedCallbacks:Ljava/util/LinkedList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/LinkedList",
+            "<",
+            "Ljava/lang/Runnable;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mOwner:Landroid/app/Activity;
 
 .field private final mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -169,6 +182,8 @@
 
 .field private final mWallpaperManager:Landroid/app/WallpaperManager;
 
+.field private final mWidgetLoadHandler:Lcom/sonyericsson/util/DeferredHandler;
+
 .field private mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
 .field private showAnim:Landroid/view/animation/Animation;
@@ -179,7 +194,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 141
     const-string v0, "content://com.sonyericsson.provider.customization/settings/com.sonyericsson.home/custom_settings_desktop.xml"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -192,133 +207,145 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/layer/InfoGroupManager;)V
-    .locals 7
+    .locals 3
     .parameter "context"
     .parameter "packageLoader"
     .parameter "infoGroupManager"
 
     .prologue
-    .line 780
+    .line 791
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 182
+    .line 184
     sget-object v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->UNINITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    .line 217
+    .line 222
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnSyncCompletedCallbacks:Ljava/util/LinkedList;
 
-    .line 229
+    .line 234
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mHandler:Landroid/os/Handler;
 
-    .line 231
+    .line 237
     new-instance v0, Lcom/sonyericsson/util/DeferredHandler;
 
     invoke-direct {v0}, Lcom/sonyericsson/util/DeferredHandler;-><init>()V
 
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDeferredHandler:Lcom/sonyericsson/util/DeferredHandler;
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetLoadHandler:Lcom/sonyericsson/util/DeferredHandler;
 
-    .line 270
+    .line 240
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnWidgetsLoadedCallbacks:Ljava/util/LinkedList;
+
+    .line 243
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mIsWidgetLoadCompleted:Z
+
+    .line 282
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFirstHint:Z
 
-    .line 274
+    .line 286
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInfoGroupListener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
 
-    .line 755
+    .line 766
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$2;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$2;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSyncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
-    .line 1467
+    .line 1497
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$7;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$7;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
-    .line 1538
+    .line 1568
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$8;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
-    .line 1558
+    .line 1588
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
-    .line 1580
+    .line 1610
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransferTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 1895
+    .line 1925
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$11;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$11;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
-    .line 1936
+    .line 1966
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
-    .line 1960
+    .line 1990
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$13;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$13;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewInteractionListener:Lcom/sonyericsson/paneview/PaneView$InteractionListener;
 
-    .line 1979
+    .line 2009
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
-    .line 2000
+    .line 2030
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewTouchListener:Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
 
-    .line 781
+    .line 792
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
-    .line 782
+    .line 793
     iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    .line 783
+    .line 794
     iput-object p3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    .line 784
+    .line 795
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
@@ -327,21 +354,21 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWallpaperManager:Landroid/app/WallpaperManager;
 
-    .line 786
+    .line 797
     new-instance v0, Lcom/sonyericsson/home/layer/HintInfo;
 
     invoke-direct {v0, p1}, Lcom/sonyericsson/home/layer/HintInfo;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
-    .line 788
+    .line 799
     new-instance v0, Lcom/sonyericsson/grid/GridSize;
 
     invoke-direct {v0}, Lcom/sonyericsson/grid/GridSize;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
-    .line 789
+    .line 800
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -356,7 +383,7 @@
 
     iput v1, v0, Lcom/sonyericsson/grid/GridSize;->rows:I
 
-    .line 790
+    .line 801
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -371,32 +398,27 @@
 
     iput v1, v0, Lcom/sonyericsson/grid/GridSize;->cols:I
 
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 803
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 114
-    .local v0, resolver:Landroid/content/ContentResolver;
-    const-string v1, "tweaks_home_screens"
+    const v1, 0x7f09000a
 
-    const/4 v4, 0x5
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    invoke-static {v0, v1, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v0
 
-    move-result v5
+    iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
 
-    iput v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
-
-    .line 794
+    .line 805
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnPackageUpdateListener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnPackageUpdateListener(Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;)V
 
-    .line 797
+    .line 808
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     const-string v1, "desktop"
@@ -407,7 +429,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/sonyericsson/storage/Storage;->readRoot(Landroid/content/Context;Ljava/lang/String;Lcom/sonyericsson/storage/Storage$OnReadCompletedCallback;)Ljava/lang/Object;
 
-    .line 883
+    .line 895
     return-void
 .end method
 
@@ -416,7 +438,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     return-object v0
@@ -428,7 +450,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     return-object p1
@@ -440,7 +462,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->writeToStorage(Z)V
 
     return-void
@@ -451,7 +473,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     return-object v0
@@ -462,7 +484,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     return-object v0
@@ -473,7 +495,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -484,7 +506,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
     return-object v0
@@ -497,7 +519,7 @@
     .parameter "x2"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->reportFreeCorners(IZ)V
 
     return-void
@@ -508,7 +530,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     return-object v0
@@ -520,7 +542,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     return-object p1
@@ -531,7 +553,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
     return-object v0
@@ -542,7 +564,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
 
     return v0
@@ -553,7 +575,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAppWidgetManager:Landroid/appwidget/AppWidgetManager;
 
     return-object v0
@@ -565,7 +587,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAppWidgetManager:Landroid/appwidget/AppWidgetManager;
 
     return-object p1
@@ -576,7 +598,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAppWidgetHost:Landroid/appwidget/AppWidgetHost;
 
     return-object v0
@@ -588,7 +610,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAppWidgetHost:Landroid/appwidget/AppWidgetHost;
 
     return-object p1
@@ -599,7 +621,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     return-object v0
@@ -610,7 +632,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     return-object v0
@@ -620,7 +642,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 125
     sget-object v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->CUSTOM_SETTINGS_PROVIDER:Landroid/net/Uri;
 
     return-object v0
@@ -632,7 +654,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->performRegister(Lcom/sonyericsson/home/data/WidgetInfo;)V
 
     return-void
@@ -644,7 +666,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     return-object p1
@@ -655,7 +677,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnSyncCompletedCallbacks:Ljava/util/LinkedList;
 
     return-object v0
@@ -667,7 +689,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnSyncCompletedCallbacks:Ljava/util/LinkedList;
 
     return-object p1
@@ -679,7 +701,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onHideFinished(Z)V
 
     return-void
@@ -690,7 +712,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onShowFinished()V
 
     return-void
@@ -701,7 +723,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->customizeWidgets()V
 
     return-void
@@ -712,7 +734,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     return-object v0
@@ -723,7 +745,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     return-object v0
@@ -734,7 +756,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     return-object v0
@@ -745,7 +767,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
     return-object v0
@@ -756,7 +778,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
     return-object v0
@@ -767,7 +789,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInfoGroupListener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
 
     return-object v0
@@ -779,7 +801,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->preCacheWidgets(Ljava/util/Collection;)V
 
     return-void
@@ -790,7 +812,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSyncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
     return-object v0
@@ -801,7 +823,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
     return-object v0
@@ -812,7 +834,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
     return-object v0
@@ -823,7 +845,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
     return-object v0
@@ -834,7 +856,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
 
     return-object v0
@@ -845,7 +867,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mViewInTransfer:Landroid/view/View;
 
     return-object v0
@@ -857,7 +879,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mViewInTransfer:Landroid/view/View;
 
     return-object p1
@@ -868,7 +890,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mMinPaneSwitchDuration:I
 
     return v0
@@ -879,7 +901,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFirstHint:Z
 
     return v0
@@ -891,7 +913,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-boolean p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFirstHint:Z
 
     return p1
@@ -902,7 +924,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mHintDesktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
     return-object v0
@@ -914,7 +936,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mHintDesktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
     return-object p1
@@ -926,7 +948,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->showNudgeIfNeeded(I)Z
 
     move-result v0
@@ -939,7 +961,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hideNudge()V
 
     return-void
@@ -950,7 +972,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopHintInfo:Lcom/sonyericsson/home/layer/HintInfo;
 
     return-object v0
@@ -961,7 +983,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneSwitchMarginLeft:I
 
     return v0
@@ -972,7 +994,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneSwitchMarginRight:I
 
     return v0
@@ -983,7 +1005,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFirstPaneSwitchWaitDuration:I
 
     return v0
@@ -994,7 +1016,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDroppedAtItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     return-object v0
@@ -1006,7 +1028,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDroppedAtItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     return-object p1
@@ -1018,7 +1040,7 @@
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     iput-boolean p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mCreatingFolder:Z
 
     return p1
@@ -1029,7 +1051,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     return-object v0
@@ -1040,7 +1062,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSavedPickedUpItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     return-object v0
@@ -1051,7 +1073,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSavedHintRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
     return-object v0
@@ -1062,19 +1084,30 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->finishCreateFolder()V
 
     return-void
 .end method
 
-.method static synthetic access$6500(Lcom/sonyericsson/home/layer/desktop/DesktopController;Lcom/sonyericsson/home/data/WidgetInfo;)V
+.method static synthetic access$6500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 125
+    invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->runOnWidgetsLoadedCallbacks()V
+
+    return-void
+.end method
+
+.method static synthetic access$6600(Lcom/sonyericsson/home/layer/desktop/DesktopController;Lcom/sonyericsson/home/data/WidgetInfo;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->registerWidget(Lcom/sonyericsson/home/data/WidgetInfo;)V
 
     return-void
@@ -1085,7 +1118,7 @@
     .parameter "x0"
 
     .prologue
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     return-object v0
@@ -1101,14 +1134,14 @@
 
     const/4 v11, 0x0
 
-    .line 2086
+    .line 2116
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     sget-object v10, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->INITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     if-eq v9, v10, :cond_0
 
-    .line 2087
+    .line 2117
     const-string v9, "DesktopController"
 
     const-string v10, "Add info called before controller initialized."
@@ -1117,11 +1150,11 @@
 
     move v9, v11
 
-    .line 2137
+    .line 2167
     :goto_0
     return v9
 
-    .line 2093
+    .line 2123
     :cond_0
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -1129,13 +1162,13 @@
 
     move-result v5
 
-    .line 2095
+    .line 2125
     .local v5, pane:I
     instance-of v9, p1, Lcom/sonyericsson/home/data/WidgetInfo;
 
     if-eqz v9, :cond_4
 
-    .line 2096
+    .line 2126
     move-object v0, p1
 
     check-cast v0, Lcom/sonyericsson/home/data/WidgetInfo;
@@ -1146,7 +1179,7 @@
 
     move-result v1
 
-    .line 2097
+    .line 2127
     .local v1, appWidgetId:I
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
@@ -1160,7 +1193,7 @@
 
     move-result v7
 
-    .line 2098
+    .line 2128
     .local v7, spanX:I
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
@@ -1174,37 +1207,37 @@
 
     move-result v8
 
-    .line 2108
+    .line 2138
     .end local v1           #appWidgetId:I
     .local v8, spanY:I
     :goto_1
     const/4 v4, 0x0
 
-    .line 2111
+    .line 2141
     .local v4, itemAdded:Z
     if-nez v4, :cond_1
 
     if-eqz p2, :cond_1
 
-    .line 2112
+    .line 2142
     new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
     invoke-direct {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopRect;-><init>()V
 
-    .line 2113
+    .line 2143
     .local v2, desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
     new-instance v3, Lcom/sonyericsson/grid/GridRect;
 
     invoke-direct {v3}, Lcom/sonyericsson/grid/GridRect;-><init>()V
 
-    .line 2114
+    .line 2144
     .local v3, gridRect:Lcom/sonyericsson/grid/GridRect;
     iput v7, v3, Lcom/sonyericsson/grid/GridRect;->colSpan:I
 
-    .line 2115
+    .line 2145
     iput v8, v3, Lcom/sonyericsson/grid/GridRect;->rowSpan:I
 
-    .line 2116
+    .line 2146
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
     iget v10, p2, Lcom/sonyericsson/grid/GridLocation;->col:I
@@ -1213,7 +1246,7 @@
 
     invoke-virtual {v9, v10, v11, v3}, Lcom/sonyericsson/grid/Grid;->centerGridRect(IILcom/sonyericsson/grid/GridRect;)V
 
-    .line 2117
+    .line 2147
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v9, v3, v5, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->getClosestEmptyLocation(Lcom/sonyericsson/grid/GridRect;ILcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
@@ -1222,7 +1255,7 @@
 
     if-eqz v9, :cond_1
 
-    .line 2118
+    .line 2148
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     new-instance v10, Lcom/sonyericsson/home/layer/desktop/DesktopItem;
@@ -1233,18 +1266,18 @@
 
     move-result v4
 
-    .line 2125
+    .line 2155
     .end local v2           #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
     .end local v3           #gridRect:Lcom/sonyericsson/grid/GridRect;
     :cond_1
     if-nez v4, :cond_2
 
-    .line 2126
+    .line 2156
     new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
     invoke-direct {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopRect;-><init>()V
 
-    .line 2127
+    .line 2157
     .restart local v2       #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
@@ -1254,7 +1287,7 @@
 
     if-eqz v9, :cond_2
 
-    .line 2128
+    .line 2158
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     new-instance v10, Lcom/sonyericsson/home/layer/desktop/DesktopItem;
@@ -1265,15 +1298,15 @@
 
     move-result v4
 
-    .line 2132
+    .line 2162
     .end local v2           #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
     :cond_2
     if-eqz v4, :cond_3
 
-    .line 2133
+    .line 2163
     invoke-direct {p0, v12}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->writeToStorage(Z)V
 
-    .line 2134
+    .line 2164
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     invoke-virtual {v9}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
@@ -1281,10 +1314,10 @@
     :cond_3
     move v9, v4
 
-    .line 2137
+    .line 2167
     goto :goto_0
 
-    .line 2099
+    .line 2129
     .end local v4           #itemAdded:Z
     .end local v7           #spanX:I
     .end local v8           #spanY:I
@@ -1293,7 +1326,7 @@
 
     if-eqz v9, :cond_5
 
-    .line 2100
+    .line 2130
     iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     move-object v0, p1
@@ -1306,26 +1339,26 @@
 
     move-result-object v6
 
-    .line 2101
+    .line 2131
     .local v6, span:[I
     aget v7, v6, v11
 
-    .line 2102
+    .line 2132
     .restart local v7       #spanX:I
     aget v8, v6, v12
 
-    .line 2103
+    .line 2133
     .restart local v8       #spanY:I
     goto :goto_1
 
-    .line 2104
+    .line 2134
     .end local v6           #span:[I
     .end local v7           #spanX:I
     .end local v8           #spanY:I
     :cond_5
     const/4 v7, 0x1
 
-    .line 2105
+    .line 2135
     .restart local v7       #spanX:I
     const/4 v8, 0x1
 
@@ -1339,18 +1372,18 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2021
+    .line 2051
     new-instance v2, Landroid/util/TypedValue;
 
     invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
 
-    .line 2022
+    .line 2052
     .local v2, stiffness:Landroid/util/TypedValue;
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 2023
+    .line 2053
     .local v0, damping:Landroid/util/TypedValue;
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
@@ -1362,7 +1395,7 @@
 
     invoke-virtual {v3, v4, v2, v5}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 2024
+    .line 2054
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1373,12 +1406,12 @@
 
     invoke-virtual {v3, v4, v0, v5}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 2025
+    .line 2055
     new-instance v1, Lcom/sonyericsson/util/SpringDynamics;
 
     invoke-direct {v1}, Lcom/sonyericsson/util/SpringDynamics;-><init>()V
 
-    .line 2026
+    .line 2056
     .local v1, dynamics:Lcom/sonyericsson/util/SpringDynamics;
     invoke-virtual {v2}, Landroid/util/TypedValue;->getFloat()F
 
@@ -1390,7 +1423,7 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/sonyericsson/util/SpringDynamics;->setSpring(FF)V
 
-    .line 2027
+    .line 2057
     return-object v1
 .end method
 
@@ -1398,7 +1431,7 @@
     .locals 13
 
     .prologue
-    .line 957
+    .line 969
     iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     if-eqz v10, :cond_0
@@ -1407,12 +1440,12 @@
 
     if-nez v10, :cond_1
 
-    .line 979
+    .line 991
     :cond_0
     :goto_0
     return-void
 
-    .line 960
+    .line 972
     :cond_1
     iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
@@ -1420,7 +1453,7 @@
 
     move-result-object v8
 
-    .line 962
+    .line 974
     .local v8, infos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/Info;>;"
     invoke-interface {v8}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -1440,13 +1473,13 @@
 
     check-cast v7, Lcom/sonyericsson/home/data/Info;
 
-    .line 963
+    .line 975
     .local v7, info:Lcom/sonyericsson/home/data/Info;
     instance-of v10, v7, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
     if-eqz v10, :cond_2
 
-    .line 964
+    .line 976
     move-object v0, v7
 
     check-cast v0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
@@ -1457,16 +1490,16 @@
 
     move-result-object v2
 
-    .line 965
+    .line 977
     .local v2, custMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     if-eqz v2, :cond_2
 
-    .line 966
+    .line 978
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 967
+    .line 979
     .local v1, bundle:Landroid/os/Bundle;
     invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -1490,7 +1523,7 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 968
+    .line 980
     .local v4, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1508,7 +1541,7 @@
 
     goto :goto_2
 
-    .line 970
+    .line 982
     .end local v4           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_3
     iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
@@ -1520,7 +1553,7 @@
 
     goto :goto_1
 
-    .line 974
+    .line 986
     .end local v1           #bundle:Landroid/os/Bundle;
     .end local v2           #custMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     .end local v6           #i$:Ljava/util/Iterator;
@@ -1535,13 +1568,13 @@
 
     move-result-object v9
 
-    .line 976
+    .line 988
     .local v9, prefs:Landroid/content/SharedPreferences;
     invoke-interface {v9}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
 
-    .line 977
+    .line 989
     .local v3, editor:Landroid/content/SharedPreferences$Editor;
     const-string v10, "preference_desktop_widget_customization_done"
 
@@ -1549,7 +1582,7 @@
 
     invoke-interface {v3, v10, v11}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 978
+    .line 990
     invoke-static {v3}, Lcom/sonyericsson/util/SharedPreferencesCompat;->apply(Landroid/content/SharedPreferences$Editor;)V
 
     goto :goto_0
@@ -1560,12 +1593,12 @@
     .parameter "viewGroup"
 
     .prologue
-    .line 2477
+    .line 2543
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
-    .line 2478
+    .line 2544
     .local v2, numChildren:I
     const/4 v1, 0x0
 
@@ -1573,18 +1606,18 @@
     :goto_0
     if-ge v1, v2, :cond_2
 
-    .line 2479
+    .line 2545
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2481
+    .line 2547
     .local v0, child:Landroid/view/View;
     instance-of v4, v0, Landroid/view/ViewGroup;
 
     if-eqz v4, :cond_0
 
-    .line 2482
+    .line 2548
     check-cast v0, Landroid/view/ViewGroup;
 
     .end local v0           #child:Landroid/view/View;
@@ -1592,18 +1625,18 @@
 
     move-result-object v3
 
-    .line 2483
+    .line 2549
     .local v3, smartSliderView:Landroid/view/View;
     if-eqz v3, :cond_1
 
     move-object v4, v3
 
-    .line 2492
+    .line 2557
     .end local v3           #smartSliderView:Landroid/view/View;
     :goto_1
     return-object v4
 
-    .line 2486
+    .line 2552
     .restart local v0       #child:Landroid/view/View;
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->isClickable()Z
@@ -1626,17 +1659,17 @@
 
     move-object v4, v0
 
-    .line 2488
+    .line 2553
     goto :goto_1
 
-    .line 2478
+    .line 2544
     .end local v0           #child:Landroid/view/View;
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2492
+    .line 2557
     :cond_2
     const/4 v4, 0x0
 
@@ -1649,21 +1682,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2365
+    .line 2403
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDroppedAtItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 2366
+    .line 2404
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSavedPickedUpItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 2367
+    .line 2405
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSavedHintRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
-    .line 2368
+    .line 2406
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mCreatingFolder:Z
 
-    .line 2369
+    .line 2407
     return-void
 .end method
 
@@ -1673,27 +1706,27 @@
     .prologue
     const/16 v1, 0x8
 
-    .line 2072
+    .line 2102
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 2073
+    .line 2103
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/HintView;->clearAnimation()V
 
-    .line 2074
+    .line 2104
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 2075
+    .line 2105
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/HintView;->clearAnimation()V
 
-    .line 2076
+    .line 2106
     return-void
 .end method
 
@@ -1702,17 +1735,17 @@
     .parameter "animating"
 
     .prologue
-    .line 886
+    .line 898
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
     if-eqz v0, :cond_0
 
-    .line 887
+    .line 899
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onDesktopHidden(Z)V
 
-    .line 889
+    .line 901
     :cond_0
     return-void
 .end method
@@ -1721,24 +1754,24 @@
     .locals 2
 
     .prologue
-    .line 892
+    .line 904
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 893
+    .line 905
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
     if-eqz v0, :cond_0
 
-    .line 894
+    .line 906
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onDesktopShown()V
 
-    .line 896
+    .line 908
     :cond_0
     return-void
 .end method
@@ -1748,7 +1781,7 @@
     .parameter "info"
 
     .prologue
-    .line 2412
+    .line 2478
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopController$20;
@@ -1759,7 +1792,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2417
+    .line 2483
     return-void
 .end method
 
@@ -1777,7 +1810,7 @@
     .end annotation
 
     .prologue
-    .line 2377
+    .line 2441
     .local p1, infos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/Info;>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -1798,14 +1831,14 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 2378
+    .line 2442
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     instance-of v2, v1, Lcom/sonyericsson/home/data/WidgetInfo;
 
     if-eqz v2, :cond_1
 
-    .line 2382
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDeferredHandler:Lcom/sonyericsson/util/DeferredHandler;
+    .line 2446
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetLoadHandler:Lcom/sonyericsson/util/DeferredHandler;
 
     new-instance v3, Lcom/sonyericsson/home/layer/desktop/DesktopController$18;
 
@@ -1815,14 +1848,14 @@
 
     goto :goto_0
 
-    .line 2389
+    .line 2454
     :cond_1
     instance-of v2, v1, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
     if-eqz v2, :cond_0
 
-    .line 2393
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDeferredHandler:Lcom/sonyericsson/util/DeferredHandler;
+    .line 2458
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetLoadHandler:Lcom/sonyericsson/util/DeferredHandler;
 
     new-instance v3, Lcom/sonyericsson/home/layer/desktop/DesktopController$19;
 
@@ -1832,7 +1865,7 @@
 
     goto :goto_0
 
-    .line 2402
+    .line 2468
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :cond_2
     return-void
@@ -1844,12 +1877,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 1532
+    .line 1562
     new-instance v0, Landroid/content/ComponentName;
 
     invoke-direct {v0, p2, p1}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1533
+    .line 1563
     .local v0, cmp:Landroid/content/ComponentName;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAppWidgetHost:Landroid/appwidget/AppWidgetHost;
 
@@ -1857,13 +1890,13 @@
 
     move-result v1
 
-    .line 1534
+    .line 1564
     .local v1, id:I
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAppWidgetManager:Landroid/appwidget/AppWidgetManager;
 
     invoke-virtual {v2, v1, v0}, Landroid/appwidget/AppWidgetManager;->bindAppWidgetId(ILandroid/content/ComponentName;)V
 
-    .line 1535
+    .line 1565
     return v1
 .end method
 
@@ -1872,33 +1905,33 @@
     .parameter "info"
 
     .prologue
-    .line 2426
+    .line 2492
     iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v7, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->get(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     move-result-object v0
 
-    .line 2427
+    .line 2493
     .local v0, desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
     if-eqz v0, :cond_2
 
-    .line 2428
+    .line 2494
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/WidgetInfo;->getName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2429
+    .line 2495
     .local v3, name:Ljava/lang/String;
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/WidgetInfo;->getPackageName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 2431
+    .line 2497
     .local v5, packageName:Ljava/lang/String;
     const/4 v6, 0x1
 
-    .line 2434
+    .line 2500
     .local v6, removeModelItem:Z
     :try_start_0
     invoke-direct {p0, v3, v5}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->registerAppWidget(Ljava/lang/String;Ljava/lang/String;)I
@@ -1907,60 +1940,60 @@
 
     move-result v2
 
-    .line 2440
+    .line 2506
     .local v2, id:I
     :goto_0
     if-eqz v2, :cond_0
 
-    .line 2442
+    .line 2508
     new-instance v4, Lcom/sonyericsson/home/data/WidgetInfo;
 
     invoke-direct {v4, v2, v3, v5}, Lcom/sonyericsson/home/data/WidgetInfo;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 2443
+    .line 2509
     .local v4, newWidgetInfo:Lcom/sonyericsson/home/data/WidgetInfo;
     invoke-virtual {v0, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->setInfo(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 2444
+    .line 2510
     const/4 v6, 0x0
 
-    .line 2445
+    .line 2511
     iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     if-eqz v7, :cond_0
 
-    .line 2446
+    .line 2512
     iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     invoke-virtual {v7}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 2451
+    .line 2517
     .end local v4           #newWidgetInfo:Lcom/sonyericsson/home/data/WidgetInfo;
     :cond_0
     if-eqz v6, :cond_1
 
-    .line 2452
+    .line 2518
     iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v7, v0}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->remove(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)Z
 
-    .line 2453
+    .line 2519
     iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     if-eqz v7, :cond_1
 
-    .line 2454
+    .line 2520
     iget-object v7, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     invoke-virtual {v7}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 2457
+    .line 2523
     :cond_1
     const/4 v7, 0x1
 
     invoke-direct {p0, v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->writeToStorage(Z)V
 
-    .line 2460
+    .line 2526
     .end local v2           #id:I
     .end local v3           #name:Ljava/lang/String;
     .end local v5           #packageName:Ljava/lang/String;
@@ -1968,14 +2001,14 @@
     :cond_2
     return-void
 
-    .line 2435
+    .line 2501
     .restart local v3       #name:Ljava/lang/String;
     .restart local v5       #packageName:Ljava/lang/String;
     .restart local v6       #removeModelItem:Z
     :catch_0
     move-exception v1
 
-    .line 2436
+    .line 2502
     .local v1, e:Ljava/lang/RuntimeException;
     const-string v7, "DesktopController"
 
@@ -2003,7 +2036,7 @@
 
     invoke-static {v7, v8, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2437
+    .line 2503
     const/4 v2, 0x0
 
     .restart local v2       #id:I
@@ -2015,17 +2048,17 @@
     .parameter "callback"
 
     .prologue
-    .line 1169
+    .line 1190
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnSyncCompletedCallbacks:Ljava/util/LinkedList;
 
     if-eqz v0, :cond_0
 
-    .line 1170
+    .line 1191
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnSyncCompletedCallbacks:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 1172
+    .line 1193
     :cond_0
     return-void
 .end method
@@ -2044,16 +2077,16 @@
 
     const/4 v4, 0x1
 
-    .line 2149
+    .line 2179
     const/4 v0, 0x0
 
-    .line 2150
+    .line 2180
     .local v0, changed:Z
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     if-nez v3, :cond_0
 
-    .line 2151
+    .line 2181
     const/4 v3, 0x4
 
     new-array v3, v3, [Z
@@ -2062,39 +2095,39 @@
 
     iput-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
-    .line 2154
+    .line 2184
     const/4 p2, 0x1
 
-    .line 2156
+    .line 2186
     :cond_0
     new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
     invoke-direct {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopRect;-><init>()V
 
-    .line 2157
+    .line 2187
     .local v2, rect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
     iput v5, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->col:I
 
-    .line 2158
+    .line 2188
     iput v5, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->row:I
 
-    .line 2159
+    .line 2189
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->colSpan:I
 
-    .line 2160
+    .line 2190
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->rowSpan:I
 
-    .line 2161
+    .line 2191
     iput p1, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->pane:I
 
-    .line 2162
+    .line 2192
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v3, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->isLocationEmpty(Lcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
 
     move-result v1
 
-    .line 2163
+    .line 2193
     .local v1, free:Z
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
@@ -2102,15 +2135,15 @@
 
     if-eq v1, v3, :cond_1
 
-    .line 2164
+    .line 2194
     const/4 v0, 0x1
 
-    .line 2165
+    .line 2195
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     aput-boolean v1, v3, v5
 
-    .line 2167
+    .line 2197
     :cond_1
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
@@ -2120,42 +2153,42 @@
 
     iput v3, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->col:I
 
-    .line 2168
+    .line 2198
     iput v5, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->row:I
 
-    .line 2169
+    .line 2199
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->colSpan:I
 
-    .line 2170
+    .line 2200
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->rowSpan:I
 
-    .line 2171
+    .line 2201
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v3, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->isLocationEmpty(Lcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
 
     move-result v1
 
-    .line 2172
+    .line 2202
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     aget-boolean v3, v3, v4
 
     if-eq v1, v3, :cond_2
 
-    .line 2173
+    .line 2203
     const/4 v0, 0x1
 
-    .line 2174
+    .line 2204
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     aput-boolean v1, v3, v4
 
-    .line 2176
+    .line 2206
     :cond_2
     iput v5, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->col:I
 
-    .line 2177
+    .line 2207
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
     iget v3, v3, Lcom/sonyericsson/grid/GridSize;->rows:I
@@ -2164,35 +2197,35 @@
 
     iput v3, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->row:I
 
-    .line 2178
+    .line 2208
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->colSpan:I
 
-    .line 2179
+    .line 2209
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->rowSpan:I
 
-    .line 2180
+    .line 2210
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v3, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->isLocationEmpty(Lcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
 
     move-result v1
 
-    .line 2181
+    .line 2211
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     aget-boolean v3, v3, v6
 
     if-eq v1, v3, :cond_3
 
-    .line 2182
+    .line 2212
     const/4 v0, 0x1
 
-    .line 2183
+    .line 2213
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     aput-boolean v1, v3, v6
 
-    .line 2185
+    .line 2215
     :cond_3
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
@@ -2202,7 +2235,7 @@
 
     iput v3, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->col:I
 
-    .line 2186
+    .line 2216
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
     iget v3, v3, Lcom/sonyericsson/grid/GridSize;->rows:I
@@ -2211,35 +2244,35 @@
 
     iput v3, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->row:I
 
-    .line 2187
+    .line 2217
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->colSpan:I
 
-    .line 2188
+    .line 2218
     iput v4, v2, Lcom/sonyericsson/home/layer/desktop/DesktopRect;->rowSpan:I
 
-    .line 2189
+    .line 2219
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v3, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->isLocationEmpty(Lcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
 
     move-result v1
 
-    .line 2190
+    .line 2220
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     aget-boolean v3, v3, v7
 
     if-eq v1, v3, :cond_4
 
-    .line 2191
+    .line 2221
     const/4 v0, 0x1
 
-    .line 2192
+    .line 2222
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
     aput-boolean v1, v3, v7
 
-    .line 2194
+    .line 2224
     :cond_4
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
@@ -2249,7 +2282,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 2195
+    .line 2225
     :cond_5
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
@@ -2257,11 +2290,11 @@
 
     invoke-interface {v3, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onFreeCornersChanged([Z)V
 
-    .line 2197
+    .line 2227
     :cond_6
     return-void
 
-    .line 2151
+    .line 2181
     nop
 
     :array_0
@@ -2273,13 +2306,171 @@
     .end array-data
 .end method
 
-.method private setContextDependentData()V
+.method private resumeWidgets()V
     .locals 7
+
+    .prologue
+    .line 2341
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-virtual {v5}, Lcom/sonyericsson/paneview/PaneView;->getVisibleItems()Ljava/util/ArrayList;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .local v2, i$:Ljava/util/Iterator;
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Integer;
+
+    .line 2342
+    .local v4, position:Ljava/lang/Integer;
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->get(I)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getInfo()Lcom/sonyericsson/home/data/Info;
+
+    move-result-object v3
+
+    .line 2343
+    .local v3, info:Lcom/sonyericsson/home/data/Info;
+    instance-of v5, v3, Lcom/sonyericsson/home/data/AdvWidgetInfo;
+
+    if-eqz v5, :cond_0
+
+    .line 2344
+    move-object v0, v3
+
+    check-cast v0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
+
+    move-object v1, v0
+
+    .line 2345
+    .local v1, advInfo:Lcom/sonyericsson/home/data/AdvWidgetInfo;
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+
+    invoke-virtual {v5, v1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->start(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
+
+    .line 2346
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+
+    invoke-virtual {v5, v1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->resume(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
+
+    .line 2347
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-virtual {v5}, Lcom/sonyericsson/paneview/PaneView;->isInteracting()Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->isInOverview()Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    .line 2348
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+
+    invoke-virtual {v5, v1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->focus(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
+
+    goto :goto_0
+
+    .line 2352
+    .end local v1           #advInfo:Lcom/sonyericsson/home/data/AdvWidgetInfo;
+    .end local v3           #info:Lcom/sonyericsson/home/data/Info;
+    .end local v4           #position:Ljava/lang/Integer;
+    :cond_1
+    return-void
+.end method
+
+.method private runOnWidgetsLoadedCallbacks()V
+    .locals 3
+
+    .prologue
+    .line 2426
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetLoadHandler:Lcom/sonyericsson/util/DeferredHandler;
+
+    invoke-virtual {v2}, Lcom/sonyericsson/util/DeferredHandler;->isQueueEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 2427
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnWidgetsLoadedCallbacks:Ljava/util/LinkedList;
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Runnable;
+
+    .line 2428
+    .local v0, callback:Ljava/lang/Runnable;
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    goto :goto_0
+
+    .line 2430
+    .end local v0           #callback:Ljava/lang/Runnable;
+    :cond_0
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnWidgetsLoadedCallbacks:Ljava/util/LinkedList;
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->clear()V
+
+    .line 2431
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mIsWidgetLoadCompleted:Z
+
+    .line 2433
+    .end local v1           #i$:Ljava/util/Iterator;
+    :cond_1
+    return-void
+.end method
+
+.method private setContextDependentData()V
+    .locals 4
 
     .prologue
     const/high16 v3, 0x4020
 
-    .line 899
+    .line 911
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2294,7 +2485,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneSwitchMarginLeft:I
 
-    .line 901
+    .line 913
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2309,7 +2500,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneSwitchMarginRight:I
 
-    .line 903
+    .line 915
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2324,7 +2515,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneSwitchNudgeOffset:I
 
-    .line 905
+    .line 917
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2339,7 +2530,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mMinPaneSwitchDuration:I
 
-    .line 907
+    .line 919
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2354,10 +2545,10 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFirstPaneSwitchWaitDuration:I
 
-    .line 910
+    .line 922
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f04000a
+    const v1, 0x7f04000b
 
     invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2365,14 +2556,14 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNudgeShow:Landroid/view/animation/Animation;
 
-    .line 913
+    .line 925
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNudgeShow:Landroid/view/animation/Animation;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 915
+    .line 927
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
@@ -2389,7 +2580,7 @@
 
     iput v1, v0, Lcom/sonyericsson/grid/GridSize;->rows:I
 
-    .line 916
+    .line 928
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGridSize:Lcom/sonyericsson/grid/GridSize;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
@@ -2406,26 +2597,22 @@
 
     iput v1, v0, Lcom/sonyericsson/grid/GridSize;->cols:I
 
-    .line 918
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+    .line 930
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 114
-    .local v0, resolver:Landroid/content/ContentResolver;
-    const-string v1, "tweaks_home_screens"
+    const v1, 0x7f09000a
 
-    const/4 v4, 0x5
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    invoke-static {v0, v1, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v0
 
-    move-result v5
+    iput v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
 
-    iput v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
-
-    .line 920
+    .line 932
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     const v1, 0x7f040004
@@ -2436,7 +2623,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hideAnim:Landroid/view/animation/Animation;
 
-    .line 921
+    .line 933
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hideAnim:Landroid/view/animation/Animation;
 
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -2445,7 +2632,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 922
+    .line 934
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hideAnim:Landroid/view/animation/Animation;
 
     new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopController$4;
@@ -2454,7 +2641,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 936
+    .line 948
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     const v1, 0x7f040005
@@ -2465,7 +2652,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->showAnim:Landroid/view/animation/Animation;
 
-    .line 937
+    .line 949
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->showAnim:Landroid/view/animation/Animation;
 
     new-instance v1, Landroid/view/animation/DecelerateInterpolator;
@@ -2474,7 +2661,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 938
+    .line 950
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->showAnim:Landroid/view/animation/Animation;
 
     new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopController$5;
@@ -2483,7 +2670,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 951
+    .line 963
     return-void
 .end method
 
@@ -2494,8 +2681,8 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2031
-    const v2, 0x7f0e0016
+    .line 2061
+    const v2, 0x7f0e001d
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2505,12 +2692,12 @@
 
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
-    .line 2032
+    .line 2062
     new-instance v1, Landroid/util/TypedValue;
 
     invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
 
-    .line 2033
+    .line 2063
     .local v1, indicatorSize:Landroid/util/TypedValue;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
@@ -2524,7 +2711,7 @@
 
     invoke-virtual {v2, v3, v1, v4}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 2034
+    .line 2064
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v1}, Landroid/util/TypedValue;->getFloat()F
@@ -2533,7 +2720,7 @@
 
     invoke-virtual {v2, v3, v5, v5}, Lcom/sonyericsson/home/layer/PaneIndicator;->setAppearance(FLandroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
 
-    .line 2035
+    .line 2065
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2546,11 +2733,11 @@
 
     move-result v0
 
-    .line 2037
+    .line 2067
     .local v0, fadeOnTimeout:Z
     if-eqz v0, :cond_0
 
-    .line 2038
+    .line 2068
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     new-instance v3, Lcom/sonyericsson/home/layer/desktop/DesktopController$16;
@@ -2559,7 +2746,7 @@
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/PaneIndicator;->setOnInactiveTimeoutListener(Lcom/sonyericsson/home/layer/PaneIndicator$InactiveTimeoutListener;)V
 
-    .line 2044
+    .line 2074
     :cond_0
     return-void
 .end method
@@ -2573,14 +2760,14 @@
 
     const/4 v5, 0x0
 
-    .line 2047
+    .line 2077
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v2}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
 
     move-result v0
 
-    .line 2048
+    .line 2078
     .local v0, currentPane:I
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -2588,7 +2775,7 @@
 
     move-result v1
 
-    .line 2049
+    .line 2079
     .local v1, maxPane:I
     iget v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneSwitchMarginLeft:I
 
@@ -2598,15 +2785,15 @@
 
     if-ge p1, v2, :cond_1
 
-    .line 2050
+    .line 2080
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 2051
+    .line 2081
     if-lez v0, :cond_3
 
-    .line 2052
+    .line 2082
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/HintView;->getVisibility()I
@@ -2615,12 +2802,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 2053
+    .line 2083
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v2, v5}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 2054
+    .line 2084
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNudgeShow:Landroid/view/animation/Animation;
@@ -2630,11 +2817,11 @@
     :cond_0
     move v2, v6
 
-    .line 2068
+    .line 2098
     :goto_0
     return v2
 
-    .line 2058
+    .line 2088
     :cond_1
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -2652,17 +2839,17 @@
 
     if-le p1, v2, :cond_3
 
-    .line 2059
+    .line 2089
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 2060
+    .line 2090
     sub-int v2, v1, v6
 
     if-ge v0, v2, :cond_3
 
-    .line 2061
+    .line 2091
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/HintView;->getVisibility()I
@@ -2671,12 +2858,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 2062
+    .line 2092
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v2, v5}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 2063
+    .line 2093
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNudgeShow:Landroid/view/animation/Animation;
@@ -2686,13 +2873,13 @@
     :cond_2
     move v2, v6
 
-    .line 2065
+    .line 2095
     goto :goto_0
 
     :cond_3
     move v2, v5
 
-    .line 2068
+    .line 2098
     goto :goto_0
 .end method
 
@@ -2701,14 +2888,14 @@
     .parameter "async"
 
     .prologue
-    .line 2141
+    .line 2171
     new-instance v1, Lcom/sonyericsson/storage/Root;
 
     const-string v2, "desktop"
 
     invoke-direct {v1, v2}, Lcom/sonyericsson/storage/Root;-><init>(Ljava/lang/String;)V
 
-    .line 2142
+    .line 2172
     .local v1, root:Lcom/sonyericsson/storage/Root;
     const-string v2, "version"
 
@@ -2716,14 +2903,14 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sonyericsson/storage/Root;->put(Ljava/lang/String;I)V
 
-    .line 2143
+    .line 2173
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->getStorableModel()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 2144
+    .line 2174
     .local v0, model:Ljava/util/ArrayList;
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -2735,12 +2922,12 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sonyericsson/storage/Root;->addChild(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)V
 
-    .line 2145
+    .line 2175
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-static {v2, v1, p1}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Lcom/sonyericsson/storage/Root;Z)V
 
-    .line 2146
+    .line 2176
     return-void
 .end method
 
@@ -2752,7 +2939,7 @@
     .parameter "activityInfo"
 
     .prologue
-    .line 1319
+    .line 1341
     new-instance v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     invoke-direct {v0, p2}, Lcom/sonyericsson/home/data/ActivityInfo;-><init>(Lcom/sonyericsson/home/data/ActivityInfo;)V
@@ -2770,27 +2957,27 @@
     .parameter "location"
 
     .prologue
-    .line 1236
+    .line 1259
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v2, p1, p2, p0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->addNewWidget(Ljava/lang/String;Lcom/sonyericsson/grid/GridLocation;Lcom/sonyericsson/home/widget/OnWidgetConfigured;)Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
     move-result-object v0
 
-    .line 1237
+    .line 1260
     .local v0, info:Lcom/sonyericsson/home/data/AdvWidgetInfo;
     if-eqz v0, :cond_1
 
-    .line 1238
+    .line 1261
     invoke-direct {p0, v0, p2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->addInfo(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/grid/GridLocation;)Z
 
     move-result v1
 
-    .line 1239
+    .line 1262
     .local v1, ret:Z
     if-nez v1, :cond_0
 
-    .line 1241
+    .line 1264
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v2, v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->cleanup(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
@@ -2798,7 +2985,7 @@
     :cond_0
     move v2, v1
 
-    .line 1248
+    .line 1271
     .end local v1           #ret:Z
     :goto_0
     return v2
@@ -2809,17 +2996,16 @@
     goto :goto_0
 .end method
 
-.method public addFolder(Lcom/sonyericsson/grid/GridLocation;Ljava/lang/String;I)Z
+.method public addFolder(Lcom/sonyericsson/grid/GridLocation;Ljava/lang/String;)Z
     .locals 1
     .parameter "location"
     .parameter "folderName"
-    .parameter "icon"
 
     .prologue
-    .line 1304
+    .line 1326
     new-instance v0, Lcom/sonyericsson/home/data/InfoGroup;
 
-    invoke-direct {v0, p2, p3}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, p2}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/lang/String;)V
 
     invoke-direct {p0, v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->addInfo(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/grid/GridLocation;)Z
 
@@ -2833,23 +3019,49 @@
     .parameter "callback"
 
     .prologue
-    .line 1161
+    .line 1182
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     sget-object v1, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->UNINITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     if-eq v0, v1, :cond_0
 
-    .line 1162
+    .line 1183
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 1166
+    .line 1187
     :goto_0
     return-void
 
-    .line 1164
+    .line 1185
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnSyncCompletedCallbacks:Ljava/util/LinkedList;
+
+    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+.end method
+
+.method public addOnWidgetsLoadedCallback(Ljava/lang/Runnable;)V
+    .locals 1
+    .parameter "callback"
+
+    .prologue
+    .line 2415
+    iget-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mIsWidgetLoadCompleted:Z
+
+    if-eqz v0, :cond_0
+
+    .line 2416
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    .line 2420
+    :goto_0
+    return-void
+
+    .line 2418
+    :cond_0
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnWidgetsLoadedCallbacks:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
@@ -2864,34 +3076,34 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1331
+    .line 1353
     invoke-static {p1}, Lcom/sonyericsson/home/data/ShortcutInfo;->create(Landroid/os/Bundle;)Lcom/sonyericsson/home/data/ShortcutInfo;
 
     move-result-object v1
 
-    .line 1333
+    .line 1355
     .local v1, shortcutInfo:Lcom/sonyericsson/home/data/ShortcutInfo;
     if-eqz v1, :cond_1
 
-    .line 1334
+    .line 1356
     invoke-direct {p0, v1, p2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->addInfo(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/grid/GridLocation;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 1335
+    .line 1357
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     invoke-virtual {v2, p1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->getShortcutBitmap(Landroid/os/Bundle;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 1336
+    .line 1358
     .local v0, shortcutBitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
-    .line 1337
+    .line 1359
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/ShortcutInfo;->getBitmapResourceName()Ljava/lang/String;
@@ -2900,7 +3112,7 @@
 
     invoke-static {v2, v3, v0, v4}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;Z)V
 
-    .line 1340
+    .line 1362
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
@@ -2908,7 +3120,7 @@
 
     move v2, v4
 
-    .line 1345
+    .line 1367
     .end local v0           #shortcutBitmap:Landroid/graphics/Bitmap;
     :goto_0
     return v2
@@ -2920,351 +3132,273 @@
 .end method
 
 .method public addShortcutSync(Landroid/os/Bundle;)Z
-    .locals 18
+    .locals 14
     .parameter "shortcutData"
 
     .prologue
-    .line 1357
-    move-object/from16 v0, p0
+    const/4 v12, 0x1
 
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
+    const/4 v13, 0x0
 
-    move-object v12, v0
+    .line 1379
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    sget-object v13, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->UNINITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
+    sget-object v11, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->UNINITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    if-ne v12, v13, :cond_0
+    if-ne v10, v11, :cond_0
 
-    .line 1358
-    new-instance v12, Ljava/lang/IllegalStateException;
+    .line 1380
+    new-instance v10, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v12}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v10}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v12
+    throw v10
 
-    .line 1361
+    .line 1383
     :cond_0
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    .line 1362
-    .local v8, shortcutAdded:Z
-    const-string v12, "duplicate"
+    .line 1384
+    .local v6, shortcutAdded:Z
+    const-string v10, "duplicate"
 
-    const/4 v13, 0x1
+    invoke-virtual {p1, v10, v12}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-object/from16 v0, p1
+    move-result v4
 
-    move-object v1, v12
+    .line 1386
+    .local v4, duplicatesAllowed:Z
+    invoke-static {p1}, Lcom/sonyericsson/home/data/ShortcutInfo;->create(Landroid/os/Bundle;)Lcom/sonyericsson/home/data/ShortcutInfo;
 
-    move v2, v13
+    move-result-object v8
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    .line 1388
+    .local v8, shortcutInfo:Lcom/sonyericsson/home/data/ShortcutInfo;
+    if-eqz v8, :cond_5
 
-    move-result v6
+    .line 1389
+    if-nez v4, :cond_1
 
-    .line 1364
-    .local v6, duplicatesAllowed:Z
-    invoke-static/range {p1 .. p1}, Lcom/sonyericsson/home/data/ShortcutInfo;->create(Landroid/os/Bundle;)Lcom/sonyericsson/home/data/ShortcutInfo;
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
+
+    invoke-virtual {v10, v8}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->get(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     move-result-object v10
 
-    .line 1366
-    .local v10, shortcutInfo:Lcom/sonyericsson/home/data/ShortcutInfo;
-    if-eqz v10, :cond_5
-
-    .line 1367
-    if-nez v6, :cond_1
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
-
-    move-object v12, v0
-
-    invoke-virtual {v12, v10}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->get(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
-
-    move-result-object v12
-
-    if-nez v12, :cond_7
-
-    .line 1368
-    :cond_1
-    new-instance v5, Lcom/sonyericsson/home/layer/desktop/DesktopRect;
-
-    invoke-direct {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopRect;-><init>()V
-
-    .line 1369
-    .local v5, desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
-    new-instance v4, Lcom/sonyericsson/home/layer/desktop/DesktopItem;
-
-    invoke-direct {v4, v10, v5}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;-><init>(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/layer/desktop/DesktopRect;)V
-
-    .line 1370
-    .local v4, desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
-    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getCenterPane()I
-
-    move-result v3
-
-    .line 1371
-    .local v3, currentPane:I
-    const/4 v7, 0x0
-
-    .line 1372
-    .local v7, panesChecked:I
-    const/4 v11, -0x1
-
-    .line 1384
-    .local v11, sign:I
-    :goto_0
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
-
-    move v12, v0
-
-    if-ge v7, v12, :cond_4
-
-    .line 1385
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
-
-    move-object v12, v0
-
-    const/4 v13, 0x1
-
-    const/4 v14, 0x1
-
-    invoke-virtual {v4}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getLocation()Lcom/sonyericsson/home/layer/desktop/DesktopRect;
-
-    move-result-object v15
-
-    invoke-virtual {v12, v13, v14, v3, v15}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->getFirstEmptyLocation(IIILcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
-
-    move-result v12
-
-    if-eqz v12, :cond_6
-
-    .line 1387
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
-
-    move-object v12, v0
-
-    invoke-virtual {v12, v4}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->addItem(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)Z
+    if-nez v10, :cond_7
 
     .line 1390
-    move-object/from16 v0, p0
+    :cond_1
+    new-instance v3, Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+    invoke-direct {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopRect;-><init>()V
 
-    move-object v12, v0
+    .line 1391
+    .local v3, desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
+    new-instance v2, Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    move-object v0, v12
-
-    move-object/from16 v1, p1
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->getShortcutBitmap(Landroid/content/Context;Landroid/os/Bundle;)Landroid/graphics/Bitmap;
-
-    move-result-object v9
+    invoke-direct {v2, v8, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;-><init>(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/layer/desktop/DesktopRect;)V
 
     .line 1392
-    .local v9, shortcutBitmap:Landroid/graphics/Bitmap;
-    if-eqz v9, :cond_2
+    .local v2, desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getCenterPane()I
+
+    move-result v1
 
     .line 1393
-    move-object/from16 v0, p0
+    .local v1, currentPane:I
+    const/4 v5, 0x0
 
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+    .line 1394
+    .local v5, panesChecked:I
+    const/4 v9, -0x1
 
-    move-object v12, v0
+    .line 1406
+    .local v9, sign:I
+    :goto_0
+    iget v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
 
-    invoke-virtual {v10}, Lcom/sonyericsson/home/data/ShortcutInfo;->getBitmapResourceName()Ljava/lang/String;
+    if-ge v5, v10, :cond_4
 
-    move-result-object v13
+    .line 1407
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
-    const/4 v14, 0x0
+    invoke-virtual {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopItem;->getLocation()Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
-    invoke-static {v12, v13, v9, v14}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;Z)V
+    move-result-object v11
 
-    .line 1396
-    :cond_2
-    const/4 v12, 0x0
+    invoke-virtual {v10, v12, v12, v1, v11}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->getFirstEmptyLocation(IIILcom/sonyericsson/home/layer/desktop/DesktopRect;)Z
 
-    move-object/from16 v0, p0
+    move-result v10
 
-    move v1, v12
+    if-eqz v10, :cond_6
 
-    invoke-direct {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->writeToStorage(Z)V
+    .line 1409
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
-    .line 1399
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
-
-    move-object v12, v0
-
-    sget-object v13, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->INITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
-
-    if-ne v12, v13, :cond_3
-
-    .line 1400
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-    move-object v12, v0
-
-    invoke-virtual {v12, v10, v9}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->add(Lcom/sonyericsson/home/data/ShortcutInfo;Landroid/graphics/Bitmap;)V
-
-    .line 1401
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
-
-    move-object v12, v0
-
-    invoke-virtual {v12}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
-
-    .line 1404
-    :cond_3
-    const/4 v8, 0x1
-
-    .line 1405
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
-
-    move-object v12, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
-
-    move-object v13, v0
-
-    const v14, 0x7f07001e
-
-    const/4 v15, 0x1
-
-    new-array v15, v15, [Ljava/lang/Object;
-
-    const/16 v16, 0x0
-
-    invoke-virtual {v10}, Lcom/sonyericsson/home/data/ShortcutInfo;->getLabel()Ljava/lang/String;
-
-    move-result-object v17
-
-    aput-object v17, v15, v16
-
-    invoke-virtual {v13, v14, v15}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v13
-
-    const/4 v14, 0x0
-
-    invoke-static {v12, v13, v14}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Landroid/widget/Toast;->show()V
-
-    .line 1416
-    .end local v9           #shortcutBitmap:Landroid/graphics/Bitmap;
-    :cond_4
-    if-nez v8, :cond_5
-
-    .line 1417
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
-
-    move-object v12, v0
-
-    const v13, 0x7f070018
-
-    const/4 v14, 0x0
-
-    invoke-static {v12, v13, v14}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Landroid/widget/Toast;->show()V
-
-    .line 1428
-    .end local v3           #currentPane:I
-    .end local v4           #desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
-    .end local v5           #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
-    .end local v7           #panesChecked:I
-    .end local v11           #sign:I
-    :cond_5
-    :goto_1
-    return v8
-
-    .line 1411
-    .restart local v3       #currentPane:I
-    .restart local v4       #desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
-    .restart local v5       #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
-    .restart local v7       #panesChecked:I
-    .restart local v11       #sign:I
-    :cond_6
-    add-int/lit8 v7, v7, 0x1
+    invoke-virtual {v10, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->addItem(Lcom/sonyericsson/home/layer/desktop/DesktopItem;)Z
 
     .line 1412
-    mul-int v12, v11, v7
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
-    add-int/2addr v3, v12
+    invoke-static {v10, p1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->getShortcutBitmap(Landroid/content/Context;Landroid/os/Bundle;)Landroid/graphics/Bitmap;
 
-    .line 1413
-    neg-int v11, v11
+    move-result-object v7
 
-    goto/16 :goto_0
+    .line 1414
+    .local v7, shortcutBitmap:Landroid/graphics/Bitmap;
+    if-eqz v7, :cond_2
+
+    .line 1415
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Lcom/sonyericsson/home/data/ShortcutInfo;->getBitmapResourceName()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11, v7, v13}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;Z)V
+
+    .line 1418
+    :cond_2
+    invoke-direct {p0, v13}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->writeToStorage(Z)V
 
     .line 1421
-    .end local v3           #currentPane:I
-    .end local v4           #desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
-    .end local v5           #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
-    .end local v7           #panesChecked:I
-    .end local v11           #sign:I
-    :cond_7
-    move-object/from16 v0, p0
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+    sget-object v11, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->INITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    move-object v12, v0
+    if-ne v10, v11, :cond_3
 
-    move-object/from16 v0, p0
+    .line 1422
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+    invoke-virtual {v10, v8, v7}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->add(Lcom/sonyericsson/home/data/ShortcutInfo;Landroid/graphics/Bitmap;)V
 
-    move-object v13, v0
+    .line 1423
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
-    const v14, 0x7f070020
+    invoke-virtual {v10}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    const/4 v15, 0x1
+    .line 1426
+    :cond_3
+    const/4 v6, 0x1
 
-    new-array v15, v15, [Ljava/lang/Object;
+    .line 1427
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
-    const/16 v16, 0x0
+    invoke-static {v10}, Lcom/sonyericsson/home/bidi/Utils;->getBidiContext(Landroid/content/Context;)Landroid/content/Context;
 
-    invoke-virtual {v10}, Lcom/sonyericsson/home/data/ShortcutInfo;->getLabel()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v17
+    .line 1428
+    .local v0, ctx:Landroid/content/Context;
+    const v10, 0x7f07001e
 
-    aput-object v17, v15, v16
+    new-array v11, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v13, v14, v15}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v13
-
-    const/4 v14, 0x0
-
-    invoke-static {v12, v13, v14}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-virtual {v8}, Lcom/sonyericsson/home/data/ShortcutInfo;->getLabel()Ljava/lang/String;
 
     move-result-object v12
 
-    invoke-virtual {v12}, Landroid/widget/Toast;->show()V
+    aput-object v12, v11, v13
+
+    invoke-virtual {v0, v10, v11}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v0, v10, v13}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/widget/Toast;->show()V
+
+    .line 1439
+    .end local v0           #ctx:Landroid/content/Context;
+    .end local v7           #shortcutBitmap:Landroid/graphics/Bitmap;
+    :cond_4
+    if-nez v6, :cond_5
+
+    .line 1440
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+
+    invoke-static {v10}, Lcom/sonyericsson/home/bidi/Utils;->getBidiContext(Landroid/content/Context;)Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 1441
+    .restart local v0       #ctx:Landroid/content/Context;
+    const v10, 0x7f070018
+
+    invoke-static {v0, v10, v13}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/widget/Toast;->show()V
+
+    .line 1453
+    .end local v0           #ctx:Landroid/content/Context;
+    .end local v1           #currentPane:I
+    .end local v2           #desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+    .end local v3           #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
+    .end local v5           #panesChecked:I
+    .end local v9           #sign:I
+    :cond_5
+    :goto_1
+    return v6
+
+    .line 1434
+    .restart local v1       #currentPane:I
+    .restart local v2       #desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+    .restart local v3       #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
+    .restart local v5       #panesChecked:I
+    .restart local v9       #sign:I
+    :cond_6
+    add-int/lit8 v5, v5, 0x1
+
+    .line 1435
+    mul-int v10, v9, v5
+
+    add-int/2addr v1, v10
+
+    .line 1436
+    neg-int v9, v9
+
+    goto :goto_0
+
+    .line 1445
+    .end local v1           #currentPane:I
+    .end local v2           #desktopItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
+    .end local v3           #desktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
+    .end local v5           #panesChecked:I
+    .end local v9           #sign:I
+    :cond_7
+    iget-object v10, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+
+    invoke-static {v10}, Lcom/sonyericsson/home/bidi/Utils;->getBidiContext(Landroid/content/Context;)Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 1446
+    .restart local v0       #ctx:Landroid/content/Context;
+    const v10, 0x7f070020
+
+    new-array v11, v12, [Ljava/lang/Object;
+
+    invoke-virtual {v8}, Lcom/sonyericsson/home/data/ShortcutInfo;->getLabel()Ljava/lang/String;
+
+    move-result-object v12
+
+    aput-object v12, v11, v13
+
+    invoke-virtual {v0, v10, v11}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v0, v10, v13}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/widget/Toast;->show()V
 
     goto :goto_1
 .end method
@@ -3275,7 +3409,7 @@
     .parameter "location"
 
     .prologue
-    .line 1224
+    .line 1247
     new-instance v0, Lcom/sonyericsson/home/data/WidgetInfo;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
@@ -3293,8 +3427,9 @@
     return v0
 .end method
 
-.method public bind(Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/widget/WidgetManager;Lcom/sonyericsson/home/widget/AdvWidgetManager;F)V
+.method public bind(Landroid/app/Activity;Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/widget/WidgetManager;Lcom/sonyericsson/home/widget/AdvWidgetManager;F)V
     .locals 13
+    .parameter "owner"
     .parameter "desktopView"
     .parameter "transferHandler"
     .parameter "resourceLoader"
@@ -3304,37 +3439,55 @@
     .parameter "densityScaleFactor"
 
     .prologue
-    .line 1012
+    .line 1023
+    iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOwner:Landroid/app/Activity;
+
+    if-eqz v8, :cond_0
+
+    .line 1024
+    iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOwner:Landroid/app/Activity;
+
+    invoke-virtual {p0, v8}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->unbind(Landroid/app/Activity;)V
+
+    .line 1026
+    :cond_0
+    iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOwner:Landroid/app/Activity;
+
+    .line 1028
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setContextDependentData()V
 
-    .line 1014
-    iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
-
-    .line 1015
+    .line 1030
     move-object/from16 v0, p3
+
+    move-object v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
+
+    .line 1031
+    move-object/from16 v0, p4
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    .line 1016
-    move-object/from16 v0, p5
+    .line 1032
+    move-object/from16 v0, p6
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
-    .line 1017
-    move-object/from16 v0, p6
+    .line 1033
+    move-object/from16 v0, p7
 
     move-object v1, p0
 
     iput-object v0, v1, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
-    .line 1018
-    const v8, 0x7f0e002d
+    .line 1034
+    const v8, 0x7f0e0040
 
-    invoke-virtual {p1, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p2, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
@@ -3343,10 +3496,10 @@
 
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
 
-    .line 1020
+    .line 1036
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
 
-    const v9, 0x7f0e0011
+    const v9, 0x7f0e0018
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -3356,42 +3509,42 @@
 
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
-    .line 1021
+    .line 1037
     new-instance v8, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     move-object v0, v8
 
     move-object v1, p0
 
-    move/from16 v2, p7
+    move/from16 v2, p8
 
     invoke-direct {v0, v1, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;F)V
 
     iput-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    .line 1023
+    .line 1039
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1024
+    .line 1040
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;->setOnInterceptTouchListener(Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout$OnInterceptTouchListener;)V
 
-    .line 1026
+    .line 1042
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     invoke-direct {p0, v8}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setupPaneIndicator(Landroid/view/ViewGroup;)V
 
-    .line 1028
+    .line 1044
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
-    const v9, 0x7f0e0012
+    const v9, 0x7f0e0019
 
     invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3401,10 +3554,10 @@
 
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
-    .line 1029
+    .line 1045
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
-    const v9, 0x7f0e0013
+    const v9, 0x7f0e001a
 
     invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3414,26 +3567,26 @@
 
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
-    .line 1030
+    .line 1046
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/home/layer/HintView;->setHintType(I)V
 
-    .line 1031
+    .line 1047
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/home/layer/HintView;->setHintType(I)V
 
-    .line 1034
+    .line 1050
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->createDynamics()Lcom/sonyericsson/util/SpringDynamics;
 
     move-result-object v5
 
-    .line 1037
+    .line 1053
     .local v5, dynamics:Lcom/sonyericsson/util/SpringDynamics;
     new-instance v8, Lcom/sonyericsson/home/layer/desktop/DesktopRendererFactory;
 
@@ -3441,14 +3594,14 @@
 
     iput-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
-    .line 1040
+    .line 1056
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
 
-    .line 1041
+    .line 1057
     .local v7, res:Landroid/content/res/Resources;
     const v8, 0x7f090009
 
@@ -3462,11 +3615,11 @@
 
     div-float v6, v8, v9
 
-    .line 1042
+    .line 1058
     .local v6, paneMargin:F
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
-    const v9, 0x7f0e0014
+    const v9, 0x7f0e001b
 
     invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3476,17 +3629,17 @@
 
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    .line 1043
+    .line 1059
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v8, v5}, Lcom/sonyericsson/paneview/PaneView;->setPaneDynamics(Lcom/sonyericsson/util/Dynamics;)V
 
-    .line 1044
+    .line 1060
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v8, v6}, Lcom/sonyericsson/paneview/PaneView;->setPaneMargin(F)V
 
-    .line 1045
+    .line 1061
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v9, 0x0
@@ -3507,7 +3660,7 @@
 
     invoke-virtual {v8, v9, v10, v11, v12}, Lcom/sonyericsson/paneview/PaneView;->setFocusPadding(IIII)V
 
-    .line 1048
+    .line 1064
     invoke-virtual {v7}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v8
@@ -3516,38 +3669,38 @@
 
     const/4 v9, 0x2
 
-    if-ne v8, v9, :cond_0
+    if-ne v8, v9, :cond_1
 
-    .line 1049
+    .line 1065
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setPreferExternalFocus(Z)V
 
-    .line 1051
-    :cond_0
+    .line 1067
+    :cond_1
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 1052
+    .line 1068
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 1053
+    .line 1069
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mItemLongClickListener:Landroid/widget/AdapterView$OnItemLongClickListener;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
 
-    .line 1054
+    .line 1070
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     sget v9, Lcom/sonyericsson/home/transfer/TransferView;->TRANSFER_TARGET_TAG:I
@@ -3560,7 +3713,7 @@
 
     invoke-virtual {v8, v9, v10}, Lcom/sonyericsson/paneview/PaneView;->setTag(ILjava/lang/Object;)V
 
-    .line 1056
+    .line 1072
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getCenterPane()I
@@ -3571,31 +3724,31 @@
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setPosition(F)V
 
-    .line 1057
+    .line 1073
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewInteractionListener:Lcom/sonyericsson/paneview/PaneView$InteractionListener;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setInteractionListener(Lcom/sonyericsson/paneview/PaneView$InteractionListener;)V
 
-    .line 1058
+    .line 1074
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setItemViewListener(Lcom/sonyericsson/paneview/PaneView$ItemViewListener;)V
 
-    .line 1059
+    .line 1075
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v9, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewTouchListener:Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setPaneViewTouchListener(Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;)V
 
-    .line 1060
+    .line 1076
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    const v9, 0x7f020052
+    const v9, 0x7f02004b
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -3603,10 +3756,10 @@
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setSelectedItemDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1061
+    .line 1077
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    const v9, 0x7f020004
+    const v9, 0x7f02000b
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -3614,28 +3767,28 @@
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setFocusedItemDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1062
+    .line 1078
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/16 v9, 0x258
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setVelocityThreshold(I)V
 
-    .line 1065
+    .line 1081
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Lcom/sonyericsson/paneview/PaneView;->setSrcBlit(Z)V
 
-    .line 1068
+    .line 1084
     const v8, 0x7f0a000a
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v4
 
-    .line 1069
+    .line 1085
     .local v4, cellWidth:I
     const v8, 0x7f0a000b
 
@@ -3643,7 +3796,7 @@
 
     move-result v3
 
-    .line 1070
+    .line 1086
     .local v3, cellHeight:I
     new-instance v8, Lcom/sonyericsson/grid/Grid;
 
@@ -3653,25 +3806,25 @@
 
     iput-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
-    .line 1072
+    .line 1088
     new-instance v8, Lcom/sonyericsson/home/layer/desktop/DesktopController$6;
 
     move-object v0, v8
 
     move-object v1, p0
 
-    move-object/from16 v2, p4
+    move-object/from16 v2, p5
 
     invoke-direct {v0, v1, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$6;-><init>(Lcom/sonyericsson/home/layer/desktop/DesktopController;Lcom/sonyericsson/home/layer/AdapterHelper;)V
 
     iput-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mBindSyncCompletedCallback:Ljava/lang/Runnable;
 
-    .line 1100
+    .line 1116
     iget-object v8, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mBindSyncCompletedCallback:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v8}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->addOnSyncCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 1101
+    .line 1117
     return-void
 .end method
 
@@ -3681,7 +3834,7 @@
     .parameter "outRect"
 
     .prologue
-    .line 2246
+    .line 2276
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
     check-cast p1, Lcom/sonyericsson/grid/GridRect;
@@ -3689,20 +3842,20 @@
     .end local p1
     invoke-virtual {v1, p1, p2}, Lcom/sonyericsson/grid/Grid;->calculateRect(Lcom/sonyericsson/grid/GridRect;Landroid/graphics/Rect;)V
 
-    .line 2247
+    .line 2277
     const/4 v1, 0x2
 
     new-array v0, v1, [I
 
     fill-array-data v0, :array_0
 
-    .line 2250
+    .line 2280
     .local v0, paneViewLocationOnScreen:[I
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/paneview/PaneView;->getLocationOnScreen([I)V
 
-    .line 2251
+    .line 2281
     const/4 v1, 0x0
 
     aget v1, v0, v1
@@ -3713,7 +3866,7 @@
 
     invoke-virtual {p2, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2252
+    .line 2282
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v1}, Lcom/sonyericsson/paneview/PaneView;->getPaddingLeft()I
@@ -3728,10 +3881,10 @@
 
     invoke-virtual {p2, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2253
+    .line 2283
     return-void
 
-    .line 2247
+    .line 2277
     nop
 
     :array_0
@@ -3745,12 +3898,12 @@
     .locals 1
 
     .prologue
-    .line 2204
+    .line 2234
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->leaveTransform()V
 
-    .line 2205
+    .line 2235
     return-void
 .end method
 
@@ -3758,7 +3911,7 @@
     .locals 1
 
     .prologue
-    .line 2466
+    .line 2532
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->findSmartSliderViewRec(Landroid/view/ViewGroup;)Landroid/view/View;
@@ -3777,30 +3930,30 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2282
+    .line 2312
     new-instance v0, Lcom/sonyericsson/grid/GridRect;
 
     invoke-direct {v0}, Lcom/sonyericsson/grid/GridRect;-><init>()V
 
-    .line 2283
+    .line 2313
     .local v0, gridRect:Lcom/sonyericsson/grid/GridRect;
     iput p1, v0, Lcom/sonyericsson/grid/GridRect;->col:I
 
-    .line 2284
+    .line 2314
     iput p2, v0, Lcom/sonyericsson/grid/GridRect;->row:I
 
-    .line 2285
+    .line 2315
     iput v1, v0, Lcom/sonyericsson/grid/GridRect;->colSpan:I
 
-    .line 2286
+    .line 2316
     iput v1, v0, Lcom/sonyericsson/grid/GridRect;->rowSpan:I
 
-    .line 2287
+    .line 2317
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
     invoke-virtual {v1, v0, p3}, Lcom/sonyericsson/grid/Grid;->calculateRect(Lcom/sonyericsson/grid/GridRect;Landroid/graphics/Rect;)V
 
-    .line 2288
+    .line 2318
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v1}, Lcom/sonyericsson/paneview/PaneView;->getPaddingLeft()I
@@ -3815,7 +3968,7 @@
 
     invoke-virtual {p3, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2289
+    .line 2319
     return-void
 .end method
 
@@ -3823,7 +3976,7 @@
     .locals 1
 
     .prologue
-    .line 2216
+    .line 2246
     iget v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mNumberOfPanes:I
 
     div-int/lit8 v0, v0, 0x2
@@ -3835,7 +3988,7 @@
     .locals 1
 
     .prologue
-    .line 2242
+    .line 2272
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
@@ -3845,11 +3998,21 @@
     return v0
 .end method
 
+.method public getFreeCorners()[Z
+    .locals 1
+
+    .prologue
+    .line 1494
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
+
+    return-object v0
+.end method
+
 .method public getOverviewProgress()F
     .locals 1
 
     .prologue
-    .line 2208
+    .line 2238
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->getTransform()F
@@ -3864,7 +4027,7 @@
     .parameter "animate"
 
     .prologue
-    .line 1175
+    .line 1196
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
@@ -3873,29 +4036,29 @@
 
     if-nez v0, :cond_0
 
-    .line 1176
+    .line 1197
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 1177
+    .line 1198
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->clearAnimation()V
 
-    .line 1179
+    .line 1200
     if-eqz p1, :cond_1
 
-    .line 1180
+    .line 1201
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hideAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1185
+    .line 1206
     :goto_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -3903,14 +4066,14 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setTouchLocked(Z)V
 
-    .line 1187
+    .line 1208
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hideOpenGLAdvWidgets()V
 
-    .line 1189
+    .line 1210
     :cond_0
     return-void
 
-    .line 1182
+    .line 1203
     :cond_1
     const/4 v0, 0x0
 
@@ -3923,12 +4086,12 @@
     .locals 1
 
     .prologue
-    .line 992
+    .line 1004
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->hideOpenGLAdvWidgets()V
 
-    .line 993
+    .line 1005
     return-void
 .end method
 
@@ -3936,7 +4099,7 @@
     .locals 1
 
     .prologue
-    .line 2200
+    .line 2230
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->isTransformed()Z
@@ -3951,28 +4114,28 @@
     .parameter "infoGroup"
 
     .prologue
-    .line 1284
+    .line 1307
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v1, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->get(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     move-result-object v0
 
-    .line 1285
+    .line 1308
     .local v0, item:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
     if-eqz v0, :cond_0
 
-    .line 1286
+    .line 1309
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->setNewUniqueID()V
 
-    .line 1287
+    .line 1310
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->ignoreNextGetDeleteRenderer(I)V
 
-    .line 1288
+    .line 1311
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
     new-instance v2, Lcom/sonyericsson/animation/JumpRenderer;
@@ -3987,12 +4150,12 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->setNextAddRenderer(Lcom/sonyericsson/animation/Renderer;I)V
 
-    .line 1290
+    .line 1313
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 1292
+    .line 1315
     :cond_0
     return-void
 .end method
@@ -4001,7 +4164,7 @@
     .locals 1
 
     .prologue
-    .line 2228
+    .line 2258
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->moveToLeftPane()Z
@@ -4010,12 +4173,12 @@
 
     if-nez v0, :cond_0
 
-    .line 2230
+    .line 2260
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 2232
+    .line 2262
     :cond_0
     return-void
 .end method
@@ -4026,19 +4189,19 @@
     .parameter "animate"
 
     .prologue
-    .line 2220
+    .line 2250
     if-eqz p2, :cond_0
 
-    .line 2221
+    .line 2251
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/paneview/PaneView;->moveToPane(I)Z
 
-    .line 2225
+    .line 2255
     :goto_0
     return-void
 
-    .line 2223
+    .line 2253
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
@@ -4053,7 +4216,7 @@
     .locals 1
 
     .prologue
-    .line 2235
+    .line 2265
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->moveToRightPane()Z
@@ -4062,12 +4225,12 @@
 
     if-nez v0, :cond_0
 
-    .line 2237
+    .line 2267
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 2239
+    .line 2269
     :cond_0
     return-void
 .end method
@@ -4077,7 +4240,7 @@
     .parameter "info"
 
     .prologue
-    .line 2257
+    .line 2287
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->contains(Lcom/sonyericsson/home/data/Info;)Z
@@ -4086,31 +4249,31 @@
 
     if-eqz v0, :cond_0
 
-    .line 2258
+    .line 2288
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 2259
+    .line 2289
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 2262
+    .line 2292
     :cond_0
     return-void
 .end method
 
 .method public onPause()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 2307
+    .line 2325
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->onPause()V
 
-    .line 2309
+    .line 2327
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mCreatingFolder:Z
 
     if-eqz v0, :cond_0
@@ -4119,18 +4282,30 @@
 
     if-nez v0, :cond_0
 
-    .line 2310
+    .line 2328
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPickedUpItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSavedPickedUpItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 2311
+    .line 2329
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mHintDesktopRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mSavedHintRect:Lcom/sonyericsson/home/layer/desktop/DesktopRect;
 
-    .line 2313
+    .line 2333
     :cond_0
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setItemViewListener(Lcom/sonyericsson/paneview/PaneView$ItemViewListener;)V
+
+    .line 2334
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->stop()V
+
+    .line 2335
     return-void
 .end method
 
@@ -4139,29 +4314,34 @@
     .parameter "dueToHomeButtonPressed"
 
     .prologue
-    .line 2322
+    .line 2361
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->onResume()V
 
-    .line 2326
+    .line 2363
+    invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->resumeWidgets()V
+
+    .line 2364
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->restoreViews()V
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneViewItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
-    .line 2328
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setItemViewListener(Lcom/sonyericsson/paneview/PaneView$ItemViewListener;)V
+
+    .line 2366
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mCreatingFolder:Z
 
     if-eqz v0, :cond_1
 
     if-nez p1, :cond_1
 
-    .line 2329
+    .line 2367
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
     if-eqz v0, :cond_0
 
-    .line 2330
+    .line 2368
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
     new-instance v1, Lcom/sonyericsson/home/layer/desktop/DesktopController$17;
@@ -4172,35 +4352,16 @@
 
     invoke-interface {v0, v1, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onCreateFolder(Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;Z)V
 
-    .line 2359
+    .line 2397
     :cond_0
     :goto_0
     return-void
 
-    .line 2357
+    .line 2395
     :cond_1
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->finishCreateFolder()V
 
     goto :goto_0
-.end method
-
-.method public onStop()V
-    .locals 1
-
-    .prologue
-    .line 2298
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
-
-    if-eqz v0, :cond_0
-
-    .line 2299
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->clearViews()V
-
-    .line 2301
-    :cond_0
-    return-void
 .end method
 
 .method public onWidgetConfigured(Lcom/sonyericsson/home/data/AdvWidgetInfo;Lcom/sonyericsson/grid/GridLocation;)Z
@@ -4209,31 +4370,38 @@
     .parameter "location"
 
     .prologue
-    .line 1272
+    .line 1295
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->addInfo(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/grid/GridLocation;)Z
 
-    move-result v0
+    move-result v1
 
-    .line 1273
-    .local v0, ret:Z
-    if-nez v0, :cond_0
+    .line 1296
+    .local v1, ret:Z
+    if-nez v1, :cond_0
 
-    .line 1274
-    iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+    .line 1297
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
 
+    invoke-static {v2}, Lcom/sonyericsson/home/bidi/Utils;->getBidiContext(Landroid/content/Context;)Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 1298
+    .local v0, ctx:Landroid/content/Context;
     const v2, 0x7f070018
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-static {v0, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
 
-    .line 1277
+    .line 1300
+    .end local v0           #ctx:Landroid/content/Context;
     :cond_0
-    return v0
+    return v1
 .end method
 
 .method public removeAdvWidget(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
@@ -4241,17 +4409,17 @@
     .parameter "info"
 
     .prologue
-    .line 1259
+    .line 1282
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->remove(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 1260
+    .line 1283
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 1261
+    .line 1284
     return-void
 .end method
 
@@ -4260,122 +4428,127 @@
     .parameter "shortcutData"
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
     const/4 v7, 0x1
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    .line 1439
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
+    .line 1464
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    sget-object v5, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->UNINITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
+    sget-object v6, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->UNINITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    if-ne v4, v5, :cond_0
+    if-ne v5, v6, :cond_0
 
-    .line 1440
-    new-instance v4, Ljava/lang/IllegalStateException;
+    .line 1465
+    new-instance v5, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v4}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v5}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v4
+    throw v5
 
-    .line 1443
+    .line 1468
     :cond_0
-    const-string v4, "android.intent.extra.shortcut.NAME"
+    const-string v5, "android.intent.extra.shortcut.NAME"
 
-    invoke-virtual {p1, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v5}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1469
+    .local v1, label:Ljava/lang/String;
+    const-string v5, "android.intent.extra.shortcut.INTENT"
+
+    invoke-virtual {p1, v5}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/Intent;
+
+    .line 1470
+    .local v3, shortcutIntent:Landroid/content/Intent;
+    new-instance v2, Lcom/sonyericsson/home/data/ShortcutInfo;
+
+    invoke-direct {v2, v1, v3, v9, v9}, Lcom/sonyericsson/home/data/ShortcutInfo;-><init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;)V
+
+    .line 1472
+    .local v2, shortcutInfo:Lcom/sonyericsson/home/data/ShortcutInfo;
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
+
+    invoke-virtual {v5, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->removeAll(Lcom/sonyericsson/home/data/Info;)I
+
+    move-result v5
+
+    if-lez v5, :cond_3
+
+    move v4, v7
+
+    .line 1474
+    .local v4, shortcutRemoved:Z
+    :goto_0
+    if-eqz v4, :cond_2
+
+    .line 1475
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
+
+    invoke-static {v5}, Lcom/sonyericsson/home/bidi/Utils;->getBidiContext(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 1444
-    .local v0, label:Ljava/lang/String;
-    const-string v4, "android.intent.extra.shortcut.INTENT"
+    .line 1476
+    .local v0, ctx:Landroid/content/Context;
+    const v5, 0x7f07001f
 
-    invoke-virtual {p1, v4}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    new-array v6, v7, [Ljava/lang/Object;
 
-    move-result-object v2
+    invoke-virtual {v2}, Lcom/sonyericsson/home/data/ShortcutInfo;->getLabel()Ljava/lang/String;
 
-    check-cast v2, Landroid/content/Intent;
+    move-result-object v7
 
-    .line 1445
-    .local v2, shortcutIntent:Landroid/content/Intent;
-    new-instance v1, Lcom/sonyericsson/home/data/ShortcutInfo;
+    aput-object v7, v6, v8
 
-    invoke-direct {v1, v0, v2, v6, v6}, Lcom/sonyericsson/home/data/ShortcutInfo;-><init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;)V
-
-    .line 1447
-    .local v1, shortcutInfo:Lcom/sonyericsson/home/data/ShortcutInfo;
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mModelManager:Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
-
-    invoke-virtual {v4, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->removeAll(Lcom/sonyericsson/home/data/Info;)I
-
-    move-result v4
-
-    if-lez v4, :cond_3
-
-    move v3, v7
-
-    .line 1449
-    .local v3, shortcutRemoved:Z
-    :goto_0
-    if-eqz v3, :cond_2
-
-    .line 1450
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
-
-    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mContext:Landroid/content/Context;
-
-    const v6, 0x7f07001f
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/data/ShortcutInfo;->getLabel()Ljava/lang/String;
-
-    move-result-object v8
-
-    aput-object v8, v7, v9
-
-    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v5, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-static {v4, v5, v9}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v5, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Landroid/widget/Toast;->show()V
+    invoke-virtual {v5}, Landroid/widget/Toast;->show()V
 
-    .line 1455
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
+    .line 1481
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
-    .line 1456
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
+    .line 1482
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
-    invoke-virtual {v4}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
+    invoke-virtual {v5}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 1459
+    .line 1485
     :cond_1
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
 
-    .line 1460
-    iget-object v4, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    .line 1486
+    iget-object v5, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    invoke-virtual {v4, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->remove(Lcom/sonyericsson/home/data/Info;)V
+    invoke-virtual {v5, v2}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->remove(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1464
+    .line 1490
+    .end local v0           #ctx:Landroid/content/Context;
     :cond_2
-    return v3
+    return v4
 
-    .end local v3           #shortcutRemoved:Z
+    .end local v4           #shortcutRemoved:Z
     :cond_3
-    move v3, v9
+    move v4, v8
 
-    .line 1447
+    .line 1472
     goto :goto_0
 .end method
 
@@ -4384,15 +4557,15 @@
     .parameter "listener"
 
     .prologue
-    .line 1151
+    .line 1172
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mListener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
 
-    .line 1152
+    .line 1173
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mFreeCorners:[Z
 
-    .line 1153
+    .line 1174
     return-void
 .end method
 
@@ -4401,12 +4574,12 @@
     .parameter "progress"
 
     .prologue
-    .line 2212
+    .line 2242
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;->setTransform(F)V
 
-    .line 2213
+    .line 2243
     return-void
 .end method
 
@@ -4415,12 +4588,12 @@
     .parameter "focusable"
 
     .prologue
-    .line 2271
+    .line 2301
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/paneview/PaneView;->setFocusable(Z)V
 
-    .line 2272
+    .line 2302
     return-void
 .end method
 
@@ -4429,7 +4602,7 @@
     .parameter "animate"
 
     .prologue
-    .line 1192
+    .line 1213
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
@@ -4438,24 +4611,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 1193
+    .line 1214
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->clearAnimation()V
 
-    .line 1195
+    .line 1216
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setTouchLocked(Z)V
 
-    .line 1196
+    .line 1217
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 1198
+    .line 1219
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
@@ -4466,25 +4639,28 @@
 
     invoke-direct {p0, v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->reportFreeCorners(IZ)V
 
-    .line 1200
+    .line 1221
     if-eqz p1, :cond_1
 
-    .line 1201
+    .line 1222
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->showAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1211
+    .line 1227
     :goto_0
+    invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->resumeWidgets()V
+
+    .line 1234
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->showOpenGLAdvWidgets()V
 
-    .line 1213
+    .line 1236
     :cond_0
     return-void
 
-    .line 1203
+    .line 1224
     :cond_1
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onShowFinished()V
 
@@ -4495,161 +4671,190 @@
     .locals 1
 
     .prologue
-    .line 985
+    .line 997
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->showOpenGLAdvWidgets()V
 
-    .line 986
+    .line 998
     return-void
 .end method
 
-.method public unbind()V
+.method public unbind(Landroid/app/Activity;)V
     .locals 3
+    .parameter "owner"
 
     .prologue
     const/4 v2, 0x0
 
-    .line 1107
+    .line 1123
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOwner:Landroid/app/Activity;
+
+    if-ne v0, p1, :cond_1
+
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOwner:Landroid/app/Activity;
+
+    if-eqz v0, :cond_1
+
+    .line 1124
+    iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOwner:Landroid/app/Activity;
+
+    .line 1125
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     sget-object v1, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->INITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     if-ne v0, v1, :cond_0
 
-    .line 1108
+    .line 1126
     sget-object v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->MODEL_INITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mState:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    .line 1111
+    .line 1129
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mBindSyncCompletedCallback:Ljava/lang/Runnable;
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->removeOnSyncCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 1112
+    .line 1130
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mBindSyncCompletedCallback:Ljava/lang/Runnable;
 
-    .line 1114
+    .line 1132
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1115
+    .line 1133
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;->setOnInterceptTouchListener(Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout$OnInterceptTouchListener;)V
 
-    .line 1116
+    .line 1134
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInterceptingView:Lcom/sonyericsson/home/layer/desktop/InterceptingRelativeLayout;
 
-    .line 1118
+    .line 1136
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mInfoGroupListener:Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/InfoGroupManager;->unregisterInfoGroupListener(Lcom/sonyericsson/home/layer/InfoGroupManager$InfoGroupListener;)V
 
-    .line 1120
+    .line 1138
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/PaneIndicator;->setOnInactiveTimeoutListener(Lcom/sonyericsson/home/layer/PaneIndicator$InactiveTimeoutListener;)V
 
-    .line 1121
+    .line 1139
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->removeCallbacks()V
 
-    .line 1122
+    .line 1140
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
-    .line 1123
+    .line 1141
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setScrollListener(Lcom/sonyericsson/paneview/PaneView$ScrollListener;)V
 
-    .line 1125
+    .line 1142
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setRendererFactory(Lcom/sonyericsson/paneview/RendererFactory;)V
 
-    .line 1126
+    .line 1143
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 1127
+    .line 1144
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
 
-    .line 1128
+    .line 1145
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setInteractionListener(Lcom/sonyericsson/paneview/PaneView$InteractionListener;)V
 
-    .line 1129
+    .line 1146
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setItemViewListener(Lcom/sonyericsson/paneview/PaneView$ItemViewListener;)V
 
-    .line 1130
+    .line 1147
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setPaneViewTouchListener(Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;)V
 
-    .line 1131
+    .line 1148
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
     sget v1, Lcom/sonyericsson/home/transfer/TransferView;->TRANSFER_TARGET_TAG:I
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/paneview/PaneView;->setTag(ILjava/lang/Object;)V
 
-    .line 1132
+    .line 1149
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
+
+    invoke-virtual {v0, v2}, Lcom/sonyericsson/paneview/PaneView;->setAdapter(Lcom/sonyericsson/paneview/PaneAdapter;)V
+
+    .line 1150
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPaneView:Lcom/sonyericsson/paneview/PaneView;
 
-    .line 1134
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDeferredHandler:Lcom/sonyericsson/util/DeferredHandler;
+    .line 1152
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetLoadHandler:Lcom/sonyericsson/util/DeferredHandler;
 
     invoke-virtual {v0}, Lcom/sonyericsson/util/DeferredHandler;->cancel()V
 
-    .line 1136
+    .line 1153
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mOnWidgetsLoadedCallbacks:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
+
+    .line 1154
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mIsWidgetLoadCompleted:Z
+
+    .line 1156
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransformManager:Lcom/sonyericsson/home/layer/desktop/DesktopController$TransformManager;
 
-    .line 1137
+    .line 1157
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
 
-    .line 1138
+    .line 1158
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    .line 1139
+    .line 1159
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
-    .line 1140
+    .line 1160
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
-    .line 1141
+    .line 1161
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mAdapter:Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
 
-    .line 1142
+    .line 1162
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
-    .line 1143
+    .line 1163
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mDesktopView:Landroid/view/ViewGroup;
 
-    .line 1144
+    .line 1164
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
-    .line 1145
+    .line 1165
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mRightNudge:Lcom/sonyericsson/home/layer/HintView;
 
-    .line 1146
+    .line 1166
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mGrid:Lcom/sonyericsson/grid/Grid;
 
-    .line 1147
+    .line 1167
     iput-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mViewInTransfer:Landroid/view/View;
 
-    .line 1148
+    .line 1169
+    :cond_1
     return-void
 .end method

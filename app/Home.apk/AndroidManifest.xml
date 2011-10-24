@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="com.sonyericsson.home" android:versionCode="4194324" android:versionName="2.0.A.0.20" package="com.sonyericsson.home"
+<manifest android:sharedUserId="com.sonyericsson.home" android:versionCode="4325383" android:versionName="2.1.A.0.7" package="com.sonyericsson.home"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10" />
     <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
     <application android:label="@string/home_application_name_txt" android:icon="@drawable/homescreen_application_launcher" android:name=".HomeApplication">
+        <uses-library android:name="com.sonyericsson.facebook.proxy_1" />
         <activity android:theme="@style/HomeTheme" android:label="@string/home_application_name_txt" android:name=".HomeActivity" android:launchMode="singleTask" android:configChanges="mcc|mnc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,8 +31,10 @@
             </intent-filter>
         </receiver>
     </application>
+    <uses-permission android:name="com.sonyericsson.permission.FACEBOOK" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />

@@ -40,6 +40,17 @@
     <string name="gui_cancel_txt">Cancel</string>
     <string name="home_button_exit_overview">Exit overview</string>
     <string name="home_no_uninstallable_apps_txt">These apps cannot be uninstalled</string>
+    <string name="home_app_share_dropzone_hint_txt">Drop here to share item</string>
+    <string name="appdialog_title">Post to Facebook</string>
+    <string name="appdialog_comment_hint">Add your comment</string>
+    <string name="appdialog_button_share">Share</string>
+    <string name="appdialog_button_cancel">Cancel</string>
+    <string name="appdialog_other_options_info">Other sharing options</string>
+    <string name="appdialog_progress_info">Creating post</string>
+    <string name="appdialog_toast_cannot_be_shared">This item cannot be shared</string>
+    <string name="appdialog_toast_connection_error">Connection error</string>
+    <string name="appdialog_toast_sharing">Sharing on Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Share</string>
     <string name="home_permission_install_shortcut_label">install shortcuts</string>
     <string name="home_permission_install_shortcut_description">Allows an application to add shortcuts without user intervention.</string>
     <string name="home_permission_uninstall_shortcut_label">uninstall shortcuts</string>

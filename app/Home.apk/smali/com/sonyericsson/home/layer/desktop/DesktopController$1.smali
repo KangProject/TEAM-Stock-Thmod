@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 274
+    .line 286
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 277
+    .line 289
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$000(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 278
+    .line 290
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$000(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 280
+    .line 292
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$1;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -67,14 +67,15 @@
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$100(Lcom/sonyericsson/home/layer/desktop/DesktopController;Z)V
 
-    .line 281
+    .line 293
     return-void
 .end method
 
-.method public onContentChanged()V
+.method public onContentChanged(Ljava/util/UUID;)V
     .locals 0
+    .parameter "infoGroupUuid"
 
     .prologue
-    .line 285
+    .line 296
     return-void
 .end method

@@ -110,6 +110,20 @@
     return-void
 .end method
 
+.method public isQueueEmpty()Z
+    .locals 1
+
+    .prologue
+    .line 109
+    iget-object v0, p0, Lcom/sonyericsson/util/DeferredHandler;->mQueue:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public post(Ljava/lang/Runnable;)V
     .locals 2
     .parameter "runnable"
@@ -159,7 +173,7 @@
     .locals 3
 
     .prologue
-    .line 109
+    .line 113
     iget-object v1, p0, Lcom/sonyericsson/util/DeferredHandler;->mQueue:Ljava/util/LinkedList;
 
     invoke-virtual {v1}, Ljava/util/LinkedList;->size()I
@@ -168,7 +182,7 @@
 
     if-lez v1, :cond_0
 
-    .line 110
+    .line 114
     iget-object v1, p0, Lcom/sonyericsson/util/DeferredHandler;->mQueue:Ljava/util/LinkedList;
 
     invoke-virtual {v1}, Ljava/util/LinkedList;->getFirst()Ljava/lang/Object;
@@ -177,26 +191,26 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
-    .line 111
+    .line 115
     .local v0, peek:Ljava/lang/Runnable;
     instance-of v1, v0, Lcom/sonyericsson/util/DeferredHandler$IdleRunnable;
 
     if-eqz v1, :cond_1
 
-    .line 112
+    .line 116
     iget-object v1, p0, Lcom/sonyericsson/util/DeferredHandler;->mMessageQueue:Landroid/os/MessageQueue;
 
     iget-object v2, p0, Lcom/sonyericsson/util/DeferredHandler;->mHandler:Lcom/sonyericsson/util/DeferredHandler$Impl;
 
     invoke-virtual {v1, v2}, Landroid/os/MessageQueue;->addIdleHandler(Landroid/os/MessageQueue$IdleHandler;)V
 
-    .line 117
+    .line 121
     .end local v0           #peek:Ljava/lang/Runnable;
     :cond_0
     :goto_0
     return-void
 
-    .line 114
+    .line 118
     .restart local v0       #peek:Ljava/lang/Runnable;
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/util/DeferredHandler;->mHandler:Lcom/sonyericsson/util/DeferredHandler$Impl;

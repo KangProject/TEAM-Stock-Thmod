@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;IIIII)V
-    .registers 13
+    .locals 6
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -52,14 +52,14 @@
 
 # virtual methods
 .method onToggle(Z)V
-    .registers 6
+    .locals 4
     .parameter "on"
 
     .prologue
     const/4 v3, 0x1
 
     .line 136
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 137
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -84,25 +84,25 @@
 
     move-result v1
 
-    if-ne v1, v3, :cond_20
+    if-ne v1, v3, :cond_0
 
     move v1, v3
 
-    :goto_1c
+    :goto_0
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
     .line 144
-    :goto_1f
+    :goto_1
     return-void
 
     .line 137
-    :cond_20
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 142
-    :cond_22
+    :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
@@ -113,11 +113,11 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    goto :goto_1f
+    goto :goto_1
 .end method
 
 .method public showBeforeProvisioning()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 151
@@ -127,7 +127,7 @@
 .end method
 
 .method public showDuringKeyguard()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 147
@@ -137,7 +137,7 @@
 .end method
 
 .method willCreate()V
-    .registers 4
+    .locals 3
 
     .prologue
     const/4 v2, 0x1
@@ -159,19 +159,19 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_19
+    if-ne v0, v2, :cond_0
 
     const v0, 0x10801b7
 
-    :goto_16
+    :goto_0
     iput v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->mEnabledIconResId:I
 
     .line 133
     return-void
 
     .line 129
-    :cond_19
+    :cond_0
     const v0, 0x1080031
 
-    goto :goto_16
+    goto :goto_0
 .end method

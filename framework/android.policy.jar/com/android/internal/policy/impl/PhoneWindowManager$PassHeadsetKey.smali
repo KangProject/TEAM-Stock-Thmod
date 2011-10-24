@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/KeyEvent;)V
-    .registers 3
+    .locals 0
     .parameter
     .parameter "keyEvent"
 
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 9
+    .locals 8
 
     .prologue
     const/4 v2, 0x0
@@ -55,7 +55,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 1986
     new-instance v1, Landroid/content/Intent;
@@ -95,6 +95,6 @@
 
     .line 1991
     .end local v1           #intent:Landroid/content/Intent;
-    :cond_27
+    :cond_0
     return-void
 .end method

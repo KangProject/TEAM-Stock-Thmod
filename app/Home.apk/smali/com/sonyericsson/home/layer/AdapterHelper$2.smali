@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 195
+    .line 202
     iput-object p1, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->this$0:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$itemView:Landroid/view/View;
@@ -55,7 +55,7 @@
     .parameter "badgeMessage"
 
     .prologue
-    .line 198
+    .line 205
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$itemView:Landroid/view/View;
 
     invoke-static {}, Lcom/sonyericsson/home/layer/AdapterHelper;->access$000()I
@@ -72,17 +72,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 199
+    .line 206
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$iconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 200
+    .line 207
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$2;->val$itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 202
+    .line 209
     :cond_0
     return-void
 .end method

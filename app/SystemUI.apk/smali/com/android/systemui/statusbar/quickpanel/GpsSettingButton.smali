@@ -32,7 +32,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/GpsSettingButton;->mGpsObserver:Lcom/android/systemui/statusbar/quickpanel/GpsSettingButton$GpsObserver;
 
-	const-string v0, "android.settings.LOCATION_SOURCE_SETTINGS"
+    const-string v0, "android.settings.LOCATION_SOURCE_SETTINGS"
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/QuickSettingButton;->mAction:Ljava/lang/String;
 

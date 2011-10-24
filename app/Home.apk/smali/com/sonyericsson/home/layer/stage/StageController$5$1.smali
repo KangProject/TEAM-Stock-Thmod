@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 378
+    .line 379
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$5$1;->this$1:Lcom/sonyericsson/home/layer/stage/StageController$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 381
+    .line 382
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$5$1;->this$1:Lcom/sonyericsson/home/layer/stage/StageController$5;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/stage/StageController$5;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 382
+    .line 383
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$5$1;->this$1:Lcom/sonyericsson/home/layer/stage/StageController$5;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/stage/StageController$5;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
@@ -65,14 +65,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 383
+    .line 384
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$5$1;->this$1:Lcom/sonyericsson/home/layer/stage/StageController$5;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/stage/StageController$5;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1202(Lcom/sonyericsson/home/layer/stage/StageController;Z)Z
 
-    .line 385
+    .line 386
     :cond_0
     return-void
 .end method

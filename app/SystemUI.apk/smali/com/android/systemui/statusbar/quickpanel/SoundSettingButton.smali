@@ -39,7 +39,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/SoundSettingButton;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
- 	const-string v0, "android.settings.SOUND_SETTINGS"
+    const-string v0, "android.settings.SOUND_SETTINGS"
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/QuickSettingButton;->mAction:Ljava/lang/String;
 

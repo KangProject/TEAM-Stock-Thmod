@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/LocalPowerManager;)V
-    .registers 3
+    .locals 0
     .parameter "context"
     .parameter "powerManager"
 
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public dismiss()V
-    .registers 3
+    .locals 2
 
     .prologue
     .line 178
@@ -70,7 +70,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
     .parameter "v"
 
     .prologue
@@ -80,7 +80,7 @@
     .line 127
     iget-object v1, p0, Lcom/android/internal/policy/impl/PowerDialog;->mPower:Landroid/widget/Button;
 
-    if-ne p1, v1, :cond_10
+    if-ne p1, v1, :cond_1
 
     .line 129
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PowerDialog;->getContext()Landroid/content/Context;
@@ -92,18 +92,18 @@
     invoke-static {v1, v2}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
 
     .line 148
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     return-void
 
     .line 130
-    :cond_10
+    :cond_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/PowerDialog;->mRadioPower:Landroid/widget/Button;
 
-    if-ne p1, v1, :cond_26
+    if-ne p1, v1, :cond_2
 
     .line 132
-    :try_start_14
+    :try_start_0
     const-string v1, "phone"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -116,39 +116,39 @@
 
     .line 133
     .local v0, phone:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 134
     invoke-interface {v0}, Lcom/android/internal/telephony/ITelephony;->toggleRadioOnOff()V
-    :try_end_23
-    .catch Landroid/os/RemoteException; {:try_start_14 .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
     .line 136
     .end local v0           #phone:Lcom/android/internal/telephony/ITelephony;
-    :catch_24
+    :catch_0
     move-exception v1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 139
-    :cond_26
+    :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/PowerDialog;->mSilent:Landroid/widget/Button;
 
-    if-eq p1, v1, :cond_f
+    if-eq p1, v1, :cond_0
 
     .line 141
     iget-object v1, p0, Lcom/android/internal/policy/impl/PowerDialog;->mKeyguard:Landroid/widget/Button;
 
-    if-ne p1, v1, :cond_f
+    if-ne p1, v1, :cond_0
 
     .line 142
     invoke-virtual {p1}, Landroid/view/View;->isInTouchMode()Z
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 144
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PowerDialog;->dismiss()V
@@ -166,11 +166,11 @@
 
     invoke-interface {v1, v2, v3}, Landroid/os/LocalPowerManager;->goToSleep(J)V
 
-    goto :goto_f
+    goto :goto_0
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 9
+    .locals 7
     .parameter "savedInstanceState"
 
     .prologue
@@ -190,7 +190,7 @@
     .local v0, context:Landroid/content/Context;
     sget-object v3, Lcom/android/internal/policy/impl/PowerDialog;->sStatusBar:Landroid/app/StatusBarManager;
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_0
 
     .line 67
     const-string v3, "statusbar"
@@ -204,7 +204,7 @@
     sput-object v3, Lcom/android/internal/policy/impl/PowerDialog;->sStatusBar:Landroid/app/StatusBarManager;
 
     .line 70
-    :cond_18
+    :cond_0
     const v3, 0x109004b
 
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/PowerDialog;->setContentView(I)V
@@ -233,7 +233,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_3f
+    if-nez v3, :cond_1
 
     .line 75
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PowerDialog;->getWindow()Landroid/view/Window;
@@ -243,7 +243,7 @@
     invoke-virtual {v3, v5, v5}, Landroid/view/Window;->setFlags(II)V
 
     .line 78
-    :cond_3f
+    :cond_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PowerDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
@@ -306,7 +306,7 @@
     .line 88
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mKeyguard:Landroid/widget/Button;
 
-    if-eqz v3, :cond_8a
+    if-eqz v3, :cond_2
 
     .line 89
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mKeyguard:Landroid/widget/Button;
@@ -319,10 +319,10 @@
     invoke-virtual {v3, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 92
-    :cond_8a
+    :cond_2
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mPower:Landroid/widget/Button;
 
-    if-eqz v3, :cond_93
+    if-eqz v3, :cond_3
 
     .line 93
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mPower:Landroid/widget/Button;
@@ -330,10 +330,10 @@
     invoke-virtual {v3, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 95
-    :cond_93
+    :cond_3
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mRadioPower:Landroid/widget/Button;
 
-    if-eqz v3, :cond_9c
+    if-eqz v3, :cond_4
 
     .line 96
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mRadioPower:Landroid/widget/Button;
@@ -341,10 +341,10 @@
     invoke-virtual {v3, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 98
-    :cond_9c
+    :cond_4
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mSilent:Landroid/widget/Button;
 
-    if-eqz v3, :cond_ac
+    if-eqz v3, :cond_5
 
     .line 99
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mSilent:Landroid/widget/Button;
@@ -359,7 +359,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setVisibility(I)V
 
     .line 107
-    :cond_ac
+    :cond_5
     const v3, 0x1040143
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -378,7 +378,7 @@
     invoke-virtual {v3}, Landroid/widget/Button;->requestFocus()Z
 
     .line 112
-    :try_start_bd
+    :try_start_0
     const-string v3, "phone"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -391,20 +391,20 @@
 
     .line 113
     .local v1, phone:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v1, :cond_d7
+    if-eqz v1, :cond_6
 
     .line 114
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->isRadioOn()Z
 
     move-result v3
 
-    if-eqz v3, :cond_dd
+    if-eqz v3, :cond_7
 
     const v3, 0x1040142
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-    :try_end_d5
-    .catch Landroid/os/RemoteException; {:try_start_bd .. :try_end_d5} :catch_e6
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v3
 
@@ -412,8 +412,8 @@
 
     .line 122
     .end local v1           #phone:Lcom/android/internal/telephony/ITelephony;
-    :cond_d7
-    :goto_d7
+    :cond_6
+    :goto_0
     iget-object v3, p0, Lcom/android/internal/policy/impl/PowerDialog;->mRadioPower:Landroid/widget/Button;
 
     invoke-virtual {v3, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
@@ -423,30 +423,30 @@
 
     .line 114
     .restart local v1       #phone:Lcom/android/internal/telephony/ITelephony;
-    :cond_dd
+    :cond_7
     const v3, 0x1040141
 
-    :try_start_e0
+    :try_start_1
     invoke-virtual {v0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-    :try_end_e3
-    .catch Landroid/os/RemoteException; {:try_start_e0 .. :try_end_e3} :catch_e6
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result-object v3
 
     move-object v2, v3
 
-    goto :goto_d7
+    goto :goto_0
 
     .line 118
     .end local v1           #phone:Lcom/android/internal/telephony/ITelephony;
-    :catch_e6
+    :catch_0
     move-exception v3
 
-    goto :goto_d7
+    goto :goto_0
 .end method
 
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .registers 10
+    .locals 6
     .parameter "v"
     .parameter "keyCode"
     .parameter "event"
@@ -457,24 +457,24 @@
     .line 157
     const/16 v0, 0x17
 
-    if-ne p2, v0, :cond_b
+    if-ne p2, v0, :cond_0
 
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
 
-    if-eq v0, v5, :cond_d
+    if-eq v0, v5, :cond_1
 
     .line 160
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 168
-    :goto_c
+    :goto_0
     return v0
 
     .line 164
-    :cond_d
+    :cond_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PowerDialog;->dismiss()V
 
     .line 167
@@ -493,11 +493,11 @@
     move v0, v5
 
     .line 168
-    goto :goto_c
+    goto :goto_0
 .end method
 
 .method public show()V
-    .registers 3
+    .locals 2
 
     .prologue
     .line 172

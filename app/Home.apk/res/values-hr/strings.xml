@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Odustani</string>
     <string name="home_button_exit_overview">Zatvaranje pregleda</string>
     <string name="home_no_uninstallable_apps_txt">Ovi se programi ne mogu deinstalirati</string>
+    <string name="home_app_share_dropzone_hint_txt">Ovdje ispustite stavku da biste je podijelili</string>
+    <string name="appdialog_title">Objavi na Facebooku</string>
+    <string name="appdialog_comment_hint">Dodaj svoj komentar</string>
+    <string name="appdialog_button_share">Podijeli</string>
+    <string name="appdialog_button_cancel">Odustani</string>
+    <string name="appdialog_other_options_info">Ostale moguć. dijeljenja</string>
+    <string name="appdialog_progress_info">Izrada posta</string>
+    <string name="appdialog_toast_cannot_be_shared">Tu stavku nije moguće podijeliti</string>
+    <string name="appdialog_toast_connection_error">Pogreška prilikom povezivanja</string>
+    <string name="appdialog_toast_sharing">Dijeljenje na servisu Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Dijeli</string>
 </resources>

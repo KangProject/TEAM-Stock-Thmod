@@ -30,19 +30,19 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 2592
+    .line 2736
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->this$1:Lcom/sonyericsson/home/HomeActivity$SortDialog;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 2594
+    .line 2738
     new-array v0, v1, [I
 
     fill-array-data v0, :array_0
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->labels:[I
 
-    .line 2601
+    .line 2745
     new-array v0, v1, [I
 
     fill-array-data v0, :array_1
@@ -51,7 +51,7 @@
 
     return-void
 
-    .line 2594
+    .line 2738
     nop
 
     :array_0
@@ -62,13 +62,13 @@
         0x15t 0x0t 0x7t 0x7ft
     .end array-data
 
-    .line 2601
+    .line 2745
     :array_1
     .array-data 0x4
-        0x44t 0x0t 0x2t 0x7ft
-        0x40t 0x0t 0x2t 0x7ft
-        0x4ct 0x0t 0x2t 0x7ft
-        0x48t 0x0t 0x2t 0x7ft
+        0x3dt 0x0t 0x2t 0x7ft
+        0x39t 0x0t 0x2t 0x7ft
+        0x45t 0x0t 0x2t 0x7ft
+        0x41t 0x0t 0x2t 0x7ft
     .end array-data
 .end method
 
@@ -78,7 +78,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2592
+    .line 2736
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;-><init>(Lcom/sonyericsson/home/HomeActivity$SortDialog;)V
 
     return-void
@@ -90,7 +90,7 @@
     .locals 1
 
     .prologue
-    .line 2607
+    .line 2751
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->labels:[I
 
     array-length v0, v0
@@ -103,7 +103,7 @@
     .parameter "position"
 
     .prologue
-    .line 2611
+    .line 2755
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->labels:[I
 
     aget v0, v0, p1
@@ -120,7 +120,7 @@
     .parameter "position"
 
     .prologue
-    .line 2615
+    .line 2759
     int-to-long v0, p1
 
     return-wide v0
@@ -133,14 +133,14 @@
     .parameter "parent"
 
     .prologue
-    .line 2619
+    .line 2763
     move-object v3, p2
 
-    .line 2620
+    .line 2764
     .local v3, view:Landroid/view/View;
     if-nez v3, :cond_0
 
-    .line 2621
+    .line 2765
     iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->this$1:Lcom/sonyericsson/home/HomeActivity$SortDialog;
 
     iget-object v4, v4, Lcom/sonyericsson/home/HomeActivity$SortDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
@@ -149,7 +149,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f030014
+    const v5, 0x7f030016
 
     const/4 v6, 0x0
 
@@ -157,9 +157,9 @@
 
     move-result-object v3
 
-    .line 2625
+    .line 2769
     :cond_0
-    const v4, 0x7f0e0032
+    const v4, 0x7f0e0045
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -167,9 +167,9 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 2626
+    .line 2770
     .local v0, icon:Landroid/widget/ImageView;
-    const v4, 0x7f0e0033
+    const v4, 0x7f0e0046
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -177,9 +177,9 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 2627
+    .line 2771
     .local v1, label:Landroid/widget/TextView;
-    const v4, 0x7f0e0034
+    const v4, 0x7f0e0047
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
 
     check-cast v2, Lcom/sonyericsson/home/FakeRadioButton;
 
-    .line 2629
+    .line 2774
     .local v2, radioButton:Lcom/sonyericsson/home/FakeRadioButton;
     iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->icons:[I
 
@@ -195,14 +195,14 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2630
+    .line 2775
     iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->labels:[I
 
     aget v4, v4, p1
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(I)V
 
-    .line 2631
+    .line 2776
     iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity$SortDialog$SortAdapter;->this$1:Lcom/sonyericsson/home/HomeActivity$SortDialog;
 
     iget-object v4, v4, Lcom/sonyericsson/home/HomeActivity$SortDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
@@ -218,10 +218,10 @@
     :goto_0
     invoke-virtual {v2, v4}, Lcom/sonyericsson/home/FakeRadioButton;->setChecked(Z)V
 
-    .line 2633
+    .line 2778
     return-object v3
 
-    .line 2631
+    .line 2776
     :cond_1
     const/4 v4, 0x0
 

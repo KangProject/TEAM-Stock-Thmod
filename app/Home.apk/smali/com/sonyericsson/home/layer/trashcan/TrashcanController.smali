@@ -100,7 +100,7 @@
     iput-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mHintHideAnimation:Landroid/view/animation/Animation;
 
     .line 127
-    const v1, 0x7f04003f
+    const v1, 0x7f040040
 
     invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -109,7 +109,7 @@
     iput-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanHideAnimation:Landroid/view/animation/Animation;
 
     .line 128
-    const v1, 0x7f040040
+    const v1, 0x7f040041
 
     invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -118,7 +118,7 @@
     iput-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanShowAnimation:Landroid/view/animation/Animation;
 
     .line 130
-    const v1, 0x7f0e003a
+    const v1, 0x7f0e004d
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -146,7 +146,7 @@
 
     .line 135
     .local v0, vibrator:Landroid/os/Vibrator;
-    const v1, 0x7f0e003b
+    const v1, 0x7f0e004e
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -163,7 +163,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f020064
+    const v3, 0x7f02005e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -173,7 +173,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f020065
+    const v4, 0x7f02005f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -197,7 +197,7 @@
 
     iput-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTransferTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 213
+    .line 214
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     sget v2, Lcom/sonyericsson/home/transfer/TransferView;->TRANSFER_TARGET_TAG:I
@@ -210,7 +210,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->setTag(ILjava/lang/Object;)V
 
-    .line 215
+    .line 216
     return-void
 
     .end local v0           #vibrator:Landroid/os/Vibrator;
@@ -335,7 +335,7 @@
     return-void
 .end method
 
-.method static synthetic access$800(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;Z)V
+.method static synthetic access$800(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -346,7 +346,7 @@
 
     .prologue
     .line 45
-    invoke-direct/range {p0 .. p5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->onDrop(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;Z)V
+    invoke-direct/range {p0 .. p5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->onDrop(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;I)V
 
     return-void
 .end method
@@ -363,33 +363,35 @@
     return-void
 .end method
 
-.method private onDrop(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;Z)V
-    .locals 5
+.method private onDrop(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;I)V
+    .locals 6
     .parameter "view"
     .parameter "renderer"
     .parameter "dropListener"
     .parameter "info"
-    .parameter "successful"
+    .parameter "result"
 
     .prologue
-    .line 326
-    if-eqz p5, :cond_0
+    const/4 v5, 0x1
 
     .line 327
-    if-eqz p2, :cond_0
+    if-ne p5, v5, :cond_0
 
     .line 328
+    if-eqz p2, :cond_0
+
+    .line 329
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 329
+    .line 330
     .local v0, rect:Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 330
+    .line 331
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     neg-int v1, v1
@@ -404,28 +406,26 @@
 
     invoke-interface {p2, v1, v2, v3, v4}, Lcom/sonyericsson/animation/Renderer;->offset(IIJ)V
 
-    .line 331
+    .line 332
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 332
+    .line 333
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v1, p1, p2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->trashItem(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 333
-    const/4 v1, 0x1
+    .line 334
+    iput-boolean v5, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mVibrateOnLidBounce:Z
 
-    iput-boolean v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mVibrateOnLidBounce:Z
-
-    .line 337
+    .line 338
     .end local v0           #rect:Landroid/graphics/Rect;
     :cond_0
     invoke-direct {p0, p2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->stopHinting(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 338
-    invoke-interface {p3, p5}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(Z)V
-
     .line 339
+    invoke-interface {p3, p5}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(I)V
+
+    .line 340
     return-void
 .end method
 
@@ -436,31 +436,31 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 292
+    .line 293
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mDeleteHint:Lcom/sonyericsson/home/layer/HintView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mHintShowAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 293
+    .line 294
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mDeleteHint:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 294
+    .line 295
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->open()V
 
-    .line 295
+    .line 296
     const-string v0, "delete_action_on"
 
     const/4 v1, 0x0
 
     invoke-interface {p1, v0, v2, v2, v1}, Lcom/sonyericsson/animation/Renderer;->sendCommand(Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 296
+    .line 297
     return-void
 .end method
 
@@ -471,7 +471,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 305
+    .line 306
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mDeleteHint:Lcom/sonyericsson/home/layer/HintView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/HintView;->getVisibility()I
@@ -480,21 +480,21 @@
 
     if-nez v0, :cond_0
 
-    .line 306
+    .line 307
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mDeleteHint:Lcom/sonyericsson/home/layer/HintView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mHintHideAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 307
+    .line 308
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mDeleteHint:Lcom/sonyericsson/home/layer/HintView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 309
+    .line 310
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
@@ -502,17 +502,17 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->close(I)V
 
-    .line 310
+    .line 311
     if-eqz p1, :cond_1
 
-    .line 311
+    .line 312
     const-string v0, "delete_action_off"
 
     const/4 v1, 0x0
 
     invoke-interface {p1, v0, v2, v2, v1}, Lcom/sonyericsson/animation/Renderer;->sendCommand(Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 313
+    .line 314
     :cond_1
     return-void
 .end method
@@ -523,7 +523,7 @@
     .locals 1
 
     .prologue
-    .line 273
+    .line 274
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashInfo:Lcom/sonyericsson/home/data/Info;
 
     return-object v0
@@ -533,12 +533,12 @@
     .locals 1
 
     .prologue
-    .line 230
+    .line 231
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->hide(Z)V
 
-    .line 232
+    .line 233
     return-void
 .end method
 
@@ -547,45 +547,45 @@
     .parameter "animate"
 
     .prologue
-    .line 240
+    .line 241
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mShowing:Z
 
     if-eqz v0, :cond_1
 
-    .line 241
+    .line 242
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->setVisibility(I)V
 
-    .line 242
+    .line 243
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->clearAnimation()V
 
-    .line 243
+    .line 244
     if-eqz p1, :cond_0
 
-    .line 244
+    .line 245
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanHideAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 246
+    .line 247
     :cond_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->stopHinting(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 247
+    .line 248
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mShowing:Z
 
-    .line 249
+    .line 250
     :cond_1
     return-void
 .end method
@@ -594,7 +594,7 @@
     .locals 1
 
     .prologue
-    .line 264
+    .line 265
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mShowing:Z
 
     return v0
@@ -604,7 +604,7 @@
     .locals 1
 
     .prologue
-    .line 280
+    .line 281
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mListener:Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
 
     if-eqz v0, :cond_0
@@ -613,18 +613,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 281
+    .line 282
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mListener:Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;->onClosed()V
 
-    .line 283
+    .line 284
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->onDestroy()V
 
-    .line 284
+    .line 285
     return-void
 .end method
 
@@ -633,10 +633,10 @@
     .parameter "listener"
 
     .prologue
-    .line 223
+    .line 224
     iput-object p1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mListener:Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;
 
-    .line 224
+    .line 225
     return-void
 .end method
 
@@ -644,36 +644,36 @@
     .locals 2
 
     .prologue
-    .line 255
+    .line 256
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mShowing:Z
 
     if-nez v0, :cond_0
 
-    .line 256
+    .line 257
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->setVisibility(I)V
 
-    .line 257
+    .line 258
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->clearAnimation()V
 
-    .line 258
+    .line 259
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanView:Lcom/sonyericsson/home/layer/trashcan/TrashcanView;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mTrashcanShowAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 259
+    .line 260
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->mShowing:Z
 
-    .line 261
+    .line 262
     :cond_0
     return-void
 .end method

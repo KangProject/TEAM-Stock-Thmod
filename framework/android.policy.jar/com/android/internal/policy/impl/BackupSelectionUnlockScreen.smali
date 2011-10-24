@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;Lcom/android/internal/widget/LockPatternUtils;)V
-    .registers 8
+    .locals 3
     .parameter "context"
     .parameter "updateMonitor"
     .parameter "callback"
@@ -149,7 +149,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    .registers 2
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -160,7 +160,7 @@
 .end method
 
 .method static synthetic access$102(Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;I)I
-    .registers 2
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
@@ -172,7 +172,7 @@
 .end method
 
 .method private populateList(Landroid/content/Context;)V
-    .registers 13
+    .locals 11
     .parameter "context"
 
     .prologue
@@ -199,7 +199,7 @@
 
     new-array v5, v1, [I
 
-    fill-array-data v5, :array_7a
+    fill-array-data v5, :array_0
 
     .line 117
     .local v5, toIds:[I
@@ -270,10 +270,10 @@
     const/4 v8, 0x0
 
     .local v8, pos:I
-    :goto_4c
+    :goto_0
     const/4 v1, 0x2
 
-    if-ge v8, v1, :cond_60
+    if-ge v8, v1, :cond_0
 
     .line 127
     aget-object v1, v4, v8
@@ -292,10 +292,10 @@
     .line 126
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_4c
+    goto :goto_0
 
     .line 130
-    :cond_60
+    :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -328,7 +328,7 @@
     return-void
 
     .line 116
-    :array_7a
+    :array_0
     .array-data 0x4
         0x95t 0x1t 0x2t 0x1t
         0x96t 0x1t 0x2t 0x1t
@@ -336,7 +336,7 @@
 .end method
 
 .method private queryKeyboardOpen()Z
-    .registers 4
+    .locals 3
 
     .prologue
     const/4 v2, 0x1
@@ -356,23 +356,23 @@
     .local v0, configuration:Landroid/content/res/Configuration;
     iget v1, v0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
-    if-ne v1, v2, :cond_11
+    if-ne v1, v2, :cond_0
 
     move v1, v2
 
-    :goto_10
+    :goto_0
     return v1
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_10
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public cleanUp()V
-    .registers 2
+    .locals 1
 
     .prologue
     .line 155
@@ -385,7 +385,7 @@
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 2
     .parameter "event"
 
     .prologue
@@ -394,7 +394,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_1
 
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
@@ -402,7 +402,7 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_28
+    if-ne v0, v1, :cond_1
 
     .line 180
     iget-object v0, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -411,7 +411,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 181
     iget-object v0, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -419,15 +419,15 @@
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToLockScreen()V
 
     .line 186
-    :goto_1a
+    :goto_0
     const/4 v0, 0x1
 
     .line 188
-    :goto_1b
+    :goto_1
     return v0
 
     .line 183
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     const/4 v1, 0x0
@@ -439,19 +439,19 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 188
-    :cond_28
+    :cond_1
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    goto :goto_1b
+    goto :goto_1
 .end method
 
 .method public needsInput()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 141
@@ -461,7 +461,7 @@
 .end method
 
 .method protected onAttachedToWindow()V
-    .registers 1
+    .locals 0
 
     .prologue
     .line 205
@@ -475,7 +475,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .locals 3
     .parameter "v"
 
     .prologue
@@ -489,14 +489,14 @@
     .line 161
     iget-object v1, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mNextButton:Landroid/widget/Button;
 
-    if-ne p1, v1, :cond_1b
+    if-ne p1, v1, :cond_0
 
     .line 162
     iget v0, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mSelectedPosition:I
 
     .line 163
     .local v0, clickedPos:I
-    if-nez v0, :cond_25
+    if-nez v0, :cond_2
 
     .line 164
     iget-object v1, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -512,11 +512,11 @@
 
     .line 171
     .end local v0           #clickedPos:I
-    :cond_1b
-    :goto_1b
+    :cond_0
+    :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mEmergencyCall:Landroid/widget/Button;
 
-    if-ne p1, v1, :cond_24
+    if-ne p1, v1, :cond_1
 
     .line 172
     iget-object v1, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -524,15 +524,15 @@
     invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->takeEmergencyCallAction()V
 
     .line 174
-    :cond_24
+    :cond_1
     return-void
 
     .line 166
     .restart local v0       #clickedPos:I
-    :cond_25
+    :cond_2
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_1b
+    if-ne v0, v1, :cond_0
 
     .line 167
     iget-object v1, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -546,11 +546,11 @@
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
-    goto :goto_1b
+    goto :goto_0
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 2
+    .locals 0
     .parameter "newConfig"
 
     .prologue
@@ -565,7 +565,7 @@
 .end method
 
 .method public onPause()V
-    .registers 1
+    .locals 0
 
     .prologue
     .line 147
@@ -573,7 +573,7 @@
 .end method
 
 .method public onResume()V
-    .registers 1
+    .locals 0
 
     .prologue
     .line 151
@@ -581,7 +581,7 @@
 .end method
 
 .method public updateConfiguration()V
-    .registers 4
+    .locals 3
 
     .prologue
     .line 197
@@ -601,7 +601,7 @@
 
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mKeyboardOpen:Z
 
-    if-eq v1, v2, :cond_15
+    if-eq v1, v2, :cond_0
 
     .line 199
     iget-object v1, p0, Lcom/android/internal/policy/impl/BackupSelectionUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -609,6 +609,6 @@
     invoke-interface {v1, v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->recreateMe(Landroid/content/res/Configuration;)V
 
     .line 201
-    :cond_15
+    :cond_0
     return-void
 .end method

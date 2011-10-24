@@ -59,30 +59,30 @@
     .parameter "context"
 
     .prologue
-    .line 110
+    .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 52
     sget-object v0, Lcom/sonyericsson/home/badge/BadgeManager$State;->UNINITIALIZED:Lcom/sonyericsson/home/badge/BadgeManager$State;
 
     iput-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mState:Lcom/sonyericsson/home/badge/BadgeManager$State;
 
-    .line 56
+    .line 55
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeMap:Ljava/util/HashMap;
 
-    .line 95
+    .line 94
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mOnStartCompletedCallbacks:Ljava/util/LinkedList;
 
-    .line 111
+    .line 110
     iput-object p1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mContext:Landroid/content/Context;
 
-    .line 112
+    .line 111
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mContext:Landroid/content/Context;
 
     const-string v1, "badgeIntents"
@@ -93,7 +93,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/sonyericsson/storage/Storage;->readRoot(Landroid/content/Context;Ljava/lang/String;Lcom/sonyericsson/storage/Storage$OnReadCompletedCallback;)Ljava/lang/Object;
 
-    .line 137
+    .line 136
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 35
     iput-object p1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeMap:Ljava/util/HashMap;
 
     return-object p1
@@ -114,7 +114,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 35
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeManagerListener:Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;
 
     return-object v0
@@ -125,7 +125,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 35
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     return-object v0
@@ -136,7 +136,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 35
     invoke-direct {p0}, Lcom/sonyericsson/home/badge/BadgeManager;->restoreBadges()V
 
     return-void
@@ -148,7 +148,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 35
     iput-object p1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mState:Lcom/sonyericsson/home/badge/BadgeManager$State;
 
     return-object p1
@@ -159,7 +159,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 35
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mOnStartCompletedCallbacks:Ljava/util/LinkedList;
 
     return-object v0
@@ -171,7 +171,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 35
     iput-object p1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mOnStartCompletedCallbacks:Ljava/util/LinkedList;
 
     return-object p1
@@ -185,7 +185,7 @@
     .parameter "x3"
 
     .prologue
-    .line 36
+    .line 35
     invoke-direct {p0, p1, p2, p3}, Lcom/sonyericsson/home/badge/BadgeManager;->updateBadge(Ljava/lang/String;Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;)V
 
     return-void
@@ -197,7 +197,7 @@
     .parameter "message"
 
     .prologue
-    .line 169
+    .line 168
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeManagerListener:Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;
 
     if-eqz v1, :cond_0
@@ -206,30 +206,30 @@
 
     if-eqz v1, :cond_0
 
-    .line 170
+    .line 169
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     invoke-virtual {v1, p1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->getCacheValue(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
 
     move-result-object v0
 
-    .line 172
+    .line 171
     .local v0, cacheValue:Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
     if-eqz v0, :cond_1
 
-    .line 173
+    .line 172
     invoke-direct {p0, p2, p1, v0}, Lcom/sonyericsson/home/badge/BadgeManager;->updateBadge(Ljava/lang/String;Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;)V
 
-    .line 188
+    .line 187
     .end local v0           #cacheValue:Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
     :cond_0
     :goto_0
     invoke-direct {p0, p2, p1}, Lcom/sonyericsson/home/badge/BadgeManager;->updateStorage(Ljava/lang/String;Lcom/sonyericsson/home/data/ActivityInfo;)V
 
-    .line 190
+    .line 189
     return-void
 
-    .line 175
+    .line 174
     .restart local v0       #cacheValue:Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
@@ -247,7 +247,7 @@
     .locals 4
 
     .prologue
-    .line 87
+    .line 86
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeMap:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -258,7 +258,7 @@
 
     move-result-object v1
 
-    .line 89
+    .line 88
     .local v1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Lcom/sonyericsson/home/data/ActivityInfo;Ljava/lang/String;>;>;"
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -267,14 +267,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 90
+    .line 89
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 91
+    .line 90
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/sonyericsson/home/data/ActivityInfo;Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -292,7 +292,7 @@
 
     goto :goto_0
 
-    .line 93
+    .line 92
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/sonyericsson/home/data/ActivityInfo;Ljava/lang/String;>;"
     :cond_0
     return-void
@@ -305,20 +305,20 @@
     .parameter "cacheValue"
 
     .prologue
-    .line 206
+    .line 205
     iput-object p1, p3, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->badgeMessage:Ljava/lang/String;
 
-    .line 208
+    .line 207
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeManagerListener:Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;
 
     if-eqz v0, :cond_0
 
-    .line 209
+    .line 208
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeManagerListener:Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;
 
     invoke-interface {v0, p2}, Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;->onBroadcastReceived(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 211
+    .line 210
     :cond_0
     return-void
 .end method
@@ -331,15 +331,15 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 193
+    .line 192
     if-eqz p1, :cond_0
 
-    .line 194
+    .line 193
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 199
+    .line 198
     :goto_0
     new-instance v0, Lcom/sonyericsson/storage/Root;
 
@@ -347,13 +347,13 @@
 
     invoke-direct {v0, v1}, Lcom/sonyericsson/storage/Root;-><init>(Ljava/lang/String;)V
 
-    .line 200
+    .line 199
     .local v0, root:Lcom/sonyericsson/storage/Root;
     const-string v1, "version"
 
     invoke-virtual {v0, v1, v3}, Lcom/sonyericsson/storage/Root;->put(Ljava/lang/String;I)V
 
-    .line 201
+    .line 200
     const-class v1, Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeMap:Ljava/util/HashMap;
@@ -364,15 +364,15 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/storage/Root;->addChild(Ljava/lang/Class;Lcom/sonyericsson/storage/Node;)V
 
-    .line 202
+    .line 201
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mContext:Landroid/content/Context;
 
     invoke-static {v1, v0, v3}, Lcom/sonyericsson/storage/Storage;->write(Landroid/content/Context;Lcom/sonyericsson/storage/Root;Z)V
 
-    .line 203
+    .line 202
     return-void
 
-    .line 196
+    .line 195
     .end local v0           #root:Lcom/sonyericsson/storage/Root;
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeMap:Ljava/util/HashMap;
@@ -389,21 +389,21 @@
     .parameter "callback"
 
     .prologue
-    .line 103
+    .line 102
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mState:Lcom/sonyericsson/home/badge/BadgeManager$State;
 
     sget-object v1, Lcom/sonyericsson/home/badge/BadgeManager$State;->INITIALIZED:Lcom/sonyericsson/home/badge/BadgeManager$State;
 
     if-ne v0, v1, :cond_0
 
-    .line 104
+    .line 103
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 108
+    .line 107
     :goto_0
     return-void
 
-    .line 106
+    .line 105
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mOnStartCompletedCallbacks:Ljava/util/LinkedList;
 
@@ -417,7 +417,7 @@
     .parameter "info"
 
     .prologue
-    .line 146
+    .line 145
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeMap:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -448,17 +448,17 @@
     .parameter "intent"
 
     .prologue
-    .line 150
+    .line 149
     if-eqz p1, :cond_1
 
-    .line 151
+    .line 150
     const-string v5, "com.sonyericsson.home.intent.extra.badge.PACKAGE_NAME"
 
     invoke-virtual {p1, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 152
+    .line 151
     .local v3, packageName:Ljava/lang/String;
     const-string v5, "com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME"
 
@@ -466,18 +466,18 @@
 
     move-result-object v0
 
-    .line 154
+    .line 153
     .local v0, activityName:Ljava/lang/String;
     if-eqz v3, :cond_1
 
     if-eqz v0, :cond_1
 
-    .line 155
+    .line 154
     new-instance v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     invoke-direct {v1, v3, v0}, Lcom/sonyericsson/home/data/ActivityInfo;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 157
+    .line 156
     .local v1, item:Lcom/sonyericsson/home/data/ActivityInfo;
     const-string v5, "com.sonyericsson.home.intent.extra.badge.MESSAGE"
 
@@ -485,7 +485,7 @@
 
     move-result-object v2
 
-    .line 158
+    .line 157
     .local v2, message:Ljava/lang/String;
     const-string v5, "com.sonyericsson.home.intent.extra.badge.SHOW_MESSAGE"
 
@@ -495,18 +495,18 @@
 
     move-result v4
 
-    .line 159
+    .line 158
     .local v4, showMessage:Z
     if-nez v4, :cond_0
 
-    .line 160
+    .line 159
     const/4 v2, 0x0
 
-    .line 163
+    .line 162
     :cond_0
     invoke-direct {p0, v1, v2}, Lcom/sonyericsson/home/badge/BadgeManager;->onReceive(Lcom/sonyericsson/home/data/ActivityInfo;Ljava/lang/String;)V
 
-    .line 166
+    .line 165
     .end local v0           #activityName:Ljava/lang/String;
     .end local v1           #item:Lcom/sonyericsson/home/data/ActivityInfo;
     .end local v2           #message:Ljava/lang/String;
@@ -522,13 +522,13 @@
     .parameter "resourceLoader"
 
     .prologue
-    .line 77
+    .line 76
     iput-object p1, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeManagerListener:Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;
 
-    .line 78
+    .line 77
     iput-object p2, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    .line 79
+    .line 78
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mBadgeManagerListener:Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;
 
     if-eqz v0, :cond_0
@@ -537,17 +537,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 80
+    .line 79
     iget-object v0, p0, Lcom/sonyericsson/home/badge/BadgeManager;->mState:Lcom/sonyericsson/home/badge/BadgeManager$State;
 
     sget-object v1, Lcom/sonyericsson/home/badge/BadgeManager$State;->INITIALIZED:Lcom/sonyericsson/home/badge/BadgeManager$State;
 
     if-ne v0, v1, :cond_0
 
-    .line 81
+    .line 80
     invoke-direct {p0}, Lcom/sonyericsson/home/badge/BadgeManager;->restoreBadges()V
 
-    .line 84
+    .line 83
     :cond_0
     return-void
 .end method

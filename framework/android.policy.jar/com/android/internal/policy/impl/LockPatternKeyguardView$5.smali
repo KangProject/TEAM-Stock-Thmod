@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .prologue
     .line 861
@@ -36,7 +36,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$widget$LockPatternUtils$PatternUnlockMode:[I
 
-    :try_start_9
+    :try_start_0
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$widget$LockPatternUtils$PatternUnlockMode:[I
 
     sget-object v1, Lcom/android/internal/widget/LockPatternUtils$PatternUnlockMode;->Account:Lcom/android/internal/widget/LockPatternUtils$PatternUnlockMode;
@@ -48,11 +48,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_79
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_7
 
-    :goto_14
-    :try_start_14
+    :goto_0
+    :try_start_1
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$widget$LockPatternUtils$PatternUnlockMode:[I
 
     sget-object v1, Lcom/android/internal/widget/LockPatternUtils$PatternUnlockMode;->Question:Lcom/android/internal/widget/LockPatternUtils$PatternUnlockMode;
@@ -64,11 +64,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_77
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_6
 
     .line 638
-    :goto_1f
+    :goto_1
     invoke-static {}, Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;->values()[Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
 
     move-result-object v0
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$policy$impl$LockPatternKeyguardView$UnlockMode:[I
 
-    :try_start_28
+    :try_start_2
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$policy$impl$LockPatternKeyguardView$UnlockMode:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;->Pattern:Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
@@ -91,11 +91,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_33
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_28 .. :try_end_33} :catch_75
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_5
 
-    :goto_33
-    :try_start_33
+    :goto_2
+    :try_start_3
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$policy$impl$LockPatternKeyguardView$UnlockMode:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;->Question:Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
@@ -107,11 +107,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_3e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_73
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_4
 
-    :goto_3e
-    :try_start_3e
+    :goto_3
+    :try_start_4
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$policy$impl$LockPatternKeyguardView$UnlockMode:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;->Account:Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
@@ -123,11 +123,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_49
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3e .. :try_end_49} :catch_71
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_3
 
-    :goto_49
-    :try_start_49
+    :goto_4
+    :try_start_5
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$policy$impl$LockPatternKeyguardView$UnlockMode:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;->BackupSelection:Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
@@ -139,11 +139,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_54
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_49 .. :try_end_54} :catch_6f
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_2
 
-    :goto_54
-    :try_start_54
+    :goto_5
+    :try_start_6
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$policy$impl$LockPatternKeyguardView$UnlockMode:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;->SimPin:Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
@@ -155,11 +155,11 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
-    :try_end_5f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_54 .. :try_end_5f} :catch_6d
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_1
 
-    :goto_5f
-    :try_start_5f
+    :goto_6
+    :try_start_7
     sget-object v0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$5;->$SwitchMap$com$android$internal$policy$impl$LockPatternKeyguardView$UnlockMode:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;->Password:Lcom/android/internal/policy/impl/LockPatternKeyguardView$UnlockMode;
@@ -171,50 +171,50 @@
     const/4 v2, 0x6
 
     aput v2, v0, v1
-    :try_end_6a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5f .. :try_end_6a} :catch_6b
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_0
 
-    :goto_6a
+    :goto_7
     return-void
 
-    :catch_6b
+    :catch_0
     move-exception v0
 
-    goto :goto_6a
+    goto :goto_7
 
-    :catch_6d
+    :catch_1
     move-exception v0
 
-    goto :goto_5f
+    goto :goto_6
 
-    :catch_6f
+    :catch_2
     move-exception v0
 
-    goto :goto_54
+    goto :goto_5
 
-    :catch_71
+    :catch_3
     move-exception v0
 
-    goto :goto_49
+    goto :goto_4
 
-    :catch_73
+    :catch_4
     move-exception v0
 
-    goto :goto_3e
+    goto :goto_3
 
-    :catch_75
+    :catch_5
     move-exception v0
 
-    goto :goto_33
+    goto :goto_2
 
     .line 861
-    :catch_77
+    :catch_6
     move-exception v0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :catch_79
+    :catch_7
     move-exception v0
 
-    goto :goto_14
+    goto :goto_0
 .end method

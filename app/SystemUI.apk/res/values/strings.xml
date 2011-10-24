@@ -21,7 +21,7 @@ Vibration"</string>
 Rotation"</string>
     <string name="quickpanel_error_text">Error</string>
     <string name="quickpanel_wifi_text">Wi-Fi</string>
-	    <string name="quickpanel_mobiledata_text">Data</string>
+    <string name="quickpanel_mobiledata_text">Data</string>
     <string name="quickpanel_flight_text">"Flight
 Mode"</string>
     <string name="quickpanel_sync_text">"Auto

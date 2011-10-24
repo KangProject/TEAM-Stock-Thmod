@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 698
+    .line 691
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopTransformer$2;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopTransformer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
     const/4 v2, -0x1
 
-    .line 700
+    .line 693
     invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
 
     move-result v0
@@ -72,11 +72,11 @@
 
     move v0, v2
 
-    .line 711
+    .line 704
     :goto_0
     return v0
 
-    .line 702
+    .line 695
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
 
@@ -90,7 +90,7 @@
 
     if-nez v0, :cond_3
 
-    .line 703
+    .line 696
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
     move-result v0
@@ -105,10 +105,10 @@
 
     move v0, v2
 
-    .line 704
+    .line 697
     goto :goto_0
 
-    .line 705
+    .line 698
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
@@ -122,7 +122,7 @@
 
     if-nez v0, :cond_2
 
-    .line 706
+    .line 699
     const/4 v0, 0x0
 
     goto :goto_0
@@ -130,13 +130,13 @@
     :cond_2
     move v0, v3
 
-    .line 708
+    .line 701
     goto :goto_0
 
     :cond_3
     move v0, v3
 
-    .line 711
+    .line 704
     goto :goto_0
 .end method
 
@@ -146,7 +146,7 @@
     .parameter "x1"
 
     .prologue
-    .line 698
+    .line 691
     check-cast p1, Landroid/graphics/RectF;
 
     .end local p1

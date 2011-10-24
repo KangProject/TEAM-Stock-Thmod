@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Abbrechen</string>
     <string name="home_button_exit_overview">Überblick verlassen</string>
     <string name="home_no_uninstallable_apps_txt">Diese Anwendungen können nicht deinstalliert werden.</string>
+    <string name="home_app_share_dropzone_hint_txt">Zur Freigabe des Objekts hier ablegen</string>
+    <string name="appdialog_title">Auf Facebook posten</string>
+    <string name="appdialog_comment_hint">Füge Deinen Kommentar hinzu</string>
+    <string name="appdialog_button_share">Freigeben</string>
+    <string name="appdialog_button_cancel">Abbrechen</string>
+    <string name="appdialog_other_options_info">Andere Freigabeopt.</string>
+    <string name="appdialog_progress_info">Posten</string>
+    <string name="appdialog_toast_cannot_be_shared">Dieses Objekt kann nicht freigegeben werden</string>
+    <string name="appdialog_toast_connection_error">Verbindungsfehler</string>
+    <string name="appdialog_toast_sharing">Freigeben auf Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Freigeben</string>
 </resources>

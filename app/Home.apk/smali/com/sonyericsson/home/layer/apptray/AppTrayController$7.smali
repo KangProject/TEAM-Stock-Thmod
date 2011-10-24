@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 465
+    .line 461
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     iput p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$addedDuration:I
@@ -48,13 +48,13 @@
     .locals 5
 
     .prologue
-    .line 472
+    .line 468
     :try_start_0
     iget v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$addedDuration:I
 
     div-int/lit16 v1, v3, 0x3e8
 
-    .line 473
+    .line 469
     .local v1, iterations:I
     const/4 v0, 0x0
 
@@ -62,42 +62,42 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 474
+    .line 470
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$toast:Landroid/widget/Toast;
 
     invoke-virtual {v3}, Landroid/widget/Toast;->show()V
 
-    .line 475
+    .line 471
     const-wide/16 v3, 0x3e8
 
     invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 473
+    .line 469
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 478
+    .line 474
     :cond_0
     iget v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$addedDuration:I
 
     rem-int/lit16 v2, v3, 0x3e8
 
-    .line 479
+    .line 475
     .local v2, leftOver:I
     if-lez v2, :cond_1
 
-    .line 480
+    .line 476
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$toast:Landroid/widget/Toast;
 
     invoke-virtual {v3}, Landroid/widget/Toast;->show()V
 
-    .line 481
+    .line 477
     int-to-long v3, v2
 
     invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 484
+    .line 480
     :cond_1
     iget-object v3, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$7;->val$toast:Landroid/widget/Toast;
 
@@ -105,14 +105,14 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 488
+    .line 484
     .end local v0           #i:I
     .end local v1           #iterations:I
     .end local v2           #leftOver:I
     :goto_1
     return-void
 
-    .line 485
+    .line 481
     :catch_0
     move-exception v3
 

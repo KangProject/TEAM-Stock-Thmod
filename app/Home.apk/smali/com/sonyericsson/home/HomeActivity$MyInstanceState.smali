@@ -35,8 +35,6 @@
 
 .field public apptrayPane:I
 
-.field public globalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
-
 .field public isFolderOpen:Z
 
 .field public isInOverview:Z
@@ -54,8 +52,6 @@
 .field public overviewProgress:F
 
 .field public resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-.field public savedFolderIconIndex:I
 
 .field public savedFolderText:Ljava/lang/String;
 
@@ -77,7 +73,7 @@
     .locals 0
 
     .prologue
-    .line 353
+    .line 371
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -42,14 +42,14 @@
     .parameter
 
     .prologue
-    .line 712
+    .line 709
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$8;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$8;->val$resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 713
+    .line 710
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -67,7 +67,7 @@
     .parameter "activityInfo2"
 
     .prologue
-    .line 716
+    .line 713
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$8;->mCollator:Ljava/text/Collator;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$8;->val$resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
@@ -99,7 +99,7 @@
     .parameter "x1"
 
     .prologue
-    .line 712
+    .line 709
     check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     .end local p1

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 692
+    .line 709
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$4;->val$info:Lcom/sonyericsson/home/data/Info;
@@ -50,21 +50,21 @@
     .parameter "badgeMessage"
 
     .prologue
-    .line 695
+    .line 712
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$4;->val$info:Lcom/sonyericsson/home/data/Info;
 
-    invoke-static {v1, v2}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$1500(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
+    invoke-static {v1, v2}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$1700(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
 
     move-result-object v0
 
-    .line 696
+    .line 713
     .local v0, newAction:Lcom/sonyericsson/cornerbutton/Action;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
     invoke-virtual {v1, v0, v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->replaceAction(Lcom/sonyericsson/cornerbutton/Action;Lcom/sonyericsson/cornerbutton/Action;)V
 
-    .line 697
+    .line 714
     return-void
 .end method

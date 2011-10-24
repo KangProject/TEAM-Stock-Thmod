@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/AccountUnlockScreen;Z)V
-    .registers 3
+    .locals 0
     .parameter
     .parameter
 
@@ -43,13 +43,13 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     .prologue
     .line 188
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/AccountUnlockScreen$1;->val$success:Z
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 189
     new-instance v0, Lcom/android/internal/policy/impl/CommonBackupUtil;
@@ -80,11 +80,11 @@
 
     .line 196
     .end local v0           #util:Lcom/android/internal/policy/impl/CommonBackupUtil;
-    :goto_1e
+    :goto_0
     return-void
 
     .line 192
-    :cond_1f
+    :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/AccountUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/AccountUnlockScreen;
 
     invoke-static {v1}, Lcom/android/internal/policy/impl/AccountUnlockScreen;->access$300(Lcom/android/internal/policy/impl/AccountUnlockScreen;)Landroid/widget/TextView;
@@ -115,5 +115,5 @@
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->reportFailedUnlockAttempt()V
 
-    goto :goto_1e
+    goto :goto_0
 .end method

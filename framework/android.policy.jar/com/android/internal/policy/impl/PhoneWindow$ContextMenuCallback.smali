@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/internal/policy/impl/PhoneWindow;I)V
-    .registers 3
+    .locals 0
     .parameter
     .parameter "featureId"
 
@@ -47,13 +47,13 @@
 
 # virtual methods
 .method public onCloseMenu(Lcom/android/internal/view/menu/MenuBuilder;Z)V
-    .registers 5
+    .locals 2
     .parameter "menu"
     .parameter "allMenusAreClosing"
 
     .prologue
     .line 2762
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_2
 
     .line 2763
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
@@ -64,21 +64,21 @@
 
     .line 2764
     .local v0, callback:Landroid/view/Window$Callback;
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     iget v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->mFeatureId:I
 
     invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
 
     .line 2766
-    :cond_f
+    :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     invoke-static {v1}, Lcom/android/internal/policy/impl/PhoneWindow;->access$500(Lcom/android/internal/policy/impl/PhoneWindow;)Lcom/android/internal/view/menu/ContextMenuBuilder;
 
     move-result-object v1
 
-    if-ne p1, v1, :cond_1c
+    if-ne p1, v1, :cond_1
 
     .line 2767
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
@@ -86,10 +86,10 @@
     invoke-static {v1}, Lcom/android/internal/policy/impl/PhoneWindow;->access$1200(Lcom/android/internal/policy/impl/PhoneWindow;)V
 
     .line 2771
-    :cond_1c
+    :cond_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->mSubMenuHelper:Lcom/android/internal/view/menu/MenuDialogHelper;
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_2
 
     .line 2772
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->mSubMenuHelper:Lcom/android/internal/view/menu/MenuDialogHelper;
@@ -103,12 +103,12 @@
 
     .line 2776
     .end local v0           #callback:Landroid/view/Window$Callback;
-    :cond_28
+    :cond_2
     return-void
 .end method
 
 .method public onCloseSubMenu(Lcom/android/internal/view/menu/SubMenuBuilder;)V
-    .registers 5
+    .locals 3
     .parameter "menu"
 
     .prologue
@@ -121,7 +121,7 @@
 
     .line 2780
     .local v0, callback:Landroid/view/Window$Callback;
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     iget v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->mFeatureId:I
 
@@ -132,12 +132,12 @@
     invoke-interface {v0, v1, v2}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
 
     .line 2781
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public onMenuItemSelected(Lcom/android/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
-    .registers 5
+    .locals 2
     .parameter "menu"
     .parameter "item"
 
@@ -151,7 +151,7 @@
 
     .line 2785
     .local v0, callback:Landroid/view/Window$Callback;
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     iget v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$ContextMenuCallback;->mFeatureId:I
 
@@ -159,21 +159,21 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    :goto_11
+    :goto_0
     return v1
 
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_11
+    goto :goto_0
 .end method
 
 .method public onMenuModeChange(Lcom/android/internal/view/menu/MenuBuilder;)V
-    .registers 2
+    .locals 0
     .parameter "menu"
 
     .prologue
@@ -182,7 +182,7 @@
 .end method
 
 .method public onSubMenuSelected(Lcom/android/internal/view/menu/SubMenuBuilder;)Z
-    .registers 4
+    .locals 2
     .parameter "subMenu"
 
     .prologue

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1979
+    .line 2009
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .parameter "view"
 
     .prologue
-    .line 1982
+    .line 2012
     instance-of v1, p2, Lcom/sonyericsson/home/widget/AdvWidgetRoot;
 
     if-eqz v1, :cond_0
 
-    .line 1983
+    .line 2013
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
@@ -65,7 +65,7 @@
 
     check-cast v0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
-    .line 1984
+    .line 2014
     .local v0, info:Lcom/sonyericsson/home/data/AdvWidgetInfo;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->start(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
 
-    .line 1985
+    .line 2015
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
@@ -84,7 +84,7 @@
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->resume(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
 
-    .line 1986
+    .line 2016
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -105,7 +105,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1987
+    .line 2017
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->focus(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
 
-    .line 1990
+    .line 2020
     .end local v0           #info:Lcom/sonyericsson/home/data/AdvWidgetInfo;
     :cond_0
     return-void
@@ -126,12 +126,12 @@
     .parameter "view"
 
     .prologue
-    .line 1993
+    .line 2023
     instance-of v1, p2, Lcom/sonyericsson/home/widget/AdvWidgetRoot;
 
     if-eqz v1, :cond_0
 
-    .line 1994
+    .line 2024
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
@@ -148,7 +148,7 @@
 
     check-cast v0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
-    .line 1995
+    .line 2025
     .local v0, info:Lcom/sonyericsson/home/data/AdvWidgetInfo;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$14;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -158,7 +158,7 @@
 
     invoke-virtual {v1, v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->stop(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
 
-    .line 1997
+    .line 2027
     .end local v0           #info:Lcom/sonyericsson/home/data/AdvWidgetInfo;
     :cond_0
     return-void

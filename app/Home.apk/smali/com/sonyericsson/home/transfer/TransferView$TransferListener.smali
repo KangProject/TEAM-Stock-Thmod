@@ -18,5 +18,5 @@
 .method public abstract onTransferEnd(Z)V
 .end method
 
-.method public abstract onTransferStart()V
+.method public abstract onTransferStart(Landroid/view/View;)V
 .end method

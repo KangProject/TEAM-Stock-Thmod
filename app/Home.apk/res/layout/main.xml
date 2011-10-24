@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.sonyericsson.home.transfer.TransferView android:id="@id/transfer_layer" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sonyericsson.view.BackgroundFadeSrcXferView android:id="@id/fade" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <com.sonyericsson.home.layer.desktop.InterceptingRelativeLayout android:id="@id/desktop_master_layer" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <include layout="@layout/desktop" />
-        <include layout="@layout/stage_stub" />
-        <include layout="@layout/desktop_launcher_button" />
-        <include layout="@layout/corners_stub" />
-    </com.sonyericsson.home.layer.desktop.InterceptingRelativeLayout>
-    <Button android:textColor="#ffffffff" android:id="@id/desktop_leave_overview" android:background="@drawable/semc_button_bg" android:visibility="invisible" android:layout_width="217.0dip" android:layout_height="wrap_content" android:text="@string/home_button_exit_overview" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
-    <RelativeLayout android:id="@id/desktop_fullscreen_placeholder" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <ViewStub android:id="@id/app_tray_layer" android:layout="@layout/apptray" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <include layout="@layout/apptray_controls" />
-    <include layout="@layout/apptray_home_button" />
-    <include layout="@layout/folder" />
-    <include layout="@layout/trashcan" />
+    <com.sonyericsson.view.BackgroundFadeSrcXferView android:id="@id/fade" android:focusable="false" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:id="@id/master_layer" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.sonyericsson.home.layer.desktop.InterceptingRelativeLayout android:id="@id/desktop_master_layer" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/desktop" />
+            <include layout="@layout/stage_stub" />
+            <include layout="@layout/desktop_launcher_button" />
+            <include layout="@layout/corners_stub" />
+        </com.sonyericsson.home.layer.desktop.InterceptingRelativeLayout>
+        <Button android:textColor="#ffffffff" android:id="@id/desktop_leave_overview" android:background="@drawable/semc_button_bg" android:visibility="invisible" android:layout_width="217.0dip" android:layout_height="wrap_content" android:text="@string/home_button_exit_overview" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        <RelativeLayout android:id="@id/desktop_fullscreen_placeholder" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ViewStub android:id="@id/app_tray_layer" android:layout="@layout/apptray" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include layout="@layout/apptray_controls" />
+        <include layout="@layout/apptray_home_button" />
+        <include layout="@layout/folder" />
+        <include layout="@layout/trashcan" />
+    </RelativeLayout>
+    <include layout="@layout/app_share_dropzone" />
 </com.sonyericsson.home.transfer.TransferView>

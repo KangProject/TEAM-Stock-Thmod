@@ -18,5 +18,5 @@
 .method public abstract onAppearanceChanged()V
 .end method
 
-.method public abstract onContentChanged()V
+.method public abstract onContentChanged(Ljava/util/UUID;)V
 .end method

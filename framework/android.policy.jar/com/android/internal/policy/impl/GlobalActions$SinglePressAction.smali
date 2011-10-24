@@ -25,7 +25,7 @@
 
 # direct methods
 .method protected constructor <init>(II)V
-    .registers 3
+    .locals 0
     .parameter "iconResId"
     .parameter "messageResId"
 
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public create(Landroid/content/Context;Landroid/view/View;Landroid/view/ViewGroup;Landroid/view/LayoutInflater;)Landroid/view/View;
-    .registers 10
+    .locals 5
     .parameter "context"
     .parameter "convertView"
     .parameter "parent"
@@ -54,13 +54,13 @@
 
     .prologue
     .line 386
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_0
 
     move-object v2, p2
 
     .line 390
     .local v2, v:Landroid/view/View;
-    :goto_3
+    :goto_0
     const v3, 0x1020006
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -116,7 +116,7 @@
     .end local v0           #icon:Landroid/widget/ImageView;
     .end local v1           #messageView:Landroid/widget/TextView;
     .end local v2           #v:Landroid/view/View;
-    :cond_34
+    :cond_0
     const v3, 0x1090026
 
     const/4 v4, 0x0
@@ -127,11 +127,11 @@
 
     move-object v2, v3
 
-    goto :goto_3
+    goto :goto_0
 .end method
 
 .method public isEnabled()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 379

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="text_shadow_color">#ff000000</color>
+    <color name="semc_text_color_highlight">#ff4468b6</color>
+    <color name="semc_hint">#aaffffff</color>
+    <color name="semc_text_color_link">#ff68b2ff</color>
 </resources>

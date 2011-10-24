@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 491
+    .line 508
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->this$1:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->val$root:Lcom/sonyericsson/storage/Root;
@@ -46,16 +46,16 @@
     .locals 8
 
     .prologue
-    .line 493
+    .line 510
     const/4 v0, 0x0
 
-    .line 494
+    .line 511
     .local v0, childNodes:Ljava/util/List;,"Ljava/util/List<Lcom/sonyericsson/storage/Node;>;"
     iget-object v5, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->val$root:Lcom/sonyericsson/storage/Root;
 
     if-eqz v5, :cond_0
 
-    .line 495
+    .line 512
     iget-object v5, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->val$root:Lcom/sonyericsson/storage/Root;
 
     const-class v6, Ljava/util/ArrayList;
@@ -64,11 +64,11 @@
 
     move-result-object v0
 
-    .line 498
+    .line 515
     :cond_0
     const/4 v4, 0x0
 
-    .line 500
+    .line 517
     .local v4, modelChanged:Z
     const/4 v2, 0x0
 
@@ -88,7 +88,7 @@
 
     if-ge v2, v5, :cond_2
 
-    .line 501
+    .line 518
     iget-object v5, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->this$1:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;
 
     iget-object v5, v5, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
@@ -97,11 +97,11 @@
 
     move-result-object v3
 
-    .line 502
+    .line 519
     .local v3, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     if-nez v3, :cond_1
 
-    .line 504
+    .line 521
     iget-object v5, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->this$1:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;
 
     iget-object v5, v5, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
@@ -110,10 +110,10 @@
 
     move-result-object v3
 
-    .line 505
+    .line 522
     const/4 v4, 0x1
 
-    .line 508
+    .line 525
     :cond_1
     iget-object v5, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->this$1:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;
 
@@ -129,11 +129,11 @@
 
     check-cast v1, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
-    .line 509
+    .line 526
     .local v1, controller:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
     invoke-virtual {v1, v3}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->setModel(Ljava/util/ArrayList;)V
 
-    .line 511
+    .line 528
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getSyncable()Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
     move-result-object v5
@@ -156,7 +156,7 @@
 
     or-int/2addr v4, v5
 
-    .line 514
+    .line 531
     iget-object v5, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->this$1:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;
 
     iget-object v5, v5, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->val$resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
@@ -167,12 +167,12 @@
 
     invoke-virtual {v5, v6}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->preCacheShortcuts(Ljava/util/Collection;)V
 
-    .line 500
+    .line 517
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 516
+    .line 533
     .end local v1           #controller:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
     .end local v3           #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     :cond_2
@@ -184,17 +184,17 @@
 
     invoke-static {v5, v6}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$1202(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;Z)Z
 
-    .line 518
+    .line 535
     if-eqz v4, :cond_3
 
-    .line 519
+    .line 536
     iget-object v5, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4$1;->this$1:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;
 
     iget-object v5, v5, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$4;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$200(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;)V
 
-    .line 521
+    .line 538
     :cond_3
     return-void
 .end method

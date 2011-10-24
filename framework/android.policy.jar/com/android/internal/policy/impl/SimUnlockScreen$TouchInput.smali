@@ -43,7 +43,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen;)V
-    .registers 4
+    .locals 2
     .parameter
 
     .prologue
@@ -287,7 +287,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen;Lcom/android/internal/policy/impl/SimUnlockScreen$1;)V
-    .registers 3
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
@@ -299,7 +299,7 @@
 .end method
 
 .method private checkDigit(Landroid/view/View;)I
-    .registers 4
+    .locals 2
     .parameter "v"
 
     .prologue
@@ -310,120 +310,120 @@
     .local v0, digit:I
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mZero:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_7
+    if-ne p1, v1, :cond_1
 
     .line 781
     const/4 v0, 0x0
 
     .line 801
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     return v0
 
     .line 782
-    :cond_7
+    :cond_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mOne:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_d
+    if-ne p1, v1, :cond_2
 
     .line 783
     const/4 v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 784
-    :cond_d
+    :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mTwo:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_13
+    if-ne p1, v1, :cond_3
 
     .line 785
     const/4 v0, 0x2
 
-    goto :goto_6
+    goto :goto_0
 
     .line 786
-    :cond_13
+    :cond_3
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mThree:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_19
+    if-ne p1, v1, :cond_4
 
     .line 787
     const/4 v0, 0x3
 
-    goto :goto_6
+    goto :goto_0
 
     .line 788
-    :cond_19
+    :cond_4
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFour:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_1f
+    if-ne p1, v1, :cond_5
 
     .line 789
     const/4 v0, 0x4
 
-    goto :goto_6
+    goto :goto_0
 
     .line 790
-    :cond_1f
+    :cond_5
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFive:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_25
+    if-ne p1, v1, :cond_6
 
     .line 791
     const/4 v0, 0x5
 
-    goto :goto_6
+    goto :goto_0
 
     .line 792
-    :cond_25
+    :cond_6
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSix:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_2b
+    if-ne p1, v1, :cond_7
 
     .line 793
     const/4 v0, 0x6
 
-    goto :goto_6
+    goto :goto_0
 
     .line 794
-    :cond_2b
+    :cond_7
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSeven:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_31
+    if-ne p1, v1, :cond_8
 
     .line 795
     const/4 v0, 0x7
 
-    goto :goto_6
+    goto :goto_0
 
     .line 796
-    :cond_31
+    :cond_8
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mEight:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_38
+    if-ne p1, v1, :cond_9
 
     .line 797
     const/16 v0, 0x8
 
-    goto :goto_6
+    goto :goto_0
 
     .line 798
-    :cond_38
+    :cond_9
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mNine:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_6
+    if-ne p1, v1, :cond_0
 
     .line 799
     const/16 v0, 0x9
 
-    goto :goto_6
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .locals 3
     .parameter "v"
 
     .prologue
@@ -434,7 +434,7 @@
 
     .line 772
     .local v0, digit:I
-    if-ltz v0, :cond_16
+    if-ltz v0, :cond_0
 
     .line 773
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->this$0:Lcom/android/internal/policy/impl/SimUnlockScreen;
@@ -453,6 +453,6 @@
     invoke-static {v1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->access$1900(Lcom/android/internal/policy/impl/SimUnlockScreen;I)V
 
     .line 776
-    :cond_16
+    :cond_0
     return-void
 .end method

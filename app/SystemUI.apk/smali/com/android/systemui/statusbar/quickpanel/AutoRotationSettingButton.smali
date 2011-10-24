@@ -31,8 +31,8 @@
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/quickpanel/AutoRotationSettingButton$AutoRotationObserver;-><init>(Lcom/android/systemui/statusbar/quickpanel/AutoRotationSettingButton;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/AutoRotationSettingButton;->mAutoRotationObserver:Lcom/android/systemui/statusbar/quickpanel/AutoRotationSettingButton$AutoRotationObserver;
-	
-	const-string v0, "android.settings.DISPLAY_SETTINGS"
+
+    const-string v0, "android.settings.DISPLAY_SETTINGS"
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/QuickSettingButton;->mAction:Ljava/lang/String;
 

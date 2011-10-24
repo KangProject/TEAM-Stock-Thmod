@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 332
+    .line 333
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$4;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "y"
 
     .prologue
-    .line 348
+    .line 349
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 335
+    .line 336
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageController$4;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->access$100(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;
@@ -64,7 +64,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 336
+    .line 337
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageController$4;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->access$000(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageModelManager;
@@ -75,7 +75,7 @@
 
     move-result v0
 
-    .line 337
+    .line 338
     .local v0, location:I
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageController$4;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -85,7 +85,7 @@
 
     invoke-interface {v1, v0}, Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;->onLongPress(I)V
 
-    .line 340
+    .line 341
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageController$4;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1100(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/paneview/PaneView;
@@ -96,7 +96,7 @@
 
     move v1, v2
 
-    .line 343
+    .line 344
     .end local v0           #location:I
     :goto_0
     return v1

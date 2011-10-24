@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">취소</string>
     <string name="home_button_exit_overview">개요 종료</string>
     <string name="home_no_uninstallable_apps_txt">이러한 응용프로그램은 제거할 수 없음</string>
+    <string name="home_app_share_dropzone_hint_txt">항목을 공유하려면 여기에 놓기</string>
+    <string name="appdialog_title">Facebook에 게시</string>
+    <string name="appdialog_comment_hint">의견 추가</string>
+    <string name="appdialog_button_share">공유</string>
+    <string name="appdialog_button_cancel">취소</string>
+    <string name="appdialog_other_options_info">기타 공유 옵션</string>
+    <string name="appdialog_progress_info">게시물을 만드는 중</string>
+    <string name="appdialog_toast_cannot_be_shared">이 항목을 공유할 수 없음</string>
+    <string name="appdialog_toast_connection_error">연결 오류</string>
+    <string name="appdialog_toast_sharing">Facebook에서 공유 중</string>
+    <string name="home_app_share_chooser_title_txt">공유</string>
 </resources>

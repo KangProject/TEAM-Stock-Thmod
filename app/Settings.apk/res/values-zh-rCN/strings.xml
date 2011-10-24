@@ -1167,4 +1167,5 @@ PIN 可能不正确。"</string>
     <string name="sound_category_feedback_title">反馈</string>
     <string name="kill_app_longpress_back">长按键来关闭应用程序</string>
     <string name="kill_app_longpress_back_summary">长按 BACK 键来杀掉当前的程序</string>
+    <string name="xloud_strings_xloud_desc_txt">增强扬声器音量</string>
 </resources>

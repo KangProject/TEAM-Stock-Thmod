@@ -18,6 +18,12 @@
 .method public abstract onClosed()V
 .end method
 
+.method public abstract onHintCancelled(I)V
+.end method
+
+.method public abstract onHinted(I)V
+.end method
+
 .method public abstract onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
 .end method
 

@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final folder_minis_scale:I = 0x7f0b0005
+
 .field public static final pane_dynamics_damping:I = 0x7f0b0001
 
 .field public static final pane_dynamics_stiffness:I = 0x7f0b0000
@@ -31,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 430
+    .line 470
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 149
+    .line 153
     iput-object p1, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->this$0:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->val$itemView:Landroid/view/View;
@@ -65,7 +65,7 @@
     .parameter "badgeMessage"
 
     .prologue
-    .line 152
+    .line 156
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->val$itemView:Landroid/view/View;
 
     invoke-static {}, Lcom/sonyericsson/home/layer/AdapterHelper;->access$000()I
@@ -82,38 +82,38 @@
 
     if-eqz v0, :cond_1
 
-    .line 153
+    .line 157
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->val$iconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 154
+    .line 158
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->val$labelView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 155
+    .line 159
     if-eqz p4, :cond_0
 
-    .line 156
+    .line 160
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->val$badgeView:Lcom/sonyericsson/home/badge/BadgeView;
 
     invoke-virtual {v0, p4}, Lcom/sonyericsson/home/badge/BadgeView;->setText(Ljava/lang/String;)V
 
-    .line 157
+    .line 161
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->val$badgeView:Lcom/sonyericsson/home/badge/BadgeView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/badge/BadgeView;->setVisibility(I)V
 
-    .line 159
+    .line 163
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$1;->val$itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 161
+    .line 165
     :cond_1
     return-void
 .end method

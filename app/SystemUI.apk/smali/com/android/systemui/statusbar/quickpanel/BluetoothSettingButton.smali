@@ -31,7 +31,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/BluetoothSettingButton;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-	const-string v0, "android.settings.BLUETOOTH_SETTINGS"
+    const-string v0, "android.settings.BLUETOOTH_SETTINGS"
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/quickpanel/QuickSettingButton;->mAction:Ljava/lang/String;
 

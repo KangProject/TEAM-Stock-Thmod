@@ -1165,4 +1165,5 @@ Aby zainstalować czytnik ekranowy, kliknij przycisk OK."</string>
     <string name="sound_category_feedback_title">Reakcje</string>
     <string name="kill_app_longpress_back">Przytrzymanie BACK zabija aplikację</string>
     <string name="kill_app_longpress_back_summary">Przytrzymanie klawisza BACK zabije uruchomioną aplikację.</string>
+    <string name="xloud_strings_xloud_desc_txt">Zwiększanie poziomu dźwięku głośnika</string>
 </resources>

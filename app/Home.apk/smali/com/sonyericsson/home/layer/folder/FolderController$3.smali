@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 188
+    .line 200
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,16 +42,16 @@
     .parameter "renderer"
 
     .prologue
-    .line 191
+    .line 203
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->cancelHint()V
 
-    .line 192
+    .line 204
     return-void
 .end method
 
@@ -62,10 +62,10 @@
     .parameter "dropListener"
 
     .prologue
-    .line 195
+    .line 207
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, v1, p2, p3}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->drop(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    .line 196
+    .line 208
     return-void
 .end method
 
@@ -87,19 +87,19 @@
     .parameter "renderer"
 
     .prologue
-    .line 199
+    .line 211
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 200
+    .line 212
     .local v1, hitRect:Landroid/graphics/Rect;
     invoke-virtual {p1, v1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 201
+    .line 213
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$3;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v2
 
@@ -107,10 +107,10 @@
 
     move-result v0
 
-    .line 202
+    .line 214
     .local v0, hintResult:Z
     invoke-static {v1}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 203
+    .line 215
     return v0
 .end method

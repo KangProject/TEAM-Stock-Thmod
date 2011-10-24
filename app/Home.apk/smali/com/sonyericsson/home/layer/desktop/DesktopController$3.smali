@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 797
+    .line 808
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->val$context:Landroid/content/Context;
@@ -47,7 +47,7 @@
     .parameter "root"
 
     .prologue
-    .line 799
+    .line 810
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$3;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$2500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -60,6 +60,6 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnLoadCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 881
+    .line 893
     return-void
 .end method

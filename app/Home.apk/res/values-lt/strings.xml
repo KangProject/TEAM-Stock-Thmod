@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Atšaukti</string>
     <string name="home_button_exit_overview">Išeiti iš apžvalgos</string>
     <string name="home_no_uninstallable_apps_txt">Šių programų negalima pašalinti</string>
+    <string name="home_app_share_dropzone_hint_txt">Norėdami bendrai naudoti elementą, vilkite čia</string>
+    <string name="appdialog_title">Skelbti „Facebook“</string>
+    <string name="appdialog_comment_hint">Pridėti komentarą</string>
+    <string name="appdialog_button_share">Bendrai naudoti</string>
+    <string name="appdialog_button_cancel">Atšaukti</string>
+    <string name="appdialog_other_options_info">Kitos bendr. naud. pas.</string>
+    <string name="appdialog_progress_info">Kuriamas įrašas</string>
+    <string name="appdialog_toast_cannot_be_shared">Negalima bendrai naudoti šio elemento</string>
+    <string name="appdialog_toast_connection_error">Ryšio klaida</string>
+    <string name="appdialog_toast_sharing">Bendras naudojimas „Facebook“</string>
+    <string name="home_app_share_chooser_title_txt">Bendrai naudoti</string>
 </resources>

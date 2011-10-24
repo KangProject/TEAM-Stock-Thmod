@@ -15,6 +15,24 @@
 
 
 # static fields
+.field public static final appdialog_button_cancel:I = 0x7f07002c
+
+.field public static final appdialog_button_share:I = 0x7f07002b
+
+.field public static final appdialog_comment_hint:I = 0x7f07002a
+
+.field public static final appdialog_other_options_info:I = 0x7f07002d
+
+.field public static final appdialog_progress_info:I = 0x7f07002e
+
+.field public static final appdialog_title:I = 0x7f070029
+
+.field public static final appdialog_toast_cannot_be_shared:I = 0x7f07002f
+
+.field public static final appdialog_toast_connection_error:I = 0x7f070030
+
+.field public static final appdialog_toast_sharing:I = 0x7f070031
+
 .field public static final gui_cancel_txt:I = 0x7f070025
 
 .field public static final gui_done_txt:I = 0x7f070024
@@ -22,6 +40,10 @@
 .field public static final gui_ok_txt:I = 0x7f070023
 
 .field public static final home_add_application_shortcut_txt:I = 0x7f070001
+
+.field public static final home_app_share_chooser_title_txt:I = 0x7f070032
+
+.field public static final home_app_share_dropzone_hint_txt:I = 0x7f070028
 
 .field public static final home_application_name_txt:I = 0x7f070000
 
@@ -75,21 +97,21 @@
 
 .field public static final home_option_set_wallpaper_txt:I = 0x7f07000a
 
-.field public static final home_permission_broadcast_badge_description:I = 0x7f07002f
+.field public static final home_permission_broadcast_badge_description:I = 0x7f07003a
 
-.field public static final home_permission_broadcast_badge_label:I = 0x7f07002e
+.field public static final home_permission_broadcast_badge_label:I = 0x7f070039
 
-.field public static final home_permission_install_shortcut_description:I = 0x7f070029
+.field public static final home_permission_install_shortcut_description:I = 0x7f070034
 
-.field public static final home_permission_install_shortcut_label:I = 0x7f070028
+.field public static final home_permission_install_shortcut_label:I = 0x7f070033
 
-.field public static final home_permission_receive_badge_description:I = 0x7f07002d
+.field public static final home_permission_receive_badge_description:I = 0x7f070038
 
-.field public static final home_permission_receive_badge_label:I = 0x7f07002c
+.field public static final home_permission_receive_badge_label:I = 0x7f070037
 
-.field public static final home_permission_uninstall_shortcut_description:I = 0x7f07002b
+.field public static final home_permission_uninstall_shortcut_description:I = 0x7f070036
 
-.field public static final home_permission_uninstall_shortcut_label:I = 0x7f07002a
+.field public static final home_permission_uninstall_shortcut_label:I = 0x7f070035
 
 .field public static final home_popup_cancel_txt:I = 0x7f070016
 
@@ -117,7 +139,7 @@
     .locals 0
 
     .prologue
-    .line 437
+    .line 480
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

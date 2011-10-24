@@ -1166,4 +1166,5 @@ Android 마켓에서 기기에 대한 스크린 리더를 다운로드할 수 �
     <string name="sound_category_feedback_title">반응</string>
     <string name="kill_app_longpress_back">뒤로 버튼을 길게 눌러 앱 종료</string>
     <string name="kill_app_longpress_back_summary">뒤로 버튼을 길게 눌러 전면 어플리케이션을 강제 종료합니다.</string>
+    <string name="xloud_strings_xloud_desc_txt">스피커 볼륨 높이기</string>
 </resources>

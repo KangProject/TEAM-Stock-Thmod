@@ -40,7 +40,7 @@
 
 .field private mFolderContent:Landroid/view/View;
 
-.field private mFolderTitle:Landroid/view/View;
+.field private mFolderTitle:Landroid/widget/TextView;
 
 .field private mSourceX:I
 
@@ -56,67 +56,28 @@
     .parameter "attrs"
 
     .prologue
-    .line 73
+    .line 76
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 50
+    .line 53
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
-    .line 75
+    .line 78
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f02002d
+    const v1, 0x7f02002a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgLeft:Landroid/graphics/drawable/Drawable;
-
-    .line 76
-    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f02002e
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgRight:Landroid/graphics/drawable/Drawable;
-
-    .line 77
-    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f02002f
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgTop:Landroid/graphics/drawable/Drawable;
-
-    .line 78
-    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f02002c
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgBottom:Landroid/graphics/drawable/Drawable;
 
     .line 79
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
@@ -129,20 +90,20 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidUp:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgRight:Landroid/graphics/drawable/Drawable;
 
     .line 80
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f020028
+    const v1, 0x7f02002c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidDown:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgTop:Landroid/graphics/drawable/Drawable;
 
     .line 81
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
@@ -155,14 +116,53 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidLeft:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgBottom:Landroid/graphics/drawable/Drawable;
 
     .line 82
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f02002a
+    const v1, 0x7f020028
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidUp:Landroid/graphics/drawable/Drawable;
+
+    .line 83
+    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f020025
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidDown:Landroid/graphics/drawable/Drawable;
+
+    .line 84
+    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f020026
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidLeft:Landroid/graphics/drawable/Drawable;
+
+    .line 85
+    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f020027
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -170,7 +170,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidRight:Landroid/graphics/drawable/Drawable;
 
-    .line 84
+    .line 87
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -183,7 +183,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingLeft:I
 
-    .line 85
+    .line 88
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -196,7 +196,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingRight:I
 
-    .line 86
+    .line 89
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -209,7 +209,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingTop:I
 
-    .line 87
+    .line 90
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -222,7 +222,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingBottom:I
 
-    .line 89
+    .line 92
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -235,7 +235,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mTitleHeight:I
 
-    .line 90
+    .line 93
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -248,12 +248,12 @@
 
     iput v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mArrowDim:I
 
-    .line 94
+    .line 97
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/layer/folder/FolderView;->setAnimationCacheEnabled(Z)V
 
-    .line 95
+    .line 98
     return-void
 .end method
 
@@ -263,7 +263,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 207
+    .line 214
     iget v2, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingLeft:I
 
     iget v3, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
@@ -277,7 +277,7 @@
     :goto_0
     add-int v0, v2, v3
 
-    .line 208
+    .line 215
     .local v0, left:I
     iget v2, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingTop:I
 
@@ -292,7 +292,7 @@
     :goto_1
     add-int v1, v2, v3
 
-    .line 209
+    .line 216
     .local v1, top:I
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderContent:Landroid/view/View;
 
@@ -306,7 +306,7 @@
 
     invoke-virtual {v2, v0, v1, v3, v4}, Landroid/view/View;->layout(IIII)V
 
-    .line 210
+    .line 217
     return-void
 
     .end local v0           #left:I
@@ -314,14 +314,14 @@
     :cond_0
     move v3, v5
 
-    .line 207
+    .line 214
     goto :goto_0
 
     .restart local v0       #left:I
     :cond_1
     move v3, v5
 
-    .line 208
+    .line 215
     goto :goto_1
 .end method
 
@@ -331,7 +331,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 200
+    .line 207
     iget v3, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentWidth:I
 
     iget v4, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingLeft:I
@@ -342,7 +342,7 @@
 
     add-int v0, v3, v4
 
-    .line 201
+    .line 208
     .local v0, folderWidth:I
     iget v3, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
 
@@ -354,7 +354,7 @@
 
     move v1, v3
 
-    .line 202
+    .line 209
     .local v1, left:I
     :goto_0
     iget v3, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
@@ -367,10 +367,10 @@
 
     move v2, v3
 
-    .line 203
+    .line 210
     .local v2, top:I
     :goto_1
-    iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderTitle:Landroid/view/View;
+    iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderTitle:Landroid/widget/TextView;
 
     add-int v4, v1, v0
 
@@ -378,9 +378,9 @@
 
     add-int/2addr v5, v2
 
-    invoke-virtual {v3, v1, v2, v4, v5}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v3, v1, v2, v4, v5}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 204
+    .line 211
     return-void
 
     .end local v1           #left:I
@@ -388,14 +388,14 @@
     :cond_0
     move v1, v5
 
-    .line 201
+    .line 208
     goto :goto_0
 
     .restart local v1       #left:I
     :cond_1
     move v2, v5
 
-    .line 202
+    .line 209
     goto :goto_1
 .end method
 
@@ -411,7 +411,7 @@
 
     const/4 v9, 0x1
 
-    .line 165
+    .line 172
     iget v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentWidth:I
 
     iget v7, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentPaddingLeft:I
@@ -422,7 +422,7 @@
 
     add-int v1, v6, v7
 
-    .line 166
+    .line 173
     .local v1, folderWidth:I
     iget v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentHeight:I
 
@@ -434,7 +434,7 @@
 
     add-int v0, v6, v7
 
-    .line 168
+    .line 175
     .local v0, folderHeight:I
     iget v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
 
@@ -444,14 +444,14 @@
 
     if-eqz v6, :cond_2
 
-    .line 169
+    .line 176
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     iget-object v7, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgLeft:Landroid/graphics/drawable/Drawable;
 
     aput-object v7, v6, v10
 
-    .line 170
+    .line 177
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     iget v7, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
@@ -463,14 +463,14 @@
     :goto_0
     aput-object v7, v6, v9
 
-    .line 171
+    .line 178
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     iget-object v7, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgRight:Landroid/graphics/drawable/Drawable;
 
     aput-object v7, v6, v11
 
-    .line 173
+    .line 180
     iget v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
 
     const/4 v7, 0x3
@@ -481,7 +481,7 @@
 
     move v5, v6
 
-    .line 174
+    .line 181
     .local v5, sidesDTop:I
     :goto_1
     iget v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mSourceX:I
@@ -498,7 +498,7 @@
 
     sub-int v2, v6, v7
 
-    .line 176
+    .line 183
     .local v2, middleLeft:I
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
@@ -508,7 +508,7 @@
 
     invoke-virtual {v6, v10, v5, v2, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 177
+    .line 184
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     aget-object v6, v6, v9
@@ -529,7 +529,7 @@
 
     invoke-virtual {v6, v2, v10, v7, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 179
+    .line 186
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     aget-object v6, v6, v11
@@ -548,13 +548,13 @@
 
     invoke-virtual {v6, v7, v5, v1, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 197
+    .line 204
     .end local v2           #middleLeft:I
     .end local v5           #sidesDTop:I
     :goto_2
     return-void
 
-    .line 170
+    .line 177
     :cond_0
     iget-object v7, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgMidDown:Landroid/graphics/drawable/Drawable;
 
@@ -563,10 +563,10 @@
     :cond_1
     move v5, v10
 
-    .line 173
+    .line 180
     goto :goto_1
 
-    .line 182
+    .line 189
     :cond_2
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
@@ -574,7 +574,7 @@
 
     aput-object v7, v6, v10
 
-    .line 183
+    .line 190
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     iget v7, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
@@ -586,14 +586,14 @@
     :goto_3
     aput-object v7, v6, v9
 
-    .line 185
+    .line 192
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     iget-object v7, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgBottom:Landroid/graphics/drawable/Drawable;
 
     aput-object v7, v6, v11
 
-    .line 187
+    .line 194
     iget v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
 
     if-ne v6, v9, :cond_4
@@ -602,7 +602,7 @@
 
     move v4, v6
 
-    .line 188
+    .line 195
     .local v4, sidesDLeft:I
     :goto_4
     iget v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mSourceY:I
@@ -619,7 +619,7 @@
 
     sub-int v3, v6, v7
 
-    .line 190
+    .line 197
     .local v3, middleTop:I
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
@@ -629,7 +629,7 @@
 
     invoke-virtual {v6, v4, v10, v7, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 191
+    .line 198
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     aget-object v6, v6, v9
@@ -650,7 +650,7 @@
 
     invoke-virtual {v6, v10, v3, v7, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 193
+    .line 200
     iget-object v6, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     aget-object v6, v6, v11
@@ -671,7 +671,7 @@
 
     goto :goto_2
 
-    .line 183
+    .line 190
     .end local v3           #middleTop:I
     .end local v4           #sidesDLeft:I
     :cond_3
@@ -682,7 +682,7 @@
     :cond_4
     move v4, v10
 
-    .line 187
+    .line 194
     goto :goto_4
 .end method
 
@@ -693,7 +693,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 215
+    .line 222
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -704,23 +704,23 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 216
+    .line 223
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderBgParts:[Landroid/graphics/drawable/Drawable;
 
     aget-object v1, v1, v0
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 215
+    .line 222
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 219
+    .line 226
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 220
+    .line 227
     return-void
 .end method
 
@@ -730,7 +730,7 @@
     .parameter "direction"
 
     .prologue
-    .line 161
+    .line 168
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
 
     move-result-object v0
@@ -746,7 +746,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 134
     iget v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mSourceX:I
 
     int-to-float v0, v0
@@ -758,7 +758,7 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 143
     iget v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mSourceY:I
 
     int-to-float v0, v0
@@ -767,20 +767,22 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 99
-    const v0, 0x7f0e001c
+    .line 102
+    const v0, 0x7f0e002e
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/layer/folder/FolderView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderTitle:Landroid/view/View;
+    check-cast v0, Landroid/widget/TextView;
 
-    .line 100
-    const v0, 0x7f0e001d
+    iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderTitle:Landroid/widget/TextView;
+
+    .line 103
+    const v0, 0x7f0e002f
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/layer/folder/FolderView;->findViewById(I)Landroid/view/View;
 
@@ -788,7 +790,26 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderContent:Landroid/view/View;
 
-    .line 101
+    .line 105
+    invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/sonyericsson/home/bidi/Utils;->isRtlAlphabet(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 106
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderTitle:Landroid/widget/TextView;
+
+    const/4 v1, 0x5
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 108
+    :cond_0
     return-void
 .end method
 
@@ -801,23 +822,23 @@
     .parameter "b"
 
     .prologue
-    .line 149
+    .line 156
     sub-int v0, p4, p2
 
     sub-int v1, p5, p3
 
     invoke-direct {p0, v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderView;->setupBackgroundGraphics(II)V
 
-    .line 151
+    .line 158
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->layoutFolderTitle()V
 
-    .line 153
+    .line 160
     invoke-direct {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->layoutFolderContent()V
 
-    .line 155
+    .line 162
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/folder/FolderView;->invalidate()V
 
-    .line 156
+    .line 163
     return-void
 .end method
 
@@ -827,20 +848,20 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 141
+    .line 148
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onMeasure(II)V
 
-    .line 143
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderTitle:Landroid/view/View;
+    .line 150
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderTitle:Landroid/widget/TextView;
 
-    invoke-virtual {v0, p1, p2}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v0, p1, p2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 144
+    .line 151
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mFolderContent:Landroid/view/View;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/View;->measure(II)V
 
-    .line 145
+    .line 152
     return-void
 .end method
 
@@ -853,21 +874,21 @@
     .parameter "contentHeight"
 
     .prologue
-    .line 114
+    .line 121
     iput p1, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mExpansion:I
 
-    .line 115
+    .line 122
     iput p4, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentWidth:I
 
-    .line 116
+    .line 123
     iput p5, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mContentHeight:I
 
-    .line 117
+    .line 124
     iput p2, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mSourceX:I
 
-    .line 118
+    .line 125
     iput p3, p0, Lcom/sonyericsson/home/layer/folder/FolderView;->mSourceY:I
 
-    .line 119
+    .line 126
     return-void
 .end method

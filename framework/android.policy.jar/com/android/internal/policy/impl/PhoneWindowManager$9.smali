@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -38,14 +38,14 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     .prologue
     .line 2250
     monitor-enter p0
 
     .line 2252
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$9;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
@@ -66,12 +66,12 @@
     return-void
 
     .line 2254
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

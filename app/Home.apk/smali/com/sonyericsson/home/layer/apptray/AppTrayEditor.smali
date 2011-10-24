@@ -91,7 +91,7 @@
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mOriginRect:Landroid/graphics/Rect;
 
     .line 173
-    const/high16 v0, 0x7f0e
+    const v0, 0x7f0e0007
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -211,7 +211,7 @@
     iput v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mCellHeight:I
 
     .line 196
-    const v0, 0x7f0e0007
+    const v0, 0x7f0e000e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -222,7 +222,7 @@
     iput-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;->mLeftNudge:Lcom/sonyericsson/home/layer/HintView;
 
     .line 197
-    const v0, 0x7f0e0008
+    const v0, 0x7f0e000f
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -243,7 +243,7 @@
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/HintView;->setHintType(I)V
 
     .line 200
-    const v0, 0x7f04000a
+    const v0, 0x7f04000b
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

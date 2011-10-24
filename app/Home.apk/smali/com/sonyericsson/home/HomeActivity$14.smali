@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1662
+    .line 1699
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,47 +38,38 @@
 
 # virtual methods
 .method public onCreateFolder(Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;Z)V
-    .locals 4
+    .locals 3
     .parameter "listener"
     .parameter "restore"
 
     .prologue
-    .line 1685
-    const/4 v1, 0x0
-
-    .line 1686
-    .local v1, text:Ljava/lang/String;
+    .line 1722
     const/4 v0, 0x0
 
-    .line 1687
-    .local v0, iconIndex:I
+    .line 1724
+    .local v0, text:Ljava/lang/String;
     if-eqz p2, :cond_0
 
-    .line 1688
-    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    .line 1725
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    iget-object v1, v2, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
+    iget-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
 
-    .line 1689
-    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    iget v0, v2, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderIconIndex:I
-
-    .line 1692
+    .line 1728
     :cond_0
-    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$2600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
 
-    move-result-object v2
+    move-result-object v1
 
-    new-instance v3, Lcom/sonyericsson/home/HomeActivity$14$1;
+    new-instance v2, Lcom/sonyericsson/home/HomeActivity$14$1;
 
-    invoke-direct {v3, p0, p1}, Lcom/sonyericsson/home/HomeActivity$14$1;-><init>(Lcom/sonyericsson/home/HomeActivity$14;Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;)V
+    invoke-direct {v2, p0, p1}, Lcom/sonyericsson/home/HomeActivity$14$1;-><init>(Lcom/sonyericsson/home/HomeActivity$14;Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;)V
 
-    invoke-virtual {v2, v3, v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow;->confirmFolderCreate(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v0}, Lcom/sonyericsson/home/HomeActivityFlow;->confirmFolderCreate(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;)V
 
-    .line 1701
+    .line 1737
     return-void
 .end method
 
@@ -88,10 +79,10 @@
     .parameter "location"
 
     .prologue
-    .line 1665
+    .line 1702
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
 
     move-result-object v0
 
@@ -99,15 +90,15 @@
 
     invoke-virtual {v0, p1, v1, p2}, Lcom/sonyericsson/home/HomeActivityFlow;->onInfoClicked(Lcom/sonyericsson/home/data/Info;ILjava/lang/Object;)V
 
-    .line 1666
+    .line 1703
     instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v0, :cond_0
 
-    .line 1667
+    .line 1704
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/statistics/Statistics;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/statistics/Statistics;
 
     move-result-object v0
 
@@ -118,7 +109,7 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/sonyericsson/home/statistics/Statistics;->registerAcitvityStart(Lcom/sonyericsson/home/data/ActivityInfo;I)V
 
-    .line 1670
+    .line 1707
     :cond_0
     return-void
 .end method
@@ -128,12 +119,12 @@
     .parameter "info"
 
     .prologue
-    .line 1704
+    .line 1740
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$600(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1705
+    .line 1741
     return-void
 .end method
 
@@ -141,7 +132,7 @@
     .locals 0
 
     .prologue
-    .line 1681
+    .line 1718
     return-void
 .end method
 
@@ -149,23 +140,23 @@
     .locals 3
 
     .prologue
-    .line 1709
+    .line 1745
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    const v2, 0x7f0e0038
+    const v2, 0x7f0e004b
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$3502(Lcom/sonyericsson/home/HomeActivity;Landroid/view/View;)Landroid/view/View;
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$3602(Lcom/sonyericsson/home/HomeActivity;Landroid/view/View;)Landroid/view/View;
 
-    .line 1710
+    .line 1746
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$3500(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$3600(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
 
     move-result-object v0
 
@@ -173,7 +164,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1711
+    .line 1747
     return-void
 .end method
 
@@ -182,26 +173,26 @@
     .parameter "location"
 
     .prologue
-    .line 1673
+    .line 1710
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v1, p1}, Lcom/sonyericsson/home/HomeActivity;->access$1602(Lcom/sonyericsson/home/HomeActivity;I)I
+    invoke-static {v1, p1}, Lcom/sonyericsson/home/HomeActivity;->access$1802(Lcom/sonyericsson/home/HomeActivity;I)I
 
-    .line 1674
+    .line 1711
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const/4 v2, 0x1
 
     iput v2, v1, Lcom/sonyericsson/home/HomeActivity;->mAddTo:I
 
-    .line 1675
+    .line 1712
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/home/HomeActivity;->showDialog(I)V
 
-    .line 1676
+    .line 1713
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$14;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const-string v2, "vibrator"
@@ -212,12 +203,12 @@
 
     check-cast v0, Landroid/os/Vibrator;
 
-    .line 1677
+    .line 1714
     .local v0, vibrator:Landroid/os/Vibrator;
     const-wide/16 v1, 0x32
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 1678
+    .line 1715
     return-void
 .end method

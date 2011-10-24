@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .locals 3
     .parameter "v"
 
     .prologue

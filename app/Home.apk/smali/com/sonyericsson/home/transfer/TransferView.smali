@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 98
     invoke-static {}, Lcom/sonyericsson/util/ViewTag;->createNextTag()I
 
     move-result v0
@@ -77,22 +77,22 @@
     .parameter "attrs"
 
     .prologue
-    .line 154
+    .line 155
     invoke-direct {p0, p1, p2}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 156
+    .line 157
     const/high16 v0, 0x4
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/transfer/TransferView;->setDescendantFocusability(I)V
 
-    .line 158
+    .line 159
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTargetRect:Landroid/graphics/Rect;
 
-    .line 159
+    .line 160
     return-void
 .end method
 
@@ -102,33 +102,33 @@
     .parameter "y"
 
     .prologue
-    .line 235
+    .line 236
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 236
+    .line 237
     .local v0, rect:Landroid/graphics/Rect;
     iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v2, v0}, Lcom/sonyericsson/animation/Renderer;->getCurrentRect(Landroid/graphics/Rect;)V
 
-    .line 237
+    .line 238
     iget v2, v0, Landroid/graphics/Rect;->left:I
 
     iget v3, v0, Landroid/graphics/Rect;->top:I
 
     invoke-direct {p0, v2, v3}, Lcom/sonyericsson/home/transfer/TransferView;->updateViewPosition(II)V
 
-    .line 238
+    .line 239
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 240
+    .line 241
     invoke-direct {p0, p0, p1, p2}, Lcom/sonyericsson/home/transfer/TransferView;->hintTransferTarget(Landroid/view/ViewGroup;II)Lcom/sonyericsson/home/transfer/TransferTarget;
 
     move-result-object v1
 
-    .line 241
+    .line 242
     .local v1, target:Lcom/sonyericsson/home/transfer/TransferTarget;
     iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mPreviousHintTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
@@ -138,18 +138,18 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 242
+    .line 243
     iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mPreviousHintTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
     iget-object v3, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v2, v3}, Lcom/sonyericsson/home/transfer/TransferTarget;->cancelHint(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 244
+    .line 245
     :cond_0
     iput-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mPreviousHintTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 246
+    .line 247
     return-object v1
 .end method
 
@@ -160,22 +160,22 @@
     .parameter "y"
 
     .prologue
-    .line 273
+    .line 274
     const/4 v10, 0x0
 
-    .line 274
+    .line 275
     .local v10, target:Lcom/sonyericsson/home/transfer/TransferTarget;
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v11
 
-    .line 275
+    .line 276
     .local v11, targetHitRect:Landroid/graphics/Rect;
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v6
 
-    .line 276
+    .line 277
     .local v6, hintHitRect:Landroid/graphics/Rect;
     invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -191,7 +191,7 @@
 
     if-nez v10, :cond_4
 
-    .line 277
+    .line 278
     move-object/from16 v0, p1
 
     move v1, v7
@@ -200,7 +200,7 @@
 
     move-result-object v5
 
-    .line 278
+    .line 279
     .local v5, child:Landroid/view/View;
     sget v14, Lcom/sonyericsson/home/transfer/TransferView;->TRANSFER_TARGET_TAG:I
 
@@ -208,11 +208,11 @@
 
     move-result-object v8
 
-    .line 282
+    .line 283
     .local v8, tag:Ljava/lang/Object;
     invoke-virtual {v5, v11}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 283
+    .line 284
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
@@ -221,7 +221,7 @@
 
     invoke-virtual {v14, v6}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 284
+    .line 285
     invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
     move-result v14
@@ -234,18 +234,18 @@
 
     if-eqz v14, :cond_1
 
-    .line 286
+    .line 287
     invoke-virtual {v5}, Landroid/view/View;->getLeft()I
 
     move-result v12
 
-    .line 287
+    .line 288
     .local v12, xOffset:I
     invoke-virtual {v5}, Landroid/view/View;->getTop()I
 
     move-result v13
 
-    .line 288
+    .line 289
     .local v13, yOffset:I
     move-object/from16 v0, p0
 
@@ -257,7 +257,7 @@
 
     invoke-virtual {v14, v15}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 289
+    .line 290
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
@@ -268,14 +268,14 @@
 
     invoke-virtual {v14, v15}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 290
+    .line 291
     if-eqz v8, :cond_2
 
     instance-of v14, v8, Ljava/lang/ref/WeakReference;
 
     if-eqz v14, :cond_2
 
-    .line 291
+    .line 292
     check-cast v8, Ljava/lang/ref/WeakReference;
 
     .end local v8           #tag:Ljava/lang/Object;
@@ -283,7 +283,7 @@
 
     move-result-object v9
 
-    .line 292
+    .line 293
     .local v9, tagObj:Ljava/lang/Object;
     if-eqz v9, :cond_0
 
@@ -319,14 +319,14 @@
 
     if-eqz v14, :cond_0
 
-    .line 296
+    .line 297
     move-object v0, v9
 
     check-cast v0, Lcom/sonyericsson/home/transfer/TransferTarget;
 
     move-object v10, v0
 
-    .line 304
+    .line 305
     .end local v5           #child:Landroid/view/View;
     .end local v9           #tagObj:Ljava/lang/Object;
     :cond_0
@@ -339,7 +339,7 @@
 
     invoke-virtual {v14, v12}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 305
+    .line 306
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
@@ -348,7 +348,7 @@
 
     invoke-virtual {v14, v13}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 276
+    .line 277
     .end local v12           #xOffset:I
     .end local v13           #yOffset:I
     :cond_1
@@ -356,7 +356,7 @@
 
     goto/16 :goto_0
 
-    .line 298
+    .line 299
     .restart local v5       #child:Landroid/view/View;
     .restart local v8       #tag:Ljava/lang/Object;
     .restart local v12       #xOffset:I
@@ -405,7 +405,7 @@
 
     if-eqz v14, :cond_3
 
-    .line 300
+    .line 301
     move-object v0, v5
 
     check-cast v0, Lcom/sonyericsson/home/transfer/TransferTarget;
@@ -414,13 +414,13 @@
 
     goto :goto_1
 
-    .line 301
+    .line 302
     :cond_3
     instance-of v14, v5, Landroid/view/ViewGroup;
 
     if-eqz v14, :cond_0
 
-    .line 302
+    .line 303
     check-cast v5, Landroid/view/ViewGroup;
 
     .end local v5           #child:Landroid/view/View;
@@ -442,22 +442,22 @@
 
     goto :goto_1
 
-    .line 308
+    .line 309
     .end local v12           #xOffset:I
     .end local v13           #yOffset:I
     :cond_4
     invoke-static {v6}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 309
+    .line 310
     const/4 v6, 0x0
 
-    .line 310
+    .line 311
     invoke-static {v11}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 311
+    .line 312
     const/4 v11, 0x0
 
-    .line 313
+    .line 314
     return-object v10
 .end method
 
@@ -467,46 +467,46 @@
     .parameter "sourceView"
 
     .prologue
-    .line 378
+    .line 379
     const/4 v2, 0x0
 
-    .line 379
+    .line 380
     .local v2, xOffset:I
     const/4 v3, 0x0
 
-    .line 380
+    .line 381
     .local v3, yOffset:I
     :goto_0
     if-eqz p2, :cond_1
 
     if-eq p2, p0, :cond_1
 
-    .line 381
+    .line 382
     invoke-virtual {p2}, Landroid/view/View;->getLeft()I
 
     move-result v4
 
     add-int/2addr v2, v4
 
-    .line 382
+    .line 383
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
 
     move-result v4
 
     add-int/2addr v3, v4
 
-    .line 383
+    .line 384
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
-    .line 384
+    .line 385
     .local v1, parent:Landroid/view/ViewParent;
     instance-of v4, v1, Landroid/view/ViewGroup;
 
     if-eqz v4, :cond_0
 
-    .line 385
+    .line 386
     move-object v0, v1
 
     check-cast v0, Landroid/view/ViewGroup;
@@ -515,21 +515,21 @@
 
     goto :goto_0
 
-    .line 387
+    .line 388
     :cond_0
     const/4 p2, 0x0
 
     goto :goto_0
 
-    .line 390
+    .line 391
     .end local v1           #parent:Landroid/view/ViewParent;
     :cond_1
     invoke-virtual {p1, v2}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 391
+    .line 392
     invoke-virtual {p1, v3}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 392
+    .line 393
     return-void
 .end method
 
@@ -539,14 +539,14 @@
     .parameter "top"
 
     .prologue
-    .line 256
+    .line 257
     iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getLeft()I
 
     move-result v0
 
-    .line 257
+    .line 258
     .local v0, currentLeft:I
     iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
@@ -554,7 +554,7 @@
 
     move-result v1
 
-    .line 258
+    .line 259
     .local v1, currentTop:I
     iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
@@ -562,14 +562,14 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 259
+    .line 260
     iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     sub-int v3, p2, v1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 260
+    .line 261
     return-void
 .end method
 
@@ -579,30 +579,30 @@
     .locals 2
 
     .prologue
-    .line 463
+    .line 464
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 464
+    .line 465
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mPreviousHintTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
     if-eqz v0, :cond_0
 
-    .line 465
+    .line 466
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mPreviousHintTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
     iget-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/transfer/TransferTarget;->cancelHint(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 467
+    .line 468
     :cond_0
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/sonyericsson/home/transfer/TransferView;->dropFinished(Z)V
+    invoke-virtual {p0, v0}, Lcom/sonyericsson/home/transfer/TransferView;->dropFinished(I)V
 
-    .line 469
+    .line 470
     :cond_1
     return-void
 .end method
@@ -614,19 +614,19 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 336
+    .line 337
     const-wide/16 v7, 0x0
 
-    .line 341
+    .line 342
     .local v7, startTime:J
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 343
+    .line 344
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 344
+    .line 345
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     iget-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
@@ -643,21 +643,21 @@
 
     move-result v6
 
-    .line 346
+    .line 347
     .local v6, newFrame:Z
     if-eqz v6, :cond_0
 
-    .line 347
+    .line 348
     invoke-virtual {p0}, Lcom/sonyericsson/home/transfer/TransferView;->invalidate()V
 
-    .line 350
+    .line 351
     .end local v6           #newFrame:Z
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRenderer:Lcom/sonyericsson/animation/Renderer;
 
     if-eqz v0, :cond_1
 
-    .line 351
+    .line 352
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRenderer:Lcom/sonyericsson/animation/Renderer;
 
     iget-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteView:Landroid/view/View;
@@ -674,31 +674,31 @@
 
     move-result v6
 
-    .line 353
+    .line 354
     .restart local v6       #newFrame:Z
     if-eqz v6, :cond_2
 
-    .line 354
+    .line 355
     invoke-virtual {p0}, Lcom/sonyericsson/home/transfer/TransferView;->invalidate()V
 
-    .line 367
+    .line 368
     .end local v6           #newFrame:Z
     :cond_1
     :goto_0
     return-void
 
-    .line 356
+    .line 357
     .restart local v6       #newFrame:Z
     :cond_2
     iput-object v9, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRenderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 357
+    .line 358
     iput-object v9, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRect:Landroid/graphics/Rect;
 
-    .line 358
+    .line 359
     iput-object v9, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteView:Landroid/view/View;
 
-    .line 359
+    .line 360
     invoke-virtual {p0}, Lcom/sonyericsson/home/transfer/TransferView;->invalidate()V
 
     goto :goto_0
@@ -710,7 +710,7 @@
     .parameter "direction"
 
     .prologue
-    .line 510
+    .line 514
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mFocusHandler:Lcom/sonyericsson/home/transfer/TransferView$FocusHandler;
 
     if-eqz v0, :cond_0
@@ -723,10 +723,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 512
+    .line 516
     const/4 v0, 0x1
 
-    .line 515
+    .line 519
     :goto_0
     return v0
 
@@ -738,62 +738,67 @@
     goto :goto_0
 .end method
 
-.method public dropFinished(Z)V
+.method public dropFinished(I)V
     .locals 7
-    .parameter "success"
+    .parameter "result"
 
     .prologue
     const/4 v6, 0x0
 
     const/4 v2, 0x0
 
-    .line 473
+    .line 474
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     const-string v1, "COMMAND_DROP"
 
     invoke-interface {v0, v1, v2, v2, v6}, Lcom/sonyericsson/animation/Renderer;->sendCommand(Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 475
+    .line 476
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
     if-eqz v0, :cond_0
 
-    .line 476
-    if-eqz p1, :cond_2
-
     .line 477
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_2
+
+    .line 478
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/transfer/TransferSource;->onTransferCompleted()V
 
-    .line 490
+    .line 494
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferListener:Lcom/sonyericsson/home/transfer/TransferView$TransferListener;
 
     if-eqz v0, :cond_1
 
-    .line 491
+    .line 495
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferListener:Lcom/sonyericsson/home/transfer/TransferView$TransferListener;
 
     invoke-interface {v0, v2}, Lcom/sonyericsson/home/transfer/TransferView$TransferListener;->onTransferEnd(Z)V
 
-    .line 494
+    .line 498
     :cond_1
     iput-object v6, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
-    .line 495
+    .line 499
     iput-object v6, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
-    .line 496
+    .line 500
     iput-object v6, p0, Lcom/sonyericsson/home/transfer/TransferView;->mPreviousHintTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 497
+    .line 501
     return-void
 
     .line 479
     :cond_2
+    if-nez p1, :cond_3
+
+    .line 480
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
     iget-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
@@ -806,31 +811,31 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRenderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 480
+    .line 481
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRenderer:Lcom/sonyericsson/animation/Renderer;
 
     if-eqz v0, :cond_0
 
-    .line 481
+    .line 482
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     iput-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteView:Landroid/view/View;
 
-    .line 482
+    .line 483
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRect:Landroid/graphics/Rect;
 
-    .line 483
+    .line 484
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 484
+    .line 485
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRenderer:Lcom/sonyericsson/animation/Renderer;
 
     iget-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRect:Landroid/graphics/Rect;
@@ -843,8 +848,27 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/sonyericsson/animation/Renderer;->start(Landroid/graphics/Rect;IIJ)V
 
-    .line 485
+    .line 486
     invoke-virtual {p0}, Lcom/sonyericsson/home/transfer/TransferView;->invalidate()V
+
+    goto :goto_0
+
+    .line 489
+    :cond_3
+    const/4 v0, 0x2
+
+    if-ne p1, v0, :cond_0
+
+    .line 490
+    iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
+
+    iget-object v1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
+
+    invoke-interface {v0, v1, v6}, Lcom/sonyericsson/home/transfer/TransferSource;->onTransferCanceled(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;)Lcom/sonyericsson/animation/Renderer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mDeleteRenderer:Lcom/sonyericsson/animation/Renderer;
 
     goto :goto_0
 .end method
@@ -853,7 +877,7 @@
     .locals 1
 
     .prologue
-    .line 441
+    .line 442
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -874,19 +898,19 @@
     .parameter "view"
 
     .prologue
-    .line 450
+    .line 451
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 451
+    .line 452
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 453
+    .line 454
     :goto_0
     return v0
 
@@ -901,22 +925,22 @@
     .parameter "event"
 
     .prologue
-    .line 319
+    .line 320
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 322
+    .line 323
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/transfer/TransferView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 323
+    .line 324
     const/4 v0, 0x1
 
-    .line 331
+    .line 332
     :goto_0
     return v0
 
-    .line 328
+    .line 329
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -926,7 +950,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchX:I
 
-    .line 329
+    .line 330
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -935,7 +959,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchY:I
 
-    .line 331
+    .line 332
     const/4 v0, 0x0
 
     goto :goto_0
@@ -947,7 +971,7 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 520
+    .line 524
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mFocusHandler:Lcom/sonyericsson/home/transfer/TransferView$FocusHandler;
 
     if-eqz v0, :cond_0
@@ -960,10 +984,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 522
+    .line 526
     const/4 v0, 0x1
 
-    .line 525
+    .line 529
     :goto_0
     return v0
 
@@ -984,18 +1008,18 @@
 
     const/4 v8, 0x0
 
-    .line 182
+    .line 183
     iget-object v4, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     if-nez v4, :cond_0
 
     move v4, v8
 
-    .line 223
+    .line 224
     :goto_0
     return v4
 
-    .line 185
+    .line 186
     :cond_0
     iget-boolean v4, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchingView:Z
 
@@ -1003,16 +1027,16 @@
 
     move v4, v9
 
-    .line 189
+    .line 190
     goto :goto_0
 
-    .line 192
+    .line 193
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 193
+    .line 194
     .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -1020,7 +1044,7 @@
 
     float-to-int v2, v4
 
-    .line 194
+    .line 195
     .local v2, x:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -1028,13 +1052,13 @@
 
     float-to-int v3, v4
 
-    .line 196
+    .line 197
     .local v3, y:I
     const/4 v4, 0x2
 
     if-ne v0, v4, :cond_2
 
-    .line 197
+    .line 198
     iget-object v4, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTargetRect:Landroid/graphics/Rect;
 
     iget-object v5, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTargetRect:Landroid/graphics/Rect;
@@ -1059,14 +1083,14 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 200
+    .line 201
     invoke-direct {p0, v2, v3}, Lcom/sonyericsson/home/transfer/TransferView;->doHinting(II)Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 203
+    .line 204
     :cond_2
     if-ne v0, v9, :cond_3
 
-    .line 206
+    .line 207
     iget v4, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchX:I
 
     iget v5, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchY:I
@@ -1075,41 +1099,41 @@
 
     move-result-object v1
 
-    .line 208
+    .line 209
     .local v1, target:Lcom/sonyericsson/home/transfer/TransferTarget;
     if-eqz v1, :cond_4
 
-    .line 209
+    .line 210
     iget-object v4, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
     iget-object v5, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v1, v4, v5, p0}, Lcom/sonyericsson/home/transfer/TransferTarget;->drop(Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    .line 215
+    .line 216
     :goto_1
     iput-boolean v8, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchingView:Z
 
-    .line 218
+    .line 219
     .end local v1           #target:Lcom/sonyericsson/home/transfer/TransferTarget;
     :cond_3
     invoke-virtual {p0}, Lcom/sonyericsson/home/transfer/TransferView;->invalidate()V
 
-    .line 220
+    .line 221
     iput v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchX:I
 
-    .line 221
+    .line 222
     iput v3, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchY:I
 
     move v4, v9
 
-    .line 223
+    .line 224
     goto :goto_0
 
-    .line 211
+    .line 212
     .restart local v1       #target:Lcom/sonyericsson/home/transfer/TransferTarget;
     :cond_4
-    invoke-virtual {p0, v8}, Lcom/sonyericsson/home/transfer/TransferView;->dropFinished(Z)V
+    invoke-virtual {p0, v8}, Lcom/sonyericsson/home/transfer/TransferView;->dropFinished(I)V
 
     goto :goto_1
 .end method
@@ -1120,17 +1144,17 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 164
+    .line 165
     iget-boolean v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mResetFocusability:Z
 
     if-eqz v0, :cond_0
 
-    .line 165
+    .line 166
     const/high16 v0, 0x4
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/transfer/TransferView;->setDescendantFocusability(I)V
 
-    .line 167
+    .line 168
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/RelativeLayout;->requestFocus(ILandroid/graphics/Rect;)Z
 
@@ -1144,10 +1168,10 @@
     .parameter "handler"
 
     .prologue
-    .line 505
+    .line 509
     iput-object p1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mFocusHandler:Lcom/sonyericsson/home/transfer/TransferView$FocusHandler;
 
-    .line 506
+    .line 510
     return-void
 .end method
 
@@ -1156,10 +1180,10 @@
     .parameter "reset"
 
     .prologue
-    .line 177
+    .line 178
     iput-boolean p1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mResetFocusability:Z
 
-    .line 178
+    .line 179
     return-void
 .end method
 
@@ -1168,10 +1192,10 @@
     .parameter "transferListener"
 
     .prologue
-    .line 432
+    .line 433
     iput-object p1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferListener:Lcom/sonyericsson/home/transfer/TransferView$TransferListener;
 
-    .line 433
+    .line 434
     return-void
 .end method
 
@@ -1184,37 +1208,37 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 397
+    .line 398
     iput-object p1, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
-    .line 398
+    .line 399
     iput-object p2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
 
-    .line 399
+    .line 400
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchingView:Z
 
-    .line 401
+    .line 402
     invoke-direct {p0, p2, p3}, Lcom/sonyericsson/home/transfer/TransferView;->offsetView(Landroid/view/View;Landroid/view/View;)V
 
-    .line 405
+    .line 406
     new-instance v0, Lcom/sonyericsson/graphics/mesh/MeshRenderer;
 
     invoke-direct {v0}, Lcom/sonyericsson/graphics/mesh/MeshRenderer;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 407
+    .line 408
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 408
+    .line 409
     .local v1, rect:Landroid/graphics/Rect;
     invoke-virtual {p2, v1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 409
+    .line 410
     iget v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchX:I
 
     iget v2, v1, Landroid/graphics/Rect;->left:I
@@ -1223,7 +1247,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchXOffset:I
 
-    .line 410
+    .line 411
     iget v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchY:I
 
     iget v2, v1, Landroid/graphics/Rect;->top:I
@@ -1232,7 +1256,7 @@
 
     iput v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchYOffset:I
 
-    .line 411
+    .line 412
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     iget v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchXOffset:I
@@ -1245,25 +1269,27 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/sonyericsson/animation/Renderer;->start(Landroid/graphics/Rect;IIJ)V
 
-    .line 412
+    .line 413
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTargetRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 413
+    .line 414
     invoke-static {v1}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
-
-    .line 415
-    iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferListener:Lcom/sonyericsson/home/transfer/TransferView$TransferListener;
-
-    if-eqz v0, :cond_0
 
     .line 416
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferListener:Lcom/sonyericsson/home/transfer/TransferView$TransferListener;
 
-    invoke-interface {v0}, Lcom/sonyericsson/home/transfer/TransferView$TransferListener;->onTransferStart()V
+    if-eqz v0, :cond_0
 
-    .line 419
+    .line 417
+    iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTransferListener:Lcom/sonyericsson/home/transfer/TransferView$TransferListener;
+
+    iget-object v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mView:Landroid/view/View;
+
+    invoke-interface {v0, v2}, Lcom/sonyericsson/home/transfer/TransferView$TransferListener;->onTransferStart(Landroid/view/View;)V
+
+    .line 420
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
@@ -1273,14 +1299,14 @@
 
     invoke-interface {v0, v2, v6, v6, v3}, Lcom/sonyericsson/animation/Renderer;->sendCommand(Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 421
+    .line 422
     iget v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchX:I
 
     iget v2, p0, Lcom/sonyericsson/home/transfer/TransferView;->mTouchY:I
 
     invoke-direct {p0, v0, v2}, Lcom/sonyericsson/home/transfer/TransferView;->doHinting(II)Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 423
+    .line 424
     iget-object v0, p0, Lcom/sonyericsson/home/transfer/TransferView;->mRenderer:Lcom/sonyericsson/animation/Renderer;
 
     return-object v0

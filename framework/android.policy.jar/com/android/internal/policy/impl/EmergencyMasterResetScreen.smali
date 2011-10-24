@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
-    .registers 11
+    .locals 7
     .parameter "context"
     .parameter "updateMonitor"
     .parameter "callback"
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)I
-    .registers 2
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -164,7 +164,7 @@
 .end method
 
 .method static synthetic access$100(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    .registers 2
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -175,7 +175,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)Landroid/app/AlertDialog;
-    .registers 2
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -188,7 +188,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)V
-    .registers 1
+    .locals 0
     .parameter "x0"
 
     .prologue
@@ -199,7 +199,7 @@
 .end method
 
 .method static synthetic access$400(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)V
-    .registers 1
+    .locals 0
     .parameter "x0"
 
     .prologue
@@ -210,7 +210,7 @@
 .end method
 
 .method static synthetic access$500(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)Landroid/content/Context;
-    .registers 2
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -221,7 +221,7 @@
 .end method
 
 .method static synthetic access$600(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;)Landroid/media/AudioManager;
-    .registers 2
+    .locals 1
     .parameter "x0"
 
     .prologue
@@ -232,7 +232,7 @@
 .end method
 
 .method static synthetic access$602(Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;Landroid/media/AudioManager;)Landroid/media/AudioManager;
-    .registers 2
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
@@ -244,7 +244,7 @@
 .end method
 
 .method private emergencyMasterResetExit()V
-    .registers 2
+    .locals 1
 
     .prologue
     .line 311
@@ -267,7 +267,7 @@
 .end method
 
 .method private executeMasterReset()V
-    .registers 6
+    .locals 5
 
     .prologue
     .line 280
@@ -281,14 +281,14 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_0
 
     .line 302
-    :goto_c
+    :goto_0
     return-void
 
     .line 284
-    :cond_d
+    :cond_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getBatteryLevel()I
@@ -299,7 +299,7 @@
     .local v1, level:I
     const/16 v2, 0x1e
 
-    if-gt v2, v1, :cond_24
+    if-gt v2, v1, :cond_1
 
     .line 292
     iget-object v2, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mContext:Landroid/content/Context;
@@ -312,10 +312,10 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    goto :goto_c
+    goto :goto_0
 
     .line 297
-    :cond_24
+    :cond_1
     invoke-direct {p0}, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->getLowBatteryDialog()Landroid/app/AlertDialog;
 
     move-result-object v0
@@ -331,17 +331,17 @@
 
     invoke-interface {v2, v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock(I)V
 
-    goto :goto_c
+    goto :goto_0
 .end method
 
 .method private getFinalConfirmationDialog()Landroid/app/AlertDialog;
-    .registers 5
+    .locals 4
 
     .prologue
     .line 229
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     .line 230
     new-instance v0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$InfoDialog;
@@ -393,20 +393,20 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 250
-    :cond_38
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
 
     return-object v0
 .end method
 
 .method private getLowBatteryDialog()Landroid/app/AlertDialog;
-    .registers 5
+    .locals 4
 
     .prologue
     .line 259
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 260
     new-instance v0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$InfoDialog;
@@ -439,7 +439,7 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 268
-    :cond_25
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
     return-object v0
@@ -448,13 +448,13 @@
 
 # virtual methods
 .method public final cleanUp()V
-    .registers 2
+    .locals 1
 
     .prologue
     .line 180
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
 
@@ -462,7 +462,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 182
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
@@ -470,10 +470,10 @@
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 184
-    :cond_11
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
@@ -481,7 +481,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 185
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
@@ -489,12 +489,12 @@
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 187
-    :cond_22
+    :cond_1
     return-void
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 2
     .parameter "event"
 
     .prologue
@@ -512,7 +512,7 @@
 .end method
 
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
     .parameter "ev"
 
     .prologue
@@ -538,7 +538,7 @@
 .end method
 
 .method public final needsInput()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 191
@@ -548,7 +548,7 @@
 .end method
 
 .method protected final onDetachedFromWindow()V
-    .registers 1
+    .locals 0
 
     .prologue
     .line 198
@@ -562,13 +562,13 @@
 .end method
 
 .method public final onPause()V
-    .registers 2
+    .locals 1
 
     .prologue
     .line 145
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
 
@@ -576,7 +576,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 148
     sget-object v0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;->FinalConfirmation:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;
@@ -589,15 +589,15 @@
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 159
-    :cond_15
-    :goto_15
+    :cond_0
+    :goto_0
     return-void
 
     .line 152
-    :cond_16
+    :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
@@ -605,7 +605,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 155
     sget-object v0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;->LowBattery:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;
@@ -617,11 +617,11 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    goto :goto_15
+    goto :goto_0
 .end method
 
 .method public final onResume()V
-    .registers 3
+    .locals 2
 
     .prologue
     .line 166
@@ -629,7 +629,7 @@
 
     sget-object v1, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;->FinalConfirmation:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_1
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
 
@@ -637,7 +637,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 168
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mFinalConfirmationDialog:Landroid/app/AlertDialog;
@@ -645,8 +645,8 @@
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     .line 173
-    :cond_13
-    :goto_13
+    :cond_0
+    :goto_0
     sget-object v0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;->None:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mMode:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;
@@ -655,12 +655,12 @@
     return-void
 
     .line 169
-    :cond_18
+    :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mMode:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;
 
     sget-object v1, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;->LowBattery:Lcom/android/internal/policy/impl/EmergencyMasterResetScreen$Mode;
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
@@ -668,12 +668,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 171
     iget-object v0, p0, Lcom/android/internal/policy/impl/EmergencyMasterResetScreen;->mLowBatteryDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    goto :goto_13
+    goto :goto_0
 .end method

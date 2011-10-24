@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 189
+    .line 190
     iput-object p1, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2$1;->this$1:Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2$1;->val$view:Landroid/view/View;
@@ -52,12 +52,12 @@
 
 
 # virtual methods
-.method public dropFinished(Z)V
+.method public dropFinished(I)V
     .locals 6
-    .parameter "successful"
+    .parameter "result"
 
     .prologue
-    .line 191
+    .line 192
     iget-object v0, p0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2$1;->this$1:Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/trashcan/TrashcanController$2;->this$0:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
@@ -78,8 +78,8 @@
 
     move v5, p1
 
-    invoke-static/range {v0 .. v5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$800(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;Z)V
+    invoke-static/range {v0 .. v5}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->access$800(Lcom/sonyericsson/home/layer/trashcan/TrashcanController;Landroid/view/View;Lcom/sonyericsson/animation/Renderer;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;Lcom/sonyericsson/home/data/Info;I)V
 
-    .line 192
+    .line 193
     return-void
 .end method

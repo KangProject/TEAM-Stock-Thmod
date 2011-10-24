@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">لغو</string>
     <string name="home_button_exit_overview">خروج از نماي كلي</string>
     <string name="home_no_uninstallable_apps_txt">این برنامه ها را نمی توان حذف کرد</string>
+    <string name="home_app_share_dropzone_hint_txt">برای به اشتراک گذاشتن مورد آن را اینجا رها کنید</string>
+    <string name="appdialog_title">پست کردن به Facebook</string>
+    <string name="appdialog_comment_hint">افزودن نظر</string>
+    <string name="appdialog_button_share">به اشتراک گذاشتن</string>
+    <string name="appdialog_button_cancel">لغو کردن</string>
+    <string name="appdialog_other_options_info">سایر گزینه های اشتراک</string>
+    <string name="appdialog_progress_info">ایجاد پست</string>
+    <string name="appdialog_toast_cannot_be_shared">این مورد را نمی توان به اشتراک گذاشت</string>
+    <string name="appdialog_toast_connection_error">خطای اتصال</string>
+    <string name="appdialog_toast_sharing">اشتراک گذاری در Facebook</string>
+    <string name="home_app_share_chooser_title_txt">به اشتراک گذاشتن</string>
 </resources>

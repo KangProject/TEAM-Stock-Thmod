@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Annuleren</string>
     <string name="home_button_exit_overview">Overzicht afsluiten</string>
     <string name="home_no_uninstallable_apps_txt">Deze applicaties kunnen niet worden verwijderd</string>
+    <string name="home_app_share_dropzone_hint_txt">Hier neerzetten om item te delen</string>
+    <string name="appdialog_title">Posten op Facebook</string>
+    <string name="appdialog_comment_hint">Opmerking toevoegen</string>
+    <string name="appdialog_button_share">Delen</string>
+    <string name="appdialog_button_cancel">Annuleren</string>
+    <string name="appdialog_other_options_info">Overige deelopties</string>
+    <string name="appdialog_progress_info">Post wordt gemaakt</string>
+    <string name="appdialog_toast_cannot_be_shared">Dit item kan niet worden gedeeld</string>
+    <string name="appdialog_toast_connection_error">Verbindingsfout</string>
+    <string name="appdialog_toast_sharing">Delen op Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Delen</string>
 </resources>

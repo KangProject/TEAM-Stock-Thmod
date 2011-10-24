@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
-    .registers 4
+    .locals 0
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onPress()V
-    .registers 3
+    .locals 2
 
     .prologue
     .line 206
@@ -57,9 +57,9 @@
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-	
+
     .line 210
-    :try_start_c
+    :try_start_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
@@ -67,22 +67,22 @@
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-    :try_end_15
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_c .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 213
-    :goto_15
+    :goto_0
     return-void
 
     .line 211
-    :catch_16
+    :catch_0
     move-exception v1
 
-    goto :goto_15
+    goto :goto_0
 .end method
 
 .method public showBeforeProvisioning()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 215
@@ -92,7 +92,7 @@
 .end method
 
 .method public showDuringKeyguard()Z
-    .registers 2
+    .locals 1
 
     .prologue
     .line 211

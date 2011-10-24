@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -35,31 +35,31 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 5
+    .locals 3
     .parameter "msg"
 
     .prologue
     .line 156
     iget v0, p1, Landroid/os/Message;->what:I
 
-    packed-switch v0, :pswitch_data_38
+    packed-switch v0, :pswitch_data_0
 
     .line 176
     .end local p0
-    :goto_5
+    :goto_0
     return-void
 
     .line 158
     .restart local p0
-    :pswitch_6
+    :pswitch_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$1;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$000(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 161
-    :pswitch_c
+    :pswitch_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$1;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
@@ -68,18 +68,18 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$100(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;II)V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 164
-    :pswitch_16
+    :pswitch_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$1;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$200(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 167
-    :pswitch_1c
+    :pswitch_3
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$1;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -89,21 +89,21 @@
 
     invoke-static {v0, p0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$300(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;)V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 170
     .restart local p0
-    :pswitch_26
+    :pswitch_4
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$1;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->handleRingerModeChange(I)V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 173
-    :pswitch_2e
+    :pswitch_5
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$1;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -113,16 +113,16 @@
 
     invoke-virtual {v0, p0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->handlePhoneStateChanged(Ljava/lang/String;)V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 156
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x12d
-        :pswitch_6
-        :pswitch_c
-        :pswitch_16
-        :pswitch_1c
-        :pswitch_26
-        :pswitch_2e
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
     .end packed-switch
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 755
+    .line 766
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$2;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "info"
 
     .prologue
-    .line 759
+    .line 770
     const/4 v0, 0x0
 
     return v0
@@ -53,7 +53,7 @@
     .parameter "info"
 
     .prologue
-    .line 763
+    .line 774
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$2;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1900(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopModelManager;->remove(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 764
+    .line 775
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$2;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -71,7 +71,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 765
+    .line 776
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$2;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -80,7 +80,7 @@
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 767
+    .line 778
     :cond_0
     const/4 v0, 0x1
 

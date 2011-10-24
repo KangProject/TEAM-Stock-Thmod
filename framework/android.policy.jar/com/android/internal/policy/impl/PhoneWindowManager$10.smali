@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .locals 9
 
     .prologue
     const/4 v7, 0x0
@@ -58,16 +58,16 @@
 
     move-result v5
 
-    if-nez v5, :cond_12
+    if-nez v5, :cond_1
 
     .line 526
-    :cond_11
-    :goto_11
+    :cond_0
+    :goto_0
     return-void
 
     .line 509
-    :cond_12
-    :try_start_12
+    :cond_1
+    :try_start_0
     iget-object v5, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$10;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v6, 0x0
@@ -96,12 +96,12 @@
     move-result-object v2
 
     .local v2, i$:Ljava/util/Iterator;
-    :cond_26
+    :cond_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -117,17 +117,17 @@
     .local v4, uid:I
     const/16 v5, 0x2710
 
-    if-lt v4, v5, :cond_26
+    if-lt v4, v5, :cond_2
 
     const v5, 0x1869f
 
-    if-gt v4, v5, :cond_26
+    if-gt v4, v5, :cond_2
 
     iget v5, v0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I
 
     const/16 v6, 0x64
 
-    if-ne v5, v6, :cond_26
+    if-ne v5, v6, :cond_2
 
     .line 518
     iget-object v5, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$10;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -148,10 +148,10 @@
     iget v5, v0, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
 
     invoke-static {v5}, Landroid/os/Process;->killProcess(I)V
-    :try_end_57
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_57} :catch_59
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_11
+    goto :goto_0
 
     return-void
 
@@ -161,10 +161,10 @@
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #mgr:Landroid/app/IActivityManager;
     .end local v4           #uid:I
-    :catch_59
+    :catch_0
     move-exception v5
 
-    goto :goto_11
+    goto :goto_0
 
     return-void
 .end method

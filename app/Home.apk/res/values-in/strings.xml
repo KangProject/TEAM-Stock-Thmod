@@ -39,4 +39,15 @@
     <string name="gui_cancel_txt">Batal</string>
     <string name="home_button_exit_overview">Keluar dari ikhtisar</string>
     <string name="home_no_uninstallable_apps_txt">Aplikasi ini tidak dapat dihapus instal</string>
+    <string name="home_app_share_dropzone_hint_txt">Jatuhkan di sini untuk berbagi item</string>
+    <string name="appdialog_title">Kirim ke Facebook</string>
+    <string name="appdialog_comment_hint">Tambah komentar Anda</string>
+    <string name="appdialog_button_share">Bagikan</string>
+    <string name="appdialog_button_cancel">Batal</string>
+    <string name="appdialog_other_options_info">Opsi berbagi lainnya</string>
+    <string name="appdialog_progress_info">Membuat kiriman</string>
+    <string name="appdialog_toast_cannot_be_shared">Item ini tidak dapat dibagikan</string>
+    <string name="appdialog_toast_connection_error">Galat sambungan</string>
+    <string name="appdialog_toast_sharing">Berbagi di Facebook</string>
+    <string name="home_app_share_chooser_title_txt">Berbagi-pakai</string>
 </resources>

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PasswordUnlockScreen;JJ)V
-    .registers 6
+    .locals 0
     .parameter
     .parameter "x0"
     .parameter "x1"
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onFinish()V
-    .registers 4
+    .locals 3
 
     .prologue
     const/4 v2, 0x1
@@ -76,7 +76,7 @@
 .end method
 
 .method public onTick(J)V
-    .registers 10
+    .locals 7
     .parameter "millisUntilFinished"
 
     .prologue

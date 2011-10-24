@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1628
+    .line 1665
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 1635
+    .line 1672
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
@@ -50,7 +50,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1636
+    .line 1673
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
@@ -61,16 +61,16 @@
 
     move-result-object v0
 
-    .line 1637
+    .line 1674
     .local v0, trashInfo:Lcom/sonyericsson/home/data/Info;
     if-eqz v0, :cond_0
 
-    .line 1638
+    .line 1675
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v1, v0}, Lcom/sonyericsson/home/HomeActivity;->access$600(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1641
+    .line 1678
     .end local v0           #trashInfo:Lcom/sonyericsson/home/data/Info;
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
@@ -81,14 +81,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 1642
+    .line 1679
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/sonyericsson/home/HomeActivity;->access$1200(Lcom/sonyericsson/home/HomeActivity;Z)V
+    invoke-static {v1, v2}, Lcom/sonyericsson/home/HomeActivity;->access$1300(Lcom/sonyericsson/home/HomeActivity;Z)V
 
-    .line 1643
+    .line 1680
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
@@ -97,7 +97,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1644
+    .line 1681
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->hide()V
 
-    .line 1646
+    .line 1683
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
@@ -114,7 +114,7 @@
 
     invoke-static {v1, v2}, Lcom/sonyericsson/home/HomeActivity;->access$1002(Lcom/sonyericsson/home/HomeActivity;Z)Z
 
-    .line 1648
+    .line 1685
     :cond_2
     return-void
 .end method
@@ -125,21 +125,21 @@
     .parameter "dropListener"
 
     .prologue
-    .line 1631
+    .line 1668
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$13;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$1800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/InfoGroupManager;
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$1900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     move-result-object v1
 
     invoke-virtual {v0, v1, p1, p2}, Lcom/sonyericsson/home/HomeActivityFlow;->onDeleteDrop(Lcom/sonyericsson/home/data/InfoGroupInterface;Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    .line 1632
+    .line 1669
     return-void
 .end method

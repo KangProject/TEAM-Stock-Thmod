@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 318
+    .line 335
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$HomeCornerListener;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
     invoke-direct {p0, p1}, Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerListener;-><init>(Lcom/sonyericsson/cornerbutton/CornerButtonController;)V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 318
+    .line 335
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$HomeCornerListener;-><init>(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
 
     return-void
@@ -51,12 +51,12 @@
     .parameter "action"
 
     .prologue
-    .line 321
+    .line 338
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$HomeCornerListener;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$HomeCornerListener;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$800(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/Action;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$900(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/Action;
 
     move-result-object v1
 
@@ -66,11 +66,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 326
+    .line 343
     :goto_0
     return-void
 
-    .line 324
+    .line 341
     :cond_0
     invoke-super {p0, p1}, Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerListener;->onOverAction(Lcom/sonyericsson/cornerbutton/Action;)V
 
