@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Aina päällä</item>
+        <item>Pyynnöstä</item>
+        <item>Ei päällä</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Hyvin pieni</item>
+        <item>Pieni</item>
+        <item>Normaali</item>
+        <item>Suuri</item>
+        <item>Erittäin suuri</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Kauas</item>
+        <item>Keskietäisyydelle</item>
+        <item>Lähelle</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Kiina (GBK)</item>
+        <item>Kiina (Big5)</item>
+        <item>Japanilainen (ISO-2022-JP)</item>
+        <item>Japanilainen (SHIFT_JIS)</item>
+        <item>Japanilainen (EUC-JP)</item>
+    </string-array>
+</resources>

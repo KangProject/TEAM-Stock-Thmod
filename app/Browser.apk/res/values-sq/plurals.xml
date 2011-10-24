@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d përkime</item>
+        <item quantity="zero">Nuk ka përkime</item>
+        <item quantity="one">1 përkim</item>
+        <item quantity="few">%d përkime</item>
+    </plurals>
+</resources>

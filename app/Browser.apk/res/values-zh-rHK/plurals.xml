@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d 相符</item>
+        <item quantity="zero">沒有相符</item>
+        <item quantity="one">一個相符</item>
+        <item quantity="few">%d 相符</item>
+    </plurals>
+</resources>

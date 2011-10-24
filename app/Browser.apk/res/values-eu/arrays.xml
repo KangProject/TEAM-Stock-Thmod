@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Beti aktibatuta</item>
+        <item>Eskatuz gero</item>
+        <item>Desaktibatuta</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Oso txikia</item>
+        <item>Txikia</item>
+        <item>Arrunta</item>
+        <item>Handia</item>
+        <item>Oso handia</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Urrun</item>
+        <item>Ertaina</item>
+        <item>Hurbil</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Txinera (GBK)</item>
+        <item>Txinera (Big5)</item>
+        <item>Japoniera (ISO-2022-JP)</item>
+        <item>Japoniera (SHIFT_JIS)</item>
+        <item>Japoniera (EUC-JP)</item>
+    </string-array>
+</resources>

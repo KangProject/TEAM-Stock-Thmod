@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Завжди ввімкнуто</item>
+        <item>За запитом</item>
+        <item>Вимк.</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Мініатюрний</item>
+        <item>Малий</item>
+        <item>Звичайний</item>
+        <item>Великий</item>
+        <item>Величезний</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Далеко</item>
+        <item>Середній масштаб</item>
+        <item>Закрити</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Латиниця-1 (ISO-8859-1)</item>
+        <item>Юнікод (UTF-8)</item>
+        <item>Китайська (GBK)</item>
+        <item>Китайська (Big5)</item>
+        <item>Японська (ISO-2022-JP)</item>
+        <item>Японська (SHIFT_JIS)</item>
+        <item>Японська (EUC-JP)</item>
+    </string-array>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d মিলছে</item>
+        <item quantity="zero">মিলছে না</item>
+        <item quantity="one">1 টি মিলেছে</item>
+        <item quantity="few">%d মিলছে</item>
+    </plurals>
+</resources>

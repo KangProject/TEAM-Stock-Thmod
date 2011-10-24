@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Sentiasa hidupkan</item>
+        <item>Atas permintaan</item>
+        <item>Mati</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Amat kecil</item>
+        <item>Kecil</item>
+        <item>Normal</item>
+        <item>Besar</item>
+        <item>Amat besar</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Jauh</item>
+        <item>Sederhana</item>
+        <item>Tutup</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unikod (UTF-8)</item>
+        <item>Cina (GBK)</item>
+        <item>Cina (Big5)</item>
+        <item>Jepun (ISO-2022-JP)</item>
+        <item>Jepun (SHIFT_JIS)</item>
+        <item>Jepun (EUC-JP)</item>
+    </string-array>
+</resources>

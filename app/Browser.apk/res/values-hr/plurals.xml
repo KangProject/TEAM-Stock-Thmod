@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">Broj podudaranja: %d</item>
+        <item quantity="zero">Nema podudaranja</item>
+        <item quantity="one">Jedno podudaranje</item>
+        <item quantity="few">Broj podudaranja: %d</item>
+    </plurals>
+</resources>

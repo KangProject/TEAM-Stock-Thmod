@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d találat</item>
+        <item quantity="zero">Nincs találat</item>
+        <item quantity="one">1 találat</item>
+        <item quantity="few">%d találat</item>
+    </plurals>
+</resources>

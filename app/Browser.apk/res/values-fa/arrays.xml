@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>هميشه روشن باشد</item>
+        <item>مورد تقاضا</item>
+        <item>خاموش</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>ریز</item>
+        <item>کوچک</item>
+        <item>عادي</item>
+        <item>بزرگ</item>
+        <item>خیلی بزرگ</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>دور</item>
+        <item>متوسط</item>
+        <item>نزدیک</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>لاتین-1 (ISO-8859-1)</item>
+        <item>یونیکد (UTF-8)</item>
+        <item>چيني (GBK)</item>
+        <item>چيني (Big5)</item>
+        <item>ژاپنی (ISO-2022-JP)</item>
+        <item>ژاپنی (SHIFT_JIS)</item>
+        <item>ژاپنی (EUC-JP)</item>
+    </string-array>
+</resources>

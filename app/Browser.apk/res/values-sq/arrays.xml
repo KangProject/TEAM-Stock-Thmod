@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Gjithmonë aktiv</item>
+        <item>Sipas kërkesës</item>
+        <item>Joaktiv</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Shumë i vogël</item>
+        <item>I vogël</item>
+        <item>Normal</item>
+        <item>I madh</item>
+        <item>Shumë i madh</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Larg</item>
+        <item>Mesatar</item>
+        <item>Afër</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Kinezisht (GBK)</item>
+        <item>Kinezisht (Big5)</item>
+        <item>Japonez (ISO-2022-JP)</item>
+        <item>Japonez (SHIFT_JIS)</item>
+        <item>Japonez (EUC-JP)</item>
+    </string-array>
+</resources>

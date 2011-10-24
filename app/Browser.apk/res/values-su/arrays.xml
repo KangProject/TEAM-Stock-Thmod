@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Hurung terus</item>
+        <item>Sakumaha dipikabutuh</item>
+        <item>Pareum</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Alit pisan</item>
+        <item>Alit</item>
+        <item>Biasa</item>
+        <item>Ageung</item>
+        <item>Ageung</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Jauh</item>
+        <item>Sedeng</item>
+        <item>Tutup</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>China (GBK)</item>
+        <item>China (Big5)</item>
+        <item>Jepang (ISO-2022-JP)</item>
+        <item>Jepang (SHIFT_JIS)</item>
+        <item>Jepang (EUC-JP)</item>
+    </string-array>
+</resources>

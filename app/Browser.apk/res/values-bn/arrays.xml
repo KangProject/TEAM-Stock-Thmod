@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>সর্বদা চালু</item>
+        <item>চাহিদা অনুসারে</item>
+        <item>বন্ধ</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>খুব ছোট</item>
+        <item>ছোট</item>
+        <item>সাধারণ</item>
+        <item>বড়</item>
+        <item>বিশাল বড়</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>দূরে</item>
+        <item>মাধ্যম</item>
+        <item>বন্ধ</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>ল্যাটিন-1 (ISO-8859-1)</item>
+        <item>ইউনিকোড (UTF-8)</item>
+        <item>চিনা (GBK)</item>
+        <item>চিনা (Big5)</item>
+        <item>জাপানী (ISO-2022-JP)</item>
+        <item>জাপানী (SHIFT_JIS)</item>
+        <item>জাপানী (EUC-JP)</item>
+    </string-array>
+</resources>

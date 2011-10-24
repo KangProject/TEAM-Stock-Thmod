@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Sempre activat</item>
+        <item>Segons demanda</item>
+        <item>Desactivat</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Minúscula</item>
+        <item>Petita</item>
+        <item>Normal</item>
+        <item>Gran</item>
+        <item>Enorme</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Lluny</item>
+        <item>Mig</item>
+        <item>A prop</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Xinès (GBK)</item>
+        <item>Xinès (Big5)</item>
+        <item>Japonès (ISO-2022-JP)</item>
+        <item>Japonès (SHIFT_JIS)</item>
+        <item>Japonès (EUC-JP)</item>
+    </string-array>
+</resources>

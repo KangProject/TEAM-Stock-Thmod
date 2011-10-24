@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Әрқашан қосулы</item>
+        <item>Талап бойынша</item>
+        <item>Өшірулі</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Шағын</item>
+        <item>Кішкене</item>
+        <item>Орташа</item>
+        <item>Үлкен</item>
+        <item>Өте үлкен</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Алыс</item>
+        <item>Орташа</item>
+        <item>Жақын</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Латын-1 (ISO-8859-1)</item>
+        <item>Уникод (UTF-8)</item>
+        <item>Қытай (GBK)</item>
+        <item>Қытай (Big5)</item>
+        <item>Жапон (ISO-2022-JP)</item>
+        <item>Жапон (SHIFT_JIS)</item>
+        <item>Жапон (EUC-JP)</item>
+    </string-array>
+</resources>

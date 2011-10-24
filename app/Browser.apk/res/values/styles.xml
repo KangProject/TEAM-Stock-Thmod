@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BrowserDefaultTheme" parent="@android:style/SEMCTheme">
+        <item name="android:directionality">leftToRight</item>
+    </style>
+    <style name="BrowserTheme" parent="@android:style/SEMCTheme">
+        <item name="android:colorBackground">#ffffffff</item>
+        <item name="android:windowBackground">@android:drawable/semc_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:directionality">leftToRight</item>
+    </style>
+    <style name="BookmarkTheme" parent="@android:style/SEMCTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:directionality">leftToRight</item>
+    </style>
+    <style name="TitleBar">
+        <item name="android:windowEnterAnimation">@anim/title_bar_enter</item>
+        <item name="android:windowExitAnimation">@anim/title_bar_exit</item>
+        <item name="android:directionality">leftToRight</item>
+    </style>
+    <style name="BrowserDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:directionality">leftToRight</item>
+    </style>
+</resources>

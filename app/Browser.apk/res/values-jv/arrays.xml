@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Mesthi urip</item>
+        <item>Yen dijaluk</item>
+        <item>Mati</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Paling cilik</item>
+        <item>Cilik</item>
+        <item>Normal</item>
+        <item>Gedhe</item>
+        <item>Paling gedhe</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Adoh</item>
+        <item>Sedheng</item>
+        <item>Tutup</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>China (GBK)</item>
+        <item>China (Big5)</item>
+        <item>Jepang (ISO-2022-JP)</item>
+        <item>Jepang (SHIFT_JIS)</item>
+        <item>Jepang (EUC-JP)</item>
+    </string-array>
+</resources>
