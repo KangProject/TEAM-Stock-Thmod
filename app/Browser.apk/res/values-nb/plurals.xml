@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d treff</item>
+        <item quantity="zero">Ingen treff</item>
+        <item quantity="one">Ett treff</item>
+        <item quantity="few">%d treff</item>
+    </plurals>
+</resources>

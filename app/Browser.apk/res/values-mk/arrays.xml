@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Секогаш вклучено</item>
+        <item>На барање</item>
+        <item>Исклучено</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Ситен</item>
+        <item>Мал</item>
+        <item>Нормален</item>
+        <item>Голем</item>
+        <item>Огромен</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Далеку</item>
+        <item>Средно</item>
+        <item>Близу</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Кинески (GBK)</item>
+        <item>Кинески (Big5)</item>
+        <item>Japanese (ISO-2022-JP)</item>
+        <item>Japanese (SHIFT_JIS)</item>
+        <item>Japanese (EUC-JP)</item>
+    </string-array>
+</resources>

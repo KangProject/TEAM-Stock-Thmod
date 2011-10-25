@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Activat întotdeauna</item>
+        <item>La cerere</item>
+        <item>Dezactivat</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Foarte mică</item>
+        <item>Mică</item>
+        <item>Normală</item>
+        <item>Mare</item>
+        <item>Foarte mare</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Îndepărtat</item>
+        <item>Mediu</item>
+        <item>Apropiat</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Chineză (GBK)</item>
+        <item>Chineză (Big5)</item>
+        <item>Japanese (ISO-2022-JP)</item>
+        <item>Japanese (SHIFT_JIS)</item>
+        <item>Japanese (EUC-JP)</item>
+    </string-array>
+</resources>

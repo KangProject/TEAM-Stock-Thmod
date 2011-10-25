@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d padanan</item>
+        <item quantity="zero">Tiada padanan</item>
+        <item quantity="one">1 padanan</item>
+        <item quantity="few">%d padanan</item>
+    </plurals>
+</resources>

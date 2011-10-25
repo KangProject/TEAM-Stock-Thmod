@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Vždy zapnuté</item>
+        <item>Podľa požiadaviek</item>
+        <item>Vypnuté</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Veľmi malé</item>
+        <item>Malé</item>
+        <item>Normálne</item>
+        <item>Veľké</item>
+        <item>Veľmi veľké</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Ďaleko</item>
+        <item>Stredne vzdialené</item>
+        <item>Blízko</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latinka-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Čínština (GBK)</item>
+        <item>Čínština (Big5)</item>
+        <item>Japončina (ISO-2022-JP)</item>
+        <item>Japončina (SHIFT_JIS)</item>
+        <item>Japončina (EUC-JP)</item>
+    </string-array>
+</resources>

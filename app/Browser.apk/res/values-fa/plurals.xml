@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d مورد منطبق</item>
+        <item quantity="zero">موردی مطابق وجود ندارد</item>
+        <item quantity="one">1 مورد منطبق</item>
+        <item quantity="few">%d مورد منطبق</item>
+    </plurals>
+</resources>

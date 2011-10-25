@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d nu cocog</item>
+        <item quantity="zero">Taya nu cocoh</item>
+        <item quantity="one">1 nu cocog</item>
+        <item quantity="few">%d nu cocog</item>
+    </plurals>
+</resources>

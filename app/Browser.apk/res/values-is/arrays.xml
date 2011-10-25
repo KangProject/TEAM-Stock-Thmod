@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Alltaf kveikt</item>
+        <item>Samkvæmt beiðni</item>
+        <item>Slökkt</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Afar lítil</item>
+        <item>Lítil</item>
+        <item>Venjuleg</item>
+        <item>Stór</item>
+        <item>Mjög stór</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Fjarlægur</item>
+        <item>Miðlungs</item>
+        <item>Nálægur</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latin-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Kínverska (GBK)</item>
+        <item>Kínverska (Big5)</item>
+        <item>Japanska (ISO-2022-JP)</item>
+        <item>Japanska (SHIFT_JIS)</item>
+        <item>Japanska (EUC-JP)</item>
+    </string-array>
+</resources>

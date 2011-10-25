@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d niðurstöður</item>
+        <item quantity="zero">Engar niðurstöður</item>
+        <item quantity="one">Ein niðurstaða</item>
+        <item quantity="few">%d niðurstöður</item>
+    </plurals>
+</resources>

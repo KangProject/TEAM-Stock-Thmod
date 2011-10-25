@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d emaitza</item>
+        <item quantity="zero">Emaitzarik ez</item>
+        <item quantity="one">1 emaitza</item>
+        <item quantity="few">%d emaitza</item>
+    </plurals>
+</resources>

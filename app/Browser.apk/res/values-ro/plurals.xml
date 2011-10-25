@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matches_found">
+        <item quantity="other">%d (de) potriviri</item>
+        <item quantity="zero">Nicio potrivire</item>
+        <item quantity="one">1 potrivire</item>
+        <item quantity="few">%d potriviri</item>
+    </plurals>
+</resources>

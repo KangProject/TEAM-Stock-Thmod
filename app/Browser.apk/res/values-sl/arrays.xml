@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_content_plugins_choices">
+        <item>Vedno vklopljeno</item>
+        <item>Na zahtevo</item>
+        <item>Izklopljeno</item>
+    </string-array>
+    <string-array name="pref_text_size_choices">
+        <item>Drobno</item>
+        <item>Majhno</item>
+        <item>Normalno</item>
+        <item>Veliko</item>
+        <item>Ogromno</item>
+    </string-array>
+    <string-array name="pref_default_zoom_choices">
+        <item>Daleč</item>
+        <item>Srednje</item>
+        <item>Blizu</item>
+    </string-array>
+    <string-array name="pref_default_text_encoding_choices">
+        <item>Latinica-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>kitajščina (GBK)</item>
+        <item>kitajščina (Big5)</item>
+        <item>Japonščina (ISO-2022-JP)</item>
+        <item>Japonščina (SHIFT_JIS)</item>
+        <item>Japonščina (EUC-JP)</item>
+    </string-array>
+</resources>
