@@ -277,6 +277,13 @@
 
     if-lez v3, :cond_5d
 
+    .line 473
+    iget-object v3, p0, Lcom/android/server/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/PowerManagerService;
+
+    const/16 v4, 0x01
+
+    invoke-static {v3, v4}, Lcom/android/server/PowerManagerService;->access$1776(Lcom/android/server/PowerManagerService;I)I
+
     .line 476
     :cond_5d
     monitor-exit v2
