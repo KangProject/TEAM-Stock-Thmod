@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings version="1">
-    <setting key="app-share-enabled">true</setting>
+    <setting key="landscape-mode-enabled">true</setting>
 </settings>

@@ -18,5 +18,5 @@
 .method public abstract onCanceled()V
 .end method
 
-.method public abstract onConfirmed(Ljava/lang/String;)V
+.method public abstract onConfirmed(Ljava/lang/String;I)V
 .end method

@@ -350,26 +350,26 @@
     .local p2, widgetExtras:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Bundle;>;"
     const/4 v9, 0x0
 
-    .line 538
+    .line 520
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 539
+    .line 521
     invoke-virtual {p2}, Ljava/util/ArrayList;->clear()V
 
-    .line 541
+    .line 523
     iget-object v6, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mContext:Landroid/app/Activity;
 
     invoke-virtual {v6}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
 
-    .line 542
+    .line 524
     .local v4, pm:Landroid/content/pm/PackageManager;
     invoke-virtual {v4, v9}, Landroid/content/pm/PackageManager;->getInstalledApplications(I)Ljava/util/List;
 
     move-result-object v3
 
-    .line 543
+    .line 525
     .local v3, pkgs:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -390,7 +390,7 @@
 
     check-cast v0, Landroid/content/pm/ApplicationInfo;
 
-    .line 544
+    .line 526
     .local v0, ai:Landroid/content/pm/ApplicationInfo;
     iget-object v6, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
@@ -402,18 +402,18 @@
 
     if-eqz v6, :cond_0
 
-    .line 545
+    .line 527
     new-instance v5, Landroid/appwidget/AppWidgetProviderInfo;
 
     invoke-direct {v5}, Landroid/appwidget/AppWidgetProviderInfo;-><init>()V
 
-    .line 546
+    .line 528
     .local v5, widgetInfo:Landroid/appwidget/AppWidgetProviderInfo;
     iget v6, v0, Landroid/content/pm/ApplicationInfo;->icon:I
 
     iput v6, v5, Landroid/appwidget/AppWidgetProviderInfo;->icon:I
 
-    .line 547
+    .line 529
     invoke-virtual {v4, v0}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
     move-result-object v6
@@ -424,7 +424,7 @@
 
     iput-object v6, v5, Landroid/appwidget/AppWidgetProviderInfo;->label:Ljava/lang/String;
 
-    .line 551
+    .line 533
     new-instance v6, Landroid/content/ComponentName;
 
     iget-object v7, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -435,15 +435,15 @@
 
     iput-object v6, v5, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    .line 552
+    .line 534
     invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 554
+    .line 536
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 555
+    .line 537
     .local v1, extraBundle:Landroid/os/Bundle;
     const-string v6, "advWidgetName"
 
@@ -451,19 +451,19 @@
 
     invoke-virtual {v1, v6, v7}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 556
+    .line 538
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 560
+    .line 542
     .end local v0           #ai:Landroid/content/pm/ApplicationInfo;
     .end local v1           #extraBundle:Landroid/os/Bundle;
     .end local v5           #widgetInfo:Landroid/appwidget/AppWidgetProviderInfo;
     :cond_1
     iput-boolean v9, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetInfoDirty:Z
 
-    .line 561
+    .line 543
     return-void
 .end method
 
@@ -757,26 +757,20 @@
 .end method
 
 .method public defocus(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
-    .locals 2
+    .locals 1
     .parameter "info"
 
     .prologue
-    .line 490
+    .line 475
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidget(Lcom/sonyericsson/home/data/AdvWidgetInfo;)Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
 
     move-result-object v0
 
-    .line 491
-    .local v0, widgetCache:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
-    .line 492
-    iget-object v1, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onDefocus()V
 
-    invoke-virtual {v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onDefocus()V
-
-    .line 494
-    :cond_0
+    .line 476
     return-void
 .end method
 
@@ -792,26 +786,20 @@
 .end method
 
 .method public focus(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
-    .locals 2
+    .locals 1
     .parameter "info"
 
     .prologue
-    .line 479
+    .line 467
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidget(Lcom/sonyericsson/home/data/AdvWidgetInfo;)Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
 
     move-result-object v0
 
-    .line 480
-    .local v0, widgetCache:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
-    .line 481
-    iget-object v1, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onFocus()V
 
-    invoke-virtual {v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onFocus()V
-
-    .line 483
-    :cond_0
+    .line 468
     return-void
 .end method
 
@@ -820,12 +808,12 @@
     .parameter "view"
 
     .prologue
-    .line 569
+    .line 551
     instance-of v0, p1, Lcom/sonyericsson/home/widget/AdvWidgetRoot;
 
     if-eqz v0, :cond_0
 
-    .line 570
+    .line 552
     check-cast p1, Lcom/sonyericsson/home/widget/AdvWidgetRoot;
 
     .end local p1
@@ -833,11 +821,11 @@
 
     move-result-object v0
 
-    .line 574
+    .line 556
     :goto_0
     return-object v0
 
-    .line 572
+    .line 554
     .restart local p1
     :cond_0
     const-string v0, "AdvWidgetManager"
@@ -846,7 +834,7 @@
 
     invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 574
+    .line 556
     const/4 v0, 0x0
 
     goto :goto_0
@@ -906,19 +894,19 @@
     .end annotation
 
     .prologue
-    .line 523
+    .line 505
     iget-boolean v0, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetInfoDirty:Z
 
     if-eqz v0, :cond_0
 
-    .line 524
+    .line 506
     iget-object v0, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetInfos:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetExtras:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0, v1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidgetInfo(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 526
+    .line 508
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetInfos:Ljava/util/ArrayList;
 
@@ -938,19 +926,19 @@
     .end annotation
 
     .prologue
-    .line 530
+    .line 512
     iget-boolean v0, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetInfoDirty:Z
 
     if-eqz v0, :cond_0
 
-    .line 531
+    .line 513
     iget-object v0, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetInfos:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetExtras:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0, v1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidgetInfo(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 533
+    .line 515
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mWidgetExtras:Ljava/util/ArrayList;
 
@@ -1006,7 +994,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f03001a
+    const v3, 0x7f030018
 
     const/4 v4, 0x0
 
@@ -1069,7 +1057,7 @@
     .locals 5
 
     .prologue
-    .line 512
+    .line 494
     iget-object v3, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1095,7 +1083,7 @@
 
     check-cast v2, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
 
-    .line 513
+    .line 495
     .local v2, w:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
     iget-object v3, v2, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->view:Landroid/view/View;
 
@@ -1103,7 +1091,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 514
+    .line 496
     iget-object v3, v2, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
     if-eqz v3, :cond_0
@@ -1118,18 +1106,18 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 515
+    .line 497
     iget-object v1, v2, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->view:Landroid/view/View;
 
     check-cast v1, Lcom/sonyericsson/home/widget/AdvWidgetRoot;
 
-    .line 516
+    .line 498
     .local v1, root:Lcom/sonyericsson/home/widget/AdvWidgetRoot;
     invoke-virtual {v1}, Lcom/sonyericsson/home/widget/AdvWidgetRoot;->hideWidget()V
 
     goto :goto_0
 
-    .line 520
+    .line 502
     .end local v1           #root:Lcom/sonyericsson/home/widget/AdvWidgetRoot;
     .end local v2           #w:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
     :cond_1
@@ -1662,26 +1650,20 @@
 .end method
 
 .method public pause(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
-    .locals 2
+    .locals 1
     .parameter "info"
 
     .prologue
-    .line 468
+    .line 459
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidget(Lcom/sonyericsson/home/data/AdvWidgetInfo;)Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
 
     move-result-object v0
 
-    .line 469
-    .local v0, widgetCache:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
-    .line 470
-    iget-object v1, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onPause()V
 
-    invoke-virtual {v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onPause()V
-
-    .line 472
-    :cond_0
+    .line 460
     return-void
 .end method
 
@@ -1697,26 +1679,20 @@
 .end method
 
 .method public resume(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
-    .locals 2
+    .locals 1
     .parameter "info"
 
     .prologue
-    .line 456
+    .line 450
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidget(Lcom/sonyericsson/home/data/AdvWidgetInfo;)Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
 
     move-result-object v0
 
-    .line 457
-    .local v0, widgetCache:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
-    .line 458
-    iget-object v1, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onResume()V
 
-    invoke-virtual {v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onResume()V
-
-    .line 460
-    :cond_0
+    .line 451
     return-void
 .end method
 
@@ -1724,7 +1700,7 @@
     .locals 4
 
     .prologue
-    .line 500
+    .line 482
     iget-object v3, p0, Lcom/sonyericsson/home/widget/AdvWidgetManager;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1750,7 +1726,7 @@
 
     check-cast v2, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
 
-    .line 501
+    .line 483
     .local v2, w:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
     iget-object v3, v2, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->view:Landroid/view/View;
 
@@ -1758,18 +1734,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 502
+    .line 484
     iget-object v1, v2, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->view:Landroid/view/View;
 
     check-cast v1, Lcom/sonyericsson/home/widget/AdvWidgetRoot;
 
-    .line 503
+    .line 485
     .local v1, root:Lcom/sonyericsson/home/widget/AdvWidgetRoot;
     invoke-virtual {v1}, Lcom/sonyericsson/home/widget/AdvWidgetRoot;->showWidget()V
 
     goto :goto_0
 
-    .line 506
+    .line 488
     .end local v1           #root:Lcom/sonyericsson/home/widget/AdvWidgetRoot;
     .end local v2           #w:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
     :cond_1
@@ -1788,7 +1764,7 @@
 .end method
 
 .method public start(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
-    .locals 2
+    .locals 1
     .parameter "info"
 
     .prologue
@@ -1797,17 +1773,11 @@
 
     move-result-object v0
 
+    iget-object v0, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
+
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onStart()V
+
     .line 436
-    .local v0, widgetCache:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
-    if-eqz v0, :cond_0
-
-    .line 437
-    iget-object v1, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
-
-    invoke-virtual {v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onStart()V
-
-    .line 439
-    :cond_0
     return-void
 .end method
 
@@ -1823,26 +1793,20 @@
 .end method
 
 .method public stop(Lcom/sonyericsson/home/data/AdvWidgetInfo;)V
-    .locals 2
+    .locals 1
     .parameter "info"
 
     .prologue
-    .line 445
+    .line 442
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidget(Lcom/sonyericsson/home/data/AdvWidgetInfo;)Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
 
     move-result-object v0
 
-    .line 446
-    .local v0, widgetCache:Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
 
-    .line 447
-    iget-object v1, v0, Lcom/sonyericsson/home/widget/AdvWidgetManager$WidgetCache;->proxy:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;
+    invoke-virtual {v0}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onStop()V
 
-    invoke-virtual {v1}, Lcom/sonyericsson/advancedwidget/framework/AdvWidgetProxy;->onStop()V
-
-    .line 449
-    :cond_0
+    .line 443
     return-void
 .end method
 

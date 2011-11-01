@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/HomeActivityFlow;->addFolder(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;)V
+    value = Lcom/sonyericsson/home/HomeActivityFlow;->addFolder(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 198
+    .line 203
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
     iput-object p2, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
@@ -46,80 +46,91 @@
     .locals 1
 
     .prologue
-    .line 214
+    .line 220
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderCanceled()V
 
-    .line 215
+    .line 221
     return-void
 .end method
 
 .method public onDialogPositive(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 4
     .parameter "result"
 
     .prologue
-    .line 200
+    .line 205
     if-eqz p1, :cond_1
 
-    .line 201
-    const-string v1, "result_folder_name"
+    .line 206
+    const-string v2, "result_folder_name"
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 202
-    .local v0, folderName:Ljava/lang/String;
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
-
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivityFlow;->access$000(Lcom/sonyericsson/home/HomeActivityFlow;)Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->addFolder(Ljava/lang/String;)Z
+    .line 207
+    .local v1, folderName:Ljava/lang/String;
+    const-string v2, "result_folder_icon"
 
-    move-result v1
+    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
-    if-nez v1, :cond_0
+    move-result v0
 
-    .line 203
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
+    .line 208
+    .local v0, folderIcon:I
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivityFlow;->access$000(Lcom/sonyericsson/home/HomeActivityFlow;)Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivityFlow;->access$000(Lcom/sonyericsson/home/HomeActivityFlow;)Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
 
-    move-result-object v1
+    move-result-object v2
 
-    const v2, 0x7f070018
+    invoke-interface {v2, v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->addFolder(Ljava/lang/String;I)Z
 
-    invoke-interface {v1, v2}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
+    move-result v2
 
-    .line 204
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
+    if-nez v2, :cond_0
 
-    invoke-interface {v1}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderCanceled()V
+    .line 209
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
-    .line 211
-    .end local v0           #folderName:Ljava/lang/String;
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivityFlow;->access$000(Lcom/sonyericsson/home/HomeActivityFlow;)Lcom/sonyericsson/home/HomeActivityFlow$Presenter;
+
+    move-result-object v2
+
+    const v3, 0x7f070018
+
+    invoke-interface {v2, v3}, Lcom/sonyericsson/home/HomeActivityFlow$Presenter;->showToast(I)V
+
+    .line 210
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
+
+    invoke-interface {v2}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderCanceled()V
+
+    .line 217
+    .end local v0           #folderIcon:I
+    .end local v1           #folderName:Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 206
-    .restart local v0       #folderName:Ljava/lang/String;
+    .line 212
+    .restart local v0       #folderIcon:I
+    .restart local v1       #folderName:Ljava/lang/String;
     :cond_0
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
-    invoke-interface {v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderConfirmed(Ljava/lang/String;)V
+    invoke-interface {v2, v1, v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderConfirmed(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 209
-    .end local v0           #folderName:Ljava/lang/String;
+    .line 215
+    .end local v0           #folderIcon:I
+    .end local v1           #folderName:Ljava/lang/String;
     :cond_1
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivityFlow$1;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
-    invoke-interface {v1}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderCanceled()V
+    invoke-interface {v2}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderCanceled()V
 
     goto :goto_0
 .end method

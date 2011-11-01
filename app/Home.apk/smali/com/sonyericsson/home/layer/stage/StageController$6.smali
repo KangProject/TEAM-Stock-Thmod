@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 428
+    .line 427
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 432
+    .line 431
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 435
+    .line 434
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1400(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/data/SyncHelper$Syncable;
@@ -80,12 +80,12 @@
 
     invoke-static {v0, v1, v2, p1}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageChanged(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/lang/String;)V
 
-    .line 438
+    .line 437
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$300(Lcom/sonyericsson/home/layer/stage/StageController;)V
 
-    .line 439
+    .line 438
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -94,7 +94,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 440
+    .line 439
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -103,7 +103,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 442
+    .line 441
     :cond_0
     return-void
 .end method
@@ -113,7 +113,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 445
+    .line 444
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1400(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/data/SyncHelper$Syncable;
@@ -132,12 +132,12 @@
 
     invoke-static {v0, v1, p1}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageRemoved(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/lang/String;)V
 
-    .line 447
+    .line 446
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$300(Lcom/sonyericsson/home/layer/stage/StageController;)V
 
-    .line 448
+    .line 447
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -146,7 +146,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 449
+    .line 448
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$6;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -155,7 +155,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 451
+    .line 450
     :cond_0
     return-void
 .end method
@@ -165,7 +165,7 @@
     .parameter "packageList"
 
     .prologue
-    .line 455
+    .line 454
     return-void
 .end method
 
@@ -174,6 +174,6 @@
     .parameter "packageList"
 
     .prologue
-    .line 459
+    .line 458
     return-void
 .end method

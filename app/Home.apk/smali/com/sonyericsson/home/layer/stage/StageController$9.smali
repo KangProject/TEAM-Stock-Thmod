@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 495
+    .line 494
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "x2"
 
     .prologue
-    .line 495
+    .line 494
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/layer/stage/StageController$9;->finishDropSuccessful(Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
     return-void
@@ -54,7 +54,7 @@
     .parameter "x1"
 
     .prologue
-    .line 495
+    .line 494
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/stage/StageController$9;->finishDropFailure(Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
     return-void
@@ -67,7 +67,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 650
+    .line 649
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1900(Lcom/sonyericsson/home/layer/stage/StageController;)Z
@@ -76,7 +76,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 651
+    .line 650
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$000(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageModelManager;
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->removeHint()V
 
-    .line 652
+    .line 651
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1600(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/LayerRendererFactory;
@@ -96,7 +96,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->ignoreNextGetDeleteRenderer(I)V
 
-    .line 653
+    .line 652
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -105,23 +105,23 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 656
+    .line 655
     :cond_0
-    invoke-interface {p1, v2}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(I)V
+    invoke-interface {p1, v2}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(Z)V
 
-    .line 659
+    .line 658
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/sonyericsson/home/layer/stage/StageController;->mPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
-    .line 660
+    .line 659
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0, v2}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1902(Lcom/sonyericsson/home/layer/stage/StageController;Z)Z
 
-    .line 661
+    .line 660
     return-void
 .end method
 
@@ -135,7 +135,7 @@
 
     const/4 v5, 0x0
 
-    .line 631
+    .line 630
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$000(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageModelManager;
@@ -144,12 +144,12 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->removeHint()V
 
-    .line 632
+    .line 631
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$300(Lcom/sonyericsson/home/layer/stage/StageController;)V
 
-    .line 633
+    .line 632
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -158,7 +158,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 637
+    .line 636
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$500(Lcom/sonyericsson/home/layer/stage/StageController;)Landroid/content/Context;
@@ -207,22 +207,22 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/WallpaperManager;->sendWallpaperCommand(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V
 
-    .line 641
+    .line 640
     const/4 v0, 0x1
 
-    invoke-interface {p2, v0}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(I)V
+    invoke-interface {p2, v0}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(Z)V
 
-    .line 644
+    .line 643
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     iput-object v6, v0, Lcom/sonyericsson/home/layer/stage/StageController;->mPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
-    .line 645
+    .line 644
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0, v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1902(Lcom/sonyericsson/home/layer/stage/StageController;Z)Z
 
-    .line 646
+    .line 645
     return-void
 .end method
 
@@ -231,7 +231,7 @@
     .parameter "info"
 
     .prologue
-    .line 498
+    .line 497
     instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-nez v0, :cond_0
@@ -263,7 +263,7 @@
     .parameter "renderer"
 
     .prologue
-    .line 664
+    .line 663
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1900(Lcom/sonyericsson/home/layer/stage/StageController;)Z
@@ -272,7 +272,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 665
+    .line 664
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$000(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageModelManager;
@@ -281,7 +281,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->removeHint()V
 
-    .line 666
+    .line 665
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1600(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/LayerRendererFactory;
@@ -292,7 +292,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->ignoreNextGetDeleteRenderer(I)V
 
-    .line 667
+    .line 666
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -301,7 +301,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 669
+    .line 668
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -313,14 +313,14 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 670
+    .line 669
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1902(Lcom/sonyericsson/home/layer/stage/StageController;Z)Z
 
-    .line 671
+    .line 670
     return-void
 .end method
 
@@ -333,10 +333,10 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 527
+    .line 526
     const/4 v4, 0x1
 
-    .line 529
+    .line 528
     .local v4, successful:Z
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -348,7 +348,7 @@
 
     invoke-virtual {v5, v6}, Lcom/sonyericsson/home/layer/HintView;->setVisibility(I)V
 
-    .line 531
+    .line 530
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1900(Lcom/sonyericsson/home/layer/stage/StageController;)Z
@@ -369,36 +369,36 @@
 
     if-ne v5, v7, :cond_1
 
-    .line 533
+    .line 532
     :cond_0
     const/4 v4, 0x0
 
-    .line 536
+    .line 535
     :cond_1
     if-eqz v4, :cond_4
 
-    .line 537
+    .line 536
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     iget-object v5, v5, Lcom/sonyericsson/home/layer/stage/StageController;->mPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
     if-nez v5, :cond_3
 
-    .line 539
+    .line 538
     invoke-static {p1}, Lcom/sonyericsson/home/layer/AdapterHelper;->getInfoFromView(Landroid/view/View;)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
 
-    .line 541
+    .line 540
     .local v0, info:Lcom/sonyericsson/home/data/Info;
     if-eqz v0, :cond_3
 
-    .line 546
+    .line 545
     instance-of v5, v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v5, :cond_2
 
-    .line 547
+    .line 546
     new-instance v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     check-cast v0, Lcom/sonyericsson/home/data/ActivityInfo;
@@ -409,7 +409,7 @@
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     move-object v0, v1
 
-    .line 549
+    .line 548
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     .restart local v0       #info:Lcom/sonyericsson/home/data/Info;
     :cond_2
@@ -417,7 +417,7 @@
 
     iput-object v0, v5, Lcom/sonyericsson/home/layer/stage/StageController;->mPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
-    .line 553
+    .line 552
     .end local v0           #info:Lcom/sonyericsson/home/data/Info;
     :cond_3
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
@@ -434,7 +434,7 @@
 
     if-ne v5, v6, :cond_7
 
-    .line 554
+    .line 553
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     iget-object v6, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
@@ -449,7 +449,7 @@
 
     invoke-static {v5, v6}, Lcom/sonyericsson/home/layer/stage/StageController;->access$2302(Lcom/sonyericsson/home/layer/stage/StageController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/data/Info;
 
-    .line 556
+    .line 555
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$2300(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/data/Info;
@@ -460,7 +460,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 558
+    .line 557
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$2300(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/data/Info;
@@ -469,7 +469,7 @@
 
     check-cast v2, Lcom/sonyericsson/home/data/InfoGroup;
 
-    .line 559
+    .line 558
     .local v2, infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -483,10 +483,10 @@
 
     invoke-virtual {v5, v2, v6}, Lcom/sonyericsson/home/layer/InfoGroupManager;->addLast(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 565
+    .line 564
     invoke-virtual {v2}, Lcom/sonyericsson/home/data/InfoGroup;->setNewUniqueID()V
 
-    .line 566
+    .line 565
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1600(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/LayerRendererFactory;
@@ -495,7 +495,7 @@
 
     invoke-virtual {v5, v7}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->ignoreNextGetDeleteRenderer(I)V
 
-    .line 567
+    .line 566
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1600(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/LayerRendererFactory;
@@ -524,7 +524,7 @@
 
     invoke-virtual {v5, v6, v7}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->setNextAddRenderer(Lcom/sonyericsson/animation/Renderer;I)V
 
-    .line 569
+    .line 568
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -533,20 +533,20 @@
 
     invoke-virtual {v5}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 622
+    .line 621
     .end local v2           #infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
     :cond_4
     :goto_0
     if-eqz v4, :cond_8
 
-    .line 623
+    .line 622
     invoke-direct {p0, p1, p3}, Lcom/sonyericsson/home/layer/stage/StageController$9;->finishDropSuccessful(Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
 
-    .line 627
+    .line 626
     :goto_1
     return-void
 
-    .line 572
+    .line 571
     :cond_5
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -556,12 +556,12 @@
 
     if-eqz v5, :cond_6
 
-    .line 573
+    .line 572
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5, v7}, Lcom/sonyericsson/home/layer/stage/StageController;->access$2402(Lcom/sonyericsson/home/layer/stage/StageController;Z)Z
 
-    .line 574
+    .line 573
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$100(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;
@@ -578,13 +578,13 @@
 
     goto :goto_1
 
-    .line 599
+    .line 598
     :cond_6
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 604
+    .line 603
     :cond_7
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -598,15 +598,15 @@
 
     invoke-virtual {v5, v6}, Lcom/sonyericsson/home/layer/stage/StageModelManager;->addItemAtHint(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 606
+    .line 605
     if-eqz p2, :cond_4
 
-    .line 609
+    .line 608
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 610
+    .line 609
     .local v3, rect:Landroid/graphics/Rect;
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -616,7 +616,7 @@
 
     invoke-virtual {v5, v3}, Lcom/sonyericsson/paneview/PaneView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 611
+    .line 610
     iget v5, v3, Landroid/graphics/Rect;->left:I
 
     neg-int v5, v5
@@ -631,10 +631,10 @@
 
     invoke-interface {p2, v5, v6, v7, v8}, Lcom/sonyericsson/animation/Renderer;->offset(IIJ)V
 
-    .line 612
+    .line 611
     invoke-static {v3}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 613
+    .line 612
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1600(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/LayerRendererFactory;
@@ -657,7 +657,7 @@
 
     invoke-virtual {v5, p2, v6}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->setNextAddRenderer(Lcom/sonyericsson/animation/Renderer;I)V
 
-    .line 617
+    .line 616
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v5}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -668,7 +668,7 @@
 
     goto :goto_0
 
-    .line 625
+    .line 624
     .end local v3           #rect:Landroid/graphics/Rect;
     :cond_8
     invoke-direct {p0, p3}, Lcom/sonyericsson/home/layer/stage/StageController$9;->finishDropFailure(Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;)V
@@ -688,7 +688,7 @@
 
     const/4 v3, 0x0
 
-    .line 503
+    .line 502
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1100(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/paneview/PaneView;
@@ -716,17 +716,17 @@
     :cond_0
     move v2, v3
 
-    .line 523
+    .line 522
     :goto_0
     return v2
 
-    .line 507
+    .line 506
     :cond_1
     invoke-static {p1}, Lcom/sonyericsson/home/layer/AdapterHelper;->getInfoFromView(Landroid/view/View;)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v1
 
-    .line 509
+    .line 508
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     invoke-direct {p0, v1}, Lcom/sonyericsson/home/layer/stage/StageController$9;->isInfoTypeAllowed(Lcom/sonyericsson/home/data/Info;)Z
 
@@ -734,7 +734,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 510
+    .line 509
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1900(Lcom/sonyericsson/home/layer/stage/StageController;)Z
@@ -743,7 +743,7 @@
 
     if-nez v2, :cond_2
 
-    .line 511
+    .line 510
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/stage/StageController;->access$000(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageModelManager;
@@ -760,7 +760,7 @@
 
     move-result v0
 
-    .line 512
+    .line 511
     .local v0, hintPosition:I
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -772,7 +772,7 @@
 
     invoke-virtual {v2, v3, v0}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->setNextAddRenderer(Lcom/sonyericsson/animation/Renderer;I)V
 
-    .line 514
+    .line 513
     .end local v0           #hintPosition:I
     :cond_2
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
@@ -789,7 +789,7 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/layer/stage/StageController;->access$2102(Lcom/sonyericsson/home/layer/stage/StageController;I)I
 
-    .line 515
+    .line 514
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/stage/StageController;->access$000(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageModelManager;
@@ -808,7 +808,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 516
+    .line 515
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/stage/StageController;->access$200(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/stage/StageAdapter;
@@ -817,7 +817,7 @@
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/layer/stage/StageAdapter;->notifyDataSetChanged()V
 
-    .line 518
+    .line 517
     :cond_3
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -826,10 +826,10 @@
     :goto_1
     move v2, v4
 
-    .line 523
+    .line 522
     goto :goto_0
 
-    .line 520
+    .line 519
     :cond_4
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageController$9;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 

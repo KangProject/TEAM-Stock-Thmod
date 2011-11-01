@@ -18,5 +18,5 @@
 .method public abstract onFolderCanceled()V
 .end method
 
-.method public abstract onFolderConfirmed(Ljava/lang/String;)V
+.method public abstract onFolderConfirmed(Ljava/lang/String;I)V
 .end method

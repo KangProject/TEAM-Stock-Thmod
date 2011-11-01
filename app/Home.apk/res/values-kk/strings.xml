@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Бас тарту</string>
     <string name="home_button_exit_overview">Шолудан шығу</string>
     <string name="home_no_uninstallable_apps_txt">Бұл қолданбалар орнатылмайды</string>
-    <string name="home_app_share_dropzone_hint_txt">Элементті ортақтастыру үшін осында тастаңыз</string>
-    <string name="appdialog_title">Facebook сайт-а жар-у</string>
-    <string name="appdialog_comment_hint">Түсініктемеңізді қосыңыз</string>
-    <string name="appdialog_button_share">Ортақтастыру</string>
-    <string name="appdialog_button_cancel">Бас тарту</string>
-    <string name="appdialog_other_options_info">Басқа ортақт-ру опц-ы</string>
-    <string name="appdialog_progress_info">Хабар жасау</string>
-    <string name="appdialog_toast_cannot_be_shared">Бұл элемент ортақтастырылмайды</string>
-    <string name="appdialog_toast_connection_error">Байланыс қатесі</string>
-    <string name="appdialog_toast_sharing">Facebook желісінде ортақтасу</string>
-    <string name="home_app_share_chooser_title_txt">Ортақтастыру</string>
 </resources>

@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Prekliči</string>
     <string name="home_button_exit_overview">Zapri pregled</string>
     <string name="home_no_uninstallable_apps_txt">Teh programov ni mogoče odstraniti</string>
-    <string name="home_app_share_dropzone_hint_txt">Element za skupno rabo spustite sem</string>
-    <string name="appdialog_title">Objav. v stor. Facebook</string>
-    <string name="appdialog_comment_hint">Dodaj komentar</string>
-    <string name="appdialog_button_share">Objavi</string>
-    <string name="appdialog_button_cancel">Prekliči</string>
-    <string name="appdialog_other_options_info">Druge možnosti objavlj.</string>
-    <string name="appdialog_progress_info">Ustvarjanje objave</string>
-    <string name="appdialog_toast_cannot_be_shared">Tega elementa ni bilo mogoče objaviti</string>
-    <string name="appdialog_toast_connection_error">Napaka pri povezavi</string>
-    <string name="appdialog_toast_sharing">V souporabi v storitvi Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Souporaba</string>
 </resources>

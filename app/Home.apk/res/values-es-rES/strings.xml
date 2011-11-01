@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Cancelar</string>
     <string name="home_button_exit_overview">Salir de visión general</string>
     <string name="home_no_uninstallable_apps_txt">Estas aplicaciones no se pueden desinstalar.</string>
-    <string name="home_app_share_dropzone_hint_txt">Deje caer aquí para compartir el elemento.</string>
-    <string name="appdialog_title">Publicar en Facebook</string>
-    <string name="appdialog_comment_hint">Añadir su comentario</string>
-    <string name="appdialog_button_share">Compartir</string>
-    <string name="appdialog_button_cancel">Cancelar</string>
-    <string name="appdialog_other_options_info">Otras opc. de compartir</string>
-    <string name="appdialog_progress_info">Creación de entrada</string>
-    <string name="appdialog_toast_cannot_be_shared">Este elemento no se pudo compartir.</string>
-    <string name="appdialog_toast_connection_error">Error de conexión</string>
-    <string name="appdialog_toast_sharing">Compartiendo en Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Compartir</string>
 </resources>

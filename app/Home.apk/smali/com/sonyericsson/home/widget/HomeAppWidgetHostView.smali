@@ -36,7 +36,7 @@
     .line 34
     iget-object v0, p0, Lcom/sonyericsson/home/widget/HomeAppWidgetHostView;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f03001a
+    const v1, 0x7f030018
 
     const/4 v2, 0x0
 

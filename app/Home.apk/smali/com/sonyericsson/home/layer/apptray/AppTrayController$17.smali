@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1155
+    .line 1156
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 0
 
     .prologue
-    .line 1164
+    .line 1165
     return-void
 .end method
 
@@ -49,12 +49,12 @@
     .locals 1
 
     .prologue
-    .line 1160
+    .line 1161
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$2000(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)V
 
-    .line 1161
+    .line 1162
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 0
 
     .prologue
-    .line 1157
+    .line 1158
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 1181
+    .line 1182
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$2100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/PaneIndicator;->show()V
 
-    .line 1182
+    .line 1183
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .locals 2
 
     .prologue
-    .line 1174
+    .line 1175
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
@@ -96,7 +96,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1175
+    .line 1176
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
@@ -105,14 +105,14 @@
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onItemTransferCanceled()V
 
-    .line 1176
+    .line 1177
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$402(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Z)Z
 
-    .line 1178
+    .line 1179
     :cond_0
     return-void
 .end method
@@ -121,7 +121,7 @@
     .locals 2
 
     .prologue
-    .line 1167
+    .line 1168
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
@@ -130,7 +130,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1168
+    .line 1169
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
@@ -139,14 +139,14 @@
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->onItemPickedUp()V
 
-    .line 1169
+    .line 1170
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$17;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$402(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Z)Z
 
-    .line 1171
+    .line 1172
     :cond_0
     return-void
 .end method

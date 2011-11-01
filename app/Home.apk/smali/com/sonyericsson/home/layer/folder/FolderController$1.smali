@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 81
+    .line 79
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,16 +42,16 @@
     .parameter "rect"
 
     .prologue
-    .line 156
+    .line 144
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/paneview/PaneView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 157
+    .line 145
     return-void
 .end method
 
@@ -60,16 +60,16 @@
     .parameter "rect"
 
     .prologue
-    .line 160
+    .line 148
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/folder/FolderLayout;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 161
+    .line 149
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .parameter "position"
 
     .prologue
-    .line 84
+    .line 82
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderAdapter;
@@ -96,10 +96,10 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 156
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
     move-result-object v0
 
@@ -114,10 +114,10 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 152
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
     move-result-object v0
 
@@ -132,10 +132,10 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 140
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
@@ -150,10 +150,10 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 136
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
@@ -169,16 +169,16 @@
     .parameter "animate"
 
     .prologue
-    .line 138
+    .line 126
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/folder/FolderLayout;->hide(Z)V
 
-    .line 139
+    .line 127
     return-void
 .end method
 
@@ -186,7 +186,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 86
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderAdapter;
@@ -195,7 +195,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderAdapter;->notifyDataSetChanged()V
 
-    .line 89
+    .line 87
     return-void
 .end method
 
@@ -203,10 +203,10 @@
     .locals 2
 
     .prologue
-    .line 173
+    .line 161
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v1
 
@@ -214,21 +214,21 @@
 
     move-result v0
 
-    .line 175
+    .line 163
     .local v0, tookFocus:Z
     if-eqz v0, :cond_0
 
-    .line 176
+    .line 164
     const/4 v1, 0x1
 
-    .line 179
+    .line 167
     :goto_0
     return v1
 
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
     move-result-object v1
 
@@ -244,111 +244,47 @@
     .parameter "lock"
 
     .prologue
-    .line 107
+    .line 95
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/paneview/PaneView;->keepMaxScroll(Z)V
 
-    .line 108
+    .line 96
     return-void
 .end method
 
-.method public setOpenFolderIcon(Lcom/sonyericsson/home/data/InfoGroup;)V
-    .locals 4
-    .parameter "infoGroup"
+.method public setOpenFolderIcon(I)V
+    .locals 2
+    .parameter "icon"
 
     .prologue
-    .line 92
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
+    .line 90
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$100(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->getCacheValue(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$100(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/GlobalCustomizationManager;
 
     move-result-object v1
 
-    .line 95
-    .local v1, cacheValue:Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
-    if-eqz v1, :cond_0
+    invoke-virtual {v1, p1}, Lcom/sonyericsson/home/GlobalCustomizationManager;->getOpenFolderIcon(I)Landroid/graphics/drawable/Drawable;
 
-    .line 96
-    new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
+    .line 91
+    .local v0, openFolder:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1, v0}, Lcom/sonyericsson/home/layer/folder/FolderLayout;->setOpenFolderDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    move-result-object v3
-
-    iget-object v2, v1, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->icon:Landroid/graphics/drawable/Drawable;
-
-    check-cast v2, Landroid/graphics/drawable/BitmapDrawable;
-
-    invoke-virtual {v2}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    invoke-direct {v0, v3, v2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
-
-    .line 103
-    .local v0, bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    :goto_0
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
-
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Lcom/sonyericsson/home/layer/folder/FolderLayout;->setOpenFolderDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 104
+    .line 92
     return-void
-
-    .line 99
-    .end local v0           #bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    :cond_0
-    new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
-
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
-
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$100(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->getDefaultFolderDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/graphics/drawable/BitmapDrawable;
-
-    invoke-virtual {v2}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    invoke-direct {v0, v3, v2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
-
-    .restart local v0       #bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    goto :goto_0
 .end method
 
 .method public setScroll(I)V
@@ -356,24 +292,24 @@
     .parameter "scrollDirection"
 
     .prologue
-    .line 119
+    .line 107
     packed-switch p1, :pswitch_data_0
 
-    .line 135
+    .line 123
     :goto_0
     return-void
 
-    .line 121
+    .line 109
     :pswitch_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$800(Lcom/sonyericsson/home/layer/folder/FolderController;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$700(Lcom/sonyericsson/home/layer/folder/FolderController;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -381,24 +317,24 @@
 
     goto :goto_0
 
-    .line 125
+    .line 113
     :pswitch_1
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     const v1, -0x435c28f6
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$902(Lcom/sonyericsson/home/layer/folder/FolderController;F)F
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$802(Lcom/sonyericsson/home/layer/folder/FolderController;F)F
 
-    .line 126
+    .line 114
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$800(Lcom/sonyericsson/home/layer/folder/FolderController;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$700(Lcom/sonyericsson/home/layer/folder/FolderController;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -406,24 +342,24 @@
 
     goto :goto_0
 
-    .line 130
+    .line 118
     :pswitch_2
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     const v1, 0x3ca3d70a
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$902(Lcom/sonyericsson/home/layer/folder/FolderController;F)F
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$802(Lcom/sonyericsson/home/layer/folder/FolderController;F)F
 
-    .line 131
+    .line 119
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$800(Lcom/sonyericsson/home/layer/folder/FolderController;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$700(Lcom/sonyericsson/home/layer/folder/FolderController;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -431,7 +367,7 @@
 
     goto :goto_0
 
-    .line 119
+    .line 107
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -445,16 +381,16 @@
     .parameter "label"
 
     .prologue
-    .line 111
+    .line 99
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$500(Lcom/sonyericsson/home/layer/folder/FolderController;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 112
+    .line 100
     return-void
 .end method
 
@@ -465,10 +401,10 @@
     .parameter "animate"
 
     .prologue
-    .line 142
+    .line 130
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
@@ -480,10 +416,10 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setAdapter(Lcom/sonyericsson/paneview/PaneAdapter;)V
 
-    .line 143
+    .line 131
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
@@ -491,16 +427,16 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->setScrollPosition(F)V
 
-    .line 144
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/sonyericsson/home/layer/folder/FolderLayout;->show(Landroid/graphics/Rect;IZ)V
 
-    .line 145
+    .line 133
     return-void
 .end method
 
@@ -509,27 +445,27 @@
     .parameter "view"
 
     .prologue
-    .line 115
+    .line 103
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$700(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/transfer/TransferHandler;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$600(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/transfer/TransferHandler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$600(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/transfer/TransferSource;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$500(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/transfer/TransferSource;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderController$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v2
 
     invoke-interface {v0, v1, p1, v2}, Lcom/sonyericsson/home/transfer/TransferHandler;->transferView(Lcom/sonyericsson/home/transfer/TransferSource;Landroid/view/View;Landroid/view/View;)Lcom/sonyericsson/animation/Renderer;
 
-    .line 116
+    .line 104
     return-void
 .end method

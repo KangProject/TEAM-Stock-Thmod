@@ -61,7 +61,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 381
+    .line 364
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -76,14 +76,14 @@
 
     invoke-direct {p0, p2, v0}, Lcom/sonyericsson/cornerbutton/CornerButtonController;-><init>(Lcom/sonyericsson/cornerbutton/CornerButton;I)V
 
-    .line 86
+    .line 73
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mModel:Ljava/util/ArrayList;
 
-    .line 95
+    .line 82
     new-instance v0, Lcom/sonyericsson/cornerbutton/Action;
 
     const-wide/16 v1, -0x1
@@ -92,48 +92,48 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mHintAction:Lcom/sonyericsson/cornerbutton/Action;
 
-    .line 110
+    .line 97
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mPickedUpInfoPosition:I
 
-    .line 118
+    .line 105
     new-instance v0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$1;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$1;-><init>(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mTransferTarget:Lcom/sonyericsson/home/transfer/TransferTarget;
 
-    .line 282
+    .line 265
     new-instance v0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$2;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$2;-><init>(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
 
-    .line 383
+    .line 366
     invoke-virtual {p0, p3}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->setListener(Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;)V
 
-    .line 384
+    .line 367
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mContext:Landroid/content/Context;
 
-    .line 385
+    .line 368
     iput-object p4, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    .line 386
+    .line 369
     iput-object p5, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
 
-    .line 387
+    .line 370
     iput-object p6, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    .line 389
+    .line 372
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f020016
+    const v1, 0x7f02000f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -141,7 +141,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mLoadingIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 391
+    .line 374
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     sget v1, Lcom/sonyericsson/home/transfer/TransferView;->TRANSFER_TARGET_TAG:I
@@ -154,7 +154,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/cornerbutton/CornerButton;->setTag(ILjava/lang/Object;)V
 
-    .line 393
+    .line 376
     return-void
 .end method
 
@@ -183,18 +183,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1100(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/cornerbutton/Action;)V
+.method static synthetic access$1000(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/cornerbutton/Action;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -204,6 +193,17 @@
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->removeActionAndInfo(Lcom/sonyericsson/cornerbutton/Action;)V
 
     return-void
+.end method
+
+.method static synthetic access$1100(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
+
+    return-object v0
 .end method
 
 .method static synthetic access$1200(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
@@ -217,18 +217,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mListener:Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1400(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
+.method static synthetic access$1300(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
     .locals 1
     .parameter "x0"
 
@@ -239,18 +228,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1600(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;II)V
+.method static synthetic access$1400(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;II)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -263,7 +241,7 @@
     return-void
 .end method
 
-.method static synthetic access$1700(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
+.method static synthetic access$1500(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -277,7 +255,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Ljava/util/ArrayList;
+.method static synthetic access$1600(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Ljava/util/ArrayList;
     .locals 1
     .parameter "x0"
 
@@ -288,13 +266,35 @@
     return-object v0
 .end method
 
-.method static synthetic access$1900(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
+.method static synthetic access$1700(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 51
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1800(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 51
+    invoke-direct {p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->bounceCornerButton()V
+
+    return-void
+.end method
+
+.method static synthetic access$1900(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mListener:Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
 
     return-object v0
 .end method
@@ -310,18 +310,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2000(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 51
-    invoke-direct {p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->bounceCornerButton()V
-
-    return-void
-.end method
-
-.method static synthetic access$2100(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
+.method static synthetic access$2000(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
     .locals 1
     .parameter "x0"
 
@@ -332,18 +321,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2200(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mListener:Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2300(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/home/data/Info;
+.method static synthetic access$2100(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/home/data/Info;
     .locals 1
     .parameter "x0"
 
@@ -354,7 +332,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2302(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/data/Info;
+.method static synthetic access$2102(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/data/Info;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -366,7 +344,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$2400(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)I
+.method static synthetic access$2200(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)I
     .locals 1
     .parameter "x0"
 
@@ -377,7 +355,7 @@
     return v0
 .end method
 
-.method static synthetic access$2402(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;I)I
+.method static synthetic access$2202(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -389,7 +367,7 @@
     return p1
 .end method
 
-.method static synthetic access$2500(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
+.method static synthetic access$2300(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
     .locals 1
     .parameter "x0"
 
@@ -400,7 +378,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2600(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
+.method static synthetic access$2400(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
     .locals 1
     .parameter "x0"
 
@@ -411,7 +389,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/cornerbutton/Action;)V
+.method static synthetic access$2500(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/cornerbutton/Action;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -423,7 +401,7 @@
     return-void
 .end method
 
-.method static synthetic access$2800(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
+.method static synthetic access$2600(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -459,13 +437,13 @@
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
+.method static synthetic access$500(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mListener:Lcom/sonyericsson/cornerbutton/CornerButtonController$CornerButtonControllerListener;
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     return-object v0
 .end method
@@ -481,18 +459,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
-
-    return-object v0
-.end method
-
-.method static synthetic access$800(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Landroid/graphics/Rect;
+.method static synthetic access$700(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Landroid/graphics/Rect;
     .locals 1
     .parameter "x0"
 
@@ -503,7 +470,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$900(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/Action;
+.method static synthetic access$800(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/Action;
     .locals 1
     .parameter "x0"
 
@@ -514,20 +481,31 @@
     return-object v0
 .end method
 
+.method static synthetic access$900(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)Lcom/sonyericsson/cornerbutton/CornerButton;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
+
+    return-object v0
+.end method
+
 .method private bounceCornerButton()V
     .locals 5
 
     .prologue
     const/4 v4, 0x0
 
-    .line 655
+    .line 638
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v2}, Lcom/sonyericsson/cornerbutton/CornerButton;->getCenterPoint()Landroid/graphics/Point;
 
     move-result-object v1
 
-    .line 656
+    .line 639
     .local v1, point:Landroid/graphics/Point;
     iget v2, v1, Landroid/graphics/Point;->x:I
 
@@ -541,13 +519,13 @@
 
     move-result-object v0
 
-    .line 658
+    .line 641
     .local v0, jump:Landroid/view/animation/Animation;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v2, v0}, Lcom/sonyericsson/cornerbutton/CornerButton;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 659
+    .line 642
     return-void
 .end method
 
@@ -557,14 +535,14 @@
     .parameter "cacheValue"
 
     .prologue
-    .line 641
+    .line 624
     iget-object v3, p3, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->label:Ljava/lang/CharSequence;
 
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 642
+    .line 625
     .local v2, label:Ljava/lang/String;
     iget-object v3, p3, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->icon:Landroid/graphics/drawable/Drawable;
 
@@ -572,7 +550,7 @@
 
     move-result-object v0
 
-    .line 643
+    .line 626
     .local v0, bitmap:Landroid/graphics/Bitmap;
     iget-object v3, p3, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->badgeMessage:Ljava/lang/String;
 
@@ -580,14 +558,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 644
+    .line 627
     iget-object v3, p3, Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;->badgeMessage:Ljava/lang/String;
 
     invoke-direct {p0, v3, v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->createBadgeBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 646
+    .line 629
     :cond_0
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -599,7 +577,7 @@
 
     invoke-direct {v1, v3, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 648
+    .line 631
     .local v1, icon:Landroid/graphics/drawable/BitmapDrawable;
     new-instance v3, Lcom/sonyericsson/cornerbutton/Action;
 
@@ -613,18 +591,18 @@
     .parameter "info"
 
     .prologue
-    .line 623
+    .line 606
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     invoke-virtual {v1, p1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->getCacheValue(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
 
     move-result-object v0
 
-    .line 624
+    .line 607
     .local v0, cacheValue:Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheValue;
     if-eqz v0, :cond_0
 
-    .line 625
+    .line 608
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/Info;->getUniqueId()J
 
     move-result-wide v1
@@ -633,15 +611,15 @@
 
     move-result-object v1
 
-    .line 628
+    .line 611
     :goto_0
     return-object v1
 
-    .line 627
+    .line 610
     :cond_0
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->loadAction(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 628
+    .line 611
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->createTemporaryAction(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
 
     move-result-object v1
@@ -663,7 +641,7 @@
 
     const/4 v6, 0x0
 
-    .line 685
+    .line 668
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -678,28 +656,28 @@
 
     move-result-object v1
 
-    .line 687
+    .line 670
     .local v1, badgeBitmap:Landroid/graphics/Bitmap;
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 688
+    .line 671
     .local v2, canvas:Landroid/graphics/Canvas;
     invoke-virtual {v2, p2, v6, v6, v9}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 690
+    .line 673
     new-instance v0, Lcom/sonyericsson/home/badge/BadgeView;
 
     iget-object v3, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v3, v9}, Lcom/sonyericsson/home/badge/BadgeView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 691
+    .line 674
     .local v0, badge:Lcom/sonyericsson/home/badge/BadgeView;
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/badge/BadgeView;->setText(Ljava/lang/String;)V
 
-    .line 692
+    .line 675
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -714,7 +692,7 @@
 
     invoke-virtual {v0, v3, v4}, Lcom/sonyericsson/home/badge/BadgeView;->measure(II)V
 
-    .line 694
+    .line 677
     invoke-virtual {v0}, Lcom/sonyericsson/home/badge/BadgeView;->getMeasuredWidth()I
 
     move-result v3
@@ -725,7 +703,7 @@
 
     invoke-virtual {v0, v8, v8, v3, v4}, Lcom/sonyericsson/home/badge/BadgeView;->layout(IIII)V
 
-    .line 696
+    .line 679
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -740,10 +718,10 @@
 
     invoke-virtual {v2, v3, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 697
+    .line 680
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/badge/BadgeView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 699
+    .line 682
     return-object v1
 .end method
 
@@ -752,7 +730,7 @@
     .parameter "info"
 
     .prologue
-    .line 726
+    .line 709
     new-instance v0, Lcom/sonyericsson/cornerbutton/Action;
 
     const-string v1, ""
@@ -773,12 +751,12 @@
     .parameter "info"
 
     .prologue
-    .line 736
+    .line 719
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getActions()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 737
+    .line 720
     .local v1, actions:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/cornerbutton/Action;>;"
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -798,7 +776,7 @@
 
     check-cast v0, Lcom/sonyericsson/cornerbutton/Action;
 
-    .line 738
+    .line 721
     .local v0, action:Lcom/sonyericsson/cornerbutton/Action;
     invoke-virtual {v0}, Lcom/sonyericsson/cornerbutton/Action;->getId()J
 
@@ -814,7 +792,7 @@
 
     move-object v3, v0
 
-    .line 742
+    .line 725
     .end local v0           #action:Lcom/sonyericsson/cornerbutton/Action;
     :goto_0
     return-object v3
@@ -830,12 +808,12 @@
     .parameter "drawable"
 
     .prologue
-    .line 669
+    .line 652
     instance-of v0, p1, Lcom/sonyericsson/drawable/FastBitmapDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 670
+    .line 653
     check-cast p1, Lcom/sonyericsson/drawable/FastBitmapDrawable;
 
     .end local p1
@@ -843,18 +821,18 @@
 
     move-result-object v0
 
-    .line 674
+    .line 657
     :goto_0
     return-object v0
 
-    .line 671
+    .line 654
     .restart local p1
     :cond_0
     instance-of v0, p1, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 672
+    .line 655
     check-cast p1, Landroid/graphics/drawable/BitmapDrawable;
 
     .end local p1
@@ -864,7 +842,7 @@
 
     goto :goto_0
 
-    .line 674
+    .line 657
     .restart local p1
     :cond_1
     const/4 v0, 0x0
@@ -877,7 +855,7 @@
     .parameter "action"
 
     .prologue
-    .line 752
+    .line 735
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mModel:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -898,7 +876,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 753
+    .line 736
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/Info;->getUniqueId()J
 
@@ -914,7 +892,7 @@
 
     move-object v2, v1
 
-    .line 757
+    .line 740
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :goto_0
     return-object v2
@@ -932,12 +910,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 570
+    .line 553
     instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v0, :cond_0
 
-    .line 571
+    .line 554
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
@@ -947,18 +925,18 @@
 
     move-result-object v0
 
-    .line 575
+    .line 558
     :goto_0
     return-object v0
 
-    .line 572
+    .line 555
     .restart local p1
     :cond_0
     instance-of v0, p1, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     if-eqz v0, :cond_1
 
-    .line 573
+    .line 556
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     check-cast p1, Lcom/sonyericsson/home/data/ShortcutInfo;
@@ -974,7 +952,7 @@
     :cond_1
     move-object v0, v1
 
-    .line 575
+    .line 558
     goto :goto_0
 .end method
 
@@ -983,7 +961,7 @@
     .parameter "info"
 
     .prologue
-    .line 610
+    .line 593
     instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-nez v0, :cond_0
@@ -1012,7 +990,7 @@
     .prologue
     const/high16 v9, 0x4000
 
-    .line 585
+    .line 568
     iget-object v7, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1025,7 +1003,7 @@
 
     move-result v2
 
-    .line 586
+    .line 569
     .local v2, cellWidth:I
     iget-object v7, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mContext:Landroid/content/Context;
 
@@ -1039,7 +1017,7 @@
 
     move-result v1
 
-    .line 587
+    .line 570
     .local v1, cellHeight:I
     iget-object v7, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mContext:Landroid/content/Context;
 
@@ -1053,7 +1031,7 @@
 
     move-result v3
 
-    .line 589
+    .line 572
     .local v3, iconPadding:I
     or-int v7, v9, v2
 
@@ -1061,14 +1039,14 @@
 
     invoke-virtual {p1, v7, v8}, Landroid/view/View;->measure(II)V
 
-    .line 591
+    .line 574
     iget-object v7, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v7, p2}, Lcom/sonyericsson/cornerbutton/CornerButton;->getActionPosition(Lcom/sonyericsson/cornerbutton/Action;)Landroid/graphics/Point;
 
     move-result-object v5
 
-    .line 592
+    .line 575
     .local v5, point:Landroid/graphics/Point;
     invoke-virtual {p2}, Lcom/sonyericsson/cornerbutton/Action;->getIcon()Landroid/graphics/drawable/Drawable;
 
@@ -1078,11 +1056,11 @@
 
     move-result v0
 
-    .line 593
+    .line 576
     .local v0, actionIconWidth:I
     if-eqz v5, :cond_0
 
-    .line 594
+    .line 577
     iget v7, v5, Landroid/graphics/Point;->x:I
 
     sub-int v8, v2, v0
@@ -1091,13 +1069,13 @@
 
     sub-int v4, v7, v8
 
-    .line 595
+    .line 578
     .local v4, left:I
     iget v7, v5, Landroid/graphics/Point;->y:I
 
     sub-int v6, v7, v3
 
-    .line 596
+    .line 579
     .local v6, top:I
     add-int v7, v4, v2
 
@@ -1105,13 +1083,13 @@
 
     invoke-virtual {p1, v4, v6, v7, v8}, Landroid/view/View;->layout(IIII)V
 
-    .line 600
+    .line 583
     .end local v4           #left:I
     .end local v6           #top:I
     :goto_0
     return-void
 
-    .line 598
+    .line 581
     :cond_0
     const-string v7, "HomeCornerButtonController.layoutActionView(View view, Action action)"
 
@@ -1127,7 +1105,7 @@
     .parameter "info"
 
     .prologue
-    .line 709
+    .line 692
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     new-instance v1, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$4;
@@ -1136,7 +1114,7 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->registerCacheCallback(Lcom/sonyericsson/home/data/Info;Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheCallback;)V
 
-    .line 716
+    .line 699
     return-void
 .end method
 
@@ -1146,14 +1124,14 @@
     .parameter "y"
 
     .prologue
-    .line 556
+    .line 539
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v1, p1, p2}, Lcom/sonyericsson/cornerbutton/CornerButton;->getAction(II)Lcom/sonyericsson/cornerbutton/Action;
 
     move-result-object v0
 
-    .line 557
+    .line 540
     .local v0, hoverAction:Lcom/sonyericsson/cornerbutton/Action;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mHintAction:Lcom/sonyericsson/cornerbutton/Action;
 
@@ -1161,12 +1139,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 558
+    .line 541
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mHintAction:Lcom/sonyericsson/cornerbutton/Action;
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->switchActions(Lcom/sonyericsson/cornerbutton/Action;Lcom/sonyericsson/cornerbutton/Action;)V
 
-    .line 560
+    .line 543
     :cond_0
     return-void
 .end method
@@ -1176,14 +1154,14 @@
     .parameter "action"
 
     .prologue
-    .line 534
+    .line 517
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getInfoFromAction(Lcom/sonyericsson/cornerbutton/Action;)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
-    .line 535
+    .line 518
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v1}, Lcom/sonyericsson/cornerbutton/CornerButton;->getActions()Ljava/util/ArrayList;
@@ -1196,33 +1174,33 @@
 
     iput v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mPickedUpInfoPosition:I
 
-    .line 537
+    .line 520
     const/4 v0, 0x0
 
-    .line 538
+    .line 521
     .local v0, view:Landroid/view/View;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
     if-eqz v1, :cond_0
 
-    .line 539
+    .line 522
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
     invoke-direct {p0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getViewFromInfo(Lcom/sonyericsson/home/data/Info;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 542
+    .line 525
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 543
+    .line 526
     invoke-direct {p0, v0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->layoutActionView(Landroid/view/View;Lcom/sonyericsson/cornerbutton/Action;)V
 
-    .line 544
+    .line 527
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->removeActionAndInfo(Lcom/sonyericsson/cornerbutton/Action;)V
 
-    .line 545
+    .line 528
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mTransferHandler:Lcom/sonyericsson/home/transfer/TransferHandler;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mTransferSource:Lcom/sonyericsson/home/transfer/TransferSource;
@@ -1231,7 +1209,7 @@
 
     invoke-interface {v1, v2, v0, v3}, Lcom/sonyericsson/home/transfer/TransferHandler;->transferView(Lcom/sonyericsson/home/transfer/TransferSource;Landroid/view/View;Landroid/view/View;)Lcom/sonyericsson/animation/Renderer;
 
-    .line 547
+    .line 530
     :cond_1
     return-void
 .end method
@@ -1241,17 +1219,17 @@
     .parameter "action"
 
     .prologue
-    .line 767
+    .line 750
     invoke-virtual {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->removeAction(Lcom/sonyericsson/cornerbutton/Action;)V
 
-    .line 768
+    .line 751
     invoke-virtual {p1}, Lcom/sonyericsson/cornerbutton/Action;->getId()J
 
     move-result-wide v0
 
     invoke-direct {p0, v0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->removeInfoFromModel(J)V
 
-    .line 769
+    .line 752
     return-void
 .end method
 
@@ -1260,14 +1238,14 @@
     .parameter "id"
 
     .prologue
-    .line 777
+    .line 760
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mModel:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 778
+    .line 761
     .local v1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/sonyericsson/home/data/Info;>;"
     :cond_0
     :goto_0
@@ -1277,14 +1255,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 779
+    .line 762
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/sonyericsson/home/data/Info;
 
-    .line 780
+    .line 763
     .local v0, info:Lcom/sonyericsson/home/data/Info;
     invoke-virtual {v0}, Lcom/sonyericsson/home/data/Info;->getUniqueId()J
 
@@ -1294,12 +1272,12 @@
 
     if-nez v2, :cond_0
 
-    .line 781
+    .line 764
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 784
+    .line 767
     .end local v0           #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     return-void
@@ -1311,7 +1289,7 @@
     .locals 1
 
     .prologue
-    .line 477
+    .line 460
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v0}, Lcom/sonyericsson/cornerbutton/CornerButton;->getCollapsedIconBounds()Landroid/graphics/Rect;
@@ -1325,7 +1303,7 @@
     .locals 2
 
     .prologue
-    .line 516
+    .line 499
     new-instance v0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$HomeCornerListener;
 
     const/4 v1, 0x0
@@ -1339,7 +1317,7 @@
     .locals 2
 
     .prologue
-    .line 524
+    .line 507
     new-instance v0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$HomeCornerLongPressListener;
 
     const/4 v1, 0x0
@@ -1354,7 +1332,7 @@
     .parameter "action"
 
     .prologue
-    .line 468
+    .line 451
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getInfoFromAction(Lcom/sonyericsson/cornerbutton/Action;)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v0
@@ -1375,12 +1353,12 @@
     .end annotation
 
     .prologue
-    .line 428
+    .line 411
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getActions()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 429
+    .line 412
     .local v1, actions:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/cornerbutton/Action;>;"
     new-instance v3, Ljava/util/ArrayList;
 
@@ -1390,7 +1368,7 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 431
+    .line 414
     .local v3, infos:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -1410,7 +1388,7 @@
 
     check-cast v0, Lcom/sonyericsson/cornerbutton/Action;
 
-    .line 432
+    .line 415
     .local v0, action:Lcom/sonyericsson/cornerbutton/Action;
     invoke-direct {p0, v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getInfoFromAction(Lcom/sonyericsson/cornerbutton/Action;)Lcom/sonyericsson/home/data/Info;
 
@@ -1420,7 +1398,7 @@
 
     goto :goto_0
 
-    .line 434
+    .line 417
     .end local v0           #action:Lcom/sonyericsson/cornerbutton/Action;
     :cond_0
     return-object v3
@@ -1430,7 +1408,7 @@
     .locals 1
 
     .prologue
-    .line 444
+    .line 427
     new-instance v0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$3;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$3;-><init>(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
@@ -1442,12 +1420,12 @@
     .locals 1
 
     .prologue
-    .line 508
+    .line 491
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v0}, Lcom/sonyericsson/cornerbutton/CornerButton;->onDestroy()V
 
-    .line 509
+    .line 492
     return-void
 .end method
 
@@ -1455,7 +1433,7 @@
     .locals 1
 
     .prologue
-    .line 504
+    .line 487
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mCornerButton:Lcom/sonyericsson/cornerbutton/CornerButton;
 
     invoke-virtual {v0}, Lcom/sonyericsson/cornerbutton/CornerButton;->requestFocus()Z
@@ -1470,25 +1448,25 @@
     .parameter "rect"
 
     .prologue
-    .line 487
+    .line 470
     if-nez p1, :cond_0
 
-    .line 488
+    .line 471
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mExtraHintRect:Landroid/graphics/Rect;
 
-    .line 496
+    .line 479
     :goto_0
     return-void
 
-    .line 490
+    .line 473
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mExtraHintRect:Landroid/graphics/Rect;
 
     if-nez v0, :cond_1
 
-    .line 491
+    .line 474
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0, p1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
@@ -1497,7 +1475,7 @@
 
     goto :goto_0
 
-    .line 493
+    .line 476
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mExtraHintRect:Landroid/graphics/Rect;
 
@@ -1520,13 +1498,13 @@
     .end annotation
 
     .prologue
-    .line 402
+    .line 385
     .local p1, infos:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mModel:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 403
+    .line 386
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1541,7 +1519,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 404
+    .line 387
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mModel:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1550,16 +1528,16 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 403
+    .line 386
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 407
+    .line 390
     :cond_0
     invoke-virtual {p0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->updateActionsFromModel()V
 
-    .line 408
+    .line 391
     return-void
 .end method
 
@@ -1567,7 +1545,7 @@
     .locals 5
 
     .prologue
-    .line 414
+    .line 397
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mModel:Ljava/util/ArrayList;
@@ -1578,7 +1556,7 @@
 
     invoke-direct {v1, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 415
+    .line 398
     .local v1, actions:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/cornerbutton/Action;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->mModel:Ljava/util/ArrayList;
 
@@ -1600,24 +1578,24 @@
 
     check-cast v3, Lcom/sonyericsson/home/data/Info;
 
-    .line 416
+    .line 399
     .local v3, info:Lcom/sonyericsson/home/data/Info;
     invoke-direct {p0, v3}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->createActionFrom(Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
 
     move-result-object v0
 
-    .line 417
+    .line 400
     .local v0, action:Lcom/sonyericsson/cornerbutton/Action;
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 419
+    .line 402
     .end local v0           #action:Lcom/sonyericsson/cornerbutton/Action;
     .end local v3           #info:Lcom/sonyericsson/home/data/Info;
     :cond_0
     invoke-virtual {p0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->setActions(Ljava/util/ArrayList;)V
 
-    .line 420
+    .line 403
     return-void
 .end method

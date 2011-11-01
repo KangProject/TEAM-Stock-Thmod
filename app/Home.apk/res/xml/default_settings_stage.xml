@@ -14,10 +14,6 @@
                     <setting key="package-name">com.sonyericsson.conversations</setting>
                 </group>
                 <group>
-                    <setting key="name">.LaunchActivity</setting>
-                    <setting key="package-name">com.sonyericsson.android.socialphonebook</setting>
-                </group>
-                <group>
                     <setting key="name">.DialerEntryActivity</setting>
                     <setting key="package-name">com.sonyericsson.android.socialphonebook</setting>
                 </group>
@@ -35,6 +31,13 @@
                     <setting key="name">.FMRadioActivity</setting>
                     <setting key="package-name">com.sonyericsson.fmradio</setting>
                     <setting key="folder">media</setting>
+                </group>
+                <group>
+                    <setting key="name">.main</setting>
+                    <setting key="package-name">com.pvy.appman</setting>
+                    <setting key="x">3</setting>
+                    <setting key="y">3</setting>
+                    <setting key="pane">1</setting>
                 </group>
             </groups>
         </group>

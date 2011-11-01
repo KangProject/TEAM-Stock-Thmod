@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">ยกเลิก</string>
     <string name="home_button_exit_overview">ออกจากภาพรวม</string>
     <string name="home_no_uninstallable_apps_txt">ไม่สามารถถอนการติดตั้งแอปเหล่านี้</string>
-    <string name="home_app_share_dropzone_hint_txt">วางที่นี่เพื่อแชร์รายการ</string>
-    <string name="appdialog_title">โพสต์ใน Facebook</string>
-    <string name="appdialog_comment_hint">ใส่ความเห็นของคุณ</string>
-    <string name="appdialog_button_share">แชร์</string>
-    <string name="appdialog_button_cancel">ยกเลิก</string>
-    <string name="appdialog_other_options_info">ตัวเลือกการแชร์อื่นๆ</string>
-    <string name="appdialog_progress_info">กำลังสร้างโพสต์</string>
-    <string name="appdialog_toast_cannot_be_shared">ไม่สามารถแชร์รายการนี้</string>
-    <string name="appdialog_toast_connection_error">การเชื่อมต่อเกิดข้อผิดพลาด</string>
-    <string name="appdialog_toast_sharing">กำลังแชร์บน Facebook</string>
-    <string name="home_app_share_chooser_title_txt">แชร์</string>
 </resources>

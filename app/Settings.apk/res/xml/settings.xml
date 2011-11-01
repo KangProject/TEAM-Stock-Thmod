@@ -8,7 +8,7 @@
     <com.android.settings.IconPreferenceScreen android:key="manufacturer_settings">
         <intent android:action="android.settings.MANUFACTURER_APPLICATION_SETTING" />
     </com.android.settings.IconPreferenceScreen>
-    <com.android.settings.IconPreferenceScreen android:title="Extra Tweaks" android:summary="TEAM Rom Tweaks" settings:icon="@drawable/ic_settings_tweaks">
+    <com.android.settings.IconPreferenceScreen android:title="@string/extra_tweaks" android:summary="ThGo2 Rom Tweaks" settings:icon="@drawable/ic_settings_tweaks">
         <intent android:targetPackage="com.roman.tweaks" android:action="android.intent.action.MAIN" android:targetClass="com.roman.tweaks.Main" />
     </com.android.settings.IconPreferenceScreen>
     <com.android.settings.IconPreferenceScreen android:title="@string/radio_controls_title" settings:icon="@drawable/ic_settings_wireless">

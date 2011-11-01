@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 923
+    .line 926
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "root"
 
     .prologue
-    .line 926
+    .line 929
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$902(Lcom/sonyericsson/home/layer/apptray/AppTrayController;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 927
+    .line 930
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$15;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$1100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -62,6 +62,6 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addOnLoadCompletedCallback(Ljava/lang/Runnable;)V
 
-    .line 972
+    .line 975
     return-void
 .end method

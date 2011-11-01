@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Revocare</string>
     <string name="home_button_exit_overview">Ieşire din vedere de ansamblu</string>
     <string name="home_no_uninstallable_apps_txt">Aceste aplicaţii nu pot fi instalate</string>
-    <string name="home_app_share_dropzone_hint_txt">Plasaţi aici elementul pentru a-l partaja</string>
-    <string name="appdialog_title">Postare pe Facebook</string>
-    <string name="appdialog_comment_hint">Adăugaţi comentariul dvs.</string>
-    <string name="appdialog_button_share">Partajare</string>
-    <string name="appdialog_button_cancel">Revocare</string>
-    <string name="appdialog_other_options_info">Alte opţiuni de partaj.</string>
-    <string name="appdialog_progress_info">Se creează publicarea</string>
-    <string name="appdialog_toast_cannot_be_shared">Acest element nu poate fi partajat</string>
-    <string name="appdialog_toast_connection_error">Eroare de conexiune</string>
-    <string name="appdialog_toast_sharing">Se partajează pe Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Partajare</string>
 </resources>

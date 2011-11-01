@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1728
+    .line 1692
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$14$1;->this$1:Lcom/sonyericsson/home/HomeActivity$14;
 
     iput-object p2, p0, Lcom/sonyericsson/home/HomeActivity$14$1;->val$listener:Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;
@@ -46,25 +46,26 @@
     .locals 1
 
     .prologue
-    .line 1734
+    .line 1698
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$14$1;->val$listener:Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;->onCanceled()V
 
-    .line 1735
+    .line 1699
     return-void
 .end method
 
-.method public onFolderConfirmed(Ljava/lang/String;)V
+.method public onFolderConfirmed(Ljava/lang/String;I)V
     .locals 1
     .parameter "folderName"
+    .parameter "icon"
 
     .prologue
-    .line 1730
+    .line 1694
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$14$1;->val$listener:Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;
 
-    invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;->onConfirmed(Ljava/lang/String;)V
+    invoke-interface {v0, p1, p2}, Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener$OnCreateFolderCompletedListener;->onConfirmed(Ljava/lang/String;I)V
 
-    .line 1731
+    .line 1695
     return-void
 .end method

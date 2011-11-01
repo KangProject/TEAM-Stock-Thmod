@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Откажи</string>
     <string name="home_button_exit_overview">Излези од преглед</string>
     <string name="home_no_uninstallable_apps_txt">Овие апликации не може да се деинсталираат</string>
-    <string name="home_app_share_dropzone_hint_txt">Пуштете овде за да споделите објект</string>
-    <string name="appdialog_title">Објави на Facebook</string>
-    <string name="appdialog_comment_hint">Додајте свој коментар</string>
-    <string name="appdialog_button_share">Сподели</string>
-    <string name="appdialog_button_cancel">Откажи</string>
-    <string name="appdialog_other_options_info">Други опции за спод.</string>
-    <string name="appdialog_progress_info">Креирање порака</string>
-    <string name="appdialog_toast_cannot_be_shared">Овој објект не може да се сподели</string>
-    <string name="appdialog_toast_connection_error">Грешка на конекцијата</string>
-    <string name="appdialog_toast_sharing">Споделување на Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Сподели</string>
 </resources>

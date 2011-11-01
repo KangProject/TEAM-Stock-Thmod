@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 270
+    .line 269
     iput-object p1, p0, Lcom/sonyericsson/home/layer/stage/StageController$3;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,17 +48,17 @@
 
     const-class v5, Ljava/util/ArrayList;
 
-    .line 274
+    .line 273
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageController$3;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     const/4 v4, 0x0
 
     invoke-static {v3, v4}, Lcom/sonyericsson/home/layer/stage/StageController;->access$402(Lcom/sonyericsson/home/layer/stage/StageController;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 275
+    .line 274
     const/4 v1, 0x0
 
-    .line 276
+    .line 275
     .local v1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     if-eqz p1, :cond_0
 
@@ -72,7 +72,7 @@
 
     if-ne v3, v7, :cond_0
 
-    .line 277
+    .line 276
     const-class v3, Ljava/util/ArrayList;
 
     const-class v3, Ljava/util/ArrayList;
@@ -88,16 +88,16 @@
     .end local v1           #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     check-cast v1, Ljava/util/ArrayList;
 
-    .line 281
+    .line 280
     .restart local v1       #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     :cond_0
     const/4 v2, 0x0
 
-    .line 282
+    .line 281
     .local v2, modelChanged:Z
     if-nez v1, :cond_2
 
-    .line 285
+    .line 284
     new-instance v1, Ljava/util/ArrayList;
 
     .end local v1           #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
@@ -105,7 +105,7 @@
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 290
+    .line 289
     .restart local v1       #model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     new-instance v0, Lcom/sonyericsson/home/layer/stage/StageCustomization;
 
@@ -129,7 +129,7 @@
 
     invoke-direct {v0, v3, v1, v4, v5}, Lcom/sonyericsson/home/layer/stage/StageCustomization;-><init>(Landroid/content/Context;Ljava/util/ArrayList;Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
 
-    .line 293
+    .line 292
     .local v0, cust:Lcom/sonyericsson/home/layer/stage/StageCustomization;
     const-string v3, "/etc/customization/settings/com/sonyericsson/home/default_settings_stage.xml"
 
@@ -139,12 +139,12 @@
 
     if-nez v3, :cond_1
 
-    .line 296
+    .line 295
     const v3, 0x7f050005
 
     invoke-virtual {v0, v3, v6}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->applyCustomization(IZ)Z
 
-    .line 299
+    .line 298
     :cond_1
     invoke-static {}, Lcom/sonyericsson/home/layer/stage/StageController;->access$800()Landroid/net/Uri;
 
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v3, v7}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->applyCustomization(Landroid/net/Uri;Z)Z
 
-    .line 301
+    .line 300
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageController$3;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v3}, Lcom/sonyericsson/home/layer/stage/StageController;->access$600(Lcom/sonyericsson/home/layer/stage/StageController;)Lcom/sonyericsson/home/layer/InfoGroupManager;
@@ -167,16 +167,16 @@
 
     invoke-virtual {v3, v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->cacheShortcuts(Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
 
-    .line 302
+    .line 301
     const/4 v2, 0x1
 
-    .line 305
+    .line 304
     .end local v0           #cust:Lcom/sonyericsson/home/layer/stage/StageCustomization;
     :cond_2
     iget-object v3, p0, Lcom/sonyericsson/home/layer/stage/StageController$3;->this$0:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-static {v3, v1, v2}, Lcom/sonyericsson/home/layer/stage/StageController;->access$1000(Lcom/sonyericsson/home/layer/stage/StageController;Ljava/util/ArrayList;Z)V
 
-    .line 306
+    .line 305
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/HomeActivityFlow;->confirmFolderCreate(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;)V
+    value = Lcom/sonyericsson/home/HomeActivityFlow;->confirmFolderCreate(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 291
+    .line 299
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->this$0:Lcom/sonyericsson/home/HomeActivityFlow;
 
     iput-object p2, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
@@ -46,24 +46,24 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 308
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderCanceled()V
 
-    .line 300
+    .line 309
     return-void
 .end method
 
 .method public onDialogPositive(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 3
     .parameter "result"
 
     .prologue
-    .line 293
+    .line 301
     if-eqz p1, :cond_0
 
-    .line 294
+    .line 302
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivityFlow$4;->val$listener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
     const-string v1, "result_folder_name"
@@ -72,9 +72,15 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderConfirmed(Ljava/lang/String;)V
+    const-string v2, "result_folder_icon"
 
-    .line 296
+    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-interface {v0, v1, v2}, Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;->onFolderConfirmed(Ljava/lang/String;I)V
+
+    .line 305
     :cond_0
     return-void
 .end method

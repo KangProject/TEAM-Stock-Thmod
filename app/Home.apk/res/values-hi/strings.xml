@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">रद्द करें</string>
     <string name="home_button_exit_overview">अवलोकन से बाहर निकलें</string>
     <string name="home_no_uninstallable_apps_txt">इन अनुप्रयोगों की स्थापना रद्द नहीं की जा सकती</string>
-    <string name="home_app_share_dropzone_hint_txt">मद को साझा करने के लिए यहां छोड़ें</string>
-    <string name="appdialog_title">Facebook पर पोस्‍ट करें</string>
-    <string name="appdialog_comment_hint">अपनी टिप्‍पणी जोड़ें</string>
-    <string name="appdialog_button_share">साझा करें</string>
-    <string name="appdialog_button_cancel">रद्द करें</string>
-    <string name="appdialog_other_options_info">अन्‍य साझाकरण विकल्‍प</string>
-    <string name="appdialog_progress_info">पोस्ट बनाई जा रही है</string>
-    <string name="appdialog_toast_cannot_be_shared">यह मद साझा नहीं किया जा सकता</string>
-    <string name="appdialog_toast_connection_error">कनेक्शन त्रुटि</string>
-    <string name="appdialog_toast_sharing">Facebook पर साझा करना</string>
-    <string name="home_app_share_chooser_title_txt">साझा करें</string>
 </resources>

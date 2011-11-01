@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 950
+    .line 938
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$5;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "animation"
 
     .prologue
-    .line 960
+    .line 948
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$5;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
 
-    .line 961
+    .line 949
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "animation"
 
     .prologue
-    .line 957
+    .line 945
     return-void
 .end method
 
@@ -65,6 +65,6 @@
     .parameter "animation"
 
     .prologue
-    .line 953
+    .line 941
     return-void
 .end method

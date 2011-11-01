@@ -69,14 +69,6 @@
                     <setting key="package-name">com.android.calendar</setting>
                 </group>
                 <group>
-                    <setting key="name">.startup.StartupActivity</setting>
-                    <setting key="package-name">com.sony.snei.mu</setting>
-                </group>
-                <group>
-                    <setting key="name">.storeclient.activity.StoreClientHomeActivity</setting>
-                    <setting key="package-name">com.sonyericsson.android.snp</setting>
-                </group>
-                <group>
                     <setting key="name">.app.StoreFrontActivity</setting>
                     <setting key="package-name">com.sonyericsson.playnowstore.android</setting>
                 </group>

@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Anulo</string>
     <string name="home_button_exit_overview">Dil nga pamja e përgjithshme</string>
     <string name="home_no_uninstallable_apps_txt">Këto aplikacione nuk mund të çinstalohen</string>
-    <string name="home_app_share_dropzone_hint_txt">Lëshojeni këtu për të përndarë objektin</string>
-    <string name="appdialog_title">Posto në Facebook</string>
-    <string name="appdialog_comment_hint">Shtoni komentin tuaj</string>
-    <string name="appdialog_button_share">Ndaj me të tjerët</string>
-    <string name="appdialog_button_cancel">Anulo</string>
-    <string name="appdialog_other_options_info">Opsionet e tj. të ndarjes</string>
-    <string name="appdialog_progress_info">Duke krijuar postin</string>
-    <string name="appdialog_toast_cannot_be_shared">Ky objekt nuk mund të ndahet me të tjerët</string>
-    <string name="appdialog_toast_connection_error">Gabim i lidhjes</string>
-    <string name="appdialog_toast_sharing">Përndarja në Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Përndaj</string>
 </resources>

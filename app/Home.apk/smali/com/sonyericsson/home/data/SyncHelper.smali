@@ -16,10 +16,10 @@
     .locals 0
 
     .prologue
-    .line 23
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 33
     return-void
 .end method
 
@@ -62,12 +62,12 @@
 
     const/4 v2, 0x0
 
-    .line 230
+    .line 227
     invoke-virtual {p0}, Lcom/sonyericsson/home/data/Info;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 233
+    .line 230
     .local v0, packageName:Ljava/lang/String;
     instance-of v1, p0, Lcom/sonyericsson/home/data/ActivityInfo;
 
@@ -86,19 +86,19 @@
 
     move v1, v2
 
-    .line 252
+    .line 249
     .end local p0
     :goto_0
     return v1
 
-    .line 239
+    .line 236
     .restart local p0
     :cond_1
     instance-of v1, p0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v1, :cond_4
 
-    .line 240
+    .line 237
     if-eqz p4, :cond_2
 
     invoke-interface {p4, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
@@ -109,10 +109,10 @@
 
     move v1, v2
 
-    .line 241
+    .line 238
     goto :goto_0
 
-    .line 243
+    .line 240
     :cond_2
     check-cast p0, Lcom/sonyericsson/home/data/ActivityInfo;
 
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 248
+    .line 245
     .restart local p0
     :cond_4
     if-eqz v0, :cond_5
@@ -145,18 +145,18 @@
 
     move v1, v3
 
-    .line 249
+    .line 246
     goto :goto_0
 
     :cond_5
     move v1, v2
 
-    .line 252
+    .line 249
     goto :goto_0
 .end method
 
 .method public static sync(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Lcom/sonyericsson/home/resourceload/PackageLoader;)Z
-    .locals 7
+    .locals 6
     .parameter "syncable"
     .parameter
     .parameter "packageLoader"
@@ -174,50 +174,44 @@
     .end annotation
 
     .prologue
-    .line 207
+    .line 205
     .local p1, infos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/Info;>;"
     invoke-virtual {p2}, Lcom/sonyericsson/home/resourceload/PackageLoader;->getActivityInfoSet()Ljava/util/Set;
 
     move-result-object v2
 
-    .line 208
+    .line 206
     .local v2, installedActivityInfos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     invoke-virtual {p2}, Lcom/sonyericsson/home/resourceload/PackageLoader;->getPackageSet()Ljava/util/Set;
 
     move-result-object v3
 
-    .line 209
+    .line 207
     .local v3, installedPackages:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
     invoke-virtual {p2}, Lcom/sonyericsson/home/resourceload/PackageLoader;->getPendingPackageSet()Ljava/util/Set;
 
     move-result-object v4
 
-    .line 210
+    .line 208
     .local v4, pendingPackages:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
     invoke-virtual {p2}, Lcom/sonyericsson/home/resourceload/PackageLoader;->getUnavailablePackageSet()Ljava/util/Set;
 
     move-result-object v5
 
-    .line 211
     .local v5, unavailablePackages:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
-    invoke-virtual {p2}, Lcom/sonyericsson/home/resourceload/PackageLoader;->isSafeMode()Z
-
-    move-result v6
-
-    .local v6, isSafeMode:Z
     move-object v0, p0
 
     move-object v1, p1
 
-    .line 213
-    invoke-static/range {v0 .. v6}, Lcom/sonyericsson/home/data/SyncHelper;->sync(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Z)Z
+    .line 210
+    invoke-static/range {v0 .. v5}, Lcom/sonyericsson/home/data/SyncHelper;->sync(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public static sync(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Z)Z
+.method public static sync(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;)Z
     .locals 5
     .parameter "syncable"
     .parameter
@@ -225,7 +219,6 @@
     .parameter
     .parameter
     .parameter
-    .parameter "isSafeMode"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -249,12 +242,12 @@
             "Ljava/util/Collection",
             "<",
             "Ljava/lang/String;",
-            ">;Z)Z"
+            ">;)Z"
         }
     .end annotation
 
     .prologue
-    .line 153
+    .line 154
     .local p1, infos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/Info;>;"
     .local p2, installedActivityInfos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     .local p3, installedPackages:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
@@ -262,11 +255,8 @@
     .local p5, unavailablePackages:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
-    .line 154
-    .local v1, changed:Z
-    if-nez p6, :cond_1
-
     .line 155
+    .local v1, changed:Z
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -288,15 +278,13 @@
 
     .line 156
     .local v3, info:Lcom/sonyericsson/home/data/Info;
-    if-eqz v3, :cond_0
-
     invoke-static {v3, p3, p2, p4, p5}, Lcom/sonyericsson/home/data/SyncHelper;->shouldInfoBeRemovedAtSync(Lcom/sonyericsson/home/data/Info;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 159
+    .line 158
     invoke-interface {p0, v3}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
     move-result v4
@@ -305,15 +293,13 @@
 
     goto :goto_0
 
-    .line 164
-    .end local v2           #i$:Ljava/util/Iterator;
+    .line 162
     .end local v3           #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .restart local v2       #i$:Ljava/util/Iterator;
     :cond_2
     :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -328,7 +314,7 @@
 
     check-cast v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 165
+    .line 163
     .local v0, activityInfo:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-interface {p1, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
@@ -336,7 +322,7 @@
 
     if-nez v4, :cond_2
 
-    .line 166
+    .line 164
     invoke-interface {p0, v0}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
     move-result v4
@@ -345,7 +331,7 @@
 
     goto :goto_1
 
-    .line 187
+    .line 185
     .end local v0           #activityInfo:Lcom/sonyericsson/home/data/ActivityInfo;
     :cond_3
     return v1
@@ -372,7 +358,7 @@
     .end annotation
 
     .prologue
-    .line 64
+    .line 66
     .local p1, infos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/Info;>;"
     .local p2, activityInfosInPackage:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -394,7 +380,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 65
+    .line 67
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     invoke-interface {p1, v1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
@@ -402,12 +388,12 @@
 
     if-nez v2, :cond_0
 
-    .line 66
+    .line 68
     invoke-interface {p0, v1}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
     goto :goto_0
 
-    .line 69
+    .line 71
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     return-void
@@ -437,7 +423,7 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 90
     .local p1, infos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/Info;>;"
     .local p2, activityInfosInPackage:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -459,20 +445,20 @@
 
     check-cast v3, Lcom/sonyericsson/home/data/Info;
 
-    .line 89
+    .line 91
     .local v3, info:Lcom/sonyericsson/home/data/Info;
     instance-of v4, v3, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v4, :cond_0
 
-    .line 90
+    .line 92
     move-object v0, v3
 
     check-cast v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     move-object v1, v0
 
-    .line 91
+    .line 93
     .local v1, activityInfo:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/ActivityInfo;->getPackageName()Ljava/lang/String;
 
@@ -490,12 +476,12 @@
 
     if-nez v4, :cond_0
 
-    .line 93
+    .line 95
     invoke-interface {p0, v3}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
     goto :goto_0
 
-    .line 99
+    .line 101
     .end local v1           #activityInfo:Lcom/sonyericsson/home/data/ActivityInfo;
     .end local v3           #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
@@ -517,7 +503,7 @@
 
     check-cast v3, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 100
+    .line 102
     .restart local v3       #info:Lcom/sonyericsson/home/data/Info;
     invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
@@ -525,12 +511,12 @@
 
     if-nez v4, :cond_2
 
-    .line 101
+    .line 103
     invoke-interface {p0, v3}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->addDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
     goto :goto_1
 
-    .line 104
+    .line 106
     .end local v3           #info:Lcom/sonyericsson/home/data/Info;
     :cond_3
     return-void
@@ -555,7 +541,7 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 123
     .local p1, infos:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/home/data/Info;>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -576,7 +562,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/Info;
 
-    .line 122
+    .line 124
     .local v1, info:Lcom/sonyericsson/home/data/Info;
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/Info;->getPackageName()Ljava/lang/String;
 
@@ -588,12 +574,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 123
+    .line 125
     invoke-interface {p0, v1}, Lcom/sonyericsson/home/data/SyncHelper$Syncable;->removeDuringSync(Lcom/sonyericsson/home/data/Info;)Z
 
     goto :goto_0
 
-    .line 126
+    .line 128
     .end local v1           #info:Lcom/sonyericsson/home/data/Info;
     :cond_1
     return-void

@@ -14,14 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final DROP_ACCEPTED_SOURCE:I = 0x1
-
-.field public static final DROP_ACCEPTED_SOURCE_INFO:I = 0x2
-
-.field public static final DROP_CANCELED:I
-
-
 # virtual methods
-.method public abstract dropFinished(I)V
+.method public abstract dropFinished(Z)V
 .end method

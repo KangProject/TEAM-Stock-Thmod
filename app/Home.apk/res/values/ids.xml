@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="id" name="app_share_layer">false</item>
-    <item type="id" name="app_share_dropzone">false</item>
-    <item type="id" name="app_share_dropzone_label">false</item>
-    <item type="id" name="app_share_dropzone_icn">false</item>
-    <item type="id" name="app_share_fbi_badge">false</item>
-    <item type="id" name="app_share_dropzone_share_txt">false</item>
-    <item type="id" name="app_share_hint_toast">false</item>
     <item type="id" name="apptray_pane_view">false</item>
     <item type="id" name="apptray_pane_indicator">false</item>
     <item type="id" name="edit_mode_bg_fade">false</item>
@@ -33,17 +26,6 @@
     <item type="id" name="item_icon">false</item>
     <item type="id" name="item_label">false</item>
     <item type="id" name="fake_stage">false</item>
-    <item type="id" name="layout_root">false</item>
-    <item type="id" name="fbi_dialog_shared_app_info">false</item>
-    <item type="id" name="fbi_dialog_shared_app_icon">false</item>
-    <item type="id" name="fbi_dialog_shared_app_name">false</item>
-    <item type="id" name="fbi_dialog_app_share_comment_box">false</item>
-    <item type="id" name="fbi_dialog_app_share_button_container">false</item>
-    <item type="id" name="fbi_dialog_app_share_share_button">false</item>
-    <item type="id" name="fbi_dialog_app_share_cancel_button">false</item>
-    <item type="id" name="fbi_dialog_app_share_other">false</item>
-    <item type="id" name="appshare_dialog_other_options_info">false</item>
-    <item type="id" name="fbi_other_options_image_button">false</item>
     <item type="id" name="folder_layer">false</item>
     <item type="id" name="folder_view">false</item>
     <item type="id" name="folder_title">false</item>
@@ -63,7 +45,6 @@
     <item type="id" name="icon_label">false</item>
     <item type="id" name="transfer_layer">false</item>
     <item type="id" name="fade">false</item>
-    <item type="id" name="master_layer">false</item>
     <item type="id" name="desktop_master_layer">false</item>
     <item type="id" name="desktop_leave_overview">false</item>
     <item type="id" name="desktop_fullscreen_placeholder">false</item>

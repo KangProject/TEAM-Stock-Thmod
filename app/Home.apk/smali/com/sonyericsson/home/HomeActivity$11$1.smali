@@ -3,12 +3,12 @@
 .source "HomeActivity.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;
+.implements Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/HomeActivity$11;->onRenameFolder(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;Z)V
+    value = Lcom/sonyericsson/home/HomeActivity$11;->onCreateFolder(Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$1:Lcom/sonyericsson/home/HomeActivity$11;
 
-.field final synthetic val$listener:Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;
+.field final synthetic val$listener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;
 
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/HomeActivity$11;Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;)V
+.method constructor <init>(Lcom/sonyericsson/home/HomeActivity$11;Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;)V
     .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 1596
+    .line 1496
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$11$1;->this$1:Lcom/sonyericsson/home/HomeActivity$11;
 
-    iput-object p2, p0, Lcom/sonyericsson/home/HomeActivity$11$1;->val$listener:Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;
+    iput-object p2, p0, Lcom/sonyericsson/home/HomeActivity$11$1;->val$listener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,25 +46,26 @@
     .locals 1
 
     .prologue
-    .line 1603
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$11$1;->val$listener:Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;
+    .line 1502
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$11$1;->val$listener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;
 
-    invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;->onRenameFinished()V
+    invoke-interface {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;->onCanceled()V
 
-    .line 1604
+    .line 1503
     return-void
 .end method
 
-.method public onFolderRenamed(Ljava/lang/String;)V
+.method public onFolderConfirmed(Ljava/lang/String;I)V
     .locals 1
     .parameter "folderName"
+    .parameter "icon"
 
     .prologue
-    .line 1599
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$11$1;->val$listener:Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;
+    .line 1498
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$11$1;->val$listener:Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;
 
-    invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;->onRenameFinished()V
+    invoke-interface {v0, p1, p2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener$OnCreateFolderCompletedListener;->onConfirmed(Ljava/lang/String;I)V
 
-    .line 1600
+    .line 1499
     return-void
 .end method

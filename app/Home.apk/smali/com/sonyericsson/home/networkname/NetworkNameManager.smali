@@ -77,7 +77,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f040009
+    const v4, 0x7f040008
 
     invoke-static {v3, v4}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -90,7 +90,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f04000a
+    const v4, 0x7f040009
 
     invoke-static {v3, v4}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Bolay</string>
     <string name="home_button_exit_overview">Kaluar ihtisar</string>
     <string name="home_no_uninstallable_apps_txt">Apl ieu teu bisa dicoplokeun pamasanganna</string>
-    <string name="home_app_share_dropzone_hint_txt">Simpen di dieu jang ngabagikeun eusi</string>
-    <string name="appdialog_title">Kirim ka Facebook</string>
-    <string name="appdialog_comment_hint">Tambahkeun komentar</string>
-    <string name="appdialog_button_share">Bagikeun</string>
-    <string name="appdialog_button_cancel">Batal</string>
-    <string name="appdialog_other_options_info">Opsi babagi nu sejen</string>
-    <string name="appdialog_progress_info">Nyieun pos</string>
-    <string name="appdialog_toast_cannot_be_shared">Ieu teu bisi dibagikeun</string>
-    <string name="appdialog_toast_connection_error">Misalah sambungan</string>
-    <string name="appdialog_toast_sharing">Dibagikeun di Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Bagikeun</string>
 </resources>

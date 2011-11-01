@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1620
+    .line 1590
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 1622
+    .line 1592
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -80,7 +80,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1624
+    .line 1594
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->access$4600(Lcom/sonyericsson/home/layer/desktop/DesktopController$10;)Z
@@ -117,7 +117,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 1626
+    .line 1596
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -128,7 +128,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/PaneView;->moveToNextPane()Z
 
-    .line 1631
+    .line 1601
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
@@ -139,7 +139,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->access$4702(Lcom/sonyericsson/home/layer/desktop/DesktopController$10;J)J
 
-    .line 1632
+    .line 1602
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -150,7 +150,7 @@
 
     invoke-virtual {v0, p0}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1634
+    .line 1604
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -195,7 +195,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1636
+    .line 1606
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -216,11 +216,11 @@
 
     invoke-virtual {v0, p0, v1, v2}, Lcom/sonyericsson/paneview/PaneView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1639
+    .line 1609
     :cond_1
     return-void
 
-    .line 1627
+    .line 1597
     :cond_2
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
@@ -244,7 +244,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1628
+    .line 1598
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10$1;->this$1:Lcom/sonyericsson/home/layer/desktop/DesktopController$10;
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$10;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;

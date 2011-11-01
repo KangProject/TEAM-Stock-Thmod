@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Скасувати</string>
     <string name="home_button_exit_overview">Закрити огляд</string>
     <string name="home_no_uninstallable_apps_txt">Не можна видалити ці програми</string>
-    <string name="home_app_share_dropzone_hint_txt">Для обміну відпустіть об’єкт тут</string>
-    <string name="appdialog_title">Розмістити у Facebook</string>
-    <string name="appdialog_comment_hint">Додайте коментар</string>
-    <string name="appdialog_button_share">Поділитися</string>
-    <string name="appdialog_button_cancel">Скасувати</string>
-    <string name="appdialog_other_options_info">Варіанти поширення</string>
-    <string name="appdialog_progress_info">Створення допису</string>
-    <string name="appdialog_toast_cannot_be_shared">Поділитись цим елементом неможливо</string>
-    <string name="appdialog_toast_connection_error">Помилка з’єднання</string>
-    <string name="appdialog_toast_sharing">Триває надсилання до Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Надіслати</string>
 </resources>

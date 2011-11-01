@@ -1165,4 +1165,5 @@ PINが正しくない可能性があります。"</string>
     <string name="kill_app_longpress_back">長押しでアプリを終了</string>
     <string name="kill_app_longpress_back_summary">戻るボタンを長押しすることでフォアグラウンドアプリケーションを終了させる</string>
     <string name="xloud_strings_xloud_desc_txt">オーディオ再生レベル強調技術を使用する</string>
+    <string name="extra_tweaks">追加設定</string>
 </resources>

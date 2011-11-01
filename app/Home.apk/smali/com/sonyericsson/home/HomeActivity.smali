@@ -11,7 +11,6 @@
         Lcom/sonyericsson/home/HomeActivity$SortDialog;,
         Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;,
         Lcom/sonyericsson/home/HomeActivity$AddDialog;,
-        Lcom/sonyericsson/home/HomeActivity$DeskStandListener;,
         Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
     }
 .end annotation
@@ -27,8 +26,6 @@
 .field private static final DIALOG_ADD_TO_STAGE:I = 0x3
 
 .field private static final DIALOG_APPTRAY_SORT:I = 0x2
-
-.field private static final DIALOG_FBI_APP_SHARE:I = 0x5
 
 .field private static final DIALOG_PICK_ACTIVITY:I = 0x4
 
@@ -46,8 +43,6 @@
 .field private static final LAYER_FOLDER:I = 0x2
 
 .field private static final LAYER_STAGE:I = 0x1
-
-.field private static final LOG_TAG:Ljava/lang/String; = "HomeActivity"
 
 .field private static final MENU_GROUP_ALL:I = 0x0
 
@@ -109,29 +104,21 @@
 
 .field private mCurrentSorting:I
 
-.field private mDefaultOrientation:I
-
-.field private mDeskStandListener:Lcom/sonyericsson/home/HomeActivity$DeskStandListener;
-
 .field private mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
 .field private mDesktopLongPressLocation:Lcom/sonyericsson/grid/GridLocation;
 
-.field private mDismissDeleteDialogOnResume:Z
+.field private mDismissCurrentDialogOnResume:Z
 
 .field private mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-.field private mDropZoneController:Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
 .field private mFadeView:Lcom/sonyericsson/view/BackgroundFadeSrcXferView;
-
-.field private mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
 
 .field private mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
 .field private mFullScreenEffectPlaceholder:Landroid/view/ViewGroup;
 
-.field private mHistoryFocus:Landroid/view/View;
+.field private mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
 
 .field private mHomeButton:Landroid/view/View;
 
@@ -147,8 +134,6 @@
 
 .field private mLastOpenFolderLocation:Ljava/lang/Object;
 
-.field private mLockCornerVisibility:Z
-
 .field private mNetworkNameManager:Lcom/sonyericsson/home/networkname/NetworkNameManager;
 
 .field private mOnCreateStartTime:J
@@ -161,11 +146,15 @@
 
 .field private mPickApplicationDialog:Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;
 
-.field private mRenamingFolder:Z
-
 .field private mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
+.field protected mSavedFolderIconIndex:I
+
 .field protected mSavedFolderText:Ljava/lang/String;
+
+.field private mScreenEventFilter:Landroid/content/IntentFilter;
+
+.field private mScreenEventReceiver:Landroid/content/BroadcastReceiver;
 
 .field private mSmartSliderEnabled:Z
 
@@ -215,7 +204,7 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 189
     invoke-static {}, Lcom/sonyericsson/util/ViewTag;->createNextTag()I
 
     move-result v0
@@ -229,30 +218,36 @@
     .locals 1
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 332
-    const/4 v0, 0x5
+    .line 2456
+    new-instance v0, Lcom/sonyericsson/home/HomeActivity$17;
 
-    iput v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDefaultOrientation:I
+    invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$17;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
-    .line 2600
+    iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetHost:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;
+
+    .line 2474
     new-instance v0, Lcom/sonyericsson/home/HomeActivity$18;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$18;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
-    iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetHost:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;
-
-    .line 2618
-    new-instance v0, Lcom/sonyericsson/home/HomeActivity$19;
-
-    invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$19;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
-
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAddFolderListener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
-    .line 2856
+    .line 2711
     return-void
+.end method
+
+.method static synthetic access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    return-object v0
 .end method
 
 .method static synthetic access$100(Lcom/sonyericsson/home/HomeActivity;Z)V
@@ -261,7 +256,7 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->hideDesktopAndOpenApptay(Z)V
 
     return-void
@@ -272,7 +267,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWaitingForTrashcanClose:Z
 
     return v0
@@ -284,7 +279,7 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     iput-boolean p1, p0, Lcom/sonyericsson/home/HomeActivity;->mWaitingForTrashcanClose:Z
 
     return p1
@@ -296,137 +291,115 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->hideAppTrayButton(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDropZoneController:Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1300(Lcom/sonyericsson/home/HomeActivity;Z)V
+.method static synthetic access$1200(Lcom/sonyericsson/home/HomeActivity;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->showAppTrayButton(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
+.method static synthetic access$1300(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
+.method static synthetic access$1400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
+.method static synthetic access$1500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/grid/GridLocation;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/grid/GridLocation;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopLongPressLocation:Lcom/sonyericsson/grid/GridLocation;
 
     return-object v0
 .end method
 
-.method static synthetic access$1702(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/grid/GridLocation;)Lcom/sonyericsson/grid/GridLocation;
+.method static synthetic access$1502(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/grid/GridLocation;)Lcom/sonyericsson/grid/GridLocation;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopLongPressLocation:Lcom/sonyericsson/grid/GridLocation;
 
     return-object p1
 .end method
 
-.method static synthetic access$1800(Lcom/sonyericsson/home/HomeActivity;)I
+.method static synthetic access$1600(Lcom/sonyericsson/home/HomeActivity;)I
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageLocation:I
 
     return v0
 .end method
 
-.method static synthetic access$1802(Lcom/sonyericsson/home/HomeActivity;I)I
+.method static synthetic access$1602(Lcom/sonyericsson/home/HomeActivity;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     iput p1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageLocation:I
 
     return p1
 .end method
 
-.method static synthetic access$1900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/InfoGroupManager;
+.method static synthetic access$1700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/GlobalCustomizationManager;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/InfoGroupManager;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2000(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/InfoGroup;ILjava/lang/Object;Z)V
+.method static synthetic access$1900(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/InfoGroup;ILjava/lang/Object;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -435,78 +408,89 @@
     .parameter "x4"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/sonyericsson/home/HomeActivity;->openFolder(Lcom/sonyericsson/home/data/InfoGroup;ILjava/lang/Object;Z)V
 
     return-void
 .end method
 
-.method static synthetic access$2100(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
+.method static synthetic access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2000(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
     return-object v0
 .end method
 
-.method static synthetic access$2102(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
+.method static synthetic access$2002(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
     return-object p1
 .end method
 
-.method static synthetic access$2202(Lcom/sonyericsson/home/HomeActivity;Z)Z
+.method static synthetic access$2102(Lcom/sonyericsson/home/HomeActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 137
-    iput-boolean p1, p0, Lcom/sonyericsson/home/HomeActivity;->mDismissDeleteDialogOnResume:Z
+    .line 132
+    iput-boolean p1, p0, Lcom/sonyericsson/home/HomeActivity;->mDismissCurrentDialogOnResume:Z
 
     return p1
 .end method
 
-.method static synthetic access$2402(Lcom/sonyericsson/home/HomeActivity;Z)Z
+.method static synthetic access$2302(Lcom/sonyericsson/home/HomeActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     iput-boolean p1, p0, Lcom/sonyericsson/home/HomeActivity;->mAddingFolder:Z
 
     return p1
 .end method
 
-.method static synthetic access$2500(Lcom/sonyericsson/home/HomeActivity;)Landroid/util/DisplayMetrics;
+.method static synthetic access$2400(Lcom/sonyericsson/home/HomeActivity;)Landroid/util/DisplayMetrics;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
     return-object v0
 .end method
 
-.method static synthetic access$2600(Lcom/sonyericsson/home/HomeActivity;ILjava/lang/Object;)Landroid/graphics/Rect;
+.method static synthetic access$2500(Lcom/sonyericsson/home/HomeActivity;ILjava/lang/Object;)Landroid/graphics/Rect;
     .locals 1
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/HomeActivity;->resolveRect(ILjava/lang/Object;)Landroid/graphics/Rect;
 
     move-result-object v0
@@ -514,24 +498,35 @@
     return-object v0
 .end method
 
-.method static synthetic access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
+.method static synthetic access$2600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
     return-object v0
 .end method
 
-.method static synthetic access$2800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/statistics/Statistics;
+.method static synthetic access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/statistics/Statistics;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     return-object v0
 .end method
@@ -541,7 +536,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->bounceAppTrayButton()V
 
     return-void
@@ -553,7 +548,7 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->closeApptrayAndShowDesktop(Z)V
 
     return-void
@@ -564,7 +559,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentSorting:I
 
     return v0
@@ -576,7 +571,7 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     iput p1, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentSorting:I
 
     return p1
@@ -587,7 +582,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     return-object v0
@@ -598,7 +593,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFadeView:Lcom/sonyericsson/view/BackgroundFadeSrcXferView;
 
     return-object v0
@@ -609,7 +604,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     return-object v0
@@ -620,21 +615,33 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mNetworkNameManager:Lcom/sonyericsson/home/networkname/NetworkNameManager;
 
     return-object v0
 .end method
 
-.method static synthetic access$3500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
+.method static synthetic access$3500(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageView:Landroid/view/View;
 
     return-object v0
+.end method
+
+.method static synthetic access$3502(Lcom/sonyericsson/home/HomeActivity;Landroid/view/View;)Landroid/view/View;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 132
+    iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageView:Landroid/view/View;
+
+    return-object p1
 .end method
 
 .method static synthetic access$3600(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
@@ -642,52 +649,29 @@
     .parameter "x0"
 
     .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageView:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method static synthetic access$3602(Lcom/sonyericsson/home/HomeActivity;Landroid/view/View;)Landroid/view/View;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 137
-    iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageView:Landroid/view/View;
-
-    return-object p1
-.end method
-
-.method static synthetic access$3700(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/View;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mButtonExitOverview:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method static synthetic access$3800(Lcom/sonyericsson/home/HomeActivity;)I
+.method static synthetic access$3700(Lcom/sonyericsson/home/HomeActivity;)I
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageBreadth:I
 
     return v0
 .end method
 
-.method static synthetic access$3900(Lcom/sonyericsson/home/HomeActivity;)V
+.method static synthetic access$3800(Lcom/sonyericsson/home/HomeActivity;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->showHomeButton()V
 
     return-void
@@ -698,33 +682,10 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStealFocusNextModeChange:Z
 
     return v0
-.end method
-
-.method static synthetic access$4000(Lcom/sonyericsson/home/HomeActivity;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
-    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mLockCornerVisibility:Z
-
-    return v0
-.end method
-
-.method static synthetic access$4002(Lcom/sonyericsson/home/HomeActivity;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 137
-    iput-boolean p1, p0, Lcom/sonyericsson/home/HomeActivity;->mLockCornerVisibility:Z
-
-    return p1
 .end method
 
 .method static synthetic access$402(Lcom/sonyericsson/home/HomeActivity;Z)Z
@@ -733,21 +694,43 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     iput-boolean p1, p0, Lcom/sonyericsson/home/HomeActivity;->mStealFocusNextModeChange:Z
 
     return p1
 .end method
 
-.method static synthetic access$4900(Lcom/sonyericsson/home/HomeActivity;)Z
+.method static synthetic access$4700(Lcom/sonyericsson/home/HomeActivity;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
-    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mLandscapeModeEnabled:Z
+    .line 132
+    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mThemeOptionEnabled:Z
 
     return v0
+.end method
+
+.method static synthetic access$4800(Lcom/sonyericsson/home/HomeActivity;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 132
+    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->pickShortcut()V
+
+    return-void
+.end method
+
+.method static synthetic access$4900(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/WidgetManager;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
+
+    return-object v0
 .end method
 
 .method static synthetic access$500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/transfer/TransferView;
@@ -755,32 +738,32 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     return-object v0
 .end method
 
-.method static synthetic access$5000(Lcom/sonyericsson/home/HomeActivity;)I
+.method static synthetic access$5000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
-    iget v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDefaultOrientation:I
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAddFolderListener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$5100(Lcom/sonyericsson/home/HomeActivity;)Z
-    .locals 1
+.method static synthetic access$5100(Lcom/sonyericsson/home/HomeActivity;)V
+    .locals 0
     .parameter "x0"
 
     .prologue
-    .line 137
-    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mThemeOptionEnabled:Z
+    .line 132
+    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->pickWallpaper()V
 
-    return v0
+    return-void
 .end method
 
 .method static synthetic access$5200(Lcom/sonyericsson/home/HomeActivity;)V
@@ -788,65 +771,42 @@
     .parameter "x0"
 
     .prologue
-    .line 137
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->pickShortcut()V
-
-    return-void
-.end method
-
-.method static synthetic access$5300(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/widget/WidgetManager;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$5400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAddFolderListener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$5500(Lcom/sonyericsson/home/HomeActivity;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 137
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->pickWallpaper()V
-
-    return-void
-.end method
-
-.method static synthetic access$5600(Lcom/sonyericsson/home/HomeActivity;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 137
+    .line 132
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->pickTheme()V
 
     return-void
 .end method
 
-.method static synthetic access$5700(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/ViewGroup;
+.method static synthetic access$5300(Lcom/sonyericsson/home/HomeActivity;)Landroid/view/ViewGroup;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFullScreenEffectPlaceholder:Landroid/view/ViewGroup;
 
     return-object v0
+.end method
+
+.method static synthetic access$5700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 132
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+
+    return-object v0
+.end method
+
+.method static synthetic access$5800()I
+    .locals 1
+
+    .prologue
+    .line 132
+    sget v0, Lcom/sonyericsson/home/HomeActivity;->INFO_TAG:I
+
+    return v0
 .end method
 
 .method static synthetic access$600(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/Info;)V
@@ -855,31 +815,10 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->removeInfo(Lcom/sonyericsson/home/data/Info;)V
 
     return-void
-.end method
-
-.method static synthetic access$6100(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/resourceload/ResourceLoader;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-    return-object v0
-.end method
-
-.method static synthetic access$6200()I
-    .locals 1
-
-    .prologue
-    .line 137
-    sget v0, Lcom/sonyericsson/home/HomeActivity;->INFO_TAG:I
-
-    return v0
 .end method
 
 .method static synthetic access$700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -887,7 +826,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     return-object v0
@@ -898,7 +837,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     return-object v0
@@ -909,7 +848,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTrashcanController:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
     return-object v0
@@ -919,25 +858,25 @@
     .locals 3
 
     .prologue
-    .line 948
+    .line 936
     invoke-static {}, Lcom/sonyericsson/animation/JumpRenderer;->createAnimation()Landroid/view/animation/Animation;
 
     move-result-object v0
 
-    .line 949
+    .line 937
     .local v0, jump:Landroid/view/animation/Animation;
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 950
+    .line 938
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonShowAnim:Landroid/view/animation/Animation;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 951
+    .line 939
     return-void
 .end method
 
@@ -946,32 +885,15 @@
     .parameter "animate"
 
     .prologue
-    .line 906
+    .line 894
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->close(Z)V
 
-    .line 907
+    .line 895
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->hideHomeButton(Z)V
 
-    .line 908
-    return-void
-.end method
-
-.method private closeFolder(Z)V
-    .locals 1
-    .parameter "animate"
-
-    .prologue
-    .line 1781
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
-
-    invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/folder/FolderController;->closeFolder(Z)V
-
-    .line 1782
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->restoreFocus()V
-
-    .line 1783
+    .line 896
     return-void
 .end method
 
@@ -979,58 +901,18 @@
     .locals 2
 
     .prologue
-    .line 1047
+    .line 1027
     new-instance v0, Lcom/sonyericsson/home/HomeActivityFlow;
 
-    new-instance v1, Lcom/sonyericsson/home/HomeActivity$7;
+    new-instance v1, Lcom/sonyericsson/home/HomeActivity$8;
 
-    invoke-direct {v1, p0}, Lcom/sonyericsson/home/HomeActivity$7;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-direct {v1, p0}, Lcom/sonyericsson/home/HomeActivity$8;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
     invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivityFlow;-><init>(Lcom/sonyericsson/home/HomeActivityFlow$Presenter;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
-    .line 1285
-    return-void
-.end method
-
-.method private createAppShareDropZone()V
-    .locals 4
-
-    .prologue
-    .line 1625
-    const/high16 v2, 0x7f0e
-
-    invoke-virtual {p0, v2}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 1626
-    .local v0, appShareView:Landroid/view/View;
-    const v2, 0x7f0e003f
-
-    invoke-virtual {p0, v2}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    .line 1628
-    .local v1, mainLayer:Landroid/view/View;
-    new-instance v2, Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
-    invoke-direct {v2, p0, v0}, Lcom/sonyericsson/home/layer/appshare/DropZoneController;-><init>(Landroid/content/Context;Landroid/view/View;)V
-
-    iput-object v2, p0, Lcom/sonyericsson/home/HomeActivity;->mDropZoneController:Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
-    .line 1629
-    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity;->mDropZoneController:Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
-    new-instance v3, Lcom/sonyericsson/home/HomeActivity$12;
-
-    invoke-direct {v3, p0, v1}, Lcom/sonyericsson/home/HomeActivity$12;-><init>(Lcom/sonyericsson/home/HomeActivity;Landroid/view/View;)V
-
-    invoke-virtual {v2, v3}, Lcom/sonyericsson/home/layer/appshare/DropZoneController;->setDropZoneControllerListener(Lcom/sonyericsson/home/layer/appshare/DropZoneController$DropZoneControllerListener;)V
-
-    .line 1660
+    .line 1282
     return-void
 .end method
 
@@ -1039,14 +921,14 @@
     .parameter "model"
 
     .prologue
-    .line 1289
+    .line 1286
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
     move v9, v0
 
-    .line 1291
+    .line 1288
     .local v9, modelSupplied:Z
     :goto_0
     new-instance v0, Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -1055,7 +937,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0043
+    const v2, 0x7f0e0030
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -1063,7 +945,7 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    const v3, 0x7f0e000a
+    const v3, 0x7f0e0003
 
     invoke-virtual {p0, v3}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -1085,28 +967,28 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    .line 1296
+    .line 1293
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    new-instance v1, Lcom/sonyericsson/home/HomeActivity$8;
+    new-instance v1, Lcom/sonyericsson/home/HomeActivity$9;
 
-    invoke-direct {v1, p0, v9}, Lcom/sonyericsson/home/HomeActivity$8;-><init>(Lcom/sonyericsson/home/HomeActivity;Z)V
+    invoke-direct {v1, p0, v9}, Lcom/sonyericsson/home/HomeActivity$9;-><init>(Lcom/sonyericsson/home/HomeActivity;Z)V
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setAppTrayControllerListener(Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;)V
 
-    .line 1383
+    .line 1382
     if-eqz p1, :cond_1
 
-    .line 1384
+    .line 1383
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setRetainedModel(Ljava/lang/Object;)V
 
-    .line 1388
+    .line 1387
     :goto_1
     return-void
 
-    .line 1289
+    .line 1286
     .end local v9           #modelSupplied:Z
     :cond_0
     const/4 v0, 0x0
@@ -1115,7 +997,7 @@
 
     goto :goto_0
 
-    .line 1386
+    .line 1385
     .restart local v9       #modelSupplied:Z
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -1129,7 +1011,7 @@
     .locals 3
 
     .prologue
-    .line 1867
+    .line 1798
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -1142,7 +1024,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mBadgeManager:Lcom/sonyericsson/home/badge/BadgeManager;
 
-    .line 1868
+    .line 1799
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mBadgeManager:Lcom/sonyericsson/home/badge/BadgeManager;
 
     new-instance v1, Lcom/sonyericsson/home/HomeActivity$16;
@@ -1153,7 +1035,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/home/badge/BadgeManager;->setBadgeManagerListener(Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
 
-    .line 1883
+    .line 1814
     return-void
 .end method
 
@@ -1165,8 +1047,8 @@
 
     const/4 v8, 0x0
 
-    .line 1797
-    const v0, 0x7f0e0010
+    .line 1744
+    const v0, 0x7f0e0009
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -1174,11 +1056,11 @@
 
     check-cast v6, Landroid/view/ViewStub;
 
-    .line 1798
+    .line 1745
     .local v6, cornerButtonsStub:Landroid/view/ViewStub;
     if-eqz v6, :cond_0
 
-    .line 1799
+    .line 1746
     new-instance v0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplicationContext()Landroid/content/Context;
@@ -1197,57 +1079,57 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
-    .line 1808
+    .line 1755
     new-instance v7, Landroid/graphics/Rect;
 
     invoke-direct {v7}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1809
+    .line 1756
     .local v7, rect:Landroid/graphics/Rect;
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0, v8, v8, v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getCellRect(IILandroid/graphics/Rect;)V
 
-    .line 1810
+    .line 1757
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v0, v8, v7}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->setExtraHintRect(ILandroid/graphics/Rect;)V
 
-    .line 1812
+    .line 1759
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0, v9, v8, v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getCellRect(IILandroid/graphics/Rect;)V
 
-    .line 1813
+    .line 1760
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1, v7}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->setExtraHintRect(ILandroid/graphics/Rect;)V
 
-    .line 1815
+    .line 1762
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0, v8, v9, v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getCellRect(IILandroid/graphics/Rect;)V
 
-    .line 1816
+    .line 1763
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, v7}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->setExtraHintRect(ILandroid/graphics/Rect;)V
 
-    .line 1818
+    .line 1765
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0, v9, v9, v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getCellRect(IILandroid/graphics/Rect;)V
 
-    .line 1819
+    .line 1766
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v0, v9, v7}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->setExtraHintRect(ILandroid/graphics/Rect;)V
 
-    .line 1821
+    .line 1768
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     new-instance v1, Lcom/sonyericsson/home/HomeActivity$15;
@@ -1256,23 +1138,23 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->setCornerButtonsListener(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$CornerButtonsControllerListener;)V
 
-    .line 1864
+    .line 1795
     .end local v7           #rect:Landroid/graphics/Rect;
     :cond_0
     return-void
 .end method
 
 .method private createDesktop()V
-    .locals 10
+    .locals 9
 
     .prologue
+    .line 1390
+    new-instance v8, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v8}, Landroid/util/DisplayMetrics;-><init>()V
+
     .line 1391
-    new-instance v9, Landroid/util/DisplayMetrics;
-
-    invoke-direct {v9}, Landroid/util/DisplayMetrics;-><init>()V
-
-    .line 1392
-    .local v9, metrics:Landroid/util/DisplayMetrics;
+    .local v8, metrics:Landroid/util/DisplayMetrics;
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v0
@@ -1281,9 +1163,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v0, v8}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 1394
+    .line 1393
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -1296,35 +1178,33 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    .line 1395
-    const v0, 0x7f0e0040
+    .line 1394
+    const v0, 0x7f0e002d
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 1396
-    .local v2, desktopMasterView:Landroid/view/View;
+    .line 1395
+    .local v1, desktopMasterView:Landroid/view/View;
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
-    iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+    iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    iget-object v6, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
+    iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    iget-object v6, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
-    iget v8, v9, Landroid/util/DisplayMetrics;->density:F
+    iget v7, v8, Landroid/util/DisplayMetrics;->density:F
 
-    move-object v1, p0
+    invoke-virtual/range {v0 .. v7}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->bind(Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/widget/WidgetManager;Lcom/sonyericsson/home/widget/AdvWidgetManager;F)V
 
-    invoke-virtual/range {v0 .. v8}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->bind(Landroid/app/Activity;Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/widget/WidgetManager;Lcom/sonyericsson/home/widget/AdvWidgetManager;F)V
-
-    .line 1399
-    const v0, 0x7f0e0041
+    .line 1398
+    const v0, 0x7f0e002e
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -1332,25 +1212,25 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mButtonExitOverview:Landroid/view/View;
 
-    .line 1400
+    .line 1399
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mButtonExitOverview:Landroid/view/View;
 
-    new-instance v1, Lcom/sonyericsson/home/HomeActivity$9;
+    new-instance v2, Lcom/sonyericsson/home/HomeActivity$10;
 
-    invoke-direct {v1, p0}, Lcom/sonyericsson/home/HomeActivity$9;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-direct {v2, p0}, Lcom/sonyericsson/home/HomeActivity$10;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1408
+    .line 1407
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    new-instance v1, Lcom/sonyericsson/home/HomeActivity$10;
+    new-instance v2, Lcom/sonyericsson/home/HomeActivity$11;
 
-    invoke-direct {v1, p0}, Lcom/sonyericsson/home/HomeActivity$10;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-direct {v2, p0}, Lcom/sonyericsson/home/HomeActivity$11;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
-    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setDesktopControllerListener(Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;)V
+    invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setDesktopControllerListener(Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;)V
 
-    .line 1570
+    .line 1568
     return-void
 .end method
 
@@ -1358,12 +1238,12 @@
     .locals 8
 
     .prologue
-    .line 1573
-    new-instance v7, Lcom/sonyericsson/home/HomeActivity$11;
+    .line 1571
+    new-instance v7, Lcom/sonyericsson/home/HomeActivity$12;
 
-    invoke-direct {v7, p0}, Lcom/sonyericsson/home/HomeActivity$11;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-direct {v7, p0}, Lcom/sonyericsson/home/HomeActivity$12;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
-    .line 1617
+    .line 1618
     .local v7, folderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
     new-instance v0, Lcom/sonyericsson/home/layer/folder/FolderController;
 
@@ -1371,7 +1251,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e002c
+    const v2, 0x7f0e001a
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -1379,22 +1259,22 @@
 
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
-    iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+    iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity;->mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
 
-    iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
+    iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    iget-object v6, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    iget-object v6, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-direct/range {v0 .. v6}, Lcom/sonyericsson/home/layer/folder/FolderController;-><init>(Landroid/content/Context;Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
+    invoke-direct/range {v0 .. v6}, Lcom/sonyericsson/home/layer/folder/FolderController;-><init>(Landroid/content/Context;Landroid/view/View;Lcom/sonyericsson/home/transfer/TransferHandler;Lcom/sonyericsson/home/GlobalCustomizationManager;Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    .line 1621
+    .line 1622
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v0, v7}, Lcom/sonyericsson/home/layer/folder/FolderController;->setFolderListener(Lcom/sonyericsson/home/layer/folder/FolderListener;)V
 
-    .line 1622
+    .line 1623
     return-void
 .end method
 
@@ -1403,8 +1283,8 @@
     .parameter "model"
 
     .prologue
-    .line 1691
-    const v0, 0x7f0e004b
+    .line 1654
+    const v0, 0x7f0e0038
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -1412,7 +1292,7 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    .line 1692
+    .line 1655
     .local v2, stageStub:Landroid/view/ViewStub;
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
 
@@ -1426,11 +1306,11 @@
 
     iput v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageBreadth:I
 
-    .line 1693
+    .line 1656
     if-eqz v2, :cond_0
 
-    .line 1694
-    const v0, 0x7f0e0020
+    .line 1657
+    const v0, 0x7f0e0019
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -1438,7 +1318,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 1695
+    .line 1658
     .local v3, imageView:Landroid/widget/ImageView;
     new-instance v0, Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -1460,7 +1340,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
-    .line 1699
+    .line 1662
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     new-instance v1, Lcom/sonyericsson/home/HomeActivity$14;
@@ -1469,15 +1349,15 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/stage/StageController;->setStageControllerListener(Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;)V
 
-    .line 1751
+    .line 1715
     if-eqz p1, :cond_1
 
-    .line 1752
+    .line 1716
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageController;->setRetainedModel(Ljava/lang/Object;)V
 
-    .line 1758
+    .line 1722
     :goto_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -1485,12 +1365,12 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setSelfFocusable(Z)V
 
-    .line 1760
+    .line 1724
     .end local v3           #imageView:Landroid/widget/ImageView;
     :cond_0
     return-void
 
-    .line 1754
+    .line 1718
     .restart local v3       #imageView:Landroid/widget/ImageView;
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
@@ -1504,14 +1384,14 @@
     .locals 3
 
     .prologue
-    .line 1663
-    const v1, 0x7f0e004c
+    .line 1626
+    const v1, 0x7f0e0039
 
     invoke-virtual {p0, v1}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1664
+    .line 1627
     .local v0, view:Landroid/view/View;
     new-instance v1, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
@@ -1523,7 +1403,7 @@
 
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mTrashcanController:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    .line 1665
+    .line 1628
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mTrashcanController:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
     new-instance v2, Lcom/sonyericsson/home/HomeActivity$13;
@@ -1532,7 +1412,7 @@
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->setTrashcanControllerListener(Lcom/sonyericsson/home/layer/trashcan/TrashcanController$TrashcanControllerListener;)V
 
-    .line 1688
+    .line 1651
     return-void
 .end method
 
@@ -1541,7 +1421,7 @@
     .parameter "appWidgetId"
 
     .prologue
-    .line 2219
+    .line 2132
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/HomeActivityFlow;->addWidget(I)Z
@@ -1550,12 +1430,12 @@
 
     if-nez v0, :cond_0
 
-    .line 2220
+    .line 2133
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/widget/WidgetManager;->deleteAppWidgetId(I)V
 
-    .line 2223
+    .line 2136
     :cond_0
     return-void
 .end method
@@ -1565,7 +1445,7 @@
     .parameter "animate"
 
     .prologue
-    .line 911
+    .line 899
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -1574,17 +1454,17 @@
 
     if-nez v0, :cond_1
 
-    .line 912
+    .line 900
     if-eqz p1, :cond_0
 
-    .line 913
+    .line 901
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonHideAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 915
+    .line 903
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
@@ -1592,14 +1472,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 916
+    .line 904
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 918
+    .line 906
     :cond_1
     return-void
 .end method
@@ -1609,44 +1489,44 @@
     .parameter "animate"
 
     .prologue
-    .line 894
+    .line 882
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->defocus()V
 
-    .line 895
+    .line 883
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->hide(Z)V
 
-    .line 896
+    .line 884
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     if-eqz v0, :cond_0
 
-    .line 897
+    .line 885
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageController;->hide(Z)V
 
-    .line 899
+    .line 887
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     if-eqz v0, :cond_1
 
-    .line 900
+    .line 888
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->hide(Z)V
 
-    .line 902
+    .line 890
     :cond_1
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->hideAppTrayButton(Z)V
 
-    .line 903
+    .line 891
     return-void
 .end method
 
@@ -1655,7 +1535,7 @@
     .parameter "animate"
 
     .prologue
-    .line 921
+    .line 909
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -1664,17 +1544,17 @@
 
     if-nez v0, :cond_1
 
-    .line 922
+    .line 910
     if-eqz p1, :cond_0
 
-    .line 923
+    .line 911
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonHideAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 925
+    .line 913
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
@@ -1682,7 +1562,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 927
+    .line 915
     :cond_1
     return-void
 .end method
@@ -1695,27 +1575,24 @@
     .parameter "animate"
 
     .prologue
-    .line 1773
+    .line 1737
     iput p2, p0, Lcom/sonyericsson/home/HomeActivity;->mLastOpenFolderLayer:I
 
-    .line 1774
+    .line 1738
     iput-object p3, p0, Lcom/sonyericsson/home/HomeActivity;->mLastOpenFolderLocation:Ljava/lang/Object;
 
-    .line 1775
+    .line 1739
     invoke-direct {p0, p2, p3}, Lcom/sonyericsson/home/HomeActivity;->resolveRect(ILjava/lang/Object;)Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 1776
+    .line 1740
     .local v0, sourceRect:Landroid/graphics/Rect;
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->rememberFocus()V
-
-    .line 1777
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v1, p1, v0, p4}, Lcom/sonyericsson/home/layer/folder/FolderController;->openFolder(Lcom/sonyericsson/home/data/InfoGroup;Landroid/graphics/Rect;Z)V
 
-    .line 1778
+    .line 1741
     return-void
 .end method
 
@@ -1723,18 +1600,18 @@
     .locals 7
 
     .prologue
-    .line 2185
+    .line 2098
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2187
+    .line 2100
     .local v0, bundle:Landroid/os/Bundle;
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2188
+    .line 2101
     .local v3, shortcutNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const v4, 0x7f070001
 
@@ -1744,19 +1621,19 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2189
+    .line 2102
     const-string v4, "android.intent.extra.shortcut.NAME"
 
     invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 2191
+    .line 2104
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2192
+    .line 2105
     .local v2, shortcutIcons:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Intent$ShortcutIconResource;>;"
-    const v4, 0x7f02004d
+    const v4, 0x7f020054
 
     invoke-static {p0, v4}, Landroid/content/Intent$ShortcutIconResource;->fromContext(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;
 
@@ -1764,19 +1641,19 @@
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2194
+    .line 2107
     const-string v4, "android.intent.extra.shortcut.ICON_RESOURCE"
 
     invoke-virtual {v0, v4, v2}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 2196
+    .line 2109
     new-instance v1, Landroid/content/Intent;
 
     const-string v4, "android.intent.action.PICK_ACTIVITY"
 
     invoke-direct {v1, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2197
+    .line 2110
     .local v1, pickIntent:Landroid/content/Intent;
     const-string v4, "android.intent.extra.INTENT"
 
@@ -1788,7 +1665,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 2198
+    .line 2111
     const-string v4, "android.intent.extra.TITLE"
 
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
@@ -1803,15 +1680,15 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 2200
+    .line 2113
     invoke-virtual {v1, v0}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 2204
+    .line 2117
     const/4 v4, 0x1
 
     invoke-virtual {p0, v1, v4}, Lcom/sonyericsson/home/HomeActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 2205
+    .line 2118
     return-void
 .end method
 
@@ -1819,14 +1696,14 @@
     .locals 3
 
     .prologue
-    .line 2178
+    .line 2091
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "com.sonyericsson.theme.intent.action.SET_RUNTIME_THEME"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2179
+    .line 2092
     .local v1, pickTheme:Landroid/content/Intent;
     const v2, 0x7f07000f
 
@@ -1838,11 +1715,11 @@
 
     move-result-object v0
 
-    .line 2181
+    .line 2094
     .local v0, chooser:Landroid/content/Intent;
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 2182
+    .line 2095
     return-void
 .end method
 
@@ -1850,14 +1727,14 @@
     .locals 3
 
     .prologue
-    .line 2171
+    .line 2084
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.SET_WALLPAPER"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2172
+    .line 2085
     .local v1, pickWallpaper:Landroid/content/Intent;
     const v2, 0x7f07000e
 
@@ -1869,13 +1746,13 @@
 
     move-result-object v0
 
-    .line 2174
+    .line 2087
     .local v0, chooser:Landroid/content/Intent;
     const/4 v2, 0x4
 
     invoke-virtual {p0, v0, v2}, Lcom/sonyericsson/home/HomeActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 2175
+    .line 2088
     return-void
 .end method
 
@@ -1884,34 +1761,34 @@
     .parameter "appWidgetId"
 
     .prologue
-    .line 2208
+    .line 2121
     if-eqz p1, :cond_0
 
-    .line 2209
+    .line 2122
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     invoke-virtual {v1, p1}, Lcom/sonyericsson/home/widget/WidgetManager;->getWidgetConfigureIntent(I)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 2210
+    .line 2123
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_1
 
-    .line 2211
+    .line 2124
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
     const/4 v2, 0x3
 
     invoke-virtual {v1, v0, v2}, Lcom/sonyericsson/home/HomeActivityFlow;->startActivitySafelyForResult(Landroid/content/Intent;I)V
 
-    .line 2216
+    .line 2129
     .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     :goto_0
     return-void
 
-    .line 2213
+    .line 2126
     .restart local v0       #intent:Landroid/content/Intent;
     :cond_1
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->finishAddWidget(I)V
@@ -1919,32 +1796,17 @@
     goto :goto_0
 .end method
 
-.method private rememberFocus()V
-    .locals 1
-
-    .prologue
-    .line 1786
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getCurrentFocus()Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHistoryFocus:Landroid/view/View;
-
-    .line 1787
-    return-void
-.end method
-
 .method private removeInfo(Lcom/sonyericsson/home/data/Info;)V
     .locals 3
     .parameter "info"
 
     .prologue
-    .line 2226
+    .line 2139
     instance-of v1, p1, Lcom/sonyericsson/home/data/WidgetInfo;
 
     if-eqz v1, :cond_1
 
-    .line 2227
+    .line 2140
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     check-cast p1, Lcom/sonyericsson/home/data/WidgetInfo;
@@ -1956,19 +1818,19 @@
 
     invoke-virtual {v1, v2}, Lcom/sonyericsson/home/widget/WidgetManager;->deleteAppWidgetId(I)V
 
-    .line 2237
+    .line 2150
     :cond_0
     :goto_0
     return-void
 
-    .line 2228
+    .line 2141
     .restart local p1
     :cond_1
     instance-of v1, p1, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
     if-eqz v1, :cond_2
 
-    .line 2230
+    .line 2143
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     check-cast p1, Lcom/sonyericsson/home/data/AdvWidgetInfo;
@@ -1978,14 +1840,14 @@
 
     goto :goto_0
 
-    .line 2231
+    .line 2144
     .restart local p1
     :cond_2
     instance-of v1, p1, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     if-eqz v1, :cond_0
 
-    .line 2232
+    .line 2145
     check-cast p1, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     .end local p1
@@ -1993,11 +1855,11 @@
 
     move-result-object v0
 
-    .line 2233
+    .line 2146
     .local v0, resourceName:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 2234
+    .line 2147
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -2013,51 +1875,51 @@
     .parameter "location"
 
     .prologue
-    .line 1886
+    .line 1817
     if-nez p2, :cond_0
 
-    .line 1887
+    .line 1818
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v1
 
-    .line 1891
+    .line 1822
     :cond_0
     instance-of v1, p2, Landroid/graphics/Rect;
 
     if-eqz v1, :cond_1
 
-    .line 1892
+    .line 1823
     check-cast p2, Landroid/graphics/Rect;
 
     .end local p2
     move-object v1, p2
 
-    .line 1911
+    .line 1842
     :goto_0
     return-object v1
 
-    .line 1895
+    .line 1826
     .restart local p2
     :cond_1
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1897
+    .line 1828
     .local v0, result:Landroid/graphics/Rect;
     packed-switch p1, :pswitch_data_0
 
-    .line 1908
+    .line 1839
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v1
 
-    .line 1899
+    .line 1830
     :pswitch_0
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -2066,10 +1928,10 @@
     :goto_1
     move-object v1, v0
 
-    .line 1911
+    .line 1842
     goto :goto_0
 
-    .line 1903
+    .line 1834
     :pswitch_1
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
@@ -2077,7 +1939,7 @@
 
     goto :goto_1
 
-    .line 1897
+    .line 1828
     nop
 
     :pswitch_data_0
@@ -2087,36 +1949,12 @@
     .end packed-switch
 .end method
 
-.method private restoreFocus()V
-    .locals 1
-
-    .prologue
-    .line 1790
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHistoryFocus:Landroid/view/View;
-
-    if-eqz v0, :cond_0
-
-    .line 1791
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHistoryFocus:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
-
-    .line 1792
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHistoryFocus:Landroid/view/View;
-
-    .line 1794
-    :cond_0
-    return-void
-.end method
-
 .method private roundToNearest100(J)I
     .locals 2
     .parameter "time"
 
     .prologue
-    .line 805
+    .line 801
     long-to-float v0, p1
 
     const/high16 v1, 0x42c8
@@ -2136,7 +1974,7 @@
     .locals 7
 
     .prologue
-    .line 2240
+    .line 2153
     const-string v5, "wallpaper"
 
     invoke-virtual {p0, v5}, Lcom/sonyericsson/home/HomeActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2145,7 +1983,7 @@
 
     check-cast v4, Landroid/app/WallpaperManager;
 
-    .line 2242
+    .line 2155
     .local v4, wpm:Landroid/app/WallpaperManager;
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getWindowManager()Landroid/view/WindowManager;
 
@@ -2155,7 +1993,7 @@
 
     move-result-object v0
 
-    .line 2243
+    .line 2156
     .local v0, display:Landroid/view/Display;
     invoke-virtual {v0}, Landroid/view/Display;->getWidth()I
 
@@ -2171,7 +2009,7 @@
 
     move v2, v5
 
-    .line 2245
+    .line 2158
     .local v2, isPortrait:Z
     :goto_0
     if-eqz v2, :cond_1
@@ -2182,7 +2020,7 @@
 
     move v3, v5
 
-    .line 2246
+    .line 2159
     .local v3, width:I
     :goto_1
     if-eqz v2, :cond_2
@@ -2193,17 +2031,17 @@
 
     move v1, v5
 
-    .line 2247
+    .line 2160
     .local v1, height:I
     :goto_2
     mul-int/lit8 v5, v3, 0x2
 
     invoke-virtual {v4, v5, v1}, Landroid/app/WallpaperManager;->suggestDesiredDimensions(II)V
 
-    .line 2248
+    .line 2161
     return-void
 
-    .line 2243
+    .line 2156
     .end local v1           #height:I
     .end local v2           #isPortrait:Z
     .end local v3           #width:I
@@ -2214,7 +2052,7 @@
 
     goto :goto_0
 
-    .line 2245
+    .line 2158
     .restart local v2       #isPortrait:Z
     :cond_1
     invoke-virtual {v0}, Landroid/view/Display;->getHeight()I
@@ -2225,7 +2063,7 @@
 
     goto :goto_1
 
-    .line 2246
+    .line 2159
     .restart local v3       #width:I
     :cond_2
     invoke-virtual {v0}, Landroid/view/Display;->getWidth()I
@@ -2243,7 +2081,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1763
+    .line 1727
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2252,7 +2090,7 @@
 
     move-result-object v0
 
-    .line 1764
+    .line 1728
     .local v0, config:Landroid/content/res/Configuration;
     iget v1, v0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
@@ -2264,10 +2102,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1767
+    .line 1731
     iput-boolean v2, p0, Lcom/sonyericsson/home/HomeActivity;->mSmartSliderEnabled:Z
 
-    .line 1768
+    .line 1732
     const/4 v1, 0x3
 
     invoke-static {v1}, Landroid/view/KeyCharacterMap;->load(I)Landroid/view/KeyCharacterMap;
@@ -2276,7 +2114,7 @@
 
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mKeyCharacterMap:Landroid/view/KeyCharacterMap;
 
-    .line 1770
+    .line 1734
     :cond_0
     return-void
 .end method
@@ -2288,43 +2126,43 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 954
-    new-instance v0, Lcom/sonyericsson/home/HomeActivity$5;
+    .line 942
+    new-instance v0, Lcom/sonyericsson/home/HomeActivity$6;
 
-    invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$5;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$6;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
     invoke-virtual {p1, v0}, Lcom/sonyericsson/home/transfer/TransferView;->setTransferListener(Lcom/sonyericsson/home/transfer/TransferView$TransferListener;)V
 
-    .line 986
+    .line 966
     iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mLandscapeModeEnabled:Z
 
     if-nez v0, :cond_0
 
-    .line 990
+    .line 970
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lcom/sonyericsson/home/transfer/TransferView;->setFocusable(Z)V
 
-    .line 991
+    .line 971
     const/high16 v0, 0x6
 
     invoke-virtual {p1, v0}, Lcom/sonyericsson/home/transfer/TransferView;->setDescendantFocusability(I)V
 
-    .line 1044
+    .line 1024
     :goto_0
     return-void
 
-    .line 993
+    .line 973
     :cond_0
     invoke-virtual {p1, v1}, Lcom/sonyericsson/home/transfer/TransferView;->setFocusable(Z)V
 
-    .line 994
+    .line 974
     invoke-virtual {p1, v1}, Lcom/sonyericsson/home/transfer/TransferView;->setResetFocusability(Z)V
 
-    .line 995
-    new-instance v0, Lcom/sonyericsson/home/HomeActivity$6;
+    .line 975
+    new-instance v0, Lcom/sonyericsson/home/HomeActivity$7;
 
-    invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$6;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$7;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
     invoke-virtual {p1, v0}, Lcom/sonyericsson/home/transfer/TransferView;->setFocusHandler(Lcom/sonyericsson/home/transfer/TransferView$FocusHandler;)V
 
@@ -2336,7 +2174,7 @@
     .parameter "animate"
 
     .prologue
-    .line 930
+    .line 918
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     if-eqz v0, :cond_1
@@ -2359,17 +2197,17 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 932
+    .line 920
     if-eqz p1, :cond_0
 
-    .line 933
+    .line 921
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonShowAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 935
+    .line 923
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
@@ -2377,7 +2215,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 937
+    .line 925
     :cond_1
     return-void
 .end method
@@ -2386,7 +2224,7 @@
     .locals 2
 
     .prologue
-    .line 940
+    .line 928
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -2395,26 +2233,26 @@
 
     if-eqz v0, :cond_0
 
-    .line 941
+    .line 929
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonShowAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 942
+    .line 930
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 943
+    .line 931
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 945
+    .line 933
     :cond_0
     return-void
 .end method
@@ -2428,22 +2266,22 @@
     .parameter "intent"
 
     .prologue
-    .line 2112
+    .line 2025
     const/4 v5, -0x1
 
     if-ne p2, v5, :cond_3
 
     if-eqz p3, :cond_3
 
-    .line 2113
+    .line 2026
     packed-switch p1, :pswitch_data_0
 
-    .line 2168
+    .line 2081
     :cond_0
     :goto_0
     return-void
 
-    .line 2116
+    .line 2029
     :pswitch_0
     const-string v5, "advWidgetName"
 
@@ -2451,35 +2289,35 @@
 
     move-result-object v0
 
-    .line 2118
+    .line 2031
     .local v0, advWidgetName:Ljava/lang/String;
     invoke-static {p3}, Lcom/sonyericsson/home/widget/WidgetManager;->getWidgetId(Landroid/content/Intent;)I
 
     move-result v1
 
-    .line 2120
+    .line 2033
     .local v1, appWidgetId:I
     if-eqz v0, :cond_1
 
-    .line 2124
+    .line 2037
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     invoke-virtual {v5, v1}, Lcom/sonyericsson/home/widget/WidgetManager;->deleteAppWidgetId(I)V
 
-    .line 2125
+    .line 2038
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
     invoke-virtual {v5, v0}, Lcom/sonyericsson/home/HomeActivityFlow;->addAdvWidget(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 2128
+    .line 2041
     :cond_1
     invoke-direct {p0, v1}, Lcom/sonyericsson/home/HomeActivity;->prepareWidget(I)V
 
     goto :goto_0
 
-    .line 2133
+    .line 2046
     .end local v0           #advWidgetName:Ljava/lang/String;
     .end local v1           #appWidgetId:I
     :pswitch_1
@@ -2491,7 +2329,7 @@
 
     goto :goto_0
 
-    .line 2139
+    .line 2052
     :pswitch_2
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
 
@@ -2503,7 +2341,7 @@
 
     move-result-object v2
 
-    .line 2141
+    .line 2054
     .local v2, applicationName:Ljava/lang/String;
     const-string v5, "android.intent.extra.shortcut.NAME"
 
@@ -2511,7 +2349,7 @@
 
     move-result-object v4
 
-    .line 2142
+    .line 2055
     .local v4, shortcutName:Ljava/lang/String;
     if-eqz v2, :cond_2
 
@@ -2521,14 +2359,14 @@
 
     if-eqz v5, :cond_2
 
-    .line 2143
+    .line 2056
     const/4 v5, 0x4
 
     invoke-virtual {p0, v5}, Lcom/sonyericsson/home/HomeActivity;->showDialog(I)V
 
     goto :goto_0
 
-    .line 2145
+    .line 2058
     :cond_2
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
@@ -2538,7 +2376,7 @@
 
     goto :goto_0
 
-    .line 2150
+    .line 2063
     .end local v2           #applicationName:Ljava/lang/String;
     .end local v4           #shortcutName:Ljava/lang/String;
     :pswitch_3
@@ -2546,18 +2384,18 @@
 
     move-result-object v3
 
-    .line 2151
+    .line 2064
     .local v3, extras:Landroid/os/Bundle;
     if-eqz v3, :cond_0
 
-    .line 2152
+    .line 2065
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
     invoke-virtual {v5, v3}, Lcom/sonyericsson/home/HomeActivityFlow;->addShortcut(Landroid/os/Bundle;)V
 
     goto :goto_0
 
-    .line 2157
+    .line 2070
     .end local v3           #extras:Landroid/os/Bundle;
     :cond_3
     packed-switch p1, :pswitch_data_1
@@ -2565,11 +2403,11 @@
     :pswitch_4
     goto :goto_0
 
-    .line 2160
+    .line 2073
     :pswitch_5
     if-eqz p3, :cond_0
 
-    .line 2161
+    .line 2074
     const-string v5, "appWidgetId"
 
     const/4 v6, 0x0
@@ -2578,7 +2416,7 @@
 
     move-result v1
 
-    .line 2163
+    .line 2076
     .restart local v1       #appWidgetId:I
     iget-object v5, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
@@ -2586,7 +2424,7 @@
 
     goto :goto_0
 
-    .line 2113
+    .line 2026
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2595,7 +2433,7 @@
         :pswitch_1
     .end packed-switch
 
-    .line 2157
+    .line 2070
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_5
@@ -2611,7 +2449,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 2061
+    .line 1973
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isOpen()Z
@@ -2620,38 +2458,38 @@
 
     if-eqz v1, :cond_2
 
-    .line 2062
+    .line 1974
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->onBackPressed()Z
 
     move-result v0
 
-    .line 2064
+    .line 1976
     .local v0, handled:Z
     if-nez v0, :cond_1
 
-    .line 2065
+    .line 1977
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     if-eqz v1, :cond_0
 
-    .line 2066
+    .line 1978
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->sparkle()V
 
-    .line 2068
+    .line 1980
     :cond_0
     invoke-direct {p0, v2}, Lcom/sonyericsson/home/HomeActivity;->closeApptrayAndShowDesktop(Z)V
 
-    .line 2077
+    .line 1989
     .end local v0           #handled:Z
     :cond_1
     :goto_0
     return-void
 
-    .line 2070
+    .line 1982
     :cond_2
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -2661,14 +2499,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 2071
+    .line 1983
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->exitOverview()V
 
     goto :goto_0
 
-    .line 2072
+    .line 1984
     :cond_3
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
@@ -2678,12 +2516,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 2073
-    invoke-direct {p0, v2}, Lcom/sonyericsson/home/HomeActivity;->closeFolder(Z)V
+    .line 1985
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
+
+    invoke-virtual {v1, v2}, Lcom/sonyericsson/home/layer/folder/FolderController;->closeFolder(Z)V
 
     goto :goto_0
 
-    .line 2074
+    .line 1986
     :cond_4
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
@@ -2697,7 +2537,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2075
+    .line 1987
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->close()V
@@ -2710,10 +2550,10 @@
     .parameter "newConfig"
 
     .prologue
-    .line 503
+    .line 492
     invoke-super {p0, p1}, Landroid/app/Activity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 504
+    .line 493
     iget v0, p1, Landroid/content/res/Configuration;->mcc:I
 
     iget v1, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentMcc:I
@@ -2726,7 +2566,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 509
+    .line 496
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -2734,851 +2574,1242 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/resourceload/PackageLoader;->packageChanged(Ljava/lang/String;)V
 
-    .line 510
+    .line 497
     iget v0, p1, Landroid/content/res/Configuration;->mcc:I
 
     iput v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentMcc:I
 
-    .line 511
+    .line 498
     iget v0, p1, Landroid/content/res/Configuration;->mnc:I
 
     iput v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentMnc:I
 
-    .line 513
+    .line 500
     :cond_1
     return-void
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 14
+    .locals 20
     .parameter "savedInstanceState"
 
     .prologue
-    .line 517
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    .line 520
-    .local v0, appContext:Landroid/content/Context;
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/sonyericsson/home/HomeApplication;
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/HomeApplication;->getPackageLoader()Lcom/sonyericsson/home/resourceload/PackageLoader;
-
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
-
-    .line 521
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/sonyericsson/home/HomeApplication;
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/HomeApplication;->getInfoGroupManager()Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    .line 522
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getLastNonConfigurationInstance()Ljava/lang/Object;
+    .line 505
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v5
 
-    check-cast v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
+    .line 508
+    .local v5, appContext:Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
 
-    .line 523
-    .local v5, lastState:Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
-    if-eqz v5, :cond_8
+    move-result-object v6
+
+    check-cast v6, Lcom/sonyericsson/home/HomeApplication;
+
+    invoke-virtual {v6}, Lcom/sonyericsson/home/HomeApplication;->getPackageLoader()Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    move-result-object v13
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    .line 509
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getLastNonConfigurationInstance()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
+
+    .line 510
+    .local v11, lastState:Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
+    if-eqz v11, :cond_6
+
+    .line 511
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+
+    .line 512
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->globalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    .line 513
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->adapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+
+    .line 514
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->statistics:Lcom/sonyericsson/home/statistics/Statistics;
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
 
     .line 524
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    :goto_0
+    const/4 v13, 0x1
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sonyericsson/home/HomeActivity;->mLandscapeModeEnabled:Z
 
     .line 525
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->adapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+    const/4 v13, 0x1
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+    move v0, v13
 
-    .line 526
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->statistics:Lcom/sonyericsson/home/statistics/Statistics;
+    move-object/from16 v1, p0
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
+    iput-boolean v0, v1, Lcom/sonyericsson/home/HomeActivity;->mThemeOptionEnabled:Z
 
-    .line 534
-    :goto_0
-    const/4 v7, 0x1
+    .line 527
+    move-object/from16 v0, p0
 
-    iput-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mLandscapeModeEnabled:Z
+    iget-boolean v0, v0, Lcom/sonyericsson/home/HomeActivity;->mLandscapeModeEnabled:Z
 
-    .line 535
-    const/4 v7, 0x1
+    move v13, v0
 
-    iput-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mThemeOptionEnabled:Z
+    if-nez v13, :cond_7
 
-    .line 537
-    iget-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mLandscapeModeEnabled:Z
+    .line 528
+    const/4 v13, 0x1
 
-    if-nez v7, :cond_9
+    move-object/from16 v0, p0
 
-    .line 538
-    const/4 v7, 0x1
+    move v1, v13
 
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDefaultOrientation:I
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->setRequestedOrientation(I)V
 
-    .line 554
+    .line 544
     :goto_1
-    iget v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDefaultOrientation:I
+    new-instance v13, Ljava/util/LinkedHashMap;
 
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->setRequestedOrientation(I)V
+    invoke-direct {v13}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 556
-    new-instance v7, Lcom/sonyericsson/home/HomeActivity$DeskStandListener;
+    move-object v0, v13
 
-    const/4 v8, 0x0
+    move-object/from16 v1, p0
 
-    invoke-direct {v7, p0, v8}, Lcom/sonyericsson/home/HomeActivity$DeskStandListener;-><init>(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/HomeActivity$1;)V
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDeskStandListener:Lcom/sonyericsson/home/HomeActivity$DeskStandListener;
+    .line 545
+    move-object/from16 v0, p0
 
-    .line 558
-    new-instance v7, Ljava/util/LinkedHashMap;
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
 
-    invoke-direct {v7}, Ljava/util/LinkedHashMap;-><init>()V
+    move-object v13, v0
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
+    const-string v14, "Application"
 
-    .line 559
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
+    new-instance v15, Ljava/lang/StringBuilder;
 
-    const-string v8, "Application"
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v6
 
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
+    check-cast v6, Lcom/sonyericsson/home/HomeApplication;
 
-    move-result-object v1
+    invoke-virtual {v6}, Lcom/sonyericsson/home/HomeApplication;->getApplicationCreateDuration()J
 
-    check-cast v1, Lcom/sonyericsson/home/HomeApplication;
+    move-result-wide v16
 
-    invoke-virtual {v1}, Lcom/sonyericsson/home/HomeApplication;->getApplicationCreateDuration()J
+    move-object/from16 v0, p0
 
-    move-result-wide v10
+    move-wide/from16 v1, v16
 
-    invoke-direct {p0, v10, v11}, Lcom/sonyericsson/home/HomeActivity;->roundToNearest100(J)I
+    invoke-direct {v0, v1, v2}, Lcom/sonyericsson/home/HomeActivity;->roundToNearest100(J)I
 
-    move-result v10
+    move-result v16
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v15
 
-    const-string v10, ""
+    const-string v16, ""
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v15
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v15
 
-    invoke-virtual {v7, v8, v9}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v13, v14, v15}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 563
+    .line 548
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v7
+    move-result-wide v13
 
-    iput-wide v7, p0, Lcom/sonyericsson/home/HomeActivity;->mOnCreateStartTime:J
+    move-wide v0, v13
 
-    .line 566
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    move-object/from16 v2, p0
 
-    .line 567
-    invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    iput-wide v0, v2, Lcom/sonyericsson/home/HomeActivity;->mOnCreateStartTime:J
 
-    move-result-object v7
+    .line 551
+    invoke-super/range {p0 .. p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v8, 0x7f030014
+    .line 552
+    invoke-static/range {p0 .. p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    const/4 v9, 0x0
+    move-result-object v13
 
-    invoke-virtual {v7, v8, v9}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    const v14, 0x7f030012
+
+    const/4 v15, 0x0
+
+    invoke-virtual {v13, v14, v15}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/view/ViewGroup;
+
+    .line 554
+    .local v9, contentView:Landroid/view/ViewGroup;
+    move-object/from16 v0, p0
+
+    move-object v1, v9
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->setContentView(Landroid/view/View;)V
+
+    .line 557
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v13
+
+    const/4 v14, 0x3
+
+    invoke-virtual {v13, v14}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    .line 560
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v13
+
+    iget v13, v13, Landroid/content/res/Configuration;->orientation:I
+
+    const/4 v14, 0x2
+
+    if-ne v13, v14, :cond_9
+
+    const/4 v13, 0x1
+
+    :goto_2
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sonyericsson/home/HomeActivity;->mOrientationLandscape:Z
+
+    .line 561
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v13
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mDisplayMetrics:Landroid/util/DisplayMetrics;
+
+    .line 562
+    const v13, 0x7f0e002f
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
     .end local p1
     check-cast p1, Landroid/view/ViewGroup;
 
-    invoke-virtual {p0, p1}, Lcom/sonyericsson/home/HomeActivity;->setContentView(Landroid/view/View;)V
+    move-object/from16 v0, p1
 
-    .line 570
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getWindow()Landroid/view/Window;
+    move-object/from16 v1, p0
 
-    move-result-object v7
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mFullScreenEffectPlaceholder:Landroid/view/ViewGroup;
 
-    const/4 v8, 0x3
+    .line 563
+    const v13, 0x7f0e002c
 
-    invoke-virtual {v7, v8}, Landroid/view/Window;->setSoftInputMode(I)V
+    move-object/from16 v0, p0
 
-    .line 573
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
+    move v1, v13
 
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v7
-
-    iget v7, v7, Landroid/content/res/Configuration;->orientation:I
-
-    const/4 v8, 0x2
-
-    if-ne v7, v8, :cond_b
-
-    const/4 v7, 0x1
-
-    :goto_2
-    iput-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mOrientationLandscape:Z
-
-    .line 574
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    .line 575
-    const v7, 0x7f0e0042
-
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/view/ViewGroup;
-
-    iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity;->mFullScreenEffectPlaceholder:Landroid/view/ViewGroup;
-
-    .line 576
-    const v7, 0x7f0e003e
-
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
     check-cast p1, Lcom/sonyericsson/view/BackgroundFadeSrcXferView;
 
-    iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity;->mFadeView:Lcom/sonyericsson/view/BackgroundFadeSrcXferView;
+    move-object/from16 v0, p1
 
-    .line 577
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->setWallpaperDimensions()V
+    move-object/from16 v1, p0
 
-    .line 579
-    const v7, 0x7f0e003d
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mFadeView:Lcom/sonyericsson/view/BackgroundFadeSrcXferView;
 
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
+    .line 564
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->setWallpaperDimensions()V
+
+    .line 566
+    new-instance v13, Lcom/sonyericsson/home/HomeActivity$1;
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity$1;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mScreenEventReceiver:Landroid/content/BroadcastReceiver;
+
+    .line 574
+    new-instance v13, Landroid/content/IntentFilter;
+
+    const-string v14, "android.intent.action.SCREEN_OFF"
+
+    invoke-direct {v13, v14}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mScreenEventFilter:Landroid/content/IntentFilter;
+
+    .line 576
+    const v13, 0x7f0e002b
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
     check-cast p1, Lcom/sonyericsson/home/transfer/TransferView;
 
-    iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
+
+    .line 577
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
+
+    move-object v13, v0
+
+    move-object/from16 v0, p0
+
+    move-object v1, v13
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->setupTransferView(Lcom/sonyericsson/home/transfer/TransferView;)V
+
+    .line 579
+    const v13, 0x7f04003d
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v13
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonHideAnim:Landroid/view/animation/Animation;
 
     .line 580
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
+    const v13, 0x7f04003e
 
-    invoke-direct {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->setupTransferView(Lcom/sonyericsson/home/transfer/TransferView;)V
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v13
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonShowAnim:Landroid/view/animation/Animation;
 
     .line 582
-    const v7, 0x7f04003e
+    new-instance v13, Lcom/sonyericsson/home/networkname/NetworkNameManager;
 
-    invoke-static {p0, v7}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+    const v14, 0x7f0e0031
 
-    move-result-object v7
+    move-object/from16 v0, p0
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonHideAnim:Landroid/view/animation/Animation;
+    move v1, v14
 
-    .line 583
-    const v7, 0x7f04003f
-
-    invoke-static {p0, v7}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonShowAnim:Landroid/view/animation/Animation;
-
-    .line 585
-    new-instance v7, Lcom/sonyericsson/home/networkname/NetworkNameManager;
-
-    const v8, 0x7f0e0044
-
-    invoke-virtual {p0, v8}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
     check-cast p1, Lcom/sonyericsson/home/networkname/NetworkNameView;
 
-    invoke-direct {v7, p1}, Lcom/sonyericsson/home/networkname/NetworkNameManager;-><init>(Lcom/sonyericsson/home/networkname/NetworkNameView;)V
+    move-object v0, v13
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mNetworkNameManager:Lcom/sonyericsson/home/networkname/NetworkNameManager;
+    move-object/from16 v1, p1
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/networkname/NetworkNameManager;-><init>(Lcom/sonyericsson/home/networkname/NetworkNameView;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mNetworkNameManager:Lcom/sonyericsson/home/networkname/NetworkNameManager;
+
+    .line 585
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonHideAnim:Landroid/view/animation/Animation;
+
+    move-object v13, v0
+
+    new-instance v14, Landroid/view/animation/DecelerateInterpolator;
+
+    invoke-direct {v14}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+
+    invoke-virtual {v13, v14}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    .line 586
+    const/4 v13, 0x4
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->setDefaultKeyMode(I)V
+
+    .line 587
+    const v13, 0x7f0e0015
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v13
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     .line 588
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mSwitchButtonHideAnim:Landroid/view/animation/Animation;
+    move-object/from16 v0, p0
 
-    new-instance v8, Landroid/view/animation/DecelerateInterpolator;
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
-    invoke-direct {v8}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    move-object v13, v0
 
-    invoke-virtual {v7, v8}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    new-instance v14, Lcom/sonyericsson/home/HomeActivity$2;
 
-    .line 589
-    const/4 v7, 0x4
+    move-object v0, v14
 
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->setDefaultKeyMode(I)V
+    move-object/from16 v1, p0
 
-    .line 590
-    const v7, 0x7f0e001c
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity$2;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v13, v14}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 593
+    const v13, 0x7f0e0006
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v13
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
+
+    .line 594
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
+
+    move-object v13, v0
+
+    invoke-virtual {v13}, Landroid/view/View;->requestFocus()Z
+
+    .line 595
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
+
+    move-object v13, v0
+
+    new-instance v14, Lcom/sonyericsson/home/HomeActivity$3;
+
+    move-object v0, v14
+
+    move-object/from16 v1, p0
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity$3;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+
+    invoke-virtual {v13, v14}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 604
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->createActivityFlow()V
+
+    .line 606
+    new-instance v13, Lcom/sonyericsson/home/HomeActivity$4;
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity$4;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mOnTouchModeChangeListener:Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
+
+    .line 621
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/sonyericsson/home/HomeApplication;
+
+    invoke-virtual/range {p1 .. p1}, Lcom/sonyericsson/home/HomeApplication;->getInfoGroupManager()Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+    move-result-object v13
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+    .line 622
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+    move-object v13, v0
+
+    new-instance v14, Lcom/sonyericsson/home/HomeActivity$5;
+
+    move-object v0, v14
+
+    move-object/from16 v1, p0
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity$5;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
+
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/InfoGroupManager;->setInfoListener(Lcom/sonyericsson/home/layer/InfoGroupManager$InfoListener;)V
+
+    .line 628
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
+
+    move-object v13, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+
+    move-object v14, v0
+
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/InfoGroupManager;->bind(Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
+
+    .line 631
+    invoke-static {v5}, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
 
     move-result-object v7
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
-
-    .line 591
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
-
-    new-instance v8, Lcom/sonyericsson/home/HomeActivity$1;
-
-    invoke-direct {v8, p0}, Lcom/sonyericsson/home/HomeActivity$1;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
-
-    invoke-virtual {v7, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 596
-    const v7, 0x7f0e000d
-
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
-
-    .line 597
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
-
-    invoke-virtual {v7}, Landroid/view/View;->requestFocus()Z
-
-    .line 598
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
-
-    new-instance v8, Lcom/sonyericsson/home/HomeActivity$2;
-
-    invoke-direct {v8, p0}, Lcom/sonyericsson/home/HomeActivity$2;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
-
-    invoke-virtual {v7, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 607
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->createActivityFlow()V
-
-    .line 609
-    new-instance v7, Lcom/sonyericsson/home/HomeActivity$3;
-
-    invoke-direct {v7, p0}, Lcom/sonyericsson/home/HomeActivity$3;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mOnTouchModeChangeListener:Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
-
-    .line 623
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    new-instance v8, Lcom/sonyericsson/home/HomeActivity$4;
-
-    invoke-direct {v8, p0}, Lcom/sonyericsson/home/HomeActivity$4;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
-
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/InfoGroupManager;->setInfoListener(Lcom/sonyericsson/home/layer/InfoGroupManager$InfoListener;)V
-
-    .line 629
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
-
-    iget-object v8, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-    invoke-virtual {v7, p0, v8}, Lcom/sonyericsson/home/layer/InfoGroupManager;->bind(Landroid/app/Activity;Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
 
     .line 632
-    invoke-static {v0}, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
+    .local v7, appWidgetManager:Landroid/appwidget/AppWidgetManager;
+    new-instance v6, Lcom/sonyericsson/home/widget/HomeAppWidgetHost;
 
-    move-result-object v2
+    const v13, 0xa3d9739
 
-    .line 633
-    .local v2, appWidgetManager:Landroid/appwidget/AppWidgetManager;
-    new-instance v1, Lcom/sonyericsson/home/widget/HomeAppWidgetHost;
+    invoke-direct {v6, v5, v13}, Lcom/sonyericsson/home/widget/HomeAppWidgetHost;-><init>(Landroid/content/Context;I)V
 
-    const v7, 0xa3d9739
+    .line 634
+    .local v6, appWidgetHost:Landroid/appwidget/AppWidgetHost;
+    new-instance v13, Lcom/sonyericsson/home/widget/WidgetManager;
 
-    invoke-direct {v1, v0, v7}, Lcom/sonyericsson/home/widget/HomeAppWidgetHost;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v13, v5, v7, v6}, Lcom/sonyericsson/home/widget/WidgetManager;-><init>(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;Landroid/appwidget/AppWidgetHost;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     .line 635
-    .local v1, appWidgetHost:Landroid/appwidget/AppWidgetHost;
-    new-instance v7, Lcom/sonyericsson/home/widget/WidgetManager;
+    new-instance v13, Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
-    invoke-direct {v7, v0, v2, v1}, Lcom/sonyericsson/home/widget/WidgetManager;-><init>(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;Landroid/appwidget/AppWidgetHost;)V
+    move-object/from16 v0, p0
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetHost:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;
 
-    .line 636
-    new-instance v7, Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    move-object v14, v0
 
-    iget-object v8, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetHost:Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;
+    move-object/from16 v0, p0
 
-    iget-object v9, p0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    invoke-direct {v7, p0, v8, v9}, Lcom/sonyericsson/home/widget/AdvWidgetManager;-><init>(Landroid/app/Activity;Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
+    move-object v15, v0
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+    move-object v0, v13
 
-    .line 639
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->createDesktop()V
+    move-object/from16 v1, p0
 
-    .line 642
-    if-eqz v5, :cond_c
+    move-object v2, v14
 
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageModel:Ljava/lang/Object;
+    move-object v3, v15
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/sonyericsson/home/widget/AdvWidgetManager;-><init>(Landroid/app/Activity;Lcom/sonyericsson/advancedwidget/framework/AdvWidgetHost;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
+
+    .line 638
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->createDesktop()V
+
+    .line 641
+    if-eqz v11, :cond_a
+
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageModel:Ljava/lang/Object;
 
     :goto_3
-    invoke-direct {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->createStage(Ljava/lang/Object;)V
+    move-object/from16 v0, p0
 
-    .line 645
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->createCornerButtons()V
+    move-object v1, v13
 
-    .line 648
-    if-eqz v5, :cond_d
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->createStage(Ljava/lang/Object;)V
 
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayModel:Ljava/lang/Object;
+    .line 644
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->createCornerButtons()V
+
+    .line 647
+    if-eqz v11, :cond_b
+
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayModel:Ljava/lang/Object;
 
     :goto_4
-    invoke-direct {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->createAppTray(Ljava/lang/Object;)V
+    move-object/from16 v0, p0
 
-    .line 651
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->createFolderLayer()V
+    move-object v1, v13
 
-    .line 654
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->createAppShareDropZone()V
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->createAppTray(Ljava/lang/Object;)V
+
+    .line 650
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->createFolderLayer()V
+
+    .line 653
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->createTrashcan()V
+
+    .line 655
+    if-eqz v11, :cond_5
+
+    .line 656
+    iget-boolean v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayIsOpen:Z
+
+    if-eqz v13, :cond_0
 
     .line 657
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->createTrashcan()V
+    const/4 v13, 0x0
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-direct {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->hideDesktopAndOpenApptay(Z)V
+
+    .line 658
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+
+    move-object v13, v0
+
+    iget v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayPane:I
+
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->moveToPane(I)V
 
     .line 659
-    if-eqz v5, :cond_5
+    iget-boolean v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayIsEditing:Z
+
+    if-eqz v13, :cond_0
 
     .line 660
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayIsOpen:Z
+    move-object/from16 v0, p0
 
-    if-eqz v7, :cond_0
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    .line 661
-    const/4 v7, 0x0
+    move-object v13, v0
 
-    invoke-direct {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->hideDesktopAndOpenApptay(Z)V
-
-    .line 662
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
-
-    iget v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayPane:I
-
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->moveToPane(I)V
-
-    .line 663
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayIsEditing:Z
-
-    if-eqz v7, :cond_0
+    invoke-virtual {v13}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->enterEditMode()V
 
     .line 664
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
+    :cond_0
+    iget-boolean v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isInOverview:Z
 
-    invoke-virtual {v7}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->enterEditMode()V
+    if-eqz v13, :cond_1
+
+    .line 665
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    move-object v13, v0
+
+    iget v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->overviewProgress:F
+
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setOverviewProgress(F)V
+
+    .line 666
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+
+    move-object v13, v0
+
+    if-eqz v13, :cond_1
 
     .line 668
-    :cond_0
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isInOverview:Z
+    move-object/from16 v0, p0
 
-    if-eqz v7, :cond_1
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
-    .line 669
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+    move-object v13, v0
 
-    iget v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->overviewProgress:F
+    const/4 v14, 0x0
 
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setOverviewProgress(F)V
-
-    .line 670
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
-
-    if-eqz v7, :cond_1
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->hide(Z)V
 
     .line 672
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+    :cond_1
+    iget-boolean v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isFolderOpen:Z
 
-    const/4 v8, 0x0
+    if-eqz v13, :cond_2
 
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->hide(Z)V
+    .line 673
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolder:Lcom/sonyericsson/home/data/InfoGroup;
+
+    iget v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderSourceLayer:I
+
+    iget-object v15, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderSourceLocation:Ljava/lang/Object;
+
+    const/16 v16, 0x0
+
+    move-object/from16 v0, p0
+
+    move-object v1, v13
+
+    move v2, v14
+
+    move-object v3, v15
+
+    move/from16 v4, v16
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/sonyericsson/home/HomeActivity;->openFolder(Lcom/sonyericsson/home/data/InfoGroup;ILjava/lang/Object;Z)V
+
+    .line 675
+    iget-boolean v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderRenaming:Z
+
+    if-eqz v13, :cond_2
 
     .line 676
-    :cond_1
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isFolderOpen:Z
+    move-object/from16 v0, p0
 
-    if-eqz v7, :cond_2
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    .line 677
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolder:Lcom/sonyericsson/home/data/InfoGroup;
+    move-object v13, v0
 
-    iget v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderSourceLayer:I
+    const/4 v14, 0x1
 
-    iget-object v9, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderSourceLocation:Ljava/lang/Object;
-
-    const/4 v10, 0x0
-
-    invoke-direct {p0, v7, v8, v9, v10}, Lcom/sonyericsson/home/HomeActivity;->openFolder(Lcom/sonyericsson/home/data/InfoGroup;ILjava/lang/Object;Z)V
-
-    .line 679
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderRenaming:Z
-
-    if-eqz v7, :cond_2
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/folder/FolderController;->setRenamingFolder(Z)V
 
     .line 680
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
+    :cond_2
+    move-object/from16 v0, p0
 
-    const/4 v8, 0x1
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/folder/FolderController;->setRenamingFolder(Z)V
+    move-object v13, v0
+
+    if-eqz v13, :cond_3
+
+    .line 681
+    iget-boolean v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageCreatingFolder:Z
+
+    if-eqz v13, :cond_3
+
+    .line 682
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-object v13, v0
+
+    const/4 v14, 0x1
+
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/stage/StageController;->setCreatingFolder(Z)V
+
+    .line 683
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-object v13, v0
+
+    iget-object v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageDroppedAtInfo:Lcom/sonyericsson/home/data/Info;
+
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/stage/StageController;->setDroppedAtInfo(Lcom/sonyericsson/home/data/Info;)V
 
     .line 684
-    :cond_2
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
+    move-object/from16 v0, p0
 
-    if-eqz v7, :cond_3
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-object v13, v0
+
+    iget-object v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageSavedPickedUpInfo:Lcom/sonyericsson/home/data/Info;
+
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/stage/StageController;->setSavedPickedUpInfo(Lcom/sonyericsson/home/data/Info;)V
 
     .line 685
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageCreatingFolder:Z
+    move-object/from16 v0, p0
 
-    if-eqz v7, :cond_3
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
-    .line 686
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
+    move-object v13, v0
 
-    const/4 v8, 0x1
+    iget v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageHintLocation:I
 
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/stage/StageController;->setCreatingFolder(Z)V
-
-    .line 687
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
-
-    iget-object v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageDroppedAtInfo:Lcom/sonyericsson/home/data/Info;
-
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/stage/StageController;->setDroppedAtInfo(Lcom/sonyericsson/home/data/Info;)V
-
-    .line 688
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
-
-    iget-object v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageSavedPickedUpInfo:Lcom/sonyericsson/home/data/Info;
-
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/stage/StageController;->setSavedPickedUpInfo(Lcom/sonyericsson/home/data/Info;)V
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/stage/StageController;->setHintLocation(I)V
 
     .line 689
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
-
-    iget v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageHintLocation:I
-
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/stage/StageController;->setHintLocation(I)V
-
-    .line 693
     :cond_3
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+    move-object/from16 v0, p0
 
-    if-eqz v7, :cond_4
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+
+    move-object v13, v0
+
+    if-eqz v13, :cond_4
+
+    .line 690
+    iget v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openCorner:I
+
+    const/4 v14, -0x1
+
+    if-eq v13, v14, :cond_4
+
+    .line 691
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+
+    move-object v13, v0
+
+    iget v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openCorner:I
+
+    const/4 v15, 0x0
+
+    invoke-virtual {v13, v14, v15}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->expandCorner(IZ)V
 
     .line 694
-    iget v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openCorner:I
+    :cond_4
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->savedFolderText:Ljava/lang/String;
 
-    const/4 v8, -0x1
+    move-object v0, v13
 
-    if-eq v7, v8, :cond_4
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
 
     .line 695
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+    iget v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->savedFolderIconIndex:I
 
-    iget v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openCorner:I
+    move v0, v13
 
-    const/4 v9, 0x0
+    move-object/from16 v1, p0
 
-    invoke-virtual {v7, v8, v9}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->expandCorner(IZ)V
+    iput v0, v1, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderIconIndex:I
+
+    .line 696
+    iget-boolean v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addingFolder:Z
+
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/sonyericsson/home/HomeActivity;->mAddingFolder:Z
+
+    .line 697
+    iget v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addTo:I
+
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sonyericsson/home/HomeActivity;->mAddTo:I
 
     .line 698
-    :cond_4
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->savedFolderText:Ljava/lang/String;
+    iget-object v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addFolderToDesktopLocation:Lcom/sonyericsson/grid/GridLocation;
 
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mDesktopLongPressLocation:Lcom/sonyericsson/grid/GridLocation;
 
     .line 699
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addingFolder:Z
+    iget v13, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addFolderToStageLocation:I
 
-    iput-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAddingFolder:Z
+    move v0, v13
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/sonyericsson/home/HomeActivity;->mStageLocation:I
 
     .line 700
-    iget-boolean v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderRenaming:Z
+    move-object/from16 v0, p0
 
-    iput-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mRenamingFolder:Z
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    .line 701
-    iget v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addTo:I
+    move-object v13, v0
 
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAddTo:I
+    iget-boolean v14, v11, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayDisableDuringSortDialog:Z
 
-    .line 702
-    iget-object v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addFolderToDesktopLocation:Lcom/sonyericsson/grid/GridLocation;
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopLongPressLocation:Lcom/sonyericsson/grid/GridLocation;
-
-    .line 703
-    iget v7, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addFolderToStageLocation:I
-
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStageLocation:I
+    invoke-virtual {v13, v14}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setButtonsDisabled(Z)V
 
     .line 704
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
-
-    iget-boolean v8, v5, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayDisableDuringSortDialog:Z
-
-    invoke-virtual {v7, v8}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setButtonsDisabled(Z)V
-
-    .line 708
     :cond_5
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->createBadgeBroadcastReceiver()V
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->createBadgeBroadcastReceiver()V
 
-    .line 710
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
+    .line 706
+    move-object/from16 v0, p0
 
-    const-string v8, "onCreate"
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    move-object v13, v0
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v14, "onCreate"
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v10
+    move-result-wide v16
 
-    iget-wide v12, p0, Lcom/sonyericsson/home/HomeActivity;->mOnCreateStartTime:J
+    move-object/from16 v0, p0
 
-    sub-long/2addr v10, v12
+    iget-wide v0, v0, Lcom/sonyericsson/home/HomeActivity;->mOnCreateStartTime:J
 
-    invoke-direct {p0, v10, v11}, Lcom/sonyericsson/home/HomeActivity;->roundToNearest100(J)I
+    move-wide/from16 v18, v0
 
-    move-result v10
+    sub-long v16, v16, v18
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-object/from16 v0, p0
 
-    move-result-object v9
+    move-wide/from16 v1, v16
 
-    const-string v10, ""
+    invoke-direct {v0, v1, v2}, Lcom/sonyericsson/home/HomeActivity;->roundToNearest100(J)I
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v16
 
-    move-result-object v9
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v15
 
-    move-result-object v9
+    const-string v16, ""
 
-    invoke-virtual {v7, v8, v9}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v13, v14, v15}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 710
+    invoke-direct/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->setupSmartSlider()V
+
+    .line 713
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v8
 
     .line 714
-    invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->setupSmartSlider()V
+    .local v8, conf:Landroid/content/res/Configuration;
+    iget v13, v8, Landroid/content/res/Configuration;->mcc:I
 
-    .line 717
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
+    move v0, v13
 
-    move-result-object v7
+    move-object/from16 v1, p0
 
-    invoke-virtual {v7}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    iput v0, v1, Lcom/sonyericsson/home/HomeActivity;->mCurrentMcc:I
 
-    move-result-object v3
+    .line 715
+    iget v13, v8, Landroid/content/res/Configuration;->mnc:I
 
-    .line 718
-    .local v3, conf:Landroid/content/res/Configuration;
-    iget v7, v3, Landroid/content/res/Configuration;->mcc:I
+    move v0, v13
 
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentMcc:I
+    move-object/from16 v1, p0
 
-    .line 719
-    iget v7, v3, Landroid/content/res/Configuration;->mnc:I
+    iput v0, v1, Lcom/sonyericsson/home/HomeActivity;->mCurrentMnc:I
 
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentMnc:I
-
-    .line 721
-    iget-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAddingFolder:Z
-
-    if-eqz v7, :cond_6
-
-    .line 722
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
-
-    iget-object v8, p0, Lcom/sonyericsson/home/HomeActivity;->mAddFolderListener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
-
-    iget-object v9, p0, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
-
-    invoke-virtual {v7, v8, v9}, Lcom/sonyericsson/home/HomeActivityFlow;->addFolder(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;)V
-
-    .line 725
-    :cond_6
-    iget-boolean v7, p0, Lcom/sonyericsson/home/HomeActivity;->mRenamingFolder:Z
-
-    if-eqz v7, :cond_7
-
-    .line 726
-    iget-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
-
-    invoke-virtual {v7}, Lcom/sonyericsson/home/layer/folder/FolderController;->onCreate()V
-
-    .line 728
-    :cond_7
+    .line 716
     return-void
 
-    .line 528
-    .end local v1           #appWidgetHost:Landroid/appwidget/AppWidgetHost;
-    .end local v2           #appWidgetManager:Landroid/appwidget/AppWidgetManager;
-    .end local v3           #conf:Landroid/content/res/Configuration;
+    .line 516
+    .end local v6           #appWidgetHost:Landroid/appwidget/AppWidgetHost;
+    .end local v7           #appWidgetManager:Landroid/appwidget/AppWidgetManager;
+    .end local v8           #conf:Landroid/content/res/Configuration;
+    .end local v9           #contentView:Landroid/view/ViewGroup;
     .restart local p1
-    :cond_8
-    new-instance v7, Lcom/sonyericsson/home/resourceload/ResourceLoader;
+    :cond_6
+    new-instance v13, Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    iget-object v8, p0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+    move-object/from16 v0, p0
 
-    iget-object v9, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
+    move-object v14, v0
 
-    move-result-object v1
-
-    check-cast v1, Lcom/sonyericsson/home/HomeApplication;
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/HomeApplication;->getBadgeManager()Lcom/sonyericsson/home/badge/BadgeManager;
-
-    move-result-object v10
-
-    invoke-direct {v7, v0, v8, v9, v10}, Lcom/sonyericsson/home/resourceload/ResourceLoader;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/layer/InfoGroupManager;Lcom/sonyericsson/home/badge/BadgeManager;)V
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-    .line 530
-    new-instance v7, Lcom/sonyericsson/home/layer/AdapterHelper;
-
-    iget-object v8, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
-
-    invoke-direct {v7, v0, v8}, Lcom/sonyericsson/home/layer/AdapterHelper;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
-
-    .line 531
-    new-instance v7, Lcom/sonyericsson/home/statistics/Statistics;
-
-    iget-object v8, p0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
-
-    invoke-direct {v7, v0, v8}, Lcom/sonyericsson/home/statistics/Statistics;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
-
-    iput-object v7, p0, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
-
-    goto/16 :goto_0
-
-    .line 543
-    :cond_9
-    :try_start_0
-    const-string v7, "uimode"
-
-    invoke-virtual {p0, v7}, Lcom/sonyericsson/home/HomeActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual/range {p0 .. p0}, Lcom/sonyericsson/home/HomeActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v6
 
-    check-cast v6, Landroid/app/UiModeManager;
+    check-cast v6, Lcom/sonyericsson/home/HomeApplication;
 
-    .line 544
-    .local v6, uiModeManager:Landroid/app/UiModeManager;
-    invoke-virtual {v6}, Landroid/app/UiModeManager;->getCurrentModeType()I
+    invoke-virtual {v6}, Lcom/sonyericsson/home/HomeApplication;->getBadgeManager()Lcom/sonyericsson/home/badge/BadgeManager;
 
-    move-result v7
+    move-result-object v15
 
-    const/4 v8, 0x1
+    invoke-direct {v13, v5, v14, v15}, Lcom/sonyericsson/home/resourceload/ResourceLoader;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;Lcom/sonyericsson/home/badge/BadgeManager;)V
 
-    if-ne v7, v8, :cond_a
+    move-object v0, v13
 
-    .line 545
-    const/4 v7, 0x5
+    move-object/from16 v1, p0
 
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDefaultOrientation:I
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+
+    .line 518
+    new-instance v13, Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    invoke-direct {v13, v5}, Lcom/sonyericsson/home/GlobalCustomizationManager;-><init>(Landroid/content/Context;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    .line 519
+    new-instance v13, Lcom/sonyericsson/home/layer/AdapterHelper;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
+
+    move-object v14, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    move-object v15, v0
+
+    invoke-direct {v13, v5, v14, v15}, Lcom/sonyericsson/home/layer/AdapterHelper;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/ResourceLoader;Lcom/sonyericsson/home/GlobalCustomizationManager;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
+
+    .line 521
+    new-instance v13, Lcom/sonyericsson/home/statistics/Statistics;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
+
+    move-object v14, v0
+
+    invoke-direct {v13, v5, v14}, Lcom/sonyericsson/home/statistics/Statistics;-><init>(Landroid/content/Context;Lcom/sonyericsson/home/resourceload/PackageLoader;)V
+
+    move-object v0, v13
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
+
+    goto/16 :goto_0
+
+    .line 532
+    :cond_7
+    :try_start_0
+    const-string v13, "uimode"
+
+    move-object/from16 v0, p0
+
+    move-object v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Landroid/app/UiModeManager;
+
+    .line 533
+    .local v12, uiModeManager:Landroid/app/UiModeManager;
+    invoke-virtual {v12}, Landroid/app/UiModeManager;->getCurrentModeType()I
+
+    move-result v13
+
+    const/4 v14, 0x1
+
+    if-ne v13, v14, :cond_8
+
+    .line 534
+    const/4 v13, 0x5
+
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->setRequestedOrientation(I)V
     :try_end_0
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_0
 
     goto/16 :goto_1
 
-    .line 549
-    .end local v6           #uiModeManager:Landroid/app/UiModeManager;
+    .line 538
+    .end local v12           #uiModeManager:Landroid/app/UiModeManager;
     :catch_0
-    move-exception v7
+    move-exception v13
 
-    move-object v4, v7
+    move-object v10, v13
 
-    .line 551
-    .local v4, e:Ljava/lang/NoClassDefFoundError;
-    const/4 v7, 0x5
+    .line 540
+    .local v10, e:Ljava/lang/NoClassDefFoundError;
+    const/4 v13, 0x5
 
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDefaultOrientation:I
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->setRequestedOrientation(I)V
 
     goto/16 :goto_1
 
-    .line 547
-    .end local v4           #e:Ljava/lang/NoClassDefFoundError;
-    .restart local v6       #uiModeManager:Landroid/app/UiModeManager;
-    :cond_a
-    const/4 v7, 0x4
+    .line 536
+    .end local v10           #e:Ljava/lang/NoClassDefFoundError;
+    .restart local v12       #uiModeManager:Landroid/app/UiModeManager;
+    :cond_8
+    const/4 v13, 0x4
 
     :try_start_1
-    iput v7, p0, Lcom/sonyericsson/home/HomeActivity;->mDefaultOrientation:I
+    move-object/from16 v0, p0
+
+    move v1, v13
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->setRequestedOrientation(I)V
     :try_end_1
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_1 .. :try_end_1} :catch_0
 
     goto/16 :goto_1
 
-    .line 573
-    .end local v6           #uiModeManager:Landroid/app/UiModeManager;
-    .end local p1
-    :cond_b
-    const/4 v7, 0x0
+    .line 560
+    .end local v12           #uiModeManager:Landroid/app/UiModeManager;
+    .restart local v9       #contentView:Landroid/view/ViewGroup;
+    :cond_9
+    const/4 v13, 0x0
 
     goto/16 :goto_2
 
-    .line 642
-    .restart local v1       #appWidgetHost:Landroid/appwidget/AppWidgetHost;
-    .restart local v2       #appWidgetManager:Landroid/appwidget/AppWidgetManager;
-    :cond_c
-    const/4 v7, 0x0
+    .line 641
+    .end local p1
+    .restart local v6       #appWidgetHost:Landroid/appwidget/AppWidgetHost;
+    .restart local v7       #appWidgetManager:Landroid/appwidget/AppWidgetManager;
+    :cond_a
+    const/4 v13, 0x0
 
     goto/16 :goto_3
 
-    .line 648
-    :cond_d
-    const/4 v7, 0x0
+    .line 647
+    :cond_b
+    const/4 v13, 0x0
 
     goto/16 :goto_4
 .end method
@@ -3590,52 +3821,52 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1955
+    .line 1886
     packed-switch p1, :pswitch_data_0
 
     move-object v0, v1
 
-    .line 1985
+    .line 1898
     :goto_0
     return-object v0
 
-    .line 1957
+    .line 1888
     :pswitch_0
     new-instance v0, Lcom/sonyericsson/home/HomeActivity$AddDialog;
 
     invoke-direct {v0, p0, v1}, Lcom/sonyericsson/home/HomeActivity$AddDialog;-><init>(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/HomeActivity$1;)V
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$AddDialog;->access$4200(Lcom/sonyericsson/home/HomeActivity$AddDialog;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$AddDialog;->access$4000(Lcom/sonyericsson/home/HomeActivity$AddDialog;)Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 1959
+    .line 1890
     :pswitch_1
     new-instance v0, Lcom/sonyericsson/home/HomeActivity$SortDialog;
 
     invoke-direct {v0, p0, v1}, Lcom/sonyericsson/home/HomeActivity$SortDialog;-><init>(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/HomeActivity$1;)V
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$SortDialog;->access$4400(Lcom/sonyericsson/home/HomeActivity$SortDialog;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$SortDialog;->access$4200(Lcom/sonyericsson/home/HomeActivity$SortDialog;)Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 1961
+    .line 1892
     :pswitch_2
     new-instance v0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;
 
     invoke-direct {v0, p0, v1}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;-><init>(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/HomeActivity$1;)V
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->access$4600(Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->access$4400(Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;)Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 1963
+    .line 1894
     :pswitch_3
     new-instance v0, Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;
 
@@ -3643,49 +3874,22 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mPickApplicationDialog:Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;
 
-    .line 1964
+    .line 1895
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mPickApplicationDialog:Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;->access$4800(Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;->access$4600(Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;)Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 1966
-    :pswitch_4
-    new-instance v0, Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
-
-    invoke-direct {v0, p0}, Lcom/sonyericsson/home/layer/appshare/AppShareDialog;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
-
-    .line 1967
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
-
-    new-instance v1, Lcom/sonyericsson/home/HomeActivity$17;
-
-    invoke-direct {v1, p0}, Lcom/sonyericsson/home/HomeActivity$17;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
-
-    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/appshare/AppShareDialog;->setDialogListener(Lcom/sonyericsson/home/layer/appshare/AppShareDialog$AppShareDialogListener;)V
-
-    .line 1982
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/appshare/AppShareDialog;->createDialog()Landroid/app/Dialog;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 1955
+    .line 1886
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_1
         :pswitch_2
         :pswitch_3
-        :pswitch_4
     .end packed-switch
 .end method
 
@@ -3698,20 +3902,20 @@
 
     const/4 v3, 0x0
 
-    .line 2008
+    .line 1920
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.SETTINGS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2009
+    .line 1921
     .local v0, launchSettings:Landroid/content/Intent;
     const/high16 v1, 0x1020
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 2012
+    .line 1924
     const v1, 0x7f070002
 
     invoke-interface {p1, v4, v3, v3, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
@@ -3722,7 +3926,7 @@
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
-    .line 2014
+    .line 1926
     const v1, 0x7f070003
 
     invoke-interface {p1, v3, v4, v3, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
@@ -3733,12 +3937,12 @@
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
-    .line 2016
+    .line 1928
     iget-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mThemeOptionEnabled:Z
 
     if-eqz v1, :cond_0
 
-    .line 2017
+    .line 1929
     const/4 v1, 0x3
 
     const v2, 0x7f070004
@@ -3747,11 +3951,11 @@
 
     move-result-object v1
 
-    const v2, 0x7f02004e
+    const v2, 0x7f020055
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
-    .line 2020
+    .line 1932
     :cond_0
     const/4 v1, 0x2
 
@@ -3769,7 +3973,7 @@
 
     invoke-interface {v1, v0}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
-    .line 2023
+    .line 1935
     return v4
 .end method
 
@@ -3779,247 +3983,225 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 810
+    .line 806
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
-    .line 811
+    .line 807
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 814
+    .line 810
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWaitingForTrashcanClose:Z
 
-    .line 815
+    .line 811
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTrashcanController:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/trashcan/TrashcanController;->onDestroy()V
 
-    .line 817
+    .line 813
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 818
+    .line 814
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 819
+    .line 815
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mButtonExitOverview:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 821
+    .line 817
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->setDesktopControllerListener(Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;)V
 
-    .line 822
+    .line 818
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->setAppTrayControllerListener(Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;)V
 
-    .line 823
+    .line 819
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->setFolderListener(Lcom/sonyericsson/home/layer/folder/FolderListener;)V
 
-    .line 824
+    .line 820
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/WidgetManager;->onDestroy()V
 
-    .line 825
+    .line 821
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     if-eqz v0, :cond_1
 
-    .line 826
+    .line 822
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/stage/StageController;->setStageControllerListener(Lcom/sonyericsson/home/layer/stage/StageController$StageControllerListener;)V
 
-    .line 828
+    .line 824
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     if-eqz v0, :cond_2
 
-    .line 829
+    .line 825
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->setCornerButtonsListener(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$CornerButtonsControllerListener;)V
 
-    .line 830
+    .line 826
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->onDestroy()V
 
-    .line 833
+    .line 829
     :cond_2
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->onDestroy()V
 
-    .line 835
+    .line 831
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-virtual {v0, p0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->unbind(Landroid/app/Activity;)V
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->unbind()V
 
-    .line 836
+    .line 832
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->onDestroy()V
 
-    .line 838
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDropZoneController:Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/appshare/DropZoneController;->onDestroy()V
-
-    .line 839
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
-
-    if-eqz v0, :cond_3
-
-    .line 840
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/appshare/AppShareDialog;->onDestroy()V
-
-    .line 841
-    iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
-
-    .line 844
-    :cond_3
+    .line 833
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-virtual {v0, p0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->unbind(Landroid/app/Activity;)V
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->unbind()V
 
-    .line 845
+    .line 834
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->onDestroy()V
 
-    .line 846
+    .line 835
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    .line 847
+    .line 836
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->onDestroy()V
 
-    .line 849
-    :cond_4
+    .line 838
+    :cond_3
     iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWillRetainNonConfigurationInstance:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
-    .line 851
+    .line 840
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->onDestroy()V
 
-    .line 852
+    .line 841
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    .line 853
+    .line 842
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/statistics/Statistics;->onDestroy()V
 
-    .line 854
+    .line 843
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
 
-    .line 856
-    :cond_5
+    .line 845
+    :cond_4
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mBadgeManager:Lcom/sonyericsson/home/badge/BadgeManager;
 
     invoke-virtual {v0, v1, v1}, Lcom/sonyericsson/home/badge/BadgeManager;->setBadgeManagerListener(Lcom/sonyericsson/home/badge/BadgeManager$BadgeManagerListener;Lcom/sonyericsson/home/resourceload/ResourceLoader;)V
 
-    .line 863
+    .line 852
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/transfer/TransferView;->setFocusHandler(Lcom/sonyericsson/home/transfer/TransferView$FocusHandler;)V
 
-    .line 864
+    .line 853
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/transfer/TransferView;->setTransferListener(Lcom/sonyericsson/home/transfer/TransferView$TransferListener;)V
 
-    .line 865
+    .line 854
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/transfer/TransferView;->removeAllViews()V
 
-    .line 867
+    .line 856
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
-    .line 868
-    iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDropZoneController:Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
-    .line 869
+    .line 857
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mTrashcanController:Lcom/sonyericsson/home/layer/trashcan/TrashcanController;
 
-    .line 870
+    .line 858
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
-    .line 871
+    .line 859
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
-    .line 872
+    .line 860
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    .line 874
+    .line 862
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
-    .line 875
+    .line 863
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
-    .line 876
+    .line 864
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    .line 877
+    .line 865
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mBadgeManager:Lcom/sonyericsson/home/badge/BadgeManager;
 
-    .line 878
+    .line 866
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mNetworkNameManager:Lcom/sonyericsson/home/networkname/NetworkNameManager;
 
-    .line 880
+    .line 868
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
-    .line 881
+    .line 869
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageView:Landroid/view/View;
 
-    .line 882
+    .line 870
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFadeView:Lcom/sonyericsson/view/BackgroundFadeSrcXferView;
 
-    .line 883
+    .line 871
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFullScreenEffectPlaceholder:Landroid/view/ViewGroup;
 
-    .line 884
+    .line 872
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButton:Landroid/view/View;
 
-    .line 885
+    .line 873
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayButton:Landroid/view/View;
 
-    .line 886
+    .line 874
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mButtonExitOverview:Landroid/view/View;
 
-    .line 888
+    .line 876
     iput-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
 
-    .line 890
+    .line 878
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 891
+    .line 879
     return-void
 .end method
 
@@ -4029,7 +4211,7 @@
     .parameter "event"
 
     .prologue
-    .line 2082
+    .line 1994
     iget-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSmartSliderEnabled:Z
 
     if-eqz v1, :cond_0
@@ -4042,24 +4224,24 @@
 
     if-eqz v1, :cond_0
 
-    .line 2083
+    .line 1996
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->findSmartSliderView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 2084
+    .line 1997
     .local v0, smartSliderView:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 2085
+    .line 1998
     invoke-virtual {v0}, Landroid/view/View;->performClick()Z
 
-    .line 2086
+    .line 1999
     const/4 v1, 0x1
 
-    .line 2090
+    .line 2003
     .end local v0           #smartSliderView:Landroid/view/View;
     :goto_0
     return v1
@@ -4080,12 +4262,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 2095
+    .line 2008
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
-    .line 2099
+    .line 2012
     .local v0, handled:Z
     if-nez v0, :cond_0
 
@@ -4101,7 +4283,7 @@
 
     if-nez v1, :cond_0
 
-    .line 2102
+    .line 2015
     const-string v1, ""
 
     const/4 v2, 0x0
@@ -4112,7 +4294,7 @@
 
     move v1, v4
 
-    .line 2107
+    .line 2020
     :goto_0
     return v1
 
@@ -4133,10 +4315,10 @@
 
     const/4 v5, 0x0
 
-    .line 1916
+    .line 1847
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 1918
+    .line 1849
     const-string v3, "android.intent.action.MAIN"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -4149,7 +4331,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 1919
+    .line 1850
     invoke-virtual {p1}, Landroid/content/Intent;->getFlags()I
 
     move-result v3
@@ -4160,14 +4342,14 @@
 
     move v0, v6
 
-    .line 1921
+    .line 1852
     .local v0, alreadyHome:Z
     :goto_0
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/transfer/TransferView;->cancelTransfer()V
 
-    .line 1923
+    .line 1854
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->hasPendingWidgets()Z
@@ -4176,30 +4358,30 @@
 
     if-eqz v3, :cond_0
 
-    .line 1924
+    .line 1855
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mAdvWidgetManager:Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->cleanupPendingWidgets()V
 
-    .line 1927
+    .line 1858
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
     if-eqz v3, :cond_5
 
-    .line 1928
+    .line 1859
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
     invoke-virtual {v3}, Landroid/app/Dialog;->cancel()V
 
-    .line 1940
+    .line 1871
     :cond_1
     :goto_1
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v3, v5}, Lcom/sonyericsson/home/layer/folder/FolderController;->setRenamingFolder(Z)V
 
-    .line 1943
+    .line 1874
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v3
@@ -4208,7 +4390,7 @@
 
     move-result-object v2
 
-    .line 1944
+    .line 1875
     .local v2, v:Landroid/view/View;
     if-eqz v2, :cond_2
 
@@ -4218,7 +4400,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 1945
+    .line 1876
     const-string v3, "input_method"
 
     invoke-virtual {p0, v3}, Lcom/sonyericsson/home/HomeActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -4227,7 +4409,7 @@
 
     check-cast v1, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 1946
+    .line 1877
     .local v1, imm:Landroid/view/inputmethod/InputMethodManager;
     invoke-virtual {v2}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
@@ -4235,12 +4417,12 @@
 
     invoke-virtual {v1, v3, v5}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 1949
+    .line 1880
     .end local v1           #imm:Landroid/view/inputmethod/InputMethodManager;
     :cond_2
     iput-boolean v6, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButtonPressed:Z
 
-    .line 1951
+    .line 1882
     .end local v0           #alreadyHome:Z
     .end local v2           #v:Landroid/view/View;
     :cond_3
@@ -4249,10 +4431,10 @@
     :cond_4
     move v0, v5
 
-    .line 1919
+    .line 1850
     goto :goto_0
 
-    .line 1929
+    .line 1860
     .restart local v0       #alreadyHome:Z
     :cond_5
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -4263,14 +4445,14 @@
 
     if-eqz v3, :cond_6
 
-    .line 1930
+    .line 1861
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->exitOverview()V
 
     goto :goto_1
 
-    .line 1931
+    .line 1862
     :cond_6
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
@@ -4288,12 +4470,12 @@
 
     if-eqz v3, :cond_7
 
-    .line 1932
+    .line 1863
     invoke-direct {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->closeApptrayAndShowDesktop(Z)V
 
     goto :goto_1
 
-    .line 1933
+    .line 1864
     :cond_7
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
@@ -4303,12 +4485,14 @@
 
     if-eqz v3, :cond_8
 
-    .line 1934
-    invoke-direct {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->closeFolder(Z)V
+    .line 1865
+    iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
+
+    invoke-virtual {v3, v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->closeFolder(Z)V
 
     goto :goto_1
 
-    .line 1935
+    .line 1866
     :cond_8
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
@@ -4322,18 +4506,18 @@
 
     if-eqz v3, :cond_9
 
-    .line 1936
+    .line 1867
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->close()V
 
     goto :goto_1
 
-    .line 1937
+    .line 1868
     :cond_9
     if-eqz v0, :cond_1
 
-    .line 1938
+    .line 1869
     iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iget-object v4, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -4354,14 +4538,14 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2039
+    .line 1951
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2055
+    .line 1967
     :pswitch_0
     invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
@@ -4370,44 +4554,44 @@
     :goto_0
     return v0
 
-    .line 2041
+    .line 1953
     :pswitch_1
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopLongPressLocation:Lcom/sonyericsson/grid/GridLocation;
 
-    .line 2042
+    .line 1954
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAddTo:I
 
-    .line 2043
+    .line 1955
     invoke-virtual {p0, v1}, Lcom/sonyericsson/home/HomeActivity;->showDialog(I)V
 
     move v0, v1
 
-    .line 2044
+    .line 1956
     goto :goto_0
 
-    .line 2047
+    .line 1959
     :pswitch_2
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->pickWallpaper()V
 
     move v0, v1
 
-    .line 2048
+    .line 1960
     goto :goto_0
 
-    .line 2051
+    .line 1963
     :pswitch_3
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity;->pickTheme()V
 
     move v0, v1
 
-    .line 2052
+    .line 1964
     goto :goto_0
 
-    .line 2039
+    .line 1951
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -4421,46 +4605,41 @@
     .locals 2
 
     .prologue
-    .line 753
+    .line 743
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 755
+    .line 745
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onPause()V
 
-    .line 757
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDropZoneController:Lcom/sonyericsson/home/layer/appshare/DropZoneController;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/appshare/DropZoneController;->onPause()V
-
-    .line 759
+    .line 746
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     if-eqz v0, :cond_0
 
-    .line 760
+    .line 747
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->onPause()V
 
-    .line 762
+    .line 749
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->onPause()V
 
-    .line 764
+    .line 751
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mNetworkNameManager:Lcom/sonyericsson/home/networkname/NetworkNameManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/networkname/NetworkNameManager;->onPause()V
 
-    .line 766
+    .line 753
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/transfer/TransferView;->cancelTransfer()V
 
-    .line 768
+    .line 755
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/transfer/TransferView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -4471,40 +4650,39 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
 
-    .line 770
+    .line 757
     return-void
 .end method
 
-.method protected onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
+.method protected onPrepareDialog(ILandroid/app/Dialog;)V
     .locals 2
     .parameter "id"
     .parameter "dialog"
-    .parameter "args"
 
     .prologue
     const/4 v1, 0x0
 
-    .line 1990
-    invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
-
-    .line 1991
+    .line 1903
     packed-switch p1, :pswitch_data_0
 
-    .line 2004
+    .line 1916
     .end local p2
     :goto_0
     return-void
 
-    .line 1993
+    .line 1905
     .restart local p2
     :pswitch_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mPickApplicationDialog:Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/HomeActivity$PickApplicationDialog;->init()V
 
+    .line 1906
+    iput-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDismissCurrentDialogOnResume:Z
+
     goto :goto_0
 
-    .line 1998
+    .line 1912
     :pswitch_1
     check-cast p2, Landroid/app/AlertDialog;
 
@@ -4515,28 +4693,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setSelection(I)V
 
-    .line 1999
-    iput-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDismissDeleteDialogOnResume:Z
+    .line 1913
+    iput-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDismissCurrentDialogOnResume:Z
 
     goto :goto_0
 
-    .line 2002
-    .restart local p2
-    :pswitch_2
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFbiAppShareDialog:Lcom/sonyericsson/home/layer/appshare/AppShareDialog;
+    .line 1903
+    nop
 
-    invoke-virtual {v0, p2, p3}, Lcom/sonyericsson/home/layer/appshare/AppShareDialog;->prepareDialog(Landroid/app/Dialog;Landroid/os/Bundle;)V
-
-    goto :goto_0
-
-    .line 1991
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
         :pswitch_1
         :pswitch_1
         :pswitch_0
-        :pswitch_2
     .end packed-switch
 .end method
 
@@ -4549,10 +4719,10 @@
 
     const/4 v1, 0x1
 
-    .line 2028
+    .line 1940
     invoke-super {p0, p1}, Landroid/app/Activity;->onPrepareOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 2031
+    .line 1943
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->isInOverview()Z
@@ -4566,7 +4736,7 @@
     :goto_0
     invoke-interface {p1, v2, v0}, Landroid/view/Menu;->setGroupVisible(IZ)V
 
-    .line 2032
+    .line 1944
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isOpen()Z
@@ -4596,19 +4766,19 @@
     :goto_1
     invoke-interface {p1, v1, v0}, Landroid/view/Menu;->setGroupVisible(IZ)V
 
-    .line 2034
+    .line 1946
     return v1
 
     :cond_0
     move v0, v2
 
-    .line 2031
+    .line 1943
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 2032
+    .line 1944
     goto :goto_1
 .end method
 
@@ -4617,10 +4787,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 495
+    .line 484
     invoke-super {p0, p1}, Landroid/app/Activity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 496
+    .line 485
     const-string v1, "desktop_pane"
 
     iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -4633,7 +4803,7 @@
 
     move-result v0
 
-    .line 498
+    .line 487
     .local v0, pane:I
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -4641,28 +4811,30 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->moveToPane(IZ)V
 
-    .line 499
+    .line 488
     return-void
 .end method
 
 .method protected onResume()V
-    .locals 2
+    .locals 5
 
     .prologue
-    .line 774
+    const/4 v4, 0x0
+
+    .line 761
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 776
+    .line 763
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mNetworkNameManager:Lcom/sonyericsson/home/networkname/NetworkNameManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/networkname/NetworkNameManager;->onResume()V
 
-    .line 778
+    .line 765
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/transfer/TransferView;->cancelTransfer()V
 
-    .line 782
+    .line 769
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/transfer/TransferView;->isInTouchMode()Z
@@ -4671,7 +4843,7 @@
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStealFocusNextModeChange:Z
 
-    .line 783
+    .line 770
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mTransferView:Lcom/sonyericsson/home/transfer/TransferView;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/transfer/TransferView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -4682,69 +4854,112 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnTouchModeChangeListener(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V
 
-    .line 787
+    .line 773
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDismissDeleteDialogOnResume:Z
+    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDismissCurrentDialogOnResume:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButtonPressed:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    .line 788
+    .line 774
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
+
+    instance-of v0, v0, Lcom/sonyericsson/home/layer/folder/FolderDialog;
+
+    if-eqz v0, :cond_0
+
+    .line 777
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
+
+    check-cast v0, Lcom/sonyericsson/home/layer/folder/FolderDialog;
+
+    check-cast v0, Lcom/sonyericsson/home/layer/folder/FolderDialog;
+
+    invoke-virtual {v0, v4}, Lcom/sonyericsson/home/layer/folder/FolderDialog;->setDialogListener(Lcom/sonyericsson/home/layer/folder/FolderDialog$FolderDialogListener;)V
+
+    .line 779
+    :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mCurrentDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 791
-    :cond_0
+    .line 782
+    :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iget-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButtonPressed:Z
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onResume(Z)V
 
-    .line 792
+    .line 783
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 793
+    .line 784
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     iget-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButtonPressed:Z
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/stage/StageController;->onResume(Z)V
 
-    .line 796
-    :cond_1
+    .line 786
+    :cond_2
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
+
+    iget-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButtonPressed:Z
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->onResume(Z)V
+
+    .line 788
+    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mAddingFolder:Z
+
+    if-eqz v0, :cond_3
+
+    iget-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButtonPressed:Z
+
+    if-nez v0, :cond_3
+
+    .line 789
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mActivityFlow:Lcom/sonyericsson/home/HomeActivityFlow;
+
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAddFolderListener:Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
+
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
+
+    iget v3, p0, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderIconIndex:I
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/sonyericsson/home/HomeActivityFlow;->addFolder(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;I)V
+
+    .line 792
+    :cond_3
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
-    .line 797
+    .line 793
     const-string v0, "StartUp"
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
 
     invoke-static {v0, v1}, Lcom/sonyericsson/util/LogUtil;->reportEvent(Ljava/lang/String;Ljava/util/Map;)V
 
-    .line 798
-    const/4 v0, 0x0
+    .line 794
+    iput-object v4, p0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
 
-    iput-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStartupMap:Ljava/util/LinkedHashMap;
-
-    .line 801
-    :cond_2
+    .line 797
+    :cond_4
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/HomeActivity;->mHomeButtonPressed:Z
 
-    .line 802
+    .line 798
     return-void
 .end method
 
@@ -4754,7 +4969,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 430
+    .line 416
     invoke-virtual {p0}, Lcom/sonyericsson/home/HomeActivity;->getChangingConfigurations()I
 
     move-result v1
@@ -4771,46 +4986,56 @@
 
     if-eqz v1, :cond_5
 
-    .line 432
+    .line 418
     iput-boolean v2, p0, Lcom/sonyericsson/home/HomeActivity;->mWillRetainNonConfigurationInstance:Z
 
-    .line 433
+    .line 419
     new-instance v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
 
     invoke-direct {v0}, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;-><init>()V
 
-    .line 435
+    .line 421
     .local v0, state:Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/resourceload/ResourceLoader;->releaseNonRetainedObjects()V
 
-    .line 436
+    .line 422
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    invoke-virtual {v1}, Lcom/sonyericsson/home/GlobalCustomizationManager;->unbindDrawables()V
+
+    .line 423
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/AdapterHelper;->unbindDrawables()V
 
-    .line 438
+    .line 425
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStatistics:Lcom/sonyericsson/home/statistics/Statistics;
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->statistics:Lcom/sonyericsson/home/statistics/Statistics;
 
-    .line 439
+    .line 426
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mResourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->resourceLoader:Lcom/sonyericsson/home/resourceload/ResourceLoader;
 
-    .line 440
+    .line 427
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mGlobalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->globalCustomizationManager:Lcom/sonyericsson/home/GlobalCustomizationManager;
+
+    .line 428
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAdapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->adapterHelper:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    .line 441
+    .line 429
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     if-eqz v1, :cond_0
 
-    .line 442
+    .line 430
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->getModel()Ljava/lang/Object;
@@ -4819,7 +5044,7 @@
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageModel:Ljava/lang/Object;
 
-    .line 443
+    .line 431
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->isCreatingFolder()Z
@@ -4828,10 +5053,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 444
+    .line 432
     iput-boolean v2, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageCreatingFolder:Z
 
-    .line 445
+    .line 433
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->getDroppedAtInfo()Lcom/sonyericsson/home/data/Info;
@@ -4840,7 +5065,7 @@
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageDroppedAtInfo:Lcom/sonyericsson/home/data/Info;
 
-    .line 446
+    .line 434
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->getSavedPickedUpInfo()Lcom/sonyericsson/home/data/Info;
@@ -4849,7 +5074,7 @@
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageSavedPickedUpInfo:Lcom/sonyericsson/home/data/Info;
 
-    .line 447
+    .line 435
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/stage/StageController;->getHintLocation()I
@@ -4858,7 +5083,7 @@
 
     iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->stageHintLocation:I
 
-    .line 451
+    .line 439
     :cond_0
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
@@ -4868,7 +5093,7 @@
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayModel:Ljava/lang/Object;
 
-    .line 452
+    .line 440
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isOpen()Z
@@ -4877,7 +5102,7 @@
 
     iput-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayIsOpen:Z
 
-    .line 453
+    .line 441
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->getButtonsDisabled()Z
@@ -4886,12 +5111,12 @@
 
     iput-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayDisableDuringSortDialog:Z
 
-    .line 454
+    .line 442
     iget-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayIsOpen:Z
 
     if-eqz v1, :cond_1
 
-    .line 455
+    .line 443
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->getCurrentPane()I
@@ -4900,7 +5125,7 @@
 
     iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayPane:I
 
-    .line 456
+    .line 444
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAppTrayController:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->isEditing()Z
@@ -4909,7 +5134,7 @@
 
     iput-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->apptrayIsEditing:Z
 
-    .line 458
+    .line 446
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -4919,12 +5144,12 @@
 
     iput-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isInOverview:Z
 
-    .line 459
+    .line 447
     iget-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isInOverview:Z
 
     if-eqz v1, :cond_2
 
-    .line 460
+    .line 448
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getOverviewProgress()F
@@ -4933,7 +5158,7 @@
 
     iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->overviewProgress:F
 
-    .line 462
+    .line 450
     :cond_2
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
@@ -4943,12 +5168,12 @@
 
     iput-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isFolderOpen:Z
 
-    .line 463
+    .line 451
     iget-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->isFolderOpen:Z
 
     if-eqz v1, :cond_3
 
-    .line 464
+    .line 452
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->getCurrentFolder()Lcom/sonyericsson/home/data/InfoGroup;
@@ -4957,17 +5182,17 @@
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolder:Lcom/sonyericsson/home/data/InfoGroup;
 
-    .line 465
+    .line 453
     iget v1, p0, Lcom/sonyericsson/home/HomeActivity;->mLastOpenFolderLayer:I
 
     iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderSourceLayer:I
 
-    .line 466
+    .line 454
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mLastOpenFolderLocation:Ljava/lang/Object;
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderSourceLocation:Ljava/lang/Object;
 
-    .line 467
+    .line 455
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mFolderController:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->isRenamingFolder()Z
@@ -4976,13 +5201,13 @@
 
     iput-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openFolderRenaming:Z
 
-    .line 469
+    .line 457
     :cond_3
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     if-eqz v1, :cond_4
 
-    .line 470
+    .line 458
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mCornerController:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->getOpenCorner()I
@@ -4991,40 +5216,45 @@
 
     iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->openCorner:I
 
-    .line 474
+    .line 462
     :goto_0
     iget-boolean v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAddingFolder:Z
 
     iput-boolean v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addingFolder:Z
 
-    .line 475
+    .line 463
     iget v1, p0, Lcom/sonyericsson/home/HomeActivity;->mAddTo:I
 
     iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addTo:I
 
-    .line 476
+    .line 464
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopLongPressLocation:Lcom/sonyericsson/grid/GridLocation;
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addFolderToDesktopLocation:Lcom/sonyericsson/grid/GridLocation;
 
-    .line 477
+    .line 465
     iget v1, p0, Lcom/sonyericsson/home/HomeActivity;->mStageLocation:I
 
     iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->addFolderToStageLocation:I
 
-    .line 478
+    .line 466
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->savedFolderText:Ljava/lang/String;
 
+    .line 467
+    iget v1, p0, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderIconIndex:I
+
+    iput v1, v0, Lcom/sonyericsson/home/HomeActivity$MyInstanceState;->savedFolderIconIndex:I
+
     move-object v1, v0
 
-    .line 483
+    .line 472
     .end local v0           #state:Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
     :goto_1
     return-object v1
 
-    .line 472
+    .line 460
     .restart local v0       #state:Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
     :cond_4
     const/4 v1, -0x1
@@ -5033,7 +5263,7 @@
 
     goto :goto_0
 
-    .line 483
+    .line 472
     .end local v0           #state:Lcom/sonyericsson/home/HomeActivity$MyInstanceState;
     :cond_5
     const/4 v1, 0x0
@@ -5046,10 +5276,10 @@
     .parameter "outState"
 
     .prologue
-    .line 488
+    .line 477
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 490
+    .line 479
     const-string v0, "desktop_pane"
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -5060,45 +5290,41 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 491
+    .line 480
     return-void
 .end method
 
 .method protected onStart()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 732
+    .line 720
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
-    .line 734
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDeskStandListener:Lcom/sonyericsson/home/HomeActivity$DeskStandListener;
+    .line 722
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mScreenEventReceiver:Landroid/content/BroadcastReceiver;
 
-    new-instance v1, Landroid/content/IntentFilter;
-
-    const-string v2, "com.sonyericsson.hardware.action.ACTION_USB_OTG_STATE"
-
-    invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity;->mScreenEventFilter:Landroid/content/IntentFilter;
 
     invoke-virtual {p0, v0, v1}, Lcom/sonyericsson/home/HomeActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 736
+    .line 724
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     if-eqz v0, :cond_0
 
-    .line 737
+    .line 725
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mStageController:Lcom/sonyericsson/home/layer/stage/StageController;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->sparkle()V
 
-    .line 740
+    .line 728
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/WidgetManager;->startListening()V
 
-    .line 741
+    .line 729
     return-void
 .end method
 
@@ -5106,19 +5332,24 @@
     .locals 1
 
     .prologue
-    .line 745
+    .line 733
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 747
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDeskStandListener:Lcom/sonyericsson/home/HomeActivity$DeskStandListener;
+    .line 735
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mScreenEventReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/HomeActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 748
+    .line 737
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mDesktopController:Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onStop()V
+
+    .line 738
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity;->mWidgetManager:Lcom/sonyericsson/home/widget/WidgetManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/widget/WidgetManager;->stopListening()V
 
-    .line 749
+    .line 739
     return-void
 .end method

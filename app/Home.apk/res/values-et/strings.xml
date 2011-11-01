@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Tühista</string>
     <string name="home_button_exit_overview">Välju ülevaatest</string>
     <string name="home_no_uninstallable_apps_txt">Neid rakendusi ei saa desinstallida</string>
-    <string name="home_app_share_dropzone_hint_txt">Üksuse jagamiseks lohistage see siia</string>
-    <string name="appdialog_title">"Postitamine Facebooki "</string>
-    <string name="appdialog_comment_hint">Kommentaari lisamine</string>
-    <string name="appdialog_button_share">Jaga</string>
-    <string name="appdialog_button_cancel">Tühista</string>
-    <string name="appdialog_other_options_info">Muud jagamisvalikud</string>
-    <string name="appdialog_progress_info">Postituse koostamine</string>
-    <string name="appdialog_toast_cannot_be_shared">Seda üksust ei saa jagada</string>
-    <string name="appdialog_toast_connection_error">Ühendusetõrge</string>
-    <string name="appdialog_toast_sharing">Jagamised Facebookis</string>
-    <string name="home_app_share_chooser_title_txt">Jaga</string>
 </resources>

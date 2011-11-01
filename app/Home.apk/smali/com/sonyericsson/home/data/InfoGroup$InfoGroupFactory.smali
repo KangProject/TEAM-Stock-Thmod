@@ -15,13 +15,15 @@
 
 
 # static fields
+.field private static final KEY_ICON:Ljava/lang/String; = "icon"
+
 .field private static final KEY_LABEL:Ljava/lang/String; = "label"
 
 .field private static final KEY_UUID:Ljava/lang/String; = "uuid"
 
 .field private static final KEY_VERSION:Ljava/lang/String; = "version"
 
-.field private static final VERSION:I = 0x2
+.field private static final VERSION:I = 0x1
 
 
 # direct methods
@@ -38,44 +40,54 @@
 
 # virtual methods
 .method public fromNode(Lcom/sonyericsson/storage/Node;)Ljava/lang/Object;
-    .locals 4
+    .locals 6
     .parameter "node"
 
     .prologue
-    .line 46
-    const-string v3, "uuid"
+    .line 45
+    const-string v4, "uuid"
 
-    invoke-virtual {p1, v3}, Lcom/sonyericsson/storage/Node;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v4}, Lcom/sonyericsson/storage/Node;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
 
     move-result-object v3
 
-    invoke-static {v3}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+    .line 46
+    .local v3, uuid:Ljava/util/UUID;
+    const-string v4, "label"
+
+    invoke-virtual {p1, v4}, Lcom/sonyericsson/storage/Node;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/sonyericsson/storage/StringUtil;->decodeSafeString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     .line 47
-    .local v2, uuid:Ljava/util/UUID;
-    const-string v3, "label"
+    .local v2, label:Ljava/lang/String;
+    const-string v4, "icon"
 
-    invoke-virtual {p1, v3}, Lcom/sonyericsson/storage/Node;->getString(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v5, 0x0
 
-    move-result-object v3
+    invoke-virtual {p1, v4, v5}, Lcom/sonyericsson/storage/Node;->getInt(Ljava/lang/String;I)I
 
-    invoke-static {v3}, Lcom/sonyericsson/storage/StringUtil;->decodeSafeString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
+    move-result v0
 
     .line 48
-    .local v1, label:Ljava/lang/String;
-    new-instance v0, Lcom/sonyericsson/home/data/InfoGroup;
+    .local v0, icon:I
+    new-instance v1, Lcom/sonyericsson/home/data/InfoGroup;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-direct {v0, v2, v1, v3}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/util/UUID;Ljava/lang/String;Lcom/sonyericsson/home/data/InfoGroup$1;)V
+    invoke-direct {v1, v3, v2, v0, v4}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/util/UUID;Ljava/lang/String;ILcom/sonyericsson/home/data/InfoGroup$1;)V
 
     .line 50
-    .local v0, infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
-    return-object v0
+    .local v1, infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
+    return-object v1
 .end method
 
 .method public toNode(Ljava/lang/Object;)Lcom/sonyericsson/storage/Node;
@@ -100,7 +112,7 @@
     .local v2, node:Lcom/sonyericsson/storage/Node;
     const-string v3, "version"
 
-    const/4 v4, 0x2
+    const/4 v4, 0x1
 
     invoke-virtual {v2, v3, v4}, Lcom/sonyericsson/storage/Node;->put(Ljava/lang/String;I)V
 
@@ -130,6 +142,15 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/sonyericsson/storage/Node;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 63
+    .line 62
+    const-string v3, "icon"
+
+    invoke-static {v1}, Lcom/sonyericsson/home/data/InfoGroup;->access$300(Lcom/sonyericsson/home/data/InfoGroup;)I
+
+    move-result v4
+
+    invoke-virtual {v2, v3, v4}, Lcom/sonyericsson/storage/Node;->put(Ljava/lang/String;I)V
+
+    .line 64
     return-object v2
 .end method

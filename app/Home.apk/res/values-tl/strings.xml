@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Kanselahin</string>
     <string name="home_button_exit_overview">Lumabas sa overview</string>
     <string name="home_no_uninstallable_apps_txt">Hindi maaaring ma-unistall ang apps na ito</string>
-    <string name="home_app_share_dropzone_hint_txt">I-drop dito upang ibahagi ang item</string>
-    <string name="appdialog_title">I-post sa Facebook</string>
-    <string name="appdialog_comment_hint">Idagdag ang iyong komento</string>
-    <string name="appdialog_button_share">Ibahagi</string>
-    <string name="appdialog_button_cancel">Kanselahin</string>
-    <string name="appdialog_other_options_info">Iba opsyon pagbahagi</string>
-    <string name="appdialog_progress_info">Paglikha ng post</string>
-    <string name="appdialog_toast_cannot_be_shared">Hindi maaaring ibahagi ang item na ito</string>
-    <string name="appdialog_toast_connection_error">Error sa koneksyon</string>
-    <string name="appdialog_toast_sharing">Nagbabahagi sa Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Ibahagi</string>
 </resources>

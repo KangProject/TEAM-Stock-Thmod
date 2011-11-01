@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2865
+    .line 2720
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$1;->this$1:Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 2867
+    .line 2722
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$1;->this$1:Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;
 
     iget-object v0, v0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->mAppList:Ljava/util/LinkedList;
@@ -60,16 +60,16 @@
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2868
+    .line 2723
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$1;->this$1:Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->access$6000(Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->access$5600(Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;)V
 
-    .line 2869
+    .line 2724
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter$1;->this$1:Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/HomeActivity$PickApplicationAdapter;->notifyDataSetChanged()V
 
-    .line 2870
+    .line 2725
     return-void
 .end method

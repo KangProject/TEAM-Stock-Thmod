@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">İptal</string>
     <string name="home_button_exit_overview">Genel bakıştan çık</string>
     <string name="home_no_uninstallable_apps_txt">Bu uygulamalar kaldırılamaz</string>
-    <string name="home_app_share_dropzone_hint_txt">Paylaşmak istediğiniz öğeyi buraya sürükleyin</string>
-    <string name="appdialog_title">"Facebook'a Gönder"</string>
-    <string name="appdialog_comment_hint">Yorumunuzu ekleyin</string>
-    <string name="appdialog_button_share">Paylaş</string>
-    <string name="appdialog_button_cancel">İptal</string>
-    <string name="appdialog_other_options_info">Diğer paylaşım seçenekl</string>
-    <string name="appdialog_progress_info">Gönderim oluşturuluyor</string>
-    <string name="appdialog_toast_cannot_be_shared">Bu öğe paylaşılamaz</string>
-    <string name="appdialog_toast_connection_error">Bağlantı hatası</string>
-    <string name="appdialog_toast_sharing">"Facebook'ta Paylaşım"</string>
-    <string name="home_app_share_chooser_title_txt">Paylaş</string>
 </resources>

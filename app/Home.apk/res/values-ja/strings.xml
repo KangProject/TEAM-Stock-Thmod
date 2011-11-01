@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">キャンセル</string>
     <string name="home_button_exit_overview">戻る</string>
     <string name="home_no_uninstallable_apps_txt">これらのアプリは削除できません</string>
-    <string name="home_app_share_dropzone_hint_txt">ここにドロップしてアイテムを共有します</string>
-    <string name="appdialog_title">Facebookに投稿</string>
-    <string name="appdialog_comment_hint">コメントを追加</string>
-    <string name="appdialog_button_share">共有</string>
-    <string name="appdialog_button_cancel">キャンセル</string>
-    <string name="appdialog_other_options_info">他の共有方法</string>
-    <string name="appdialog_progress_info">投稿中...</string>
-    <string name="appdialog_toast_cannot_be_shared">このアイテムは共有できません</string>
-    <string name="appdialog_toast_connection_error">通信エラー</string>
-    <string name="appdialog_toast_sharing">Facebookで共有中...</string>
-    <string name="home_app_share_chooser_title_txt">共有</string>
 </resources>

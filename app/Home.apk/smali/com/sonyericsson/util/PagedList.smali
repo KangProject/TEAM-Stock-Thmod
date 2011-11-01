@@ -151,106 +151,6 @@
     goto :goto_0
 .end method
 
-.method public addInFirstAvailableLocation(Ljava/lang/Object;)V
-    .locals 6
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TV;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 183
-    .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
-    .local p1, value:Ljava/lang/Object;,"TV;"
-    iget-object v4, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v5}, Ljava/util/LinkedList;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object v3
-
-    .line 184
-    .local v3, pageIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/LinkedList<TV;>;>;"
-    const/4 v0, 0x0
-
-    .line 186
-    .local v0, done:Z
-    :cond_0
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    if-nez v0, :cond_2
-
-    .line 187
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/LinkedList;
-
-    .line 188
-    .local v2, page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v4}, Ljava/util/LinkedList;->indexOf(Ljava/lang/Object;)I
-
-    move-result v1
-
-    .line 189
-    .local v1, firstNullLocation:I
-    const/4 v4, -0x1
-
-    if-eq v1, v4, :cond_1
-
-    .line 190
-    invoke-virtual {v2, v1, p1}, Ljava/util/LinkedList;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    .line 191
-    const/4 v0, 0x1
-
-    .line 193
-    :cond_1
-    if-nez v0, :cond_0
-
-    invoke-virtual {v2}, Ljava/util/LinkedList;->size()I
-
-    move-result v4
-
-    invoke-virtual {p0}, Lcom/sonyericsson/util/PagedList;->getMaxPageSize()I
-
-    move-result v5
-
-    if-ge v4, v5, :cond_0
-
-    .line 194
-    invoke-virtual {v2, p1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
-
-    .line 195
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 198
-    .end local v1           #firstNullLocation:I
-    .end local v2           #page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
-    :cond_2
-    if-nez v0, :cond_3
-
-    .line 199
-    invoke-virtual {p0, p1}, Lcom/sonyericsson/util/PagedList;->addLast(Ljava/lang/Object;)V
-
-    .line 201
-    :cond_3
-    return-void
-.end method
-
 .method public addLast(Ljava/lang/Object;)V
     .locals 3
     .parameter
@@ -261,7 +161,7 @@
     .end annotation
 
     .prologue
-    .line 371
+    .line 331
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     .local p1, item:Ljava/lang/Object;,"TV;"
     invoke-virtual {p0}, Lcom/sonyericsson/util/PagedList;->getNumberOfPages()I
@@ -272,7 +172,7 @@
 
     sub-int v0, v1, v2
 
-    .line 372
+    .line 332
     .local v0, lastPage:I
     const/4 v1, -0x1
 
@@ -284,18 +184,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 373
+    .line 333
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    .line 374
+    .line 334
     invoke-virtual {p0}, Lcom/sonyericsson/util/PagedList;->addPageLast()V
 
-    .line 376
+    .line 336
     :cond_1
     invoke-virtual {p0, v0, p1}, Lcom/sonyericsson/util/PagedList;->addToPage(ILjava/lang/Object;)V
 
-    .line 377
+    .line 337
     return-void
 .end method
 
@@ -367,7 +267,7 @@
     .locals 3
 
     .prologue
-    .line 359
+    .line 319
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     iget-object v2, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
 
@@ -389,20 +289,20 @@
 
     check-cast v1, Ljava/util/LinkedList;
 
-    .line 360
+    .line 320
     .local v1, page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     invoke-virtual {v1}, Ljava/util/LinkedList;->clear()V
 
     goto :goto_0
 
-    .line 362
+    .line 322
     .end local v1           #page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->clear()V
 
-    .line 363
+    .line 323
     return-void
 .end method
 
@@ -416,7 +316,7 @@
     .end annotation
 
     .prologue
-    .line 269
+    .line 229
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     .local p1, value:Ljava/lang/Object;,"TV;"
     iget-object v2, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
@@ -439,7 +339,7 @@
 
     check-cast v1, Ljava/util/LinkedList;
 
-    .line 270
+    .line 230
     .local v1, page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     invoke-virtual {v1, p1}, Ljava/util/LinkedList;->contains(Ljava/lang/Object;)Z
 
@@ -447,10 +347,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 271
+    .line 231
     const/4 v2, 0x1
 
-    .line 274
+    .line 234
     .end local v1           #page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     :goto_0
     return v2
@@ -472,7 +372,7 @@
     .end annotation
 
     .prologue
-    .line 211
+    .line 181
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
 
@@ -494,7 +394,7 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 264
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     iget v0, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageIndex:I
 
@@ -505,7 +405,7 @@
     .locals 1
 
     .prologue
-    .line 314
+    .line 274
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     iget v0, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageLocation:I
 
@@ -599,7 +499,7 @@
     .end annotation
 
     .prologue
-    .line 380
+    .line 340
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     .local p3, item:Ljava/lang/Object;,"TV;"
     invoke-virtual {p0}, Lcom/sonyericsson/util/PagedList;->getNumberOfPages()I
@@ -610,7 +510,7 @@
 
     if-gez p1, :cond_1
 
-    .line 381
+    .line 341
     :cond_0
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -618,7 +518,7 @@
 
     throw v1
 
-    .line 384
+    .line 344
     :cond_1
     invoke-virtual {p0, p1}, Lcom/sonyericsson/util/PagedList;->isPageFull(I)Z
 
@@ -626,7 +526,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 385
+    .line 345
     invoke-virtual {p0}, Lcom/sonyericsson/util/PagedList;->getMaxPageSize()I
 
     move-result v1
@@ -639,7 +539,7 @@
 
     move-result-object v0
 
-    .line 386
+    .line 346
     .local v0, lastItem:Ljava/lang/Object;,"TV;"
     add-int/lit8 v1, p1, 0x1
 
@@ -649,10 +549,10 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 387
+    .line 347
     invoke-virtual {p0}, Lcom/sonyericsson/util/PagedList;->addPageLast()V
 
-    .line 389
+    .line 349
     :cond_2
     add-int/lit8 v1, p1, 0x1
 
@@ -660,12 +560,12 @@
 
     invoke-virtual {p0, v1, v2, v0}, Lcom/sonyericsson/util/PagedList;->insert(IILjava/lang/Object;)V
 
-    .line 392
+    .line 352
     .end local v0           #lastItem:Ljava/lang/Object;,"TV;"
     :cond_3
     invoke-virtual {p0, p1, p2, p3}, Lcom/sonyericsson/util/PagedList;->add(IILjava/lang/Object;)V
 
-    .line 393
+    .line 353
     return-void
 .end method
 
@@ -714,7 +614,7 @@
     .end annotation
 
     .prologue
-    .line 321
+    .line 281
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     new-instance v0, Lcom/sonyericsson/util/PagedList$1;
 
@@ -728,16 +628,16 @@
     .parameter "location"
 
     .prologue
-    .line 285
+    .line 245
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageIndex:I
 
-    .line 286
+    .line 246
     iput p1, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageLocation:I
 
-    .line 287
+    .line 247
     iget-object v2, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
@@ -758,7 +658,7 @@
 
     check-cast v1, Ljava/util/LinkedList;
 
-    .line 288
+    .line 248
     .local v1, page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     iget v2, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageLocation:I
 
@@ -768,7 +668,7 @@
 
     if-lt v2, v3, :cond_0
 
-    .line 289
+    .line 249
     iget v2, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageLocation:I
 
     invoke-virtual {v1}, Ljava/util/LinkedList;->size()I
@@ -779,7 +679,7 @@
 
     iput v2, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageLocation:I
 
-    .line 290
+    .line 250
     iget v2, p0, Lcom/sonyericsson/util/PagedList;->mMappedPageIndex:I
 
     add-int/lit8 v2, v2, 0x1
@@ -788,7 +688,7 @@
 
     goto :goto_0
 
-    .line 295
+    .line 255
     .end local v1           #page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     :cond_0
     return-void
@@ -805,7 +705,7 @@
     .end annotation
 
     .prologue
-    .line 234
+    .line 204
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
 
@@ -833,7 +733,7 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 214
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     .local p1, value:Ljava/lang/Object;,"TV;"
     iget-object v2, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
@@ -856,7 +756,7 @@
 
     check-cast v1, Ljava/util/LinkedList;
 
-    .line 245
+    .line 215
     .local v1, page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     invoke-virtual {v1, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
@@ -864,10 +764,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 246
+    .line 216
     const/4 v2, 0x1
 
-    .line 249
+    .line 219
     .end local v1           #page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
     :goto_0
     return v2
@@ -876,51 +776,6 @@
     const/4 v2, 0x0
 
     goto :goto_0
-.end method
-
-.method public removeGaps()V
-    .locals 3
-
-    .prologue
-    .line 256
-    .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
-    iget-object v2, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
-
-    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/LinkedList;
-
-    .line 257
-    .local v1, page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
-    :goto_0
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    goto :goto_0
-
-    .line 260
-    .end local v1           #page:Ljava/util/LinkedList;,"Ljava/util/LinkedList<TV;>;"
-    :cond_1
-    return-void
 .end method
 
 .method public removePage(I)Ljava/util/LinkedList;
@@ -961,7 +816,7 @@
     .end annotation
 
     .prologue
-    .line 223
+    .line 193
     .local p0, this:Lcom/sonyericsson/util/PagedList;,"Lcom/sonyericsson/util/PagedList<TV;>;"
     .local p3, value:Ljava/lang/Object;,"TV;"
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList;->mPages:Ljava/util/LinkedList;
@@ -975,7 +830,7 @@
 
     invoke-virtual {p0, p2, p3}, Ljava/util/LinkedList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 224
+    .line 194
     return-void
 .end method
 

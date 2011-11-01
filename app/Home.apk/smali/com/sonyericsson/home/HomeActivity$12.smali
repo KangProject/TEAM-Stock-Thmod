@@ -3,12 +3,12 @@
 .source "HomeActivity.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/appshare/DropZoneController$DropZoneControllerListener;
+.implements Lcom/sonyericsson/home/layer/folder/FolderListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/sonyericsson/home/HomeActivity;->createAppShareDropZone()V
+    value = Lcom/sonyericsson/home/HomeActivity;->createFolderLayer()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/sonyericsson/home/HomeActivity;
 
-.field final synthetic val$mainLayer:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/HomeActivity;Landroid/view/View;)V
+.method constructor <init>(Lcom/sonyericsson/home/HomeActivity;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 1629
+    .line 1571
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    iput-object p2, p0, Lcom/sonyericsson/home/HomeActivity$12;->val$mainLayer:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,145 +38,156 @@
 
 # virtual methods
 .method public onCancelHint()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 1653
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    .line 1574
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 1654
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$1600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->getFreeCorners()[Z
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$1400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
 
     move-result-object v0
 
-    .line 1655
-    .local v0, visibility:[Z
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    const/4 v1, 0x1
 
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->closeFolder(Z)V
 
-    move-result-object v1
+    .line 1575
+    return-void
+.end method
 
-    invoke-virtual {v1, v0}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->setCornerVisibility([Z)V
+.method public onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
+    .locals 2
+    .parameter "info"
+    .parameter "location"
 
-    .line 1656
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+    .prologue
+    .line 1581
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    const/4 v2, 0x0
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
 
-    invoke-static {v1, v2}, Lcom/sonyericsson/home/HomeActivity;->access$4002(Lcom/sonyericsson/home/HomeActivity;Z)Z
+    move-result-object v0
 
-    .line 1658
-    .end local v0           #visibility:[Z
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, p1, v1, p2}, Lcom/sonyericsson/home/HomeActivityFlow;->onInfoClicked(Lcom/sonyericsson/home/data/Info;ILjava/lang/Object;)V
+
+    .line 1582
+    instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
+
+    if-eqz v0, :cond_0
+
+    .line 1583
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/statistics/Statistics;
+
+    move-result-object v0
+
+    check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
+
+    .end local p1
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, p1, v1}, Lcom/sonyericsson/home/statistics/Statistics;->registerAcitvityStart(Lcom/sonyericsson/home/data/ActivityInfo;I)V
+
+    .line 1586
     :cond_0
     return-void
 .end method
 
-.method public onDrop(Landroid/os/Bundle;)V
-    .locals 2
-    .parameter "args"
+.method public onItemPickedUp()V
+    .locals 0
 
     .prologue
-    .line 1645
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1, p1}, Lcom/sonyericsson/home/HomeActivity;->showDialog(ILandroid/os/Bundle;)Z
-
-    .line 1646
+    .line 1578
     return-void
 .end method
 
-.method public onHide()V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 1640
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/HomeActivity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    const/16 v1, 0x400
-
-    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
-
-    .line 1641
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->val$mainLayer:Landroid/view/View;
-
-    invoke-virtual {v0, v2, v2, v2, v2}, Landroid/view/View;->setPadding(IIII)V
-
-    .line 1642
-    return-void
-.end method
-
-.method public onHint()V
-    .locals 2
-
-    .prologue
-    .line 1649
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$4002(Lcom/sonyericsson/home/HomeActivity;Z)Z
-
-    .line 1650
-    return-void
-.end method
-
-.method public onShow()V
+.method public onRenameFolder(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;Z)V
     .locals 4
+    .parameter "infoGroup"
+    .parameter "listener"
+    .parameter "restore"
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 1633
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/HomeActivity;->getWindow()Landroid/view/Window;
+    .line 1590
+    invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->getLabel()Ljava/lang/String;
 
     move-result-object v1
 
-    const/16 v2, 0x400
-
-    invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
-
-    .line 1634
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-virtual {v1}, Lcom/sonyericsson/home/HomeActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0a0034
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+    .line 1591
+    .local v1, text:Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->getIcon()I
 
     move-result v0
 
-    .line 1635
-    .local v0, topPadding:I
-    iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$12;->val$mainLayer:Landroid/view/View;
+    .line 1592
+    .local v0, iconIndex:I
+    if-eqz p3, :cond_0
 
-    invoke-virtual {v1, v3, v0, v3, v3}, Landroid/view/View;->setPadding(IIII)V
+    .line 1593
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    .line 1636
+    iget-object v1, v2, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderText:Ljava/lang/String;
+
+    .line 1594
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    iget v0, v2, Lcom/sonyericsson/home/HomeActivity;->mSavedFolderIconIndex:I
+
+    .line 1596
+    :cond_0
+    iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v2}, Lcom/sonyericsson/home/HomeActivity;->access$2600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/sonyericsson/home/HomeActivity$12$1;
+
+    invoke-direct {v3, p0, p2}, Lcom/sonyericsson/home/HomeActivity$12$1;-><init>(Lcom/sonyericsson/home/HomeActivity$12;Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;)V
+
+    invoke-virtual {v2, p1, v1, v0, v3}, Lcom/sonyericsson/home/HomeActivityFlow;->setFolderName(Lcom/sonyericsson/home/data/InfoGroup;Ljava/lang/String;ILcom/sonyericsson/home/HomeActivityFlow$OnFolderRenameListener;)V
+
+    .line 1607
+    return-void
+.end method
+
+.method public onTransferCanceled(Lcom/sonyericsson/home/data/InfoGroup;)V
+    .locals 1
+    .parameter "infoGroup"
+
+    .prologue
+    .line 1610
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->itemAddedTo(Lcom/sonyericsson/home/data/InfoGroup;)V
+
+    .line 1611
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 1612
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$12;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageController;->itemAddedTo(Lcom/sonyericsson/home/data/InfoGroup;)V
+
+    .line 1614
+    :cond_0
     return-void
 .end method

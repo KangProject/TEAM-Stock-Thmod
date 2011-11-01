@@ -27,18 +27,18 @@
     .parameter "packageName"
 
     .prologue
-    .line 406
+    .line 405
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    .line 407
+    .line 406
     const-string v0, "remove package"
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/util/Worker$Task;-><init>(Ljava/lang/String;)V
 
-    .line 408
+    .line 407
     iput-object p2, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;->mPackageName:Ljava/lang/String;
 
-    .line 409
+    .line 408
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 413
+    .line 412
     return-void
 .end method
 
@@ -56,12 +56,12 @@
     .locals 7
 
     .prologue
-    .line 417
+    .line 416
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 418
+    .line 417
     .local v2, itemsToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -73,7 +73,7 @@
 
     move-result-object v3
 
-    .line 419
+    .line 418
     .local v3, keySet:Ljava/util/Set;,"Ljava/util/Set<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -94,7 +94,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 420
+    .line 419
     .local v1, item:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/ActivityInfo;->getPackageName()Ljava/lang/String;
 
@@ -108,12 +108,12 @@
 
     if-eqz v5, :cond_0
 
-    .line 421
+    .line 420
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 425
+    .line 424
     .end local v1           #item:Lcom/sonyericsson/home/data/ActivityInfo;
     :cond_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -133,7 +133,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 426
+    .line 425
     .restart local v1       #item:Lcom/sonyericsson/home/data/ActivityInfo;
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -145,7 +145,7 @@
 
     goto :goto_1
 
-    .line 429
+    .line 428
     .end local v1           #item:Lcom/sonyericsson/home/data/ActivityInfo;
     :cond_2
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -158,7 +158,7 @@
 
     invoke-virtual {v5, v6}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 431
+    .line 430
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     invoke-static {v5}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$700(Lcom/sonyericsson/home/resourceload/PackageLoader;)Ljava/util/ArrayList;
@@ -182,7 +182,7 @@
 
     check-cast v4, Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
-    .line 432
+    .line 431
     .local v4, listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;->mPackageName:Ljava/lang/String;
 
@@ -190,7 +190,7 @@
 
     goto :goto_2
 
-    .line 434
+    .line 433
     .end local v4           #listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     :cond_3
     return-void

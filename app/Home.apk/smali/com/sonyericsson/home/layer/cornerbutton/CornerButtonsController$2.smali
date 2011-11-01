@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 186
+    .line 182
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$2;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 190
+    .line 186
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 193
+    .line 189
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$2;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$000(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;)Ljava/util/ArrayList;
@@ -76,7 +76,7 @@
 
     check-cast v0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
-    .line 194
+    .line 190
     .local v0, controller:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getSyncable()Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
@@ -98,19 +98,16 @@
 
     invoke-static {v2, v3, v4, p1}, Lcom/sonyericsson/home/data/SyncHelper;->syncPackageChanged(Lcom/sonyericsson/home/data/SyncHelper$Syncable;Ljava/util/Collection;Ljava/util/Collection;Ljava/lang/String;)V
 
-    .line 196
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->updateActionsFromModel()V
-
     goto :goto_0
 
-    .line 198
+    .line 193
     .end local v0           #controller:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$2;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$200(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;)V
 
-    .line 199
+    .line 194
     return-void
 .end method
 
@@ -119,7 +116,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 202
+    .line 197
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$2;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$000(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;)Ljava/util/ArrayList;
@@ -144,7 +141,7 @@
 
     check-cast v0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
-    .line 203
+    .line 198
     .local v0, controller:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->getSyncable()Lcom/sonyericsson/home/data/SyncHelper$Syncable;
 
@@ -158,14 +155,14 @@
 
     goto :goto_0
 
-    .line 206
+    .line 201
     .end local v0           #controller:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController$2;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->access$200(Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;)V
 
-    .line 207
+    .line 202
     return-void
 .end method
 
@@ -174,7 +171,7 @@
     .parameter "packageList"
 
     .prologue
-    .line 211
+    .line 206
     return-void
 .end method
 
@@ -183,6 +180,6 @@
     .parameter "packageList"
 
     .prologue
-    .line 215
+    .line 210
     return-void
 .end method

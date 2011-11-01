@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 254
+    .line 240
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$7;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,28 +54,28 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 243
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 258
+    .line 244
     .local v0, globalVisibleRect:Landroid/graphics/Rect;
     invoke-virtual {p2, v0}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 259
+    .line 245
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$7;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v1
 
     invoke-virtual {v1, v0, p3}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->onItemClick(Landroid/graphics/Rect;I)V
 
-    .line 260
+    .line 246
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 261
+    .line 247
     return-void
 .end method

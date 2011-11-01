@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Peruuta</string>
     <string name="home_button_exit_overview">Poistu yleiskuvauksesta</string>
     <string name="home_no_uninstallable_apps_txt">Näiden sovellusten asennusta ei voi poistaa</string>
-    <string name="home_app_share_dropzone_hint_txt">Jaa kohde pudottamalla tähän</string>
-    <string name="appdialog_title">Julkaise Facebookissa</string>
-    <string name="appdialog_comment_hint">Lisää kommentti</string>
-    <string name="appdialog_button_share">Jaa</string>
-    <string name="appdialog_button_cancel">Peruuta</string>
-    <string name="appdialog_other_options_info">Muut jakamisasetukset</string>
-    <string name="appdialog_progress_info">Julkaisua luodaan</string>
-    <string name="appdialog_toast_cannot_be_shared">Tätä kohdetta ei voi jakaa</string>
-    <string name="appdialog_toast_connection_error">Yhteysvirhe</string>
-    <string name="appdialog_toast_sharing">Jaetaan Facebookissa</string>
-    <string name="home_app_share_chooser_title_txt">Jaa</string>
 </resources>

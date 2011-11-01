@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="HomeTheme" parent="@android:style/Theme.Wallpaper.NoTitleBar" />
-    <style name="SEMCTextAppearance" parent="@android:style/TextAppearance">
-        <item name="android:textColor">?android:textColorPrimary</item>
-        <item name="android:textColorHighlight">@color/semc_text_color_highlight</item>
-        <item name="android:textColorHint">@color/semc_hint</item>
-        <item name="android:textColorLink">@color/semc_text_color_link</item>
-    </style>
-    <style name="SEMCTextAppearance.Medium" parent="@style/SEMCTextAppearance">
-        <item name="android:textSize">@dimen/semc_text_size_medium</item>
-    </style>
-    <style name="SEMCTextAppearance.Small" parent="@style/SEMCTextAppearance">
-        <item name="android:textSize">@dimen/semc_text_size_small</item>
-    </style>
-    <style name="ButtonContainer">
-        <item name="android:gravity">center</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/styles_fbi_buttoncontainer_marginTop</item>
-        <item name="android:layout_marginBottom">@dimen/styles_fbi_buttoncontainer_marginBottom</item>
-    </style>
 </resources>

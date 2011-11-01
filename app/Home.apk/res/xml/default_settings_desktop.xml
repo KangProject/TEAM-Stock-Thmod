@@ -91,6 +91,13 @@
                     <setting key="y">3</setting>
                     <setting key="pane">1</setting>
                 </group>
+                <group>
+                    <setting key="name">.main</setting>
+                    <setting key="package-name">com.pvy.appman</setting>
+                    <setting key="x">3</setting>
+                    <setting key="y">3</setting>
+                    <setting key="pane">1</setting>
+                </group>
             </groups>
         </group>
     </groups>

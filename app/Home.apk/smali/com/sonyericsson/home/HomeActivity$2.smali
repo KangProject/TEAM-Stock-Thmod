@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 598
+    .line 588
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$2;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,32 +42,13 @@
     .parameter "v"
 
     .prologue
-    .line 600
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$2;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 601
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$2;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->sparkle()V
-
-    .line 603
-    :cond_0
+    .line 590
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$2;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$300(Lcom/sonyericsson/home/HomeActivity;Z)V
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$100(Lcom/sonyericsson/home/HomeActivity;Z)V
 
-    .line 604
+    .line 591
     return-void
 .end method

@@ -1509,6 +1509,7 @@
     <public type="string" name="kill_app_longpress_back_summary" id="0x7f0904ab" />
     <public type="string" name="xloud_strings_xloud_txt" id="0x7f0904ac" />
     <public type="string" name="xloud_strings_xloud_desc_txt" id="0x7f0904ad" />
+    <public type="string" name="extra_tweaks" id="0x7f0904ae" />
     <public type="string" name="wifi_context_menu_change_wapi_certificate" id="0x7f090020" />
     <public type="string" name="wifi_security_wapi_cert" id="0x7f090021" />
     <public type="string" name="wifi_security_wapi_psk" id="0x7f090022" />

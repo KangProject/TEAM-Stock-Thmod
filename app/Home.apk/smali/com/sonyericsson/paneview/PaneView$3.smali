@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 467
+    .line 466
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView$3;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +44,12 @@
     .parameter "event"
 
     .prologue
-    .line 469
+    .line 468
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
 
-    .line 470
+    .line 469
     .local v0, action:I
     if-eqz v0, :cond_0
 
@@ -57,18 +57,18 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 471
+    .line 470
     :cond_0
     sparse-switch p2, :sswitch_data_0
 
-    .line 486
+    .line 485
     :cond_1
     const/4 v1, 0x0
 
     :goto_0
     return v1
 
-    .line 474
+    .line 473
     :sswitch_0
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
 
@@ -76,7 +76,7 @@
 
     if-nez v1, :cond_1
 
-    .line 475
+    .line 474
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$3;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView;->access$400(Lcom/sonyericsson/paneview/PaneView;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
@@ -139,7 +139,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 478
+    .line 477
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView$3;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView$3;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -172,13 +172,13 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/sonyericsson/paneview/PaneView;->performItemClick(Landroid/view/View;IJ)Z
 
-    .line 481
+    .line 480
     :cond_2
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 471
+    .line 470
     nop
 
     :sswitch_data_0

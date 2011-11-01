@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">إلغاء</string>
     <string name="home_button_exit_overview">خروج من النظرة العامة</string>
     <string name="home_no_uninstallable_apps_txt">تتعذر إزالة تثبيت هذه التطبيقات</string>
-    <string name="home_app_share_dropzone_hint_txt">إفلات هنا لمشاركة العنصر</string>
-    <string name="appdialog_title">نشر على Facebook</string>
-    <string name="appdialog_comment_hint">إضافة تعليقك</string>
-    <string name="appdialog_button_share">مشاركة</string>
-    <string name="appdialog_button_cancel">إلغاء</string>
-    <string name="appdialog_other_options_info">خيارات مشاركة أخرى</string>
-    <string name="appdialog_progress_info">إنشاء لافتة</string>
-    <string name="appdialog_toast_cannot_be_shared">تتعذر مشاركة هذا العنصر</string>
-    <string name="appdialog_toast_connection_error">خطأ في الاتصال</string>
-    <string name="appdialog_toast_sharing">مشاركة على Facebook</string>
-    <string name="home_app_share_chooser_title_txt">مشاركة</string>
 </resources>

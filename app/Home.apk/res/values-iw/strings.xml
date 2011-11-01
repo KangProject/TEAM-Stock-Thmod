@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">ביטול</string>
     <string name="home_button_exit_overview">צא ממצב סקירה כללית</string>
     <string name="home_no_uninstallable_apps_txt">לא ניתן להסיר יישומים אלה</string>
-    <string name="home_app_share_dropzone_hint_txt">שחרר כאן כדי לשתף פריט</string>
-    <string name="appdialog_title">פרסם ב-Facebook</string>
-    <string name="appdialog_comment_hint">הוסף הערה</string>
-    <string name="appdialog_button_share">שתף</string>
-    <string name="appdialog_button_cancel">ביטול</string>
-    <string name="appdialog_other_options_info">אפשרויות שיתוף אחרות</string>
-    <string name="appdialog_progress_info">יצירת פרסום</string>
-    <string name="appdialog_toast_cannot_be_shared">לא ניתן לשתף פריט זה</string>
-    <string name="appdialog_toast_connection_error">שגיאת התחברות</string>
-    <string name="appdialog_toast_sharing">שיתוףב-Facebook</string>
-    <string name="home_app_share_chooser_title_txt">שתף</string>
 </resources>

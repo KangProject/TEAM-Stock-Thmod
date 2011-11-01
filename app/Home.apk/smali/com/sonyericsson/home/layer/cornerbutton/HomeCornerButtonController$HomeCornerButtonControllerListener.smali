@@ -20,9 +20,3 @@
 # virtual methods
 .method public abstract onChanged(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
 .end method
-
-.method public abstract onHintCancelled(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
-.end method
-
-.method public abstract onHinted(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;)V
-.end method

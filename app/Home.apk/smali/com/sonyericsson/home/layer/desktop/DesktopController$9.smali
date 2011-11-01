@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1588
+    .line 1558
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     const/4 v3, 0x1
 
-    .line 1591
+    .line 1561
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$4100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
@@ -66,7 +66,7 @@
 
     invoke-interface {v0, p3, p2}, Lcom/sonyericsson/paneview/PaneView$ItemViewListener;->onViewRemoved(ILandroid/view/View;)V
 
-    .line 1592
+    .line 1562
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$4200(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/LayerRendererFactory;
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, v3}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->ignoreNextGetDeleteRenderer(I)V
 
-    .line 1593
+    .line 1563
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
@@ -90,7 +90,7 @@
 
     iput-object v1, v0, Lcom/sonyericsson/home/layer/desktop/DesktopController;->mPickedUpItem:Lcom/sonyericsson/home/layer/desktop/DesktopItem;
 
-    .line 1594
+    .line 1564
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$000(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;
@@ -99,7 +99,7 @@
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopAdapter;->notifyDataSetChanged()V
 
-    .line 1595
+    .line 1565
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$4400(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/transfer/TransferHandler;
@@ -120,7 +120,7 @@
 
     invoke-interface {v0, v1, p2, v2}, Lcom/sonyericsson/home/transfer/TransferHandler;->transferView(Lcom/sonyericsson/home/transfer/TransferSource;Landroid/view/View;Landroid/view/View;)Lcom/sonyericsson/animation/Renderer;
 
-    .line 1597
+    .line 1567
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -129,7 +129,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1598
+    .line 1568
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$9;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -138,7 +138,7 @@
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onItemPickedUp()V
 
-    .line 1601
+    .line 1571
     :cond_0
     return v3
 .end method

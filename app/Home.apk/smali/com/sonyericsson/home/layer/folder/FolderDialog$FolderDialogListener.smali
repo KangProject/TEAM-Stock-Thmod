@@ -24,5 +24,8 @@
 .method public abstract onDialogPositive(Landroid/os/Bundle;)V
 .end method
 
+.method public abstract onIconSelected(I)V
+.end method
+
 .method public abstract onNameChanged(Ljava/lang/String;)V
 .end method

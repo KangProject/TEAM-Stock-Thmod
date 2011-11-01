@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 858
+    .line 861
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -48,11 +48,11 @@
     .parameter "max"
 
     .prologue
-    .line 860
+    .line 863
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$12;->val$paneIndicator:Lcom/sonyericsson/home/layer/PaneIndicator;
 
     invoke-virtual {v0, p1, p2}, Lcom/sonyericsson/home/layer/PaneIndicator;->setPosition(FI)V
 
-    .line 861
+    .line 864
     return-void
 .end method

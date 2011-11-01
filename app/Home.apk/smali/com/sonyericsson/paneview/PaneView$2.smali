@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 455
+    .line 454
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView$2;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0}, Lcom/sonyericsson/util/Dynamics;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "dt"
 
     .prologue
-    .line 464
+    .line 463
     return-void
 .end method
 
@@ -50,6 +50,6 @@
     .parameter "now"
 
     .prologue
-    .line 459
+    .line 458
     return-void
 .end method

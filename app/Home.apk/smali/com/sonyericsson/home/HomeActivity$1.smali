@@ -1,9 +1,6 @@
 .class Lcom/sonyericsson/home/HomeActivity$1;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "HomeActivity.java"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -27,28 +24,45 @@
     .parameter
 
     .prologue
-    .line 591
+    .line 566
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$1;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .parameter "v"
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 593
+    .line 569
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "android.intent.action.SCREEN_OFF"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 570
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$1;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$100(Lcom/sonyericsson/home/HomeActivity;Z)V
+    move-result-object v0
 
-    .line 594
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->onStop()V
+
+    .line 572
+    :cond_0
     return-void
 .end method

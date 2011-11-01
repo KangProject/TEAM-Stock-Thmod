@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Atcelt</string>
     <string name="home_button_exit_overview">Iziet no pārskata</string>
     <string name="home_no_uninstallable_apps_txt">Šīs programmas nevar atinstalēt</string>
-    <string name="home_app_share_dropzone_hint_txt">Nometiet šeit, lai objektu kopīgotu</string>
-    <string name="appdialog_title">Publicēt Facebook</string>
-    <string name="appdialog_comment_hint">Pievienot komentāru</string>
-    <string name="appdialog_button_share">Kopīgot</string>
-    <string name="appdialog_button_cancel">Atcelt</string>
-    <string name="appdialog_other_options_info">Citas kopīgošanas iesp.</string>
-    <string name="appdialog_progress_info">Notiek ieraksta izveide</string>
-    <string name="appdialog_toast_cannot_be_shared">Šo objektu nevar kopīgot</string>
-    <string name="appdialog_toast_connection_error">Savienojuma kļūda</string>
-    <string name="appdialog_toast_sharing">Kopīgošana pakalpojumā Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Kopīgot</string>
 </resources>

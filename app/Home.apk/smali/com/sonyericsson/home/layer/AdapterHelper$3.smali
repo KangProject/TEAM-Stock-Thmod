@@ -3,7 +3,7 @@
 .source "AdapterHelper.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/resourceload/ResourceLoader$CacheCallback;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -22,23 +22,28 @@
 
 .field final synthetic val$iconView:Landroid/widget/ImageView;
 
+.field final synthetic val$infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
+
 .field final synthetic val$infoView:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lcom/sonyericsson/home/layer/AdapterHelper;Landroid/view/View;Landroid/widget/ImageView;)V
+.method constructor <init>(Lcom/sonyericsson/home/layer/AdapterHelper;Lcom/sonyericsson/home/data/InfoGroup;Landroid/view/View;Landroid/widget/ImageView;)V
     .locals 0
+    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 266
+    .line 256
     iput-object p1, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->this$0:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    iput-object p2, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoView:Landroid/view/View;
+    iput-object p2, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
 
-    iput-object p3, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$iconView:Landroid/widget/ImageView;
+    iput-object p3, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoView:Landroid/view/View;
+
+    iput-object p4, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$iconView:Landroid/widget/ImageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,42 +52,51 @@
 
 
 # virtual methods
-.method public cacheCallback(Lcom/sonyericsson/home/data/Info;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Ljava/lang/String;)V
-    .locals 2
-    .parameter "info"
-    .parameter "icon"
-    .parameter "label"
-    .parameter "badgeMessage"
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 269
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoView:Landroid/view/View;
+    .line 258
+    iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
+
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoView:Landroid/view/View;
 
     invoke-static {}, Lcom/sonyericsson/home/layer/AdapterHelper;->access$000()I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 270
+    .line 259
     iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$iconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    iget-object v1, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->this$0:Lcom/sonyericsson/home/layer/AdapterHelper;
 
-    .line 271
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoView:Landroid/view/View;
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/AdapterHelper;->access$100(Lcom/sonyericsson/home/layer/AdapterHelper;)Lcom/sonyericsson/home/GlobalCustomizationManager;
 
-    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+    move-result-object v1
 
-    .line 273
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/AdapterHelper$3;->val$infoGroup:Lcom/sonyericsson/home/data/InfoGroup;
+
+    invoke-virtual {v2}, Lcom/sonyericsson/home/data/InfoGroup;->getIcon()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lcom/sonyericsson/home/GlobalCustomizationManager;->getFolderIcon(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 262
     :cond_0
     return-void
 .end method

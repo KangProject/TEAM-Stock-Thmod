@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 490
+    .line 489
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView$4;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "hasFocus"
 
     .prologue
-    .line 492
+    .line 491
     if-nez p2, :cond_0
 
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$4;->this$0:Lcom/sonyericsson/paneview/PaneView;
@@ -64,14 +64,14 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 493
+    .line 492
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView$4;->this$0:Lcom/sonyericsson/paneview/PaneView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->access$402(Lcom/sonyericsson/paneview/PaneView;Lcom/sonyericsson/paneview/PaneView$AdapterItem;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 495
+    .line 494
     :cond_0
     return-void
 .end method

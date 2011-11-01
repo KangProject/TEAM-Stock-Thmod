@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Άκυρο</string>
     <string name="home_button_exit_overview">Έξοδος από επισκόπηση</string>
     <string name="home_no_uninstallable_apps_txt">Δεν είναι δυνατή η κατάργηση της εγκατάστασης αυτών των εφαρμογών</string>
-    <string name="home_app_share_dropzone_hint_txt">Αποθέστε εδώ για να πραγματοποιήσετε κοινή χρήση του αντικειμένου</string>
-    <string name="appdialog_title">Δημοσ. στο Facebook</string>
-    <string name="appdialog_comment_hint">Προσθέστε το σχόλιό σας</string>
-    <string name="appdialog_button_share">Κοινή χρήση</string>
-    <string name="appdialog_button_cancel">Άκυρο</string>
-    <string name="appdialog_other_options_info">Άλλες επιλ.κοινής χρήσ.</string>
-    <string name="appdialog_progress_info">Δημιουργία ανάρτησης</string>
-    <string name="appdialog_toast_cannot_be_shared">Δεν είναι δυνατή η κοινή χρήση αυτού του στοιχείου</string>
-    <string name="appdialog_toast_connection_error">Σφάλμα σύνδεσης</string>
-    <string name="appdialog_toast_sharing">Κοινή χρήση στο Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Κοινή χρήση</string>
 </resources>

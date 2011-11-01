@@ -279,7 +279,7 @@
     .line 402
     const/4 v0, 0x1
 
-    invoke-interface {p3, v0}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(I)V
+    invoke-interface {p3, v0}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(Z)V
 
     .line 403
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayEditor$3;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayEditor;

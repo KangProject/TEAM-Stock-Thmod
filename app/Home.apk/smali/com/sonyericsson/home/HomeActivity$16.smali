@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1868
+    .line 1799
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "info"
 
     .prologue
-    .line 1871
+    .line 1802
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/apptray/AppTrayController;
@@ -51,25 +51,25 @@
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->notifyChangedInfo(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1872
+    .line 1803
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$1600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->notifyChangedInfo(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1873
+    .line 1804
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$1500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$1400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/folder/FolderController;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/folder/FolderController;->notifyChangedInfo(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1874
+    .line 1805
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
@@ -78,7 +78,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1875
+    .line 1806
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/stage/StageController;->notifyChangedInfo(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1877
+    .line 1808
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
@@ -97,7 +97,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1878
+    .line 1809
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$16;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$800(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/home/layer/cornerbutton/CornerButtonsController;->notifyChangedInfo(Lcom/sonyericsson/home/data/Info;)V
 
-    .line 1880
+    .line 1811
     :cond_1
     return-void
 .end method

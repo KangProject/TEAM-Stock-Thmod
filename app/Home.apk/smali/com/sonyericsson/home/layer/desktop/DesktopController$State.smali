@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 181
+    .line 179
     new-instance v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     const-string v1, "UNINITIALIZED"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->INITIALIZED:Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
-    .line 180
+    .line 178
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 180
+    .line 178
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -113,7 +113,7 @@
     .parameter "name"
 
     .prologue
-    .line 180
+    .line 178
     const-class v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -130,7 +130,7 @@
     .locals 1
 
     .prologue
-    .line 180
+    .line 178
     sget-object v0, Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->$VALUES:[Lcom/sonyericsson/home/layer/desktop/DesktopController$State;
 
     invoke-virtual {v0}, [Lcom/sonyericsson/home/layer/desktop/DesktopController$State;->clone()Ljava/lang/Object;

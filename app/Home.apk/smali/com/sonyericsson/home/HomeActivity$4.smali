@@ -3,7 +3,7 @@
 .source "HomeActivity.java"
 
 # interfaces
-.implements Lcom/sonyericsson/home/layer/InfoGroupManager$InfoListener;
+.implements Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 623
+    .line 606
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$4;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,16 +37,41 @@
 
 
 # virtual methods
-.method public onInfoRemoved(Lcom/sonyericsson/home/data/Info;)V
-    .locals 1
-    .parameter "info"
+.method public onTouchModeChanged(Z)V
+    .locals 2
+    .parameter "isInTouchMode"
 
     .prologue
-    .line 626
+    .line 609
+    if-nez p1, :cond_0
+
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$4;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$600(Lcom/sonyericsson/home/HomeActivity;Lcom/sonyericsson/home/data/Info;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$400(Lcom/sonyericsson/home/HomeActivity;)Z
 
-    .line 627
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 613
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$4;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/transfer/TransferView;
+
+    move-result-object v0
+
+    const/high16 v1, 0x6
+
+    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/transfer/TransferView;->setDescendantFocusability(I)V
+
+    .line 615
+    :cond_0
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$4;->this$0:Lcom/sonyericsson/home/HomeActivity;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$402(Lcom/sonyericsson/home/HomeActivity;Z)Z
+
+    .line 616
     return-void
 .end method

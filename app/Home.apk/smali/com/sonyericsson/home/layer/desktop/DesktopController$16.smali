@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2068
+    .line 2038
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$16;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 2070
+    .line 2040
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$16;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/home/layer/PaneIndicator;->hide(Z)V
 
-    .line 2071
+    .line 2041
     return-void
 .end method

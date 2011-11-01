@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 718
+    .line 721
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$9;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$9;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
@@ -60,7 +60,7 @@
     .prologue
     const/16 v2, 0xff
 
-    .line 720
+    .line 723
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$9;->val$statistics:Lcom/sonyericsson/home/statistics/Statistics;
 
     invoke-virtual {v0, p2}, Lcom/sonyericsson/home/statistics/Statistics;->getStats(Lcom/sonyericsson/home/data/ActivityInfo;)Lcom/sonyericsson/home/statistics/ActivityStats;
@@ -92,7 +92,7 @@
     .parameter "x1"
 
     .prologue
-    .line 718
+    .line 721
     check-cast p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     .end local p1

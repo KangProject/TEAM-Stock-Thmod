@@ -1230,4 +1230,5 @@ Click OK to install the screen reader."</string>
     <string name="kill_app_longpress_back_summary">Long-pressing the BACK button will kill the foreground application.</string>
     <string name="xloud_strings_xloud_txt">xLOUD™</string>
     <string name="xloud_strings_xloud_desc_txt">Enhance the loudness of speaker</string>
+    <string name="extra_tweaks">Extra Tweaks</string>
 </resources>

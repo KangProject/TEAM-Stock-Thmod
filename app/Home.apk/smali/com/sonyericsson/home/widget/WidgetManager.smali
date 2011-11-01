@@ -475,7 +475,7 @@
     .prologue
     const/4 v6, 0x0
 
-    const v5, 0x7f03001a
+    const v5, 0x7f030018
 
     const-string v7, "AppWidgetHost"
 

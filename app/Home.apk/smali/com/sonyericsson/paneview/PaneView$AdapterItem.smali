@@ -27,12 +27,12 @@
     .locals 1
 
     .prologue
-    .line 222
+    .line 221
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/paneview/PaneView$Item;-><init>(Lcom/sonyericsson/paneview/PaneView$1;)V
 
-    .line 230
+    .line 229
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->viewValid:Z
@@ -45,7 +45,7 @@
     .parameter "x0"
 
     .prologue
-    .line 222
+    .line 221
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;-><init>()V
 
     return-void
@@ -56,7 +56,7 @@
     .parameter "x0"
 
     .prologue
-    .line 222
+    .line 221
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->position:I
 
     return v0
@@ -68,7 +68,7 @@
     .parameter "x1"
 
     .prologue
-    .line 222
+    .line 221
     iput p1, p0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->position:I
 
     return p1
@@ -79,7 +79,7 @@
     .parameter "x0"
 
     .prologue
-    .line 222
+    .line 221
     iget-wide v0, p0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->id:J
 
     return-wide v0
@@ -91,7 +91,7 @@
     .parameter "x1"
 
     .prologue
-    .line 222
+    .line 221
     iput-wide p1, p0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->id:J
 
     return-wide p1

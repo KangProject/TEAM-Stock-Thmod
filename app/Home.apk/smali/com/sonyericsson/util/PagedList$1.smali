@@ -55,13 +55,13 @@
     .parameter
 
     .prologue
-    .line 321
+    .line 281
     .local p0, this:Lcom/sonyericsson/util/PagedList$1;,"Lcom/sonyericsson/util/PagedList.1;"
     iput-object p1, p0, Lcom/sonyericsson/util/PagedList$1;->this$0:Lcom/sonyericsson/util/PagedList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 323
+    .line 283
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->this$0:Lcom/sonyericsson/util/PagedList;
 
     invoke-static {v0}, Lcom/sonyericsson/util/PagedList;->access$000(Lcom/sonyericsson/util/PagedList;)Ljava/util/LinkedList;
@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 328
+    .line 288
     .local p0, this:Lcom/sonyericsson/util/PagedList$1;,"Lcom/sonyericsson/util/PagedList.1;"
     :goto_0
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->elementIterator:Ljava/util/Iterator;
@@ -98,7 +98,7 @@
 
     if-nez v0, :cond_2
 
-    .line 329
+    .line 289
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->pageIterator:Ljava/util/Iterator;
 
@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 330
+    .line 290
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->pageIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -125,11 +125,11 @@
 
     goto :goto_0
 
-    .line 332
+    .line 292
     :cond_1
     const/4 v0, 0x0
 
-    .line 335
+    .line 295
     :goto_1
     return v0
 
@@ -152,7 +152,7 @@
     .end annotation
 
     .prologue
-    .line 339
+    .line 299
     .local p0, this:Lcom/sonyericsson/util/PagedList$1;,"Lcom/sonyericsson/util/PagedList.1;"
     :goto_0
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->elementIterator:Ljava/util/Iterator;
@@ -167,7 +167,7 @@
 
     if-nez v0, :cond_2
 
-    .line 340
+    .line 300
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->pageIterator:Ljava/util/Iterator;
 
@@ -177,7 +177,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 341
+    .line 301
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->pageIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -194,7 +194,7 @@
 
     goto :goto_0
 
-    .line 343
+    .line 303
     :cond_1
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -202,7 +202,7 @@
 
     throw v0
 
-    .line 346
+    .line 306
     :cond_2
     iget-object v0, p0, Lcom/sonyericsson/util/PagedList$1;->elementIterator:Ljava/util/Iterator;
 
@@ -217,7 +217,7 @@
     .locals 1
 
     .prologue
-    .line 350
+    .line 310
     .local p0, this:Lcom/sonyericsson/util/PagedList$1;,"Lcom/sonyericsson/util/PagedList.1;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

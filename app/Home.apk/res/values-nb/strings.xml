@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Avbryt</string>
     <string name="home_button_exit_overview">Avslutt oversikt</string>
     <string name="home_no_uninstallable_apps_txt">Disse programmene kan ikke avinstalleres</string>
-    <string name="home_app_share_dropzone_hint_txt">Slipp her for å dele element</string>
-    <string name="appdialog_title">Publiser på Facebook</string>
-    <string name="appdialog_comment_hint">Legg til en kommentar</string>
-    <string name="appdialog_button_share">Del</string>
-    <string name="appdialog_button_cancel">Avbryt</string>
-    <string name="appdialog_other_options_info">Andre delingsalt.</string>
-    <string name="appdialog_progress_info">Oppretter publisering</string>
-    <string name="appdialog_toast_cannot_be_shared">Dette elementet kan ikke deles</string>
-    <string name="appdialog_toast_connection_error">Tilkoblingsfeil</string>
-    <string name="appdialog_toast_sharing">Dele på Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Del</string>
 </resources>

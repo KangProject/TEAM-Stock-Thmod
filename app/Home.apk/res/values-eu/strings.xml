@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Utzi</string>
     <string name="home_button_exit_overview">Irten ikuspegi orokorretik</string>
     <string name="home_no_uninstallable_apps_txt">Ezin dira aplikazio hauek desinstalatu</string>
-    <string name="home_app_share_dropzone_hint_txt">Jaregin hemen elementua partekatzeko</string>
-    <string name="appdialog_title">Argitaratu Facebook-en</string>
-    <string name="appdialog_comment_hint">Gehitu iruzkina</string>
-    <string name="appdialog_button_share">Partekatu</string>
-    <string name="appdialog_button_cancel">Utzi</string>
-    <string name="appdialog_other_options_info">Partekatze-auk. gehiago</string>
-    <string name="appdialog_progress_info">Mezua sortzen</string>
-    <string name="appdialog_toast_cannot_be_shared">Ezin da elementu hau partekatu</string>
-    <string name="appdialog_toast_connection_error">Konexio errorea</string>
-    <string name="appdialog_toast_sharing">Facebook-en partekatzen</string>
-    <string name="home_app_share_chooser_title_txt">Partekatu</string>
 </resources>

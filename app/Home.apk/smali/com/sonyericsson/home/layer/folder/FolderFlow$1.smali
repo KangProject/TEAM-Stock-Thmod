@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 140
+    .line 145
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .locals 2
 
     .prologue
-    .line 142
+    .line 147
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow$1;->this$0:Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->access$002(Lcom/sonyericsson/home/layer/folder/FolderFlow;Z)Z
 
-    .line 143
+    .line 148
     return-void
 .end method

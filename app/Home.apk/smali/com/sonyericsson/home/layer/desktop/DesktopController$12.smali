@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1966
+    .line 1936
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1968
+    .line 1938
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/PaneIndicator;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v2, p1, p2}, Lcom/sonyericsson/home/layer/PaneIndicator;->setPosition(FI)V
 
-    .line 1971
+    .line 1941
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -65,11 +65,11 @@
 
     move-result-object v1
 
-    .line 1972
+    .line 1942
     .local v1, windowToken:Landroid/os/IBinder;
     if-eqz v1, :cond_0
 
-    .line 1973
+    .line 1943
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/app/WallpaperManager;
@@ -92,7 +92,7 @@
 
     invoke-virtual {v2, v1, v3, v5}, Landroid/app/WallpaperManager;->setWallpaperOffsets(Landroid/os/IBinder;FF)V
 
-    .line 1978
+    .line 1948
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -102,7 +102,7 @@
 
     invoke-virtual {v2}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->onScrolled()V
 
-    .line 1980
+    .line 1950
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v2}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -113,7 +113,7 @@
 
     move-result v0
 
-    .line 1981
+    .line 1951
     .local v0, pane:I
     int-to-float v2, v0
 
@@ -141,14 +141,14 @@
 
     if-nez v2, :cond_1
 
-    .line 1985
+    .line 1955
     iget-object v2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$12;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v0, v3}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1800(Lcom/sonyericsson/home/layer/desktop/DesktopController;IZ)V
 
-    .line 1987
+    .line 1957
     :cond_1
     return-void
 .end method

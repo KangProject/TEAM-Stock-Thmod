@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 111
+    .line 112
     iput-object p1, p0, Lcom/sonyericsson/home/badge/BadgeManager$1;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +44,10 @@
     .prologue
     const-class v4, Ljava/util/HashMap;
 
-    .line 115
+    .line 116
     if-eqz p1, :cond_1
 
-    .line 116
+    .line 117
     iget-object v3, p0, Lcom/sonyericsson/home/badge/BadgeManager$1;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
     const-class v2, Ljava/util/HashMap;
@@ -66,7 +66,7 @@
 
     invoke-static {v3, v2}, Lcom/sonyericsson/home/badge/BadgeManager;->access$002(Lcom/sonyericsson/home/badge/BadgeManager;Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 123
+    .line 124
     :goto_0
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager$1;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
@@ -84,12 +84,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 124
+    .line 125
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager$1;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
     invoke-static {v2}, Lcom/sonyericsson/home/badge/BadgeManager;->access$300(Lcom/sonyericsson/home/badge/BadgeManager;)V
 
-    .line 127
+    .line 128
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager$1;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
@@ -97,7 +97,7 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/badge/BadgeManager;->access$402(Lcom/sonyericsson/home/badge/BadgeManager;Lcom/sonyericsson/home/badge/BadgeManager$State;)Lcom/sonyericsson/home/badge/BadgeManager$State;
 
-    .line 128
+    .line 129
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager$1;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
 
     invoke-static {v2}, Lcom/sonyericsson/home/badge/BadgeManager;->access$500(Lcom/sonyericsson/home/badge/BadgeManager;)Ljava/util/LinkedList;
@@ -122,13 +122,13 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
-    .line 129
+    .line 130
     .local v0, callback:Ljava/lang/Runnable;
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
 
-    .line 119
+    .line 120
     .end local v0           #callback:Ljava/lang/Runnable;
     .end local v1           #i$:Ljava/util/Iterator;
     :cond_1
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 131
+    .line 132
     .restart local v1       #i$:Ljava/util/Iterator;
     :cond_2
     iget-object v2, p0, Lcom/sonyericsson/home/badge/BadgeManager$1;->this$0:Lcom/sonyericsson/home/badge/BadgeManager;
@@ -151,6 +151,6 @@
 
     invoke-static {v2, v3}, Lcom/sonyericsson/home/badge/BadgeManager;->access$502(Lcom/sonyericsson/home/badge/BadgeManager;Ljava/util/LinkedList;)Ljava/util/LinkedList;
 
-    .line 133
+    .line 134
     return-void
 .end method

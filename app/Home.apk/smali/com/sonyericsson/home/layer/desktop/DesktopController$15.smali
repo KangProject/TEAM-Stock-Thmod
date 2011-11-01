@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2030
+    .line 2000
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "y"
 
     .prologue
-    .line 2045
+    .line 2015
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6100(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Landroid/app/WallpaperManager;
@@ -72,7 +72,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/WallpaperManager;->sendWallpaperCommand(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V
 
-    .line 2047
+    .line 2017
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 2032
+    .line 2002
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -93,12 +93,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 2033
+    .line 2003
     new-instance v0, Lcom/sonyericsson/grid/GridLocation;
 
     invoke-direct {v0}, Lcom/sonyericsson/grid/GridLocation;-><init>()V
 
-    .line 2034
+    .line 2004
     .local v0, location:Lcom/sonyericsson/grid/GridLocation;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
@@ -132,7 +132,7 @@
 
     invoke-virtual {v1, v2, v3, v0}, Lcom/sonyericsson/grid/Grid;->calculateGridLocation(IILcom/sonyericsson/grid/GridLocation;)V
 
-    .line 2036
+    .line 2006
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$1700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;
@@ -141,7 +141,7 @@
 
     invoke-interface {v1, v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController$DesktopControllerListener;->onLongPress(Lcom/sonyericsson/grid/GridLocation;)V
 
-    .line 2038
+    .line 2008
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$15;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$700(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/paneview/PaneView;
@@ -152,7 +152,7 @@
 
     move v1, v4
 
-    .line 2041
+    .line 2011
     .end local v0           #location:Lcom/sonyericsson/grid/GridLocation;
     :goto_0
     return v1

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 444
+    .line 427
     iput-object p1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$3;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "info"
 
     .prologue
-    .line 456
+    .line 439
     const/4 v0, 0x0
 
     return v0
@@ -53,26 +53,26 @@
     .parameter "info"
 
     .prologue
-    .line 447
+    .line 430
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$3;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
-    invoke-static {v1, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$2800(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
+    invoke-static {v1, p1}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$2600(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/home/data/Info;)Lcom/sonyericsson/cornerbutton/Action;
 
     move-result-object v0
 
-    .line 448
+    .line 431
     .local v0, action:Lcom/sonyericsson/cornerbutton/Action;
     if-eqz v0, :cond_0
 
-    .line 449
+    .line 432
     iget-object v1, p0, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController$3;->this$0:Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;
 
-    invoke-static {v1, v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$1100(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/cornerbutton/Action;)V
+    invoke-static {v1, v0}, Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;->access$1000(Lcom/sonyericsson/home/layer/cornerbutton/HomeCornerButtonController;Lcom/sonyericsson/cornerbutton/Action;)V
 
-    .line 450
+    .line 433
     const/4 v1, 0x1
 
-    .line 452
+    .line 435
     :goto_0
     return v1
 

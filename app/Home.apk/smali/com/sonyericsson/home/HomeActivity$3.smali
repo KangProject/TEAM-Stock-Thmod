@@ -3,7 +3,7 @@
 .source "HomeActivity.java"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 609
+    .line 595
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$3;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,41 +37,37 @@
 
 
 # virtual methods
-.method public onTouchModeChanged(Z)V
+.method public onClick(Landroid/view/View;)V
     .locals 2
-    .parameter "isInTouchMode"
+    .parameter "v"
 
     .prologue
-    .line 612
-    if-nez p1, :cond_0
-
+    .line 597
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$3;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$400(Lcom/sonyericsson/home/HomeActivity;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 616
-    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$3;->this$0:Lcom/sonyericsson/home/HomeActivity;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$500(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/transfer/TransferView;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
 
     move-result-object v0
 
-    const/high16 v1, 0x6
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lcom/sonyericsson/home/transfer/TransferView;->setDescendantFocusability(I)V
+    .line 598
+    iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$3;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    .line 618
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$200(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/layer/stage/StageController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/sonyericsson/home/layer/stage/StageController;->sparkle()V
+
+    .line 600
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$3;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$402(Lcom/sonyericsson/home/HomeActivity;Z)Z
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$300(Lcom/sonyericsson/home/HomeActivity;Z)V
 
-    .line 619
+    .line 601
     return-void
 .end method

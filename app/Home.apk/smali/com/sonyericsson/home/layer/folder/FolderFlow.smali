@@ -16,6 +16,8 @@
 
 .field private final mFolderLocator:Lcom/sonyericsson/home/layer/folder/FolderLocator;
 
+.field private mIconPaddingTop:I
+
 .field private final mInfoGroupInterface:Lcom/sonyericsson/home/data/InfoGroupInterface;
 
 .field private mIsOpen:Z
@@ -47,7 +49,7 @@
     .parameter "rendererFactory"
 
     .prologue
-    .line 106
+    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 76
@@ -57,22 +59,22 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mSourceRect:Landroid/graphics/Rect;
 
-    .line 107
+    .line 109
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
-    .line 108
+    .line 110
     iput-object p2, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
-    .line 109
+    .line 111
     iput-object p3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderLocator:Lcom/sonyericsson/home/layer/folder/FolderLocator;
 
-    .line 110
+    .line 112
     iput-object p4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mInfoGroupInterface:Lcom/sonyericsson/home/data/InfoGroupInterface;
 
-    .line 111
+    .line 113
     iput-object p5, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
-    .line 112
+    .line 114
     return-void
 .end method
 
@@ -93,7 +95,7 @@
     .parameter "info"
 
     .prologue
-    .line 334
+    .line 338
     instance-of v0, p1, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-nez v0, :cond_0
@@ -122,37 +124,37 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 215
+    .line 220
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->stopHinting()V
 
-    .line 216
+    .line 221
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setLockScrollbarRange(Z)V
 
-    .line 217
+    .line 222
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setScroll(I)V
 
-    .line 218
+    .line 223
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->notifyDataSetChanged()V
 
-    .line 219
+    .line 224
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     if-eqz v0, :cond_0
 
-    .line 220
+    .line 225
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderListener;->onCancelHint()V
 
-    .line 222
+    .line 227
     :cond_0
     return-void
 .end method
@@ -162,22 +164,22 @@
     .parameter "animate"
 
     .prologue
-    .line 313
+    .line 317
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
     if-eqz v0, :cond_0
 
-    .line 314
+    .line 318
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
-    .line 315
+    .line 319
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->hide(Z)V
 
-    .line 317
+    .line 321
     :cond_0
     return-void
 .end method
@@ -187,7 +189,7 @@
     .parameter "info"
 
     .prologue
-    .line 328
+    .line 332
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mInfoGroupInterface:Lcom/sonyericsson/home/data/InfoGroupInterface;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -212,19 +214,19 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 225
+    .line 230
     const/4 v2, 0x1
 
-    .line 228
-    .local v2, result:I
+    .line 233
+    .local v2, successful:Z
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
     if-nez v3, :cond_0
 
-    .line 229
+    .line 234
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
-    .line 232
+    .line 237
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
@@ -234,38 +236,36 @@
 
     if-nez v3, :cond_1
 
-    .line 234
+    .line 239
     const/4 v2, 0x0
 
-    .line 237
+    .line 242
     :cond_1
-    const/4 v3, 0x1
+    if-eqz v2, :cond_3
 
-    if-ne v2, v3, :cond_3
-
-    .line 238
+    .line 243
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->getHintPosition()I
 
     move-result v0
 
-    .line 243
+    .line 248
     .local v0, hintPosition:I
     if-eqz p2, :cond_2
 
-    .line 244
+    .line 249
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 245
+    .line 250
     .local v1, rect:Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v3, v1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->getContentGlobalVisibleRect(Landroid/graphics/Rect;)V
 
-    .line 246
+    .line 251
     iget v3, v1, Landroid/graphics/Rect;->left:I
 
     neg-int v3, v3
@@ -288,15 +288,15 @@
 
     invoke-interface {p2, v3, v4, v5, v6}, Lcom/sonyericsson/animation/Renderer;->offset(IIJ)V
 
-    .line 248
+    .line 253
     invoke-static {v1}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 249
+    .line 254
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
     invoke-virtual {v3, p2, v0}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->setNextAddRenderer(Lcom/sonyericsson/animation/Renderer;I)V
 
-    .line 252
+    .line 257
     .end local v1           #rect:Landroid/graphics/Rect;
     :cond_2
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mInfoGroupInterface:Lcom/sonyericsson/home/data/InfoGroupInterface;
@@ -311,37 +311,37 @@
 
     invoke-interface {v3, v4, v0, v5}, Lcom/sonyericsson/home/data/InfoGroupInterface;->add(Lcom/sonyericsson/home/data/InfoGroup;ILcom/sonyericsson/home/data/Info;)V
 
-    .line 256
+    .line 261
     .end local v0           #hintPosition:I
     :cond_3
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
-    .line 257
+    .line 262
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
     invoke-virtual {v3}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->stopHinting()V
 
-    .line 258
+    .line 263
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v3}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->notifyDataSetChanged()V
 
-    .line 260
+    .line 265
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v3, v7}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setLockScrollbarRange(Z)V
 
-    .line 261
+    .line 266
     iget-object v3, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v3, v7}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setScroll(I)V
 
-    .line 263
-    invoke-interface {p3, v2}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(I)V
+    .line 268
+    invoke-interface {p3, v2}, Lcom/sonyericsson/home/transfer/TransferTarget$DropListener;->dropFinished(Z)V
 
-    .line 264
+    .line 269
     return-void
 .end method
 
@@ -349,7 +349,7 @@
     .locals 1
 
     .prologue
-    .line 324
+    .line 328
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->getFolder()Lcom/sonyericsson/home/data/InfoGroup;
@@ -369,7 +369,7 @@
 
     const/4 v3, 0x0
 
-    .line 267
+    .line 272
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->getScrollOffset()I
@@ -378,7 +378,7 @@
 
     invoke-virtual {p1, v3, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 268
+    .line 273
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mInfoGroupInterface:Lcom/sonyericsson/home/data/InfoGroupInterface;
 
     iget-object v2, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -401,7 +401,7 @@
 
     move-result v0
 
-    .line 272
+    .line 276
     .local v0, hintPosition:I
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
@@ -411,27 +411,27 @@
 
     if-eqz v1, :cond_0
 
-    .line 273
+    .line 277
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->notifyDataSetChanged()V
 
-    .line 276
+    .line 280
     :cond_0
     iget v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mScrollMargin:I
 
     if-ge p2, v1, :cond_1
 
-    .line 277
+    .line 281
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v1, v4}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setScroll(I)V
 
-    .line 284
+    .line 288
     :goto_0
     return v4
 
-    .line 278
+    .line 282
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
@@ -445,7 +445,7 @@
 
     if-le p2, v1, :cond_2
 
-    .line 279
+    .line 283
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     const/4 v2, 0x2
@@ -454,7 +454,7 @@
 
     goto :goto_0
 
-    .line 281
+    .line 285
     :cond_2
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
@@ -467,7 +467,7 @@
     .locals 1
 
     .prologue
-    .line 320
+    .line 324
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
     return v0
@@ -477,7 +477,7 @@
     .locals 1
 
     .prologue
-    .line 344
+    .line 348
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mRenamingFolder:Z
 
     return v0
@@ -487,19 +487,19 @@
     .locals 3
 
     .prologue
-    .line 155
+    .line 160
     iget-boolean v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
     if-eqz v1, :cond_0
 
-    .line 156
+    .line 161
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
     invoke-virtual {v1}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->getFolder()Lcom/sonyericsson/home/data/InfoGroup;
 
     move-result-object v0
 
-    .line 157
+    .line 162
     .local v0, folder:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
@@ -509,12 +509,16 @@
 
     invoke-interface {v1, v2}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setTitle(Ljava/lang/String;)V
 
-    .line 158
+    .line 163
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
-    invoke-interface {v1, v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setOpenFolderIcon(Lcom/sonyericsson/home/data/InfoGroup;)V
+    invoke-virtual {v0}, Lcom/sonyericsson/home/data/InfoGroup;->getIcon()I
 
-    .line 160
+    move-result v2
+
+    invoke-interface {v1, v2}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setOpenFolderIcon(I)V
+
+    .line 165
     .end local v0           #folder:Lcom/sonyericsson/home/data/InfoGroup;
     :cond_0
     return-void
@@ -524,12 +528,12 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 139
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->closeFolder(Z)V
 
-    .line 134
+    .line 140
     return-void
 .end method
 
@@ -538,7 +542,7 @@
     .parameter "restore"
 
     .prologue
-    .line 137
+    .line 143
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     if-eqz v0, :cond_1
@@ -549,13 +553,13 @@
 
     if-eqz p1, :cond_1
 
-    .line 138
+    .line 144
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mRenamingFolder:Z
 
-    .line 139
+    .line 145
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -570,7 +574,7 @@
 
     invoke-interface {v0, v1, v2, p1}, Lcom/sonyericsson/home/layer/folder/FolderListener;->onRenameFolder(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/layer/folder/FolderListener$OnRenameFinishedListener;Z)V
 
-    .line 146
+    .line 151
     :cond_1
     return-void
 .end method
@@ -579,17 +583,17 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 154
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
     if-eqz v0, :cond_0
 
-    .line 150
+    .line 155
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->notifyDataSetChanged()V
 
-    .line 152
+    .line 157
     :cond_0
     return-void
 .end method
@@ -598,12 +602,12 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 135
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->notifyDataSetChanged()V
 
-    .line 130
+    .line 136
     return-void
 .end method
 
@@ -613,12 +617,12 @@
     .parameter "position"
 
     .prologue
-    .line 123
+    .line 129
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     if-eqz v0, :cond_0
 
-    .line 124
+    .line 130
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
@@ -629,7 +633,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/sonyericsson/home/layer/folder/FolderListener;->onInfoClicked(Lcom/sonyericsson/home/data/Info;Landroid/graphics/Rect;)V
 
-    .line 126
+    .line 132
     :cond_0
     return-void
 .end method
@@ -642,17 +646,17 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 163
+    .line 168
     iget-boolean v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
     if-eqz v0, :cond_1
 
-    .line 167
+    .line 172
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mRendererFactory:Lcom/sonyericsson/home/layer/LayerRendererFactory;
 
     invoke-virtual {v0, v2}, Lcom/sonyericsson/home/layer/LayerRendererFactory;->ignoreNextGetDeleteRenderer(I)V
 
-    .line 168
+    .line 173
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mInfoGroupInterface:Lcom/sonyericsson/home/data/InfoGroupInterface;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -667,30 +671,30 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
-    .line 169
+    .line 174
     iput p2, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpPosition:I
 
-    .line 171
+    .line 176
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0, v2}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setLockScrollbarRange(Z)V
 
-    .line 172
+    .line 177
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->notifyDataSetChanged()V
 
-    .line 174
+    .line 179
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0, p1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->transferView(Landroid/view/View;)V
 
-    .line 175
+    .line 180
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     if-eqz v0, :cond_0
 
-    .line 176
+    .line 181
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderListener;->onItemPickedUp()V
@@ -698,7 +702,7 @@
     :cond_0
     move v0, v2
 
-    .line 182
+    .line 187
     :goto_0
     return v0
 
@@ -718,12 +722,12 @@
 
     const/4 v4, 0x0
 
-    .line 186
+    .line 191
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
     if-eqz v0, :cond_0
 
-    .line 187
+    .line 192
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mInfoGroupInterface:Lcom/sonyericsson/home/data/InfoGroupInterface;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -738,29 +742,29 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/sonyericsson/home/data/InfoGroupInterface;->add(Lcom/sonyericsson/home/data/InfoGroup;ILcom/sonyericsson/home/data/Info;)V
 
-    .line 189
+    .line 194
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->stopHinting()V
 
-    .line 192
+    .line 197
     iput-object v5, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
-    .line 193
+    .line 198
     iput v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpPosition:I
 
-    .line 194
+    .line 199
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->notifyDataSetChanged()V
 
-    .line 196
+    .line 201
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     if-eqz v0, :cond_1
 
-    .line 197
+    .line 202
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
@@ -771,7 +775,7 @@
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/home/layer/folder/FolderListener;->onTransferCanceled(Lcom/sonyericsson/home/data/InfoGroup;)V
 
-    .line 200
+    .line 205
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mSourceRect:Landroid/graphics/Rect;
 
@@ -791,20 +795,20 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/view/View;->layout(IIII)V
 
-    .line 202
+    .line 207
     if-eqz p2, :cond_2
 
-    .line 204
+    .line 209
     const-string v0, "reset_closest_vertex"
 
     invoke-interface {p2, v0, v4, v4, v5}, Lcom/sonyericsson/animation/Renderer;->sendCommand(Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 206
+    .line 211
     const-string v0, "set_alpha"
 
     invoke-interface {p2, v0, v4, v4, v5}, Lcom/sonyericsson/animation/Renderer;->sendCommand(Ljava/lang/String;IILandroid/os/Bundle;)V
 
-    .line 208
+    .line 213
     :cond_2
     return-void
 .end method
@@ -813,12 +817,12 @@
     .locals 1
 
     .prologue
-    .line 211
+    .line 216
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPickedUpItem:Lcom/sonyericsson/home/data/Info;
 
-    .line 212
+    .line 217
     return-void
 .end method
 
@@ -831,38 +835,42 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 288
+    .line 292
     iget-boolean v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
     if-eqz v4, :cond_0
 
-    .line 289
+    .line 293
     const-string v4, "FolderController"
 
     const-string v5, "openFolder() invoked while folder was already open"
 
     invoke-static {v4, v5}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 293
+    .line 297
     :cond_0
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIsOpen:Z
 
-    .line 294
+    .line 298
     iput-boolean v7, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mRenamingFolder:Z
 
-    .line 295
+    .line 299
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mModelManager:Lcom/sonyericsson/home/layer/folder/FolderModelManager;
 
     invoke-virtual {v4, p1}, Lcom/sonyericsson/home/layer/folder/FolderModelManager;->setFolder(Lcom/sonyericsson/home/data/InfoGroup;)V
 
-    .line 296
+    .line 300
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
-    invoke-interface {v4, p1}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setOpenFolderIcon(Lcom/sonyericsson/home/data/InfoGroup;)V
+    invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->getIcon()I
 
-    .line 297
+    move-result v5
+
+    invoke-interface {v4, v5}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setOpenFolderIcon(I)V
+
+    .line 301
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-virtual {p1}, Lcom/sonyericsson/home/data/InfoGroup;->getLabel()Ljava/lang/String;
@@ -871,14 +879,14 @@
 
     invoke-interface {v4, v5}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setTitle(Ljava/lang/String;)V
 
-    .line 300
+    .line 304
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v4}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->getOpenFolderIconWidth()I
 
     move-result v1
 
-    .line 301
+    .line 305
     .local v1, drawableWidth:I
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
@@ -886,7 +894,7 @@
 
     move-result v0
 
-    .line 302
+    .line 306
     .local v0, drawableHeight:I
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
@@ -894,7 +902,7 @@
 
     invoke-interface {v4, v5}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->getFolderGlobalVisibleRect(Landroid/graphics/Rect;)V
 
-    .line 303
+    .line 307
     invoke-virtual {p2}, Landroid/graphics/Rect;->centerX()I
 
     move-result v4
@@ -909,9 +917,13 @@
 
     sub-int v2, v4, v5
 
-    .line 304
+    .line 308
     .local v2, left:I
     iget v4, p2, Landroid/graphics/Rect;->top:I
+
+    iget v5, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIconPaddingTop:I
+
+    add-int/2addr v4, v5
 
     iget-object v5, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mSourceRect:Landroid/graphics/Rect;
 
@@ -919,7 +931,7 @@
 
     sub-int v3, v4, v5
 
-    .line 305
+    .line 309
     .local v3, top:I
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mSourceRect:Landroid/graphics/Rect;
 
@@ -929,12 +941,12 @@
 
     invoke-virtual {v4, v2, v3, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 307
+    .line 311
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v4, v7}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->setLockScrollbarRange(Z)V
 
-    .line 308
+    .line 312
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     iget-object v5, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mSourceRect:Landroid/graphics/Rect;
@@ -947,12 +959,12 @@
 
     invoke-interface {v4, v5, v6, p3}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->show(Landroid/graphics/Rect;IZ)V
 
-    .line 309
+    .line 313
     iget-object v4, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mPresenter:Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;
 
     invoke-interface {v4}, Lcom/sonyericsson/home/layer/folder/FolderFlow$Presenter;->requestFocus()Z
 
-    .line 310
+    .line 314
     return-void
 .end method
 
@@ -961,10 +973,22 @@
     .parameter "folderListener"
 
     .prologue
-    .line 115
+    .line 117
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mFolderListener:Lcom/sonyericsson/home/layer/folder/FolderListener;
 
-    .line 116
+    .line 118
+    return-void
+.end method
+
+.method public setIconPaddingTop(I)V
+    .locals 0
+    .parameter "iconPaddingTop"
+
+    .prologue
+    .line 125
+    iput p1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mIconPaddingTop:I
+
+    .line 126
     return-void
 .end method
 
@@ -973,10 +997,10 @@
     .parameter "renamingFolder"
 
     .prologue
-    .line 354
+    .line 358
     iput-boolean p1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mRenamingFolder:Z
 
-    .line 355
+    .line 359
     return-void
 .end method
 
@@ -985,9 +1009,9 @@
     .parameter "scrollMargin"
 
     .prologue
-    .line 119
+    .line 121
     iput p1, p0, Lcom/sonyericsson/home/layer/folder/FolderFlow;->mScrollMargin:I
 
-    .line 120
+    .line 122
     return-void
 .end method

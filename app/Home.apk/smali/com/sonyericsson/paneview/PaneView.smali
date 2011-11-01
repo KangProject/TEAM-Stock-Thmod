@@ -216,81 +216,81 @@
     .parameter "attrs"
 
     .prologue
-    .line 430
+    .line 429
     invoke-direct {p0, p1, p2}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 289
+    .line 288
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItems1:Ljava/util/HashMap;
 
-    .line 295
+    .line 294
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItems2:Ljava/util/HashMap;
 
-    .line 298
+    .line 297
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItems1:Ljava/util/HashMap;
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
-    .line 301
+    .line 300
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItemsSorted:Ljava/util/LinkedList;
 
-    .line 310
+    .line 309
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mViewCache:Ljava/util/HashMap;
 
-    .line 319
+    .line 318
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mDeletedItems:Ljava/util/LinkedList;
 
-    .line 358
+    .line 357
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mDebugTextPaint:Landroid/graphics/Paint;
 
-    .line 360
+    .line 359
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/sonyericsson/paneview/PaneView;->mStandardRenderersEnabled:Z
 
-    .line 369
+    .line 368
     new-instance v1, Lcom/sonyericsson/paneview/FocusFinder;
 
     invoke-direct {v1}, Lcom/sonyericsson/paneview/FocusFinder;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusFinder:Lcom/sonyericsson/paneview/FocusFinder;
 
-    .line 421
+    .line 420
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
-    .line 432
+    .line 431
     const/high16 v1, 0x4
 
     invoke-virtual {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->setDescendantFocusability(I)V
 
-    .line 434
+    .line 433
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v1
@@ -299,7 +299,7 @@
 
     move-result v0
 
-    .line 436
+    .line 435
     .local v0, touchSlop:I
     new-instance v1, Lcom/sonyericsson/paneview/GestureDetector;
 
@@ -317,7 +317,7 @@
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
-    .line 439
+    .line 438
     new-instance v1, Lcom/sonyericsson/paneview/PaneView$PaneDataSetObserver;
 
     const/4 v2, 0x0
@@ -326,38 +326,38 @@
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mDataSetObserver:Lcom/sonyericsson/paneview/PaneView$PaneDataSetObserver;
 
-    .line 441
+    .line 440
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->createDynamicsRunnable()V
 
-    .line 443
+    .line 442
     new-instance v1, Lcom/sonyericsson/paneview/PaneView$1;
 
     invoke-direct {v1, p0}, Lcom/sonyericsson/paneview/PaneView$1;-><init>(Lcom/sonyericsson/paneview/PaneView;)V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
-    .line 455
+    .line 454
     new-instance v1, Lcom/sonyericsson/paneview/PaneView$2;
 
     invoke-direct {v1, p0}, Lcom/sonyericsson/paneview/PaneView$2;-><init>(Lcom/sonyericsson/paneview/PaneView;)V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
-    .line 467
+    .line 466
     new-instance v1, Lcom/sonyericsson/paneview/PaneView$3;
 
     invoke-direct {v1, p0}, Lcom/sonyericsson/paneview/PaneView$3;-><init>(Lcom/sonyericsson/paneview/PaneView;)V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItemKeyListener:Landroid/view/View$OnKeyListener;
 
-    .line 490
+    .line 489
     new-instance v1, Lcom/sonyericsson/paneview/PaneView$4;
 
     invoke-direct {v1, p0}, Lcom/sonyericsson/paneview/PaneView$4;-><init>(Lcom/sonyericsson/paneview/PaneView;)V
 
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItemFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
 
-    .line 503
+    .line 502
     return-void
 .end method
 
@@ -366,7 +366,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     return-object v0
@@ -378,7 +378,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->startDynamicsRunnable(Z)V
 
     return-void
@@ -389,7 +389,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneViewTouchListener:Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
 
     return-object v0
@@ -401,7 +401,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->pixelsToPosition(F)F
 
     move-result v0
@@ -414,7 +414,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     return-object v0
@@ -425,7 +425,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
 
     return v0
@@ -439,7 +439,7 @@
     .parameter "x3"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0, p1, p2, p3}, Lcom/sonyericsson/paneview/PaneView;->updateSnapPosition(FFF)F
 
     move-result v0
@@ -452,7 +452,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
     return-object v0
@@ -463,7 +463,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
     return v0
@@ -474,7 +474,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->interactionStart()V
 
     return-void
@@ -485,7 +485,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->updatePanePosition()V
 
     return-void
@@ -497,7 +497,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->onDataChanged(Z)V
 
     return-void
@@ -508,7 +508,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->interactionEnd()V
 
     return-void
@@ -519,7 +519,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     return-object v0
@@ -531,7 +531,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 59
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     return-object p1
@@ -542,7 +542,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDynamicsRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -555,7 +555,7 @@
     .parameter "x2"
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/paneview/PaneView;->getContainingItem(II)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     move-result-object v0
@@ -568,7 +568,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
     return-object v0
@@ -583,39 +583,39 @@
     .prologue
     const/high16 v2, 0x4000
 
-    .line 2336
+    .line 2306
     if-nez p2, :cond_0
 
-    .line 2363
+    .line 2333
     :goto_0
     return-void
 
-    .line 2341
+    .line 2311
     :cond_0
     iget-object v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 2343
+    .line 2313
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->removeItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
-    .line 2347
+    .line 2317
     :cond_1
     iput-object p2, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
-    .line 2348
+    .line 2318
     iget-object v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
 
-    .line 2351
+    .line 2321
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
     if-eqz v0, :cond_2
 
-    .line 2352
+    .line 2322
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
     invoke-static {p1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
@@ -624,14 +624,14 @@
 
     invoke-interface {v0, v1, p2}, Lcom/sonyericsson/paneview/PaneView$ItemViewListener;->onViewAdded(ILandroid/view/View;)V
 
-    .line 2355
+    .line 2325
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 2357
+    .line 2327
     invoke-direct {p0, p2}, Lcom/sonyericsson/paneview/PaneView;->addViewAndLayoutParams(Landroid/view/View;)V
 
-    .line 2361
+    .line 2331
     :cond_3
     iget-object v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -663,44 +663,44 @@
     .parameter "view"
 
     .prologue
-    .line 2603
+    .line 2573
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
-    .line 2604
+    .line 2574
     .local v2, parent:Landroid/view/ViewParent;
     move-object v1, p1
 
-    .line 2606
+    .line 2576
     .local v1, descendant:Landroid/view/View;
     :goto_0
     if-eqz v2, :cond_0
 
     if-eq v2, p0, :cond_0
 
-    .line 2607
+    .line 2577
     move-object v0, v2
 
     check-cast v0, Landroid/view/View;
 
     move-object v1, v0
 
-    .line 2608
+    .line 2578
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
     goto :goto_0
 
-    .line 2611
+    .line 2581
     :cond_0
     if-nez v2, :cond_1
 
-    .line 2612
+    .line 2582
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->addViewAndLayoutParams(Landroid/view/View;)V
 
-    .line 2614
+    .line 2584
     :cond_1
     return-void
 .end method
@@ -712,22 +712,22 @@
     .prologue
     const/4 v1, -0x2
 
-    .line 2662
+    .line 2632
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 2663
+    .line 2633
     .local v0, params:Landroid/view/ViewGroup$LayoutParams;
     if-nez v0, :cond_0
 
-    .line 2664
+    .line 2634
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     .end local v0           #params:Landroid/view/ViewGroup$LayoutParams;
     invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 2667
+    .line 2637
     .restart local v0       #params:Landroid/view/ViewGroup$LayoutParams;
     :cond_0
     const/4 v1, -0x1
@@ -736,7 +736,7 @@
 
     invoke-virtual {p0, p1, v1, v0, v2}, Lcom/sonyericsson/paneview/PaneView;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
 
-    .line 2668
+    .line 2638
     return-void
 .end method
 
@@ -746,12 +746,12 @@
     .parameter "viewType"
 
     .prologue
-    .line 2390
+    .line 2360
     const/4 v1, -0x1
 
     if-eq p2, v1, :cond_1
 
-    .line 2391
+    .line 2361
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mViewCache:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -764,17 +764,17 @@
 
     check-cast v0, Ljava/util/LinkedList;
 
-    .line 2392
+    .line 2362
     .local v0, viewTypeCache:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/view/View;>;"
     if-nez v0, :cond_0
 
-    .line 2393
+    .line 2363
     new-instance v0, Ljava/util/LinkedList;
 
     .end local v0           #viewTypeCache:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/view/View;>;"
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    .line 2394
+    .line 2364
     .restart local v0       #viewTypeCache:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/view/View;>;"
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mViewCache:Ljava/util/HashMap;
 
@@ -784,11 +784,11 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2396
+    .line 2366
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 2398
+    .line 2368
     .end local v0           #viewTypeCache:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/view/View;>;"
     :cond_1
     return-void
@@ -809,7 +809,7 @@
     .end annotation
 
     .prologue
-    .line 1993
+    .line 1963
     .local p1, items:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     invoke-virtual {p1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -833,25 +833,25 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1994
+    .line 1964
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     invoke-virtual {v2}, Lcom/sonyericsson/paneview/PaneLocation;->recycle()V
 
-    .line 1995
+    .line 1965
     const/4 v2, 0x0
 
     iput-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     goto :goto_0
 
-    .line 1997
+    .line 1967
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_0
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
-    .line 1998
+    .line 1968
     return-void
 .end method
 
@@ -859,14 +859,14 @@
     .locals 1
 
     .prologue
-    .line 1531
+    .line 1530
     new-instance v0, Lcom/sonyericsson/paneview/PaneView$6;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/paneview/PaneView$6;-><init>(Lcom/sonyericsson/paneview/PaneView;)V
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDynamicsRunnable:Ljava/lang/Runnable;
 
-    .line 1551
+    .line 1550
     return-void
 .end method
 
@@ -874,7 +874,7 @@
     .locals 1
 
     .prologue
-    .line 1376
+    .line 1375
     new-instance v0, Lcom/sonyericsson/paneview/PaneView$5;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/paneview/PaneView$5;-><init>(Lcom/sonyericsson/paneview/PaneView;)V
@@ -888,14 +888,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2189
+    .line 2159
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlitPaint:Landroid/graphics/Paint;
 
-    .line 2190
+    .line 2160
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlitPaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -906,22 +906,22 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 2191
+    .line 2161
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlitPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 2192
+    .line 2162
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlitPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 2193
+    .line 2163
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlitPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 2194
+    .line 2164
     return-void
 .end method
 
@@ -936,50 +936,50 @@
 
     const/16 v4, 0x11
 
-    .line 2679
+    .line 2649
     const/4 v1, 0x0
 
-    .line 2681
+    .line 2651
     .local v1, scroll:Z
     if-eq p3, v4, :cond_0
 
     if-ne p3, v5, :cond_3
 
-    .line 2682
+    .line 2652
     :cond_0
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 2683
+    .line 2653
     .local v0, focusRect:Landroid/graphics/Rect;
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 2684
+    .line 2654
     .local v3, sourceRect:Landroid/graphics/Rect;
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 2686
+    .line 2656
     .local v2, scrollRect:Landroid/graphics/Rect;
     invoke-direct {p0, p2, v0}, Lcom/sonyericsson/paneview/PaneView;->getFocusRectInRootCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2687
+    .line 2657
     invoke-direct {p0, p1, v3}, Lcom/sonyericsson/paneview/PaneView;->getFocusRectInRootCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2689
+    .line 2659
     invoke-virtual {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 2690
+    .line 2660
     invoke-direct {p0, p0, v2}, Lcom/sonyericsson/paneview/PaneView;->offsetRectToRootCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2694
+    .line 2664
     if-ne p3, v4, :cond_4
 
-    .line 2695
+    .line 2665
     iget v4, v2, Landroid/graphics/Rect;->left:I
 
     const/4 v5, 0x1
@@ -990,7 +990,7 @@
 
     iput v4, v2, Landroid/graphics/Rect;->right:I
 
-    .line 2704
+    .line 2674
     :cond_1
     :goto_0
     invoke-static {p3, v3, v2, v0}, Lcom/sonyericsson/paneview/FocusFinder;->isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
@@ -999,34 +999,34 @@
 
     if-eqz v4, :cond_2
 
-    .line 2705
+    .line 2675
     const/4 v1, 0x1
 
-    .line 2708
+    .line 2678
     :cond_2
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2709
+    .line 2679
     invoke-static {v3}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2710
+    .line 2680
     invoke-static {v2}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2713
+    .line 2683
     .end local v0           #focusRect:Landroid/graphics/Rect;
     .end local v2           #scrollRect:Landroid/graphics/Rect;
     .end local v3           #sourceRect:Landroid/graphics/Rect;
     :cond_3
     return v1
 
-    .line 2696
+    .line 2666
     .restart local v0       #focusRect:Landroid/graphics/Rect;
     .restart local v2       #scrollRect:Landroid/graphics/Rect;
     .restart local v3       #sourceRect:Landroid/graphics/Rect;
     :cond_4
     if-ne p3, v5, :cond_1
 
-    .line 2697
+    .line 2667
     iget v4, v2, Landroid/graphics/Rect;->right:I
 
     add-int/lit8 v4, v4, 0x1
@@ -1047,17 +1047,17 @@
 
     const/4 v7, 0x0
 
-    .line 1332
+    .line 1331
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplate:Landroid/graphics/drawable/Drawable;
 
     if-eqz v4, :cond_2
 
-    .line 1333
+    .line 1332
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
     if-nez v4, :cond_0
 
-    .line 1334
+    .line 1333
     iget v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateWidth:I
 
     if-eqz v4, :cond_3
@@ -1066,7 +1066,7 @@
 
     move v0, v4
 
-    .line 1336
+    .line 1335
     .local v0, backplateWidth:I
     :goto_0
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getHeight()I
@@ -1081,14 +1081,14 @@
 
     iput-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
-    .line 1338
+    .line 1337
     new-instance v3, Landroid/graphics/Canvas;
 
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
     invoke-direct {v3, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1339
+    .line 1338
     .local v3, tmpCanvas:Landroid/graphics/Canvas;
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplate:Landroid/graphics/drawable/Drawable;
 
@@ -1098,12 +1098,12 @@
 
     invoke-virtual {v4, v7, v7, v0, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1340
+    .line 1339
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplate:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, v3}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1343
+    .line 1342
     .end local v0           #backplateWidth:I
     .end local v3           #tmpCanvas:Landroid/graphics/Canvas;
     :cond_0
@@ -1115,7 +1115,7 @@
 
     float-to-int v2, v4
 
-    .line 1345
+    .line 1344
     .local v2, pane1:I
     if-ltz v2, :cond_1
 
@@ -1123,7 +1123,7 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 1346
+    .line 1345
     iget v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateOffsetX:I
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->getPaneRelativeOffset(I)I
@@ -1132,7 +1132,7 @@
 
     add-int v1, v4, v5
 
-    .line 1347
+    .line 1346
     .local v1, left:I
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
@@ -1142,7 +1142,7 @@
 
     invoke-virtual {p1, v4, v5, v8, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 1348
+    .line 1347
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
@@ -1161,7 +1161,7 @@
 
     invoke-virtual {v4, v1, v7, v5, v6}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 1352
+    .line 1351
     .end local v1           #left:I
     :cond_1
     iget v4, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
@@ -1172,7 +1172,7 @@
 
     if-ge v2, v4, :cond_2
 
-    .line 1353
+    .line 1352
     iget v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateOffsetX:I
 
     add-int/lit8 v5, v2, 0x1
@@ -1183,7 +1183,7 @@
 
     add-int v1, v4, v5
 
-    .line 1354
+    .line 1353
     .restart local v1       #left:I
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
@@ -1193,7 +1193,7 @@
 
     invoke-virtual {p1, v4, v5, v8, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 1355
+    .line 1354
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
@@ -1212,13 +1212,13 @@
 
     invoke-virtual {v4, v1, v7, v5, v6}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 1359
+    .line 1358
     .end local v1           #left:I
     .end local v2           #pane1:I
     :cond_2
     return-void
 
-    .line 1334
+    .line 1333
     :cond_3
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
 
@@ -1237,14 +1237,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2069
+    .line 2039
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mDeletedItems:Ljava/util/LinkedList;
 
     invoke-virtual {v3}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 2071
+    .line 2041
     .local v1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/sonyericsson/paneview/PaneView$Item;>;"
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -1253,51 +1253,51 @@
 
     if-eqz v3, :cond_1
 
-    .line 2072
+    .line 2042
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/sonyericsson/paneview/PaneView$Item;
 
-    .line 2074
+    .line 2044
     .local v0, deletedItem:Lcom/sonyericsson/paneview/PaneView$Item;
     invoke-direct {p0, p1, v0, p2}, Lcom/sonyericsson/paneview/PaneView;->drawItemUsingRenderer(Landroid/graphics/Canvas;Lcom/sonyericsson/paneview/PaneView$Item;F)Z
 
     move-result v2
 
-    .line 2076
+    .line 2046
     .local v2, newFrame:Z
     if-nez v2, :cond_0
 
-    .line 2078
+    .line 2048
     iget-object v3, v0, Lcom/sonyericsson/paneview/PaneView$Item;->view:Landroid/view/View;
 
     invoke-virtual {p0, v3}, Lcom/sonyericsson/paneview/PaneView;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 2082
+    .line 2052
     iput-object v5, v0, Lcom/sonyericsson/paneview/PaneView$Item;->view:Landroid/view/View;
 
-    .line 2085
+    .line 2055
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     iget-object v4, v0, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v3, v4}, Lcom/sonyericsson/paneview/RendererFactory;->recycle(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 2086
+    .line 2056
     iput-object v5, v0, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 2089
+    .line 2059
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    .line 2096
+    .line 2066
     :cond_0
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->invalidate()V
 
     goto :goto_0
 
-    .line 2098
+    .line 2068
     .end local v0           #deletedItem:Lcom/sonyericsson/paneview/PaneView$Item;
     .end local v2           #newFrame:Z
     :cond_1
@@ -1311,16 +1311,16 @@
     .parameter "rect"
 
     .prologue
-    .line 2055
+    .line 2025
     if-eqz p1, :cond_0
 
-    .line 2056
+    .line 2026
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 2057
+    .line 2027
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2059
+    .line 2029
     :cond_0
     return-void
 .end method
@@ -1330,31 +1330,31 @@
     .parameter "canvas"
 
     .prologue
-    .line 1362
+    .line 1361
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->isFocused()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1363
+    .line 1362
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 1364
+    .line 1363
     .local v0, rect:Landroid/graphics/Rect;
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 1365
+    .line 1364
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusedItemDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {p1, v1, v0}, Lcom/sonyericsson/paneview/PaneView;->drawDrawable(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;)V
 
-    .line 1366
+    .line 1365
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1368
+    .line 1367
     .end local v0           #rect:Landroid/graphics/Rect;
     :cond_0
     return-void
@@ -1369,23 +1369,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2206
+    .line 2176
     iget-object v0, p2, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     if-nez v0, :cond_0
 
-    .line 2208
+    .line 2178
     const/4 v0, 0x0
 
-    .line 2228
+    .line 2198
     :goto_0
     return v0
 
-    .line 2213
+    .line 2183
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2214
+    .line 2184
     invoke-direct {p0, v2, p3}, Lcom/sonyericsson/paneview/PaneView;->getPaneXOffset(FF)I
 
     move-result v0
@@ -1410,12 +1410,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2217
+    .line 2187
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 2218
+    .line 2188
     .local v3, targetRect:Landroid/graphics/Rect;
     iget-object v0, p2, Lcom/sonyericsson/paneview/PaneView$Item;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -1423,7 +1423,7 @@
 
     invoke-virtual {v3, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 2219
+    .line 2189
     iget-object v0, p2, Lcom/sonyericsson/paneview/PaneView$Item;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget v0, v0, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
@@ -1446,7 +1446,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2222
+    .line 2192
     iget-object v0, p2, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     iget-object v1, p2, Lcom/sonyericsson/paneview/PaneView$Item;->view:Landroid/view/View;
@@ -1461,16 +1461,16 @@
 
     move-result v6
 
-    .line 2225
+    .line 2195
     .local v6, newFrame:Z
     invoke-static {v3}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2226
+    .line 2196
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     move v0, v6
 
-    .line 2228
+    .line 2198
     goto :goto_0
 .end method
 
@@ -1482,12 +1482,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 2107
+    .line 2077
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v4
 
-    .line 2108
+    .line 2078
     .local v4, viewRect:Landroid/graphics/Rect;
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
 
@@ -1499,7 +1499,7 @@
 
     invoke-virtual {v4, v7, v7, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2110
+    .line 2080
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mItemsSorted:Ljava/util/LinkedList;
 
     invoke-virtual {v5}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
@@ -1521,23 +1521,23 @@
 
     check-cast v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 2111
+    .line 2081
     .local v2, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v5, :cond_0
 
-    .line 2116
+    .line 2086
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     if-eqz v5, :cond_3
 
-    .line 2117
+    .line 2087
     invoke-direct {p0, p1, v2, p2}, Lcom/sonyericsson/paneview/PaneView;->drawItemUsingRenderer(Landroid/graphics/Canvas;Lcom/sonyericsson/paneview/PaneView$Item;F)Z
 
     move-result v3
 
-    .line 2118
+    .line 2088
     .local v3, newFrame:Z
     if-nez v3, :cond_2
 
@@ -1545,19 +1545,19 @@
 
     if-nez v5, :cond_2
 
-    .line 2120
+    .line 2090
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     iget-object v6, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v5, v6}, Lcom/sonyericsson/paneview/RendererFactory;->recycle(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 2121
+    .line 2091
     const/4 v5, 0x0
 
     iput-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 2122
+    .line 2092
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     invoke-direct {p0, v5, p2, v4}, Lcom/sonyericsson/paneview/PaneView;->isLocationVisible(Lcom/sonyericsson/paneview/PaneLocation;FLandroid/graphics/Rect;)Z
@@ -1566,30 +1566,30 @@
 
     if-nez v5, :cond_1
 
-    .line 2125
+    .line 2095
     invoke-direct {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->removeItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
-    .line 2128
+    .line 2098
     :cond_1
     iget-boolean v5, p0, Lcom/sonyericsson/paneview/PaneView;->mStandardRenderersEnabled:Z
 
     if-eqz v5, :cond_2
 
-    .line 2131
+    .line 2101
     invoke-direct {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->setStandardRenderer(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
-    .line 2137
+    .line 2107
     :cond_2
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->invalidate()V
 
     goto :goto_0
 
-    .line 2139
+    .line 2109
     .end local v3           #newFrame:Z
     :cond_3
     const/4 v0, 0x0
 
-    .line 2141
+    .line 2111
     .local v0, cache:Landroid/graphics/Bitmap;
     iget-boolean v5, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlit:Z
 
@@ -1599,7 +1599,7 @@
 
     if-nez v5, :cond_4
 
-    .line 2142
+    .line 2112
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     const/4 v6, 0x1
@@ -1608,16 +1608,16 @@
 
     move-result-object v0
 
-    .line 2145
+    .line 2115
     :cond_4
     if-eqz v0, :cond_5
 
-    .line 2146
+    .line 2116
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-direct {p0, p1, v5, v0}, Lcom/sonyericsson/paneview/PaneView;->srcBlitChild(Landroid/graphics/Canvas;Landroid/view/View;Landroid/graphics/Bitmap;)V
 
-    .line 2150
+    .line 2120
     :goto_1
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
@@ -1625,7 +1625,7 @@
 
     goto :goto_0
 
-    .line 2148
+    .line 2118
     :cond_5
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
@@ -1637,13 +1637,13 @@
 
     goto :goto_1
 
-    .line 2154
+    .line 2124
     .end local v0           #cache:Landroid/graphics/Bitmap;
     .end local v2           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_6
     invoke-static {v4}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2155
+    .line 2125
     return-void
 .end method
 
@@ -1654,23 +1654,23 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 2007
+    .line 1977
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     invoke-interface {v5}, Lcom/sonyericsson/paneview/Transformer;->update()V
 
-    .line 2009
+    .line 1979
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 2010
+    .line 1980
     .local v3, rect:Landroid/graphics/Rect;
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v4
 
-    .line 2011
+    .line 1981
     .local v4, viewRect:Landroid/graphics/Rect;
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
 
@@ -1682,7 +1682,7 @@
 
     invoke-virtual {v4, v7, v7, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2014
+    .line 1984
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v5}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1708,7 +1708,7 @@
 
     check-cast v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 2015
+    .line 1985
     .local v2, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
@@ -1720,7 +1720,7 @@
 
     move-result-object v0
 
-    .line 2016
+    .line 1986
     .local v0, adapterItem:Ljava/lang/Object;
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
@@ -1730,19 +1730,19 @@
 
     if-eqz v5, :cond_0
 
-    .line 2017
+    .line 1987
     invoke-static {v4, v3}, Landroid/graphics/Rect;->intersects(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 2018
+    .line 1988
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-nez v5, :cond_1
 
-    .line 2019
+    .line 1989
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget v5, v5, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
@@ -1751,7 +1751,7 @@
 
     invoke-direct {p0, v2, v5}, Lcom/sonyericsson/paneview/PaneView;->layoutItem(Lcom/sonyericsson/paneview/PaneView$AdapterItem;F)V
 
-    .line 2022
+    .line 1992
     :cond_1
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
@@ -1785,18 +1785,18 @@
 
     if-eqz v5, :cond_2
 
-    .line 2025
+    .line 1995
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItemDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {p1, v5, v3}, Lcom/sonyericsson/paneview/PaneView;->drawDrawable(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;)V
 
-    .line 2028
+    .line 1998
     :cond_2
     iget-object v5, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v5, :cond_0
 
-    .line 2029
+    .line 1999
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     iget-object v6, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
@@ -1805,16 +1805,16 @@
 
     goto :goto_0
 
-    .line 2035
+    .line 2005
     .end local v0           #adapterItem:Ljava/lang/Object;
     .end local v2           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_3
     invoke-static {v4}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2036
+    .line 2006
     invoke-static {v3}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2040
+    .line 2010
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     invoke-interface {v5, p1}, Lcom/sonyericsson/paneview/Transformer;->draw(Landroid/graphics/Canvas;)Z
@@ -1823,10 +1823,10 @@
 
     if-eqz v5, :cond_4
 
-    .line 2043
+    .line 2013
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->invalidate()V
 
-    .line 2045
+    .line 2015
     :cond_4
     return-void
 .end method
@@ -1844,16 +1844,16 @@
 
     const/4 v8, 0x1
 
-    .line 2258
+    .line 2228
     invoke-static {p1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
 
     move-result v0
 
-    .line 2259
+    .line 2229
     .local v0, adapterPosition:I
     const/4 v1, 0x0
 
-    .line 2261
+    .line 2231
     .local v1, gotView:Z
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
@@ -1877,7 +1877,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 2263
+    .line 2233
     new-instance v4, Ljava/lang/IllegalStateException;
 
     const-string v5, "ID has changed!A posible cause of this is that the client has changed the data without notifiying us (via the observer on the adapter).If the IDs are not stable, hasStableIds() should return false."
@@ -1886,7 +1886,7 @@
 
     throw v4
 
-    .line 2269
+    .line 2239
     :cond_0
     iget-object v4, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
@@ -1896,7 +1896,7 @@
 
     if-nez v4, :cond_6
 
-    .line 2272
+    .line 2242
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     iget-object v5, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
@@ -1905,33 +1905,33 @@
 
     move-result-object v2
 
-    .line 2273
+    .line 2243
     .local v2, view:Landroid/view/View;
     const/4 v1, 0x1
 
-    .line 2275
+    .line 2245
     iget-object v4, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eq v2, v4, :cond_1
 
-    .line 2279
+    .line 2249
     const-string v4, "PaneView"
 
     const-string v5, "convertView does not seem to be handled efficiently by the adaptor"
 
     invoke-static {v4, v5}, Lcom/sonyericsson/util/LogUtil;->reportError(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2283
+    .line 2253
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->removeItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
-    .line 2284
+    .line 2254
     invoke-direct {p0, p1, v2, p3}, Lcom/sonyericsson/paneview/PaneView;->addItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;Landroid/view/View;Z)V
 
-    .line 2287
+    .line 2257
     :cond_1
     iput-boolean v8, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->viewValid:Z
 
-    .line 2297
+    .line 2267
     .end local v2           #view:Landroid/view/View;
     :cond_2
     :goto_0
@@ -1943,23 +1943,23 @@
 
     if-eqz v4, :cond_3
 
-    .line 2298
+    .line 2268
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->setStandardRenderer(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
-    .line 2301
+    .line 2271
     :cond_3
     iget-object v4, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v4, :cond_5
 
-    .line 2302
+    .line 2272
     iget-object v2, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
-    .line 2304
+    .line 2274
     .restart local v2       #view:Landroid/view/View;
     if-eqz v1, :cond_4
 
-    .line 2305
+    .line 2275
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     invoke-static {p1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
@@ -1972,7 +1972,7 @@
 
     if-nez v4, :cond_4
 
-    .line 2306
+    .line 2276
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     invoke-static {p1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
@@ -1985,20 +1985,20 @@
 
     if-eqz v4, :cond_7
 
-    .line 2307
+    .line 2277
     invoke-virtual {v2, v8}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 2309
+    .line 2279
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mItemKeyListener:Landroid/view/View$OnKeyListener;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 2310
+    .line 2280
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mItemFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 2320
+    .line 2290
     :cond_4
     :goto_1
     iget-object v4, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -2023,7 +2023,7 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/view/View;->measure(II)V
 
-    .line 2322
+    .line 2292
     iget v4, p2, Landroid/graphics/Rect;->left:I
 
     iget v5, p2, Landroid/graphics/Rect;->top:I
@@ -2034,25 +2034,25 @@
 
     invoke-virtual {v2, v4, v5, v6, v7}, Landroid/view/View;->layout(IIII)V
 
-    .line 2324
+    .line 2294
     .end local v2           #view:Landroid/view/View;
     :cond_5
     return-void
 
-    .line 2289
+    .line 2259
     :cond_6
     iget-object v4, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-nez v4, :cond_2
 
-    .line 2291
+    .line 2261
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     invoke-interface {v4, v0}, Lcom/sonyericsson/paneview/PaneAdapter;->getItemViewType(I)I
 
     move-result v3
 
-    .line 2292
+    .line 2262
     .local v3, viewType:I
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
@@ -2064,26 +2064,26 @@
 
     move-result-object v2
 
-    .line 2293
+    .line 2263
     .restart local v2       #view:Landroid/view/View;
     const/4 v1, 0x1
 
-    .line 2294
+    .line 2264
     invoke-direct {p0, p1, v2, p3}, Lcom/sonyericsson/paneview/PaneView;->addItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;Landroid/view/View;Z)V
 
     goto :goto_0
 
-    .line 2312
+    .line 2282
     .end local v3           #viewType:I
     :cond_7
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 2313
+    .line 2283
     invoke-virtual {v2, v10}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 2314
+    .line 2284
     invoke-virtual {v2, v10}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
     goto :goto_1
@@ -2094,7 +2094,7 @@
     .parameter "view"
 
     .prologue
-    .line 2473
+    .line 2443
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -2119,7 +2119,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 2474
+    .line 2444
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
@@ -2127,7 +2127,7 @@
 
     move-object v2, v1
 
-    .line 2479
+    .line 2449
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :goto_0
     return-object v2
@@ -2154,37 +2154,37 @@
 
     const/16 v5, 0x11
 
-    .line 2780
+    .line 2750
     const/4 v1, 0x0
 
-    .line 2781
+    .line 2751
     .local v1, newFocus:Landroid/view/View;
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
 
     move-result v2
 
-    .line 2782
+    .line 2752
     .local v2, pane:I
     const/4 v3, 0x0
 
-    .line 2784
+    .line 2754
     .local v3, sourceRect:Landroid/graphics/Rect;
     if-eqz p1, :cond_0
 
-    .line 2785
+    .line 2755
     new-instance v3, Landroid/graphics/Rect;
 
     .end local v3           #sourceRect:Landroid/graphics/Rect;
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2786
+    .line 2756
     .restart local v3       #sourceRect:Landroid/graphics/Rect;
     invoke-virtual {p1, v3}, Landroid/view/View;->getFocusedRect(Landroid/graphics/Rect;)V
 
-    .line 2789
+    .line 2759
     invoke-virtual {p0, p1, v3}, Lcom/sonyericsson/paneview/PaneView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2792
+    .line 2762
     :cond_0
     if-ne p2, v5, :cond_5
 
@@ -2194,7 +2194,7 @@
 
     if-eqz v4, :cond_5
 
-    .line 2793
+    .line 2763
     invoke-direct {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->getLeftPane(I)I
 
     move-result v4
@@ -2203,24 +2203,24 @@
 
     move-result-object v0
 
-    .line 2794
+    .line 2764
     .local v0, focusables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     if-eqz v3, :cond_4
 
-    .line 2800
+    .line 2770
     iput v7, v3, Landroid/graphics/Rect;->right:I
 
-    .line 2801
+    .line 2771
     iput v7, v3, Landroid/graphics/Rect;->left:I
 
-    .line 2802
+    .line 2772
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusFinder:Lcom/sonyericsson/paneview/FocusFinder;
 
     invoke-virtual {v4, v0, p0, v3, v6}, Lcom/sonyericsson/paneview/FocusFinder;->findNextFocusFromRect(Ljava/util/ArrayList;Landroid/view/View;Landroid/graphics/Rect;I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2809
+    .line 2779
     :goto_0
     if-nez v1, :cond_1
 
@@ -2228,17 +2228,17 @@
 
     if-eqz v4, :cond_1
 
-    .line 2815
+    .line 2785
     invoke-virtual {p0, v8}, Lcom/sonyericsson/paneview/PaneView;->setDescendantFocusability(I)V
 
-    .line 2818
+    .line 2788
     move-object v1, p0
 
-    .line 2821
+    .line 2791
     :cond_1
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->moveToLeftPane()Z
 
-    .line 2860
+    .line 2830
     .end local v0           #focusables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     :cond_2
     :goto_1
@@ -2246,14 +2246,14 @@
 
     if-eq v1, p0, :cond_3
 
-    .line 2863
+    .line 2833
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->addRootView(Landroid/view/View;)V
 
-    .line 2866
+    .line 2836
     :cond_3
     return-object v1
 
-    .line 2805
+    .line 2775
     .restart local v0       #focusables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     :cond_4
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusFinder:Lcom/sonyericsson/paneview/FocusFinder;
@@ -2264,7 +2264,7 @@
 
     goto :goto_0
 
-    .line 2822
+    .line 2792
     .end local v0           #focusables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     :cond_5
     if-ne p2, v6, :cond_8
@@ -2275,7 +2275,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 2823
+    .line 2793
     invoke-direct {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->getRightPane(I)I
 
     move-result v4
@@ -2284,30 +2284,30 @@
 
     move-result-object v0
 
-    .line 2824
+    .line 2794
     .restart local v0       #focusables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     if-eqz v3, :cond_7
 
-    .line 2830
+    .line 2800
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
 
     move-result v4
 
     iput v4, v3, Landroid/graphics/Rect;->left:I
 
-    .line 2831
+    .line 2801
     iget v4, v3, Landroid/graphics/Rect;->left:I
 
     iput v4, v3, Landroid/graphics/Rect;->right:I
 
-    .line 2832
+    .line 2802
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusFinder:Lcom/sonyericsson/paneview/FocusFinder;
 
     invoke-virtual {v4, v0, p0, v3, v5}, Lcom/sonyericsson/paneview/FocusFinder;->findNextFocusFromRect(Ljava/util/ArrayList;Landroid/view/View;Landroid/graphics/Rect;I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2839
+    .line 2809
     :goto_2
     if-nez v1, :cond_6
 
@@ -2315,19 +2315,19 @@
 
     if-eqz v4, :cond_6
 
-    .line 2845
+    .line 2815
     invoke-virtual {p0, v8}, Lcom/sonyericsson/paneview/PaneView;->setDescendantFocusability(I)V
 
-    .line 2848
+    .line 2818
     move-object v1, p0
 
-    .line 2851
+    .line 2821
     :cond_6
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->moveToRightPane()Z
 
     goto :goto_1
 
-    .line 2835
+    .line 2805
     :cond_7
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusFinder:Lcom/sonyericsson/paneview/FocusFinder;
 
@@ -2337,7 +2337,7 @@
 
     goto :goto_2
 
-    .line 2852
+    .line 2822
     .end local v0           #focusables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     :cond_8
     const/16 v4, 0x82
@@ -2348,17 +2348,17 @@
 
     if-ne p2, v4, :cond_2
 
-    .line 2853
+    .line 2823
     :cond_9
     invoke-direct {p0, p2, v2}, Lcom/sonyericsson/paneview/PaneView;->getFocusableViewsOnPane(II)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 2854
+    .line 2824
     .restart local v0       #focusables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     if-eqz v3, :cond_2
 
-    .line 2855
+    .line 2825
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusFinder:Lcom/sonyericsson/paneview/FocusFinder;
 
     invoke-virtual {v4, v0, p0, v3, p2}, Lcom/sonyericsson/paneview/FocusFinder;->findNextFocusFromRect(Ljava/util/ArrayList;Landroid/view/View;Landroid/graphics/Rect;I)Landroid/view/View;
@@ -2390,7 +2390,7 @@
     .end annotation
 
     .prologue
-    .line 1776
+    .line 1746
     .local p1, newItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     .local p2, oldItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     move-object/from16 v0, p0
@@ -2403,35 +2403,35 @@
 
     move-result v18
 
-    .line 1777
+    .line 1747
     .local v18, stableIDs:Z
     if-nez v18, :cond_0
 
-    .line 1780
+    .line 1750
     const/16 p3, 0x0
 
-    .line 1785
+    .line 1755
     invoke-virtual/range {p2 .. p2}, Ljava/util/HashMap;->clear()V
 
-    .line 1788
+    .line 1758
     :cond_0
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v6
 
-    .line 1789
+    .line 1759
     .local v6, itemDrawRect:Landroid/graphics/Rect;
     invoke-static {}, Lcom/sonyericsson/paneview/PaneLocation;->obtain()Lcom/sonyericsson/paneview/PaneLocation;
 
     move-result-object v16
 
-    .line 1790
+    .line 1760
     .local v16, newLocation:Lcom/sonyericsson/paneview/PaneLocation;
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v19
 
-    .line 1791
+    .line 1761
     .local v19, viewRect:Landroid/graphics/Rect;
     const/4 v5, 0x0
 
@@ -2457,7 +2457,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1792
+    .line 1762
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
@@ -2468,7 +2468,7 @@
 
     move-result v17
 
-    .line 1794
+    .line 1764
     .local v17, position:F
     const/4 v11, 0x0
 
@@ -2486,7 +2486,7 @@
 
     if-ge v11, v5, :cond_7
 
-    .line 1796
+    .line 1766
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
@@ -2501,14 +2501,14 @@
 
     invoke-interface {v0, v1, v2}, Lcom/sonyericsson/paneview/PaneAdapter;->getLocation(ILcom/sonyericsson/paneview/PaneLocation;)V
 
-    .line 1799
+    .line 1769
     const/4 v14, 0x0
 
-    .line 1801
+    .line 1771
     .local v14, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     if-eqz v18, :cond_5
 
-    .line 1804
+    .line 1774
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
@@ -2519,7 +2519,7 @@
 
     move-result-wide v12
 
-    .line 1805
+    .line 1775
     .local v12, id:J
     invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -2536,12 +2536,12 @@
     .end local v14           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     check-cast v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1811
+    .line 1781
     .restart local v14       #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :goto_1
     if-eqz v14, :cond_6
 
-    .line 1820
+    .line 1790
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
@@ -2598,7 +2598,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 1826
+    .line 1796
     :cond_1
     move-object/from16 v0, p0
 
@@ -2612,19 +2612,19 @@
 
     iput-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 1827
+    .line 1797
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     if-eqz v5, :cond_2
 
-    .line 1828
+    .line 1798
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v5, v5, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
 
     invoke-virtual {v6, v5}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1829
+    .line 1799
     const/4 v5, 0x0
 
     iget-object v7, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -2655,7 +2655,7 @@
 
     invoke-virtual {v6, v5, v7}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1831
+    .line 1801
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     const/4 v7, 0x0
@@ -2668,7 +2668,7 @@
 
     invoke-interface/range {v5 .. v10}, Lcom/sonyericsson/animation/Renderer;->start(Landroid/graphics/Rect;IIJ)V
 
-    .line 1836
+    .line 1806
     :cond_2
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -2678,20 +2678,20 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneLocation;->set(Lcom/sonyericsson/paneview/PaneLocation;)V
 
-    .line 1837
+    .line 1807
     invoke-static {v14, v11}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$502(Lcom/sonyericsson/paneview/PaneView$AdapterItem;I)I
 
-    .line 1839
+    .line 1809
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v5, :cond_3
 
-    .line 1842
+    .line 1812
     const/4 v5, 0x0
 
     iput-boolean v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->viewValid:Z
 
-    .line 1868
+    .line 1838
     :cond_3
     :goto_2
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -2706,7 +2706,7 @@
 
     if-le v5, v7, :cond_4
 
-    .line 1869
+    .line 1839
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v5, v5, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
@@ -2729,7 +2729,7 @@
 
     move-result v15
 
-    .line 1870
+    .line 1840
     .local v15, maxScroll:F
     move-object/from16 v0, p0
 
@@ -2741,14 +2741,14 @@
 
     if-lez v5, :cond_4
 
-    .line 1871
+    .line 1841
     move v0, v15
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
-    .line 1876
+    .line 1846
     .end local v15           #maxScroll:F
     :cond_4
     invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2763,12 +2763,12 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1794
+    .line 1764
     add-int/lit8 v11, v11, 0x1
 
     goto/16 :goto_0
 
-    .line 1808
+    .line 1778
     .end local v12           #id:J
     :cond_5
     int-to-long v12, v11
@@ -2776,7 +2776,7 @@
     .restart local v12       #id:J
     goto/16 :goto_1
 
-    .line 1850
+    .line 1820
     :cond_6
     new-instance v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
@@ -2785,7 +2785,7 @@
 
     invoke-direct {v14, v5}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;-><init>(Lcom/sonyericsson/paneview/PaneView$1;)V
 
-    .line 1851
+    .line 1821
     .restart local v14       #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     invoke-static {}, Lcom/sonyericsson/paneview/PaneLocation;->obtain()Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -2793,7 +2793,7 @@
 
     iput-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
-    .line 1852
+    .line 1822
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     move-object v0, v5
@@ -2802,13 +2802,13 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneLocation;->set(Lcom/sonyericsson/paneview/PaneLocation;)V
 
-    .line 1853
+    .line 1823
     invoke-static {v14, v11}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$502(Lcom/sonyericsson/paneview/PaneView$AdapterItem;I)I
 
-    .line 1854
+    .line 1824
     invoke-static {v14, v12, v13}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$602(Lcom/sonyericsson/paneview/PaneView$AdapterItem;J)J
 
-    .line 1857
+    .line 1827
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
@@ -2819,7 +2819,7 @@
 
     if-eqz p3, :cond_3
 
-    .line 1858
+    .line 1828
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
@@ -2832,19 +2832,19 @@
 
     iput-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 1859
+    .line 1829
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     if-eqz v5, :cond_3
 
-    .line 1860
+    .line 1830
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v5, v5, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
 
     invoke-virtual {v6, v5}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1861
+    .line 1831
     const/4 v5, 0x0
 
     iget-object v7, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -2875,7 +2875,7 @@
 
     invoke-virtual {v6, v5, v7}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1863
+    .line 1833
     iget-object v5, v14, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     const/4 v7, 0x0
@@ -2890,7 +2890,7 @@
 
     goto/16 :goto_2
 
-    .line 1879
+    .line 1849
     .end local v12           #id:J
     .end local v14           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_7
@@ -2904,16 +2904,16 @@
 
     invoke-direct {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->updateMaxScroll(Ljava/util/Collection;)V
 
-    .line 1881
+    .line 1851
     invoke-static/range {v19 .. v19}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1882
+    .line 1852
     invoke-virtual/range {v16 .. v16}, Lcom/sonyericsson/paneview/PaneLocation;->recycle()V
 
-    .line 1883
+    .line 1853
     invoke-static {v6}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1884
+    .line 1854
     return-void
 .end method
 
@@ -2923,12 +2923,12 @@
     .parameter "y"
 
     .prologue
-    .line 1508
+    .line 1507
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 1512
+    .line 1511
     .local v2, rect:Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
@@ -2954,39 +2954,39 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1513
+    .line 1512
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v3, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v3, :cond_0
 
-    .line 1514
+    .line 1513
     iget-object v3, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 1515
+    .line 1514
     invoke-virtual {v2, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 1516
+    .line 1515
     invoke-static {v2}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
     move-object v3, v1
 
-    .line 1523
+    .line 1522
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :goto_0
     return-object v3
 
-    .line 1522
+    .line 1521
     :cond_1
     invoke-static {v2}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1523
+    .line 1522
     const/4 v3, 0x0
 
     goto :goto_0
@@ -2998,13 +2998,13 @@
     .parameter "rect"
 
     .prologue
-    .line 2592
+    .line 2562
     invoke-virtual {p1, p2}, Landroid/view/View;->getFocusedRect(Landroid/graphics/Rect;)V
 
-    .line 2593
+    .line 2563
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/paneview/PaneView;->offsetRectToRootCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2594
+    .line 2564
     return-void
 .end method
 
@@ -3025,12 +3025,12 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 2625
+    .line 2595
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2626
+    .line 2596
     .local v4, views:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -3042,13 +3042,13 @@
 
     move-result v3
 
-    .line 2628
+    .line 2598
     .local v3, scroll:I
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 2630
+    .line 2600
     .local v2, rect:Landroid/graphics/Rect;
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
@@ -3075,7 +3075,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 2631
+    .line 2601
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v5, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
@@ -3089,14 +3089,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 2632
+    .line 2602
     iget-object v5, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v5, v5, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v5}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 2633
+    .line 2603
     int-to-float v5, p2
 
     iget-object v6, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -3125,7 +3125,7 @@
 
     invoke-virtual {v2, v5, v6}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2635
+    .line 2605
     iget v5, v2, Landroid/graphics/Rect;->right:I
 
     if-lez v5, :cond_0
@@ -3138,12 +3138,12 @@
 
     if-ge v5, v6, :cond_0
 
-    .line 2636
+    .line 2606
     iget-object v5, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v5, :cond_1
 
-    .line 2637
+    .line 2607
     iget-object v5, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     iget v6, v2, Landroid/graphics/Rect;->left:I
@@ -3158,7 +3158,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 2638
+    .line 2608
     iget-object v5, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     iget v6, v2, Landroid/graphics/Rect;->top:I
@@ -3173,31 +3173,31 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 2643
+    .line 2613
     :goto_1
     iget-object v5, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v5, :cond_0
 
-    .line 2644
+    .line 2614
     iget-object v5, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-virtual {v5, v4, p1, v8}, Landroid/view/View;->addFocusables(Ljava/util/ArrayList;II)V
 
     goto :goto_0
 
-    .line 2640
+    .line 2610
     :cond_1
     invoke-direct {p0, v1, v2, v8}, Lcom/sonyericsson/paneview/PaneView;->ensureItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;Landroid/graphics/Rect;Z)V
 
     goto :goto_1
 
-    .line 2650
+    .line 2620
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_2
     invoke-static {v2}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2652
+    .line 2622
     return-object v4
 .end method
 
@@ -3206,15 +3206,15 @@
     .parameter "pane"
 
     .prologue
-    .line 2723
+    .line 2693
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-eqz v0, :cond_0
 
-    .line 2724
+    .line 2694
     add-int/lit8 v0, p1, 0x1
 
-    .line 2726
+    .line 2696
     :goto_0
     return v0
 
@@ -3232,7 +3232,7 @@
     .parameter "pane"
 
     .prologue
-    .line 2425
+    .line 2395
     sub-float v0, p2, p1
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->positionToPixels(F)I
@@ -3247,17 +3247,17 @@
     .parameter "pane"
 
     .prologue
-    .line 2737
+    .line 2707
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-eqz v0, :cond_0
 
-    .line 2738
+    .line 2708
     const/4 v0, 0x1
 
     sub-int v0, p1, v0
 
-    .line 2740
+    .line 2710
     :goto_0
     return v0
 
@@ -3288,12 +3288,12 @@
 
     const/4 v10, 0x0
 
-    .line 1911
+    .line 1881
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 1914
+    .line 1884
     .local v1, itemDrawRect:Landroid/graphics/Rect;
     invoke-virtual {p1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -3318,16 +3318,16 @@
 
     check-cast v7, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1916
+    .line 1886
     .local v7, deletedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     if-ne v7, v0, :cond_1
 
-    .line 1917
+    .line 1887
     iput-object v10, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1921
+    .line 1891
     :cond_1
     if-eqz v7, :cond_0
 
@@ -3335,10 +3335,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1922
+    .line 1892
     const/4 v6, 0x0
 
-    .line 1926
+    .line 1896
     .local v6, deleteRenderer:Lcom/sonyericsson/animation/Renderer;
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
@@ -3346,23 +3346,23 @@
 
     if-eqz p2, :cond_2
 
-    .line 1927
+    .line 1897
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     invoke-interface {v0}, Lcom/sonyericsson/paneview/RendererFactory;->getDeleteRenderer()Lcom/sonyericsson/animation/Renderer;
 
     move-result-object v6
 
-    .line 1929
+    .line 1899
     :cond_2
     if-eqz v6, :cond_3
 
-    .line 1932
+    .line 1902
     new-instance v9, Lcom/sonyericsson/paneview/PaneView$Item;
 
     invoke-direct {v9, v10}, Lcom/sonyericsson/paneview/PaneView$Item;-><init>(Lcom/sonyericsson/paneview/PaneView$1;)V
 
-    .line 1933
+    .line 1903
     .local v9, item:Lcom/sonyericsson/paneview/PaneView$Item;
     invoke-static {}, Lcom/sonyericsson/paneview/PaneLocation;->obtain()Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -3370,29 +3370,29 @@
 
     iput-object v0, v9, Lcom/sonyericsson/paneview/PaneView$Item;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
-    .line 1934
+    .line 1904
     iget-object v0, v9, Lcom/sonyericsson/paneview/PaneView$Item;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v3, v7, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     invoke-virtual {v0, v3}, Lcom/sonyericsson/paneview/PaneLocation;->set(Lcom/sonyericsson/paneview/PaneLocation;)V
 
-    .line 1935
+    .line 1905
     iget-object v0, v7, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     iput-object v0, v9, Lcom/sonyericsson/paneview/PaneView$Item;->view:Landroid/view/View;
 
-    .line 1936
+    .line 1906
     iput-object v6, v9, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 1937
+    .line 1907
     iget-object v0, v9, Lcom/sonyericsson/paneview/PaneView$Item;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1938
+    .line 1908
     const/4 v0, 0x0
 
     iget-object v3, v9, Lcom/sonyericsson/paneview/PaneView$Item;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -3417,7 +3417,7 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1940
+    .line 1910
     iget-object v0, v9, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -3428,35 +3428,35 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/sonyericsson/animation/Renderer;->start(Landroid/graphics/Rect;IIJ)V
 
-    .line 1941
+    .line 1911
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDeletedItems:Ljava/util/LinkedList;
 
     invoke-virtual {v0, v9}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1944
+    .line 1914
     .end local v9           #item:Lcom/sonyericsson/paneview/PaneView$Item;
     :cond_3
     iget-object v0, v7, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 1948
+    .line 1918
     iput-object v10, v7, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     goto :goto_0
 
-    .line 1954
+    .line 1924
     .end local v6           #deleteRenderer:Lcom/sonyericsson/animation/Renderer;
     .end local v7           #deletedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_4
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->clearItems(Ljava/util/HashMap;)V
 
-    .line 1956
+    .line 1926
     invoke-static {v1}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1957
+    .line 1927
     return-void
 .end method
 
@@ -3464,7 +3464,7 @@
     .locals 1
 
     .prologue
-    .line 1572
+    .line 1571
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mIsInteracting:Z
 
     if-eqz v0, :cond_0
@@ -3473,17 +3473,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 1573
+    .line 1572
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mIsInteracting:Z
 
-    .line 1574
+    .line 1573
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mInteractionListener:Lcom/sonyericsson/paneview/PaneView$InteractionListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/paneview/PaneView$InteractionListener;->onInteractionEnd()V
 
-    .line 1576
+    .line 1575
     :cond_0
     return-void
 .end method
@@ -3492,7 +3492,7 @@
     .locals 1
 
     .prologue
-    .line 1565
+    .line 1564
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mIsInteracting:Z
 
     if-nez v0, :cond_0
@@ -3501,17 +3501,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 1566
+    .line 1565
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mIsInteracting:Z
 
-    .line 1567
+    .line 1566
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mInteractionListener:Lcom/sonyericsson/paneview/PaneView$InteractionListener;
 
     invoke-interface {v0}, Lcom/sonyericsson/paneview/PaneView$InteractionListener;->onInteractionStart()V
 
-    .line 1569
+    .line 1568
     :cond_0
     return-void
 .end method
@@ -3525,7 +3525,7 @@
     .prologue
     const/high16 v3, 0x3f80
 
-    .line 1969
+    .line 1939
     iget v2, p1, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
 
     int-to-float v2, v2
@@ -3546,31 +3546,31 @@
 
     if-lez v2, :cond_1
 
-    .line 1972
+    .line 1942
     :cond_0
     const/4 v2, 0x0
 
-    .line 1983
+    .line 1953
     :goto_0
     return v2
 
-    .line 1974
+    .line 1944
     :cond_1
     const/4 v1, 0x0
 
-    .line 1975
+    .line 1945
     .local v1, visible:Z
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 1976
+    .line 1946
     .local v0, rect:Landroid/graphics/Rect;
     iget-object v2, p1, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1977
+    .line 1947
     iget v2, p1, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
 
     int-to-float v2, v2
@@ -3593,23 +3593,23 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1979
+    .line 1949
     invoke-virtual {v0, p3}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1980
+    .line 1950
     const/4 v1, 0x1
 
-    .line 1982
+    .line 1952
     :cond_2
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
     move v2, v1
 
-    .line 1983
+    .line 1953
     goto :goto_0
 .end method
 
@@ -3619,12 +3619,12 @@
     .parameter "placement"
 
     .prologue
-    .line 2239
+    .line 2209
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 2240
+    .line 2210
     .local v0, rect:Landroid/graphics/Rect;
     iget-object v1, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -3632,7 +3632,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 2241
+    .line 2211
     iget-object v1, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget v1, v1, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
@@ -3669,20 +3669,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2243
+    .line 2213
     const/4 v1, 0x1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/sonyericsson/paneview/PaneView;->ensureItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;Landroid/graphics/Rect;Z)V
 
-    .line 2244
+    .line 2214
     iget-object v1, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->unionInvalidRectWithView(Landroid/view/View;)V
 
-    .line 2245
+    .line 2215
     invoke-static {v0}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 2246
+    .line 2216
     return-void
 .end method
 
@@ -3692,21 +3692,21 @@
     .parameter "rect"
 
     .prologue
-    .line 2578
+    .line 2548
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 2580
+    .line 2550
     .local v0, root:Landroid/view/ViewGroup;
     if-eqz v0, :cond_0
 
-    .line 2581
+    .line 2551
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2583
+    .line 2553
     :cond_0
     return-void
 .end method
@@ -3718,7 +3718,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1699
+    .line 1669
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mItems1:Ljava/util/HashMap;
@@ -3729,24 +3729,24 @@
 
     if-eqz v2, :cond_3
 
-    .line 1700
+    .line 1670
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mItems2:Ljava/util/HashMap;
 
-    .line 1701
+    .line 1671
     .local v0, newItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItems1:Ljava/util/HashMap;
 
-    .line 1708
+    .line 1678
     .local v1, oldItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     :goto_0
     invoke-direct {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->clearItems(Ljava/util/HashMap;)V
 
-    .line 1710
+    .line 1680
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     if-eqz v2, :cond_4
 
-    .line 1712
+    .line 1682
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     invoke-interface {v2}, Lcom/sonyericsson/paneview/PaneAdapter;->getNumberOfPanes()I
@@ -3755,10 +3755,10 @@
 
     iput v2, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
 
-    .line 1716
+    .line 1686
     invoke-direct {p0, v0, v1, p1}, Lcom/sonyericsson/paneview/PaneView;->getAdapterItems(Ljava/util/HashMap;Ljava/util/HashMap;Z)V
 
-    .line 1723
+    .line 1693
     :goto_1
     invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -3766,19 +3766,19 @@
 
     if-nez v2, :cond_0
 
-    .line 1724
+    .line 1694
     invoke-direct {p0, v1, p1}, Lcom/sonyericsson/paneview/PaneView;->handleDeletedItems(Ljava/util/HashMap;Z)V
 
-    .line 1728
+    .line 1698
     :cond_0
     iput-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
-    .line 1731
+    .line 1701
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItemsSorted:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->clear()V
 
-    .line 1732
+    .line 1702
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItemsSorted:Ljava/util/LinkedList;
 
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
@@ -3789,7 +3789,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/LinkedList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1733
+    .line 1703
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItemsSorted:Ljava/util/LinkedList;
 
     new-instance v3, Lcom/sonyericsson/paneview/PaneView$7;
@@ -3798,12 +3798,12 @@
 
     invoke-static {v2, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 1741
+    .line 1711
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
     if-eqz v2, :cond_1
 
-    .line 1742
+    .line 1712
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
@@ -3816,7 +3816,7 @@
 
     invoke-interface {v2, v3, v4}, Lcom/sonyericsson/paneview/PaneView$ScrollListener;->onScroll(FI)V
 
-    .line 1746
+    .line 1716
     :cond_1
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -3834,44 +3834,44 @@
 
     if-lez v2, :cond_2
 
-    .line 1747
+    .line 1717
     iget v2, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
 
     sub-int/2addr v2, v5
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->moveToPane(I)Z
 
-    .line 1751
+    .line 1721
     :cond_2
     iget-boolean v2, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusDesired:Z
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->setFocusable(Z)V
 
-    .line 1752
+    .line 1722
     const/high16 v2, 0x4
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->setDescendantFocusability(I)V
 
-    .line 1755
+    .line 1725
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->requestLayout()V
 
-    .line 1756
+    .line 1726
     return-void
 
-    .line 1703
+    .line 1673
     .end local v0           #newItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     .end local v1           #oldItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     :cond_3
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mItems1:Ljava/util/HashMap;
 
-    .line 1704
+    .line 1674
     .restart local v0       #newItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItems2:Ljava/util/HashMap;
 
     .restart local v1       #oldItems:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     goto :goto_0
 
-    .line 1718
+    .line 1688
     :cond_4
     const/4 v2, 0x0
 
@@ -3889,12 +3889,12 @@
 
     const/4 v2, 0x0
 
-    .line 2751
+    .line 2721
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-eqz v0, :cond_1
 
-    .line 2752
+    .line 2722
     add-int/lit8 v0, p1, 0x1
 
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getNumberOfPanes()I
@@ -3905,17 +3905,17 @@
 
     move v0, v3
 
-    .line 2754
+    .line 2724
     :goto_0
     return v0
 
     :cond_0
     move v0, v2
 
-    .line 2752
+    .line 2722
     goto :goto_0
 
-    .line 2754
+    .line 2724
     :cond_1
     if-lez p1, :cond_2
 
@@ -3938,27 +3938,27 @@
 
     const/4 v2, 0x0
 
-    .line 2765
+    .line 2735
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-eqz v0, :cond_1
 
-    .line 2766
+    .line 2736
     if-lez p1, :cond_0
 
     move v0, v3
 
-    .line 2768
+    .line 2738
     :goto_0
     return v0
 
     :cond_0
     move v0, v2
 
-    .line 2766
+    .line 2736
     goto :goto_0
 
-    .line 2768
+    .line 2738
     :cond_1
     add-int/lit8 v0, p1, 0x1
 
@@ -3983,19 +3983,19 @@
     .parameter "pixels"
 
     .prologue
-    .line 2450
+    .line 2420
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-nez v0, :cond_0
 
-    .line 2451
+    .line 2421
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mWidthWithMargin:I
 
     int-to-float v0, v0
 
     div-float v0, p1, v0
 
-    .line 2454
+    .line 2424
     :goto_0
     return v0
 
@@ -4016,12 +4016,12 @@
     .parameter "position"
 
     .prologue
-    .line 2435
+    .line 2405
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-nez v0, :cond_0
 
-    .line 2436
+    .line 2406
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mWidthWithMargin:I
 
     int-to-float v0, v0
@@ -4032,7 +4032,7 @@
 
     move-result v0
 
-    .line 2439
+    .line 2409
     :goto_0
     return v0
 
@@ -4057,12 +4057,12 @@
     .parameter "item"
 
     .prologue
-    .line 2373
+    .line 2343
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
     if-eqz v1, :cond_0
 
-    .line 2374
+    .line 2344
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
     invoke-static {p1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
@@ -4073,13 +4073,13 @@
 
     invoke-interface {v1, v2, v3}, Lcom/sonyericsson/paneview/PaneView$ItemViewListener;->onViewRemoved(ILandroid/view/View;)V
 
-    .line 2377
+    .line 2347
     :cond_0
     iget-object v1, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 2378
+    .line 2348
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     invoke-static {p1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
@@ -4090,18 +4090,18 @@
 
     move-result v0
 
-    .line 2379
+    .line 2349
     .local v0, viewType:I
     iget-object v1, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-direct {p0, v1, v0}, Lcom/sonyericsson/paneview/PaneView;->addViewToCache(Landroid/view/View;I)V
 
-    .line 2380
+    .line 2350
     const/4 v1, 0x0
 
     iput-object v1, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
-    .line 2381
+    .line 2351
     return-void
 .end method
 
@@ -4112,7 +4112,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2407
+    .line 2377
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mViewCache:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4125,18 +4125,18 @@
 
     check-cast v0, Ljava/util/LinkedList;
 
-    .line 2408
+    .line 2378
     .local v0, viewTypeCache:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/view/View;>;"
     if-nez v0, :cond_0
 
     move-object v1, v3
 
-    .line 2414
+    .line 2384
     .end local p0
     :goto_0
     return-object v1
 
-    .line 2411
+    .line 2381
     .restart local p0
     :cond_0
     invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
@@ -4147,10 +4147,10 @@
 
     move-object v1, v3
 
-    .line 2412
+    .line 2382
     goto :goto_0
 
-    .line 2414
+    .line 2384
     :cond_1
     invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
 
@@ -4169,7 +4169,7 @@
     .parameter "view"
 
     .prologue
-    .line 2875
+    .line 2845
     invoke-virtual {p1}, Landroid/view/View;->getBottom()I
 
     move-result v1
@@ -4180,11 +4180,11 @@
 
     sub-int v0, v1, v2
 
-    .line 2876
+    .line 2846
     .local v0, delta:I
     if-lez v0, :cond_1
 
-    .line 2877
+    .line 2847
     int-to-float v1, v0
 
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->pixelsToPosition(F)F
@@ -4193,25 +4193,25 @@
 
     invoke-virtual {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->scroll(F)V
 
-    .line 2884
+    .line 2854
     :cond_0
     :goto_0
     return-void
 
-    .line 2879
+    .line 2849
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result v0
 
-    .line 2880
+    .line 2850
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getPaddingTop()I
 
     move-result v1
 
     if-ge v0, v1, :cond_0
 
-    .line 2881
+    .line 2851
     int-to-float v1, v0
 
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->pixelsToPosition(F)F
@@ -4230,7 +4230,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1319
+    .line 1318
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     invoke-static {p1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
@@ -4243,30 +4243,30 @@
 
     iput-object v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 1320
+    .line 1319
     iget-object v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     if-eqz v0, :cond_0
 
-    .line 1321
+    .line 1320
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 1322
+    .line 1321
     .local v1, itemDrawRect:Landroid/graphics/Rect;
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->rendererIsStandard:Z
 
-    .line 1323
+    .line 1322
     iget-object v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1324
+    .line 1323
     const/4 v0, 0x0
 
     iget-object v3, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -4291,7 +4291,7 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1326
+    .line 1325
     iget-object v0, p1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -4302,10 +4302,10 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/sonyericsson/animation/Renderer;->start(Landroid/graphics/Rect;IIJ)V
 
-    .line 1327
+    .line 1326
     invoke-static {v1}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1329
+    .line 1328
     .end local v1           #itemDrawRect:Landroid/graphics/Rect;
     :cond_0
     return-void
@@ -4317,7 +4317,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 978
+    .line 977
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
@@ -4334,12 +4334,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 979
+    .line 978
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 980
+    .line 979
     .local v2, rect:Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
@@ -4365,7 +4365,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 981
+    .line 980
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v3, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -4373,7 +4373,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 982
+    .line 981
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v3}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
@@ -4404,7 +4404,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 984
+    .line 983
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getPaddingLeft()I
 
     move-result v3
@@ -4415,7 +4415,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 985
+    .line 984
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
@@ -4432,32 +4432,32 @@
 
     goto :goto_0
 
-    .line 987
+    .line 986
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_0
     invoke-static {v2}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 989
+    .line 988
     iput-object v6, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 991
+    .line 990
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     invoke-interface {v3}, Lcom/sonyericsson/paneview/Transformer;->finishSetup()V
 
-    .line 996
+    .line 995
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v2           #rect:Landroid/graphics/Rect;
     :goto_1
     return-void
 
-    .line 993
+    .line 992
     :cond_1
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     invoke-interface {v3}, Lcom/sonyericsson/paneview/Transformer;->cleanup()V
 
-    .line 994
+    .line 993
     iput-object v6, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     goto :goto_1
@@ -4470,30 +4470,30 @@
     .parameter "cache"
 
     .prologue
-    .line 2166
+    .line 2136
     invoke-virtual {p2}, Landroid/view/View;->getLeft()I
 
     move-result v7
 
-    .line 2167
+    .line 2137
     .local v7, cl:I
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
 
     move-result v9
 
-    .line 2168
+    .line 2138
     .local v9, ct:I
     invoke-virtual {p2}, Landroid/view/View;->getRight()I
 
     move-result v8
 
-    .line 2169
+    .line 2139
     .local v8, cr:I
     invoke-virtual {p2}, Landroid/view/View;->getBottom()I
 
     move-result v6
 
-    .line 2171
+    .line 2141
     .local v6, cb:I
     int-to-float v1, v7
 
@@ -4513,17 +4513,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 2183
+    .line 2153
     :goto_0
     return-void
 
-    .line 2175
+    .line 2145
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v10
 
-    .line 2177
+    .line 2147
     .local v10, restoreTo:I
     int-to-float v0, v7
 
@@ -4531,7 +4531,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2178
+    .line 2148
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -4542,7 +4542,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 2180
+    .line 2150
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -4551,7 +4551,7 @@
 
     invoke-virtual {p1, p3, v0, v1, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 2182
+    .line 2152
     invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     goto :goto_0
@@ -4561,12 +4561,12 @@
     .locals 1
 
     .prologue
-    .line 1554
+    .line 1553
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->startDynamicsRunnable(Z)V
 
-    .line 1555
+    .line 1554
     return-void
 .end method
 
@@ -4575,19 +4575,19 @@
     .parameter "startInteraction"
 
     .prologue
-    .line 1558
+    .line 1557
     if-eqz p1, :cond_0
 
-    .line 1559
+    .line 1558
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->interactionStart()V
 
-    .line 1561
+    .line 1560
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDynamicsRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->post(Ljava/lang/Runnable;)Z
 
-    .line 1562
+    .line 1561
     return-void
 .end method
 
@@ -4596,10 +4596,10 @@
     .parameter "view"
 
     .prologue
-    .line 2459
+    .line 2429
     if-eqz p1, :cond_0
 
-    .line 2461
+    .line 2431
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
@@ -4620,7 +4620,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 2463
+    .line 2433
     :cond_0
     return-void
 .end method
@@ -4639,29 +4639,29 @@
     .end annotation
 
     .prologue
-    .line 1887
+    .line 1857
     .local p1, adapterItems:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/sonyericsson/paneview/PaneView$AdapterItem;>;"
     iget-boolean v4, p0, Lcom/sonyericsson/paneview/PaneView;->mKeepMaxScroll:Z
 
     if-eqz v4, :cond_1
 
-    .line 1900
+    .line 1870
     :cond_0
     return-void
 
-    .line 1890
+    .line 1860
     :cond_1
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getHeight()I
 
     move-result v1
 
-    .line 1891
+    .line 1861
     .local v1, height:I
     const/4 v4, 0x0
 
     iput v4, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
-    .line 1892
+    .line 1862
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -4681,7 +4681,7 @@
 
     check-cast v0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1893
+    .line 1863
     .local v0, adapterItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v4, v0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -4691,7 +4691,7 @@
 
     if-le v4, v1, :cond_2
 
-    .line 1894
+    .line 1864
     iget-object v4, v0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget-object v4, v4, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
@@ -4706,7 +4706,7 @@
 
     move-result v3
 
-    .line 1895
+    .line 1865
     .local v3, maxScroll:F
     iget v4, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
@@ -4714,7 +4714,7 @@
 
     if-lez v4, :cond_2
 
-    .line 1896
+    .line 1866
     iput v3, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
     goto :goto_0
@@ -4728,14 +4728,14 @@
 
     const/4 v10, 0x0
 
-    .line 1583
+    .line 1582
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v7}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
 
     move-result v4
 
-    .line 1584
+    .line 1583
     .local v4, position:F
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -4747,13 +4747,13 @@
 
     move-result v6
 
-    .line 1585
+    .line 1584
     .local v6, scroll:I
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v5
 
-    .line 1587
+    .line 1586
     .local v5, rect:Landroid/graphics/Rect;
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
@@ -4780,7 +4780,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1588
+    .line 1587
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -4788,7 +4788,7 @@
 
     invoke-virtual {v5, v7}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1589
+    .line 1588
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
     iget v7, v7, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
@@ -4815,7 +4815,7 @@
 
     invoke-virtual {v5, v7, v8}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1591
+    .line 1590
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
 
     move-result v7
@@ -4830,12 +4830,12 @@
 
     if-eqz v7, :cond_3
 
-    .line 1593
+    .line 1592
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v7, :cond_2
 
-    .line 1594
+    .line 1593
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-virtual {v7}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -4844,12 +4844,12 @@
 
     if-nez v7, :cond_1
 
-    .line 1596
+    .line 1595
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-direct {p0, v7}, Lcom/sonyericsson/paneview/PaneView;->addViewAndLayoutParams(Landroid/view/View;)V
 
-    .line 1601
+    .line 1600
     :cond_1
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
@@ -4865,7 +4865,7 @@
 
     invoke-virtual {v7, v8}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 1602
+    .line 1601
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     iget v8, v5, Landroid/graphics/Rect;->top:I
@@ -4880,7 +4880,7 @@
 
     invoke-virtual {v7, v8}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 1609
+    .line 1608
     :goto_1
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
@@ -4888,13 +4888,13 @@
 
     goto :goto_0
 
-    .line 1607
+    .line 1606
     :cond_2
     invoke-direct {p0, v1, v5, v11}, Lcom/sonyericsson/paneview/PaneView;->ensureItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;Landroid/graphics/Rect;Z)V
 
     goto :goto_1
 
-    .line 1610
+    .line 1609
     :cond_3
     iget-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
@@ -4921,10 +4921,10 @@
 
     if-nez v7, :cond_0
 
-    .line 1616
+    .line 1615
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->removeItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
-    .line 1617
+    .line 1616
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     if-eqz v7, :cond_0
@@ -4933,34 +4933,34 @@
 
     if-eqz v7, :cond_0
 
-    .line 1618
+    .line 1617
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     iget-object v8, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v7, v8}, Lcom/sonyericsson/paneview/RendererFactory;->recycle(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 1619
+    .line 1618
     const/4 v7, 0x0
 
     iput-object v7, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
-    .line 1620
+    .line 1619
     iput-boolean v10, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->rendererIsStandard:Z
 
     goto/16 :goto_0
 
-    .line 1625
+    .line 1624
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_5
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v7, :cond_7
 
-    .line 1628
+    .line 1627
     float-to-int v3, v4
 
-    .line 1629
+    .line 1628
     .local v3, pane1:I
     if-ltz v3, :cond_6
 
@@ -4968,7 +4968,7 @@
 
     if-ge v3, v7, :cond_6
 
-    .line 1630
+    .line 1629
     iget v7, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateOffsetX:I
 
     invoke-virtual {p0, v3}, Lcom/sonyericsson/paneview/PaneView;->getPaneRelativeOffset(I)I
@@ -4977,7 +4977,7 @@
 
     add-int v2, v7, v8
 
-    .line 1631
+    .line 1630
     .local v2, left:I
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
@@ -4997,7 +4997,7 @@
 
     invoke-virtual {v7, v2, v10, v8, v9}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 1635
+    .line 1634
     .end local v2           #left:I
     :cond_6
     iget v7, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
@@ -5006,7 +5006,7 @@
 
     if-ge v3, v7, :cond_7
 
-    .line 1636
+    .line 1635
     iget v7, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateOffsetX:I
 
     add-int/lit8 v8, v3, 0x1
@@ -5017,7 +5017,7 @@
 
     add-int v2, v7, v8
 
-    .line 1637
+    .line 1636
     .restart local v2       #left:I
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
@@ -5037,34 +5037,34 @@
 
     invoke-virtual {v7, v2, v10, v8, v9}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 1642
+    .line 1641
     .end local v2           #left:I
     .end local v3           #pane1:I
     :cond_7
     invoke-static {v5}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1646
+    .line 1645
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
     if-eqz v7, :cond_8
 
-    .line 1647
+    .line 1646
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
     iget v8, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
 
     invoke-interface {v7, v4, v8}, Lcom/sonyericsson/paneview/PaneView$ScrollListener;->onScroll(FI)V
 
-    .line 1651
+    .line 1650
     :cond_8
     invoke-virtual {p0, v10, v10}, Lcom/sonyericsson/paneview/PaneView;->awakenScrollBars(IZ)Z
 
-    .line 1654
+    .line 1653
     iget-object v7, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v7}, Lcom/sonyericsson/paneview/PaneView;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 1655
+    .line 1654
     return-void
 .end method
 
@@ -5079,16 +5079,16 @@
 
     const/high16 v3, 0x3f80
 
-    .line 1477
+    .line 1476
     move v0, p3
 
-    .line 1478
+    .line 1477
     .local v0, tmpSnapPosition:F
     iget-boolean v1, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-nez v1, :cond_2
 
-    .line 1479
+    .line 1478
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mVelocityThreshold:I
 
     neg-int v1, v1
@@ -5113,15 +5113,15 @@
 
     if-gez v1, :cond_1
 
-    .line 1481
+    .line 1480
     add-float/2addr v0, v3
 
-    .line 1496
+    .line 1495
     :cond_0
     :goto_0
     return v0
 
-    .line 1482
+    .line 1481
     :cond_1
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mVelocityThreshold:I
 
@@ -5139,12 +5139,12 @@
 
     if-lez v1, :cond_0
 
-    .line 1484
+    .line 1483
     sub-float/2addr v0, v3
 
     goto :goto_0
 
-    .line 1489
+    .line 1488
     :cond_2
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mVelocityThreshold:I
 
@@ -5164,12 +5164,12 @@
 
     if-lez v1, :cond_3
 
-    .line 1490
+    .line 1489
     sub-float/2addr v0, v3
 
     goto :goto_0
 
-    .line 1491
+    .line 1490
     :cond_3
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mVelocityThreshold:I
 
@@ -5193,7 +5193,7 @@
 
     if-gez v1, :cond_0
 
-    .line 1493
+    .line 1492
     add-float/2addr v0, v3
 
     goto :goto_0
@@ -5205,15 +5205,15 @@
     .locals 1
 
     .prologue
-    .line 1013
+    .line 1012
     invoke-super {p0}, Landroid/widget/AdapterView;->cancelLongPress()V
 
-    .line 1014
+    .line 1013
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/GestureDetector;->cancelLongPress()V
 
-    .line 1015
+    .line 1014
     return-void
 .end method
 
@@ -5223,7 +5223,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 673
+    .line 672
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -5249,25 +5249,25 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 674
+    .line 673
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$Item;
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     if-eqz v2, :cond_0
 
-    .line 675
+    .line 674
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     iget-object v3, v1, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v2, v3}, Lcom/sonyericsson/paneview/RendererFactory;->recycle(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 676
+    .line 675
     iput-object v4, v1, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     goto :goto_0
 
-    .line 680
+    .line 679
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$Item;
     :cond_1
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mDeletedItems:Ljava/util/LinkedList;
@@ -5290,25 +5290,25 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$Item;
 
-    .line 681
+    .line 680
     .restart local v1       #item:Lcom/sonyericsson/paneview/PaneView$Item;
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     if-eqz v2, :cond_2
 
-    .line 682
+    .line 681
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
     iget-object v3, v1, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     invoke-interface {v2, v3}, Lcom/sonyericsson/paneview/RendererFactory;->recycle(Lcom/sonyericsson/animation/Renderer;)V
 
-    .line 683
+    .line 682
     iput-object v4, v1, Lcom/sonyericsson/paneview/PaneView$Item;->renderer:Lcom/sonyericsson/animation/Renderer;
 
     goto :goto_1
 
-    .line 686
+    .line 685
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$Item;
     :cond_3
     return-void
@@ -5318,7 +5318,7 @@
     .locals 3
 
     .prologue
-    .line 692
+    .line 691
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -5344,18 +5344,18 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 693
+    .line 692
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v2, :cond_0
 
-    .line 694
+    .line 693
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->removeItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
     goto :goto_0
 
-    .line 697
+    .line 696
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_1
     return-void
@@ -5367,21 +5367,21 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1196
+    .line 1195
     iget v3, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
     cmpl-float v3, v3, v4
 
     if-nez v3, :cond_0
 
-    .line 1197
+    .line 1196
     const/4 v3, 0x0
 
-    .line 1203
+    .line 1202
     :goto_0
     return v3
 
-    .line 1200
+    .line 1199
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -5389,7 +5389,7 @@
 
     move-result v2
 
-    .line 1201
+    .line 1200
     .local v2, scrollPosition:F
     iget v3, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
@@ -5397,7 +5397,7 @@
 
     move-result v0
 
-    .line 1202
+    .line 1201
     .local v0, clampedScrollPosition:F
     sub-float v3, v0, v2
 
@@ -5405,7 +5405,7 @@
 
     move-result v1
 
-    .line 1203
+    .line 1202
     .local v1, outside:F
     const/high16 v3, 0x447a
 
@@ -5428,21 +5428,21 @@
 
     const/4 v4, 0x0
 
-    .line 1209
+    .line 1208
     iget v3, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
     cmpl-float v3, v3, v4
 
     if-nez v3, :cond_0
 
-    .line 1210
+    .line 1209
     const/4 v3, 0x0
 
-    .line 1220
+    .line 1219
     :goto_0
     return v3
 
-    .line 1213
+    .line 1212
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -5450,7 +5450,7 @@
 
     move-result v2
 
-    .line 1214
+    .line 1213
     .local v2, scrollPosition:F
     iget v3, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
@@ -5458,7 +5458,7 @@
 
     move-result v0
 
-    .line 1215
+    .line 1214
     .local v0, clampedScrollPosition:F
     sub-float v3, v0, v2
 
@@ -5466,7 +5466,7 @@
 
     move-result v1
 
-    .line 1217
+    .line 1216
     .local v1, outside:F
     iget v3, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
@@ -5474,7 +5474,7 @@
 
     if-lez v3, :cond_1
 
-    .line 1218
+    .line 1217
     add-float v3, v0, v1
 
     mul-float/2addr v3, v5
@@ -5483,7 +5483,7 @@
 
     goto :goto_0
 
-    .line 1220
+    .line 1219
     :cond_1
     mul-float v3, v5, v0
 
@@ -5496,7 +5496,7 @@
     .locals 3
 
     .prologue
-    .line 1227
+    .line 1226
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
     const/4 v1, 0x0
@@ -5505,10 +5505,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1228
+    .line 1227
     const/4 v0, 0x0
 
-    .line 1231
+    .line 1230
     :goto_0
     return v0
 
@@ -5535,7 +5535,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1262
+    .line 1261
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
@@ -5548,10 +5548,10 @@
 
     invoke-virtual {v2, v3, v4, v5, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1264
+    .line 1263
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->drawBackplate(Landroid/graphics/Canvas;)V
 
-    .line 1266
+    .line 1265
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     if-eqz v2, :cond_0
@@ -5564,17 +5564,17 @@
 
     if-eqz v2, :cond_0
 
-    .line 1267
+    .line 1266
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->drawUsingTransformer(Landroid/graphics/Canvas;)V
 
-    .line 1301
+    .line 1300
     :goto_0
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->drawFocusRect(Landroid/graphics/Canvas;)V
 
-    .line 1316
+    .line 1315
     return-void
 
-    .line 1269
+    .line 1268
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
@@ -5614,12 +5614,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 1275
+    .line 1274
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 1276
+    .line 1275
     .local v1, rect:Landroid/graphics/Rect;
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
@@ -5629,7 +5629,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1277
+    .line 1276
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v2}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
@@ -5674,7 +5674,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1282
+    .line 1281
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     iget-object v2, v2, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
@@ -5685,21 +5685,21 @@
 
     if-eqz v2, :cond_1
 
-    .line 1283
+    .line 1282
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusedItemDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {p1, v2, v1}, Lcom/sonyericsson/paneview/PaneView;->drawDrawable(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;)V
 
-    .line 1288
+    .line 1287
     :goto_1
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItemBackgroundDrawn:Z
 
-    .line 1290
+    .line 1289
     invoke-static {v1}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1295
+    .line 1294
     .end local v1           #rect:Landroid/graphics/Rect;
     :goto_2
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
@@ -5708,16 +5708,16 @@
 
     move-result v0
 
-    .line 1297
+    .line 1296
     .local v0, position:F
     invoke-direct {p0, p1, v0}, Lcom/sonyericsson/paneview/PaneView;->drawDeletedItems(Landroid/graphics/Canvas;F)V
 
-    .line 1298
+    .line 1297
     invoke-direct {p0, p1, v0}, Lcom/sonyericsson/paneview/PaneView;->drawItems(Landroid/graphics/Canvas;F)V
 
     goto/16 :goto_0
 
-    .line 1285
+    .line 1284
     .end local v0           #position:F
     .restart local v1       #rect:Landroid/graphics/Rect;
     :cond_1
@@ -5727,7 +5727,7 @@
 
     goto :goto_1
 
-    .line 1292
+    .line 1291
     .end local v1           #rect:Landroid/graphics/Rect;
     :cond_2
     iput-boolean v5, p0, Lcom/sonyericsson/paneview/PaneView;->mItemBackgroundDrawn:Z
@@ -5740,12 +5740,12 @@
     .parameter "direction"
 
     .prologue
-    .line 2894
+    .line 2864
     invoke-virtual {p0, p0, p1}, Lcom/sonyericsson/paneview/PaneView;->focusSearch(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2896
+    .line 2866
     .local v0, view:Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -5768,21 +5768,21 @@
     .parameter "direction"
 
     .prologue
-    .line 2901
+    .line 2871
     const/4 v0, 0x0
 
-    .line 2904
+    .line 2874
     .local v0, focusCandidate:Landroid/view/View;
     const/high16 v2, 0x4
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->setDescendantFocusability(I)V
 
-    .line 2906
+    .line 2876
     iget-boolean v2, p0, Lcom/sonyericsson/paneview/PaneView;->mPreventExternalFocus:Z
 
     if-eqz v2, :cond_2
 
-    .line 2910
+    .line 2880
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
 
     move-result-object v2
@@ -5791,7 +5791,7 @@
 
     move-result-object v0
 
-    .line 2917
+    .line 2887
     :goto_0
     iget-boolean v2, p0, Lcom/sonyericsson/paneview/PaneView;->mPreferExternalFocus:Z
 
@@ -5801,31 +5801,31 @@
 
     if-eqz p1, :cond_0
 
-    .line 2920
+    .line 2890
     invoke-direct {p0, p1, v0, p2}, Lcom/sonyericsson/paneview/PaneView;->detectUserPaneSwitch(Landroid/view/View;Landroid/view/View;I)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 2921
+    .line 2891
     const/4 v0, 0x0
 
-    .line 2925
+    .line 2895
     :cond_0
     if-nez v0, :cond_3
 
-    .line 2926
+    .line 2896
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/paneview/PaneView;->focusSearchOffScreen(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2936
+    .line 2906
     :cond_1
     :goto_1
     return-object v0
 
-    .line 2914
+    .line 2884
     :cond_2
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getParent()Landroid/view/ViewParent;
 
@@ -5837,7 +5837,7 @@
 
     goto :goto_0
 
-    .line 2927
+    .line 2897
     :cond_3
     const/16 v2, 0x21
 
@@ -5852,16 +5852,16 @@
 
     if-nez v2, :cond_1
 
-    .line 2929
+    .line 2899
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/paneview/PaneView;->focusSearchOffScreen(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2931
+    .line 2901
     .local v1, offScreenFocus:Landroid/view/View;
     if-eqz v1, :cond_1
 
-    .line 2932
+    .line 2902
     move-object v0, v1
 
     goto :goto_1
@@ -5871,7 +5871,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 59
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getAdapter()Lcom/sonyericsson/paneview/PaneAdapter;
 
     move-result-object v0
@@ -5883,7 +5883,7 @@
     .locals 1
 
     .prologue
-    .line 540
+    .line 539
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     return-object v0
@@ -5893,7 +5893,7 @@
     .locals 1
 
     .prologue
-    .line 1243
+    .line 1242
     const/high16 v0, 0x3f80
 
     return v0
@@ -5903,7 +5903,7 @@
     .locals 1
 
     .prologue
-    .line 843
+    .line 842
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v0}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
@@ -5922,10 +5922,10 @@
     .parameter "outRect"
 
     .prologue
-    .line 1248
+    .line 1247
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 1252
+    .line 1251
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingLeft:I
@@ -5934,7 +5934,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->left:I
 
-    .line 1253
+    .line 1252
     iget v0, p1, Landroid/graphics/Rect;->top:I
 
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingTop:I
@@ -5943,7 +5943,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->top:I
 
-    .line 1254
+    .line 1253
     iget v0, p1, Landroid/graphics/Rect;->right:I
 
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingRight:I
@@ -5952,7 +5952,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->right:I
 
-    .line 1255
+    .line 1254
     iget v0, p1, Landroid/graphics/Rect;->bottom:I
 
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingBottom:I
@@ -5961,7 +5961,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 1256
+    .line 1255
     return-void
 .end method
 
@@ -5970,7 +5970,7 @@
     .parameter "rect"
 
     .prologue
-    .line 2487
+    .line 2457
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     if-eqz v0, :cond_0
@@ -5981,25 +5981,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 2490
+    .line 2460
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->getFocusedRect(Landroid/graphics/Rect;)V
 
-    .line 2491
+    .line 2461
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     invoke-virtual {p0, v0, p1}, Lcom/sonyericsson/paneview/PaneView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 2496
+    .line 2466
     :goto_0
     return-void
 
-    .line 2494
+    .line 2464
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->getFocusedRect(Landroid/graphics/Rect;)V
 
@@ -6010,7 +6010,7 @@
     .locals 1
 
     .prologue
-    .line 852
+    .line 851
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
 
     return v0
@@ -6021,7 +6021,7 @@
     .parameter "pane"
 
     .prologue
-    .line 881
+    .line 880
     const/4 v0, 0x0
 
     int-to-float v1, p1
@@ -6038,7 +6038,7 @@
     .parameter "pane"
 
     .prologue
-    .line 871
+    .line 870
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v0}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
@@ -6058,7 +6058,7 @@
     .locals 1
 
     .prologue
-    .line 861
+    .line 860
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v0}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
@@ -6076,17 +6076,17 @@
     .locals 1
 
     .prologue
-    .line 516
+    .line 515
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     if-eqz v0, :cond_0
 
-    .line 517
+    .line 516
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     iget-object v0, v0, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
-    .line 520
+    .line 519
     :goto_0
     return-object v0
 
@@ -6100,7 +6100,7 @@
     .locals 1
 
     .prologue
-    .line 1237
+    .line 1236
     const/high16 v0, 0x3f80
 
     return v0
@@ -6110,160 +6110,10 @@
     .locals 1
 
     .prologue
-    .line 1064
+    .line 1063
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mVelocityThreshold:I
 
     return v0
-.end method
-
-.method public getVisibleItems()Ljava/util/ArrayList;
-    .locals 10
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/ArrayList",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v9, 0x0
-
-    .line 1664
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
-
-    .line 1665
-    .local v5, visibleItems:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
-    iget-object v6, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
-
-    invoke-virtual {v6}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
-
-    move-result v2
-
-    .line 1666
-    .local v2, position:F
-    iget-object v6, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
-
-    invoke-virtual {v6}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
-
-    move-result v6
-
-    invoke-direct {p0, v6}, Lcom/sonyericsson/paneview/PaneView;->positionToPixels(F)I
-
-    move-result v4
-
-    .line 1667
-    .local v4, scroll:I
-    invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
-
-    move-result-object v3
-
-    .line 1669
-    .local v3, rect:Landroid/graphics/Rect;
-    iget-object v6, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
-
-    invoke-virtual {v6}, Ljava/util/HashMap;->values()Ljava/util/Collection;
-
-    move-result-object v6
-
-    invoke-interface {v6}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
-
-    .line 1670
-    .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
-    iget-object v6, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
-
-    if-eqz v6, :cond_0
-
-    .line 1671
-    iget-object v6, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
-
-    iget-object v6, v6, Lcom/sonyericsson/paneview/PaneLocation;->drawRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v3, v6}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    .line 1672
-    iget-object v6, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
-
-    iget v6, v6, Lcom/sonyericsson/paneview/PaneLocation;->pane:I
-
-    int-to-float v6, v6
-
-    invoke-direct {p0, v2, v6}, Lcom/sonyericsson/paneview/PaneView;->getPaneXOffset(FF)I
-
-    move-result v6
-
-    invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getPaddingLeft()I
-
-    move-result v7
-
-    add-int/2addr v6, v7
-
-    neg-int v7, v4
-
-    invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getPaddingTop()I
-
-    move-result v8
-
-    add-int/2addr v7, v8
-
-    invoke-virtual {v3, v6, v7}, Landroid/graphics/Rect;->offset(II)V
-
-    .line 1674
-    invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
-
-    move-result v6
-
-    invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getHeight()I
-
-    move-result v7
-
-    invoke-virtual {v3, v9, v9, v6, v7}, Landroid/graphics/Rect;->intersects(IIII)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    .line 1676
-    invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
-
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    .line 1681
-    .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
-    :cond_1
-    invoke-static {v3}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
-
-    .line 1683
-    return-object v5
 .end method
 
 .method public hasEnabledItems(I)Z
@@ -6271,7 +6121,7 @@
     .parameter "pane"
 
     .prologue
-    .line 1081
+    .line 1080
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -6296,7 +6146,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1082
+    .line 1081
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
 
@@ -6304,7 +6154,7 @@
 
     if-ne v2, p1, :cond_0
 
-    .line 1083
+    .line 1082
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
@@ -6317,10 +6167,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 1084
+    .line 1083
     const/4 v2, 0x1
 
-    .line 1088
+    .line 1087
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :goto_0
     return v2
@@ -6335,7 +6185,7 @@
     .locals 1
 
     .prologue
-    .line 1057
+    .line 1056
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     return v0
@@ -6345,7 +6195,7 @@
     .locals 1
 
     .prologue
-    .line 617
+    .line 616
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mIsInteracting:Z
 
     return v0
@@ -6356,15 +6206,15 @@
     .parameter "keepMaxScroll"
 
     .prologue
-    .line 829
+    .line 828
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mKeepMaxScroll:Z
 
-    .line 830
+    .line 829
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mKeepMaxScroll:Z
 
     if-eqz v0, :cond_0
 
-    .line 831
+    .line 830
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -6373,15 +6223,15 @@
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->updateMaxScroll(Ljava/util/Collection;)V
 
-    .line 832
+    .line 831
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDynamicsRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 833
+    .line 832
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->startDynamicsRunnable()V
 
-    .line 835
+    .line 834
     :cond_0
     return-void
 .end method
@@ -6390,12 +6240,12 @@
     .locals 2
 
     .prologue
-    .line 910
+    .line 909
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-eqz v0, :cond_0
 
-    .line 911
+    .line 910
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
 
     move-result v0
@@ -6406,7 +6256,7 @@
 
     move-result v0
 
-    .line 913
+    .line 912
     :goto_0
     return v0
 
@@ -6430,7 +6280,7 @@
     .locals 1
 
     .prologue
-    .line 936
+    .line 935
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
 
     move-result v0
@@ -6449,14 +6299,14 @@
     .parameter "pane"
 
     .prologue
-    .line 891
+    .line 890
     if-ltz p1, :cond_0
 
     iget v0, p0, Lcom/sonyericsson/paneview/PaneView;->mNumberOfPanes:I
 
     if-ge p1, v0, :cond_0
 
-    .line 892
+    .line 891
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
@@ -6477,27 +6327,27 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 894
+    .line 893
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     int-to-float v1, p1
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/util/Dynamics;->setMaxPosition(F)V
 
-    .line 895
+    .line 894
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     int-to-float v1, p1
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/util/Dynamics;->setMinPosition(F)V
 
-    .line 898
+    .line 897
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->startDynamicsRunnable()V
 
-    .line 899
+    .line 898
     const/4 v0, 0x1
 
-    .line 901
+    .line 900
     :goto_0
     return v0
 
@@ -6511,7 +6361,7 @@
     .locals 2
 
     .prologue
-    .line 945
+    .line 944
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
 
     move-result v0
@@ -6531,12 +6381,12 @@
     .locals 2
 
     .prologue
-    .line 923
+    .line 922
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
     if-eqz v0, :cond_0
 
-    .line 924
+    .line 923
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getCurrentPane()I
 
     move-result v0
@@ -6549,7 +6399,7 @@
 
     move-result v0
 
-    .line 926
+    .line 925
     :goto_0
     return v0
 
@@ -6574,19 +6424,19 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 2524
+    .line 2494
     if-eqz p1, :cond_0
 
-    .line 2525
+    .line 2495
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 2527
+    .line 2497
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/widget/AdapterView;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
-    .line 2528
+    .line 2498
     return-void
 .end method
 
@@ -6595,17 +6445,17 @@
     .parameter "event"
 
     .prologue
-    .line 1037
+    .line 1036
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mTouchIsLocked:Z
 
     if-nez v0, :cond_0
 
-    .line 1039
+    .line 1038
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/paneview/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 1043
+    .line 1042
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
@@ -6642,23 +6492,23 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1164
+    .line 1163
     invoke-super/range {p0 .. p5}, Landroid/widget/AdapterView;->onLayout(ZIIII)V
 
-    .line 1166
+    .line 1165
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v4}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
 
     move-result v2
 
-    .line 1168
+    .line 1167
     .local v2, position:F
     invoke-static {}, Lcom/sonyericsson/util/RectPool;->obtainRect()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 1169
+    .line 1168
     .local v3, viewRect:Landroid/graphics/Rect;
     sub-int v4, p4, p2
 
@@ -6666,7 +6516,7 @@
 
     invoke-virtual {v3, v6, v6, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1171
+    .line 1170
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -6692,7 +6542,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1172
+    .line 1171
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v4, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
@@ -6706,24 +6556,24 @@
 
     if-eqz v4, :cond_2
 
-    .line 1175
+    .line 1174
     :cond_1
     invoke-direct {p0, v1, v2}, Lcom/sonyericsson/paneview/PaneView;->layoutItem(Lcom/sonyericsson/paneview/PaneView$AdapterItem;F)V
 
     goto :goto_0
 
-    .line 1176
+    .line 1175
     :cond_2
     iget-object v4, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v4, :cond_0
 
-    .line 1179
+    .line 1178
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->removeItemView(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
     goto :goto_0
 
-    .line 1183
+    .line 1182
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_3
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
@@ -6734,7 +6584,7 @@
 
     invoke-direct {p0, v4}, Lcom/sonyericsson/paneview/PaneView;->updateMaxScroll(Ljava/util/Collection;)V
 
-    .line 1185
+    .line 1184
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     if-eqz v4, :cond_4
@@ -6747,19 +6597,19 @@
 
     if-nez v4, :cond_4
 
-    .line 1186
+    .line 1185
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->setupTransformer()V
 
-    .line 1189
+    .line 1188
     :cond_4
     invoke-static {v3}, Lcom/sonyericsson/util/RectPool;->recycleRect(Landroid/graphics/Rect;)V
 
-    .line 1190
+    .line 1189
     iget-object v4, p0, Lcom/sonyericsson/paneview/PaneView;->mInvalidRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v4}, Lcom/sonyericsson/paneview/PaneView;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 1191
+    .line 1190
     return-void
 .end method
 
@@ -6771,10 +6621,10 @@
     .prologue
     const/high16 v5, 0x4000
 
-    .line 1151
+    .line 1150
     invoke-super {p0, p1, p2}, Landroid/widget/AdapterView;->onMeasure(II)V
 
-    .line 1152
+    .line 1151
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -6800,13 +6650,13 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 1153
+    .line 1152
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     if-eqz v2, :cond_0
 
-    .line 1156
+    .line 1155
     iget-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->view:Landroid/view/View;
 
     iget-object v3, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->location:Lcom/sonyericsson/paneview/PaneLocation;
@@ -6833,7 +6683,7 @@
 
     goto :goto_0
 
-    .line 1160
+    .line 1159
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_1
     return-void
@@ -6849,30 +6699,30 @@
 
     const/4 v6, 0x0
 
-    .line 2537
+    .line 2507
     const/4 v5, 0x2
 
     if-ne p1, v5, :cond_2
 
-    .line 2538
+    .line 2508
     const/16 p1, 0x42
 
-    .line 2543
+    .line 2513
     :cond_0
     :goto_0
     if-nez p2, :cond_1
 
-    .line 2544
+    .line 2514
     new-instance p2, Landroid/graphics/Rect;
 
     .end local p2
     invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2545
+    .line 2515
     .restart local p2
     sparse-switch p1, :sswitch_data_0
 
-    .line 2561
+    .line 2531
     :cond_1
     :goto_1
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
@@ -6883,7 +6733,7 @@
 
     move-result-object v1
 
-    .line 2563
+    .line 2533
     .local v1, focusCandidate:Landroid/view/View;
     if-eqz v1, :cond_3
 
@@ -6895,35 +6745,35 @@
 
     move v5, v7
 
-    .line 2567
+    .line 2537
     :goto_2
     return v5
 
-    .line 2539
+    .line 2509
     .end local v1           #focusCandidate:Landroid/view/View;
     :cond_2
     if-ne p1, v7, :cond_0
 
-    .line 2540
+    .line 2510
     const/16 p1, 0x11
 
     goto :goto_0
 
-    .line 2548
+    .line 2518
     :sswitch_0
     const/4 v4, 0x0
 
-    .line 2549
+    .line 2519
     .local v4, top:I
     const/4 v2, 0x0
 
-    .line 2550
+    .line 2520
     .local v2, left:I
     invoke-virtual {p2, v6, v6, v6, v6}, Landroid/graphics/Rect;->set(IIII)V
 
     goto :goto_1
 
-    .line 2554
+    .line 2524
     .end local v2           #left:I
     .end local v4           #top:I
     :sswitch_1
@@ -6931,13 +6781,13 @@
 
     move-result v0
 
-    .line 2555
+    .line 2525
     .local v0, bottom:I
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->getWidth()I
 
     move-result v3
 
-    .line 2556
+    .line 2526
     .local v3, right:I
     invoke-virtual {p2, v3, v0, v3, v0}, Landroid/graphics/Rect;->set(IIII)V
 
@@ -6949,10 +6799,10 @@
     :cond_3
     move v5, v6
 
-    .line 2567
+    .line 2537
     goto :goto_2
 
-    .line 2545
+    .line 2515
     :sswitch_data_0
     .sparse-switch
         0x11 -> :sswitch_1
@@ -6970,10 +6820,10 @@
     .parameter "oldh"
 
     .prologue
-    .line 1140
+    .line 1139
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/AdapterView;->onSizeChanged(IIII)V
 
-    .line 1141
+    .line 1140
     int-to-float v0, p1
 
     int-to-float v1, p1
@@ -6988,22 +6838,22 @@
 
     iput v0, p0, Lcom/sonyericsson/paneview/PaneView;->mWidthWithMargin:I
 
-    .line 1143
+    .line 1142
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 1144
+    .line 1143
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1145
+    .line 1144
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
-    .line 1147
+    .line 1146
     :cond_0
     return-void
 .end method
@@ -7013,7 +6863,7 @@
     .parameter "event"
 
     .prologue
-    .line 1020
+    .line 1019
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mRejectPaddingTouch:Z
 
     if-eqz v0, :cond_1
@@ -7046,31 +6896,31 @@
 
     if-gez v0, :cond_1
 
-    .line 1022
+    .line 1021
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/GestureDetector;->cancelTouch()V
 
-    .line 1023
+    .line 1022
     const/4 v0, 0x0
 
-    .line 1032
+    .line 1031
     :goto_0
     return v0
 
-    .line 1026
+    .line 1025
     :cond_1
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mTouchIsLocked:Z
 
     if-nez v0, :cond_2
 
-    .line 1028
+    .line 1027
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/paneview/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 1032
+    .line 1031
     :cond_2
     const/4 v0, 0x1
 
@@ -7083,35 +6933,35 @@
     .parameter "focused"
 
     .prologue
-    .line 2504
+    .line 2474
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->findItem(Landroid/view/View;)Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     move-result-object v0
 
-    .line 2505
+    .line 2475
     .local v0, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     if-eqz v0, :cond_1
 
-    .line 2506
+    .line 2476
     iput-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 2507
+    .line 2477
     iget-boolean v1, p0, Lcom/sonyericsson/paneview/PaneView;->mVerticalScrollEnabled:Z
 
     if-eqz v1, :cond_0
 
-    .line 2510
+    .line 2480
     invoke-direct {p0, p1}, Lcom/sonyericsson/paneview/PaneView;->scrollToView(Landroid/view/View;)V
 
-    .line 2516
+    .line 2486
     :cond_0
     :goto_0
     invoke-super {p0, p1, p2}, Landroid/widget/AdapterView;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
-    .line 2517
+    .line 2487
     return-void
 
-    .line 2513
+    .line 2483
     :cond_1
     const/4 v1, 0x0
 
@@ -7124,10 +6974,10 @@
     .locals 0
 
     .prologue
-    .line 703
+    .line 702
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->updatePanePosition()V
 
-    .line 704
+    .line 703
     return-void
 .end method
 
@@ -7138,27 +6988,27 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 808
+    .line 807
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v2}, Lcom/sonyericsson/util/Dynamics;->getPosition()F
 
     move-result v0
 
-    .line 809
+    .line 808
     .local v0, currentPosition:F
     add-float v1, v0, p1
 
-    .line 811
+    .line 810
     .local v1, newPosition:F
     cmpg-float v2, v1, v5
 
     if-gez v2, :cond_1
 
-    .line 812
+    .line 811
     const/4 v1, 0x0
 
-    .line 817
+    .line 816
     :cond_0
     :goto_0
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
@@ -7169,18 +7019,18 @@
 
     invoke-virtual {v2, v1, v5, v3, v4}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 818
+    .line 817
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mDynamicsRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v2}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 819
+    .line 818
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->updatePanePosition()V
 
-    .line 820
+    .line 819
     return-void
 
-    .line 813
+    .line 812
     :cond_1
     iget v2, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
@@ -7188,7 +7038,7 @@
 
     if-lez v2, :cond_0
 
-    .line 814
+    .line 813
     iget v1, p0, Lcom/sonyericsson/paneview/PaneView;->mMaxScroll:F
 
     goto :goto_0
@@ -7199,7 +7049,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 59
     check-cast p1, Lcom/sonyericsson/paneview/PaneAdapter;
 
     .end local p1
@@ -7213,41 +7063,41 @@
     .parameter "adapter"
 
     .prologue
-    .line 525
+    .line 524
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 526
+    .line 525
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mDataSetObserver:Lcom/sonyericsson/paneview/PaneView$PaneDataSetObserver;
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/paneview/PaneAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 529
+    .line 528
     :cond_0
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
-    .line 531
+    .line 530
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     if-eqz v0, :cond_1
 
-    .line 532
+    .line 531
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mAdapter:Lcom/sonyericsson/paneview/PaneAdapter;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mDataSetObserver:Lcom/sonyericsson/paneview/PaneView$PaneDataSetObserver;
 
     invoke-interface {v0, v1}, Lcom/sonyericsson/paneview/PaneAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 535
+    .line 534
     :cond_1
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->onDataChanged(Z)V
 
-    .line 536
+    .line 535
     return-void
 .end method
 
@@ -7256,34 +7106,34 @@
     .parameter "backplateDrawable"
 
     .prologue
-    .line 764
+    .line 763
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplate:Landroid/graphics/drawable/Drawable;
 
-    .line 766
+    .line 765
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 767
+    .line 766
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 768
+    .line 767
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateBitmap:Landroid/graphics/Bitmap;
 
-    .line 771
+    .line 770
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlitPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_1
 
-    .line 772
+    .line 771
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->createSrcBlitPaint()V
 
-    .line 774
+    .line 773
     :cond_1
     return-void
 .end method
@@ -7294,13 +7144,13 @@
     .parameter "backPlateWidth"
 
     .prologue
-    .line 784
+    .line 783
     iput p1, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateOffsetX:I
 
-    .line 785
+    .line 784
     iput p2, p0, Lcom/sonyericsson/paneview/PaneView;->mBackplateWidth:I
 
-    .line 786
+    .line 785
     return-void
 .end method
 
@@ -7309,10 +7159,10 @@
     .parameter "doMirror"
 
     .prologue
-    .line 1050
+    .line 1049
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mDoMirror:Z
 
-    .line 1051
+    .line 1050
     return-void
 .end method
 
@@ -7321,15 +7171,15 @@
     .parameter "enable"
 
     .prologue
-    .line 655
+    .line 654
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mStandardRenderersEnabled:Z
 
-    .line 656
+    .line 655
     iget-boolean v2, p0, Lcom/sonyericsson/paneview/PaneView;->mStandardRenderersEnabled:Z
 
     if-eqz v2, :cond_1
 
-    .line 657
+    .line 656
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -7355,7 +7205,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 658
+    .line 657
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     iget-object v2, v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->renderer:Lcom/sonyericsson/animation/Renderer;
 
@@ -7365,12 +7215,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 659
+    .line 658
     invoke-direct {p0, v1}, Lcom/sonyericsson/paneview/PaneView;->setStandardRenderer(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)V
 
     goto :goto_0
 
-    .line 663
+    .line 662
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_1
@@ -7398,7 +7248,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 664
+    .line 663
     .restart local v1       #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     const/4 v2, 0x0
 
@@ -7406,7 +7256,7 @@
 
     goto :goto_1
 
-    .line 667
+    .line 666
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_2
     return-void
@@ -7420,19 +7270,19 @@
     .parameter "bottom"
 
     .prologue
-    .line 752
+    .line 751
     iput p1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingLeft:I
 
-    .line 753
+    .line 752
     iput p2, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingTop:I
 
-    .line 754
+    .line 753
     iput p3, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingRight:I
 
-    .line 755
+    .line 754
     iput p4, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusPaddingBottom:I
 
-    .line 756
+    .line 755
     return-void
 .end method
 
@@ -7441,13 +7291,13 @@
     .parameter "focusable"
 
     .prologue
-    .line 2888
+    .line 2858
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusDesired:Z
 
-    .line 2889
+    .line 2859
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->setFocusable(Z)V
 
-    .line 2890
+    .line 2860
     return-void
 .end method
 
@@ -7456,10 +7306,10 @@
     .parameter "focusedItemDrawable"
 
     .prologue
-    .line 739
+    .line 738
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusedItemDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 740
+    .line 739
     return-void
 .end method
 
@@ -7468,10 +7318,10 @@
     .parameter "interactionListener"
 
     .prologue
-    .line 608
+    .line 607
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mInteractionListener:Lcom/sonyericsson/paneview/PaneView$InteractionListener;
 
-    .line 609
+    .line 608
     return-void
 .end method
 
@@ -7480,10 +7330,10 @@
     .parameter "itemViewListener"
 
     .prologue
-    .line 628
+    .line 627
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mItemViewListener:Lcom/sonyericsson/paneview/PaneView$ItemViewListener;
 
-    .line 629
+    .line 628
     return-void
 .end method
 
@@ -7492,10 +7342,10 @@
     .parameter "dynamics"
 
     .prologue
-    .line 551
+    .line 550
     if-nez p1, :cond_0
 
-    .line 552
+    .line 551
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "dynamics cannot be null"
@@ -7504,7 +7354,7 @@
 
     throw v2
 
-    .line 555
+    .line 554
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -7512,7 +7362,7 @@
 
     move-result v0
 
-    .line 556
+    .line 555
     .local v0, currentPosition:F
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -7520,7 +7370,7 @@
 
     move-result v1
 
-    .line 558
+    .line 557
     .local v1, currentVelocity:F
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -7528,17 +7378,17 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 559
+    .line 558
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
-    .line 561
+    .line 560
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/paneview/GestureDetector;->setEnableHorizontalDrag(Z)V
 
-    .line 562
+    .line 561
     return-void
 .end method
 
@@ -7547,10 +7397,10 @@
     .parameter "paneMargin"
 
     .prologue
-    .line 712
+    .line 711
     iput p1, p0, Lcom/sonyericsson/paneview/PaneView;->mMarginF:F
 
-    .line 713
+    .line 712
     return-void
 .end method
 
@@ -7559,10 +7409,10 @@
     .parameter "paneViewTouchListener"
 
     .prologue
-    .line 721
+    .line 720
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneViewTouchListener:Lcom/sonyericsson/paneview/PaneView$PaneViewTouchListener;
 
-    .line 722
+    .line 721
     return-void
 .end method
 
@@ -7571,7 +7421,7 @@
     .parameter "position"
 
     .prologue
-    .line 794
+    .line 793
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     const/4 v1, 0x0
@@ -7582,25 +7432,25 @@
 
     invoke-virtual {v0, p1, v1, v2, v3}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 795
+    .line 794
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/util/Dynamics;->setMaxPosition(F)V
 
-    .line 796
+    .line 795
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
 
     invoke-virtual {v0, p1}, Lcom/sonyericsson/util/Dynamics;->setMinPosition(F)V
 
-    .line 797
+    .line 796
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDynamicsRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 798
+    .line 797
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->updatePanePosition()V
 
-    .line 799
+    .line 798
     return-void
 .end method
 
@@ -7609,10 +7459,10 @@
     .parameter "preferExternal"
 
     .prologue
-    .line 1112
+    .line 1111
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mPreferExternalFocus:Z
 
-    .line 1113
+    .line 1112
     return-void
 .end method
 
@@ -7621,10 +7471,10 @@
     .parameter "preventExternal"
 
     .prologue
-    .line 1099
+    .line 1098
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mPreventExternalFocus:Z
 
-    .line 1100
+    .line 1099
     return-void
 .end method
 
@@ -7633,10 +7483,10 @@
     .parameter "rejectPaddingTouch"
 
     .prologue
-    .line 598
+    .line 597
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mRejectPaddingTouch:Z
 
-    .line 599
+    .line 598
     return-void
 .end method
 
@@ -7645,10 +7495,10 @@
     .parameter "rendererFactory"
 
     .prologue
-    .line 639
+    .line 638
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mRendererFactory:Lcom/sonyericsson/paneview/RendererFactory;
 
-    .line 640
+    .line 639
     return-void
 .end method
 
@@ -7657,10 +7507,10 @@
     .parameter "dynamics"
 
     .prologue
-    .line 565
+    .line 564
     if-nez p1, :cond_0
 
-    .line 566
+    .line 565
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "dynamics cannot be null"
@@ -7669,7 +7519,7 @@
 
     throw v2
 
-    .line 569
+    .line 568
     :cond_0
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -7677,7 +7527,7 @@
 
     move-result v0
 
-    .line 570
+    .line 569
     .local v0, currentPosition:F
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
@@ -7685,7 +7535,7 @@
 
     move-result v1
 
-    .line 572
+    .line 571
     .local v1, currentVelocity:F
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -7693,17 +7543,17 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 573
+    .line 572
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
-    .line 575
+    .line 574
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Lcom/sonyericsson/paneview/GestureDetector;->setEnableVerticalDrag(Z)V
 
-    .line 576
+    .line 575
     return-void
 .end method
 
@@ -7712,15 +7562,15 @@
     .parameter "scrollListener"
 
     .prologue
-    .line 585
+    .line 584
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
-    .line 587
+    .line 586
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
     if-eqz v0, :cond_0
 
-    .line 588
+    .line 587
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollListener:Lcom/sonyericsson/paneview/PaneView$ScrollListener;
 
     iget-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mPaneDynamics:Lcom/sonyericsson/util/Dynamics;
@@ -7733,7 +7583,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/sonyericsson/paneview/PaneView$ScrollListener;->onScroll(FI)V
 
-    .line 590
+    .line 589
     :cond_0
     return-void
 .end method
@@ -7743,7 +7593,7 @@
     .parameter "position"
 
     .prologue
-    .line 802
+    .line 801
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mScrollDynamics:Lcom/sonyericsson/util/Dynamics;
 
     const/4 v1, 0x0
@@ -7754,15 +7604,15 @@
 
     invoke-virtual {v0, p1, v1, v2, v3}, Lcom/sonyericsson/util/Dynamics;->setState(FFJ)V
 
-    .line 803
+    .line 802
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mDynamicsRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 804
+    .line 803
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->updatePanePosition()V
 
-    .line 805
+    .line 804
     return-void
 .end method
 
@@ -7771,10 +7621,10 @@
     .parameter "selectedItemDrawable"
 
     .prologue
-    .line 730
+    .line 729
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItemDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 731
+    .line 730
     return-void
 .end method
 
@@ -7783,7 +7633,7 @@
     .parameter "pos"
 
     .prologue
-    .line 507
+    .line 506
     iget-object v2, p0, Lcom/sonyericsson/paneview/PaneView;->mItems:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -7809,7 +7659,7 @@
 
     check-cast v1, Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
-    .line 508
+    .line 507
     .local v1, item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     invoke-static {v1}, Lcom/sonyericsson/paneview/PaneView$AdapterItem;->access$500(Lcom/sonyericsson/paneview/PaneView$AdapterItem;)I
 
@@ -7817,12 +7667,12 @@
 
     if-ne v2, p1, :cond_0
 
-    .line 509
+    .line 508
     iput-object v1, p0, Lcom/sonyericsson/paneview/PaneView;->mSelectedItem:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
 
     goto :goto_0
 
-    .line 512
+    .line 511
     .end local v1           #item:Lcom/sonyericsson/paneview/PaneView$AdapterItem;
     :cond_1
     return-void
@@ -7833,18 +7683,18 @@
     .parameter "srcBlit"
 
     .prologue
-    .line 1132
+    .line 1131
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlit:Z
 
-    .line 1133
+    .line 1132
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mSrcBlitPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
-    .line 1134
+    .line 1133
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->createSrcBlitPaint()V
 
-    .line 1136
+    .line 1135
     :cond_0
     return-void
 .end method
@@ -7854,18 +7704,18 @@
     .parameter "locked"
 
     .prologue
-    .line 1005
+    .line 1004
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mTouchIsLocked:Z
 
-    .line 1006
+    .line 1005
     if-eqz p1, :cond_0
 
-    .line 1007
+    .line 1006
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mGestureDetector:Lcom/sonyericsson/paneview/GestureDetector;
 
     invoke-virtual {v0}, Lcom/sonyericsson/paneview/GestureDetector;->cancelLongPress()V
 
-    .line 1009
+    .line 1008
     :cond_0
     return-void
 .end method
@@ -7875,10 +7725,10 @@
     .parameter "velocityThreshold"
 
     .prologue
-    .line 1071
+    .line 1070
     iput p1, p0, Lcom/sonyericsson/paneview/PaneView;->mVelocityThreshold:I
 
-    .line 1072
+    .line 1071
     return-void
 .end method
 
@@ -7887,10 +7737,10 @@
     .parameter "enable"
 
     .prologue
-    .line 1121
+    .line 1120
     iput-boolean p1, p0, Lcom/sonyericsson/paneview/PaneView;->mVerticalScrollEnabled:Z
 
-    .line 1122
+    .line 1121
     return-void
 .end method
 
@@ -7899,55 +7749,55 @@
     .parameter "transformer"
 
     .prologue
-    .line 957
+    .line 956
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     if-eqz v0, :cond_0
 
-    .line 958
+    .line 957
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     invoke-interface {v0}, Lcom/sonyericsson/paneview/Transformer;->cleanup()V
 
-    .line 960
+    .line 959
     :cond_0
     iput-object p1, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
-    .line 961
+    .line 960
     iget-object v0, p0, Lcom/sonyericsson/paneview/PaneView;->mTransformer:Lcom/sonyericsson/paneview/Transformer;
 
     if-eqz v0, :cond_1
 
-    .line 963
+    .line 962
     const/4 v0, 0x0
 
     invoke-super {p0, v0}, Landroid/widget/AdapterView;->setFocusable(Z)V
 
-    .line 964
+    .line 963
     const/high16 v0, 0x6
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->setDescendantFocusability(I)V
 
-    .line 965
+    .line 964
     invoke-virtual {p0}, Lcom/sonyericsson/paneview/PaneView;->requestLayout()V
 
-    .line 972
+    .line 971
     :goto_0
     return-void
 
-    .line 967
+    .line 966
     :cond_1
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->updatePanePosition()V
 
-    .line 968
+    .line 967
     invoke-direct {p0}, Lcom/sonyericsson/paneview/PaneView;->startDynamicsRunnable()V
 
-    .line 969
+    .line 968
     iget-boolean v0, p0, Lcom/sonyericsson/paneview/PaneView;->mFocusDesired:Z
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->setFocusable(Z)V
 
-    .line 970
+    .line 969
     const/high16 v0, 0x4
 
     invoke-virtual {p0, v0}, Lcom/sonyericsson/paneview/PaneView;->setDescendantFocusability(I)V

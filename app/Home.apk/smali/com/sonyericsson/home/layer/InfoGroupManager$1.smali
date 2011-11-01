@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 91
+    .line 86
     iput-object p1, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 95
+    .line 90
     return-void
 .end method
 
@@ -51,13 +51,13 @@
     .parameter "packageName"
 
     .prologue
-    .line 98
+    .line 93
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 100
-    .local v0, changedInfoGroups:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/util/UUID;>;"
+    .line 95
+    .local v0, changedInfoGroups:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$000(Lcom/sonyericsson/home/layer/InfoGroupManager;)Ljava/util/HashMap;
@@ -86,13 +86,13 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 101
+    .line 96
     .local v2, infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     new-instance v3, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;
 
     invoke-direct {v3, p0, v2, v0}, Lcom/sonyericsson/home/layer/InfoGroupManager$1$1;-><init>(Lcom/sonyericsson/home/layer/InfoGroupManager$1;Ljava/util/Map$Entry;Ljava/util/HashSet;)V
 
-    .line 117
+    .line 112
     .local v3, syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -120,7 +120,7 @@
 
     goto :goto_0
 
-    .line 121
+    .line 116
     .end local v2           #infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     .end local v3           #syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     :cond_0
@@ -130,17 +130,17 @@
 
     if-nez v4, :cond_1
 
-    .line 122
+    .line 117
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$300(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 123
+    .line 118
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-static {v4, v0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$400(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/lang/Iterable;)V
+    invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$400(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 125
+    .line 120
     :cond_1
     return-void
 .end method
@@ -150,13 +150,13 @@
     .parameter "packageName"
 
     .prologue
-    .line 128
+    .line 123
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 130
-    .local v0, changedInfoGroups:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/util/UUID;>;"
+    .line 125
+    .local v0, changedInfoGroups:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$000(Lcom/sonyericsson/home/layer/InfoGroupManager;)Ljava/util/HashMap;
@@ -185,13 +185,13 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 131
+    .line 126
     .local v2, infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     new-instance v3, Lcom/sonyericsson/home/layer/InfoGroupManager$1$2;
 
     invoke-direct {v3, p0, v2, v0}, Lcom/sonyericsson/home/layer/InfoGroupManager$1$2;-><init>(Lcom/sonyericsson/home/layer/InfoGroupManager$1;Ljava/util/Map$Entry;Ljava/util/HashSet;)V
 
-    .line 147
+    .line 142
     .local v3, syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -209,7 +209,7 @@
 
     goto :goto_0
 
-    .line 151
+    .line 146
     .end local v2           #infoList:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/LinkedList<Lcom/sonyericsson/home/data/Info;>;>;"
     .end local v3           #syncable:Lcom/sonyericsson/home/data/SyncHelper$Syncable;
     :cond_0
@@ -219,17 +219,17 @@
 
     if-nez v4, :cond_1
 
-    .line 152
+    .line 147
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$300(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 153
+    .line 148
     iget-object v4, p0, Lcom/sonyericsson/home/layer/InfoGroupManager$1;->this$0:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
-    invoke-static {v4, v0}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$400(Lcom/sonyericsson/home/layer/InfoGroupManager;Ljava/lang/Iterable;)V
+    invoke-static {v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->access$400(Lcom/sonyericsson/home/layer/InfoGroupManager;)V
 
-    .line 155
+    .line 150
     :cond_1
     return-void
 .end method
@@ -239,7 +239,7 @@
     .parameter "packageList"
 
     .prologue
-    .line 159
+    .line 154
     return-void
 .end method
 
@@ -248,6 +248,6 @@
     .parameter "packageList"
 
     .prologue
-    .line 163
+    .line 158
     return-void
 .end method

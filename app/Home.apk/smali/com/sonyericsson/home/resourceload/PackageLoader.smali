@@ -97,28 +97,28 @@
     .locals 2
 
     .prologue
-    .line 79
+    .line 78
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
     sput-object v0, Lcom/sonyericsson/home/resourceload/PackageLoader;->LAUNCHER_INTENT:Landroid/content/Intent;
 
-    .line 83
+    .line 82
     sget-object v0, Lcom/sonyericsson/home/resourceload/PackageLoader;->LAUNCHER_INTENT:Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 84
+    .line 83
     sget-object v0, Lcom/sonyericsson/home/resourceload/PackageLoader;->LAUNCHER_INTENT:Landroid/content/Intent;
 
     const-string v1, "android.intent.category.LAUNCHER"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 85
+    .line 84
     return-void
 .end method
 
@@ -127,45 +127,45 @@
     .parameter "context"
 
     .prologue
-    .line 119
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
+    .line 87
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnPackageUpdateListeners:Ljava/util/ArrayList;
 
-    .line 97
+    .line 96
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mUnavailableApps:Ljava/util/HashSet;
 
-    .line 103
+    .line 102
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnLoadCompletedCallbacks:Ljava/util/LinkedList;
 
-    .line 112
+    .line 111
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mPendingPackages:Ljava/util/HashSet;
 
-    .line 120
+    .line 119
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 121
+    .line 120
     const/4 v0, 0x1
 
     invoke-static {v0}, Lcom/sonyericsson/util/Worker;->obtain(I)Lcom/sonyericsson/util/Worker;
@@ -174,7 +174,7 @@
 
     iput-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mWorker:Lcom/sonyericsson/util/Worker;
 
-    .line 122
+    .line 121
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mWorker:Lcom/sonyericsson/util/Worker;
 
     new-instance v1, Lcom/sonyericsson/home/resourceload/PackageLoader$LoadAllApplicationsTask;
@@ -183,7 +183,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/util/Worker;->postTask(Lcom/sonyericsson/util/Worker$Task;)V
 
-    .line 123
+    .line 122
     return-void
 .end method
 
@@ -191,7 +191,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 43
     sget-object v0, Lcom/sonyericsson/home/resourceload/PackageLoader;->LAUNCHER_INTENT:Landroid/content/Intent;
 
     return-object v0
@@ -202,7 +202,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mPackageManager:Landroid/content/pm/PackageManager;
 
     return-object v0
@@ -213,7 +213,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
     return-object v0
@@ -225,7 +225,7 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 43
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
     return-object p1
@@ -236,7 +236,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllPackages:Ljava/util/HashSet;
 
     return-object v0
@@ -248,7 +248,7 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 43
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllPackages:Ljava/util/HashSet;
 
     return-object p1
@@ -259,7 +259,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mUnavailableApps:Ljava/util/HashSet;
 
     return-object v0
@@ -270,7 +270,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnLoadCompletedCallbacks:Ljava/util/LinkedList;
 
     return-object v0
@@ -282,7 +282,7 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 43
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnLoadCompletedCallbacks:Ljava/util/LinkedList;
 
     return-object p1
@@ -293,7 +293,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mPendingPackages:Ljava/util/HashSet;
 
     return-object v0
@@ -304,7 +304,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnPackageUpdateListeners:Ljava/util/ArrayList;
 
     return-object v0
@@ -317,19 +317,19 @@
     .parameter "callback"
 
     .prologue
-    .line 160
+    .line 159
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
 
-    .line 161
+    .line 160
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 165
+    .line 164
     :goto_0
     return-void
 
-    .line 163
+    .line 162
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnLoadCompletedCallbacks:Ljava/util/LinkedList;
 
@@ -343,12 +343,12 @@
     .parameter "listener"
 
     .prologue
-    .line 228
+    .line 227
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnPackageUpdateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 229
+    .line 228
     return-void
 .end method
 
@@ -357,12 +357,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 504
+    .line 503
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mPendingPackages:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 505
+    .line 504
     return-void
 .end method
 
@@ -379,7 +379,7 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 172
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -405,12 +405,12 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 209
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 211
+    .line 210
     .local v3, itemSubSet:Ljava/util/Set;,"Ljava/util/Set<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     iget-object v4, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
@@ -418,7 +418,7 @@
 
     move-result-object v2
 
-    .line 213
+    .line 212
     .local v2, itemSet:Ljava/util/Set;,"Ljava/util/Set<Lcom/sonyericsson/home/data/ActivityInfo;>;"
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -439,7 +439,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 214
+    .line 213
     .local v1, item:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/ActivityInfo;->getPackageName()Ljava/lang/String;
 
@@ -451,12 +451,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 215
+    .line 214
     invoke-interface {v3, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 219
+    .line 218
     .end local v1           #item:Lcom/sonyericsson/home/data/ActivityInfo;
     :cond_1
     return-object v3
@@ -475,7 +475,7 @@
     .end annotation
 
     .prologue
-    .line 182
+    .line 181
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllPackages:Ljava/util/HashSet;
 
     return-object v0
@@ -494,7 +494,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 190
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mPendingPackages:Ljava/util/HashSet;
 
     return-object v0
@@ -505,7 +505,7 @@
     .parameter "item"
 
     .prologue
-    .line 476
+    .line 475
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -531,7 +531,7 @@
     .end annotation
 
     .prologue
-    .line 200
+    .line 199
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mUnavailableApps:Ljava/util/HashSet;
 
     return-object v0
@@ -543,7 +543,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 488
+    .line 487
     invoke-virtual {p0}, Lcom/sonyericsson/home/resourceload/PackageLoader;->getActivityInfoSet()Ljava/util/Set;
 
     move-result-object v2
@@ -566,7 +566,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/data/ActivityInfo;
 
-    .line 489
+    .line 488
     .local v1, info:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/ActivityInfo;->getName()Ljava/lang/String;
 
@@ -588,10 +588,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 490
+    .line 489
     const/4 v2, 0x1
 
-    .line 493
+    .line 492
     .end local v1           #info:Lcom/sonyericsson/home/data/ActivityInfo;
     :goto_0
     return v2
@@ -606,7 +606,7 @@
     .locals 1
 
     .prologue
-    .line 131
+    .line 130
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -622,20 +622,6 @@
     goto :goto_0
 .end method
 
-.method public isSafeMode()Z
-    .locals 1
-
-    .prologue
-    .line 511
-    iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mPackageManager:Landroid/content/pm/PackageManager;
-
-    invoke-virtual {v0}, Landroid/content/pm/PackageManager;->isSafeMode()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public isUninstallable(Lcom/sonyericsson/home/data/ActivityInfo;)Z
     .locals 5
     .parameter "activityInfo"
@@ -645,7 +631,7 @@
 
     const/4 v3, 0x0
 
-    .line 143
+    .line 142
     iget-object v1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mAllActivities:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -654,11 +640,11 @@
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    .line 144
+    .line 143
     .local v0, info:Landroid/content/pm/ResolveInfo;
     if-eqz v0, :cond_1
 
-    .line 145
+    .line 144
     iget-object v1, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v1, v1, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -671,17 +657,17 @@
 
     move v1, v4
 
-    .line 150
+    .line 149
     :goto_0
     return v1
 
     :cond_0
     move v1, v3
 
-    .line 145
+    .line 144
     goto :goto_0
 
-    .line 146
+    .line 145
     :cond_1
     iget-object v1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mUnavailableApps:Ljava/util/HashSet;
 
@@ -697,13 +683,13 @@
 
     move v1, v4
 
-    .line 147
+    .line 146
     goto :goto_0
 
     :cond_2
     move v1, v3
 
-    .line 150
+    .line 149
     goto :goto_0
 .end method
 
@@ -712,7 +698,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 336
+    .line 335
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mWorker:Lcom/sonyericsson/util/Worker;
 
     new-instance v1, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;
@@ -721,7 +707,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/util/Worker;->postTask(Lcom/sonyericsson/util/Worker$Task;)V
 
-    .line 337
+    .line 336
     return-void
 .end method
 
@@ -730,7 +716,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 398
+    .line 397
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mWorker:Lcom/sonyericsson/util/Worker;
 
     new-instance v1, Lcom/sonyericsson/home/resourceload/PackageLoader$PackageChangeTask;
@@ -739,7 +725,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/util/Worker;->postTask(Lcom/sonyericsson/util/Worker$Task;)V
 
-    .line 399
+    .line 398
     return-void
 .end method
 
@@ -748,7 +734,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 445
+    .line 444
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mWorker:Lcom/sonyericsson/util/Worker;
 
     new-instance v1, Lcom/sonyericsson/home/resourceload/PackageLoader$RemovePackageTask;
@@ -757,7 +743,7 @@
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/util/Worker;->postTask(Lcom/sonyericsson/util/Worker$Task;)V
 
-    .line 446
+    .line 445
     return-void
 .end method
 
@@ -766,7 +752,7 @@
     .parameter "packageList"
 
     .prologue
-    .line 449
+    .line 448
     move-object v0, p1
 
     .local v0, arr$:[Ljava/lang/String;
@@ -781,21 +767,21 @@
 
     aget-object v4, v0, v1
 
-    .line 450
+    .line 449
     .local v4, packageName:Ljava/lang/String;
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mUnavailableApps:Ljava/util/HashSet;
 
     invoke-virtual {v5, v4}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 451
+    .line 450
     invoke-virtual {p0, v4}, Lcom/sonyericsson/home/resourceload/PackageLoader;->packageChanged(Ljava/lang/String;)V
 
-    .line 449
+    .line 448
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 454
+    .line 453
     .end local v4           #packageName:Ljava/lang/String;
     :cond_0
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnPackageUpdateListeners:Ljava/util/ArrayList;
@@ -818,13 +804,13 @@
 
     check-cast v3, Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
-    .line 455
+    .line 454
     .local v3, listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     invoke-interface {v3, p1}, Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;->onPackagesAvailable([Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 457
+    .line 456
     .end local v3           #listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     :cond_1
     return-void
@@ -835,7 +821,7 @@
     .parameter "packageList"
 
     .prologue
-    .line 460
+    .line 459
     move-object v0, p1
 
     .local v0, arr$:[Ljava/lang/String;
@@ -850,18 +836,18 @@
 
     aget-object v4, v0, v1
 
-    .line 461
+    .line 460
     .local v4, packageName:Ljava/lang/String;
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mUnavailableApps:Ljava/util/HashSet;
 
     invoke-virtual {v5, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 460
+    .line 459
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 464
+    .line 463
     .end local v4           #packageName:Ljava/lang/String;
     :cond_0
     iget-object v5, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnPackageUpdateListeners:Ljava/util/ArrayList;
@@ -884,13 +870,13 @@
 
     check-cast v3, Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
-    .line 465
+    .line 464
     .local v3, listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     invoke-interface {v3, p1}, Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;->onPackagesUnavailable([Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 467
+    .line 466
     .end local v3           #listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     :cond_1
     return-void
@@ -901,11 +887,11 @@
     .parameter "listener"
 
     .prologue
-    .line 237
+    .line 236
     iget-object v0, p0, Lcom/sonyericsson/home/resourceload/PackageLoader;->mOnPackageUpdateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 238
+    .line 237
     return-void
 .end method

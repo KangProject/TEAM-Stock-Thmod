@@ -18,5 +18,5 @@
 .method public abstract onFolderCanceled()V
 .end method
 
-.method public abstract onFolderRenamed(Ljava/lang/String;)V
+.method public abstract onFolderRenamed(Ljava/lang/String;I)V
 .end method

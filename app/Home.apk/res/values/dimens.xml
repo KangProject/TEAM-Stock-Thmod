@@ -52,13 +52,4 @@
     <dimen name="network_name_view_size">18.0dip</dimen>
     <dimen name="corner_button_max_icon_size">48.0dip</dimen>
     <dimen name="apptray_uninstall_badge_offset">4.0dip</dimen>
-    <dimen name="app_share_drop_zone_height">25.0dip</dimen>
-    <dimen name="app_sharing_icn_padding">1.0dip</dimen>
-    <dimen name="folder_minis_padding_top">5.5dip</dimen>
-    <dimen name="styles_fbi_buttoncontainer_marginTop">20.0dip</dimen>
-    <dimen name="styles_fbi_buttoncontainer_marginBottom">20.0dip</dimen>
-    <dimen name="styles_fbi_button_text_size">14.699982dip</dimen>
-    <dimen name="semc_text_size_medium">18.0sp</dimen>
-    <dimen name="semc_text_size_small">14.0sp</dimen>
-    <dimen name="semc_text_size_button">@dimen/semc_text_size_small</dimen>
 </resources>

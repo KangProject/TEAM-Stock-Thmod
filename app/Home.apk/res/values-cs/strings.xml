@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Zrušit</string>
     <string name="home_button_exit_overview">Ukončit přehled</string>
     <string name="home_no_uninstallable_apps_txt">Tyto aplikace nelze odinstalovat.</string>
-    <string name="home_app_share_dropzone_hint_txt">Přetažením sem položku sdílíte</string>
-    <string name="appdialog_title">Vystav. ve sl. Facebook</string>
-    <string name="appdialog_comment_hint">Přidat komentář</string>
-    <string name="appdialog_button_share">Sdílet</string>
-    <string name="appdialog_button_cancel">Zrušit</string>
-    <string name="appdialog_other_options_info">Další možnosti sdílení</string>
-    <string name="appdialog_progress_info">Vytváření příspěvku</string>
-    <string name="appdialog_toast_cannot_be_shared">Tuto položku nelze sdílet</string>
-    <string name="appdialog_toast_connection_error">Chyba připojení</string>
-    <string name="appdialog_toast_sharing">Sdílení ve službě Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Sdílet</string>
 </resources>

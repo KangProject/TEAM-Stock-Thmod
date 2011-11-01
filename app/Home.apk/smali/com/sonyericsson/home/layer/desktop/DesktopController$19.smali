@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 2458
+    .line 2393
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$19;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$19;->val$info:Lcom/sonyericsson/home/data/Info;
@@ -43,27 +43,23 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 2462
+    .line 2397
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$19;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$3500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)Lcom/sonyericsson/home/widget/AdvWidgetManager;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$19;->val$info:Lcom/sonyericsson/home/data/Info;
+    iget-object p0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$19;->val$info:Lcom/sonyericsson/home/data/Info;
 
-    check-cast v0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
+    .end local p0
+    check-cast p0, Lcom/sonyericsson/home/data/AdvWidgetInfo;
 
-    invoke-virtual {v1, v0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidgetView(Lcom/sonyericsson/home/data/AdvWidgetInfo;)Landroid/view/View;
+    invoke-virtual {v0, p0}, Lcom/sonyericsson/home/widget/AdvWidgetManager;->getWidgetView(Lcom/sonyericsson/home/data/AdvWidgetInfo;)Landroid/view/View;
 
-    .line 2463
-    iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$19;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
-
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6500(Lcom/sonyericsson/home/layer/desktop/DesktopController;)V
-
-    .line 2464
+    .line 2398
     return-void
 .end method

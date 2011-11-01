@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Отмяна</string>
     <string name="home_button_exit_overview">Изход от общия преглед</string>
     <string name="home_no_uninstallable_apps_txt">Тези приложения не могат да се деинсталират</string>
-    <string name="home_app_share_dropzone_hint_txt">Пуснете тук, за да споделите елемента</string>
-    <string name="appdialog_title">Публик. във Facebook</string>
-    <string name="appdialog_comment_hint">Добавяне на коментар</string>
-    <string name="appdialog_button_share">Сподели</string>
-    <string name="appdialog_button_cancel">Отмени</string>
-    <string name="appdialog_other_options_info">Др. опции за сподел.</string>
-    <string name="appdialog_progress_info">Създаване на публикация</string>
-    <string name="appdialog_toast_cannot_be_shared">Този елемент не може да се сподели</string>
-    <string name="appdialog_toast_connection_error">Грешка при свързване</string>
-    <string name="appdialog_toast_sharing">Споделяне във Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Споделяне</string>
 </resources>

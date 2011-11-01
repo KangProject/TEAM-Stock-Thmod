@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Annulla</string>
     <string name="home_button_exit_overview">Esci dalla panoramica</string>
     <string name="home_no_uninstallable_apps_txt">Impossibile disinstallare queste app.</string>
-    <string name="home_app_share_dropzone_hint_txt">"Rilascia qui per condividere l'elemento"</string>
-    <string name="appdialog_title">Pubblica su Facebook</string>
-    <string name="appdialog_comment_hint">Aggiungi un commento</string>
-    <string name="appdialog_button_share">Condividi</string>
-    <string name="appdialog_button_cancel">Annulla</string>
-    <string name="appdialog_other_options_info">Altre opzioni di condiv.</string>
-    <string name="appdialog_progress_info">Creazione post</string>
-    <string name="appdialog_toast_cannot_be_shared">Questo elemento non può essere condiviso</string>
-    <string name="appdialog_toast_connection_error">Errore di connessione</string>
-    <string name="appdialog_toast_sharing">Condividi su Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Condividi</string>
 </resources>

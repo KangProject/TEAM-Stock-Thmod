@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">取消</string>
     <string name="home_button_exit_overview">離開概覽</string>
     <string name="home_no_uninstallable_apps_txt">無法解除安裝這些應用程式</string>
-    <string name="home_app_share_dropzone_hint_txt">拖放至此處以分享項目</string>
-    <string name="appdialog_title">發表到Facebook</string>
-    <string name="appdialog_comment_hint">新增您的評論</string>
-    <string name="appdialog_button_share">分享</string>
-    <string name="appdialog_button_cancel">取消</string>
-    <string name="appdialog_other_options_info">其他分享選項</string>
-    <string name="appdialog_progress_info">建立留言</string>
-    <string name="appdialog_toast_cannot_be_shared">無法分享此項目</string>
-    <string name="appdialog_toast_connection_error">連接錯誤</string>
-    <string name="appdialog_toast_sharing">在Facebook上分享</string>
-    <string name="home_app_share_chooser_title_txt">分享</string>
 </resources>

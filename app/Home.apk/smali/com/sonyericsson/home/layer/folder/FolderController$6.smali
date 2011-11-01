@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 242
+    .line 228
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$6;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,43 +42,43 @@
     .parameter "view"
 
     .prologue
-    .line 245
+    .line 231
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$6;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$200(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderLayout;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_1
 
-    .line 246
+    .line 232
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$6;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/folder/FolderFlow;->onClickFade()V
 
-    .line 250
+    .line 236
     :cond_0
     :goto_0
     return-void
 
-    .line 247
+    .line 233
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$6;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$500(Lcom/sonyericsson/home/layer/folder/FolderController;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Landroid/widget/TextView;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 248
+    .line 234
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$6;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$1000(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/home/layer/folder/FolderFlow;
 
     move-result-object v0
 

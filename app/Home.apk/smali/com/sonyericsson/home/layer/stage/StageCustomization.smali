@@ -155,63 +155,63 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 129
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     new-instance v4, Lcom/sonyericsson/home/data/ActivityInfo;
 
     invoke-direct {v4, p3, p2}, Lcom/sonyericsson/home/data/ActivityInfo;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 133
+    .line 131
     .local v4, info:Lcom/sonyericsson/home/data/ActivityInfo;
     if-eqz p5, :cond_1
 
-    .line 134
+    .line 132
     invoke-direct {p0, p5}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->findFolder(Ljava/lang/String;)Lcom/sonyericsson/home/data/InfoGroup;
 
     move-result-object v2
 
-    .line 135
+    .line 133
     .local v2, folderItem:Lcom/sonyericsson/home/data/Info;
     if-eqz v2, :cond_0
 
-    .line 136
+    .line 134
     move-object v0, v2
 
     check-cast v0, Lcom/sonyericsson/home/data/InfoGroup;
 
     move-object v1, v0
 
-    .line 137
+    .line 135
     .local v1, folderInfo:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v5, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-virtual {v5, v1, v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->addLast(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 147
+    .line 145
     .end local v1           #folderInfo:Lcom/sonyericsson/home/data/InfoGroup;
     .end local v2           #folderItem:Lcom/sonyericsson/home/data/Info;
     :cond_0
     :goto_0
     return-void
 
-    .line 140
+    .line 138
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->findActivityIndex(Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v3
 
-    .line 141
+    .line 139
     .local v3, index:I
     const/4 v5, -0x1
 
     if-eq v3, v5, :cond_2
 
-    .line 142
+    .line 140
     const/4 v5, 0x0
 
     invoke-virtual {p1, v3, v5}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 145
+    .line 143
     :cond_2
     invoke-virtual {p0, p1, p4, v4}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->addItem(Ljava/util/ArrayList;ILcom/sonyericsson/home/data/Info;)V
 
@@ -240,39 +240,45 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 249
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     new-instance v1, Lcom/sonyericsson/home/data/InfoGroup;
 
-    invoke-direct {v1, p3}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mCategories:[Ljava/lang/String;
 
-    .line 253
+    invoke-static {v2, p4}, Lcom/sonyericsson/home/customization/CustomizationUtils;->getCategoryIndex([Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-direct {v1, p3, v2}, Lcom/sonyericsson/home/data/InfoGroup;-><init>(Ljava/lang/String;I)V
+
+    .line 252
     .local v1, info:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v2, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mFolders:Ljava/util/HashMap;
 
     invoke-virtual {v2, p2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 255
+    .line 254
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->findFolderIndex(Ljava/util/ArrayList;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 256
+    .line 255
     .local v0, index:I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_0
 
-    .line 257
+    .line 256
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 260
+    .line 259
     :cond_0
     invoke-virtual {p0, p1, p5, v1}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->addItem(Ljava/util/ArrayList;ILcom/sonyericsson/home/data/Info;)V
 
-    .line 261
+    .line 260
     return-void
 .end method
 
@@ -305,18 +311,18 @@
     .end annotation
 
     .prologue
-    .line 198
+    .line 196
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     :try_start_0
     invoke-static/range {p2 .. p6}, Lcom/sonyericsson/home/customization/CustomizationUtils;->createShortcutInfo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/sonyericsson/home/data/ShortcutInfo;
 
     move-result-object v8
 
-    .line 201
+    .line 199
     .local v8, info:Lcom/sonyericsson/home/data/ShortcutInfo;
     if-eqz p8, :cond_1
 
-    .line 202
+    .line 200
     move-object v0, p0
 
     move-object/from16 v1, p8
@@ -325,24 +331,24 @@
 
     move-result-object v6
 
-    .line 203
+    .line 201
     .local v6, folderItem:Lcom/sonyericsson/home/data/Info;
     if-eqz v6, :cond_0
 
-    .line 204
+    .line 202
     move-object v0, v6
 
     check-cast v0, Lcom/sonyericsson/home/data/InfoGroup;
 
     move-object v5, v0
 
-    .line 205
+    .line 203
     .local v5, folderInfo:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v9, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-virtual {v9, v5, v8}, Lcom/sonyericsson/home/layer/InfoGroupManager;->addLast(Lcom/sonyericsson/home/data/InfoGroup;Lcom/sonyericsson/home/data/Info;)V
 
-    .line 218
+    .line 216
     .end local v5           #folderInfo:Lcom/sonyericsson/home/data/InfoGroup;
     .end local v6           #folderItem:Lcom/sonyericsson/home/data/Info;
     .end local v8           #info:Lcom/sonyericsson/home/data/ShortcutInfo;
@@ -350,25 +356,25 @@
     :goto_0
     return-void
 
-    .line 208
+    .line 206
     .restart local v8       #info:Lcom/sonyericsson/home/data/ShortcutInfo;
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->findShortcutIndex(Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v7
 
-    .line 209
+    .line 207
     .local v7, index:I
     const/4 v9, -0x1
 
     if-eq v7, v9, :cond_2
 
-    .line 210
+    .line 208
     const/4 v9, 0x0
 
     invoke-virtual {p1, v7, v9}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 213
+    .line 211
     :cond_2
     move-object v0, p0
 
@@ -384,7 +390,7 @@
 
     goto :goto_0
 
-    .line 215
+    .line 213
     .end local v7           #index:I
     .end local v8           #info:Lcom/sonyericsson/home/data/ShortcutInfo;
     :catch_0
@@ -392,7 +398,7 @@
 
     move-object v4, v9
 
-    .line 216
+    .line 214
     .local v4, e:Ljava/net/URISyntaxException;
     const-string v9, "stage"
 
@@ -422,13 +428,13 @@
     .end annotation
 
     .prologue
-    .line 180
+    .line 178
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 181
+    .line 179
     .local v4, size:I
     const/4 v1, 0x0
 
@@ -436,27 +442,27 @@
     :goto_0
     if-ge v1, v4, :cond_1
 
-    .line 182
+    .line 180
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/sonyericsson/home/data/Info;
 
-    .line 183
+    .line 181
     .local v3, item:Lcom/sonyericsson/home/data/Info;
     instance-of v5, v3, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v5, :cond_0
 
-    .line 184
+    .line 182
     move-object v0, v3
 
     check-cast v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     move-object v2, v0
 
-    .line 185
+    .line 183
     .local v2, info:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-virtual {v2}, Lcom/sonyericsson/home/data/ActivityInfo;->getName()Ljava/lang/String;
 
@@ -480,20 +486,20 @@
 
     move v5, v1
 
-    .line 191
+    .line 189
     .end local v2           #info:Lcom/sonyericsson/home/data/ActivityInfo;
     .end local v3           #item:Lcom/sonyericsson/home/data/Info;
     :goto_1
     return v5
 
-    .line 181
+    .line 179
     .restart local v3       #item:Lcom/sonyericsson/home/data/Info;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 191
+    .line 189
     .end local v3           #item:Lcom/sonyericsson/home/data/Info;
     :cond_1
     const/4 v5, -0x1
@@ -506,7 +512,7 @@
     .parameter "id"
 
     .prologue
-    .line 274
+    .line 273
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mFolders:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -536,7 +542,7 @@
     .end annotation
 
     .prologue
-    .line 278
+    .line 277
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mFolders:Ljava/util/HashMap;
 
@@ -573,7 +579,7 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 229
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     const/4 v7, 0x0
 
@@ -582,7 +588,7 @@
 
     move-result-object v3
 
-    .line 232
+    .line 230
     .local v3, intent:Landroid/content/Intent;
     new-instance v5, Lcom/sonyericsson/home/data/ShortcutInfo;
 
@@ -592,13 +598,13 @@
 
     invoke-direct {v5, p2, v3, v7, v8}, Lcom/sonyericsson/home/data/ShortcutInfo;-><init>(Ljava/lang/String;Landroid/content/Intent;Landroid/content/Intent$ShortcutIconResource;Ljava/lang/String;)V
 
-    .line 233
+    .line 231
     .local v5, shortcutInfo:Lcom/sonyericsson/home/data/ShortcutInfo;
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    .line 234
+    .line 232
     .local v6, size:I
     const/4 v1, 0x0
 
@@ -606,27 +612,27 @@
     :goto_0
     if-ge v1, v6, :cond_1
 
-    .line 235
+    .line 233
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/sonyericsson/home/data/Info;
 
-    .line 236
+    .line 234
     .local v4, item:Lcom/sonyericsson/home/data/Info;
     instance-of v7, v4, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     if-eqz v7, :cond_0
 
-    .line 237
+    .line 235
     move-object v0, v4
 
     check-cast v0, Lcom/sonyericsson/home/data/ShortcutInfo;
 
     move-object v2, v0
 
-    .line 238
+    .line 236
     .local v2, info:Lcom/sonyericsson/home/data/ShortcutInfo;
     invoke-virtual {v2, v5}, Lcom/sonyericsson/home/data/ShortcutInfo;->equals(Ljava/lang/Object;)Z
     :try_end_0
@@ -638,7 +644,7 @@
 
     move v7, v1
 
-    .line 246
+    .line 244
     .end local v1           #i:I
     .end local v2           #info:Lcom/sonyericsson/home/data/ShortcutInfo;
     .end local v3           #intent:Landroid/content/Intent;
@@ -648,7 +654,7 @@
     :goto_1
     return v7
 
-    .line 234
+    .line 232
     .restart local v1       #i:I
     .restart local v3       #intent:Landroid/content/Intent;
     .restart local v4       #item:Lcom/sonyericsson/home/data/Info;
@@ -659,7 +665,7 @@
 
     goto :goto_0
 
-    .line 243
+    .line 241
     .end local v1           #i:I
     .end local v3           #intent:Landroid/content/Intent;
     .end local v4           #item:Lcom/sonyericsson/home/data/Info;
@@ -668,7 +674,7 @@
     :catch_0
     move-exception v7
 
-    .line 246
+    .line 244
     :cond_1
     const/4 v7, -0x1
 
@@ -696,27 +702,27 @@
     .end annotation
 
     .prologue
-    .line 151
+    .line 149
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     if-eqz p4, :cond_2
 
-    .line 152
+    .line 150
     invoke-direct {p0, p4}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->findFolder(Ljava/lang/String;)Lcom/sonyericsson/home/data/InfoGroup;
 
     move-result-object v3
 
-    .line 153
+    .line 151
     .local v3, folderItem:Lcom/sonyericsson/home/data/Info;
     if-eqz v3, :cond_0
 
-    .line 154
+    .line 152
     move-object v0, v3
 
     check-cast v0, Lcom/sonyericsson/home/data/InfoGroup;
 
     move-object v6, v0
 
-    .line 155
+    .line 153
     .local v6, info:Lcom/sonyericsson/home/data/InfoGroup;
     iget-object v8, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
@@ -724,7 +730,7 @@
 
     move-result v2
 
-    .line 156
+    .line 154
     .local v2, cnt:I
     const/4 v4, 0x0
 
@@ -732,27 +738,27 @@
     :goto_0
     if-ge v4, v2, :cond_0
 
-    .line 157
+    .line 155
     iget-object v8, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-virtual {v8, v6, v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->getInfo(Lcom/sonyericsson/home/data/InfoGroup;I)Lcom/sonyericsson/home/data/Info;
 
     move-result-object v7
 
-    .line 158
+    .line 156
     .local v7, tmp:Lcom/sonyericsson/home/data/Info;
     instance-of v8, v7, Lcom/sonyericsson/home/data/ActivityInfo;
 
     if-eqz v8, :cond_1
 
-    .line 159
+    .line 157
     move-object v0, v7
 
     check-cast v0, Lcom/sonyericsson/home/data/ActivityInfo;
 
     move-object v1, v0
 
-    .line 160
+    .line 158
     .local v1, activityInfo:Lcom/sonyericsson/home/data/ActivityInfo;
     invoke-virtual {v1}, Lcom/sonyericsson/home/data/ActivityInfo;->getName()Ljava/lang/String;
 
@@ -774,12 +780,12 @@
 
     if-eqz v8, :cond_1
 
-    .line 162
+    .line 160
     iget-object v8, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mInfoGroupManager:Lcom/sonyericsson/home/layer/InfoGroupManager;
 
     invoke-virtual {v8, v6, v4}, Lcom/sonyericsson/home/layer/InfoGroupManager;->remove(Lcom/sonyericsson/home/data/InfoGroup;I)Lcom/sonyericsson/home/data/Info;
 
-    .line 177
+    .line 175
     .end local v1           #activityInfo:Lcom/sonyericsson/home/data/ActivityInfo;
     .end local v2           #cnt:I
     .end local v3           #folderItem:Lcom/sonyericsson/home/data/Info;
@@ -790,7 +796,7 @@
     :goto_1
     return-void
 
-    .line 156
+    .line 154
     .restart local v2       #cnt:I
     .restart local v3       #folderItem:Lcom/sonyericsson/home/data/Info;
     .restart local v4       #i:I
@@ -801,7 +807,7 @@
 
     goto :goto_0
 
-    .line 169
+    .line 167
     .end local v2           #cnt:I
     .end local v3           #folderItem:Lcom/sonyericsson/home/data/Info;
     .end local v4           #i:I
@@ -812,20 +818,20 @@
 
     move-result v5
 
-    .line 170
+    .line 168
     .local v5, index:I
     const/4 v8, -0x1
 
     if-eq v5, v8, :cond_3
 
-    .line 171
+    .line 169
     const/4 v8, 0x0
 
     invoke-virtual {p1, v5, v8}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 173
+    .line 171
     :cond_3
     const-string v8, "stage"
 
@@ -879,33 +885,33 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 263
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->findFolderIndex(Ljava/util/ArrayList;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 265
+    .line 264
     .local v0, index:I
     iget-object v1, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mFolders:Ljava/util/HashMap;
 
     invoke-virtual {v1, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
+    .line 265
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 267
+    .line 266
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 271
+    .line 270
     :goto_0
     return-void
 
-    .line 269
+    .line 268
     :cond_0
     const-string v1, "stage"
 
@@ -951,28 +957,28 @@
     .end annotation
 
     .prologue
-    .line 221
+    .line 219
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     invoke-direct {p0, p1, p2, p3}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->findShortcutIndex(Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 222
+    .line 220
     .local v0, index:I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 223
+    .line 221
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 227
+    .line 225
     :goto_0
     return-void
 
-    .line 225
+    .line 223
     :cond_0
     const-string v1, "stage"
 
@@ -1022,21 +1028,21 @@
     .local p1, model:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/sonyericsson/home/data/Info;>;"
     const/4 v2, -0x1
 
-    .line 282
+    .line 281
     if-eq p2, v2, :cond_0
 
     const/4 v1, 0x4
 
     if-ge p2, v1, :cond_0
 
-    .line 283
+    .line 282
     invoke-virtual {p1, p2, p3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 293
+    .line 292
     :goto_0
     return-void
 
-    .line 285
+    .line 284
     :cond_0
     const/4 v1, 0x0
 
@@ -1044,16 +1050,16 @@
 
     move-result v0
 
-    .line 287
+    .line 286
     .local v0, index:I
     if-eq v0, v2, :cond_1
 
-    .line 288
+    .line 287
     invoke-virtual {p1, v0, p3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 290
+    .line 289
     :cond_1
     const-string v1, "stage"
 
@@ -1098,7 +1104,7 @@
     .end annotation
 
     .prologue
-    .line 296
+    .line 295
     iget-object v0, p0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mFolders:Ljava/util/HashMap;
 
     return-object v0
@@ -1236,7 +1242,7 @@
 
     invoke-direct/range {v5 .. v10}, Lcom/sonyericsson/home/layer/stage/StageCustomization;->addActivityItem(Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 126
+    .line 124
     .end local v8           #packageName:Ljava/lang/String;
     .end local v9           #position:I
     .end local v10           #folderId:Ljava/lang/String;
@@ -1262,7 +1268,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 80
+    .line 79
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mPackageLoader:Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -1271,7 +1277,7 @@
 
     invoke-virtual {v5, v8}, Lcom/sonyericsson/home/resourceload/PackageLoader;->addPendingPackage(Ljava/lang/String;)V
 
-    .line 81
+    .line 80
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mModel:Ljava/util/ArrayList;
@@ -1284,7 +1290,7 @@
 
     goto :goto_0
 
-    .line 83
+    .line 82
     .end local v7           #name:Ljava/lang/String;
     .end local v8           #packageName:Ljava/lang/String;
     .end local v9           #position:I
@@ -1303,7 +1309,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 84
+    .line 83
     const-string v5, "package-name"
 
     move-object/from16 v0, p3
@@ -1316,7 +1322,7 @@
 
     check-cast v8, Ljava/lang/String;
 
-    .line 85
+    .line 84
     .restart local v8       #packageName:Ljava/lang/String;
     const-string v5, "name"
 
@@ -1339,7 +1345,7 @@
 
     move-result-object v7
 
-    .line 86
+    .line 85
     .restart local v7       #name:Ljava/lang/String;
     const-string v5, "folder"
 
@@ -1353,7 +1359,7 @@
 
     check-cast v10, Ljava/lang/String;
 
-    .line 87
+    .line 86
     .restart local v10       #folderId:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1375,7 +1381,7 @@
 
     goto :goto_0
 
-    .line 88
+    .line 87
     .end local v7           #name:Ljava/lang/String;
     .end local v8           #packageName:Ljava/lang/String;
     .end local v10           #folderId:Ljava/lang/String;
@@ -1393,7 +1399,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 89
+    .line 88
     const-string v5, "name"
 
     move-object/from16 v0, p3
@@ -1406,7 +1412,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 90
+    .line 89
     .restart local v7       #name:Ljava/lang/String;
     const-string v5, "uri"
 
@@ -1420,7 +1426,7 @@
 
     check-cast v14, Ljava/lang/String;
 
-    .line 91
+    .line 90
     .local v14, uri:Ljava/lang/String;
     const-string v5, "folder"
 
@@ -1434,7 +1440,7 @@
 
     check-cast v10, Ljava/lang/String;
 
-    .line 92
+    .line 91
     .restart local v10       #folderId:Ljava/lang/String;
     const-string v5, "icon-package-name"
 
@@ -1448,7 +1454,7 @@
 
     check-cast v15, Ljava/lang/String;
 
-    .line 93
+    .line 92
     .local v15, iconPackageName:Ljava/lang/String;
     const-string v5, "icon-resource-name"
 
@@ -1462,7 +1468,7 @@
 
     check-cast v16, Ljava/lang/String;
 
-    .line 94
+    .line 93
     .local v16, iconResourceName:Ljava/lang/String;
     const-string v5, "icon-filename"
 
@@ -1476,7 +1482,7 @@
 
     check-cast v17, Ljava/lang/String;
 
-    .line 95
+    .line 94
     .local v17, iconFilename:Ljava/lang/String;
     const-string v5, "position"
 
@@ -1501,7 +1507,7 @@
 
     move-result v9
 
-    .line 96
+    .line 95
     .restart local v9       #position:I
     move-object/from16 v0, p0
 
@@ -1521,7 +1527,7 @@
 
     goto/16 :goto_0
 
-    .line 98
+    .line 97
     .end local v7           #name:Ljava/lang/String;
     .end local v9           #position:I
     .end local v10           #folderId:Ljava/lang/String;
@@ -1543,7 +1549,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 99
+    .line 98
     const-string v5, "name"
 
     move-object/from16 v0, p3
@@ -1556,7 +1562,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 100
+    .line 99
     .restart local v7       #name:Ljava/lang/String;
     const-string v5, "uri"
 
@@ -1570,7 +1576,7 @@
 
     check-cast v14, Ljava/lang/String;
 
-    .line 101
+    .line 100
     .restart local v14       #uri:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1590,7 +1596,7 @@
 
     goto/16 :goto_0
 
-    .line 102
+    .line 101
     .end local v7           #name:Ljava/lang/String;
     .end local v14           #uri:Ljava/lang/String;
     :cond_5
@@ -1606,7 +1612,7 @@
 
     if-eqz v5, :cond_8
 
-    .line 103
+    .line 102
     const-string v5, "name"
 
     move-object/from16 v0, p3
@@ -1619,7 +1625,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 104
+    .line 103
     .restart local v7       #name:Ljava/lang/String;
     const-string v5, "category"
 
@@ -1633,7 +1639,7 @@
 
     check-cast v22, Ljava/lang/String;
 
-    .line 105
+    .line 104
     .local v22, category:Ljava/lang/String;
     const-string v5, "id"
 
@@ -1647,11 +1653,11 @@
 
     check-cast v20, Ljava/lang/String;
 
-    .line 106
+    .line 105
     .local v20, id:Ljava/lang/String;
     if-nez v7, :cond_6
 
-    .line 107
+    .line 106
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/sonyericsson/home/layer/stage/StageCustomization;->mCategories:[Ljava/lang/String;
@@ -1674,14 +1680,14 @@
 
     move-result-object v7
 
-    .line 110
+    .line 108
     :cond_6
     if-nez v20, :cond_7
 
-    .line 111
+    .line 109
     move-object/from16 v20, v7
 
-    .line 113
+    .line 111
     :cond_7
     const-string v5, "position"
 
@@ -1706,7 +1712,7 @@
 
     move-result v9
 
-    .line 114
+    .line 112
     .restart local v9       #position:I
     move-object/from16 v0, p0
 
@@ -1724,7 +1730,7 @@
 
     goto/16 :goto_0
 
-    .line 115
+    .line 113
     .end local v7           #name:Ljava/lang/String;
     .end local v9           #position:I
     .end local v20           #id:Ljava/lang/String;
@@ -1743,7 +1749,7 @@
 
     if-eqz v5, :cond_a
 
-    .line 116
+    .line 114
     const-string v5, "name"
 
     move-object/from16 v0, p3
@@ -1756,7 +1762,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 117
+    .line 115
     .restart local v7       #name:Ljava/lang/String;
     const-string v5, "id"
 
@@ -1770,14 +1776,14 @@
 
     check-cast v20, Ljava/lang/String;
 
-    .line 118
+    .line 116
     .restart local v20       #id:Ljava/lang/String;
     if-nez v20, :cond_9
 
-    .line 119
+    .line 117
     move-object/from16 v20, v7
 
-    .line 121
+    .line 119
     :cond_9
     move-object/from16 v0, p0
 
@@ -1795,7 +1801,7 @@
 
     goto/16 :goto_0
 
-    .line 123
+    .line 121
     .end local v7           #name:Ljava/lang/String;
     .end local v20           #id:Ljava/lang/String;
     :cond_a

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 275
+    .line 261
     iput-object p1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$9;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
     .locals 2
 
     .prologue
-    .line 278
+    .line 264
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$9;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)F
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$800(Lcom/sonyericsson/home/layer/folder/FolderController;)F
 
     move-result v0
 
@@ -54,31 +54,31 @@
 
     if-eqz v0, :cond_0
 
-    .line 279
+    .line 265
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$9;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/folder/FolderController$9;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$900(Lcom/sonyericsson/home/layer/folder/FolderController;)F
+    invoke-static {v1}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$800(Lcom/sonyericsson/home/layer/folder/FolderController;)F
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/sonyericsson/paneview/PaneView;->scroll(F)V
 
-    .line 280
+    .line 266
     iget-object v0, p0, Lcom/sonyericsson/home/layer/folder/FolderController$9;->this$0:Lcom/sonyericsson/home/layer/folder/FolderController;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$400(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
+    invoke-static {v0}, Lcom/sonyericsson/home/layer/folder/FolderController;->access$300(Lcom/sonyericsson/home/layer/folder/FolderController;)Lcom/sonyericsson/paneview/PaneView;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/sonyericsson/paneview/PaneView;->post(Ljava/lang/Runnable;)Z
 
-    .line 282
+    .line 268
     :cond_0
     return-void
 .end method

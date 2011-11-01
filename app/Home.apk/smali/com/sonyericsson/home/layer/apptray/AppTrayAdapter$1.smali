@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 91
+    .line 88
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 90
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter$1;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;
 
     invoke-virtual {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayAdapter;->notifyDataSetChanged()V
 
-    .line 94
+    .line 91
     return-void
 .end method

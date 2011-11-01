@@ -38,18 +38,18 @@
     .parameter "packageName"
 
     .prologue
-    .line 300
+    .line 299
     iput-object p1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
-    .line 301
+    .line 300
     const-string v0, "add package"
 
     invoke-direct {p0, v0}, Lcom/sonyericsson/util/Worker$Task;-><init>(Ljava/lang/String;)V
 
-    .line 302
+    .line 301
     iput-object p2, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->mPackageName:Ljava/lang/String;
 
-    .line 303
+    .line 302
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .locals 3
 
     .prologue
-    .line 307
+    .line 306
     new-instance v1, Landroid/content/Intent;
 
     invoke-static {}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$000()Landroid/content/Intent;
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    .line 308
+    .line 307
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -90,19 +90,19 @@
 
     iput-object v1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->mResolveInfos:Ljava/util/List;
 
-    .line 309
+    .line 308
     iget-object v1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->mResolveInfos:Ljava/util/List;
 
     if-nez v1, :cond_0
 
-    .line 310
+    .line 309
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->mResolveInfos:Ljava/util/List;
 
-    .line 312
+    .line 311
     :cond_0
     return-void
 .end method
@@ -111,7 +111,7 @@
     .locals 5
 
     .prologue
-    .line 316
+    .line 315
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->mResolveInfos:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -132,7 +132,7 @@
 
     check-cast v2, Landroid/content/pm/ResolveInfo;
 
-    .line 317
+    .line 316
     .local v2, resolveInfo:Landroid/content/pm/ResolveInfo;
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
@@ -148,7 +148,7 @@
 
     goto :goto_0
 
-    .line 320
+    .line 319
     .end local v2           #resolveInfo:Landroid/content/pm/ResolveInfo;
     :cond_0
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
@@ -161,7 +161,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 321
+    .line 320
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     invoke-static {v3}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$600(Lcom/sonyericsson/home/resourceload/PackageLoader;)Ljava/util/HashSet;
@@ -172,7 +172,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 323
+    .line 322
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->this$0:Lcom/sonyericsson/home/resourceload/PackageLoader;
 
     invoke-static {v3}, Lcom/sonyericsson/home/resourceload/PackageLoader;->access$700(Lcom/sonyericsson/home/resourceload/PackageLoader;)Ljava/util/ArrayList;
@@ -196,7 +196,7 @@
 
     check-cast v1, Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
 
-    .line 324
+    .line 323
     .local v1, listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     iget-object v3, p0, Lcom/sonyericsson/home/resourceload/PackageLoader$AddPackageTask;->mPackageName:Ljava/lang/String;
 
@@ -204,7 +204,7 @@
 
     goto :goto_1
 
-    .line 326
+    .line 325
     .end local v1           #listener:Lcom/sonyericsson/home/resourceload/PackageLoader$OnPackageUpdateListener;
     :cond_1
     return-void

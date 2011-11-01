@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 2478
+    .line 2412
     iput-object p1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$20;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iput-object p2, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$20;->val$info:Lcom/sonyericsson/home/data/WidgetInfo;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 2480
+    .line 2414
     iget-object v0, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$20;->this$0:Lcom/sonyericsson/home/layer/desktop/DesktopController;
 
     iget-object v1, p0, Lcom/sonyericsson/home/layer/desktop/DesktopController$20;->val$info:Lcom/sonyericsson/home/data/WidgetInfo;
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6600(Lcom/sonyericsson/home/layer/desktop/DesktopController;Lcom/sonyericsson/home/data/WidgetInfo;)V
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/layer/desktop/DesktopController;->access$6500(Lcom/sonyericsson/home/layer/desktop/DesktopController;Lcom/sonyericsson/home/data/WidgetInfo;)V
 
-    .line 2481
+    .line 2415
     return-void
 .end method

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field mIsAppShareEnabled:Z
+.field mLandscapeModeEnabled:Z
 
 
 # direct methods
@@ -25,15 +25,15 @@
     .parameter "type"
 
     .prologue
-    .line 97
+    .line 207
     invoke-direct {p0, p1, p2}, Lcom/sonyericsson/home/customization/GenericCustomization;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 94
+    .line 204
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/sonyericsson/home/GlobalCustomizationManager$GlobalCustomization;->mIsAppShareEnabled:Z
+    iput-boolean v0, p0, Lcom/sonyericsson/home/GlobalCustomizationManager$GlobalCustomization;->mLandscapeModeEnabled:Z
 
-    .line 98
+    .line 208
     return-void
 .end method
 
@@ -45,8 +45,8 @@
     .parameter "value"
 
     .prologue
-    .line 102
-    const-string v0, "app-share-enabled"
+    .line 212
+    const-string v0, "landscape-mode-enabled"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -54,17 +54,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 213
     invoke-static {p2}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/sonyericsson/home/GlobalCustomizationManager$GlobalCustomization;->mIsAppShareEnabled:Z
+    iput-boolean v0, p0, Lcom/sonyericsson/home/GlobalCustomizationManager$GlobalCustomization;->mLandscapeModeEnabled:Z
 
-    .line 104
+    .line 214
     const/4 v0, 0x1
 
-    .line 107
+    .line 217
     :goto_0
     return v0
 

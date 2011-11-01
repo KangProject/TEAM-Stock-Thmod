@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Mégse</string>
     <string name="home_button_exit_overview">Kilépés áttekintő módból</string>
     <string name="home_no_uninstallable_apps_txt">Ezek az alkalmazások nem távolíthatók el</string>
-    <string name="home_app_share_dropzone_hint_txt">Húzza ide az elem megosztásához</string>
-    <string name="appdialog_title">Közzététel Facebookon</string>
-    <string name="appdialog_comment_hint">Megjegyzés hozzáadása</string>
-    <string name="appdialog_button_share">Megosztás</string>
-    <string name="appdialog_button_cancel">Mégse</string>
-    <string name="appdialog_other_options_info">Egyéb megosztási beáll.</string>
-    <string name="appdialog_progress_info">Üzenet létrehozása</string>
-    <string name="appdialog_toast_cannot_be_shared">Ez az elem nem osztható meg</string>
-    <string name="appdialog_toast_connection_error">Kapcsolódási hiba</string>
-    <string name="appdialog_toast_sharing">Megosztás a Facebookon</string>
-    <string name="home_app_share_chooser_title_txt">Megosztás</string>
 </resources>

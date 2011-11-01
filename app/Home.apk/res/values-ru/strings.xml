@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Отмена</string>
     <string name="home_button_exit_overview">Закончить обзор</string>
     <string name="home_no_uninstallable_apps_txt">Невозможно удалить эти приложения</string>
-    <string name="home_app_share_dropzone_hint_txt">Поместите объект сюда, чтобы сделать его общим</string>
-    <string name="appdialog_title">Опублик. в Facebook</string>
-    <string name="appdialog_comment_hint">Добавьте свой комментарий</string>
-    <string name="appdialog_button_share">Обменяться</string>
-    <string name="appdialog_button_cancel">Отмена</string>
-    <string name="appdialog_other_options_info">Друг. функции обмена</string>
-    <string name="appdialog_progress_info">Публикация</string>
-    <string name="appdialog_toast_cannot_be_shared">Этот объект не может быть опубликован</string>
-    <string name="appdialog_toast_connection_error">Ошибка подключения</string>
-    <string name="appdialog_toast_sharing">Публикация на Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Обмен</string>
 </resources>

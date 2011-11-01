@@ -42,12 +42,12 @@
     .parameter
 
     .prologue
-    .line 2473
+    .line 2329
     iput-object p1, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2485
+    .line 2340
     new-instance v0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog$1;
 
     invoke-direct {v0, p0}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog$1;-><init>(Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;)V
@@ -63,18 +63,18 @@
     .parameter "x1"
 
     .prologue
-    .line 2473
+    .line 2329
     invoke-direct {p0, p1}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;-><init>(Lcom/sonyericsson/home/HomeActivity;)V
 
     return-void
 .end method
 
-.method static synthetic access$4600(Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;)Landroid/app/Dialog;
+.method static synthetic access$4400(Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;)Landroid/app/Dialog;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 2473
+    .line 2329
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->createDialog()Landroid/app/Dialog;
 
     move-result-object v0
@@ -86,14 +86,24 @@
     .locals 4
 
     .prologue
-    .line 2534
+    .line 2389
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
     iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v2}, Lcom/sonyericsson/home/bidi/Utils;->getAlertDialogBuilder(Landroid/content/Context;)Landroid/app/AlertDialog$Builder;
+    iget-object v3, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    move-result-object v0
+    invoke-virtual {v3}, Lcom/sonyericsson/home/HomeActivity;->getApplicationContext()Landroid/content/Context;
 
-    .line 2535
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/sonyericsson/home/bidi/Utils;->getDialogAlertThemeStyle(Landroid/content/Context;)I
+
+    move-result v3
+
+    invoke-direct {v0, v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
+
+    .line 2391
     .local v0, builder:Landroid/app/AlertDialog$Builder;
     iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
@@ -105,34 +115,34 @@
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 2536
+    .line 2392
     iget-object v2, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->adapter:Landroid/widget/BaseAdapter;
 
     const/4 v3, -0x1
 
     invoke-virtual {v0, v2, v3, p0}, Landroid/app/AlertDialog$Builder;->setSingleChoiceItems(Landroid/widget/ListAdapter;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 2538
+    .line 2394
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setInverseBackgroundForced(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 2540
+    .line 2396
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
-    .line 2541
+    .line 2397
     .local v1, dialog:Landroid/app/AlertDialog;
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 2542
+    .line 2398
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 2543
+    .line 2399
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 2545
+    .line 2401
     return-object v1
 .end method
 
@@ -140,7 +150,7 @@
     .locals 2
 
     .prologue
-    .line 2554
+    .line 2410
     :try_start_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
@@ -150,11 +160,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2558
+    .line 2414
     :goto_0
     return-void
 
-    .line 2555
+    .line 2411
     :catch_0
     move-exception v0
 
@@ -168,73 +178,77 @@
     .parameter "dialog"
 
     .prologue
-    .line 2562
+    .line 2418
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->dismissSafely()V
 
-    .line 2563
+    .line 2419
     return-void
 .end method
 
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+    .locals 4
     .parameter "dialog"
     .parameter "which"
 
     .prologue
-    .line 2567
+    .line 2423
     invoke-direct {p0}, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->dismissSafely()V
 
-    .line 2569
+    .line 2425
     packed-switch p2, :pswitch_data_0
 
-    .line 2583
+    .line 2439
     :goto_0
     return-void
 
-    .line 2571
+    .line 2427
     :pswitch_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$5200(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$4800(Lcom/sonyericsson/home/HomeActivity;)V
 
     goto :goto_0
 
-    .line 2575
+    .line 2431
     :pswitch_1
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2402(Lcom/sonyericsson/home/HomeActivity;Z)Z
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2302(Lcom/sonyericsson/home/HomeActivity;Z)Z
 
-    .line 2576
+    .line 2432
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2700(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2600(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$5400(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
+    invoke-static {v1}, Lcom/sonyericsson/home/HomeActivity;->access$5000(Lcom/sonyericsson/home/HomeActivity;)Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/sonyericsson/home/HomeActivityFlow;->addFolder(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;)V
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/sonyericsson/home/HomeActivityFlow;->addFolder(Lcom/sonyericsson/home/HomeActivityFlow$OnFolderCreatedListener;Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 2580
+    .line 2436
     :pswitch_2
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$5500(Lcom/sonyericsson/home/HomeActivity;)V
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$5100(Lcom/sonyericsson/home/HomeActivity;)V
 
     goto :goto_0
 
-    .line 2569
+    .line 2425
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -248,23 +262,23 @@
     .parameter "dialog"
 
     .prologue
-    .line 2587
+    .line 2443
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2100(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2000(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
 
     move-result-object v0
 
     if-ne v0, p1, :cond_0
 
-    .line 2588
+    .line 2444
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
+    invoke-static {v0, v1}, Lcom/sonyericsson/home/HomeActivity;->access$2002(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 2590
+    .line 2446
     :cond_0
     return-void
 .end method
@@ -274,33 +288,33 @@
     .parameter "dialog"
 
     .prologue
-    .line 2593
+    .line 2449
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2100(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2000(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2594
+    .line 2450
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
-    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2100(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
+    invoke-static {v0}, Lcom/sonyericsson/home/HomeActivity;->access$2000(Lcom/sonyericsson/home/HomeActivity;)Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2596
+    .line 2452
     :cond_0
     iget-object v0, p0, Lcom/sonyericsson/home/HomeActivity$AddToStageDialog;->this$0:Lcom/sonyericsson/home/HomeActivity;
 
     check-cast p1, Landroid/app/Dialog;
 
     .end local p1
-    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$2102(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
+    invoke-static {v0, p1}, Lcom/sonyericsson/home/HomeActivity;->access$2002(Lcom/sonyericsson/home/HomeActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 2597
+    .line 2453
     return-void
 .end method

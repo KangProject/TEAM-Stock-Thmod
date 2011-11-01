@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 447
+    .line 451
     iput-object p1, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 449
+    .line 453
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$600(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Z
@@ -51,12 +51,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 456
+    .line 460
     :cond_0
     :goto_0
     return-void
 
-    .line 452
+    .line 456
     :cond_1
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 453
+    .line 457
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     invoke-static {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController;->access$100(Lcom/sonyericsson/home/layer/apptray/AppTrayController;)Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;
@@ -75,7 +75,7 @@
 
     invoke-interface {v0}, Lcom/sonyericsson/home/layer/apptray/AppTrayController$AppTrayControllerListener;->sortButtonPressed()V
 
-    .line 454
+    .line 458
     iget-object v0, p0, Lcom/sonyericsson/home/layer/apptray/AppTrayController$6;->this$0:Lcom/sonyericsson/home/layer/apptray/AppTrayController;
 
     const/4 v1, 0x1

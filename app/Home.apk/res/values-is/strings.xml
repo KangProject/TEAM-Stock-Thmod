@@ -39,15 +39,4 @@
     <string name="gui_cancel_txt">Hætta við</string>
     <string name="home_button_exit_overview">Loka yfirliti</string>
     <string name="home_no_uninstallable_apps_txt">Ekki er hægt að fjarlægja þessi forrit</string>
-    <string name="home_app_share_dropzone_hint_txt">Slepptu hlut hér til að samnýta hann</string>
-    <string name="appdialog_title">Birta á Facebook</string>
-    <string name="appdialog_comment_hint">Bættu við ummælum</string>
-    <string name="appdialog_button_share">Deila</string>
-    <string name="appdialog_button_cancel">Hætta við</string>
-    <string name="appdialog_other_options_info">Aðrir deilikostir</string>
-    <string name="appdialog_progress_info">Bý til færslu</string>
-    <string name="appdialog_toast_cannot_be_shared">Ekki er hægt að deila þessum hlut</string>
-    <string name="appdialog_toast_connection_error">Tengivilla</string>
-    <string name="appdialog_toast_sharing">Birti á Facebook</string>
-    <string name="home_app_share_chooser_title_txt">Deila</string>
 </resources>
