@@ -18,5 +18,5 @@
             <TextView android:textAppearance="@android:style/TextAppearance.StatusBar.Ticker" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
         </com.android.systemui.statusbar.TickerView>
     </LinearLayout>
-    <com.android.systemui.statusbar.DateView android:textAppearance="@android:style/TextAppearance.StatusBar.Icon" android:textColor="#00000000" android:gravity="left|center" android:id="@id/date" android:background="#00000000" android:paddingLeft="6.0px" android:paddingTop="40.0px" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+    <com.android.systemui.statusbar.DateView android:textAppearance="@android:style/TextAppearance.StatusBar.Icon" android:textColor="#00000000" android:gravity="left|center" android:id="@id/date" android:background="#00ffffff" android:paddingLeft="6.0px" android:paddingTop="40.0px" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
 </com.android.systemui.statusbar.StatusBarView>
