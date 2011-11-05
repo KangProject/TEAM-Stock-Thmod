@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/background">
-        <shape>
-            <corners android:radius="5.0dip" />
-            <gradient android:startColor="#4cffffff" android:endColor="#4cffffff" android:angle="270.0" android:centerY="0.75" android:centerColor="#4cffffff" />
-        </shape>
-    </item>
+    <item android:id="@id/background" android:drawable="@drawable/progress_bg_holo_light" />
     <item android:id="@id/secondaryProgress">
-        <clip>
-            <shape>
-                <corners android:radius="5.0dip" />
-                <gradient android:startColor="#4c09afed" android:endColor="#4c09afed" android:angle="270.0" android:centerY="0.75" android:centerColor="#4c09afed" />
-            </shape>
-        </clip>
+        <scale android:drawable="@drawable/progress_secondary_holo_light" android:scaleWidth="100%" />
     </item>
     <item android:id="@id/progress">
-        <clip>
-            <shape>
-                <corners android:radius="5.0dip" />
-                <gradient android:startColor="#ff09afed" android:endColor="#ff09afed" android:angle="270.0" android:centerY="0.75" android:centerColor="#ff09afed" />
-            </shape>
-        </clip>
+        <scale android:drawable="@drawable/progress_primary_holo_light" android:scaleWidth="100%" />
     </item>
 </layer-list>

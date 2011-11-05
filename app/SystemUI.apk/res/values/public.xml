@@ -153,6 +153,8 @@
     <public type="drawable" name="quick_panel_icon_flight_mode_on" id="0x7f020096" />
     <public type="drawable" name="quick_panel_icon_sync_mode_off" id="0x7f020097" />
     <public type="drawable" name="quick_panel_icon_sync_mode_on" id="0x7f020098" />
+    <public type="drawable" name="btn_clear_default_small_normal" id="0x7f020099" />
+    <public type="drawable" name="btn_clear_default_small_pressed" id="0x7f02009a" />
     <public type="layout" name="battery_low" id="0x7f030000" />
     <public type="layout" name="status_bar" id="0x7f030001" />
     <public type="layout" name="status_bar_expanded" id="0x7f030002" />
