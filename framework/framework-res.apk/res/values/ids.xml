@@ -229,6 +229,10 @@
     <item type="id" name="button5">false</item>
     <item type="id" name="button6">false</item>
     <item type="id" name="button7">false</item>
+    <item type="id" name="button8">false</item>
+    <item type="id" name="button9">false</item>
+    <item type="id" name="button10">false</item>
+    <item type="id" name="button11">false</item>
     <item type="id" name="right_container">false</item>
     <item type="id" name="progress_circular">false</item>
     <item type="id" name="progress_horizontal">false</item>

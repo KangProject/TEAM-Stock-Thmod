@@ -37,6 +37,8 @@
 
 .field private mCaptureScreenshot:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
+.field private mXRecoveryt:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
 .field private final mContext:Landroid/content/Context;
 
 .field private mDeviceProvisioned:Z
@@ -483,7 +485,7 @@
 
     invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$8;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
-    iput-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mCaptureScreenshot:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+    iput-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mXRecoveryt:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
     aput-object v2, v0, v1
 

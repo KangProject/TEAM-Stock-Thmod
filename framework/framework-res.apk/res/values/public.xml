@@ -1394,6 +1394,10 @@
     <public type="id" name="zoomIn" id="0x01020288" />
     <public type="id" name="zoomMagnify" id="0x01020289" />
     <public type="id" name="mode_normal" id="0x0102028a" />
+    <public type="id" name="button8" id="0x0102028b" />
+    <public type="id" name="button9" id="0x0102028c" />
+    <public type="id" name="button10" id="0x0102028d" />
+    <public type="id" name="button11" id="0x0102028e" />
     <public type="style" name="Animation" id="0x01030000" />
     <public type="style" name="Animation.Activity" id="0x01030001" />
     <public type="style" name="Animation.Dialog" id="0x01030002" />
