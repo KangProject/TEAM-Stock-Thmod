@@ -66,6 +66,8 @@
 
 .field private mStatusBar:Landroid/app/StatusBarManager;
 
+.field private mXRecoveryt:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
@@ -483,7 +485,7 @@
 
     invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/GlobalActions$8;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
-    iput-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mCaptureScreenshot:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+    iput-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions;->mXRecoveryt:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 
     aput-object v2, v0, v1
 

@@ -15,5 +15,11 @@
         <include android:id="@id/button6" layout="@android:layout/recent_apps_icon" />
         <include android:id="@id/button7" layout="@android:layout/recent_apps_icon" />
     </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="320.0dip" android:layout_height="wrap_content">
+        <include android:id="@id/button8" layout="@android:layout/recent_apps_icon" />
+        <include android:id="@id/button9" layout="@android:layout/recent_apps_icon" />
+        <include android:id="@id/button10" layout="@android:layout/recent_apps_icon" />
+        <include android:id="@id/button11" layout="@android:layout/recent_apps_icon" />
+    </LinearLayout>
     <FrameLayout android:layout_width="fill_parent" android:layout_height="40.0dip" />
 </com.android.internal.policy.impl.RecentApplicationsBackground>

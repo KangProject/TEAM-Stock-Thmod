@@ -11,7 +11,7 @@
 
 .field private static final MAX_RECENT_TASKS:I = 0x10
 
-.field private static final NUM_BUTTONS:I = 0x8
+.field private static final NUM_BUTTONS:I = 0xc
 
 .field private static sStatusBar:Landroid/app/StatusBarManager;
 
@@ -44,7 +44,7 @@
     invoke-direct {p0, p1, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 53
-    const/16 v1, 0x8
+    const/16 v1, 0xc
 
     new-array v1, v1, [Landroid/widget/TextView;
 
@@ -204,7 +204,7 @@
     :goto_0
     if-ge v9, v15, :cond_3
 
-    const/16 v21, 0x8
+    const/16 v21, 0xc
 
     move v0, v12
 
@@ -484,7 +484,7 @@
 
     .line 250
     :goto_3
-    const/16 v21, 0x8
+    const/16 v21, 0xc
 
     move v0, v12
 
@@ -501,7 +501,7 @@
 
     aget-object v21, v21, v12
 
-    const/16 v22, 0x8
+    const/16 v22, 0xc
 
     invoke-virtual/range {v21 .. v22}, Landroid/widget/TextView;->setVisibility(I)V
 
@@ -512,7 +512,7 @@
 
     .line 247
     :cond_4
-    const/16 v22, 0x8
+    const/16 v22, 0xc
 
     goto :goto_2
 
@@ -811,6 +811,66 @@
     aput-object v7, v8, v9
 
     .line 116
+    iget-object v8, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->mIcons:[Landroid/widget/TextView;
+
+    const/16 v9, 0x8
+
+    const v7, 0x102028b
+
+    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/TextView;
+
+    aput-object v7, v8, v9
+
+    .line 117
+    iget-object v8, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->mIcons:[Landroid/widget/TextView;
+
+    const/16 v9, 0x9
+
+    const v7, 0x102028c
+
+    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/TextView;
+
+    aput-object v7, v8, v9
+
+    .line 118
+    iget-object v8, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->mIcons:[Landroid/widget/TextView;
+
+    const/16 v9, 0xa
+
+    const v7, 0x102028d
+
+    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/TextView;
+
+    aput-object v7, v8, v9
+
+    .line 119
+    iget-object v8, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->mIcons:[Landroid/widget/TextView;
+
+    const/16 v9, 0xb
+
+    const v7, 0x102028e
+
+    invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/TextView;
+
+    aput-object v7, v8, v9
+
+    .line 120
     const v7, 0x1020227
 
     invoke-virtual {p0, v7}, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->findViewById(I)Landroid/view/View;
@@ -819,7 +879,7 @@
 
     iput-object v7, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->mNoAppsText:Landroid/view/View;
 
-    .line 118
+    .line 122
     iget-object v0, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog;->mIcons:[Landroid/widget/TextView;
 
     .local v0, arr$:[Landroid/widget/TextView;
@@ -834,16 +894,16 @@
 
     aget-object v1, v0, v3
 
-    .line 119
+    .line 123
     .local v1, b:Landroid/widget/TextView;
     invoke-virtual {v1, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 118
+    .line 122
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 121
+    .line 125
     .end local v1           #b:Landroid/widget/TextView;
     :cond_1
     return-void

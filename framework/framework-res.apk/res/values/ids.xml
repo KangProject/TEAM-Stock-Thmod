@@ -323,4 +323,8 @@
     <item type="id" name="zoomIn">false</item>
     <item type="id" name="zoomMagnify">false</item>
     <item type="id" name="mode_normal">false</item>
+    <item type="id" name="button8">false</item>
+    <item type="id" name="button9">false</item>
+    <item type="id" name="button10">false</item>
+    <item type="id" name="button11">false</item>
 </resources>
