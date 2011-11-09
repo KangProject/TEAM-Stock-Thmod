@@ -68,6 +68,8 @@
 
 .field private mStatusBar:Landroid/app/StatusBarManager;
 
+.field private mXRecoveryt:Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
